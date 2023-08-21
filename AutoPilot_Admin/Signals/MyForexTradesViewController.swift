@@ -68,7 +68,7 @@ class MyForexTradesViewController: UIViewController {
         setupNav()
         setupTable()
         setupEmptyStates()
-        setupLoadingIndicator()
+        //setupLoadingIndicator()
         
         /*
         ChatClient.loginUser { error in
@@ -547,7 +547,6 @@ extension MyForexTradesViewController: ModifySignalViewControllerDelegate {
 
 extension MyForexTradesViewController: PickOptionViewControllerDelegate {
     func didPickOption(optionSelected: String) {
-        /*
         print("did this bitch 🎃🎃🎃 000")
         let newNotiVC = MT_NewForexSignalViewController()
         newNotiVC.signalTypeSelected = "Einstein"
@@ -557,12 +556,11 @@ extension MyForexTradesViewController: PickOptionViewControllerDelegate {
         newNotiVC.assetTitleLabel.text = optionSelected
         newNotiVC.modalPresentationStyle = .overFullScreen
         self.present(newNotiVC, animated: true, completion: nil)
-        */
     }
 }
 
 //MARK: NEW FOREX SIGNAL POSTED
-/*
+
 extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
     func showNotiLoading() {
         self.loadingContainer.alpha = 1.0
@@ -570,8 +568,8 @@ extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
     }
     
     func didCreateForexSignal(signal: Signal) {
-        getForex()
+        //getForex()
         print("did this 🤞🤞🤞")
     }
 }
-*/
+

@@ -81,6 +81,7 @@ extension MyForexTradesViewController {
         //
         
         plusImageView.image = UIImage(named: "plusImg")
+        plusImageView.backgroundColor = .blue
         plusImageView.contentMode = .scaleAspectFill
         plusImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(plusImageView)

@@ -35,6 +35,8 @@
 		DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F12A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf */; };
 		DEC9A4F82A93ED96000DBE39 /* Sofia Pro Bold Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F22A93ED96000DBE39 /* Sofia Pro Bold Az.otf */; };
 		DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */; };
+		DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */; };
+		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		DEC9A4F12A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Semi Bold Az.otf"; sourceTree = "<group>"; };
 		DEC9A4F22A93ED96000DBE39 /* Sofia Pro Bold Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Bold Az.otf"; sourceTree = "<group>"; };
 		DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
+		DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeConfirmView.swift; sourceTree = "<group>"; };
+		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				DEC9A4DC2A93EA75000DBE39 /* EmptyStateView.swift */,
 				DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */,
+				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
+				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
 				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
 				DEC9A4DE2A93EAC5000DBE39 /* Pick Option */,
 				DEC9A4D72A93E9F3000DBE39 /* Model */,
@@ -336,6 +342,7 @@
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
 				DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */,
+				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
@@ -345,6 +352,7 @@
 				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
+				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
