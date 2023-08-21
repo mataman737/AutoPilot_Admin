@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B2D1926EEE6D3CE02FF9D14 /* Pods_AutoPilot_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8BF621F23C0CC22D901A519 /* Pods_AutoPilot_Admin.framework */; };
+		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
+		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
+		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
+		DEC9A4BD2A93DB38000DBE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4BB2A93DB38000DBE39 /* Main.storyboard */; };
+		DEC9A4BF2A93DB3B000DBE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */; };
+		DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4C02A93DB3B000DBE39 /* LaunchScreen.storyboard */; };
+		DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */; };
+		DEC9A4CD2A93E73D000DBE39 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4CC2A93E73D000DBE39 /* SplashViewController.swift */; };
+		DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4CE2A93E742000DBE39 /* SplashViewController+Views.swift */; };
+		DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */; };
+		DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */; };
+		DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */; };
+		DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D82A93E9F8000DBE39 /* Signal.swift */; };
+		DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */; };
+		DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4DC2A93EA75000DBE39 /* EmptyStateView.swift */; };
+		DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4DF2A93EACD000DBE39 /* PickOptionViewController.swift */; };
+		DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4E12A93EADD000DBE39 /* PickOptionViewController+Views.swift */; };
+		DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4E32A93EAF0000DBE39 /* ContinueButton.swift */; };
+		DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */; };
+		DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4E72A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift */; };
+		DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4E92A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift */; };
+		DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4EE2A93ED96000DBE39 /* Nexa Bold.otf */; };
+		DEC9A4F52A93ED96000DBE39 /* Sofia Pro Light Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4EF2A93ED96000DBE39 /* Sofia Pro Light Az.otf */; };
+		DEC9A4F62A93ED96000DBE39 /* Sofia Pro Medium Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F02A93ED96000DBE39 /* Sofia Pro Medium Az.otf */; };
+		DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F12A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf */; };
+		DEC9A4F82A93ED96000DBE39 /* Sofia Pro Bold Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F22A93ED96000DBE39 /* Sofia Pro Bold Az.otf */; };
+		DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A9499FD73DC38B13447A6091 /* Pods-AutoPilot_Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPilot_Admin.release.xcconfig"; path = "Target Support Files/Pods-AutoPilot_Admin/Pods-AutoPilot_Admin.release.xcconfig"; sourceTree = "<group>"; };
+		C8BF621F23C0CC22D901A519 /* Pods_AutoPilot_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoPilot_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9EAEADF2306CAA7B7C4471F /* Pods-AutoPilot_Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPilot_Admin.debug.xcconfig"; path = "Target Support Files/Pods-AutoPilot_Admin/Pods-AutoPilot_Admin.debug.xcconfig"; sourceTree = "<group>"; };
+		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyForexTradesViewController.swift; sourceTree = "<group>"; };
+		DEC9A4BC2A93DB38000DBE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEC9A4C12A93DB3B000DBE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DEC9A4C32A93DB3B000DBE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		DEC9A4CC2A93E73D000DBE39 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DEC9A4CE2A93E742000DBE39 /* SplashViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashViewController+Views.swift"; sourceTree = "<group>"; };
+		DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyForexTradesViewController+Views.swift"; sourceTree = "<group>"; };
+		DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSignalsTableViewCell.swift; sourceTree = "<group>"; };
+		DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableViewCell.swift; sourceTree = "<group>"; };
+		DEC9A4D82A93E9F8000DBE39 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DEC9A4DC2A93EA75000DBE39 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		DEC9A4DF2A93EACD000DBE39 /* PickOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickOptionViewController.swift; sourceTree = "<group>"; };
+		DEC9A4E12A93EADD000DBE39 /* PickOptionViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PickOptionViewController+Views.swift"; sourceTree = "<group>"; };
+		DEC9A4E32A93EAF0000DBE39 /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexSignalsHeaderView.swift; sourceTree = "<group>"; };
+		DEC9A4E72A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MT_NewForexSignalViewController.swift; sourceTree = "<group>"; };
+		DEC9A4E92A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MT_NewForexSignalViewController+Views.swift"; sourceTree = "<group>"; };
+		DEC9A4EE2A93ED96000DBE39 /* Nexa Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold.otf"; sourceTree = "<group>"; };
+		DEC9A4EF2A93ED96000DBE39 /* Sofia Pro Light Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Light Az.otf"; sourceTree = "<group>"; };
+		DEC9A4F02A93ED96000DBE39 /* Sofia Pro Medium Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Medium Az.otf"; sourceTree = "<group>"; };
+		DEC9A4F12A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Semi Bold Az.otf"; sourceTree = "<group>"; };
+		DEC9A4F22A93ED96000DBE39 /* Sofia Pro Bold Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Bold Az.otf"; sourceTree = "<group>"; };
+		DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEC9A4AF2A93DB38000DBE39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B2D1926EEE6D3CE02FF9D14 /* Pods_AutoPilot_Admin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70A6FBFC15E14030AE594BBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8BF621F23C0CC22D901A519 /* Pods_AutoPilot_Admin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7061C5540635051C8B2AE0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9EAEADF2306CAA7B7C4471F /* Pods-AutoPilot_Admin.debug.xcconfig */,
+				A9499FD73DC38B13447A6091 /* Pods-AutoPilot_Admin.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DEC9A4A92A93DB38000DBE39 = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4B42A93DB38000DBE39 /* AutoPilot_Admin */,
+				DEC9A4B32A93DB38000DBE39 /* Products */,
+				B7061C5540635051C8B2AE0C /* Pods */,
+				70A6FBFC15E14030AE594BBB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DEC9A4B32A93DB38000DBE39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEC9A4B42A93DB38000DBE39 /* AutoPilot_Admin */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */,
+				DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */,
+				DEC9A4ED2A93ED76000DBE39 /* Assets */,
+				DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */,
+				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
+				DEC9A4DC2A93EA75000DBE39 /* EmptyStateView.swift */,
+				DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */,
+				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
+				DEC9A4DE2A93EAC5000DBE39 /* Pick Option */,
+				DEC9A4D72A93E9F3000DBE39 /* Model */,
+				DEC9A4CB2A93E732000DBE39 /* Onboarding */,
+				DEC9A4D02A93E8F6000DBE39 /* Signals */,
+				DEC9A4BB2A93DB38000DBE39 /* Main.storyboard */,
+				DEC9A4C02A93DB3B000DBE39 /* LaunchScreen.storyboard */,
+				DEC9A4C32A93DB3B000DBE39 /* Info.plist */,
+			);
+			path = AutoPilot_Admin;
+			sourceTree = "<group>";
+		};
+		DEC9A4CB2A93E732000DBE39 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4CC2A93E73D000DBE39 /* SplashViewController.swift */,
+				DEC9A4CE2A93E742000DBE39 /* SplashViewController+Views.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DEC9A4D02A93E8F6000DBE39 /* Signals */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */,
+				DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */,
+				DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */,
+				DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */,
+			);
+			path = Signals;
+			sourceTree = "<group>";
+		};
+		DEC9A4D72A93E9F3000DBE39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4D82A93E9F8000DBE39 /* Signal.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEC9A4DE2A93EAC5000DBE39 /* Pick Option */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4DF2A93EACD000DBE39 /* PickOptionViewController.swift */,
+				DEC9A4E32A93EAF0000DBE39 /* ContinueButton.swift */,
+				DEC9A4E12A93EADD000DBE39 /* PickOptionViewController+Views.swift */,
+			);
+			path = "Pick Option";
+			sourceTree = "<group>";
+		};
+		DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4E72A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift */,
+				DEC9A4E92A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift */,
+			);
+			path = "New Forex Signal";
+			sourceTree = "<group>";
+		};
+		DEC9A4EC2A93ED6F000DBE39 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4EE2A93ED96000DBE39 /* Nexa Bold.otf */,
+				DEC9A4F22A93ED96000DBE39 /* Sofia Pro Bold Az.otf */,
+				DEC9A4EF2A93ED96000DBE39 /* Sofia Pro Light Az.otf */,
+				DEC9A4F02A93ED96000DBE39 /* Sofia Pro Medium Az.otf */,
+				DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */,
+				DEC9A4F12A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DEC9A4ED2A93ED76000DBE39 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */,
+				DEC9A4EC2A93ED6F000DBE39 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEC9A4B12A93DB38000DBE39 /* AutoPilot_Admin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEC9A4C62A93DB3B000DBE39 /* Build configuration list for PBXNativeTarget "AutoPilot_Admin" */;
+			buildPhases = (
+				D5603A9BBE82497702E2418C /* [CP] Check Pods Manifest.lock */,
+				DEC9A4AE2A93DB38000DBE39 /* Sources */,
+				DEC9A4AF2A93DB38000DBE39 /* Frameworks */,
+				DEC9A4B02A93DB38000DBE39 /* Resources */,
+				2BF2F437FB9AC84767CA8187 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoPilot_Admin;
+			productName = AutoPilot_Admin;
+			productReference = DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEC9A4AA2A93DB38000DBE39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					DEC9A4B12A93DB38000DBE39 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = DEC9A4AD2A93DB38000DBE39 /* Build configuration list for PBXProject "AutoPilot_Admin" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DEC9A4A92A93DB38000DBE39;
+			productRefGroup = DEC9A4B32A93DB38000DBE39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEC9A4B12A93DB38000DBE39 /* AutoPilot_Admin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEC9A4B02A93DB38000DBE39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */,
+				DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */,
+				DEC9A4F52A93ED96000DBE39 /* Sofia Pro Light Az.otf in Resources */,
+				DEC9A4F82A93ED96000DBE39 /* Sofia Pro Bold Az.otf in Resources */,
+				DEC9A4F62A93ED96000DBE39 /* Sofia Pro Medium Az.otf in Resources */,
+				DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */,
+				DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */,
+				DEC9A4BF2A93DB3B000DBE39 /* Assets.xcassets in Resources */,
+				DEC9A4BD2A93DB38000DBE39 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BF2F437FB9AC84767CA8187 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoPilot_Admin/Pods-AutoPilot_Admin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoPilot_Admin/Pods-AutoPilot_Admin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoPilot_Admin/Pods-AutoPilot_Admin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5603A9BBE82497702E2418C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AutoPilot_Admin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEC9A4AE2A93DB38000DBE39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
+				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
+				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
+				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
+				DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */,
+				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
+				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
+				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
+				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
+				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
+				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,
+				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
+				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
+				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
+				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
+				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
+				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
+				DEC9A4CD2A93E73D000DBE39 /* SplashViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DEC9A4BB2A93DB38000DBE39 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEC9A4BC2A93DB38000DBE39 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DEC9A4C02A93DB3B000DBE39 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEC9A4C12A93DB3B000DBE39 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEC9A4C42A93DB3B000DBE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DEC9A4C52A93DB3B000DBE39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEC9A4C72A93DB3B000DBE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9EAEADF2306CAA7B7C4471F /* Pods-AutoPilot_Admin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M32NGP6PG5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoPilot_Admin/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Admin;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EnigmaLabs.AutoPilot-Admin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEC9A4C82A93DB3B000DBE39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9499FD73DC38B13447A6091 /* Pods-AutoPilot_Admin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M32NGP6PG5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoPilot_Admin/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Admin;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EnigmaLabs.AutoPilot-Admin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEC9A4AD2A93DB38000DBE39 /* Build configuration list for PBXProject "AutoPilot_Admin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEC9A4C42A93DB3B000DBE39 /* Debug */,
+				DEC9A4C52A93DB3B000DBE39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEC9A4C62A93DB3B000DBE39 /* Build configuration list for PBXNativeTarget "AutoPilot_Admin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEC9A4C72A93DB3B000DBE39 /* Debug */,
+				DEC9A4C82A93DB3B000DBE39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEC9A4AA2A93DB38000DBE39 /* Project object */;
+}
