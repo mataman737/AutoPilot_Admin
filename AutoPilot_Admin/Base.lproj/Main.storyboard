@@ -23,7 +23,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMp-tW-SEG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-416" y="246"/>
+            <point key="canvasLocation" x="-416" y="610"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="g0f-6d-VIJ">
+            <objects>
+                <viewController id="2uh-bh-dpy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Usg-Ub-qpS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QG4-8L-R3H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="qwo-cc-rhC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lif-c2-Tct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="-116"/>
         </scene>
         <!--Signals-->
         <scene sceneID="R2p-PD-3Tz">
@@ -40,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cu4-pR-gR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-416" y="-466"/>
+            <point key="canvasLocation" x="-416" y="-895"/>
         </scene>
         <!--My Tab Bar Controller-->
         <scene sceneID="7KR-Sh-0Lf">
@@ -53,7 +69,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Fea-7m-wJS" kind="relationship" relationship="viewControllers" id="u8o-FC-Fqm"/>
-                        <segue destination="fF8-Dp-VGb" kind="relationship" relationship="viewControllers" id="utc-XM-zFO"/>
+                        <segue destination="2uh-bh-dpy" kind="relationship" relationship="viewControllers" id="9Yy-zc-yi1"/>
+                        <segue destination="fF8-Dp-VGb" kind="relationship" relationship="viewControllers" id="R1l-3Q-UgI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQj-m3-fIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

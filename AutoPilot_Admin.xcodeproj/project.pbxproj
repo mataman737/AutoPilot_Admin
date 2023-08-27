@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B2D1926EEE6D3CE02FF9D14 /* Pods_AutoPilot_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8BF621F23C0CC22D901A519 /* Pods_AutoPilot_Admin.framework */; };
+		DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20422A9BE9040067C719 /* ConnectViewController.swift */; };
+		DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */; };
+		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -43,6 +46,9 @@
 		A9499FD73DC38B13447A6091 /* Pods-AutoPilot_Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPilot_Admin.release.xcconfig"; path = "Target Support Files/Pods-AutoPilot_Admin/Pods-AutoPilot_Admin.release.xcconfig"; sourceTree = "<group>"; };
 		C8BF621F23C0CC22D901A519 /* Pods_AutoPilot_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoPilot_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9EAEADF2306CAA7B7C4471F /* Pods-AutoPilot_Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPilot_Admin.debug.xcconfig"; path = "Target Support Files/Pods-AutoPilot_Admin/Pods-AutoPilot_Admin.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0E20422A9BE9040067C719 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectViewController+Views.swift"; sourceTree = "<group>"; };
+		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DE0E20412A9BE8F30067C719 /* Connect */ = {
+			isa = PBXGroup;
+			children = (
+				DE0E20422A9BE9040067C719 /* ConnectViewController.swift */,
+				DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */,
+				DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */,
+			);
+			path = Connect;
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +151,7 @@
 				DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */,
 				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
 				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
+				DE0E20412A9BE8F30067C719 /* Connect */,
 				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
 				DEC9A4DE2A93EAC5000DBE39 /* Pick Option */,
 				DEC9A4D72A93E9F3000DBE39 /* Model */,
@@ -337,13 +354,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */,
 				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
 				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
 				DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */,
+				DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */,
 				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
+				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
