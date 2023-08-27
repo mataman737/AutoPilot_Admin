@@ -40,6 +40,8 @@
 		DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */; };
 		DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */; };
 		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
+		FCC4DD252A93FE0100185168 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD242A93FE0100185168 /* API.swift */; };
+		FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD262A93FE7B00185168 /* Admin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
 		DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeConfirmView.swift; sourceTree = "<group>"; };
 		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
+		FCC4DD242A93FE0100185168 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FCC4DD262A93FE7B00185168 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 			children = (
 				DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */,
 				DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */,
+				FCC4DD232A93FDF800185168 /* Singletons */,
 				DEC9A4ED2A93ED76000DBE39 /* Assets */,
 				DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */,
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
@@ -154,7 +159,7 @@
 				DE0E20412A9BE8F30067C719 /* Connect */,
 				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
 				DEC9A4DE2A93EAC5000DBE39 /* Pick Option */,
-				DEC9A4D72A93E9F3000DBE39 /* Model */,
+				DEC9A4D72A93E9F3000DBE39 /* Models */,
 				DEC9A4CB2A93E732000DBE39 /* Onboarding */,
 				DEC9A4D02A93E8F6000DBE39 /* Signals */,
 				DEC9A4BB2A93DB38000DBE39 /* Main.storyboard */,
@@ -184,12 +189,13 @@
 			path = Signals;
 			sourceTree = "<group>";
 		};
-		DEC9A4D72A93E9F3000DBE39 /* Model */ = {
+		DEC9A4D72A93E9F3000DBE39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				DEC9A4D82A93E9F8000DBE39 /* Signal.swift */,
+				FCC4DD262A93FE7B00185168 /* Admin.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DEC9A4DE2A93EAC5000DBE39 /* Pick Option */ = {
@@ -231,6 +237,14 @@
 				DEC9A4EC2A93ED6F000DBE39 /* Fonts */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		FCC4DD232A93FDF800185168 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				FCC4DD242A93FE0100185168 /* API.swift */,
+			);
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,10 +380,12 @@
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
+				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
 				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,
 				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
+				FCC4DD252A93FE0100185168 /* API.swift in Sources */,
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,

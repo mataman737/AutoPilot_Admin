@@ -740,9 +740,6 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
     }
     
     @objc func postSignal() {
-        
-        /*
-        
         self.showLoading()
         self.mainScrollView.isUserInteractionEnabled = false
         
@@ -815,8 +812,6 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
             //guard let s = self else { return }
             self.perform(#selector(self.showCheck), with: self, afterDelay: 1.25)
         }
-        */
-        
-        */
+        */        
     }
 }
