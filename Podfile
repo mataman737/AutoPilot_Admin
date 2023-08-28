@@ -18,7 +18,6 @@ end
   # Pods for AutoPilot_Admin
 
 pod 'lottie-ios'
-pod 'YPImagePicker'
 pod 'WXImageCompress'
 pod 'Disk'
 pod 'AWSS3'

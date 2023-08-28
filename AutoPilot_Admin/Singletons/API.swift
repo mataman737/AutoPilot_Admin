@@ -143,7 +143,7 @@ class API: NSObject {
     }
     
     func getForexSignals(completionHandler: @escaping (Bool, [Signal]?, Error?) -> ()) {
-        performRequest(endpoint: "api/users/signals/forex", method: "GET", authenticated: true) { (data, response, error) in
+        performRequest(endpoint: "api/admin/signals", method: "GET", authenticated: true) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
                 completionHandler(false, nil, error)
@@ -163,7 +163,8 @@ class API: NSObject {
     }
     
     func postForexSignal(signal: SignalRequest, completionHandler: @escaping (Bool, Signal?, Error?) -> ()) {
-        performRequest(endpoint: "api/users/signals/forex", method: "POST", authenticated: true, object: signal) { (data, response, error) in
+        print(signal)
+        performRequest(endpoint: "api/admin/signals", method: "POST", authenticated: true, object: signal) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
                 completionHandler(false, nil, error)
