@@ -56,7 +56,7 @@ class ConnectViewController: UIViewController {
         modifyConstraints()
         setupNav()
         setupTableView()
-        setupLoadingIndicator()
+        //setupLoadingIndicator()
         
         self.perform(#selector(self.hideLoader), with: self, afterDelay: 0.5)
         
@@ -168,7 +168,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return superGroupCIDs.count
+        return 1//superGroupCIDs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -180,7 +180,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
             //cell.circleImageView.kf.setImage(with: url)
         }
         
-        cell.chatNameLabel.text = superGroupCIDs[indexPath.row][0]
+        cell.chatNameLabel.text = "Main Super Group"//superGroupCIDs[indexPath.row][0]
         cell.chatDescriptionLabel.text = "0 new messages"
         cell.newMessageBubble.alpha = 0
         return cell
