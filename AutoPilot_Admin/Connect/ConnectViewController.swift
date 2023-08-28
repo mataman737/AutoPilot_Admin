@@ -29,7 +29,7 @@ class ConnectViewController: UIViewController {
     var discoverTableView = UITableView()
     var connectChannelTableViewCell = "connectChannelTableViewCell"
     var superGroupCIDs: [[String]] = [
-        [ "Community", "gaming:NVU_Community", "https://enigmatrading.s3.amazonaws.com/nvu_3x.png"],
+        [ "MainSuperGroup"],
     ]
     var communityUnreadCount: Int = 0
     var supportnreadCount: Int = 0
@@ -61,6 +61,15 @@ class ConnectViewController: UIViewController {
         self.perform(#selector(self.hideLoader), with: self, afterDelay: 0.5)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        ChatClient.loginUser { error in
+            print("🤌🤌🤌 111")
+            guard error == nil else {
+                //print(error!)
+                print("\(error!) 🤌🤌🤌 222")
+                return
+            }
+        }
         
         /*
         let center = UNUserNotificationCenter.current()
@@ -192,7 +201,6 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         lightImpactGenerator()
-        /*
         let idString = superGroupCIDs[indexPath.row][1]
         do {
             let id = try ChannelId(cid: idString)
@@ -203,23 +211,22 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
             DispatchQueue.main.async { [weak self] in
                 let nav = UINavigationController(rootViewController: channelVC)
                 self?.present(nav, animated: true, completion: {
-                    API.sharedInstance.updateAdmin(admin: Admin.current) { success, admin, error in
-                        guard error == nil else {
-                            print(error!)
-                            return
-                        }
-                        
-                        guard success, let _ = admin else {
-                            print("error updating admin")
-                            return
-                        }
-                    }
+//                    API.sharedInstance.updateAdmin(admin: Admin.current) { success, admin, error in
+//                        guard error == nil else {
+//                            print(error!)
+//                            return
+//                        }
+//                        
+//                        guard success, let _ = admin else {
+//                            print("error updating admin")
+//                            return
+//                        }
+//                    }
                 })
             }
         } catch {
             print(error)
         }
-        */
     }
     
     /*
@@ -276,3 +283,11 @@ extension ConnectViewController: PickLiveTypeViewControllerDelegate {
     }
 }
 */
+
+//MARK CUSTOM CHAT DELEGATE
+
+extension ConnectViewController: CustomChatChannelVCDelegate {
+    func didCloseChannel() {
+        checkUnreadCount()
+    }
+}

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StreamChat
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,3 +35,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension ChatClient {
+    static var shared: ChatClient!
+    
+    static var token: Token!
+    
+    static var loggedIn = false
+    
+    static func login() {
+        /// you can grab your API Key from https://getstream.io/dashboard/
+        let config = ChatClientConfig(apiKey: .init("2hujf8t6u4nn"))
+        
+        ChatClient.shared = ChatClient(config: config)
+    }
+    
+    static func loginUser(completionHandler: @escaping (Error?) -> ()) {
+        let tokenProvider: TokenProvider = { completion in
+            API.sharedInstance.getStreamToken() { success, token, error in
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                
+                guard success, let token = token else {
+                    print("error getting token")
+                    return
+                }
+                
+                do {
+                    let token = try Token(rawValue: token.token)
+                    
+                    ChatClient.token = token
+                    
+                    completion(.success(token))
+
+                } catch {
+                    print(error)
+                    print("error initializing Stream token")
+                }
+            }
+        }
+        
+        
+        ChatClient.shared.connectUser(userInfo: .init(id: Admin.current.id!.uuidString.uppercased(), name: Admin.current.displayName, imageURL: URL(string: Admin.current.profilePhotoUrl ?? "")), tokenProvider: tokenProvider) { error in
+            if error == nil {
+                ChatClient.loggedIn = true
+            }
+            completionHandler(error)
+        }
+    }
+}
