@@ -25,17 +25,17 @@
             </objects>
             <point key="canvasLocation" x="-416" y="610"/>
         </scene>
-        <!--Item-->
+        <!--Connect-->
         <scene sceneID="g0f-6d-VIJ">
             <objects>
-                <viewController id="2uh-bh-dpy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConnectViewController" id="2uh-bh-dpy" customClass="ConnectViewController" customModule="AutoPilot_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Usg-Ub-qpS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="QG4-8L-R3H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qwo-cc-rhC"/>
+                    <tabBarItem key="tabBarItem" title="Connect" id="qwo-cc-rhC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lif-c2-Tct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
