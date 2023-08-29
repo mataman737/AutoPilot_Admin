@@ -31,4 +31,5 @@ pod 'PWSwitch'
 pod 'NWWebSocket'
 pod 'FSCalendar'
 pod 'DateTimePicker'
+pod 'YPImagePicker'
 end

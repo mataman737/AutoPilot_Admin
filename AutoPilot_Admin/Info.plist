@@ -75,5 +75,7 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>App would like to access your photos so you can send push notifications</string>
 </dict>
 </plist>

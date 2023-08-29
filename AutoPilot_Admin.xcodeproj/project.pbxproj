@@ -11,6 +11,10 @@
 		DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20422A9BE9040067C719 /* ConnectViewController.swift */; };
 		DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */; };
 		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
+		DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E43FB2A9D9D1B00C76B71 /* NewNotificationViewController.swift */; };
+		DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */; };
+		DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */; };
+		DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -52,6 +56,10 @@
 		DE0E20422A9BE9040067C719 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectViewController+Views.swift"; sourceTree = "<group>"; };
 		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
+		DE6E43FB2A9D9D1B00C76B71 /* NewNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNotificationViewController.swift; sourceTree = "<group>"; };
+		DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewNotificationViewController+Views.swift"; sourceTree = "<group>"; };
+		DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageVideoViewController.swift; sourceTree = "<group>"; };
+		DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAlertView.swift; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +135,17 @@
 			path = Connect;
 			sourceTree = "<group>";
 		};
+		DE6E43FA2A9D9D1000C76B71 /* New Notification */ = {
+			isa = PBXGroup;
+			children = (
+				DE6E43FB2A9D9D1B00C76B71 /* NewNotificationViewController.swift */,
+				DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */,
+				DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */,
+				DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */,
+			);
+			path = "New Notification";
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +178,7 @@
 				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
 				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DE6E43FA2A9D9D1000C76B71 /* New Notification */,
 				DE0E20412A9BE8F30067C719 /* Connect */,
 				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
 				DEC9A4DE2A93EAC5000DBE39 /* Pick Option */,
@@ -373,6 +393,7 @@
 			files = (
 				DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */,
 				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
+				DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */,
 				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
@@ -381,11 +402,13 @@
 				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
+				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
+				DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */,
 				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,
 				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
 				FCC4DD252A93FE0100185168 /* API.swift in Sources */,
@@ -395,6 +418,7 @@
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
+				DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */,
 				DEC9A4CD2A93E73D000DBE39 /* SplashViewController.swift in Sources */,
 				FCE556A42A9D40DA00C2B394 /* CustomChatChannelVC.swift in Sources */,
 			);
