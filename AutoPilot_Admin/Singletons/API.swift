@@ -223,35 +223,55 @@ class API: NSObject {
         }
     }
     
-//    func sendToken(token: AToken, completionHandler: @escaping (Bool, [Admin]?, Error?) -> ()) {
-//        if Admin.current.id != nil {
-//            performRequest(endpoint: "api/admin/devicetoken", method: "POST", authenticated: true, object: token) { (data, response, error) in
-//                guard let data = data, error == nil else {                                                 // check for fundamental networking error
-//                    print("error=\(String(describing: error))")
-//                    completionHandler(false, nil, error)
-//                    return
-//                }
-//                completionHandler(true, nil, nil)
+    func sendNotification(notification: Notification, completionHandler: @escaping (Bool, Signal?, Error?) -> ()) {
+        performRequest(endpoint: "sendpush", method: "POST", authenticated: true, object: notification) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+//            do {
+//                let decoder = JSONDecoder()
+//                decoder.dateDecodingStrategy = .iso8601
+//                let signal = try decoder.decode(Signal.self, from: data)
+                
+                completionHandler(true, nil, nil)
+//            } catch {
+//                print(error)
+//                completionHandler(false, nil, error)
 //            }
-//        } else {
-//
-//        }
-//    }
-//
-//    func sendTokenSandbox(token: AToken, completionHandler: @escaping (Bool, [Admin]?, Error?) -> ()) {
-//        if Admin.current.id != nil {
-//            performRequest(endpoint: "api/admin/devicetokensandbox", method: "POST", authenticated: true, object: token) { (data, response, error) in
-//                guard let data = data, error == nil else {                                                 // check for fundamental networking error
-//                    print("error=\(String(describing: error))")
-//                    completionHandler(false, nil, error)
-//                    return
-//                }
-//                completionHandler(true, nil, nil)
-//            }
-//        } else {
-//
-//        }
-//    }
+        }
+    }
+    
+    func sendToken(token: AToken, completionHandler: @escaping (Bool, [Admin]?, Error?) -> ()) {
+        if Admin.current.id != nil {
+            performRequest(endpoint: "api/admin/devicetoken", method: "POST", authenticated: true, object: token) { (data, response, error) in
+                guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                    print("error=\(String(describing: error))")
+                    completionHandler(false, nil, error)
+                    return
+                }
+                completionHandler(true, nil, nil)
+            }
+        } else {
+
+        }
+    }
+
+    func sendTokenSandbox(token: AToken, completionHandler: @escaping (Bool, [Admin]?, Error?) -> ()) {
+        if Admin.current.id != nil {
+            performRequest(endpoint: "api/admin/devicetokensandbox", method: "POST", authenticated: true, object: token) { (data, response, error) in
+                guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                    print("error=\(String(describing: error))")
+                    completionHandler(false, nil, error)
+                    return
+                }
+                completionHandler(true, nil, nil)
+            }
+        } else {
+
+        }
+    }
     
     func login(loginRequest: LoginAttempt, completionHandler: @escaping (Bool, Admin?, Error?, Int?) -> ()) {
         performRequest(endpoint: "api/users/login", method: "POST", authenticated: true, object: loginRequest) { (data, response, error) in

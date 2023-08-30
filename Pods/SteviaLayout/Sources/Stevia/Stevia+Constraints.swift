@@ -41,8 +41,8 @@ public extension UIView {
                               relatedBy: NSLayoutConstraint.Relation = .equal,
                               toItem view2: AnyObject? = nil,
                               attribute attr2: NSLayoutConstraint.Attribute? = nil,
-                              multiplier: CGFloat = 1,
-                              constant: CGFloat = 0) -> NSLayoutConstraint {
+                              multiplier: Double = 1,
+                              constant: Double = 0) -> NSLayoutConstraint {
         let c = constraint(
             item: view1, attribute: attr1,
             relatedBy: relatedBy,
@@ -74,12 +74,12 @@ func constraint(item view1: AnyObject,
                        relatedBy: NSLayoutConstraint.Relation = .equal,
                        toItem view2: AnyObject? = nil,
                        attribute attr2: NSLayoutConstraint.Attribute? = nil, // Not an attribute??
-                       multiplier: CGFloat = 1,
-                       constant: CGFloat = 0) -> NSLayoutConstraint {
+                       multiplier: Double = 1,
+                       constant: Double = 0) -> NSLayoutConstraint {
         let c =  NSLayoutConstraint(item: view1, attribute: attr1,
                                   relatedBy: relatedBy,
                                   toItem: view2, attribute: ((attr2 == nil) ? attr1 : attr2! ),
-                                  multiplier: multiplier, constant: constant)
+                                  multiplier: CGFloat(multiplier), constant: CGFloat(constant))
     c.priority = UILayoutPriority(rawValue: UILayoutPriority.defaultHigh.rawValue + 1)
     return c
 }
@@ -111,18 +111,19 @@ public extension UIView {
     /**
      Makes a view follow another view's frame.
      For instance if we want a button to be on top of an image :
+     You can also set how much you want to cover the image, like set the leading, trailing, top and bottom alignment.
      
      ```
      button.followEdges(image)
      ```
      */
-    func followEdges(_ otherView: UIView) {
+    func followEdges(_ otherView: UIView, top : Double = 0.0, bottom : Double = 0.0, leading : Double = 0.0, trailing : Double = 0.0) {
         if let spv = superview {
             let cs = [
-                constraint(item: self, attribute: .top, toItem: otherView),
-                constraint(item: self, attribute: .trailing, toItem: otherView),
-                constraint(item: self, attribute: .bottom, toItem: otherView),
-                constraint(item: self, attribute: .leading, toItem: otherView)
+                constraint(item: self, attribute: .top, toItem: otherView, constant: top),
+                constraint(item: self, attribute: .trailing, toItem: otherView, constant: trailing),
+                constraint(item: self, attribute: .bottom, toItem: otherView, constant: bottom),
+                constraint(item: self, attribute: .leading, toItem: otherView, constant: leading)
             ]
             spv.addConstraints(cs)
         }

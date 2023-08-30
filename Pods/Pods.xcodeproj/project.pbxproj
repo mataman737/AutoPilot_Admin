@@ -78,7 +78,6 @@
 		0B260AD5990D226C8E71AECDE1F8DA88 /* YPAssetZoomableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E25432FA34E7DD4F238A3E76E72501 /* YPAssetZoomableView.swift */; };
 		0B6FE300537E44A4B0BB2419DAA88EB4 /* Changeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3373CE1B64B47C82DBF664BADFA8073 /* Changeset.swift */; };
 		0BA857F3E4F0872C0B383D28A73DF034 /* PWSwitch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CE7A1D494991D1DE9B98FAC1BB4A5EC /* PWSwitch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0BCA889F7FF8B97FBAC423B586D1AC8C /* Stevia+Equation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA07797F377A464ADB5EB6568E872E /* Stevia+Equation.swift */; };
 		0CCBB4361672C8994784F0CD9AFC876D /* FSCalendarHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = E17E2515DA6F7FB14028B28B22D67F71 /* FSCalendarHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CD67D8814E1BAA05134E728806A8BDD /* ChatChannelNamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA974E47E8B6D63660C795F95E687E60 /* ChatChannelNamer.swift */; };
 		0CF1B9D9493CBDF5FAC031E96389CAC3 /* AnimationImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDD4FBF166777BF642D567DD6A6D52 /* AnimationImageProvider.swift */; };
@@ -101,7 +100,6 @@
 		0E6699FEEBD1B27FF0A40A40706362CA /* TranslationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F711AE3EDDE77B6778F74A23141EA /* TranslationLanguage.swift */; };
 		0E82E89C87D6471F85DD1C499A9BBFB9 /* AWSXMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC29C069ECB9C9FFA13044C907C85E /* AWSXMLDictionary.m */; };
 		0EC546ABC2D19FDD2F3A09293B8D4B2D /* AWSModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F92DDC613FB9AD5709F4F4EE33D0007E /* AWSModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0ED61E628F29E492DE69AC60DE634EFE /* Stevia+DoubleDash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02957E8402151A5DB0D63AEC1C2B3AD6 /* Stevia+DoubleDash.swift */; };
 		0ED8FBFD9A86D21BF69137EC9350E575 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275202DF215C23EE28B9C71E9704BA68 /* SessionDelegate.swift */; };
 		0EEAB5881A0A0BC61132F03E43BD353F /* APIPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1C15BBEF8801D06E8597BD5DA76EB /* APIPathConvertible.swift */; };
 		0EEBF56C6809431679C6DD5D4803D66A /* IndexSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2763B243573FB3EC8E2F27D618720F /* IndexSet+Extensions.swift */; };
@@ -120,6 +118,7 @@
 		10D8B6144C85D7970CD7377548F5A2E6 /* id.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B14475149F23E373F791F9603D5058FE /* id.lproj */; };
 		10FFDFDA7F45FB34A5081212A5CFC21C /* PushDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F5FCB528C0B92905EB5A0A310A9FB /* PushDevice.swift */; };
 		1152D5AAA7732A77B80CF0E33A68351C /* FSCalendarSeparatorDecorationView.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2052401EC61EF1E7835976751F0B38 /* FSCalendarSeparatorDecorationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1155762896403DF34C284344DF801D26 /* Stevia+Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501EA0F8412986707F3D2F6AFDB8A3E4 /* Stevia+Fill.swift */; };
 		1185A2B40E14F2FCBC761FC99777CAD8 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF389B7DD517333AF50FEE15534FE61E /* ExtensionHelpers.swift */; };
 		11ECFB416E5ABC892A74704EAB07B429 /* SystemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F21DA93FE03CFACC4E7229FB1B5D97 /* SystemEnvironment.swift */; };
 		121D790937C61381DFBE1D9C38091C3E /* LegacyGradientFillRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE5BA790811216E19AAB3C4A032DDC /* LegacyGradientFillRenderer.swift */; };
@@ -129,7 +128,6 @@
 		126813F1FE7D9C76BA9C17EED7827920 /* MemberListController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AEADE53BACA626633CEC4D3E27A639 /* MemberListController+Combine.swift */; };
 		1268B8697EC5B85E5824DEF0F6C01CFE /* AWSCognitoIdentityResources.h in Headers */ = {isa = PBXBuildFile; fileRef = FC114935089C5CE750E213E062A5F981 /* AWSCognitoIdentityResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1286E81B7AECDB35B6C096D97E432886 /* ChannelReadDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184751A3A2322EE7CD9A888B3872859F /* ChannelReadDTO.swift */; };
-		12B7C3C0A692129CACF27A8188D62829 /* Stevia+LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA21E9450052A4EAB8FD1F937B8140AC /* Stevia+LayoutAnchors.swift */; };
 		12FD888C0BA6C39D4F40BE505B09F023 /* ImageSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D4B0DC595EAFD305D5CAC43658C38C /* ImageSizeCalculator.swift */; };
 		13134793FB3E6EA15D83C681FC002E1F /* String+SwiftyMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816849C1BD9B7881CF8421C3B72D940E /* String+SwiftyMarkdown.swift */; };
 		137D4B102700CAD1DC1946D455900C3E /* NukeImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F79869A22422004483B8D7AC5B5DC55 /* NukeImageLoader.swift */; };
@@ -180,6 +178,7 @@
 		1CA858875358EB3BE1E4860E1E41FF94 /* ImageLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B36DCEC4D3C53FD92EA8A4FFCB83A /* ImageLayer.swift */; };
 		1CC093CD781BA624CB9DB2F3A6E45422 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA7C05566AD25936064B7FF193E25E /* UIFont+Extensions.swift */; };
 		1CE924F90B492CD220FC754E0EAB65E1 /* LayerTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A656C3444CEEEB632E275A7D76D91C7B /* LayerTextProvider.swift */; };
+		1CEFA1A6DF7991B0B3138C712AA82487 /* Stevia+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B5929EB6EFC5A6115123B52338A10 /* Stevia+Style.swift */; };
 		1CF9660C01FD4E3538F281908DAA38EC /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AB3A7455109FF1821225815513E404F4 /* es.lproj */; };
 		1D0DB52A63904C1FE64C20553ABA0E4B /* CircularCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09277BAFA5068D0DECD85B934EB3A4 /* CircularCloseButton.swift */; };
 		1D21ED593E55FC48ECDB65EF69639E04 /* ContentEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118D58770A1E48A8BD3723DF8AE326A /* ContentEquatable.swift */; };
@@ -189,6 +188,7 @@
 		1DC7D10D1CF37D749C3F085AF7DD16AB /* YPTrimError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70564C6298DAA3881CC49161B28F677 /* YPTrimError.swift */; };
 		1DD7A52C3F979269CCD221D5C78C032A /* LottieAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641CAD3594E98DC1486879943FF8105 /* LottieAnimation.swift */; };
 		1E2C207FA107A386F60A06A71B4C4C8E /* WXImageCompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386665FC5ABCB04B777659E402AAC22 /* WXImageCompress.swift */; };
+		1E53CF3F82C264C7EF03BD5FAA2E7B0C /* Stevia+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7635FB62B9D007FA4810940D4936FB /* Stevia+Operators.swift */; };
 		1E58527DF7057528861A295224E57090 /* StreamChatModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = D5FF06B68535065305405789FED1F154 /* StreamChatModel.xcdatamodeld */; };
 		1E8015EC9845FB162A5B4FE7CD25BAF8 /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735AB69FC1641E0D71B790078823EE2B /* ImagePrefetcher.swift */; };
 		1F363C6A3BED25D3B1839E87A60C3A89 /* AttachmentQueueUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BFFB542F783DF78E8C4564B878D869 /* AttachmentQueueUploader.swift */; };
@@ -211,6 +211,7 @@
 		22216C300C763044344B9DBF97317E63 /* RetryStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3CF28FC045290E8C4D422EFDAC945 /* RetryStrategy.swift */; };
 		223BE83B511D61A39F8E792F572DA047 /* ImageDownloadOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986109A7C6DF038BDCEFCF44D44BB1BD /* ImageDownloadOptions.swift */; };
 		225330012F22F269E89279000FDCD36C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E50D7BA657C035019C8E5132BD43F4 /* UIViewController+Extensions.swift */; };
+		2260BD01D5CB8D7EEC0DFCA1FB17C46E /* Stevia+GetConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED789FB2E6A0F4DDB01D3CB0378EE20 /* Stevia+GetConstraint.swift */; };
 		22BD1346F66BFCB129AAA44EEF322AC9 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808CF8DEF9E4D495C7ED8D1CAF06E7A2 /* Resource.swift */; };
 		2314C4055AB02EA69DF9E3FCA7379043 /* VideoAttachmentGalleryPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F411B1A766C5C22EFF230984A90AEA /* VideoAttachmentGalleryPreview.swift */; };
 		236A974A97A3F7E685561E4E2DA313DE /* ConnectionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6730708639B9EE260E822B3D85802B /* ConnectionEvents.swift */; };
@@ -304,9 +305,7 @@
 		3066CAA222B1966F61E5E4890E38827B /* StringInterpolation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBAE196036541C887AF7FC8002FF962 /* StringInterpolation+Extensions.swift */; };
 		306B5C828E365AE9CAE31879BFA51404 /* NBPhoneNumberUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5643822B33EE82326B76C8D65580D7 /* NBPhoneNumberUtil.m */; };
 		311504230CD293C6825E9257981D6D26 /* DefaultAttachmentPreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC8ECF3AFA9C517BFA0DBAFA00FC50E /* DefaultAttachmentPreviewProvider.swift */; };
-		311C3D57615E20522F2B816D0C77CCE3 /* Stevia+Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217D6B4DCC5E9695E0BD4CBEFB1E9A68 /* Stevia+Alignment.swift */; };
 		3160F31C5CC2781354B7E7BCE657724A /* ChatMessageLayoutOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699C60F80C28E736A614C760A532512 /* ChatMessageLayoutOptions.swift */; };
-		31B7CD329462A3773F372D382E155F1E /* Stevia+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8075AA4F4A57FF96584A5EED82136CC /* Stevia+Content.swift */; };
 		31BD437848A21259AA0FF094E1DDF638 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A727C8CDA14AC91C7AC6C6F3C2ABD7 /* Deprecations.swift */; };
 		31CC259C8919AAAD17209E9467597A88 /* SingleValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0FAE7ADA378D419FC3D80F0DA706B4 /* SingleValueProvider.swift */; };
 		31E069F1C321C74C12495BE9E2ECB684 /* ChatMessageListView+DiffKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16689976799C05FB6DBE867377B11021 /* ChatMessageListView+DiffKit.swift */; };
@@ -315,7 +314,6 @@
 		3229C6E7E6AAEBDC15415FD90641D100 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C709FF058E7E6D74645064EF31DA35 /* EventType.swift */; };
 		326F271CE1A8FD1D856F12F4F12D4258 /* AudioAnalysing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129291AF0B53F78CB9A8D751DDCB210 /* AudioAnalysing.swift */; };
 		32EC7E6212D924EFF1D1717AC41872AD /* OperationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937574CAB5314840F4C8B5E3E596D5B2 /* OperationTask.swift */; };
-		32FE3124A45351AABE19EFE9A6A74C45 /* Stevia+FlexibleMargin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF61390D4CA2FB47175A9054A468F2B /* Stevia+FlexibleMargin.swift */; };
 		33538D9EFD39364A6AF701520A7D735A /* AWSXMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D60FBAC5B5734CB009F40920FF78264 /* AWSXMLWriter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		33E7A6362D6AC445AAF412CB12B811E3 /* ChatChannelAvatarView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E39AE1E85EA1DFB9B448ACDE21270CE /* ChatChannelAvatarView+SwiftUI.swift */; };
 		344C92AF03869104F28099E18B4F5D13 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE050508B2F6A684ABF18D4121DE6A4D /* QuartzCore.framework */; };
@@ -333,6 +331,7 @@
 		365116C48B03CB83E4A72A0F538EF62D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D74E4AA5286B2F832E0DF0F2FE8C11 /* Foundation.framework */; };
 		365F191E7DA257E4A615BE19C7137FEE /* RetryStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C999A917C40E6F6B62E74B8F7AEF194 /* RetryStrategy.swift */; };
 		36769219812863352EAD9A023D7CD110 /* NBNumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DA88C892CFE0630D4E121323BDDBE7 /* NBNumberFormat.m */; };
+		36AA5D50D7B9C9A475C889E0CD41356E /* Stevia+FlexibleMargin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4F203DB5CA4A9875DAC843BE15880 /* Stevia+FlexibleMargin.swift */; };
 		36B3E6CF9789F6B4567CAFFDA93E0B85 /* SolidCompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15299FA5EC58F367A9476E3AE9EFAD63 /* SolidCompositionLayer.swift */; };
 		36C407C9549BA586C2B38BFD40A9D817 /* ChatMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A33FC6CFAD357F9FF74D6C9A195A3A /* ChatMessageListView.swift */; };
 		36EC41EE24E395F0D61EE493D9841092 /* ChatMessageVoiceRecordingAttachmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6F6B2CEE0AA3D381AA854F428E9AD /* ChatMessageVoiceRecordingAttachmentListView.swift */; };
@@ -401,6 +400,7 @@
 		41B2E6D8B6F806A896E4332112DB758F /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDE9514633B5E8F87C8605BCB52731 /* HTTPHeader.swift */; };
 		41CB3B561BCE87506D90730771670117 /* Appearance+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B9F53F22B18FC4E260C2614BA915E /* Appearance+Fonts.swift */; };
 		41CD5E6D608ADFE953F182A8CDEACF20 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479DE4A741AA5CAAB0397A32DFFE5CB /* ChatMessageCell.swift */; };
+		41CE717CFA2B970D0829EBD964126225 /* Stevia+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = A652E9996CD763F69E2D787C9FEF7817 /* Stevia+Center.swift */; };
 		41E4386222432FA420E6A11106D309D5 /* CoreAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE52BECBD0DDCB9BBA2B7DD5FFE32D0E /* CoreAnimationLayer.swift */; };
 		41FC03C36FA6BC35CA08E92E1DB689E3 /* ChatMessageImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961D6E31477F0257E71C1BE86CCA985 /* ChatMessageImageAttachment.swift */; };
 		420C200A05BB29E1D299D1BADE9139D2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FC6FF0F573554B11BD9F84C75E98E7 /* CFNetwork.framework */; };
@@ -635,7 +635,6 @@
 		6A2EFC661A2E025D1A742A21289CF3E5 /* Bundle+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFF84F1493C3BC96FAE7613A7FA264 /* Bundle+Resource.swift */; };
 		6AB2CFDB748C5FCCC89E36D0EF17740D /* AWSDDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 41710D2880F6A1C84484D7A13178D426 /* AWSDDLog+LOGV.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6ACD51A2840F0FD4307F11606B866815 /* FillNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38A705ECB8AC7815BA1A7330DE06110 /* FillNode.swift */; };
-		6B577A8A8C8A9F1556667CAF3BA1DFA6 /* Stevia+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B6BDA8C84CC8D73696555C849B43F /* Stevia+Size.swift */; };
 		6B5F73FA311FD716323F1177AF77D406 /* AWSS3Model.h in Headers */ = {isa = PBXBuildFile; fileRef = C63F6497062CBDEDE5C0D602B0A5FF55 /* AWSS3Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B8AFF99999230D135D31D82BE6BD6A0 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03522E67911DFEBE764D45937543CE32 /* Bundle+Extensions.swift */; };
 		6BB8C251E05FFFCE63EDE1B332052525 /* NBPhoneNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 324715EFEA18829B5C6259F43B97751B /* NBPhoneNumber.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -676,6 +675,7 @@
 		7230FB44D9926187534CCED4102120A0 /* NBPhoneMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 159F7A78F742BD813811E780E358624D /* NBPhoneMetaData.m */; };
 		72D7EF7CCF7D3E6F0C27023991F8A077 /* NWWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB198F0B0A2638F009D73BFF3DDA0435 /* NWWebSocket.swift */; };
 		72F478D974EF3ECD7F2499FBDE04FCCA /* DateTimePicker+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAAB0C88D3111F19E702130FCE021FB /* DateTimePicker+CollectionView.swift */; };
+		73913D3F80063F8ED4B7266CCA36F388 /* Stevia+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959AD5DDA3001952CDCB41F187458C8 /* Stevia+Size.swift */; };
 		73CA65CD8F4D425E33DBD70247E0E2A8 /* YPLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ADA35E93CBBF7A1912CA492AB40B09 /* YPLibraryView.swift */; };
 		73F433C1D11EED55A03F1F1FD63728A6 /* RenderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74163BFB56CA07951B1472832D2C402 /* RenderNode.swift */; };
 		74340052A3CD15A02A87D8D651CB8AB8 /* FSCalendarTransitionCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = DF8D4F2EE3F2743EC7414C5E26A0AF38 /* FSCalendarTransitionCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -712,6 +712,7 @@
 		7A5408B600F02E159C9D4D00A2BD8FB3 /* AWSCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = FB9AFD908DF86D6CEFF2EAD49A9E916E /* AWSCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A7B2CF0984B4AB695E82204B6F31382 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 866E3D68FBA545F0059523F88C0CA940 /* README.md */; };
 		7A994999AE952CAF42C7CDB3FF5D3F5A /* AWSDDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CD624FCA8E8E34A582188DE0B93B4A56 /* AWSDDLegacyMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7ACB45FA63C5425E0059B9432F04D43A /* Stevia+Stacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8AC686CA57AFF219BD49B5C64570C /* Stevia+Stacks.swift */; };
 		7AD4BF65ED5AE1CD10742863A0E94806 /* ChatChannelWatcherListController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83985075EF993B36DFF259DD45BBB476 /* ChatChannelWatcherListController+Combine.swift */; };
 		7ADE7F4263F3A3697E7FC53DB933841C /* AWSNetworkingHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = E57182728FFE838342D7108B65C122E9 /* AWSNetworkingHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AE5FA72ACC6ECF803F6FFA746F91A6D /* StreamRuntimeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA75435123CFF835058920C27CB05FC4 /* StreamRuntimeCheck.swift */; };
@@ -719,13 +720,12 @@
 		7B29A449F0B8E0B85E2EEB1AA3C3AB17 /* CompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6336FFEFF0FD8A12DF1280AFD8F15 /* CompositionLayer.swift */; };
 		7B3135E8F9ACC03357613947A735557E /* NSObject+AWSMTLComparisonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FCFDD7811232BC4DAD317CD058F2813 /* NSObject+AWSMTLComparisonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C201E1EB1CCB2578459245BC20D86DC /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AF25B03AF84E10B3576822C413E7E /* Bundle+Extensions.swift */; };
-		7C2507EED9CF62943A43AEBD135A3683 /* Stevia+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B93D2CA47B158D534A18B1C35E80A /* Stevia+Operators.swift */; };
 		7C2DE406DBA7D651D4A7102437219CBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D74E4AA5286B2F832E0DF0F2FE8C11 /* Foundation.framework */; };
 		7C7418FF01DD7BB909719682B634A8A5 /* SessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E92146801C33A4F311141E620C6AE /* SessionDataTask.swift */; };
 		7C78A412C31F9AEB77BB889F17AAF514 /* Appearance+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219DDA51C5BD66B2E0B1F78AC92B91AD /* Appearance+Formatters.swift */; };
 		7C92DA029A804B2646B0C419CC5971B5 /* AWSMantle.h in Headers */ = {isa = PBXBuildFile; fileRef = 19A314C88C6C63433C318CCE4E9F97C8 /* AWSMantle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CA0A574200D752F9D531057EA764D2C /* Stevia+Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BFB9B988B74FE6A3EDD2431CB3BBC /* Stevia+Alignment.swift */; };
 		7CA51B8483A576CD8D96BDFE2D95717A /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA389ED72364D60CF7E58413898C6208 /* Algorithm.swift */; };
-		7CE3CB2754E69F69D9D815E2139DB306 /* Stevia+Stacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC9553668B59E33F293CB43A5AABDE /* Stevia+Stacks.swift */; };
 		7D258D66AD103D4C8FA5CF1A0AD80F8F /* AWSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B17ABF993625155F206ED24CF36A9C /* AWSNetworking.m */; };
 		7D6231AD69DC8F8C066B91AF8460E974 /* WSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CB2758A23D3C133DFBA3EF08532308 /* WSEngine.swift */; };
 		7D754FD133B50AE6E4420472CA9AAA92 /* EventBatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD20CDB4379F5154FCD0702ED5496FE /* EventBatcher.swift */; };
@@ -742,6 +742,7 @@
 		7F20E293F4B473DCF03807858609D62C /* AudioRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20EC6FF51A2205217F074443FACD85 /* AudioRecording.swift */; };
 		7F331293AC0D79117E133C405E6E922C /* YPFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661622F45E6D0C64F38F8EE2FF488806 /* YPFilterCollectionViewCell.swift */; };
 		7F6E6475DCD475BF76C8487AC813898F /* ImagePipelineConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48533B3C1671199926837E07E81069ED /* ImagePipelineConfiguration.swift */; };
+		7FD1DA457C8FCD399252C7288203F7F2 /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D1B5E2BAB874C357A5CD1FCB32A28D /* Stevia+Constraints.swift */; };
 		7FDEAD728DF7397DAEE4237F07AD5A70 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1DA8D4E8ACBDA8F335199EDF7790E6 /* FSCalendarHeaderView.m */; };
 		7FF357B07A086BEDAE629D6453029CB8 /* ChatChannelListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A42F828611A848A040DB89EE84FF5E2 /* ChatChannelListRouter.swift */; };
 		7FFE4021A4F14124342AD41CE1117B3E /* KFAnimatedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C094B846FFE18E817E9DFE49E433F15 /* KFAnimatedImage.swift */; };
@@ -781,7 +782,6 @@
 		86C87D9F6DB276EE681192F6FDDBF0C1 /* AttachmentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1239E1F0D2BABB055480B42F0002E52B /* AttachmentDTO.swift */; };
 		86C8963B71CF5B2A4B3E62A45A5E3762 /* DateTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B2AA01147DF90ABC99F94E66E1E876 /* DateTimePicker.xib */; };
 		86F4DE2DAE1DB66E696C26B97F5E439D /* AttachmentUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818CCCF1F28A96F54339C63250C84965 /* AttachmentUploader.swift */; };
-		86FFDF1646F2BF827AAC505853101C18 /* Stevia+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034DF31C42FE81484A7A338E3784F46 /* Stevia+Style.swift */; };
 		8774AF40B5C9B5D430A92CF963C07B54 /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93016B07CB694843D700795A2D5856FA /* Codable+Extensions.swift */; };
 		881A35B28D93C56E46E305F6138B1A76 /* ImageDownloaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C1CF289D18BF01911910C64760E1E /* ImageDownloaderDelegate.swift */; };
 		882CB5F2D2F4231B8E0BD03A6EDE6849 /* AWSTimestampSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 970EBA56FF4EA12B6F344545D426DE61 /* AWSTimestampSerialization.m */; };
@@ -852,7 +852,6 @@
 		9466306B4B5C8EC1E14DDDE7E2FE25DC /* MessageController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D10452B3FEAA96B9A18CE6516DD6E /* MessageController+Combine.swift */; };
 		947EB3630646DE0AAEEF85FF6F92AA14 /* ShapeItemLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B96E558A0839EC176CFB5EAA20EDAD /* ShapeItemLayer.swift */; };
 		9480CA65DB9B4C6D3E2DB3158287D8AB /* LibraryMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79D6F87F66DC32D89DAA6675D11C6B7 /* LibraryMediaManager.swift */; };
-		948FD7DC39A3C252A0237279EF945C3C /* Stevia+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDE5AE0AD3856768A9BE522531EEEB /* Stevia+Notifications.swift */; };
 		94B79E27090D33650B875B200087EA26 /* AWSURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = E74D1BEA84EB97D51A012415597017A5 /* AWSURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94C414C1263E6F4FB9C80D5B1CFE339C /* YPLibraryVC+PanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2B1AA333C70E1924002BEA2D8A7FA /* YPLibraryVC+PanGesture.swift */; };
 		94D615C0AC75BB8BB531113BD00CBC15 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD404233DD4CA937773639BDB1596A3 /* Cache.swift */; };
@@ -861,7 +860,6 @@
 		9554546CD385C09F3F3656E1CF07907D /* EphemeralValuesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED5FA5469CE9BBE2CD5911A52B5B21E /* EphemeralValuesContainer.swift */; };
 		957D8C0F3A9958BB49FA63E37EBF03CE /* VoiceRecordingAttachmentViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836D2EDDBB3171870A42A170C6306BE5 /* VoiceRecordingAttachmentViewInjector.swift */; };
 		957F235A49FE58A9E5E23164BE858C73 /* NSFileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EAA687DD4FDA8FEC0E0D10CA17B599 /* NSFileManager+Extensions.swift */; };
-		95A0D64480A774F7BE5F5A798C1492FD /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A72210031856F9CEC1E2E205875DF /* Stevia+Constraints.swift */; };
 		95C89CE3BD9D024D69FD39353CB48F83 /* ChannelConfigDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8ED54562DCD28884FDC392324FA51D /* ChannelConfigDTO.swift */; };
 		95FC27B4FE934227129D2D473AA4938C /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 6C8836D09BD91AF55B2BA1059883C6E1 /* zh-Hant.lproj */; };
 		96699BE9ECD65D1D83B901CDB521D614 /* AnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69A138C64BA953BE158BE842D74883 /* AnimationLayer.swift */; };
@@ -890,7 +888,7 @@
 		9A194132ED000CFBC620770CAF728EC3 /* FrameCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AFF71563389B54973769D7287722B /* FrameCollector.swift */; };
 		9ABC08F1393E8FECF5CDA1F4B00E9F9D /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CB99D11BB2E96DB5EDB08AABFFEC5 /* Channel.swift */; };
 		9B0A78AC22E7EDA755F51D86527E2D9C /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B352AA2C6A6829902D701E5EFEBCEC5 /* Source.swift */; };
-		9B2D01E565B84641D1FFABDB8DBB783E /* Stevia+GetConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C2E05192AAF64134756C67F708B77 /* Stevia+GetConstraint.swift */; };
+		9B6A50C7B4BCCB834BE71BF4C2900D4F /* Stevia+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A679E508B76F16F96CEFF4EFCDDF714B /* Stevia+Position.swift */; };
 		9B908E14E4B7B87BD1A121734B90E5CA /* Archive+BackingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A54D45557B745DA7A1469D72074EF /* Archive+BackingConfiguration.swift */; };
 		9BDB1ECC1FD7FD855893C9F39BFF4CE5 /* SwiftyMarkdown+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735F5ABE0B2AE3EFED842994A497BB4B /* SwiftyMarkdown+macOS.swift */; };
 		9C63B8970E3E9F5482B970C302FF7218 /* StrokeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BE7989FA97A0B7A3E3FE0CB2152F7A /* StrokeRenderer.swift */; };
@@ -991,6 +989,7 @@
 		AF329679FAF795842330D646C239FCCE /* CurrentChatUserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C83B21DF35D308A5663C383543C25 /* CurrentChatUserAvatarView.swift */; };
 		AF441DB11BF853954DC6B3EF688DB7F4 /* ImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA234BE948C83D869887EF872F2C310 /* ImageTask.swift */; };
 		AF455483DB41971A351DABAEC744CB02 /* ChannelMemberListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28525F8CFECD3F1B395A1C69AF71322B /* ChannelMemberListQuery.swift */; };
+		AF629B3AA89BB4CA90C90ABB0F5B250B /* Stevia+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E775A1261F27305B1985C5DCBE7DD2E /* Stevia+Percentage.swift */; };
 		AFB5EFCC00A5FA59A3D53FCFF20A041C /* MissingEventsRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C7582DC7C38E809AF95464E92FEC4 /* MissingEventsRequestBody.swift */; };
 		AFD945F85483BD20D87A5F1370CBFC5F /* AWSCognitoIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 104E196EAB41F827CA0770BC82C6D5A9 /* AWSCognitoIdentityModel.m */; };
 		AFDE6B7A7A3BD6A43F4B71F16F0FE6F5 /* th.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B95FE4C4E51F8628C70B80DD5FA7EF61 /* th.lproj */; };
@@ -1011,8 +1010,6 @@
 		B23E0FFB2D34A50C43714E1FE9C6D1D1 /* Archive+Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC29CA3C55DD2CE98A9498606A9B5B66 /* Archive+Progress.swift */; };
 		B25394C2389E1CBA67868E43191B2C90 /* CreateCallRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93D5DEBE9275A74CEA14F1A81845CF5 /* CreateCallRequestBody.swift */; };
 		B25E07EA645911443A38DA1E68166156 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D547B4A715B893E3D782FE7028E12 /* Box.swift */; };
-		B26B56114E52905EBF3947B5AF7C3B0F /* Stevia+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FC28EC1C36037B0F8DA696F5AD088 /* Stevia+Position.swift */; };
-		B2FD86230CE7CBC4F1DCF3787E15BC9E /* Stevia+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A553ED51B966BC160BCDD9C68B1F4244 /* Stevia+Percentage.swift */; };
 		B33F2AE7246286AE0361B80323E9D211 /* YPDeviceOrientationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AC301A2DAC36F078759CEAE20578FA /* YPDeviceOrientationHelper.swift */; };
 		B34BCAA09D6A03C6A36B7D129473BFF3 /* RequestEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCECAEA6CC6460F84636EEF8313D63 /* RequestEncoder.swift */; };
 		B36DF466159D19268C986252807BE8F4 /* YPFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B6A3BA0178CCF0C7C64293788BC24 /* YPFilter.swift */; };
@@ -1021,7 +1018,6 @@
 		B45D3091834A3AF0AE04EBFDB931AF53 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD730ED709A61AF502EA26615CEB0149 /* Transport.swift */; };
 		B470EB86361BC908A77E1A317C9C0A2B /* VideoDurationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD544D56BA72E10429DA67A4EDBE4EA /* VideoDurationFormatter.swift */; };
 		B4C54C45B887AFFE5DCC3FDA18E17901 /* DefaultAnimationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F7F1FA9169E99F3C7BA93611ACB98 /* DefaultAnimationCache.swift */; };
-		B51B1E697CCB5CD3192E093EFC3F6384 /* Stevia+Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF0566895112678F5C5170152B5F05 /* Stevia+Fill.swift */; };
 		B57B09519BC09C72EC5CD64CC49C80EF /* ChatThreadArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C5FB90E2598EF7FE171A849F6F128 /* ChatThreadArrowView.swift */; };
 		B593DE4C2482BF88B2DE291B1EF91DB7 /* NWWebSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 158CD9CE91B6BC88466A3AE1B352D0D0 /* NWWebSocket-dummy.m */; };
 		B5A388CE1F18AD9B42A1A7B707ACB454 /* ChatMessageListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB4CCEB75FE9BC83DD15675C0D5676 /* ChatMessageListRouter.swift */; };
@@ -1029,15 +1025,18 @@
 		B5BB2538CEAD0F097B2C3A97C7E7E26D /* PHFetchResult+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1B8257492630255DEBADAD98502B1 /* PHFetchResult+Extensions.swift */; };
 		B5DF1D0F070617E321DD49E52C933D58 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607E44744C207BBCAE38CA2831E06D4 /* Device.swift */; };
 		B612A38F74073DE1407C7B50253177A5 /* NBNumberFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 26F82BA257DEA9B785F60DB649B64C80 /* NBNumberFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B64BEDD2188867F543FAC203C0F9A149 /* Stevia+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A271F20C2A183FA4C53409A6F2F42E /* Stevia+Hierarchy.swift */; };
 		B6743E57926B36B9330AA1C193105AB2 /* PryntTrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ADADA91BFC72EDD0C1AF7B4E2CAF4 /* PryntTrimmerView.swift */; };
 		B6817B4FA18FF11412C593412A1C773D /* AWSS3TransferUtility+EnumerateBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7038AE1EB99220E4F32EE5ABFB3FF /* AWSS3TransferUtility+EnumerateBlocks.m */; };
 		B73AC5850437A3B38660C80C90563243 /* AWSS3TransferUtilityBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF966FFE9B62FB86AC22AE0CC906AB0 /* AWSS3TransferUtilityBlocks.m */; };
 		B73CBFD1ACA0BA8955E56400877B865C /* ChatReactionPickerReactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB05BEBFD80215A72CC03F64A341B82 /* ChatReactionPickerReactionsView.swift */; };
 		B747958E2160073C3B7B3D5E63546F7D /* AWSSynchronizedMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7CC8D0E3728F99831F5D9FC1376AF5 /* AWSSynchronizedMutableDictionary.m */; };
+		B7518D3D5D976EE89FB8DE6A95DA9ED2 /* Stevia+DoubleDash.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF85AFDCA31B9066882437FCDB7F8B /* Stevia+DoubleDash.swift */; };
 		B78B2939356F18E57DE343321800BBF1 /* ChatUnreadMessagesCountDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C251F297C1CC22170026775C3B3532F /* ChatUnreadMessagesCountDecorationView.swift */; };
 		B795BB41CC4F7822E55489C0B0CD3A9B /* AWSEXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CF73B3623AA144C5F987ADAD97C34D /* AWSEXTScope.m */; };
 		B7A00446B4E8797262DDCE45C0AB4714 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91441A6806F5C92B01B3F8BEC5F2BC8 /* UIStackView+Extensions.swift */; };
 		B7DDA41FE6F9274E932D4FF3D969F0EA /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E094CDD42A63A3A732294FE859520F /* UserController.swift */; };
+		B8070F598F1BD31FC527EF0D3C695EB4 /* Stevia+LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3796BF434BAA57AAEE55A02960EEBA12 /* Stevia+LayoutAnchors.swift */; };
 		B8BA32550D627A42C53BE8B9EC169453 /* AWSS3Serializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 799716125BA165F2B5DE694565B7586B /* AWSS3Serializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8E5A20B50647CE8B54619A2B2D84BAC /* ChannelTruncateRequestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8F507EADFA46C41FEEA2203DB2D8C /* ChannelTruncateRequestPayload.swift */; };
 		B9A35B1F18DEAA4020C1EE292E8EB6B8 /* FlagKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6850DF4E597032EDDE46076663649913 /* FlagKit.xcassets */; };
@@ -1073,6 +1072,7 @@
 		BEE2F810C2DCEA80CCBF2DD76C0B90D1 /* EventsController+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185970FE26EBDAECE9DAC48A9F565F38 /* EventsController+SwiftUI.swift */; };
 		BF16531357026FAF51CE4442D6C0EA3C /* TextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C537F5379BE9310C2E281F0E65BC19 /* TextLayer.swift */; };
 		BF7FB8E91F726BE0D9B68E67E6340E40 /* UserListController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF8C5CAE81AF07A5AE71A2BE7D47FF0 /* UserListController+Combine.swift */; };
+		BF80B0EA880FA57553C00B1E59890F3F /* Stevia+Equation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4EA6A22DD9F29119F2406E89F88D6 /* Stevia+Equation.swift */; };
 		BF8B1538E138AE376479BA265A294702 /* AWSIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D785C88FDB008F4C6D80A6E5FC1E08C /* AWSIdentityProvider.m */; };
 		BF8E09B8965E2D1A461696841D2707DF /* FilepathImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE39A9480614C4FD0441BAF1BDC07D1 /* FilepathImageProvider.swift */; };
 		BF98C4716D0CAD87DDD45EEBDE76AE05 /* CurrentUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0ACA86437482AF8DC948EA86D064AA /* CurrentUserDTO.swift */; };
@@ -1081,6 +1081,7 @@
 		BFD6293A9F7222A5CEDA6C5198D6C593 /* YPAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6527DC15D7A089ACF6A5266FE162C10 /* YPAlerts.swift */; };
 		BFD6DBB1A282AC6FF51455BAFA40A593 /* LinkAttachmentViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835AB2DB886ED9ADE5F54886BA180DF6 /* LinkAttachmentViewInjector.swift */; };
 		C03D8A227B50712E7DB01D7DB710FAB0 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 22240CEF8D1F9F5DD2D0B2C8D938CDE4 /* en.lproj */; };
+		C09430F8CBBCD169E5FB1B391080F6A0 /* Stevia+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75952E79CD3A26AD1DCB8AA37BC38652 /* Stevia+Content.swift */; };
 		C0DAC6F1F8AFFB441A93EC37A0D1BDBB /* CACornerMask+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C44131ED2FBC38A34ADE18A33D65F68 /* CACornerMask+Extensions.swift */; };
 		C1166B0856C3D00BCF9F678FD4547971 /* WebSocketConnectEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EDA559F3A5D76EDC7C2F3655DA991 /* WebSocketConnectEndpoint.swift */; };
 		C167E36F431E9C68C1B80AFD76DC2B46 /* CallPayloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFC7FF437105E5136273F84B9B662F /* CallPayloads.swift */; };
@@ -1202,6 +1203,7 @@
 		D82EA913E947FB03A40365BB5F39AF92 /* Disk+VolumeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9EBEA5707CA37A36E8474A8E7941B /* Disk+VolumeInformation.swift */; };
 		D82F967523D9FEBBD5F76337C8173ED3 /* AWSEXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F4251B29A01694C147472CC618D8BCB /* AWSEXTRuntimeExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D82F9FA2CE9C061BAE47211E179733E8 /* ChatMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F33DDA6009F36A5DDC8EA8BB1C1CC5 /* ChatMessageContentView.swift */; };
+		D832A4014D29B5A33CCE20688B5CD91F /* Stevia+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD51F9CD3EE9FBD483F8068290CAB12 /* Stevia+Notifications.swift */; };
 		D85ACCCAA4F8EE6C6EBF19C4775B7E5C /* ChannelId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A80C3CFAE475728D67C6436F31AF43 /* ChannelId.swift */; };
 		D879BD17B3AD456CFB1ACF42E0A49202 /* ChatMessageReactionAuthorsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E439BF56775C34CAE2DC36F180CE9578 /* ChatMessageReactionAuthorsFlowLayout.swift */; };
 		D8964D01A8A705A7A6ED8377F0C947B4 /* ConnectionController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EB0FE5FDD0B220745C6F9BBBB44DBA /* ConnectionController+Combine.swift */; };
@@ -1237,7 +1239,7 @@
 		DD2131EE2F628704F3C5DC22C9DE8AF9 /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A78E9D340873FD8EB06E1A50A382F /* Disk+Codable.swift */; };
 		DD439A5101253866D9623C845E5B5075 /* AWSMTLReflection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1067BF596A2CFE97F91A9B567A7FB8 /* AWSMTLReflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD72DC30CF19FFC81AB19CD0B074000D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC9DFE47232C251909B95F78A855B5 /* ImageDownloader.swift */; };
-		DD7A26205AE8190BA854C961DE12965D /* SteviaLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E4423EF9F90ED0D5B9810F9E9B3FEF /* SteviaLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD7A26205AE8190BA854C961DE12965D /* SteviaLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99BBEB2735CA22158523EA6371117EC5 /* SteviaLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD92310954B5A5C6FCB890487F0F2707 /* PreCompLayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C76EDCB4510E2F32831F917556A8C /* PreCompLayerModel.swift */; };
 		DDB0948B3F2E8E8C9DC2F2A069F3EE51 /* CommandLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02FEB11A9732C93DC005C30AD073107 /* CommandLabelView.swift */; };
 		DDB0CB8ACF8CE4ABFC157852F6E24BAA /* AWSS3Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB908D37FFFD0FDF03A238596600EA8 /* AWSS3Model.m */; };
@@ -1281,6 +1283,7 @@
 		E5037DCFF018BF40AEC13F7F0D72DFF0 /* UserListSortingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A63B72AC747D10B379D2610EF0901C /* UserListSortingKey.swift */; };
 		E51B2A3CB59C85BA213E9FCF637318D3 /* ChatChannelListLoadingViewCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA064526C67A8EF0D1EAB7EB6AD841A /* ChatChannelListLoadingViewCellContentView.swift */; };
 		E53DD07DFCDD2241779DBAAE71E77032 /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AC736DF9DEC61F95727A39FFCF2963 /* FSCalendarDelegationProxy.m */; };
+		E5A96AA729404F322F2BED4367D75532 /* Stevia+Baselines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51539702F7CD2BEEE4AE1F2FEB41D86A /* Stevia+Baselines.swift */; };
 		E5B664771063F1A9A372519A8466860B /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF40E3D96D95B01C4CD287CCB86E7D7 /* ImageView+Kingfisher.swift */; };
 		E5C5F6A02BD31E6428C3CBE9E4AC974D /* IdentifiableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45E2B7051EFA3F4BADD78D820DCB2B3 /* IdentifiableModel.swift */; };
 		E5C75D286A7456F8542F5223A560CD9C /* TextAnimatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0A181CD3CCCEFD3F9A02F6D920B3 /* TextAnimatorNode.swift */; };
@@ -1388,11 +1391,9 @@
 		F797FAE3A7C6714F72E9A5A9CEEA855F /* AWSS3TransferUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = F53E246F72548C251E1DF3024CC327BB /* AWSS3TransferUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7A2F3B3693DCB6EFE02BC10B8FC4DC0 /* NBRegExMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3093F5E6BE924CCE76D3D0F83DB36834 /* NBRegExMatcher.m */; };
 		F7C20C67D0D5A1C73A0A057268A719C1 /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C71472F7CC2DD85445A3DBFAAD3078 /* FSCalendar.m */; };
-		F7D920DDA483BF38B1EC2A21EA363DC4 /* Stevia+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D58831A9954EEA369119DF48798D /* Stevia+Center.swift */; };
 		F7F0C723DF66BF4AD7F57412544D6966 /* ChannelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BD5FD9721D4369EA747D2055A71BF /* ChannelRepository.swift */; };
 		F8159B0965AF162F5811B3A2859DC3FC /* MessageReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56160BE31736DF9467E9E29EDA028C50 /* MessageReaction.swift */; };
 		F83F9DB527D98D7010FA82A34626A42C /* ChannelMemberBanRequestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FA7AB6D6139B8E8F8C66805C1F911 /* ChannelMemberBanRequestPayload.swift */; };
-		F86C2A2AFB966C3BFF5866BC97509E84 /* Stevia+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5397BF2B52248402664B621BAD6EC0B /* Stevia+Hierarchy.swift */; };
 		F883B93AE8C9744DBD2F7BDAC45AE01D /* RequestDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F6451775C0B8DC37AB7CE944C859CA /* RequestDecoder.swift */; };
 		F8B36B8AF0CDDAC5C371454D92AF5FDD /* ChatMessageVoiceRecordingAttachmentListView+ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C6A6709A80FCD4042A0C1FFD17136 /* ChatMessageVoiceRecordingAttachmentListView+ItemView.swift */; };
 		F8FAC4D77BEF7C36A5F1D9DBDDE9F08A /* ChatMessagesCountDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AAB602CA345C89F1B0681B87B9CEB8 /* ChatMessagesCountDecorationView.swift */; };
@@ -1405,7 +1406,7 @@
 		FA4F057A8EDA2A31BB2F0717EA69449A /* TransformAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DC230AC4B107BF998DA6E31A65CB7 /* TransformAnimations.swift */; };
 		FA52857C832F9FE285450F5CEE611A41 /* CachedImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A160E4D5D17AA0E4F25FE9A62691F6 /* CachedImageProvider.swift */; };
 		FA759818ED9069F44B4452864220FD5D /* BanEnabling.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBE6713AB4F35F37ACFA8DC36D1B34C /* BanEnabling.swift */; };
-		FA86BBE01A629F9461503C0AF054E47B /* SteviaLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A8DC0BF9609FD725EFF4D3196D220 /* SteviaLayout-dummy.m */; };
+		FA86BBE01A629F9461503C0AF054E47B /* SteviaLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54295AE292FBC2C515F6766530752262 /* SteviaLayout-dummy.m */; };
 		FA8D50F23812B020648A30C234E175D9 /* ChannelEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E7AAE6626964518B1FDBC0A70B71D /* ChannelEndpoints.swift */; };
 		FA993D69DD94BF363375002B490B92C1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5514242788B77C487206FF5E95086D54 /* DateUtils.swift */; };
 		FABC803718B8AE105CA15D3302691884 /* ChatClient+ChannelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B1A4B8DD712776F0D4C04FA8A81501 /* ChatClient+ChannelController.swift */; };
@@ -1427,7 +1428,6 @@
 		FD0CF52FCEE2792624D3BAD8FA2ED228 /* ChatMessageLinkAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE7EAA2ECBE42CA13647AC1E57CB988 /* ChatMessageLinkAttachment.swift */; };
 		FD1CF7E4562E035D2582049C1B3A34B9 /* ChatSuggestionsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F997331CF275EF8828E305D611EF215 /* ChatSuggestionsCollectionViewLayout.swift */; };
 		FD5270A4176D5EAE624BBF3F087D468C /* FlagPhoneNumber-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6425F160B9F1240375BBBF178091AFA5 /* FlagPhoneNumber-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD650A0FE031EFDE9E79A706CDFB1461 /* Stevia+Baselines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DAA272B8DCD8A5642DADD08FC16BC /* Stevia+Baselines.swift */; };
 		FD6DE831B28901F87AEE1375873CD1A6 /* UserEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A441FD4FFA8EEA0C84D9A6957683550 /* UserEndpoints.swift */; };
 		FD75B7663785D3B0FE4451025BF2885A /* AWSS3TransferUtility+HeaderHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 188DA45262117BCAE140D93FDBC5DF60 /* AWSS3TransferUtility+HeaderHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDA8CFEB9B679F1E5C3BDDCD89620474 /* SystemEnvironment+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BADFEFC28D2FF194F6B7A796C2E6064 /* SystemEnvironment+Version.swift */; };
@@ -1641,7 +1641,6 @@
 		00144255D8C49B215FA6B9587427E373 /* AgoraVideoSegmentationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoSegmentationExtension.xcframework; sourceTree = "<group>"; };
 		001E50FF68CD33D88119FF931EC8135D /* URLSessionWebSocketEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLSessionWebSocketEngine.swift; path = Sources/StreamChat/WebSocketClient/Engine/URLSessionWebSocketEngine.swift; sourceTree = "<group>"; };
 		00355E4D50C83617FE78B4406C1766A0 /* EventsController+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "EventsController+Combine.swift"; path = "Sources/StreamChat/Controllers/EventsController/EventsController+Combine.swift"; sourceTree = "<group>"; };
-		0063C52F5574CC9917B425B33FEB0A63 /* SteviaLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SteviaLayout-prefix.pch"; sourceTree = "<group>"; };
 		00B96E558A0839EC176CFB5EAA20EDAD /* ShapeItemLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeItemLayer.swift; path = Sources/Private/CoreAnimation/Layers/ShapeItemLayer.swift; sourceTree = "<group>"; };
 		0106CC385FBF0BF7D4F14ACD360C6364 /* ChatMessageListVCDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageListVCDataSource.swift; path = Sources/StreamChatUI/ChatMessageList/ChatMessageListVCDataSource.swift; sourceTree = "<group>"; };
 		0110508ECE03A61F98F0162D56537728 /* KeyedDecodingContainerExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyedDecodingContainerExtensions.swift; path = Sources/Private/Model/Extensions/KeyedDecodingContainerExtensions.swift; sourceTree = "<group>"; };
@@ -1651,10 +1650,9 @@
 		02059827B684561728798A3FB9EE591A /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Sources/Networking/RedirectHandler.swift; sourceTree = "<group>"; };
 		0229CACE00969D7A45ACD4464DF0E1D2 /* Archive+WritingDeprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+WritingDeprecated.swift"; path = "Sources/Private/Model/DotLottie/ZipFoundation/Archive+WritingDeprecated.swift"; sourceTree = "<group>"; };
 		02508EBEF0A52E351558167B2F8D5389 /* AWSServiceEnum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSServiceEnum.h; path = AWSCore/Service/AWSServiceEnum.h; sourceTree = "<group>"; };
-		02957E8402151A5DB0D63AEC1C2B3AD6 /* Stevia+DoubleDash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+DoubleDash.swift"; path = "Source/Stevia+DoubleDash.swift"; sourceTree = "<group>"; };
+		025CC403872CFB938B7C3076AFCF4C57 /* SteviaLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SteviaLayout-prefix.pch"; sourceTree = "<group>"; };
 		029E9DA959D7A80E5B575497921F413B /* ComposerKeyboardHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComposerKeyboardHandler.swift; path = Sources/StreamChatUI/Composer/ComposerKeyboardHandler.swift; sourceTree = "<group>"; };
 		02D103532B838525602B25B7A8418C28 /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Image/Placeholder.swift; sourceTree = "<group>"; };
-		02E4423EF9F90ED0D5B9810F9E9B3FEF /* SteviaLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SteviaLayout-umbrella.h"; sourceTree = "<group>"; };
 		030081309F8DC9B82361E5C85E5B7EBF /* Debouncer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debouncer.swift; path = Sources/StreamChat/Utils/Debouncer.swift; sourceTree = "<group>"; };
 		03522E67911DFEBE764D45937543CE32 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Extensions.swift"; path = "Source/Helpers/Extensions/Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		03639005108D4E1CB227D193D4170644 /* AWSFMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabaseQueue.h; path = AWSCore/FMDB/AWSFMDatabaseQueue.h; sourceTree = "<group>"; };
@@ -1672,11 +1670,11 @@
 		0577C7716283CF7DFDD2080670C1DCFC /* PryntTrimmerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PryntTrimmerView-umbrella.h"; sourceTree = "<group>"; };
 		05A826DC95F06EB2D84949F5A5E1D9F8 /* AWSS3TransferUtility_private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSS3TransferUtility_private.h; path = AWSS3/AWSS3TransferUtility_private.h; sourceTree = "<group>"; };
 		05B0497CD1FA12F62E3CB64716E8AB9B /* CGRect+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGRect+Extensions.swift"; path = "Sources/StreamChatUI/Utils/Extensions/CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		05D4F203DB5CA4A9875DAC843BE15880 /* Stevia+FlexibleMargin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+FlexibleMargin.swift"; path = "Sources/Stevia/Stevia+FlexibleMargin.swift"; sourceTree = "<group>"; };
 		05F89A903DB5F805F75EF5DA4E288F91 /* NativeEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeEngine.swift; path = Sources/StreamChat/StreamStarscream/Engine/NativeEngine.swift; sourceTree = "<group>"; };
 		06245AA7222538FDCEA2815A63190C0E /* Disk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disk.swift; path = Sources/Disk.swift; sourceTree = "<group>"; };
 		06B04A980384E71112013D387B5A5161 /* FSCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendar.h; path = FSCalendar/FSCalendar.h; sourceTree = "<group>"; };
 		0705C847B185FB8F00DD785EFB59909D /* ImageAttachmentComposerPreview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageAttachmentComposerPreview.swift; path = Sources/StreamChatUI/CommonViews/Attachments/AttachmentViews/ImageAttachmentComposerPreview.swift; sourceTree = "<group>"; };
-		07167962A2B96672785ED3E1D268D1C6 /* SteviaLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SteviaLayout.modulemap; sourceTree = "<group>"; };
 		0730BE4EEAFCB6B84D89B405C0B735B3 /* MarkdownFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownFormatter.swift; path = "Sources/StreamChatUI/Appearance+Formatters/MarkdownFormatter.swift"; sourceTree = "<group>"; };
 		0739922B79A06A72841CCFB539576A01 /* AWSMTLModel+NSCoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AWSMTLModel+NSCoding.m"; path = "AWSCore/Mantle/AWSMTLModel+NSCoding.m"; sourceTree = "<group>"; };
 		0747773191E7EF3BE372FEE657134242 /* PlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlayerView.swift; path = Sources/StreamChatUI/CommonViews/PlayerView.swift; sourceTree = "<group>"; };
@@ -1697,6 +1695,7 @@
 		0A3CDCFA9AA4D0683EC655B0713890E3 /* YPImagePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YPImagePicker-Info.plist"; sourceTree = "<group>"; };
 		0A98333D536830AF21DA752B0AC8B967 /* ResourceBundle-StreamChat-StreamChat-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-StreamChat-StreamChat-Info.plist"; sourceTree = "<group>"; };
 		0ACF4CFEB26CB592A0E59549F69EF52C /* ChatMessageActionItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageActionItem.swift; path = Sources/StreamChatUI/MessageActionsPopup/ChatMessageActionItem.swift; sourceTree = "<group>"; };
+		0AD8AC686CA57AFF219BD49B5C64570C /* Stevia+Stacks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Stacks.swift"; path = "Sources/Stevia/Stevia+Stacks.swift"; sourceTree = "<group>"; };
 		0BCB22A420075B166E377CEB7AA910DB /* MathKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MathKit.swift; path = Sources/Private/Utility/Extensions/MathKit.swift; sourceTree = "<group>"; };
 		0BD1FCA0F23A562907C588027F1496F1 /* CIImage+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CIImage+Extensions.swift"; path = "Source/Helpers/Extensions/CIImage+Extensions.swift"; sourceTree = "<group>"; };
 		0BF6D95AB1837614BF33ECD75F16F686 /* NBPhoneNumberDesc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBPhoneNumberDesc.h; path = Sources/libPhoneNumber/NBPhoneNumberDesc.h; sourceTree = "<group>"; };
@@ -1705,6 +1704,7 @@
 		0C5625E2433E0FB70EDF2812038F5993 /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pl.lproj; path = Source/Resources/pl.lproj; sourceTree = "<group>"; };
 		0C6AFAD031E7BCBBA1C01F4738DE55D1 /* StreamChatUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StreamChatUI-dummy.m"; sourceTree = "<group>"; };
 		0CC435D6ACD678EED4055B1655265FE1 /* AttachmentId.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttachmentId.swift; path = Sources/StreamChat/Models/Attachments/AttachmentId.swift; sourceTree = "<group>"; };
+		0CC46E99747B4216E7755417075611A6 /* SteviaLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SteviaLayout-Info.plist"; sourceTree = "<group>"; };
 		0CDC29C450F5F0D697BA82DC9362CAFC /* CGColor+RGB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGColor+RGB.swift"; path = "Sources/Private/Utility/Extensions/CGColor+RGB.swift"; sourceTree = "<group>"; };
 		0D3D560F1D9DEBAF67C954B4254F880D /* AudioSessionFeedbackGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioSessionFeedbackGenerator.swift; path = Sources/StreamChatUI/VoiceRecording/Components/AudioSessionFeedbackGenerator.swift; sourceTree = "<group>"; };
 		0D3E0B9AD80A20DB19F3CF44C813C194 /* AWSS3TransferUtility+EnumerateBlocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSS3TransferUtility+EnumerateBlocks.h"; path = "AWSS3/AWSS3TransferUtility+EnumerateBlocks.h"; sourceTree = "<group>"; };
@@ -1721,6 +1721,7 @@
 		0FE7EAA2ECBE42CA13647AC1E57CB988 /* ChatMessageLinkAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageLinkAttachment.swift; path = Sources/StreamChat/Models/Attachments/ChatMessageLinkAttachment.swift; sourceTree = "<group>"; };
 		104E196EAB41F827CA0770BC82C6D5A9 /* AWSCognitoIdentityModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoIdentityModel.m; path = AWSCore/CognitoIdentity/AWSCognitoIdentityModel.m; sourceTree = "<group>"; };
 		10931B14CCF78995D404161E48E3E3CB /* YPCropVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPCropVC.swift; path = Source/Filters/Crop/YPCropVC.swift; sourceTree = "<group>"; };
+		109B0FD1CE18DD5F1DF739D3849C4648 /* SteviaLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SteviaLayout.debug.xcconfig; sourceTree = "<group>"; };
 		109EAA0DC56AA95C63A6366F3D7EE724 /* ContentIdentifiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentIdentifiable.swift; path = Sources/StreamChatUI/StreamDifferenceKit/ContentIdentifiable.swift; sourceTree = "<group>"; };
 		10B31D2B7CAC468C3C9BA63EAEA7644E /* StreamChat */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StreamChat; path = StreamChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B680DB2642D1DC5A692F576C6869E2 /* LayerImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerImageProvider.swift; path = Sources/Private/MainThread/LayerContainers/Utility/LayerImageProvider.swift; sourceTree = "<group>"; };
@@ -1773,13 +1774,14 @@
 		184751A3A2322EE7CD9A888B3872859F /* ChannelReadDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelReadDTO.swift; path = Sources/StreamChat/Database/DTOs/ChannelReadDTO.swift; sourceTree = "<group>"; };
 		185970FE26EBDAECE9DAC48A9F565F38 /* EventsController+SwiftUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "EventsController+SwiftUI.swift"; path = "Sources/StreamChat/Controllers/EventsController/EventsController+SwiftUI.swift"; sourceTree = "<group>"; };
 		1871696318AF2B04976A011A8215EE7A /* MessagesPaginationStateHandling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessagesPaginationStateHandling.swift; path = Sources/StreamChat/Utils/MessagesPaginationStateHandling/MessagesPaginationStateHandling.swift; sourceTree = "<group>"; };
+		187BFB9B988B74FE6A3EDD2431CB3BBC /* Stevia+Alignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Alignment.swift"; path = "Sources/Stevia/Stevia+Alignment.swift"; sourceTree = "<group>"; };
 		188DA45262117BCAE140D93FDBC5DF60 /* AWSS3TransferUtility+HeaderHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSS3TransferUtility+HeaderHelper.h"; path = "AWSS3/AWSS3TransferUtility+HeaderHelper.h"; sourceTree = "<group>"; };
 		18AFC3EB8F8AEDC00427A62D78831959 /* WXImageCompress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WXImageCompress-umbrella.h"; sourceTree = "<group>"; };
 		18B8B6A06E18F527BE35BDFE51A728D2 /* Disk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Disk.h; path = Sources/Disk.h; sourceTree = "<group>"; };
 		18B9D68AD33A535CAE6FE41DA2CD029C /* SDKIdentifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDKIdentifier.swift; path = Sources/StreamChatUI/SDKIdentifier.swift; sourceTree = "<group>"; };
-		18BDE5AE0AD3856768A9BE522531EEEB /* Stevia+Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Notifications.swift"; path = "Source/Stevia+Notifications.swift"; sourceTree = "<group>"; };
 		18C595B03B9F5BC1382616232ED9FA47 /* EventMiddleware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMiddleware.swift; path = Sources/StreamChat/WebSocketClient/EventMiddlewares/EventMiddleware.swift; sourceTree = "<group>"; };
 		18D2B38500C172A3D110F6051CE21348 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/Cache/CacheSerializer.swift; sourceTree = "<group>"; };
+		1959AD5DDA3001952CDCB41F187458C8 /* Stevia+Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Size.swift"; path = "Sources/Stevia/Stevia+Size.swift"; sourceTree = "<group>"; };
 		1977308EDB09B257AE684138F74B898F /* SwiftyGifManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyGifManager.swift; path = Sources/StreamChatUI/StreamSwiftyGif/SwiftyGifManager.swift; sourceTree = "<group>"; };
 		19A314C88C6C63433C318CCE4E9F97C8 /* AWSMantle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMantle.h; path = AWSCore/Mantle/AWSMantle.h; sourceTree = "<group>"; };
 		19C11C74A6B9E423AC37948C1429111B /* BezierPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BezierPath.swift; path = Sources/Private/Utility/Primitives/BezierPath.swift; sourceTree = "<group>"; };
@@ -1832,8 +1834,6 @@
 		21145A7F6038F7868426CF2FBF79069F /* AWSFMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabaseAdditions.h; path = AWSCore/FMDB/AWSFMDatabaseAdditions.h; sourceTree = "<group>"; };
 		211ECB05EF4677ABCAACB7C7E5D21EC6 /* AWSMTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLJSONAdapter.h; path = AWSCore/Mantle/AWSMTLJSONAdapter.h; sourceTree = "<group>"; };
 		2133CEABE639E9F1BB9451E2CCE526FB /* BezierPathRoundExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BezierPathRoundExtension.swift; path = Sources/Private/Utility/Primitives/BezierPathRoundExtension.swift; sourceTree = "<group>"; };
-		2134FD66FDF07C80846191C56F5537F4 /* SteviaLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SteviaLayout.debug.xcconfig; sourceTree = "<group>"; };
-		217D6B4DCC5E9695E0BD4CBEFB1E9A68 /* Stevia+Alignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Alignment.swift"; path = "Source/Stevia+Alignment.swift"; sourceTree = "<group>"; };
 		2196794BA005A0044F0D63F1850BA1FE /* MemberEvents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemberEvents.swift; path = Sources/StreamChat/WebSocketClient/Events/MemberEvents.swift; sourceTree = "<group>"; };
 		219DDA51C5BD66B2E0B1F78AC92B91AD /* Appearance+Formatters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Appearance+Formatters.swift"; path = "Sources/StreamChatUI/Appearance+Formatters/Appearance+Formatters.swift"; sourceTree = "<group>"; };
 		21F30C20C2FBF20ACAC34C82D31C308D /* NBPhoneNumberDefines.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NBPhoneNumberDefines.m; path = Sources/libPhoneNumber/NBPhoneNumberDefines.m; sourceTree = "<group>"; };
@@ -1913,10 +1913,10 @@
 		2D60FBAC5B5734CB009F40920FF78264 /* AWSXMLWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSXMLWriter.h; path = AWSCore/XMLWriter/AWSXMLWriter.h; sourceTree = "<group>"; };
 		2D7DB3DB0A8FA595EF873D6859F7C8C0 /* AWSValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSValidation.h; path = AWSCore/Serialization/AWSValidation.h; sourceTree = "<group>"; };
 		2D8FE7F1938099FF5F04BA88934C56F1 /* InputChatMessageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputChatMessageView.swift; path = Sources/StreamChatUI/CommonViews/InputChatMessageView/InputChatMessageView.swift; sourceTree = "<group>"; };
-		2E12AFF1C73FDA0974E1A5CAFECA018F /* SteviaLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SteviaLayout-Info.plist"; sourceTree = "<group>"; };
 		2E8212689CEDF160E9E2C58582E1C123 /* ChannelListSortingKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelListSortingKey.swift; path = Sources/StreamChat/Query/Sorting/ChannelListSortingKey.swift; sourceTree = "<group>"; };
 		2EAEBA4C32FB95460F92BB5495298BAE /* FoundationHTTPServerHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationHTTPServerHandler.swift; path = Sources/StreamChat/StreamStarscream/Framer/FoundationHTTPServerHandler.swift; sourceTree = "<group>"; };
 		2EB403AA10C5A4CAF9C2E11063FC910F /* PinnedMessagesQuery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PinnedMessagesQuery.swift; path = Sources/StreamChat/Query/PinnedMessages/PinnedMessagesQuery.swift; sourceTree = "<group>"; };
+		2ED789FB2E6A0F4DDB01D3CB0378EE20 /* Stevia+GetConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+GetConstraint.swift"; path = "Sources/Stevia/Stevia+GetConstraint.swift"; sourceTree = "<group>"; };
 		2F3D72D504205626AE2EAB4FACD3A78E /* ChannelDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelDTO.swift; path = Sources/StreamChat/Database/DTOs/ChannelDTO.swift; sourceTree = "<group>"; };
 		2F44FF5F88352AD18E9D3DDF6546D921 /* BundleImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleImageProvider.swift; path = Sources/Public/iOS/BundleImageProvider.swift; sourceTree = "<group>"; };
 		2F4C8EA2EE35574CE8585F1F6360F4E4 /* DotLottieFileHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotLottieFileHelpers.swift; path = Sources/Public/DotLottie/DotLottieFileHelpers.swift; sourceTree = "<group>"; };
@@ -1973,6 +1973,7 @@
 		36DEAA77E0888253ED23DD598504DCFB /* AudioQueuePlayerNextItemProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioQueuePlayerNextItemProvider.swift; path = Sources/StreamChatUI/VoiceRecording/Components/AudioQueuePlayerNextItemProvider.swift; sourceTree = "<group>"; };
 		371C108BF7353BAC24E9BF93EE2E499C /* FlagPhoneNumber-FlagPhoneNumber */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "FlagPhoneNumber-FlagPhoneNumber"; path = FlagPhoneNumber.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		374B52883450BCC03431B65F169F1B4A /* Localizable.stringsdict */ = {isa = PBXFileReference; includeInIndex = 1; name = Localizable.stringsdict; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		3796BF434BAA57AAEE55A02960EEBA12 /* Stevia+LayoutAnchors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+LayoutAnchors.swift"; path = "Sources/Stevia/Stevia+LayoutAnchors.swift"; sourceTree = "<group>"; };
 		37A727C8CDA14AC91C7AC6C6F3C2ABD7 /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Sources/StreamChat/Deprecations.swift; sourceTree = "<group>"; };
 		37AC736DF9DEC61F95727A39FFCF2963 /* FSCalendarDelegationProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarDelegationProxy.m; path = FSCalendar/FSCalendarDelegationProxy.m; sourceTree = "<group>"; };
 		37B98D3688327B03A6BC9EECA7F27720 /* InfiniteOpaqueAnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfiniteOpaqueAnimationLayer.swift; path = Sources/Private/CoreAnimation/Layers/InfiniteOpaqueAnimationLayer.swift; sourceTree = "<group>"; };
@@ -2016,7 +2017,6 @@
 		3EF966FFE9B62FB86AC22AE0CC906AB0 /* AWSS3TransferUtilityBlocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSS3TransferUtilityBlocks.m; path = AWSS3/AWSS3TransferUtilityBlocks.m; sourceTree = "<group>"; };
 		3F3446CE62CC347731EF095996C2D4CA /* PassThroughOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassThroughOutputNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/PassThroughOutputNode.swift; sourceTree = "<group>"; };
 		3F5F221438EA0ACF7355A149D9BA84C2 /* AssetVideoScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetVideoScrollView.swift; path = Sources/PryntTrimmerView/Parents/AssetVideoScrollView.swift; sourceTree = "<group>"; };
-		3FC3D58831A9954EEA369119DF48798D /* Stevia+Center.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Center.swift"; path = "Source/Stevia+Center.swift"; sourceTree = "<group>"; };
 		3FF6AC264D446536845170A64AD21A19 /* RawJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RawJSON.swift; path = Sources/StreamChat/APIClient/Endpoints/Payloads/RawJSON.swift; sourceTree = "<group>"; };
 		3FFB9F758FD3A608F0F27D29B1CD4D7E /* ImageContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageContext.swift; path = Sources/SwiftUI/ImageContext.swift; sourceTree = "<group>"; };
 		3FFF7ED6EEB0CBAAB8ED7B4A137DDA44 /* YPAlbumVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAlbumVC.swift; path = Source/Pages/Gallery/Album/YPAlbumVC.swift; sourceTree = "<group>"; };
@@ -2036,17 +2036,14 @@
 		430E7AAE6626964518B1FDBC0A70B71D /* ChannelEndpoints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelEndpoints.swift; path = Sources/StreamChat/APIClient/Endpoints/ChannelEndpoints.swift; sourceTree = "<group>"; };
 		432311C71473EC3CDA027AE87880BAEE /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Extensions.swift"; path = "Sources/StreamChat/Utils/Database/NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		43379F00F0BEDCC07FC7FDA012A7931B /* YPAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAccessibility.swift; path = Source/Helpers/YPAccessibility.swift; sourceTree = "<group>"; };
-		434A72210031856F9CEC1E2E205875DF /* Stevia+Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Constraints.swift"; path = "Source/Stevia+Constraints.swift"; sourceTree = "<group>"; };
 		437AFB0771128D447074BB98877B1639 /* ChatRemoteNotificationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatRemoteNotificationHandler.swift; path = Sources/StreamChat/APIClient/ChatRemoteNotificationHandler.swift; sourceTree = "<group>"; };
 		4387900D7AC963DC231B2960174A2851 /* AudioVisualizationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioVisualizationView.swift; path = Sources/StreamChatUI/VoiceRecording/Views/AudioVisualizationView.swift; sourceTree = "<group>"; };
 		44400740B1506A2B7985D9B23F59D31E /* ChatChannelListVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatChannelListVC.swift; path = Sources/StreamChatUI/ChatChannelList/ChatChannelListVC.swift; sourceTree = "<group>"; };
 		445629927B9EA6CAA594F9976213C135 /* AWSClientContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSClientContext.m; path = AWSCore/Service/AWSClientContext.m; sourceTree = "<group>"; };
 		4456814E8A1D914D9B06811A845B9E10 /* RoundedCorners.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RoundedCorners.swift; path = Sources/Private/Model/ShapeItems/RoundedCorners.swift; sourceTree = "<group>"; };
-		445DAA272B8DCD8A5642DADD08FC16BC /* Stevia+Baselines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Baselines.swift"; path = "Source/Stevia+Baselines.swift"; sourceTree = "<group>"; };
 		449CC4CF08620FB061985B47B0A9168D /* Allocations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Allocations.swift; path = Sources/StreamChatUI/StreamNuke/Internal/Allocations.swift; sourceTree = "<group>"; };
 		44D87D1B042266B34C5A3C4E6BE20377 /* Endpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Sources/StreamChat/APIClient/Endpoints/Endpoint.swift; sourceTree = "<group>"; };
 		44F1ECE249E0ED88D45C3C4E769F40F9 /* MessageSearchQueryDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageSearchQueryDTO.swift; path = Sources/StreamChat/Database/DTOs/MessageSearchQueryDTO.swift; sourceTree = "<group>"; };
-		452C2E05192AAF64134756C67F708B77 /* Stevia+GetConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+GetConstraint.swift"; path = "Source/Stevia+GetConstraint.swift"; sourceTree = "<group>"; };
 		45841A0A848640810CBA471913E2B353 /* StreamChatUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StreamChatUI.modulemap; sourceTree = "<group>"; };
 		458A4D3799C2352FCC0BB5B779872C8B /* KFImageProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFImageProtocol.swift; path = Sources/SwiftUI/KFImageProtocol.swift; sourceTree = "<group>"; };
 		459810A0B84BE0333DCB6D6D3A3CAC3C /* BackgroundListDatabaseObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackgroundListDatabaseObserver.swift; path = Sources/StreamChat/Controllers/BackgroundListDatabaseObserver.swift; sourceTree = "<group>"; };
@@ -2099,25 +2096,28 @@
 		4D796A63D881F4783A310F0C1F129FF0 /* ChatMessageDeliveryStatusView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageDeliveryStatusView.swift; path = Sources/StreamChatUI/ChatMessageList/ChatMessage/ChatMessageDeliveryStatusView.swift; sourceTree = "<group>"; };
 		4D7F9F45C2B65E439583EEF3249B4017 /* ChatLoadingIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatLoadingIndicator.swift; path = Sources/StreamChatUI/CommonViews/ChatLoadingIndicator.swift; sourceTree = "<group>"; };
 		4D9A299CADB38D96D5D65E5EEE93DBEC /* Member.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Member.swift; path = Sources/StreamChat/Models/Member.swift; sourceTree = "<group>"; };
-		4D9FC28EC1C36037B0F8DA696F5AD088 /* Stevia+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Position.swift"; path = "Source/Stevia+Position.swift"; sourceTree = "<group>"; };
 		4DADE3B1FC1E4C193533788178C51E83 /* AWSXMLDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSXMLDictionary.h; path = AWSCore/XMLDictionary/AWSXMLDictionary.h; sourceTree = "<group>"; };
 		4DC2B065414C15B082D548F1FE30AA96 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		4DD30501E704EFAC378D48D646428352 /* Pods-AutoPilot_Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutoPilot_Admin.release.xcconfig"; sourceTree = "<group>"; };
+		4DDDEFB2CB9478ED92AE22D68FF06F23 /* SteviaLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SteviaLayout.release.xcconfig; sourceTree = "<group>"; };
 		4DF74AA153B23A64E751CCA994835935 /* Disk+Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Data.swift"; path = "Sources/Disk+Data.swift"; sourceTree = "<group>"; };
 		4E1B007BC044579B29D57839626DC173 /* EventNotificationCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventNotificationCenter.swift; path = Sources/StreamChat/Workers/EventNotificationCenter.swift; sourceTree = "<group>"; };
 		4E39AE1E85EA1DFB9B448ACDE21270CE /* ChatChannelAvatarView+SwiftUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ChatChannelAvatarView+SwiftUI.swift"; path = "Sources/StreamChatUI/CommonViews/AvatarView/ChatChannelAvatarView+SwiftUI.swift"; sourceTree = "<group>"; };
 		4E3FAD59F482798CCDA5C3044BFF2535 /* ChatChannelListItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatChannelListItemView.swift; path = Sources/StreamChatUI/ChatChannelList/ChatChannelListItemView.swift; sourceTree = "<group>"; };
+		4E775A1261F27305B1985C5DCBE7DD2E /* Stevia+Percentage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Percentage.swift"; path = "Sources/Stevia/Stevia+Percentage.swift"; sourceTree = "<group>"; };
 		4F2435EF09350907F80581C70C5959E9 /* ChannelEventsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelEventsController.swift; path = Sources/StreamChat/Controllers/EventsController/ChannelEventsController.swift; sourceTree = "<group>"; };
 		4F5047DA7FD948E608D12F99D33FC574 /* NWWebSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NWWebSocket-umbrella.h"; sourceTree = "<group>"; };
 		4F56F9E9ACA5D3B9AFDD5E7EF529BCF5 /* SizeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeExtensions.swift; path = Sources/Utility/SizeExtensions.swift; sourceTree = "<group>"; };
 		4F7E3CA100995F544874A56A6DC4C02B /* AnimationTextProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationTextProvider.swift; path = Sources/Public/TextProvider/AnimationTextProvider.swift; sourceTree = "<group>"; };
 		4FCFDD7811232BC4DAD317CD058F2813 /* NSObject+AWSMTLComparisonAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+AWSMTLComparisonAdditions.h"; path = "AWSCore/Mantle/NSObject+AWSMTLComparisonAdditions.h"; sourceTree = "<group>"; };
+		501EA0F8412986707F3D2F6AFDB8A3E4 /* Stevia+Fill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Fill.swift"; path = "Sources/Stevia/Stevia+Fill.swift"; sourceTree = "<group>"; };
 		505EDF35D324FFDCCD511565C7E319CE /* AppKitExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppKitExtension.swift; path = Sources/StreamChatUI/StreamDifferenceKit/Extensions/AppKitExtension.swift; sourceTree = "<group>"; };
 		50CDFA617C30CECB0554D0775363F197 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Image/Filter.swift; sourceTree = "<group>"; };
 		50D4B0DC595EAFD305D5CAC43658C38C /* ImageSizeCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageSizeCalculator.swift; path = Sources/StreamChatUI/Utils/ImageLoading/ImageSizeCalculator.swift; sourceTree = "<group>"; };
 		50E6F6B2CEE0AA3D381AA854F428E9AD /* ChatMessageVoiceRecordingAttachmentListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageVoiceRecordingAttachmentListView.swift; path = Sources/StreamChatUI/ChatMessageList/Attachments/ChatMessageVoiceRecordingAttachmentListView.swift; sourceTree = "<group>"; };
 		50E7009543EE0CA594FADAD2F1DAAEEC /* ChatChannelListVC+SwiftUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ChatChannelListVC+SwiftUI.swift"; path = "Sources/StreamChatUI/ChatChannelList/ChatChannelListVC+SwiftUI.swift"; sourceTree = "<group>"; };
 		513CD6055E06035CAC1450E38D9E7876 /* AWSMTLValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLValueTransformer.m; path = AWSCore/Mantle/AWSMTLValueTransformer.m; sourceTree = "<group>"; };
+		51539702F7CD2BEEE4AE1F2FEB41D86A /* Stevia+Baselines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Baselines.swift"; path = "Sources/Stevia/Stevia+Baselines.swift"; sourceTree = "<group>"; };
 		5158C5631B485E45B4C40220747115AE /* Mask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mask.swift; path = Sources/Private/Model/Objects/Mask.swift; sourceTree = "<group>"; };
 		516B55992F329584A4E261C38382C4EA /* YPLibrarySelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPLibrarySelection.swift; path = Source/Models/YPLibrarySelection.swift; sourceTree = "<group>"; };
 		51A9CC396AE7EC87981FF92F911D3D41 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Source/Resources/Assets.xcassets; sourceTree = "<group>"; };
@@ -2137,6 +2137,7 @@
 		53DA88C892CFE0630D4E121323BDDBE7 /* NBNumberFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NBNumberFormat.m; path = Sources/libPhoneNumber/NBNumberFormat.m; sourceTree = "<group>"; };
 		540FCB8E58B74009F6208677265EAC39 /* EllipseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EllipseAnimation.swift; path = Sources/Private/CoreAnimation/Animations/EllipseAnimation.swift; sourceTree = "<group>"; };
 		54152323D83479CBBE83CC2BC5B19BB7 /* ChatMessageDefaultReactionsBubbleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageDefaultReactionsBubbleView.swift; path = Sources/StreamChatUI/ChatMessageList/Reactions/ChatMessageDefaultReactionsBubbleView.swift; sourceTree = "<group>"; };
+		54295AE292FBC2C515F6766530752262 /* SteviaLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SteviaLayout-dummy.m"; sourceTree = "<group>"; };
 		543C4F0AE4C3CAFA230895CB8D18B216 /* ShapeContainerLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeContainerLayer.swift; path = Sources/Private/MainThread/NodeRenderSystem/RenderLayers/ShapeContainerLayer.swift; sourceTree = "<group>"; };
 		544F778AF7E352DCAB688C686D710BFD /* WXImageCompress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WXImageCompress-dummy.m"; sourceTree = "<group>"; };
 		54722A99E2FCD37106F11F497EF7509F /* YPPermissionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPPermissionManager.swift; path = Source/Helpers/Permissions/YPPermissionManager.swift; sourceTree = "<group>"; };
@@ -2233,6 +2234,7 @@
 		64597E5118C48D9EA9C1C4FCD9DBDC79 /* AWSTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTask.h; path = AWSCore/Bolts/AWSTask.h; sourceTree = "<group>"; };
 		64883B71ABD587056C8C0881CCE97349 /* AWSMTLModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLModel.h; path = AWSCore/Mantle/AWSMTLModel.h; sourceTree = "<group>"; };
 		6499396F743D94A6C4E5E28D8152D52C /* ResourceBundle-StreamChatUIResources-StreamChatUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-StreamChatUIResources-StreamChatUI-Info.plist"; sourceTree = "<group>"; };
+		64A271F20C2A183FA4C53409A6F2F42E /* Stevia+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Hierarchy.swift"; path = "Sources/Stevia/Stevia+Hierarchy.swift"; sourceTree = "<group>"; };
 		64AEADE53BACA626633CEC4D3E27A639 /* MemberListController+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MemberListController+Combine.swift"; path = "Sources/StreamChat/Controllers/MemberListController/MemberListController+Combine.swift"; sourceTree = "<group>"; };
 		64B23FA53219249E18D1BCED8E0FCDBE /* ChannelWatcherListQuery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelWatcherListQuery.swift; path = Sources/StreamChat/Query/ChannelWatcherListQuery.swift; sourceTree = "<group>"; };
 		64D6D009C8F2DB8D3A647E3C2A3696FD /* AWSDDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDTTYLogger.h; path = AWSCore/Logging/AWSDDTTYLogger.h; sourceTree = "<group>"; };
@@ -2266,7 +2268,6 @@
 		68FC53B312BF7476D6C668C442FA1904 /* YPAlbumView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAlbumView.swift; path = Source/Pages/Gallery/Album/YPAlbumView.swift; sourceTree = "<group>"; };
 		690113518395E440FC3A165EF4430372 /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = tr.lproj; path = Source/Resources/tr.lproj; sourceTree = "<group>"; };
 		6A0976342C73FF62AA4A88B023AC649E /* YPVideoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPVideoView.swift; path = Source/Filters/Video/YPVideoView.swift; sourceTree = "<group>"; };
-		6A3A8DC0BF9609FD725EFF4D3196D220 /* SteviaLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SteviaLayout-dummy.m"; sourceTree = "<group>"; };
 		6A6EC03195DA399246AD604C42ABAC1C /* ChatMessageGalleryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageGalleryView.swift; path = Sources/StreamChatUI/ChatMessageList/Attachments/ChatMessageGalleryView.swift; sourceTree = "<group>"; };
 		6A98B075D309C285CBE2F9DE7563870C /* AWSExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSExecutor.m; path = AWSCore/Bolts/AWSExecutor.m; sourceTree = "<group>"; };
 		6AB4E8EECB4B6F56292C8FB4C6C305A4 /* ImagePipeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipeline.swift; path = Sources/StreamChatUI/StreamNuke/Core/ImagePipeline.swift; sourceTree = "<group>"; };
@@ -2296,12 +2297,12 @@
 		6F57E86F49529DA371338001B57C8123 /* PathOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathOutputNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/PathOutputNode.swift; sourceTree = "<group>"; };
 		6FAEA05667C6032C75F5BD406C600133 /* CompositionLayersInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositionLayersInitializer.swift; path = Sources/Private/MainThread/LayerContainers/Utility/CompositionLayersInitializer.swift; sourceTree = "<group>"; };
 		6FBDE4FAAFBF4C984448D5B7BADF7680 /* YPBottomPagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPBottomPagerView.swift; path = Source/Pages/Gallery/BottomPager/YPBottomPagerView.swift; sourceTree = "<group>"; };
+		6FD51F9CD3EE9FBD483F8068290CAB12 /* Stevia+Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Notifications.swift"; path = "Sources/Stevia/Stevia+Notifications.swift"; sourceTree = "<group>"; };
 		700BD5FD9721D4369EA747D2055A71BF /* ChannelRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelRepository.swift; path = Sources/StreamChat/Repositories/ChannelRepository.swift; sourceTree = "<group>"; };
 		70317228E6607978A4F364977F57AB1E /* DataCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataCache.swift; path = Sources/StreamChatUI/StreamNuke/Core/DataCache.swift; sourceTree = "<group>"; };
 		706289B05B71E75598974280D20E4524 /* EventDTOConverterMiddleware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventDTOConverterMiddleware.swift; path = Sources/StreamChat/WebSocketClient/EventMiddlewares/EventDTOConverterMiddleware.swift; sourceTree = "<group>"; };
 		70BC50FD2CE2E4163EF0E8B759C8178E /* PerfomanceLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerfomanceLog.swift; path = Sources/StreamChatUI/StreamSwiftyMarkdown/SwiftyMarkdown/PerfomanceLog.swift; sourceTree = "<group>"; };
 		70D1E14742243BD4BBE7F1D053778ECA /* Font.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Font.swift; path = Sources/Private/Model/Text/Font.swift; sourceTree = "<group>"; };
-		70DC9553668B59E33F293CB43A5AABDE /* Stevia+Stacks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Stacks.swift"; path = "Source/Stevia+Stacks.swift"; sourceTree = "<group>"; };
 		711A774CD7E7B5F6F7A3A73FB6BF28D3 /* AudioRecordingNameFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioRecordingNameFormatter.swift; path = "Sources/StreamChatUI/Appearance+Formatters/AudioRecordingNameFormatter.swift"; sourceTree = "<group>"; };
 		71742946636690371E1AEA59FE44A777 /* CustomEventRequestBody.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomEventRequestBody.swift; path = Sources/StreamChat/APIClient/Endpoints/Requests/CustomEventRequestBody.swift; sourceTree = "<group>"; };
 		71BC93ECAEC76AD38245CD5E89EFDBFF /* SendButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SendButton.swift; path = Sources/StreamChatUI/CommonViews/SendButton/SendButton.swift; sourceTree = "<group>"; };
@@ -2312,6 +2313,7 @@
 		735AB69FC1641E0D71B790078823EE2B /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/StreamChatUI/StreamNuke/Core/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		735F5ABE0B2AE3EFED842994A497BB4B /* SwiftyMarkdown+macOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftyMarkdown+macOS.swift"; path = "Sources/StreamChatUI/StreamSwiftyMarkdown/SwiftyMarkdown/SwiftyMarkdown+macOS.swift"; sourceTree = "<group>"; };
 		737F6D4FD2493F584FD8ECF000FEF788 /* ChatMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessage.swift; path = Sources/StreamChat/Models/ChatMessage.swift; sourceTree = "<group>"; };
+		73D4EA6A22DD9F29119F2406E89F88D6 /* Stevia+Equation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Equation.swift"; path = "Sources/Stevia/Stevia+Equation.swift"; sourceTree = "<group>"; };
 		73DF54E7D52EF79D7FA60451E32AB433 /* ChatMessageVideoAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageVideoAttachment.swift; path = Sources/StreamChat/Models/Attachments/ChatMessageVideoAttachment.swift; sourceTree = "<group>"; };
 		742007E08947738CEC537936638341CC /* ChatReactionPickerBubbleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatReactionPickerBubbleView.swift; path = Sources/StreamChatUI/ChatMessageList/Reactions/ChatReactionPickerBubbleView.swift; sourceTree = "<group>"; };
 		7420A658432EE2E156132E6EE4B64940 /* Disk+Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Errors.swift"; path = "Sources/Disk+Errors.swift"; sourceTree = "<group>"; };
@@ -2322,6 +2324,7 @@
 		74D74E4AA5286B2F832E0DF0F2FE8C11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		74E90F14BDAAB043BB68F53742151A5B /* ChatChannelHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatChannelHeaderView.swift; path = Sources/StreamChatUI/ChatChannel/ChatChannelHeaderView.swift; sourceTree = "<group>"; };
 		759320A379584FF41E5CD444980B4AF7 /* FetchImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchImage.swift; path = Sources/StreamChatUI/StreamNuke/UI/FetchImage.swift; sourceTree = "<group>"; };
+		75952E79CD3A26AD1DCB8AA37BC38652 /* Stevia+Content.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Content.swift"; path = "Sources/Stevia/Stevia+Content.swift"; sourceTree = "<group>"; };
 		75DC12A926DA8B08FA6FE6B8FB8488A7 /* Security.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Security.swift; path = Sources/StreamChat/StreamStarscream/Security/Security.swift; sourceTree = "<group>"; };
 		75EBB2BAFCBA8F64688C0926DDC51A21 /* KF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KF.swift; path = Sources/General/KF.swift; sourceTree = "<group>"; };
 		7607E44744C207BBCAE38CA2831E06D4 /* Device.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Sources/StreamChat/Models/Device.swift; sourceTree = "<group>"; };
@@ -2344,6 +2347,7 @@
 		799716125BA165F2B5DE694565B7586B /* AWSS3Serializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSS3Serializer.h; path = AWSS3/AWSS3Serializer.h; sourceTree = "<group>"; };
 		7A2AA5DEE2A8EECB7B7347E284D8988E /* YPImageSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPImageSize.swift; path = Source/Configuration/YPImageSize.swift; sourceTree = "<group>"; };
 		7ABEA0AC805BE2956F73F35E2DA5CE00 /* Archive+MemoryFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+MemoryFile.swift"; path = "Sources/Private/Model/DotLottie/ZipFoundation/Archive+MemoryFile.swift"; sourceTree = "<group>"; };
+		7AF487ABA1EF7E7867E99C79615DAE27 /* SteviaLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SteviaLayout.modulemap; sourceTree = "<group>"; };
 		7B8546DA3078B3A25EFF2AEE952B3A5B /* DotLottieConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotLottieConfiguration.swift; path = Sources/Private/Model/DotLottie/DotLottieConfiguration.swift; sourceTree = "<group>"; };
 		7BB785544DD610397FD60A8CC9023DFA /* PhotoCircleCrop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PhotoCircleCrop-dummy.m"; sourceTree = "<group>"; };
 		7BEA607D9453D54562267D46D9FE40DD /* PlayPauseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlayPauseButton.swift; path = Sources/StreamChatUI/CommonViews/PlayPauseButton/PlayPauseButton.swift; sourceTree = "<group>"; };
@@ -2374,7 +2378,6 @@
 		7F2D547B4A715B893E3D782FE7028E12 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Utility/Box.swift; sourceTree = "<group>"; };
 		7F46B98728287122456311E45D482439 /* AttachmentTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttachmentTypes.swift; path = Sources/StreamChat/Models/Attachments/AttachmentTypes.swift; sourceTree = "<group>"; };
 		7FF03BF4929A6D8761F8D4B95CA1F52A /* ChatChannelVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatChannelVC.swift; path = Sources/StreamChatUI/ChatChannel/ChatChannelVC.swift; sourceTree = "<group>"; };
-		7FFF0566895112678F5C5170152B5F05 /* Stevia+Fill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Fill.swift"; path = "Source/Stevia+Fill.swift"; sourceTree = "<group>"; };
 		80079C8138DA28EAD19B7C7EDAF33109 /* Data+Serialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Serialization.swift"; path = "Sources/Private/Model/DotLottie/ZipFoundation/Data+Serialization.swift"; sourceTree = "<group>"; };
 		802AF004E101960B8EC447152E100516 /* AWSTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTaskCompletionSource.m; path = AWSCore/Bolts/AWSTaskCompletionSource.m; sourceTree = "<group>"; };
 		802B426EEE726B240F36F1A9B5249EB8 /* FlagPhoneNumber-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FlagPhoneNumber-Info.plist"; sourceTree = "<group>"; };
@@ -2429,6 +2432,7 @@
 		870D0AF3CFE4936182B92CBC6AD40D2B /* SwiftyScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyScanner.swift; path = Sources/StreamChatUI/StreamSwiftyMarkdown/SwiftyMarkdown/SwiftyScanner.swift; sourceTree = "<group>"; };
 		872D30F54C0ED41DF2F41D48C1B03ECB /* ConnectionRecoveryHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionRecoveryHandler.swift; path = Sources/StreamChat/Workers/Background/ConnectionRecoveryHandler.swift; sourceTree = "<group>"; };
 		872F000D6F5A5E33AB7CF454057A858F /* lottie-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "lottie-ios-umbrella.h"; sourceTree = "<group>"; };
+		87D1B5E2BAB874C357A5CD1FCB32A28D /* Stevia+Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Constraints.swift"; path = "Sources/Stevia/Stevia+Constraints.swift"; sourceTree = "<group>"; };
 		87E25432FA34E7DD4F238A3E76E72501 /* YPAssetZoomableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAssetZoomableView.swift; path = Source/Pages/Gallery/YPAssetZoomableView.swift; sourceTree = "<group>"; };
 		88124D681E01FE04BDFCDB2D0EEC6FFC /* CoreTextRenderLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreTextRenderLayer.swift; path = Sources/Private/MainThread/LayerContainers/Utility/CoreTextRenderLayer.swift; sourceTree = "<group>"; };
 		88155C91B5C9C7B4AF8ED54BB1AA75E5 /* PryntTrimmerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PryntTrimmerView.release.xcconfig; sourceTree = "<group>"; };
@@ -2536,6 +2540,7 @@
 		997E76C2E94B9DDA348E54546A948F2A /* StarscreamWebSocketEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarscreamWebSocketEngine.swift; path = Sources/StreamChat/WebSocketClient/Engine/StarscreamWebSocketEngine.swift; sourceTree = "<group>"; };
 		9981815FE710349381A53845473B05D3 /* NotificationExtension+Lifecycle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NotificationExtension+Lifecycle.swift"; path = "Sources/StreamChat/Utils/NotificationExtension+Lifecycle.swift"; sourceTree = "<group>"; };
 		99B68BEF584D24EFFC460F316CC6B3EB /* AttachmentPreviewContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttachmentPreviewContainer.swift; path = Sources/StreamChatUI/CommonViews/Attachments/AttachmentPreviewContainer.swift; sourceTree = "<group>"; };
+		99BBEB2735CA22158523EA6371117EC5 /* SteviaLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SteviaLayout-umbrella.h"; sourceTree = "<group>"; };
 		99D0C65C410AC0A2FC237D63964E1DB7 /* InterpolatableExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InterpolatableExtensions.swift; path = Sources/Private/Utility/Interpolatable/InterpolatableExtensions.swift; sourceTree = "<group>"; };
 		99EB0FE5FDD0B220745C6F9BBBB44DBA /* ConnectionController+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConnectionController+Combine.swift"; path = "Sources/StreamChat/Controllers/ConnectionController/ConnectionController+Combine.swift"; sourceTree = "<group>"; };
 		9A9CD55ED9BEB9DE2D90E215C7CA613F /* ChannelUpdater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelUpdater.swift; path = Sources/StreamChat/Workers/ChannelUpdater.swift; sourceTree = "<group>"; };
@@ -2601,12 +2606,13 @@
 		A4D0463E9A141021EAF07B8BEA6A69DD /* ChannelCodingKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelCodingKeys.swift; path = Sources/StreamChat/APIClient/Endpoints/Payloads/ChannelCodingKeys.swift; sourceTree = "<group>"; };
 		A506ABD52B039AFADF85E7C57D7ACCBA /* Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Trim.swift; path = Sources/Private/Model/ShapeItems/Trim.swift; sourceTree = "<group>"; };
 		A51B5F262A3168C5E66E911C2FEB42B2 /* TaskFetchDecodedImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskFetchDecodedImage.swift; path = Sources/StreamChatUI/StreamNuke/Internal/Tasks/TaskFetchDecodedImage.swift; sourceTree = "<group>"; };
-		A553ED51B966BC160BCDD9C68B1F4244 /* Stevia+Percentage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Percentage.swift"; path = "Source/Stevia+Percentage.swift"; sourceTree = "<group>"; };
 		A5A660B6F68495357DD88DAE831FD6F5 /* PhotoCircleCrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PhotoCircleCrop.release.xcconfig; sourceTree = "<group>"; };
 		A5D6114F42A8B3510B3A477F0F089942 /* CALayer+addAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+addAnimation.swift"; path = "Sources/Private/CoreAnimation/Animations/CALayer+addAnimation.swift"; sourceTree = "<group>"; };
 		A5E5236C0DD57E6B97739B9A9208BB33 /* UploadingProgressFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UploadingProgressFormatter.swift; path = "Sources/StreamChatUI/Appearance+Formatters/UploadingProgressFormatter.swift"; sourceTree = "<group>"; };
 		A641CAD3594E98DC1486879943FF8105 /* LottieAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieAnimation.swift; path = Sources/Public/Animation/LottieAnimation.swift; sourceTree = "<group>"; };
+		A652E9996CD763F69E2D787C9FEF7817 /* Stevia+Center.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Center.swift"; path = "Sources/Stevia/Stevia+Center.swift"; sourceTree = "<group>"; };
 		A656C3444CEEEB632E275A7D76D91C7B /* LayerTextProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerTextProvider.swift; path = Sources/Private/MainThread/LayerContainers/Utility/LayerTextProvider.swift; sourceTree = "<group>"; };
+		A679E508B76F16F96CEFF4EFCDDF714B /* Stevia+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Position.swift"; path = "Sources/Stevia/Stevia+Position.swift"; sourceTree = "<group>"; };
 		A681943AE04D046661B6D5CAD36BDBC9 /* AnimatedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedControl.swift; path = Sources/Public/iOS/AnimatedControl.swift; sourceTree = "<group>"; };
 		A69CBB8D89232BF92C3DBCC7252866EE /* SolidLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SolidLayer.swift; path = Sources/Private/CoreAnimation/Layers/SolidLayer.swift; sourceTree = "<group>"; };
 		A6BA5677C600D31B23CA646BD31C9FE0 /* YPIcons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPIcons.swift; path = Source/Configuration/YPIcons.swift; sourceTree = "<group>"; };
@@ -2669,7 +2675,6 @@
 		ADBCBD5827C56CCF19AD5151429E75CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		ADBFDA0AFA21E8DA8C2EF0E715822448 /* AWSInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSInfo.m; path = AWSCore/Service/AWSInfo.m; sourceTree = "<group>"; };
 		ADE5E5846C0EC2113B77C499F56C8C3E /* AgoraRtcEngine_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraRtcEngine_iOS.debug.xcconfig; sourceTree = "<group>"; };
-		ADF61390D4CA2FB47175A9054A468F2B /* Stevia+FlexibleMargin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+FlexibleMargin.swift"; path = "Source/Stevia+FlexibleMargin.swift"; sourceTree = "<group>"; };
 		AE7F15F1C61745B031538EAC85ED2BA4 /* UserListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserListController.swift; path = Sources/StreamChat/Controllers/UserListController/UserListController.swift; sourceTree = "<group>"; };
 		AEA8482C5C40B4A5772DC0FA27F54498 /* Data+Gzip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Gzip.swift"; path = "Sources/StreamChat/Utils/Data+Gzip.swift"; sourceTree = "<group>"; };
 		AED574FD97550D32024E6E00D6E010A0 /* ChatNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatNavigationBar.swift; path = Sources/StreamChatUI/CommonViews/ChatNavigationBar.swift; sourceTree = "<group>"; };
@@ -2775,6 +2780,7 @@
 		BDDC559F0944CF767C33A831B95EBBC5 /* GradientRenderLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientRenderLayer.swift; path = Sources/Private/CoreAnimation/Layers/GradientRenderLayer.swift; sourceTree = "<group>"; };
 		BDE7038AE1EB99220E4F32EE5ABFB3FF /* AWSS3TransferUtility+EnumerateBlocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AWSS3TransferUtility+EnumerateBlocks.m"; path = "AWSS3/AWSS3TransferUtility+EnumerateBlocks.m"; sourceTree = "<group>"; };
 		BE3F7A4DBAB7FCA33A4BD5DEB80A853F /* ChatMentionSuggestionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMentionSuggestionView.swift; path = Sources/StreamChatUI/CommonViews/Suggestions/ChatMentionSuggestionView/ChatMentionSuggestionView.swift; sourceTree = "<group>"; };
+		BE7635FB62B9D007FA4810940D4936FB /* Stevia+Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Operators.swift"; path = "Sources/Stevia/Stevia+Operators.swift"; sourceTree = "<group>"; };
 		BEADE10303ED2698E96DEE83BA623F7A /* StrokeAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrokeAnimation.swift; path = Sources/Private/CoreAnimation/Animations/StrokeAnimation.swift; sourceTree = "<group>"; };
 		BEC1B8C923771DEDDB805EC5B71244B2 /* ChannelQuery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelQuery.swift; path = Sources/StreamChat/Query/ChannelQuery.swift; sourceTree = "<group>"; };
 		BEE39C01CD4B0EDBE1D8D822F2C9D1CD /* EventSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSender.swift; path = Sources/StreamChat/Workers/EventSender.swift; sourceTree = "<group>"; };
@@ -2827,7 +2833,6 @@
 		C7A0470B40FA639A41E2910A1279BA34 /* RectNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RectNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/PathNodes/RectNode.swift; sourceTree = "<group>"; };
 		C7B636A99763A1AF81F155E43E098C66 /* AWSTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTaskCompletionSource.h; path = AWSCore/Bolts/AWSTaskCompletionSource.h; sourceTree = "<group>"; };
 		C7B6EC69A08170D2ED176DE086371AB5 /* YPVideoFiltersVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPVideoFiltersVC.swift; path = Source/Filters/Video/YPVideoFiltersVC.swift; sourceTree = "<group>"; };
-		C8075AA4F4A57FF96584A5EED82136CC /* Stevia+Content.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Content.swift"; path = "Source/Stevia+Content.swift"; sourceTree = "<group>"; };
 		C8402DE918E930870C6A135478569DDA /* URL+EnrichedURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+EnrichedURL.swift"; path = "Sources/StreamChat/Extensions/URL+EnrichedURL.swift"; sourceTree = "<group>"; };
 		C8919B0262CB692E236F77009D7264C1 /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Sources/StreamChat/WebSocketClient/Events/Event.swift; sourceTree = "<group>"; };
 		C8AF826A9B81AEDB67F2E7A17640BE52 /* Merge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Merge.swift; path = Sources/Private/Model/ShapeItems/Merge.swift; sourceTree = "<group>"; };
@@ -2840,7 +2845,9 @@
 		C9B8D9B8E889F0A75FA4053ECE38BD17 /* MemberListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemberListController.swift; path = Sources/StreamChat/Controllers/MemberListController/MemberListController.swift; sourceTree = "<group>"; };
 		C9CD13F62D83078CD9CCA02389504761 /* AWSURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLResponseSerialization.m; path = AWSCore/Serialization/AWSURLResponseSerialization.m; sourceTree = "<group>"; };
 		C9E2DEF1EA598B9112A5D6BD3AE73EC2 /* AWSDDMultiFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDMultiFormatter.m; path = AWSCore/Logging/AWSDDMultiFormatter.m; sourceTree = "<group>"; };
+		CA1B5929EB6EFC5A6115123B52338A10 /* Stevia+Style.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Style.swift"; path = "Sources/Stevia/Stevia+Style.swift"; sourceTree = "<group>"; };
 		CA26112EB018EFADB383AF1065624E3F /* ChatMessageListVC+DiffKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ChatMessageListVC+DiffKit.swift"; path = "Sources/StreamChatUI/ChatMessageList/ChatMessageListVC+DiffKit.swift"; sourceTree = "<group>"; };
+		CACF85AFDCA31B9066882437FCDB7F8B /* Stevia+DoubleDash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+DoubleDash.swift"; path = "Sources/Stevia/Stevia+DoubleDash.swift"; sourceTree = "<group>"; };
 		CAE006221456652D65936A768FA09E93 /* AttachmentViewInjector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttachmentViewInjector.swift; path = Sources/StreamChatUI/ChatMessageList/Attachments/AttachmentViewInjector.swift; sourceTree = "<group>"; };
 		CB05F1D662F1B4D7E22B708AEB6DF7C5 /* AWSCognitoIdentityService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentityService.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentityService.h; sourceTree = "<group>"; };
 		CB36B1D151FCF11DEF1EAEF5A633D47B /* ChannelVisibilityEventMiddleware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelVisibilityEventMiddleware.swift; path = Sources/StreamChat/WebSocketClient/EventMiddlewares/ChannelVisibilityEventMiddleware.swift; sourceTree = "<group>"; };
@@ -2893,7 +2900,6 @@
 		D330CF0B57B9190EB3838C28DA2907AA /* PolygonNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PolygonNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/PathNodes/PolygonNode.swift; sourceTree = "<group>"; };
 		D3423383C078B43CFEB183246BB0C71C /* ScrollToBottomButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollToBottomButton.swift; path = Sources/StreamChatUI/ChatMessageList/ScrollToBottomButton.swift; sourceTree = "<group>"; };
 		D34F787292CA1DF09F294ECA407F1692 /* NBGeneratedPhoneNumberMetaData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBGeneratedPhoneNumberMetaData.h; path = Sources/libPhoneNumber/NBGeneratedPhoneNumberMetaData.h; sourceTree = "<group>"; };
-		D35B6BDA8C84CC8D73696555C849B43F /* Stevia+Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Size.swift"; path = "Source/Stevia+Size.swift"; sourceTree = "<group>"; };
 		D398E9EA6956ADC4C93265A089DAADFE /* ChatMessageListDateSeparatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageListDateSeparatorView.swift; path = Sources/StreamChatUI/ChatMessageList/ChatMessageListDateSeparatorView.swift; sourceTree = "<group>"; };
 		D44C4AA0F8C7345929E4B2CC1ED41CBE /* MessageSearchController+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MessageSearchController+Combine.swift"; path = "Sources/StreamChat/Controllers/SearchControllers/MessageSearchController/MessageSearchController+Combine.swift"; sourceTree = "<group>"; };
 		D4EEC4C7576E891465E712610B4CE2DD /* MessageUpdater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageUpdater.swift; path = Sources/StreamChat/Workers/MessageUpdater.swift; sourceTree = "<group>"; };
@@ -2928,7 +2934,6 @@
 		D7B5E6F560C2E61B108D7DA552384202 /* AudioPlaying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioPlaying.swift; path = Sources/StreamChat/Audio/AudioPlayer/AudioPlaying.swift; sourceTree = "<group>"; };
 		D7E6FF9B4FFB03A862256F134D84DF99 /* CallRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CallRepository.swift; path = Sources/StreamChat/Repositories/CallRepository.swift; sourceTree = "<group>"; };
 		D7F5AD927B1BD2F96AC1CFC42EEF4B38 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.lproj; path = Source/Resources/nl.lproj; sourceTree = "<group>"; };
-		D87B93D2CA47B158D534A18B1C35E80A /* Stevia+Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Operators.swift"; path = "Source/Stevia+Operators.swift"; sourceTree = "<group>"; };
 		D8C9609BFD6CC51053815763290F5731 /* SyncEndpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyncEndpoint.swift; path = Sources/StreamChat/APIClient/Endpoints/SyncEndpoint.swift; sourceTree = "<group>"; };
 		D8E2E0A83AEF8896CF2A3010D398A1DE /* StringExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/Private/Utility/Extensions/StringExtensions.swift; sourceTree = "<group>"; };
 		D906D82262C334DEB0A548EF59A0FD85 /* YPImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YPImagePicker-umbrella.h"; sourceTree = "<group>"; };
@@ -2936,7 +2941,6 @@
 		D95B53D6DF1975BA261BD4A69565ABAE /* FloatValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/FloatValueProvider.swift; sourceTree = "<group>"; };
 		D9621D7599CBFC9C84BFEFE9BB757465 /* PryntTrimmerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PryntTrimmerView-dummy.m"; sourceTree = "<group>"; };
 		D9A0A03174E09684BBCA5EBE31A0FD1A /* DataLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Sources/StreamChatUI/StreamNuke/Core/DataLoader.swift; sourceTree = "<group>"; };
-		DA21E9450052A4EAB8FD1F937B8140AC /* Stevia+LayoutAnchors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+LayoutAnchors.swift"; path = "Source/Stevia+LayoutAnchors.swift"; sourceTree = "<group>"; };
 		DA42288D3FF239836A9E8C93EE40B8F9 /* PWSwitch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PWSwitch.modulemap; sourceTree = "<group>"; };
 		DA911F10D4590B40A9A9961CECCED47C /* CGRect+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGRect+Extensions.swift"; path = "Source/Helpers/Extensions/CGRect+Extensions.swift"; sourceTree = "<group>"; };
 		DB0D8501340FB85C40F6FF12CB8AAC63 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Publisher+Extensions.swift"; path = "Sources/StreamChat/Utils/Publisher+Extensions.swift"; sourceTree = "<group>"; };
@@ -2953,7 +2957,6 @@
 		DCB16F6DBE7B42190F4DB3E03C6CAF91 /* DotLottieCacheProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotLottieCacheProvider.swift; path = Sources/Public/DotLottie/Cache/DotLottieCacheProvider.swift; sourceTree = "<group>"; };
 		DCC9983E97AF876A2A969BC15273B447 /* YPFiltersView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPFiltersView.swift; path = Source/Filters/Photo/YPFiltersView.swift; sourceTree = "<group>"; };
 		DCCD02FA31945CB0C5C5BB950999B5A1 /* ShapeLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeLayer.swift; path = Sources/Private/CoreAnimation/Layers/ShapeLayer.swift; sourceTree = "<group>"; };
-		DCEA07797F377A464ADB5EB6568E872E /* Stevia+Equation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Equation.swift"; path = "Source/Stevia+Equation.swift"; sourceTree = "<group>"; };
 		DD0D5647A29CD0EF8AEA43AE403F1E5F /* SwipeableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeableView.swift; path = Sources/StreamChatUI/ChatChannelList/SwipeableView.swift; sourceTree = "<group>"; };
 		DD2DF7BF66179CB71CDBFE042F384EEC /* ChatMessageAttachmentPreviewVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageAttachmentPreviewVC.swift; path = Sources/StreamChatUI/ChatMessageList/Attachments/ChatMessageAttachmentPreviewVC.swift; sourceTree = "<group>"; };
 		DD453894DFFC8E0BF3220B7FD883E17E /* Reusable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Reusable+Extensions.swift"; path = "Sources/StreamChatUI/Utils/Extensions/Reusable+Extensions.swift"; sourceTree = "<group>"; };
@@ -3011,7 +3014,6 @@
 		E472FF37EC55AA574E53B9B599A6B033 /* YPCameraView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPCameraView.swift; path = Source/Pages/Photo/YPCameraView.swift; sourceTree = "<group>"; };
 		E4E994D9F86267B431160E6365AD86AD /* ImageResultsMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResultsMapper.swift; path = Sources/StreamChatUI/Utils/ImageLoading/ImageResultsMapper.swift; sourceTree = "<group>"; };
 		E536AA90A818B80718396C7153A3B6E3 /* AudioAnalysisEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioAnalysisEngine.swift; path = Sources/StreamChat/Audio/Analysis/AudioAnalysisEngine.swift; sourceTree = "<group>"; };
-		E5397BF2B52248402664B621BAD6EC0B /* Stevia+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Hierarchy.swift"; path = "Source/Stevia+Hierarchy.swift"; sourceTree = "<group>"; };
 		E5438A0F66742D1F16574BE6E5DFCC1D /* CellSeparatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellSeparatorView.swift; path = Sources/StreamChatUI/CommonViews/ListCollectionViewLayout/CellSeparatorView.swift; sourceTree = "<group>"; };
 		E56DBF94F891DEFA6E45F6CE08EB2DFA /* YPHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPHelper.swift; path = Source/Helpers/YPHelper.swift; sourceTree = "<group>"; };
 		E57182728FFE838342D7108B65C122E9 /* AWSNetworkingHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSNetworkingHelpers.h; path = AWSCore/Networking/AWSNetworkingHelpers.h; sourceTree = "<group>"; };
@@ -3080,7 +3082,6 @@
 		EFFD9A393AD1B9B6859D099029622746 /* MessageDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageDTO.swift; path = Sources/StreamChat/Database/DTOs/MessageDTO.swift; sourceTree = "<group>"; };
 		F00398BB5272AFD91DE1778A496990E9 /* ChatMessageReactionAuthorsVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChatMessageReactionAuthorsVC.swift; path = Sources/StreamChatUI/ChatMessageList/Reactions/ChatMessageReactionAuthorsVC/ChatMessageReactionAuthorsVC.swift; sourceTree = "<group>"; };
 		F004AABA989F6119BAD766F7D512F12F /* AVFileType+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVFileType+Extensions.swift"; path = "Source/Helpers/Extensions/AVFileType+Extensions.swift"; sourceTree = "<group>"; };
-		F034DF31C42FE81484A7A338E3784F46 /* Stevia+Style.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Style.swift"; path = "Source/Stevia+Style.swift"; sourceTree = "<group>"; };
 		F042F8933F90EED2565809C859E1BEC5 /* ImagePipelineCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipelineCache.swift; path = Sources/StreamChatUI/StreamNuke/Core/ImagePipelineCache.swift; sourceTree = "<group>"; };
 		F06A4945D605464F521C40ED08D47727 /* StreamChatUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StreamChatUI-prefix.pch"; sourceTree = "<group>"; };
 		F0BB1BA170EE0B78C8B99A8A9B548C97 /* Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Delegate.swift; path = Sources/Utility/Delegate.swift; sourceTree = "<group>"; };
@@ -3175,7 +3176,6 @@
 		FF8D4B33132C2187DD3EF9EA6AEDE7E9 /* Pods-AutoPilot_Admin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AutoPilot_Admin-umbrella.h"; sourceTree = "<group>"; };
 		FFA3B83FCB52B9BD1C916406EBA2BA7F /* GroupNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/RenderContainers/GroupNode.swift; sourceTree = "<group>"; };
 		FFAABAB9282CC29DFE53063D8AA05BC2 /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/Utility/String+MD5.swift"; sourceTree = "<group>"; };
-		FFCCF0E249A3C39D0EB7970951989028 /* SteviaLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SteviaLayout.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3997,6 +3997,21 @@
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
+		5AA8B3D33129AB70C5D221CDF597CA67 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7AF487ABA1EF7E7867E99C79615DAE27 /* SteviaLayout.modulemap */,
+				54295AE292FBC2C515F6766530752262 /* SteviaLayout-dummy.m */,
+				0CC46E99747B4216E7755417075611A6 /* SteviaLayout-Info.plist */,
+				025CC403872CFB938B7C3076AFCF4C57 /* SteviaLayout-prefix.pch */,
+				99BBEB2735CA22158523EA6371117EC5 /* SteviaLayout-umbrella.h */,
+				109B0FD1CE18DD5F1DF739D3849C4648 /* SteviaLayout.debug.xcconfig */,
+				4DDDEFB2CB9478ED92AE22D68FF06F23 /* SteviaLayout.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SteviaLayout";
+			sourceTree = "<group>";
+		};
 		5C9BEF35C7465338F78151307E9EA43B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -4181,21 +4196,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FSCalendar";
-			sourceTree = "<group>";
-		};
-		8235B9510AD1C4ED22226E5F011B650B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				07167962A2B96672785ED3E1D268D1C6 /* SteviaLayout.modulemap */,
-				6A3A8DC0BF9609FD725EFF4D3196D220 /* SteviaLayout-dummy.m */,
-				2E12AFF1C73FDA0974E1A5CAFECA018F /* SteviaLayout-Info.plist */,
-				0063C52F5574CC9917B425B33FEB0A63 /* SteviaLayout-prefix.pch */,
-				02E4423EF9F90ED0D5B9810F9E9B3FEF /* SteviaLayout-umbrella.h */,
-				2134FD66FDF07C80846191C56F5537F4 /* SteviaLayout.debug.xcconfig */,
-				FFCCF0E249A3C39D0EB7970951989028 /* SteviaLayout.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SteviaLayout";
 			sourceTree = "<group>";
 		};
 		8445E641C48C6BE7ECFEAC4EAC1B2316 /* Support Files */ = {
@@ -4426,41 +4426,13 @@
 				A63B1DE577741F5E90C556499805514A /* PhotoCircleCrop */,
 				4EE704C7415C73F2275ED927E1EEC780 /* PryntTrimmerView */,
 				BC6B81366D4127134943493BC50C5C01 /* PWSwitch */,
-				9CB8D09F092A70F8C619F686FEF64373 /* SteviaLayout */,
+				DCF20EC2CC88284A605E587C8F8CF915 /* SteviaLayout */,
 				CE9BCF73581F649424AEC9E18327DE74 /* StreamChat */,
 				CA8681D39560ABB411A176AB7B20173A /* StreamChatUI */,
 				69F6F3AE43C1A25BDF635EC8F9551030 /* WXImageCompress */,
 				238CB4BDF1835029D84611F2F49EAEF3 /* YPImagePicker */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		9CB8D09F092A70F8C619F686FEF64373 /* SteviaLayout */ = {
-			isa = PBXGroup;
-			children = (
-				217D6B4DCC5E9695E0BD4CBEFB1E9A68 /* Stevia+Alignment.swift */,
-				445DAA272B8DCD8A5642DADD08FC16BC /* Stevia+Baselines.swift */,
-				3FC3D58831A9954EEA369119DF48798D /* Stevia+Center.swift */,
-				434A72210031856F9CEC1E2E205875DF /* Stevia+Constraints.swift */,
-				C8075AA4F4A57FF96584A5EED82136CC /* Stevia+Content.swift */,
-				02957E8402151A5DB0D63AEC1C2B3AD6 /* Stevia+DoubleDash.swift */,
-				DCEA07797F377A464ADB5EB6568E872E /* Stevia+Equation.swift */,
-				7FFF0566895112678F5C5170152B5F05 /* Stevia+Fill.swift */,
-				ADF61390D4CA2FB47175A9054A468F2B /* Stevia+FlexibleMargin.swift */,
-				452C2E05192AAF64134756C67F708B77 /* Stevia+GetConstraint.swift */,
-				E5397BF2B52248402664B621BAD6EC0B /* Stevia+Hierarchy.swift */,
-				DA21E9450052A4EAB8FD1F937B8140AC /* Stevia+LayoutAnchors.swift */,
-				18BDE5AE0AD3856768A9BE522531EEEB /* Stevia+Notifications.swift */,
-				D87B93D2CA47B158D534A18B1C35E80A /* Stevia+Operators.swift */,
-				A553ED51B966BC160BCDD9C68B1F4244 /* Stevia+Percentage.swift */,
-				4D9FC28EC1C36037B0F8DA696F5AD088 /* Stevia+Position.swift */,
-				D35B6BDA8C84CC8D73696555C849B43F /* Stevia+Size.swift */,
-				70DC9553668B59E33F293CB43A5AABDE /* Stevia+Stacks.swift */,
-				F034DF31C42FE81484A7A338E3784F46 /* Stevia+Style.swift */,
-				8235B9510AD1C4ED22226E5F011B650B /* Support Files */,
-			);
-			name = SteviaLayout;
-			path = SteviaLayout;
 			sourceTree = "<group>";
 		};
 		9D6D38A46E2498D7771DD5D1E2F899EE /* Frameworks */ = {
@@ -5435,6 +5407,34 @@
 			);
 			name = FlagPhoneNumber;
 			path = FlagPhoneNumber;
+			sourceTree = "<group>";
+		};
+		DCF20EC2CC88284A605E587C8F8CF915 /* SteviaLayout */ = {
+			isa = PBXGroup;
+			children = (
+				187BFB9B988B74FE6A3EDD2431CB3BBC /* Stevia+Alignment.swift */,
+				51539702F7CD2BEEE4AE1F2FEB41D86A /* Stevia+Baselines.swift */,
+				A652E9996CD763F69E2D787C9FEF7817 /* Stevia+Center.swift */,
+				87D1B5E2BAB874C357A5CD1FCB32A28D /* Stevia+Constraints.swift */,
+				75952E79CD3A26AD1DCB8AA37BC38652 /* Stevia+Content.swift */,
+				CACF85AFDCA31B9066882437FCDB7F8B /* Stevia+DoubleDash.swift */,
+				73D4EA6A22DD9F29119F2406E89F88D6 /* Stevia+Equation.swift */,
+				501EA0F8412986707F3D2F6AFDB8A3E4 /* Stevia+Fill.swift */,
+				05D4F203DB5CA4A9875DAC843BE15880 /* Stevia+FlexibleMargin.swift */,
+				2ED789FB2E6A0F4DDB01D3CB0378EE20 /* Stevia+GetConstraint.swift */,
+				64A271F20C2A183FA4C53409A6F2F42E /* Stevia+Hierarchy.swift */,
+				3796BF434BAA57AAEE55A02960EEBA12 /* Stevia+LayoutAnchors.swift */,
+				6FD51F9CD3EE9FBD483F8068290CAB12 /* Stevia+Notifications.swift */,
+				BE7635FB62B9D007FA4810940D4936FB /* Stevia+Operators.swift */,
+				4E775A1261F27305B1985C5DCBE7DD2E /* Stevia+Percentage.swift */,
+				A679E508B76F16F96CEFF4EFCDDF714B /* Stevia+Position.swift */,
+				1959AD5DDA3001952CDCB41F187458C8 /* Stevia+Size.swift */,
+				0AD8AC686CA57AFF219BD49B5C64570C /* Stevia+Stacks.swift */,
+				CA1B5929EB6EFC5A6115123B52338A10 /* Stevia+Style.swift */,
+				5AA8B3D33129AB70C5D221CDF597CA67 /* Support Files */,
+			);
+			name = SteviaLayout;
+			path = SteviaLayout;
 			sourceTree = "<group>";
 		};
 		E1E21BB69E9C777852BB6096399D5B2A /* AWSS3 */ = {
@@ -7414,25 +7414,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				311C3D57615E20522F2B816D0C77CCE3 /* Stevia+Alignment.swift in Sources */,
-				FD650A0FE031EFDE9E79A706CDFB1461 /* Stevia+Baselines.swift in Sources */,
-				F7D920DDA483BF38B1EC2A21EA363DC4 /* Stevia+Center.swift in Sources */,
-				95A0D64480A774F7BE5F5A798C1492FD /* Stevia+Constraints.swift in Sources */,
-				31B7CD329462A3773F372D382E155F1E /* Stevia+Content.swift in Sources */,
-				0ED61E628F29E492DE69AC60DE634EFE /* Stevia+DoubleDash.swift in Sources */,
-				0BCA889F7FF8B97FBAC423B586D1AC8C /* Stevia+Equation.swift in Sources */,
-				B51B1E697CCB5CD3192E093EFC3F6384 /* Stevia+Fill.swift in Sources */,
-				32FE3124A45351AABE19EFE9A6A74C45 /* Stevia+FlexibleMargin.swift in Sources */,
-				9B2D01E565B84641D1FFABDB8DBB783E /* Stevia+GetConstraint.swift in Sources */,
-				F86C2A2AFB966C3BFF5866BC97509E84 /* Stevia+Hierarchy.swift in Sources */,
-				12B7C3C0A692129CACF27A8188D62829 /* Stevia+LayoutAnchors.swift in Sources */,
-				948FD7DC39A3C252A0237279EF945C3C /* Stevia+Notifications.swift in Sources */,
-				7C2507EED9CF62943A43AEBD135A3683 /* Stevia+Operators.swift in Sources */,
-				B2FD86230CE7CBC4F1DCF3787E15BC9E /* Stevia+Percentage.swift in Sources */,
-				B26B56114E52905EBF3947B5AF7C3B0F /* Stevia+Position.swift in Sources */,
-				6B577A8A8C8A9F1556667CAF3BA1DFA6 /* Stevia+Size.swift in Sources */,
-				7CE3CB2754E69F69D9D815E2139DB306 /* Stevia+Stacks.swift in Sources */,
-				86FFDF1646F2BF827AAC505853101C18 /* Stevia+Style.swift in Sources */,
+				7CA0A574200D752F9D531057EA764D2C /* Stevia+Alignment.swift in Sources */,
+				E5A96AA729404F322F2BED4367D75532 /* Stevia+Baselines.swift in Sources */,
+				41CE717CFA2B970D0829EBD964126225 /* Stevia+Center.swift in Sources */,
+				7FD1DA457C8FCD399252C7288203F7F2 /* Stevia+Constraints.swift in Sources */,
+				C09430F8CBBCD169E5FB1B391080F6A0 /* Stevia+Content.swift in Sources */,
+				B7518D3D5D976EE89FB8DE6A95DA9ED2 /* Stevia+DoubleDash.swift in Sources */,
+				BF80B0EA880FA57553C00B1E59890F3F /* Stevia+Equation.swift in Sources */,
+				1155762896403DF34C284344DF801D26 /* Stevia+Fill.swift in Sources */,
+				36AA5D50D7B9C9A475C889E0CD41356E /* Stevia+FlexibleMargin.swift in Sources */,
+				2260BD01D5CB8D7EEC0DFCA1FB17C46E /* Stevia+GetConstraint.swift in Sources */,
+				B64BEDD2188867F543FAC203C0F9A149 /* Stevia+Hierarchy.swift in Sources */,
+				B8070F598F1BD31FC527EF0D3C695EB4 /* Stevia+LayoutAnchors.swift in Sources */,
+				D832A4014D29B5A33CCE20688B5CD91F /* Stevia+Notifications.swift in Sources */,
+				1E53CF3F82C264C7EF03BD5FAA2E7B0C /* Stevia+Operators.swift in Sources */,
+				AF629B3AA89BB4CA90C90ABB0F5B250B /* Stevia+Percentage.swift in Sources */,
+				9B6A50C7B4BCCB834BE71BF4C2900D4F /* Stevia+Position.swift in Sources */,
+				73913D3F80063F8ED4B7266CCA36F388 /* Stevia+Size.swift in Sources */,
+				7ACB45FA63C5425E0059B9432F04D43A /* Stevia+Stacks.swift in Sources */,
+				1CEFA1A6DF7991B0B3138C712AA82487 /* Stevia+Style.swift in Sources */,
 				FA86BBE01A629F9461503C0AF054E47B /* SteviaLayout-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -8133,7 +8133,7 @@
 		};
 		06C0FE1E429C7D7EA02D8C2370B6CE34 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFCCF0E249A3C39D0EB7970951989028 /* SteviaLayout.release.xcconfig */;
+			baseConfigurationReference = 4DDDEFB2CB9478ED92AE22D68FF06F23 /* SteviaLayout.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -9454,7 +9454,7 @@
 		};
 		EF87FF1DE3CB4747D5811A193C3CD533 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2134FD66FDF07C80846191C56F5537F4 /* SteviaLayout.debug.xcconfig */;
+			baseConfigurationReference = 109B0FD1CE18DD5F1DF739D3849C4648 /* SteviaLayout.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

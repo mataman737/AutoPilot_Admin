@@ -188,7 +188,7 @@ extension NewNotificationViewController {
             
         
         confirmView.animateBroadcastSuccess()
-        /*
+
         if let image = image {
             let key = "notification:\(UUID().uuidString)"
             ImageUploader.uploadImage(image: image.wxCompress(), key: key, completion: { [weak self] (error, success, url) in
@@ -240,7 +240,6 @@ extension NewNotificationViewController {
                 }
             }
         }
-        */
     }
     
     @objc func showViews() {

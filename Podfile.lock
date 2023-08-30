@@ -43,14 +43,14 @@ PODS:
   - PhotoCircleCrop (1.3.2)
   - PryntTrimmerView (4.0.2)
   - PWSwitch (1.1.3)
-  - SteviaLayout (4.7.3)
+  - SteviaLayout (5.1.2)
   - StreamChat (4.34.0)
   - StreamChatUI (4.34.0):
     - StreamChat (= 4.34.0)
   - WXImageCompress (0.1.3)
   - YPImagePicker (5.2.1):
     - PryntTrimmerView (= 4.0.2)
-    - SteviaLayout (= 4.7.3)
+    - SteviaLayout (= 5.1.2)
 
 DEPENDENCIES:
   - AgoraRtcEngine_iOS
@@ -66,7 +66,7 @@ DEPENDENCIES:
   - PWSwitch
   - StreamChatUI
   - WXImageCompress
-  - YPImagePicker
+  - YPImagePicker (from `https://github.com/LawrenceNorman/YPImagePicker.git`)
 
 SPEC REPOS:
   trunk:
@@ -87,7 +87,15 @@ SPEC REPOS:
     - StreamChat
     - StreamChatUI
     - WXImageCompress
-    - YPImagePicker
+
+EXTERNAL SOURCES:
+  YPImagePicker:
+    :git: https://github.com/LawrenceNorman/YPImagePicker.git
+
+CHECKOUT OPTIONS:
+  YPImagePicker:
+    :commit: ae0e3ac19025930e6bc6822fdca7f2ae129bfae9
+    :git: https://github.com/LawrenceNorman/YPImagePicker.git
 
 SPEC CHECKSUMS:
   AgoraRtcEngine_iOS: c510de329cd905daff3f01fa4c872ea6d5eaee23
@@ -103,12 +111,12 @@ SPEC CHECKSUMS:
   PhotoCircleCrop: cdbea998ad27778853977b349dd2e7c3352c9245
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   PWSwitch: e20b0dcda15349bb61270a8c5cb6b2196dc440fa
-  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  SteviaLayout: 05424e528d643657d39ce72c786e4adf13cfc5f2
   StreamChat: 957c5947d7159736f59a1d0a5e6171559ab5b3fc
   StreamChatUI: 6eeec76de5cb85f52cca38365100ef4193ad10f4
   WXImageCompress: 86c7a4d028c7fc9c74181468c318a9ec688fcdac
-  YPImagePicker: f36043210c10b0783034eb1947d6e06e31c461e4
+  YPImagePicker: e7f9a34273fdf56283ac03ec2efa0601f946489f
 
-PODFILE CHECKSUM: 238832c31f1099eb928b3480079f9e588829625a
+PODFILE CHECKSUM: b001fe7990cea1dfe8cd465f68a097980c6b40e3
 
 COCOAPODS: 1.12.1

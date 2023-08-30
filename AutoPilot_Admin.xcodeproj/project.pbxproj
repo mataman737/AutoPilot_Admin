@@ -46,6 +46,8 @@
 		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
 		FCC4DD252A93FE0100185168 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD242A93FE0100185168 /* API.swift */; };
 		FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD262A93FE7B00185168 /* Admin.swift */; };
+		FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9669A2A9F8CC70088DD2A /* Notification.swift */; };
+		FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9669C2A9F8D160088DD2A /* ImageUploader.swift */; };
 		FCE556A42A9D40DA00C2B394 /* CustomChatChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
 		FCC4DD242A93FE0100185168 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FCC4DD262A93FE7B00185168 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
+		FCC9669A2A9F8CC70088DD2A /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		FCC9669C2A9F8D160088DD2A /* ImageUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageUploader.swift; path = AutoPilot_Admin/ImageUploader.swift; sourceTree = SOURCE_ROOT; };
 		FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChatChannelVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,6 +221,7 @@
 			children = (
 				DEC9A4D82A93E9F8000DBE39 /* Signal.swift */,
 				FCC4DD262A93FE7B00185168 /* Admin.swift */,
+				FCC9669A2A9F8CC70088DD2A /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				FCC4DD242A93FE0100185168 /* API.swift */,
+				FCC9669C2A9F8D160088DD2A /* ImageUploader.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
+				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
@@ -420,6 +427,7 @@
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
 				DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */,
 				DEC9A4CD2A93E73D000DBE39 /* SplashViewController.swift in Sources */,
+				FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */,
 				FCE556A42A9D40DA00C2B394 /* CustomChatChannelVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

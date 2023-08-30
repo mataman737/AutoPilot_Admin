@@ -9,6 +9,48 @@
 #if canImport(UIKit)
 import UIKit
 
+//enum SteviaLayoutItemType {
+//
+//}
+
+public protocol SteviaLayoutItem {
+    var any: Any {get}
+}
+
+extension SteviaLayoutItem {
+    public var any: Any { self }
+}
+extension UIView: SteviaLayoutItem {}
+extension Int: SteviaLayoutItem {}
+extension Double: SteviaLayoutItem {}
+extension CGFloat: SteviaLayoutItem {}
+extension String: SteviaLayoutItem {}
+
+extension FlexibleSpace: SteviaLayoutItem {}
+extension SteviaFlexibleMargin: SteviaLayoutItem {}
+extension SteviaPercentage: SteviaLayoutItem {}
+extension Array: SteviaLayoutItem where Element: UIView {}
+
+public struct FlexibleSpace {
+    public init() {}
+}
+
+@resultBuilder public struct SteviaLayoutBuilder {
+    public static func buildBlock(_ content: SteviaLayoutItem...) -> [SteviaLayoutItem] {
+        return content
+    }
+}
+
+public extension UIView {
+    @discardableResult
+    func layout(@SteviaLayoutBuilder content: () -> [SteviaLayoutItem]) -> UIView {
+        let subviews = content()
+        let anys = subviews.map { $0.any }
+        layout(anys)
+        return self
+    }
+}
+
 public extension UIView {
     
     /**
@@ -32,6 +74,7 @@ public extension UIView {
      )
      ```
      */
+//    @available(*, deprecated, message: "Use Layout { } function builder instead.")
     @discardableResult
     func layout(_ objects: Any...) -> [UIView] {
         return layout(objects)
@@ -39,8 +82,9 @@ public extension UIView {
     
     @discardableResult
     func layout(_ objects: [Any]) -> [UIView] {
-        var previousMargin: CGFloat?
+        var previousMargin: Double?
         var previousFlexibleMargin: SteviaFlexibleMargin?
+        var previousPercentMargin: SteviaPercentage?
         
         for (i, o) in objects.enumerated() {
             
@@ -77,6 +121,24 @@ public extension UIView {
                         }
                     }
                     previousFlexibleMargin = nil
+                } else if let ppm = previousPercentMargin {
+                    if i == 1 {
+                        v.top(ppm) // only if first view
+                    } else {
+                        if let vx = objects[i-2] as? UIView {
+                            // Add layout guide to suport %-based spaces.
+                            let percent = ppm.value / 100
+                        
+                            let lg = UILayoutGuide()
+                            addLayoutGuide(lg)
+                            NSLayoutConstraint.activate([
+                                lg.topAnchor.constraint(equalTo: vx.bottomAnchor),
+                                lg.heightAnchor.constraint(equalTo: heightAnchor, multiplier: CGFloat(percent)),
+                                v.topAnchor.constraint(equalTo: lg.bottomAnchor)
+                            ])
+                        }
+                    }
+                    previousPercentMargin = nil
                 } else {
                     tryStackViewVerticallyWithPreviousView(v, index: i, objects: objects)
                 }
@@ -86,7 +148,7 @@ public extension UIView {
             case let v as UIView:
                 viewLogic(v)
             case is Int, is Double, is CGFloat:
-                let m = cgFloatMarginFromObject(o)
+                let m = doubleMarginFromObject(o)
                 previousMargin = m // Store margin for next pass
                 if i != 0 && i == (objects.count - 1) {
                     //Last Margin, Bottom
@@ -106,6 +168,16 @@ public extension UIView {
                         va.first!.bottom(fm)
                     }
                 }
+                case let pm as SteviaPercentage:
+                    previousPercentMargin = pm // Store margin for next pass
+                    if i != 0 && i == (objects.count - 1) {
+                        //Last Margin, Bottom
+                        if let previousView = objects[i-1] as? UIView {
+                            previousView.bottom(pm)
+                        } else if let va = objects[i-1] as? [UIView] {
+                            va.first!.bottom(pm)
+                        }
+                    }
             case _ as String:() //Do nothin' !
             case let a as [UIView]:
                 align(horizontally: a)
@@ -117,14 +189,14 @@ public extension UIView {
         return objects.map {$0 as? UIView }.compactMap {$0}
     }
     
-    fileprivate func cgFloatMarginFromObject(_ o: Any) -> CGFloat {
-        var m: CGFloat = 0
+    fileprivate func doubleMarginFromObject(_ o: Any) -> Double {
+        var m: Double = 0
         if let i = o as? Int {
-            m = CGFloat(i)
+            m = Double(i)
         } else if let d = o as? Double {
-            m = CGFloat(d)
+            m = d
         } else if let cg = o as? CGFloat {
-            m = cg
+            m = Double(cg)
         }
         return m
     }
@@ -146,12 +218,12 @@ public extension UIView {
     }
     
     @discardableResult
-    fileprivate func stackV(m points: CGFloat = 0, v: UIView) -> UIView {
+    fileprivate func stackV(m points: Double = 0, v: UIView) -> UIView {
         return stack(.vertical, points: points, v: v)
     }
     
     fileprivate func stack(_ axis: NSLayoutConstraint.Axis,
-                           points: CGFloat = 0, v: UIView) -> UIView {
+                           points: Double = 0, v: UIView) -> UIView {
         let a: NSLayoutConstraint.Attribute = axis == .vertical ? .top : .left
         let b: NSLayoutConstraint.Attribute = axis == .vertical ? .bottom : .right
         if let spv = superview {
