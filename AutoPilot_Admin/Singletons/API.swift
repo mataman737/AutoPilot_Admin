@@ -361,7 +361,7 @@ class API: NSObject {
     }
     
     func sendSMSVerify(user: AdminSignup, completionHandler: @escaping (Bool, SMSLoginRequest?, Error?) -> ()) {
-        performRequest(endpoint: "api/admin/signup/verify", method: "POST", authenticated: true, object: user) { (data, response, error) in
+        performRequest(endpoint: "api/signup/verify", method: "POST", authenticated: true, object: user) { (data, response, error) in
             guard let data = data, error == nil else {
                 print("error=\(String(describing: error))")
                 completionHandler(false, nil, error)
@@ -382,7 +382,7 @@ class API: NSObject {
     }
     
     func sendSMSVerifyLogin(loginRequest: SMSLoginAttempt, completionHandler: @escaping (Bool, Admin?, Error?, Int?) -> ()) {
-        performRequest(endpoint: "api/admin/signup/verifylogin", method: "POST", authenticated: true, object: loginRequest) { (data, response, error) in
+        performRequest(endpoint: "api/signup/verifylogin", method: "POST", authenticated: true, object: loginRequest) { (data, response, error) in
             guard let data = data, error == nil, (response as? HTTPURLResponse)?.statusCode != 406 else {
                 print("error=\(String(describing: error))")
                 completionHandler(false, nil, error, ((response as? HTTPURLResponse)?.statusCode ?? -1))
