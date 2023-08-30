@@ -243,6 +243,26 @@ class API: NSObject {
         }
     }
     
+    func getNotifications(completionHandler: @escaping (Bool, [Notification]?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/notifications", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let signals = try decoder.decode([Notification].self, from: data)
+                
+                completionHandler(true, signals, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func sendToken(token: AToken, completionHandler: @escaping (Bool, [Admin]?, Error?) -> ()) {
         if Admin.current.id != nil {
             performRequest(endpoint: "api/admin/devicetoken", method: "POST", authenticated: true, object: token) { (data, response, error) in
