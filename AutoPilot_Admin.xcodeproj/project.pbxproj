@@ -11,6 +11,7 @@
 		DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20422A9BE9040067C719 /* ConnectViewController.swift */; };
 		DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */; };
 		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
+		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
 		DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E43FB2A9D9D1B00C76B71 /* NewNotificationViewController.swift */; };
 		DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */; };
 		DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */; };
@@ -58,6 +59,7 @@
 		DE0E20422A9BE9040067C719 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectViewController+Views.swift"; sourceTree = "<group>"; };
 		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
+		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		DE6E43FB2A9D9D1B00C76B71 /* NewNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNotificationViewController.swift; sourceTree = "<group>"; };
 		DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewNotificationViewController+Views.swift"; sourceTree = "<group>"; };
 		DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageVideoViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC9A4CC2A93E73D000DBE39 /* SplashViewController.swift */,
+				DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */,
 				DEC9A4CE2A93E742000DBE39 /* SplashViewController+Views.swift */,
 			);
 			path = Onboarding;
@@ -425,6 +428,7 @@
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
+				DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */,
 				DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */,
 				DEC9A4CD2A93E73D000DBE39 /* SplashViewController.swift in Sources */,
 				FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */,
