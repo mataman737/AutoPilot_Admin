@@ -360,7 +360,7 @@ class API: NSObject {
         task.resume()
     }
     
-    func sendSMSVerify(user: AdminSignup, completionHandler: @escaping (Bool, SMSLoginRequest?, Error?) -> ()) {
+    func sendSMSVerify(user: AdminSignup, completionHandler: @escaping (Bool, Admin?, Error?) -> ()) {
         performRequest(endpoint: "api/signup/verify", method: "POST", authenticated: true, object: user) { (data, response, error) in
             guard let data = data, error == nil else {
                 print("error=\(String(describing: error))")
@@ -368,16 +368,16 @@ class API: NSObject {
                 return
             }
             
-            do {
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                let response = try decoder.decode(SMSLoginRequest.self, from: data)
+//            do {
+//                let decoder = JSONDecoder()
+//                decoder.dateDecodingStrategy = .iso8601
+//                let response = try decoder.decode(SMSLoginRequest.self, from: data)
                 
-                completionHandler(true, response, nil)
-            } catch {
-                print(error)
-                completionHandler(false, nil, error)
-            }
+                completionHandler(true, nil, nil)
+//            } catch {
+//                print(error)
+//                completionHandler(false, nil, error)
+//            }
         }
     }
     
@@ -405,7 +405,7 @@ class API: NSObject {
     }
     
     func updateAdmin(admin: Admin, completionHandler: @escaping (Bool, Admin?, Error?) -> ()) {
-        performRequest(endpoint: "api/admin/update", method: "PUT", authenticated: true, object: admin) { (data, response, error) in
+        performRequest(endpoint: "api/admin", method: "PUT", authenticated: true, object: admin) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
                 completionHandler(false, nil, error)

@@ -55,9 +55,7 @@ class SplashViewController: UIViewController {
     var phoneNubmerIsValid = false
     
     var phoneNumber = ""
-    
-    var smsRequest: SMSLoginRequest!
-    
+        
     var dismissImageView = UIImageView()
     var isStepOne = true
     var isStepTwo = true
@@ -68,7 +66,6 @@ class SplashViewController: UIViewController {
     var fromSignUp = UserDefaults()
     
     var photo: UIImage?
-    var loginRequest: SMSLoginRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,7 +132,7 @@ extension SplashViewController {
         } else if isStepTwo {
             
             if phoneNubmerIsValid {
-                API.sharedInstance.sendSMSVerify(user: AdminSignup(phone: phoneNumber)) { (success, loginRequest, error) in
+                API.sharedInstance.sendSMSVerify(user: AdminSignup(phone: phoneNumber)) { (success, _, error) in
                     guard error == nil else {
                         print(error!)
                         return
@@ -147,7 +144,6 @@ extension SplashViewController {
                     }
                     
                     DispatchQueue.main.async { [weak self] in
-                        self?.loginRequest = loginRequest
                         self?.codeTextField.becomeFirstResponder()
                         self?.showOTC()
                         self?.isStepTwo = false
@@ -160,7 +156,7 @@ extension SplashViewController {
             
         } else {
             if photoSet {
-                API.sharedInstance.sendSMSVerifyLogin(loginRequest: self.loginRequest!.attempt(code: codeTextField.text ?? "", phone: phoneNumber, displayName: usernameTextfield.text ?? "")) { [weak self] (success, admin, error, statusCode) in
+                API.sharedInstance.sendSMSVerifyLogin(loginRequest: SMSLoginAttempt(code: codeTextField.text ?? "", phone: phoneNumber, displayName: usernameTextfield.text ?? "")) { [weak self] (success, admin, error, statusCode) in
                     if error != nil {
                         DispatchQueue.main.async {
                             print("failed verifying sms code")
@@ -199,7 +195,7 @@ extension SplashViewController {
                     }
                     
                     guard let photo = self?.photo else { return }
-                    /*
+
                     ImageUploader.uploadImage(image: photo, key: "admin:\(admin.id!.uuidString)") { error, success, uploadedUrl in
                         guard error == nil else {
                             print(error!)
@@ -233,7 +229,6 @@ extension SplashViewController {
                             }
                         }
                     }
-                    */
                 }
             }
         }

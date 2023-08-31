@@ -84,22 +84,12 @@ final class LoginResponse: Codable {
     var token: String
 }
 
-final class SMSLoginRequest: Codable {
-    var id: String!
-    
-    public func attempt(code: String, phone: String, displayName: String) -> SMSLoginAttempt {
-        return SMSLoginAttempt(id: self.id, code: code, phone: phone, displayName: displayName)
-    }
-}
-
 final class SMSLoginAttempt: Codable {
-    var id: String!
     var code: String!
     var phone: String!
     var displayName: String!
     
-    init(id: String, code: String, phone: String, displayName: String) {
-        self.id = id
+    init(code: String, phone: String, displayName: String) {
         self.code = code
         self.phone = phone
         self.displayName = displayName

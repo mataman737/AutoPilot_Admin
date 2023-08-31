@@ -43,10 +43,10 @@ class ImageUploader {
             return
         }
         
-        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USWest2, identityPoolId: "us-west-2:91de0dae-bb92-4110-a97c-77707e8c6eef")
-        let serviceConfiguration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)// AWSServiceManager.default().defaultServiceConfiguration
+        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .EUWest3, identityPoolId: "eu-west-3:36cade19-723b-42aa-a0af-94d0ba400137")
+        let serviceConfiguration = AWSServiceConfiguration(region: .EUWest3, credentialsProvider: credentialProvider)// AWSServiceManager.default().defaultServiceConfiguration
         let transferUtilityConfiguration = AWSS3TransferUtilityConfiguration()
-        transferUtilityConfiguration.bucket = "enigmatrading"
+        transferUtilityConfiguration.bucket = "autotrader-bucket"
         
         let awsUtilityKey = UUID()
         
@@ -139,10 +139,10 @@ class ImageUploader {
     //            return
     //        }
             
-            let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USWest2, identityPoolId: "us-west-2:91de0dae-bb92-4110-a97c-77707e8c6eef")
-            let serviceConfiguration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)// AWSServiceManager.default().defaultServiceConfiguration
+            let credentialProvider = AWSCognitoCredentialsProvider(regionType: .EUWest3, identityPoolId: "eu-west-3:36cade19-723b-42aa-a0af-94d0ba400137")
+            let serviceConfiguration = AWSServiceConfiguration(region: .EUWest3, credentialsProvider: credentialProvider)// AWSServiceManager.default().defaultServiceConfiguration
             let transferUtilityConfiguration = AWSS3TransferUtilityConfiguration()
-            transferUtilityConfiguration.bucket = "enigmatrading"
+            transferUtilityConfiguration.bucket = "autotrader-bucket"
             
 //            guard let id = event.id?.uuidString else { return } // String(Influencer.current.id)
             //        var photoNumber = event.stories?.count ?? 0
@@ -245,10 +245,10 @@ class ImageUploader {
                 return
             }
             
-            let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USWest2, identityPoolId: "us-west-2:91de0dae-bb92-4110-a97c-77707e8c6eef")
-            let serviceConfiguration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)// AWSServiceManager.default().defaultServiceConfiguration
+            let credentialProvider = AWSCognitoCredentialsProvider(regionType: .EUWest3, identityPoolId: "eu-west-3:36cade19-723b-42aa-a0af-94d0ba400137")
+            let serviceConfiguration = AWSServiceConfiguration(region: .EUWest3, credentialsProvider: credentialProvider)// AWSServiceManager.default().defaultServiceConfiguration
             let transferUtilityConfiguration = AWSS3TransferUtilityConfiguration()
-            transferUtilityConfiguration.bucket = "enigmatrading"
+            transferUtilityConfiguration.bucket = "autotrader-bucket"
             
             let keyName = "thumbnailforvideokey\(key)"
 
@@ -340,10 +340,10 @@ class ImageUploader {
     //            return
     //        }
             
-            let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USWest2, identityPoolId: "us-west-2:91de0dae-bb92-4110-a97c-77707e8c6eef")
-            let serviceConfiguration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)// AWSServiceManager.default().defaultServiceConfiguration
+            let credentialProvider = AWSCognitoCredentialsProvider(regionType: .EUWest3, identityPoolId: "eu-west-3:36cade19-723b-42aa-a0af-94d0ba400137")
+            let serviceConfiguration = AWSServiceConfiguration(region: .EUWest3, credentialsProvider: credentialProvider)// AWSServiceManager.default().defaultServiceConfiguration
             let transferUtilityConfiguration = AWSS3TransferUtilityConfiguration()
-            transferUtilityConfiguration.bucket = "enigmatrading"
+            transferUtilityConfiguration.bucket = "autotrader-bucket"
             
             guard let id = User.current.id else { return }
             

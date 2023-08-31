@@ -44,7 +44,7 @@ extension ChatClient {
     
     static func login() {
         /// you can grab your API Key from https://getstream.io/dashboard/
-        let config = ChatClientConfig(apiKey: .init("2hujf8t6u4nn"))
+        let config = ChatClientConfig(apiKey: .init("rmhuh7ykksh7"))
         
         ChatClient.shared = ChatClient(config: config)
     }
