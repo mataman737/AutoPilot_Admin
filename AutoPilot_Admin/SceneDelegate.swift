@@ -21,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if Admin.restoreCurrentAdmin() {
             ChatClient.login()
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "MyTabBarController") as! MyTabBarController
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
         }
     }
 
