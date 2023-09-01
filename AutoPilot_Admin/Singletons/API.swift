@@ -317,7 +317,7 @@ class API: NSObject {
     }
     
     func getStreamToken(completionHandler: @escaping (Bool, LToken?, Error?) -> ()) {
-        var request = URLRequest(url: URL(string: "http://a53ed7c762049fd98.awsglobalaccelerator.com/fetch_stream_token")!)
+        var request = URLRequest(url: URL(string: "http://a69588fe18ac228b0.awsglobalaccelerator.com/fetch_stream_token")!)
         request.httpMethod = "POST"
         //HTTP Headers
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

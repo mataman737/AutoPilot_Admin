@@ -185,9 +185,9 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         //New
         //cell.circleImageView.image = UIImage(named: "gradient\(indexPath.row)")
         
-        if let url = URL(string: superGroupCIDs[indexPath.row][2]) {
+//        if let url = URL(string: superGroupCIDs[indexPath.row][2]) {
             //cell.circleImageView.kf.setImage(with: url)
-        }
+//        }
         
         cell.chatNameLabel.text = "Main Super Group"//superGroupCIDs[indexPath.row][0]
         cell.chatDescriptionLabel.text = "0 new messages"
@@ -201,9 +201,9 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         lightImpactGenerator()
-        let idString = superGroupCIDs[indexPath.row][1]
+//        let idString = superGroupCIDs[indexPath.row][1]
         do {
-            let id = try ChannelId(cid: idString)
+            let id = try ChannelId(cid: "gaming:MainSuperGroup")
             let channelVC = CustomChatChannelVC()
             channelVC.chatChannelDelegate = self
             channelVC.channelController = ChatClient.shared.channelController(for: id)
