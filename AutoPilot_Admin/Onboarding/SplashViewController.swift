@@ -27,10 +27,15 @@ class SplashViewController: UIViewController {
 
     var delegate: SplashViewControllerDelegate!
     
+    var navView = UIView()
     var userInfoContainer = UIView()
     var profilePhotoImageView = UIImageView()
     var userNameContainer = UIView()
     var usernameTextfield = UITextField()
+    var xImageView = UIImageView()
+    var progressZero = SignupProgressView()
+    var progressOne = SignupProgressView()
+    var progressTwo = SignupProgressView()
     
     var joinLabel = UILabel()
     var joinDescriptionLabel = UILabel()
@@ -39,6 +44,7 @@ class SplashViewController: UIViewController {
     
     var passwordContainer = UIView()
     var codeTextField = OneTimeCodeTextField()
+    var nextButton = ContinueButton()
     
     var emailFieldCompleted = false
     var passwordFieldCompleted = false
@@ -70,6 +76,7 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        self.perform(#selector(animateFirstProgress), with: self, afterDelay: 0.5)
     }
 
 }
@@ -109,9 +116,11 @@ extension SplashViewController: FPNTextFieldDelegate {
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension SplashViewController {
+    @objc func animateFirstProgress() {
+        self.progressZero.showProgress()
+    }
     
     @objc func nextTapped() {
-        
         if isStepOne {
             
             if photoSet == false {
@@ -126,7 +135,9 @@ extension SplashViewController {
                 return
             }
             
-            showPhoneNumber()
+            //showPhoneNumber()
+            showOTC()
+            progressOne.showProgress()
             isStepOne = false
             
         } else if isStepTwo {
@@ -146,6 +157,7 @@ extension SplashViewController {
                     DispatchQueue.main.async { [weak self] in
                         self?.codeTextField.becomeFirstResponder()
                         self?.showOTC()
+                        self?.progressTwo.showProgress()
                         self?.isStepTwo = false
                     }
                 }
@@ -236,6 +248,7 @@ extension SplashViewController {
     
     
     @objc func dismissVC() {
+        lightImpactGenerator()
         self.dismiss(animated: true) {
             //
         }

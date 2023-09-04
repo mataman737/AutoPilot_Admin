@@ -336,6 +336,8 @@ extension String {
 
 extension UIColor {
     
+    static let swBlue = UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0)
+    
     //DARK MODE COLORS
     static let darkModeBackground = UIColor(red: 15/255, green: 15/255, blue: 15/255, alpha: 1.0)
     static let darkModeCardBackground = UIColor(red: 49/255, green: 49/255, blue: 49/255, alpha: 1.0)

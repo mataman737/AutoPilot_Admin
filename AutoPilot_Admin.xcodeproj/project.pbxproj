@@ -12,6 +12,13 @@
 		DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */; };
 		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
 		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
+		DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */; };
+		DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */; };
+		DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66439B2AA56CAF00DA27BE /* BlurredView.swift */; };
+		DE66439E2AA56CD400DA27BE /* CustomVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66439D2AA56CD400DA27BE /* CustomVisualEffectView.swift */; };
+		DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66439F2AA56CE500DA27BE /* NVULaunchView.swift */; };
+		DE6643A32AA56D2500DA27BE /* splash.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DE6643A22AA56D2500DA27BE /* splash.mp4 */; };
+		DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643A42AA5841D00DA27BE /* SignupProgressView.swift */; };
 		DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E43FB2A9D9D1B00C76B71 /* NewNotificationViewController.swift */; };
 		DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */; };
 		DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */; };
@@ -60,6 +67,13 @@
 		DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectViewController+Views.swift"; sourceTree = "<group>"; };
 		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
 		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
+		DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTwoViewController.swift; sourceTree = "<group>"; };
+		DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashTwoViewController+Views.swift"; sourceTree = "<group>"; };
+		DE66439B2AA56CAF00DA27BE /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
+		DE66439D2AA56CD400DA27BE /* CustomVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisualEffectView.swift; sourceTree = "<group>"; };
+		DE66439F2AA56CE500DA27BE /* NVULaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVULaunchView.swift; sourceTree = "<group>"; };
+		DE6643A22AA56D2500DA27BE /* splash.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash.mp4; sourceTree = "<group>"; };
+		DE6643A42AA5841D00DA27BE /* SignupProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupProgressView.swift; sourceTree = "<group>"; };
 		DE6E43FB2A9D9D1B00C76B71 /* NewNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNotificationViewController.swift; sourceTree = "<group>"; };
 		DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewNotificationViewController+Views.swift"; sourceTree = "<group>"; };
 		DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageVideoViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +155,14 @@
 			path = Connect;
 			sourceTree = "<group>";
 		};
+		DE6643A12AA56D1200DA27BE /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				DE6643A22AA56D2500DA27BE /* splash.mp4 */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
 		DE6E43FA2A9D9D1000C76B71 /* New Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,9 +223,15 @@
 		DEC9A4CB2A93E732000DBE39 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */,
+				DE66439F2AA56CE500DA27BE /* NVULaunchView.swift */,
+				DE66439B2AA56CAF00DA27BE /* BlurredView.swift */,
+				DE66439D2AA56CD400DA27BE /* CustomVisualEffectView.swift */,
+				DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */,
 				DEC9A4CC2A93E73D000DBE39 /* SplashViewController.swift */,
-				DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */,
+				DE6643A42AA5841D00DA27BE /* SignupProgressView.swift */,
 				DEC9A4CE2A93E742000DBE39 /* SplashViewController+Views.swift */,
+				DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -265,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */,
+				DE6643A12AA56D1200DA27BE /* Media */,
 				DEC9A4EC2A93ED6F000DBE39 /* Fonts */,
 			);
 			path = Assets;
@@ -343,6 +372,7 @@
 				DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */,
 				DEC9A4F52A93ED96000DBE39 /* Sofia Pro Light Az.otf in Resources */,
 				DEC9A4F82A93ED96000DBE39 /* Sofia Pro Bold Az.otf in Resources */,
+				DE6643A32AA56D2500DA27BE /* splash.mp4 in Resources */,
 				DEC9A4F62A93ED96000DBE39 /* Sofia Pro Medium Az.otf in Resources */,
 				DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */,
 				DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */,
@@ -406,15 +436,19 @@
 				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
+				DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */,
 				DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */,
 				DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */,
 				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
+				DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
+				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
+				DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
@@ -428,8 +462,10 @@
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
+				DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */,
 				DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */,
 				DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */,
+				DE66439E2AA56CD400DA27BE /* CustomVisualEffectView.swift in Sources */,
 				DEC9A4CD2A93E73D000DBE39 /* SplashViewController.swift in Sources */,
 				FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */,
 				FCE556A42A9D40DA00C2B394 /* CustomChatChannelVC.swift in Sources */,

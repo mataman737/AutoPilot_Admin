@@ -72,11 +72,11 @@ class OneTimeCodeTextField: UITextField {
             label.textColor = .black
             label.isUserInteractionEnabled = true
             label.text = defaultCharacter
-            label.layer.borderColor = UIColor.black.withAlphaComponent(0.7).cgColor
+            label.layer.borderColor = UIColor.black.withAlphaComponent(0.25).cgColor
             label.layer.borderWidth = 1
             label.layer.cornerRadius = 8
             label.layer.masksToBounds = true
-            label.backgroundColor = UIColor.black.withAlphaComponent(0.31)//UIColor.black.withAlphaComponent(0.05)
+            label.backgroundColor = .white
             stackView.addArrangedSubview(label)
             
             digitLabels.append(label)
@@ -115,6 +115,5 @@ extension OneTimeCodeTextField: UITextFieldDelegate {
         return characterCount < digitLabels.count || string == ""
     }
 }
-
 
 
