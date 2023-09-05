@@ -59,7 +59,7 @@ extension SwipeConfirmView {
         self.addSubview(swipeContainer)
         swipeContainer.fillSuperview()
                 
-        swipeBG.image = UIImage(named: "buttonGradient")
+        swipeBG.image = UIImage(named: "buttonGradientNVU")
         swipeBG.contentMode = .scaleAspectFill
         swipeBG.backgroundColor = .clear
         swipeBG.translatesAutoresizingMaskIntoConstraints = false
@@ -148,13 +148,13 @@ extension SwipeConfirmView {
         for layer in 1...loadingLayers.count {
             let keyPath = AnimationKeypath(keypath: "\(loadingLayers[layer - 1])")
             if i == 0 {
-                let colorProvider = ColorValueProvider(UIColor(red: 232/255, green: 121/255, blue: 48/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor(red: 42/255, green: 47/255, blue: 97/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
                 arrowsAnimation.setValueProvider(colorProvider, keypath: keyPath)
             } else if i == 1 {
-                let colorProvider = ColorValueProvider(UIColor(red: 229/255, green: 91/255, blue: 137/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor(red: 77/255, green: 110/255, blue: 142/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
                 arrowsAnimation.setValueProvider(colorProvider, keypath: keyPath)
             } else {
-                let colorProvider = ColorValueProvider(UIColor(red: 225/255, green: 62/255, blue: 227/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor(red: 118/255, green: 181/255, blue: 193/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
                 arrowsAnimation.setValueProvider(colorProvider, keypath: keyPath)
             }
             i += 1

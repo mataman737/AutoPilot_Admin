@@ -40,7 +40,7 @@ extension ContinueButton {
     
     func setupViews() {
         
-        purpleBG.image = UIImage(named: "buttonGradient")
+        purpleBG.image = UIImage(named: "buttonGradientNVU")
         purpleBG.contentMode = .scaleAspectFill
         purpleBG.isUserInteractionEnabled = false
         purpleBG.backgroundColor = .clear

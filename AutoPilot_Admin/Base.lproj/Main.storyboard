@@ -13,12 +13,12 @@
             <objects>
                 <viewController id="fF8-Dp-VGb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0A1-JX-bVd">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Iy5-Ig-lJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="WKL-1U-zPp"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTab" id="WKL-1U-zPp"/>
                     <navigationItem key="navigationItem" id="jxO-5g-2oM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMp-tW-SEG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -30,28 +30,28 @@
             <objects>
                 <viewController storyboardIdentifier="ConnectViewController" id="2uh-bh-dpy" customClass="ConnectViewController" customModule="AutoPilot_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Usg-Ub-qpS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="QG4-8L-R3H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Connect" id="qwo-cc-rhC"/>
+                    <tabBarItem key="tabBarItem" title="Connect" image="connectTab" id="qwo-cc-rhC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lif-c2-Tct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-416" y="-116"/>
         </scene>
-        <!--Signals-->
+        <!--Trades-->
         <scene sceneID="R2p-PD-3Tz">
             <objects>
                 <viewController storyboardIdentifier="MyForexTradesViewController" id="Fea-7m-wJS" customClass="MyForexTradesViewController" customModule="AutoPilot_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XS9-jx-gYb">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="HGy-ax-FbV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Signals" id="BoK-Nt-BBh"/>
+                    <tabBarItem key="tabBarItem" title="Trades" image="signalsTab" id="BoK-Nt-BBh"/>
                     <navigationItem key="navigationItem" id="IvJ-Rj-xoA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cu4-pR-gR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -62,10 +62,13 @@
         <scene sceneID="7KR-Sh-0Lf">
             <objects>
                 <tabBarController storyboardIdentifier="MyTabBarController" id="tdD-Ej-6xt" customClass="MyTabBarController" customModule="AutoPilot_Admin" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qrg-dI-mVd">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="qrg-dI-mVd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Fea-7m-wJS" kind="relationship" relationship="viewControllers" id="u8o-FC-Fqm"/>
@@ -94,11 +97,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="connectTab" width="28" height="28"/>
+        <image name="settingsTab" width="24" height="24"/>
+        <image name="signalsTab" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -27,6 +27,7 @@ class SplashViewController: UIViewController {
 
     var delegate: SplashViewControllerDelegate!
     
+    var transitionView = UIView()
     var navView = UIView()
     var userInfoContainer = UIView()
     var profilePhotoImageView = UIImageView()
@@ -66,9 +67,7 @@ class SplashViewController: UIViewController {
     var isStepOne = true
     var isStepTwo = true
     var photoSet = false
-    
-    var transitionView = UIView()
-    
+        
     var fromSignUp = UserDefaults()
     
     var photo: UIImage?
@@ -135,10 +134,10 @@ extension SplashViewController {
                 return
             }
             
-            //showPhoneNumber()
-            showOTC()
+            showPhoneNumber()
+            //showOTC()
             progressOne.showProgress()
-            isStepOne = false
+            isStepOne = false            
             
         } else if isStepTwo {
             
@@ -168,6 +167,9 @@ extension SplashViewController {
             
         } else {
             if photoSet {
+                nextButton.showLoader()
+                nextButton.isUserInteractionEnabled = false
+                                
                 API.sharedInstance.sendSMSVerifyLogin(loginRequest: SMSLoginAttempt(code: codeTextField.text ?? "", phone: phoneNumber, displayName: usernameTextfield.text ?? "")) { [weak self] (success, admin, error, statusCode) in
                     if error != nil {
                         DispatchQueue.main.async {
@@ -235,9 +237,9 @@ extension SplashViewController {
                             DispatchQueue.main.async {
                                 Admin.current = admin
                                 Admin.saveCurrentAdmin()
-                                
                                 ChatClient.login()
-                                self?.goToHome()
+                                //self?.goToHome()
+                                self?.perform(#selector(self?.transitionHome), with: self, afterDelay: 0.5)
                             }
                         }
                     }
@@ -251,6 +253,21 @@ extension SplashViewController {
         lightImpactGenerator()
         self.dismiss(animated: true) {
             //
+        }
+    }
+    
+    @objc func transitionHome() {
+        UIView.animate(withDuration: 0.35, delay: 0, options: []) {
+            self.navView.alpha = 0
+            self.mainScrollView.alpha = 0
+            self.view.endEditing(true)
+        } completion: { success in
+            self.transitionView.isHidden = false
+            UIView.animate(withDuration: 0.35, delay: 0, options: []) {
+                self.transitionView.alpha = 1.0
+            } completion: { success in
+                self.goToHome()
+            }
         }
     }
             

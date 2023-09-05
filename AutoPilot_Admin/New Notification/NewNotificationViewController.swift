@@ -202,7 +202,7 @@ extension NewNotificationViewController {
                     return
                 }
                       
-                let notification = Notification(title: self?.notificationNameTextField.text, userId: nil/*Admin.current.id*/, enigmaId: Admin.current.enigmaId, subtitle: nil, body: self?.messageTextView.text, itemUrl: self?.urlToPassTextField.text, imageUrl: url, language: self?.selectedLanguage, userType: nil, added: Date(), scheduled: self?.selectedNotificationDate)
+                let notification = Notification(title: self?.notificationNameTextField.text, userId: nil/*Admin.current.id*/, enigmaId: Admin.current.enigmaId, subtitle: nil, body: self?.messageTextView.text, itemUrl: nil, imageUrl: url, language: nil, userType: nil, added: Date(), scheduled: nil)
                 print("\(notification) 🚨🚨🚨")
                 self?.delegate?.showNotiLoading()
                 API.sharedInstance.sendNotification(notification: notification) { success, _, error in
@@ -222,7 +222,7 @@ extension NewNotificationViewController {
                 }
             })
         } else {
-            let notification = Notification(title: self.notificationNameTextField.text, userId: nil/*Admin.current.id*/, enigmaId: Admin.current.enigmaId, subtitle: nil, body: self.messageTextView.text, itemUrl: self.urlToPassTextField.text, imageUrl: nil, language: self.selectedLanguage, userType: nil, added: Date(), scheduled: self.selectedNotificationDate)
+            let notification = Notification(title: self.notificationNameTextField.text, userId: nil/*Admin.current.id*/, enigmaId: Admin.current.enigmaId, subtitle: nil, body: self.messageTextView.text, itemUrl: nil, imageUrl: nil, language: nil, userType: nil, added: Date(), scheduled: nil)
             self.delegate?.showNotiLoading()
             API.sharedInstance.sendNotification(notification: notification) { success, _, error in
                 guard error == nil else {
@@ -295,12 +295,12 @@ extension NewNotificationViewController {
     }
     
     @objc func didTapConfirm() {
-        if accessTextField.text == "Gorda" && selectedLanguage != "" && selectedMemberType != "" {
+        if messageTextView.text != "" && notificationNameTextField.text != "" {
             confirmView.animateViewsin()
         } else {
             errorImpactGenerator()
             let toastNoti = ToastNotificationView()
-            toastNoti.present(withMessage: "Incorrect Permission Code!")
+            toastNoti.present(withMessage: "Set title and message")
         }
     }
     
@@ -314,7 +314,7 @@ extension NewNotificationViewController: PickImageVideoViewControllerDelegate {
         notificationImageView.image = image
         isDoingPhoto = true
         notificationNameTextField.becomeFirstResponder()
-        print("💋💋💋\(url)💋💋💋")
+            //print("💋💋💋\(url)💋💋💋")
     }
     
     @objc func didSelectMedia() {

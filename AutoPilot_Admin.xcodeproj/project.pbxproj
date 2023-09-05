@@ -11,6 +11,8 @@
 		DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20422A9BE9040067C719 /* ConnectViewController.swift */; };
 		DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */; };
 		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
+		DE4D57812AA6B715008E2B6B /* gradientCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = DE4D57802AA6B715008E2B6B /* gradientCheck.json */; };
+		DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */ = {isa = PBXBuildFile; fileRef = DE4D57822AA6B818008E2B6B /* blueArrows.json */; };
 		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
 		DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */; };
 		DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */; };
@@ -66,6 +68,8 @@
 		DE0E20422A9BE9040067C719 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectViewController+Views.swift"; sourceTree = "<group>"; };
 		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
+		DE4D57802AA6B715008E2B6B /* gradientCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gradientCheck.json; sourceTree = "<group>"; };
+		DE4D57822AA6B818008E2B6B /* blueArrows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blueArrows.json; sourceTree = "<group>"; };
 		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTwoViewController.swift; sourceTree = "<group>"; };
 		DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashTwoViewController+Views.swift"; sourceTree = "<group>"; };
@@ -153,6 +157,15 @@
 				DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */,
 			);
 			path = Connect;
+			sourceTree = "<group>";
+		};
+		DE4D577F2AA6B704008E2B6B /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				DE4D57822AA6B818008E2B6B /* blueArrows.json */,
+				DE4D57802AA6B715008E2B6B /* gradientCheck.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		DE6643A12AA56D1200DA27BE /* Media */ = {
@@ -293,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */,
+				DE4D577F2AA6B704008E2B6B /* Lottie */,
 				DE6643A12AA56D1200DA27BE /* Media */,
 				DEC9A4EC2A93ED6F000DBE39 /* Fonts */,
 			);
@@ -369,7 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */,
+				DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */,
 				DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */,
+				DE4D57812AA6B715008E2B6B /* gradientCheck.json in Resources */,
 				DEC9A4F52A93ED96000DBE39 /* Sofia Pro Light Az.otf in Resources */,
 				DEC9A4F82A93ED96000DBE39 /* Sofia Pro Bold Az.otf in Resources */,
 				DE6643A32AA56D2500DA27BE /* splash.mp4 in Resources */,

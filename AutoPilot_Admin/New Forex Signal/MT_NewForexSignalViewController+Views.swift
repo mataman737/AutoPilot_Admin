@@ -71,7 +71,7 @@ extension MT_NewForexSignalViewController {
         contentContainer.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         contentContainer.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
         
-        dismissImageView.image = UIImage(named: "gradX")
+        dismissImageView.image = UIImage(named: "gradXNVU")
         dismissImageView.contentMode = .scaleAspectFill
         dismissImageView.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(dismissImageView)
@@ -88,7 +88,7 @@ extension MT_NewForexSignalViewController {
         dismissButton.trailingAnchor.constraint(equalTo: dismissImageView.trailingAnchor, constant: 15).isActive = true
         dismissButton.bottomAnchor.constraint(equalTo: dismissImageView.bottomAnchor, constant: 15).isActive = true
         
-        downArrowImageView.image = UIImage(named: "downGradient")
+        downArrowImageView.image = UIImage(named: "downGradientNVU")
         downArrowImageView.contentMode = .scaleAspectFill
         downArrowImageView.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(downArrowImageView)
@@ -144,7 +144,7 @@ extension MT_NewForexSignalViewController {
         continueButton.continueLabel.text = "Confirm"
         continueButton.continueLabel.textColor = .white
         continueButton.confirmLabel.textColor = .white
-        continueButton.purpleBG.image = UIImage(named: "buttonGradient")
+        continueButton.purpleBG.image = UIImage(named: "buttonGradientNVU")
         continueButton.translatesAutoresizingMaskIntoConstraints = false
         accessoryContainer.addSubview(continueButton)
         continueButton.leadingAnchor.constraint(equalTo: accessoryContainer.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
@@ -153,21 +153,22 @@ extension MT_NewForexSignalViewController {
         continueButton.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 56)).isActive = true
         
         //LIVE PRICE
-        
+        /*
         createContainer(containerView: livePriceContainer, sectionTitleLabel: livePriceTitleLabel, isFirst: true)
         livePriceTitleLabel.text = "Live Price"
         //entryPriceContainer.topAnchor.constraint(equalTo: lotSizeContainer.bottomAnchor, constant: 0).isActive = true
         livePriceContainer.topAnchor.constraint(equalTo: assetTitleLabel.bottomAnchor, constant: 26).isActive = true
         
         setupLiveLabel(liveLabel: livePriceLabel, pinView: livePriceContainer, theText: "0.0 | 0 pips")
-        
+        */
         //ENTRY PRICE
         
         createContainer(containerView: entryPriceContainer, sectionTitleLabel: entryPriceTitleLabel, isFirst: false)
         entryPriceTitleLabel.text = "Entry Price"
         //entryPriceContainer.topAnchor.constraint(equalTo: lotSizeContainer.bottomAnchor, constant: 0).isActive = true
         //entryPriceContainer.topAnchor.constraint(equalTo: assetTitleLabel.bottomAnchor, constant: 26).isActive = true
-        entryPriceContainer.topAnchor.constraint(equalTo: livePriceContainer.bottomAnchor, constant: 0).isActive = true
+        entryPriceContainer.topAnchor.constraint(equalTo: assetTitleLabel.bottomAnchor, constant: 26).isActive = true
+        //entryPriceContainer.topAnchor.constraint(equalTo: livePriceContainer.bottomAnchor, constant: 0).isActive = true
         
         
         //entryPriceTextField
@@ -214,7 +215,7 @@ extension MT_NewForexSignalViewController {
         stopLossUSDLabel.isHidden = true
         
         //TRADE TYPE
-        
+        /*
         createContainer(containerView: tradeTypeContainer, sectionTitleLabel: tradetypeTitleLabel, isFirst: false)
         tradetypeTitleLabel.text = "Signal Type"
         tradetypeTitleLabel.isUserInteractionEnabled = false
@@ -228,10 +229,11 @@ extension MT_NewForexSignalViewController {
         signalTypeButton.translatesAutoresizingMaskIntoConstraints = false
         tradeTypeContainer.addSubview(signalTypeButton)
         signalTypeButton.fillSuperview()
+        */
         
         //DEMO SIGNAL
                 
-        
+        /*
         createDemoContainer(containerView: demoSignalContainer, sectionTitleLabel: demoSignalTitleLabel)
         demoSignalTitleLabel.text = "Send Demo Signal"
         demoSignalContainer.topAnchor.constraint(equalTo: tradeTypeContainer.bottomAnchor, constant: 0).isActive = true
@@ -252,14 +254,14 @@ extension MT_NewForexSignalViewController {
         demoSignalButton.topAnchor.constraint(equalTo: demoSignalContainer.topAnchor).isActive = true
         demoSignalButton.bottomAnchor.constraint(equalTo: demoSignalContainer.bottomAnchor).isActive = true
         demoSignalButton.leadingAnchor.constraint(equalTo: demoSignalContainer.centerXAnchor).isActive = true
-        
+        */
         
         bulletZero.backgroundColor = variableColor.withAlphaComponent(0.75)
         bulletZero.layer.cornerRadius = .createAspectRatio(value: 4)/2
         bulletZero.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(bulletZero)
         bulletZero.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: .createAspectRatio(value: 18)).isActive = true
-        bulletZero.topAnchor.constraint(equalTo: demoSignalContainer.bottomAnchor, constant: .createAspectRatio(value: 34)).isActive = true
+        bulletZero.topAnchor.constraint(equalTo: stopLossContainer.bottomAnchor, constant: .createAspectRatio(value: 34)).isActive = true
         bulletZero.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 4)).isActive = true
         bulletZero.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 4)).isActive = true
         

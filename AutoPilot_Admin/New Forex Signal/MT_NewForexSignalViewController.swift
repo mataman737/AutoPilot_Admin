@@ -109,7 +109,7 @@ class MT_NewForexSignalViewController: UIViewController {
     var signalTypeOptions: [String] = ["Scalping", "Swing"]
     
     var disclaimerZero = "Please make sure all the fields above are completed before posting a signal. Please note that once you swipe, the signal will be live and a push notification will go out to all users."
-    var disclaimerOne = "BFX Standard takes no responsibility for any losses or gains incurred based on any reliance on the information given. Trading Forex, CFDs or any market carries great risks and can lead to complete loss of funds. Do not trade with any funds that you can’t afford to lose. Trade at your own Risk. (Please refer to Risk Disclosure Statement)"
+    var disclaimerOne = "Enigma Labs LLC takes no responsibility for any losses or gains incurred based on any reliance on the information given. Trading Forex, CFDs or any market carries great risks and can lead to complete loss of funds. Do not trade with any funds that you can’t afford to lose. Trade at your own Risk. (Please refer to Risk Disclosure Statement)"
     
     var isOrderType = true
     var checkmarkOneLottie = LottieAnimationView()

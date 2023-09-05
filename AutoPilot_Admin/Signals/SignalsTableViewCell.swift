@@ -331,7 +331,7 @@ extension SignalsTableViewCell {
         imageGradient.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         imageGradient.layer.cornerRadius = 15
         imageGradient.layer.masksToBounds = true
-        imageGradient.image = UIImage(named: "buttonGradient")
+        imageGradient.image = UIImage(named: "buttonGradientNVU")
         imageGradient.contentMode = .scaleAspectFill
         imageGradient.translatesAutoresizingMaskIntoConstraints = false
         viewImageButton.addSubview(imageGradient)

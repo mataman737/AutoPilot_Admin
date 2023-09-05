@@ -157,8 +157,8 @@ class ConnectViewController: UIViewController {
 extension ConnectViewController {
     @objc func didTapNotiBell() {
         lightImpactGenerator()
-        //let notiBFX = NotificationsViewController()
-        //self.present(notiBFX, animated: true)
+        let newNotiVC = NewNotificationViewController()
+        self.present(newNotiVC, animated: true)
     }
     
     @objc func createNewEvent() {

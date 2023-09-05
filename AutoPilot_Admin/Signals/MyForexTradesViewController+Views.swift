@@ -60,7 +60,7 @@ extension MyForexTradesViewController {
         padlockButton.trailingAnchor.constraint(equalTo: padlockImageView.trailingAnchor, constant: 10).isActive = true
         padlockButton.bottomAnchor.constraint(equalTo: padlockImageView.bottomAnchor, constant: 10).isActive = true
         
-        titleLabel.text = "Einstein"
+        titleLabel.text = "My Trades"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .newBlack
         titleLabel.font = .sofiaProMedium(ofSize: 16)
@@ -81,7 +81,7 @@ extension MyForexTradesViewController {
         //
         
         plusImageView.image = UIImage(named: "plusImg")
-        plusImageView.backgroundColor = .blue
+        //plusImageView.backgroundColor = .blue
         plusImageView.contentMode = .scaleAspectFill
         plusImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(plusImageView)

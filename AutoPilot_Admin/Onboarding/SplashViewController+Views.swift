@@ -128,13 +128,13 @@ extension SplashViewController {
         usernameTextfield.keyboardType = .default
         usernameTextfield.autocorrectionType = .no
         usernameTextfield.textColor = .black
-        usernameTextfield.tintColor = .black
+        usernameTextfield.tintColor = .swBlue
         usernameTextfield.returnKeyType = .next
         usernameTextfield.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
         var namePlaceHolder = NSMutableAttributedString()
         let userName  = "Display Name"
         namePlaceHolder = NSMutableAttributedString(string:userName, attributes: [NSAttributedString.Key.font: UIFont.sofiaProMedium(ofSize: 18)])
-        namePlaceHolder.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range:NSRange(location:0,length:userName.count))
+        namePlaceHolder.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black.withAlphaComponent(0.5), range:NSRange(location:0,length:userName.count))
         usernameTextfield.attributedPlaceholder = namePlaceHolder
         usernameTextfield.translatesAutoresizingMaskIntoConstraints = false
         userNameContainer.addSubview(usernameTextfield)
@@ -237,11 +237,11 @@ extension SplashViewController {
         codeTextField.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87)).isActive = true
         
         transitionView.isHidden = true
-        transitionView.backgroundColor = .black
+        transitionView.alpha = 0
+        transitionView.backgroundColor = .swBlue
         transitionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(transitionView)
         transitionView.fillSuperview()
-        transitionView.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
     }
     

@@ -83,32 +83,14 @@ extension ConnectViewController {
         plusButton.topAnchor.constraint(equalTo: plusImageView.topAnchor, constant: -10).isActive = true
         plusButton.trailingAnchor.constraint(equalTo: plusImageView.trailingAnchor, constant: 10).isActive = true
         plusButton.bottomAnchor.constraint(equalTo: plusImageView.bottomAnchor, constant: 10).isActive = true
-        
-        editRowsImageView.image = UIImage(named: "miniCalendar")
-        editRowsImageView.setImageColor(color: .black)
-        editRowsImageView.contentMode = .scaleAspectFill
-        editRowsImageView.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(editRowsImageView)
-        editRowsImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 17).isActive = true
-        editRowsImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
-        editRowsImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        editRowsImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        
-        //editRowsButton.addTarget(self, action: #selector(didTapWeAreBFX), for: .touchUpInside)
-        editRowsButton.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(editRowsButton)
-        editRowsButton.leadingAnchor.constraint(equalTo: editRowsImageView.leadingAnchor, constant: -10).isActive = true
-        editRowsButton.topAnchor.constraint(equalTo: editRowsImageView.topAnchor, constant: -10).isActive = true
-        editRowsButton.trailingAnchor.constraint(equalTo: editRowsImageView.trailingAnchor, constant: 10).isActive = true
-        editRowsButton.bottomAnchor.constraint(equalTo: editRowsImageView.bottomAnchor, constant: 10).isActive = true
-        
+                        
         bellImageView.image = UIImage(named: "notiBell")
         bellImageView.setImageColor(color: .black)
         bellImageView.contentMode = .scaleAspectFill
         bellImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(bellImageView)
-        bellImageView.leadingAnchor.constraint(equalTo: editRowsImageView.trailingAnchor, constant: 15).isActive = true
-        bellImageView.centerYAnchor.constraint(equalTo: editRowsImageView.centerYAnchor).isActive = true
+        bellImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 17).isActive = true
+        bellImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
         bellImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
         bellImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         
@@ -116,7 +98,7 @@ extension ConnectViewController {
         bellButton.backgroundColor = .clear
         bellButton.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(bellButton)
-        bellButton.leadingAnchor.constraint(equalTo: editRowsButton.trailingAnchor, constant: 0).isActive = true
+        bellButton.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 0).isActive = true
         bellButton.topAnchor.constraint(equalTo: navView.topAnchor, constant: 0).isActive = true
         bellButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
         bellButton.trailingAnchor.constraint(equalTo: bellImageView.trailingAnchor, constant: 20).isActive = true

@@ -84,31 +84,6 @@ extension NewNotificationViewController {
         dismissButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
         dismissButton.trailingAnchor.constraint(equalTo: dismissImageView.trailingAnchor, constant: 20).isActive = true
         
-        pwSubSwitchContainer.backgroundColor = .clear
-        pwSubSwitchContainer.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(pwSubSwitchContainer)
-        pwSubSwitchContainer.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: -21).isActive = true
-        pwSubSwitchContainer.centerYAnchor.constraint(equalTo: pickInterestLabel.centerYAnchor, constant: 0).isActive = true
-        pwSubSwitchContainer.heightAnchor.constraint(equalToConstant: 26).isActive = true
-        pwSubSwitchContainer.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        pwSubSwitch = PWSwitch(frame: CGRect(x: 0, y: 0, width: 50, height: 26))
-        pwSubSwitch.trackOnFillColor = .nvuBlueOne//UIColor(red: 227/255, green: 78/255, blue: 177/255, alpha: 1.0)
-        pwSubSwitch.trackOffFillColor = .white
-        pwSubSwitch.trackOnBorderColor = .nvuBlueOne//UIColor(red: 227/255, green: 78/255, blue: 177/255, alpha: 1.0)
-        pwSubSwitch.thumbOffFillColor = UIColor(red: 171/255, green: 171/255, blue: 171/255, alpha: 1.0)
-        pwSubSwitch.thumbOnFillColor = .white
-        pwSubSwitch.thumbOffBorderColor = UIColor(red: 171/255, green: 171/255, blue: 171/255, alpha: 1.0)
-        pwSubSwitch.thumbOnBorderColor = .white
-        pwSubSwitch.setOn(false, animated: true)
-        pwSubSwitch.addTarget(self, action: #selector(self.subOnSwitchChanged), for: .valueChanged)
-        /*
-        if pwSubSwitch.on {
-            //do something is switch is on
-        }
-        */
-        pwSubSwitchContainer.addSubview(pwSubSwitch)
-        
         mainScrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 1.35)
         mainScrollView.automaticallyAdjustsScrollIndicatorInsets = false
         mainScrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -133,36 +108,36 @@ extension NewNotificationViewController {
         notificationImageView.heightAnchor.constraint(equalToConstant: 73).isActive = true
         notificationImageView.widthAnchor.constraint(equalToConstant: 73).isActive = true
         
-        //Access Code
-        
-        accessContainer.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
-        accessContainer.layer.cornerRadius = 10
-        accessContainer.translatesAutoresizingMaskIntoConstraints = false
-        mainScrollView.addSubview(accessContainer)
-        accessContainer.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor, constant: 21).isActive = true
-        //accessContainer.trailingAnchor.constraint(equalTo: mainScrollView.trailingAnchor, constant: -21).isActive = true
-        accessContainer.topAnchor.constraint(equalTo: notificationImageView.bottomAnchor, constant: 16).isActive = true
-        accessContainer.widthAnchor.constraint(equalToConstant: view.frame.width - 42).isActive = true
-        accessContainer.heightAnchor.constraint(equalToConstant: 62).isActive = true
-        
-        var accessPlaceHolder = NSMutableAttributedString()
-        let accessName  = "Permission Code"
-        accessPlaceHolder = NSMutableAttributedString(string:accessName, attributes: [NSAttributedString.Key.font:UIFont.sofiaProSemiBold(ofSize: 21)])
-        accessPlaceHolder.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1.0), range:NSRange(location:0,length:accessName.count))
-        accessTextField.attributedPlaceholder = accessPlaceHolder
-        accessTextField.autocorrectionType = .no
-        accessTextField.font = .sofiaProBold(ofSize: 21)
-        accessTextField.textColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 1.0)
-        accessTextField.tintColor = .themeBlack
-        accessTextField.returnKeyType = .done
-        accessTextField.delegate = self
-        accessTextField.tag = 5
-        accessTextField.translatesAutoresizingMaskIntoConstraints = false
-        accessContainer.addSubview(accessTextField)
-        accessTextField.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 8).isActive = true
-        accessTextField.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: -8).isActive = true
-        accessTextField.topAnchor.constraint(equalTo: accessContainer.topAnchor, constant: 0).isActive = true
-        accessTextField.bottomAnchor.constraint(equalTo: accessContainer.bottomAnchor, constant: 0).isActive = true
+//        //Access Code
+//
+//        accessContainer.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
+//        accessContainer.layer.cornerRadius = 10
+//        accessContainer.translatesAutoresizingMaskIntoConstraints = false
+//        mainScrollView.addSubview(accessContainer)
+//        accessContainer.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor, constant: 21).isActive = true
+//        //accessContainer.trailingAnchor.constraint(equalTo: mainScrollView.trailingAnchor, constant: -21).isActive = true
+//        accessContainer.topAnchor.constraint(equalTo: notificationImageView.bottomAnchor, constant: 16).isActive = true
+//        accessContainer.widthAnchor.constraint(equalToConstant: view.frame.width - 42).isActive = true
+//        accessContainer.heightAnchor.constraint(equalToConstant: 62).isActive = true
+//
+//        var accessPlaceHolder = NSMutableAttributedString()
+//        let accessName  = "Permission Code"
+//        accessPlaceHolder = NSMutableAttributedString(string:accessName, attributes: [NSAttributedString.Key.font:UIFont.sofiaProSemiBold(ofSize: 21)])
+//        accessPlaceHolder.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1.0), range:NSRange(location:0,length:accessName.count))
+//        accessTextField.attributedPlaceholder = accessPlaceHolder
+//        accessTextField.autocorrectionType = .no
+//        accessTextField.font = .sofiaProBold(ofSize: 21)
+//        accessTextField.textColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 1.0)
+//        accessTextField.tintColor = .themeBlack
+//        accessTextField.returnKeyType = .done
+//        accessTextField.delegate = self
+//        accessTextField.tag = 5
+//        accessTextField.translatesAutoresizingMaskIntoConstraints = false
+//        accessContainer.addSubview(accessTextField)
+//        accessTextField.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 8).isActive = true
+//        accessTextField.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: -8).isActive = true
+//        accessTextField.topAnchor.constraint(equalTo: accessContainer.topAnchor, constant: 0).isActive = true
+//        accessTextField.bottomAnchor.constraint(equalTo: accessContainer.bottomAnchor, constant: 0).isActive = true
         
         //Event Name
         
@@ -170,10 +145,11 @@ extension NewNotificationViewController {
         eventNameContainer.layer.cornerRadius = 10
         eventNameContainer.translatesAutoresizingMaskIntoConstraints = false
         mainScrollView.addSubview(eventNameContainer)
-        eventNameContainer.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 0).isActive = true
-        eventNameContainer.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: 0).isActive = true
-        eventNameContainer.topAnchor.constraint(equalTo: accessContainer.bottomAnchor, constant: 16).isActive = true
-        eventNameContainer.heightAnchor.constraint(equalToConstant: 62).isActive = true
+        eventNameContainer.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor, constant: .createAspectRatio(value: 21)).isActive = true
+        //accessContainer.trailingAnchor.constraint(equalTo: mainScrollView.trailingAnchor, constant: -21).isActive = true
+        eventNameContainer.topAnchor.constraint(equalTo: notificationImageView.bottomAnchor, constant: .createAspectRatio(value: 16)).isActive = true
+        eventNameContainer.widthAnchor.constraint(equalToConstant: view.frame.width - .createAspectRatio(value: 42)).isActive = true
+        eventNameContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 62)).isActive = true
         
         var placeHolder = NSMutableAttributedString()
         let Name  = "Notification Title"
@@ -200,12 +176,12 @@ extension NewNotificationViewController {
         messageContainer.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
         messageContainer.translatesAutoresizingMaskIntoConstraints = false
         mainScrollView.addSubview(messageContainer)
-        messageContainer.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 0).isActive = true
-        messageContainer.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: 0).isActive = true
+        messageContainer.leadingAnchor.constraint(equalTo: eventNameContainer.leadingAnchor, constant: 0).isActive = true
+        messageContainer.trailingAnchor.constraint(equalTo: eventNameContainer.trailingAnchor, constant: 0).isActive = true
         messageContainer.topAnchor.constraint(equalTo: eventNameContainer.bottomAnchor, constant: 16).isActive = true
-        messageContainer.heightAnchor.constraint(equalToConstant: 138).isActive = true
+        messageContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 138)).isActive = true
                 
-        messageTextView.font = .sofiaProBold(ofSize: 21)
+        messageTextView.font = .sofiaProBold(ofSize: .createAspectRatio(value: 21))
         messageTextView.delegate = self
         messageTextView.autocorrectionType = .no
         messageTextView.textColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 1.0)
@@ -219,10 +195,10 @@ extension NewNotificationViewController {
         messageTextView.topAnchor.constraint(equalTo: messageContainer.topAnchor, constant: 11).isActive = true
         messageTextView.bottomAnchor.constraint(equalTo: messageContainer.bottomAnchor, constant: -11).isActive = true
         
-        nextButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 48))
+        nextButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: .createAspectRatio(value: 48)))
         nextButton.setTitle("Confirm", for: .normal)
         nextButton.setTitleColor(.white, for: .normal)
-        nextButton.titleLabel?.font = .sofiaProBold(ofSize: 18)
+        nextButton.titleLabel?.font = .sofiaProBold(ofSize: .createAspectRatio(value: 18))
         if messageEmpty {
             nextButton.backgroundColor = .themeInActive
         } else {
@@ -234,29 +210,29 @@ extension NewNotificationViewController {
         titleLimitLabel.text = "0/\(titleLimit)"
         titleLimitLabel.textAlignment = .right
         titleLimitLabel.textColor = .white
-        titleLimitLabel.font = .sofiaProRegular(ofSize: 14)
+        titleLimitLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
         titleLimitLabel.numberOfLines = 0
         titleLimitLabel.translatesAutoresizingMaskIntoConstraints = false
         nextButton.addSubview(titleLimitLabel)
         titleLimitLabel.centerYAnchor.constraint(equalTo: nextButton.centerYAnchor).isActive = true
-        titleLimitLabel.trailingAnchor.constraint(equalTo: nextButton.trailingAnchor, constant: -16).isActive = true
+        titleLimitLabel.trailingAnchor.constraint(equalTo: nextButton.trailingAnchor, constant: -.createAspectRatio(value: 16)).isActive = true
         
         messageLimitLabel.isHidden = true
         messageLimitLabel.text = "0/\(messageLimit)"
         messageLimitLabel.textAlignment = .right
         messageLimitLabel.textColor = .white
-        messageLimitLabel.font = .sofiaProRegular(ofSize: 14)
+        messageLimitLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
         messageLimitLabel.numberOfLines = 0
         messageLimitLabel.translatesAutoresizingMaskIntoConstraints = false
         nextButton.addSubview(messageLimitLabel)
         messageLimitLabel.centerYAnchor.constraint(equalTo: nextButton.centerYAnchor).isActive = true
-        messageLimitLabel.trailingAnchor.constraint(equalTo: nextButton.trailingAnchor, constant: -16).isActive = true
+        messageLimitLabel.trailingAnchor.constraint(equalTo: nextButton.trailingAnchor, constant: -.createAspectRatio(value: 16)).isActive = true
         
         notificationNameTextField.inputAccessoryView = nextButton
         
         placeHolderLabel.text = "Notification message"
         placeHolderLabel.textAlignment = .left
-        placeHolderLabel.font = .sofiaProBold(ofSize: 21)
+        placeHolderLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 21))
         placeHolderLabel.textColor = UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1.0)
         placeHolderLabel.numberOfLines = 0
         placeHolderLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -266,15 +242,15 @@ extension NewNotificationViewController {
         placeHolderLabel.topAnchor.constraint(equalTo: messageContainer.topAnchor, constant: 19).isActive = true
         
         //URL To Passh
-        
+        /*
         urlToPassContainer.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
         urlToPassContainer.layer.cornerRadius = 10
         urlToPassContainer.translatesAutoresizingMaskIntoConstraints = false
         mainScrollView.addSubview(urlToPassContainer)
-        urlToPassContainer.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 0).isActive = true
-        urlToPassContainer.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: 0).isActive = true
-        urlToPassContainer.topAnchor.constraint(equalTo: messageContainer.bottomAnchor, constant: 16).isActive = true
-        urlToPassContainer.heightAnchor.constraint(equalToConstant: 62).isActive = true
+        urlToPassContainer.leadingAnchor.constraint(equalTo: eventNameContainer.leadingAnchor, constant: 0).isActive = true
+        urlToPassContainer.trailingAnchor.constraint(equalTo: eventNameContainer.trailingAnchor, constant: 0).isActive = true
+        urlToPassContainer.topAnchor.constraint(equalTo: messageContainer.bottomAnchor, constant: .createAspectRatio(value: 16)).isActive = true
+        urlToPassContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 62)).isActive = true
         
         var urlPH = NSMutableAttributedString()
         let urlName  = "URL (optional)"
@@ -291,21 +267,21 @@ extension NewNotificationViewController {
         urlToPassTextField.translatesAutoresizingMaskIntoConstraints = false
         urlToPassContainer.addSubview(urlToPassTextField)
         urlToPassTextField.leadingAnchor.constraint(equalTo: urlToPassContainer.leadingAnchor, constant: 8).isActive = true
-        urlToPassTextField.trailingAnchor.constraint(equalTo: urlToPassContainer.trailingAnchor, constant: -8).isActive = true
+        urlToPassTextField.trailingAnchor.constraint(equalTo: urlToPassContainer.trailingAnchor, constant: -.createAspectRatio(value: 8)).isActive = true
         urlToPassTextField.topAnchor.constraint(equalTo: urlToPassContainer.topAnchor, constant: 0).isActive = true
         urlToPassTextField.bottomAnchor.constraint(equalTo: urlToPassContainer.bottomAnchor, constant: 0).isActive = true
-        
+        */
         //
-        
+        /*
         regionContainer.tag = 0
         regionContainer.addTarget(self, action: #selector(didTapOrderType(sender:)), for: .touchUpInside)
         regionContainer.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
         regionContainer.layer.cornerRadius = 10
         regionContainer.translatesAutoresizingMaskIntoConstraints = false
         mainScrollView.addSubview(regionContainer)
-        regionContainer.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 0).isActive = true
-        regionContainer.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: 0).isActive = true
-        regionContainer.topAnchor.constraint(equalTo: urlToPassContainer.bottomAnchor, constant: 16).isActive = true
+        regionContainer.leadingAnchor.constraint(equalTo: eventNameContainer.leadingAnchor, constant: 0).isActive = true
+        regionContainer.trailingAnchor.constraint(equalTo: eventNameContainer.trailingAnchor, constant: 0).isActive = true
+        regionContainer.topAnchor.constraint(equalTo: messageContainer.bottomAnchor, constant: 16).isActive = true
         regionContainer.heightAnchor.constraint(equalToConstant: 62).isActive = true
         
         regionLabel.text = "Language"
@@ -324,8 +300,8 @@ extension NewNotificationViewController {
         userTypeContainer.layer.cornerRadius = 10
         userTypeContainer.translatesAutoresizingMaskIntoConstraints = false
         mainScrollView.addSubview(userTypeContainer)
-        userTypeContainer.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 0).isActive = true
-        userTypeContainer.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: 0).isActive = true
+        userTypeContainer.leadingAnchor.constraint(equalTo: eventNameContainer.leadingAnchor, constant: 0).isActive = true
+        userTypeContainer.trailingAnchor.constraint(equalTo: eventNameContainer.trailingAnchor, constant: 0).isActive = true
         userTypeContainer.topAnchor.constraint(equalTo: regionContainer.bottomAnchor, constant: 16).isActive = true
         userTypeContainer.heightAnchor.constraint(equalToConstant: 62).isActive = true
         
@@ -338,40 +314,40 @@ extension NewNotificationViewController {
         userTypeContainer.addSubview(userTypeLabel)
         userTypeLabel.leadingAnchor.constraint(equalTo: userTypeContainer.leadingAnchor, constant: 16).isActive = true
         userTypeLabel.centerYAnchor.constraint(equalTo: userTypeContainer.centerYAnchor, constant: 0).isActive = true
-        
+        */
         //
         
-        dateTimeContainer.tag = 2
-        dateTimeContainer.addTarget(self, action: #selector(didTapDateTime), for: .touchUpInside)
-        dateTimeContainer.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
-        dateTimeContainer.layer.cornerRadius = 10
-        dateTimeContainer.translatesAutoresizingMaskIntoConstraints = false
-        mainScrollView.addSubview(dateTimeContainer)
-        dateTimeContainer.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 0).isActive = true
-        dateTimeContainer.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: 0).isActive = true
-        dateTimeContainer.topAnchor.constraint(equalTo: userTypeContainer.bottomAnchor, constant: 16).isActive = true
-        dateTimeContainer.heightAnchor.constraint(equalToConstant: 62).isActive = true
-        
-        dateTimeLabel.text = "Date & Time (optional)"
-        dateTimeLabel.textColor = UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1.0)
-        dateTimeLabel.textAlignment = .left
-        dateTimeLabel.font = .sofiaProBold(ofSize: 21)
-        dateTimeLabel.numberOfLines = 0
-        dateTimeLabel.translatesAutoresizingMaskIntoConstraints = false
-        dateTimeContainer.addSubview(dateTimeLabel)
-        dateTimeLabel.leadingAnchor.constraint(equalTo: dateTimeContainer.leadingAnchor, constant: 16).isActive = true
-        dateTimeLabel.centerYAnchor.constraint(equalTo: dateTimeContainer.centerYAnchor, constant: 0).isActive = true
+//        dateTimeContainer.tag = 2
+//        dateTimeContainer.addTarget(self, action: #selector(didTapDateTime), for: .touchUpInside)
+//        dateTimeContainer.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
+//        dateTimeContainer.layer.cornerRadius = 10
+//        dateTimeContainer.translatesAutoresizingMaskIntoConstraints = false
+//        mainScrollView.addSubview(dateTimeContainer)
+//        dateTimeContainer.leadingAnchor.constraint(equalTo: accessContainer.leadingAnchor, constant: 0).isActive = true
+//        dateTimeContainer.trailingAnchor.constraint(equalTo: accessContainer.trailingAnchor, constant: 0).isActive = true
+//        dateTimeContainer.topAnchor.constraint(equalTo: userTypeContainer.bottomAnchor, constant: 16).isActive = true
+//        dateTimeContainer.heightAnchor.constraint(equalToConstant: 62).isActive = true
+//        
+//        dateTimeLabel.text = "Date & Time (optional)"
+//        dateTimeLabel.textColor = UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1.0)
+//        dateTimeLabel.textAlignment = .left
+//        dateTimeLabel.font = .sofiaProBold(ofSize: 21)
+//        dateTimeLabel.numberOfLines = 0
+//        dateTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+//        dateTimeContainer.addSubview(dateTimeLabel)
+//        dateTimeLabel.leadingAnchor.constraint(equalTo: dateTimeContainer.leadingAnchor, constant: 16).isActive = true
+//        dateTimeLabel.centerYAnchor.constraint(equalTo: dateTimeContainer.centerYAnchor, constant: 0).isActive = true
         
         //
         
         confirmButton.addTarget(self, action: #selector(didTapConfirm), for: .touchUpInside)
         confirmButton.layer.zPosition = 2
         confirmButton.isUserInteractionEnabled = true
-        confirmButton.purpleBG.image = UIImage(named: "buttonGradient")
+        confirmButton.purpleBG.image = UIImage(named: "buttonGradientNVU")
         confirmButton.layer.cornerRadius = 63/2
         confirmButton.layer.masksToBounds = true
         //nextButton.purpleBG.backgroundColor = .themePurple
-        confirmButton.continueLabel.text = "Let's go!"
+        confirmButton.continueLabel.text = "Send Notification"
         confirmButton.confirmLabel.text = "Please wait for video to finish"
         confirmButton.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(confirmButton)
