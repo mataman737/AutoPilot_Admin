@@ -76,7 +76,7 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>App would like to access your photos so you can send push notifications</string>
+	<string>App would like to access your camera so you can send push notifications</string>
 	<key>AWS</key>
 	<dict>
 		<key>CredentialsProvider</key>
@@ -103,5 +103,7 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App would like to access your photos so you can send push notifications</string>
 </dict>
 </plist>

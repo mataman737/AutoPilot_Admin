@@ -13,6 +13,10 @@
 		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
 		DE4D57812AA6B715008E2B6B /* gradientCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = DE4D57802AA6B715008E2B6B /* gradientCheck.json */; };
 		DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */ = {isa = PBXBuildFile; fileRef = DE4D57822AA6B818008E2B6B /* blueArrows.json */; };
+		DE4D57862AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57852AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift */; };
+		DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57872AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift */; };
+		DE4D578B2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D578A2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift */; };
+		DE4D578D2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D578C2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift */; };
 		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
 		DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */; };
 		DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */; };
@@ -70,6 +74,10 @@
 		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
 		DE4D57802AA6B715008E2B6B /* gradientCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gradientCheck.json; sourceTree = "<group>"; };
 		DE4D57822AA6B818008E2B6B /* blueArrows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blueArrows.json; sourceTree = "<group>"; };
+		DE4D57852AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyOpenOrderViewController.swift; sourceTree = "<group>"; };
+		DE4D57872AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifyOpenOrderViewController+Views.swift"; sourceTree = "<group>"; };
+		DE4D578A2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPendingOrderViewController.swift; sourceTree = "<group>"; };
+		DE4D578C2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifyPendingOrderViewController+Views.swift"; sourceTree = "<group>"; };
 		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTwoViewController.swift; sourceTree = "<group>"; };
 		DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashTwoViewController+Views.swift"; sourceTree = "<group>"; };
@@ -168,6 +176,24 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		DE4D57842AA6DE1D008E2B6B /* Modify Open Order */ = {
+			isa = PBXGroup;
+			children = (
+				DE4D57852AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift */,
+				DE4D57872AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift */,
+			);
+			path = "Modify Open Order";
+			sourceTree = "<group>";
+		};
+		DE4D57892AA6E0CA008E2B6B /* Modify Pending Order */ = {
+			isa = PBXGroup;
+			children = (
+				DE4D578A2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift */,
+				DE4D578C2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift */,
+			);
+			path = "Modify Pending Order";
+			sourceTree = "<group>";
+		};
 		DE6643A12AA56D1200DA27BE /* Media */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +245,8 @@
 				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
 				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DE4D57892AA6E0CA008E2B6B /* Modify Pending Order */,
+				DE4D57842AA6DE1D008E2B6B /* Modify Open Order */,
 				DE6E43FA2A9D9D1000C76B71 /* New Notification */,
 				DE0E20412A9BE8F30067C719 /* Connect */,
 				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
@@ -449,6 +477,7 @@
 				DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */,
 				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
 				DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */,
+				DE4D57862AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift in Sources */,
 				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
@@ -461,12 +490,15 @@
 				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
+				DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
 				DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
+				DE4D578D2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift in Sources */,
+				DE4D578B2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
 				DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */,
 				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,

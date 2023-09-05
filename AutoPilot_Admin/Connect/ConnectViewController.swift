@@ -183,13 +183,13 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: connectChannelTableViewCell, for: indexPath) as! ConnectChannelTableViewCell
         //New
-        //cell.circleImageView.image = UIImage(named: "gradient\(indexPath.row)")
+        cell.circleImageView.image = UIImage(named: "enigmaCommunity")
         
 //        if let url = URL(string: superGroupCIDs[indexPath.row][2]) {
             //cell.circleImageView.kf.setImage(with: url)
 //        }
         
-        cell.chatNameLabel.text = "Main Super Group"//superGroupCIDs[indexPath.row][0]
+        cell.chatNameLabel.text = "Community"//superGroupCIDs[indexPath.row][0]
         cell.chatDescriptionLabel.text = "0 new messages"
         cell.newMessageBubble.alpha = 0
         return cell
