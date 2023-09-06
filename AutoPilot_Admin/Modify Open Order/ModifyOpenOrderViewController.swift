@@ -74,7 +74,7 @@ class ModifyOpenOrderViewController: UIViewController {
     var tpOptions: [String] = ["1.655", "1.755", "1.855"]
     
     var disclaimerZero = "Signals, Ideas, Insight, or Analysis is sent out strictly as Education, Information and is for entertainment purposes only, and does not constitute investment advice and you should not receive it as such. You must execute, approve and manage all trades. Any past performance shown and given is not indicative of future profits or results."
-    var disclaimerOne = "NVISIONU™ takes no responsibility for any losses or gains incurred based on any reliance on the information given. Trading Forex, CFDs or any market carries great risks and can lead to complete loss of funds. Do not trade with any funds that you can’t afford to lose. Trade at your own Risk. (Please refer to Risk Disclosure Statement)"
+    var disclaimerOne = "Enigma Labs LLC takes no responsibility for any losses or gains incurred based on any reliance on the information given. Trading Forex, CFDs or any market carries great risks and can lead to complete loss of funds. Do not trade with any funds that you can’t afford to lose. Trade at your own Risk. (Please refer to Risk Disclosure Statement)"
     
     var isOrderType = true
     var checkmarkOneLottie = LottieAnimationView()

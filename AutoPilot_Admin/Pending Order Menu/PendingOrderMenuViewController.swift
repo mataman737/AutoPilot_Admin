@@ -1,5 +1,5 @@
 //
-//  PendingTradeMenuViewController.swift
+//  PendingOrderMenuViewController.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 9/6/23.
@@ -8,13 +8,13 @@
 import UIKit
 import Lottie
 
-protocol PendingTradeMenuViewControllerDelegate: AnyObject {
+protocol PendingOrderMenuViewControllerDelegate: AnyObject {
     //func didTapModifyPendingTrade(signal: MTInstantTradeStatus)
     //func didTapClosePendingTrade(signal: MTInstantTradeStatus)
     //func didSubscribeUnsubscibePending(signal: MTInstantTradeStatus)
 }
 
-class PendingTradeMenuViewController: UIViewController {
+class PendingOrderMenuViewController: UIViewController {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -70,7 +70,7 @@ class PendingTradeMenuViewController: UIViewController {
     var leadName: String = ""
     var isCrypto = false
             
-    weak var delegate: PendingTradeMenuViewControllerDelegate?
+    weak var delegate: PendingOrderMenuViewControllerDelegate?
     var entryPriceLock = UIImageView()
     
     var textColor: UIColor = UIColor.white
@@ -88,7 +88,7 @@ class PendingTradeMenuViewController: UIViewController {
 
 //MARK: ACTIONS
 
-extension PendingTradeMenuViewController {
+extension PendingOrderMenuViewController {
     @objc func animateViewsIn() {
         UIView.animate(withDuration: 0.35) {
             self.opacityLayer.alpha = 0.75
@@ -158,7 +158,7 @@ extension PendingTradeMenuViewController {
 
 //MARK: SCROLLVIEW DELEGATE
 
-extension PendingTradeMenuViewController: UIScrollViewDelegate {
+extension PendingOrderMenuViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.tag == 1 {
             let yOffset = scrollView.contentOffset.y// + 44

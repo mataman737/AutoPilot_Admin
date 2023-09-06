@@ -59,7 +59,7 @@ extension ModifyOpenOrderViewController {
         contentContainer.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         contentContainer.heightAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         
-        dismissImageView.image = UIImage(named: isNVUDemo.bool(forKey: "isNVUDemo") ? "gradXNVU" : "gradX")
+        dismissImageView.image = UIImage(named: "gradXNVU")
         dismissImageView.contentMode = .scaleAspectFill
         dismissImageView.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(dismissImageView)
@@ -77,7 +77,7 @@ extension ModifyOpenOrderViewController {
         dismissButton.bottomAnchor.constraint(equalTo: dismissImageView.bottomAnchor, constant: 15).isActive = true
         
         downArrowImageView.isHidden = true
-        downArrowImageView.image = UIImage(named: isNVUDemo.bool(forKey: "isNVUDemo") ? "downGradientNVU" : "downGradient")
+        downArrowImageView.image = UIImage(named: "downGradientNVU")
         downArrowImageView.contentMode = .scaleAspectFill
         downArrowImageView.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(downArrowImageView)
@@ -145,7 +145,7 @@ extension ModifyOpenOrderViewController {
         
         //takeProfitUSDLabel.isHidden = true
         
-        takeProfitArrowImageView.image = UIImage(named: isNVUDemo.bool(forKey: "isNVUDemo") ? "downGradientNVU" : "downGradient")
+        takeProfitArrowImageView.image = UIImage(named: "downGradientNVU")
         takeProfitArrowImageView.contentMode = .scaleAspectFill
         takeProfitArrowImageView.translatesAutoresizingMaskIntoConstraints = false
         takeProfitContainer.addSubview(takeProfitArrowImageView)
@@ -272,7 +272,7 @@ extension ModifyOpenOrderViewController {
         
         //
         
-        let checkAnimation = LottieAnimation.named(isNVUDemo.bool(forKey: "isNVUDemo") ? "gradientCheckNVU" : "gradientCheck")
+        let checkAnimation = LottieAnimation.named("gradientCheckNVU")
         checkmarkOneLottie.isUserInteractionEnabled = false
         checkmarkOneLottie.alpha = 0
         checkmarkOneLottie.animation = checkAnimation

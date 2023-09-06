@@ -2,50 +2,46 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationSceneManifest</key>
+	<key>AWS</key>
 	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
+		<key>CredentialsProvider</key>
 		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
+			<key>CognitoIdentity</key>
+			<dict>
+				<key>Default</key>
 				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<key>PoolId</key>
+					<string>eu-west-3:36cade19-723b-42aa-a0af-94d0ba400137</string>
+					<key>Region</key>
+					<string>EUWest3</string>
 				</dict>
-			</array>
+			</dict>
 		</dict>
-		<key>UIApplicationSupportsTabbedSceneCollection</key>
-		<false/>
+		<key>S3</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Bucket</key>
+				<string>autotrader-bucket</string>
+				<key>Region</key>
+				<string>EUWest3</string>
+			</dict>
+		</dict>
 	</dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Sofia Pro Bold Az.otf</string>
-		<string>Sofia Pro Regular Az.otf</string>
-		<string>Sofia Pro Medium Az.otf</string>
-		<string>Sofia Pro Semi Bold Az.otf</string>
-		<string>sofiapro-light.otf</string>
-		<string>Nexa Bold.otf</string>
-	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>afd0806fd43fa970f.awsglobalaccelerator.com</key>
+			<key>a6dd70dff783de9cf.awsglobalaccelerator.com</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
-			<key>a6dd70dff783de9cf.awsglobalaccelerator.com</key>
+			<key>afd0806fd43fa970f.awsglobalaccelerator.com</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
@@ -75,35 +71,35 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>App would like to access your camera so you can send push notifications</string>
-	<key>AWS</key>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Sofia Pro Bold Az.otf</string>
+		<string>Sofia Pro Regular Az.otf</string>
+		<string>Sofia Pro Medium Az.otf</string>
+		<string>Sofia Pro Semi Bold Az.otf</string>
+		<string>sofiapro-light.otf</string>
+		<string>Nexa Bold.otf</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
 	<dict>
-		<key>CredentialsProvider</key>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UIApplicationSupportsTabbedSceneCollection</key>
+		<false/>
+		<key>UISceneConfigurations</key>
 		<dict>
-			<key>CognitoIdentity</key>
-			<dict>
-				<key>Default</key>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
 				<dict>
-					<key>PoolId</key>
-					<string>eu-west-3:36cade19-723b-42aa-a0af-94d0ba400137</string>
-					<key>Region</key>
-					<string>EUWest3</string>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
 				</dict>
-			</dict>
-		</dict>
-		<key>S3</key>
-		<dict>
-			<key>Default</key>
-			<dict>
-				<key>Bucket</key>
-				<string>autotrader-bucket</string>
-				<key>Region</key>
-				<string>EUWest3</string>
-			</dict>
+			</array>
 		</dict>
 	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App would like to access your photos so you can send push notifications</string>
 </dict>
 </plist>

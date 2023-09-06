@@ -337,7 +337,7 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
             
             //----- Show Open Trade Menu -----//
             
-            let signalOptionsVC = OpenTradeMenuViewController()
+            let signalOptionsVC = OpenOrderMenuViewController() //ModifyOpenOrderViewController()
             /*
             var signal: MTInstantTradeStatus
             signal = allPositions[indexPath.row]
@@ -351,7 +351,7 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
             
             //----- Show Pending Trade Menu -----//
             
-            let signalOptionsVC = PendingTradeMenuViewController()
+            let signalOptionsVC = PendingOrderMenuViewController() //ModifyPendingOrderViewController()
             /*
             var signal: MTInstantTradeStatus
             signal = allOrders[indexPath.row]

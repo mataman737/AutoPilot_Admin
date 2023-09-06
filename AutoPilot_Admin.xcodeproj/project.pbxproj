@@ -30,11 +30,11 @@
 		DE4D57A42AA82B11008E2B6B /* UpgradeAccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57A32AA82B11008E2B6B /* UpgradeAccountButton.swift */; };
 		DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57A62AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift */; };
 		DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57A82AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift */; };
-		DE4D57AC2AA9051A008E2B6B /* OpenTradeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57AB2AA9051A008E2B6B /* OpenTradeMenuViewController.swift */; };
-		DE4D57AE2AA90522008E2B6B /* OpenTradeMenuViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57AD2AA90522008E2B6B /* OpenTradeMenuViewController+Views.swift */; };
+		DE4D57AC2AA9051A008E2B6B /* OpenOrderMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57AB2AA9051A008E2B6B /* OpenOrderMenuViewController.swift */; };
+		DE4D57AE2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57AD2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift */; };
 		DE4D57B02AA905EB008E2B6B /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57AF2AA905EB008E2B6B /* OptionsView.swift */; };
-		DE4D57B32AA9086E008E2B6B /* PendingTradeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B22AA9086E008E2B6B /* PendingTradeMenuViewController.swift */; };
-		DE4D57B52AA9087B008E2B6B /* PendingTradeMenuViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B42AA9087B008E2B6B /* PendingTradeMenuViewController+Views.swift */; };
+		DE4D57B32AA9086E008E2B6B /* PendingOrderMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B22AA9086E008E2B6B /* PendingOrderMenuViewController.swift */; };
+		DE4D57B52AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */; };
 		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
 		DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */; };
 		DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */; };
@@ -109,11 +109,11 @@
 		DE4D57A32AA82B11008E2B6B /* UpgradeAccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeAccountButton.swift; sourceTree = "<group>"; };
 		DE4D57A62AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrdersTableViewCell.swift; sourceTree = "<group>"; };
 		DE4D57A82AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedOrderTableViewCell.swift; sourceTree = "<group>"; };
-		DE4D57AB2AA9051A008E2B6B /* OpenTradeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTradeMenuViewController.swift; sourceTree = "<group>"; };
-		DE4D57AD2AA90522008E2B6B /* OpenTradeMenuViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenTradeMenuViewController+Views.swift"; sourceTree = "<group>"; };
+		DE4D57AB2AA9051A008E2B6B /* OpenOrderMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrderMenuViewController.swift; sourceTree = "<group>"; };
+		DE4D57AD2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenOrderMenuViewController+Views.swift"; sourceTree = "<group>"; };
 		DE4D57AF2AA905EB008E2B6B /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
-		DE4D57B22AA9086E008E2B6B /* PendingTradeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTradeMenuViewController.swift; sourceTree = "<group>"; };
-		DE4D57B42AA9087B008E2B6B /* PendingTradeMenuViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PendingTradeMenuViewController+Views.swift"; sourceTree = "<group>"; };
+		DE4D57B22AA9086E008E2B6B /* PendingOrderMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOrderMenuViewController.swift; sourceTree = "<group>"; };
+		DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PendingOrderMenuViewController+Views.swift"; sourceTree = "<group>"; };
 		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTwoViewController.swift; sourceTree = "<group>"; };
 		DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashTwoViewController+Views.swift"; sourceTree = "<group>"; };
@@ -260,20 +260,20 @@
 		DE4D57AA2AA90503008E2B6B /* Open Trade Menu */ = {
 			isa = PBXGroup;
 			children = (
-				DE4D57AB2AA9051A008E2B6B /* OpenTradeMenuViewController.swift */,
-				DE4D57AD2AA90522008E2B6B /* OpenTradeMenuViewController+Views.swift */,
+				DE4D57AB2AA9051A008E2B6B /* OpenOrderMenuViewController.swift */,
+				DE4D57AD2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift */,
 				DE4D57AF2AA905EB008E2B6B /* OptionsView.swift */,
 			);
 			path = "Open Trade Menu";
 			sourceTree = "<group>";
 		};
-		DE4D57B12AA90829008E2B6B /* Pending Trade Menu */ = {
+		DE4D57B12AA90829008E2B6B /* Pending Order Menu */ = {
 			isa = PBXGroup;
 			children = (
-				DE4D57B22AA9086E008E2B6B /* PendingTradeMenuViewController.swift */,
-				DE4D57B42AA9087B008E2B6B /* PendingTradeMenuViewController+Views.swift */,
+				DE4D57B22AA9086E008E2B6B /* PendingOrderMenuViewController.swift */,
+				DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */,
 			);
-			path = "Pending Trade Menu";
+			path = "Pending Order Menu";
 			sourceTree = "<group>";
 		};
 		DE6643A12AA56D1200DA27BE /* Media */ = {
@@ -327,7 +327,7 @@
 				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
 				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
-				DE4D57B12AA90829008E2B6B /* Pending Trade Menu */,
+				DE4D57B12AA90829008E2B6B /* Pending Order Menu */,
 				DE4D57AA2AA90503008E2B6B /* Open Trade Menu */,
 				DE4D57A52AA8C780008E2B6B /* Orders Cell */,
 				DE4D578E2AA77A3D008E2B6B /* Settings */,
@@ -567,7 +567,7 @@
 				DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */,
 				DE4D57862AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift in Sources */,
 				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
-				DE4D57B52AA9087B008E2B6B /* PendingTradeMenuViewController+Views.swift in Sources */,
+				DE4D57B52AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
@@ -576,7 +576,7 @@
 				DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */,
 				DE4D57A02AA8291F008E2B6B /* MyProfileLinkViewController.swift in Sources */,
 				DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */,
-				DE4D57AE2AA90522008E2B6B /* OpenTradeMenuViewController+Views.swift in Sources */,
+				DE4D57AE2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift in Sources */,
 				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
 				DE4D57922AA77A4B008E2B6B /* SettingsViewController+Views.swift in Sources */,
 				DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */,
@@ -593,9 +593,9 @@
 				DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
-				DE4D57B32AA9086E008E2B6B /* PendingTradeMenuViewController.swift in Sources */,
+				DE4D57B32AA9086E008E2B6B /* PendingOrderMenuViewController.swift in Sources */,
 				DE4D578D2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift in Sources */,
-				DE4D57AC2AA9051A008E2B6B /* OpenTradeMenuViewController.swift in Sources */,
+				DE4D57AC2AA9051A008E2B6B /* OpenOrderMenuViewController.swift in Sources */,
 				DE4D579E2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift in Sources */,
 				DE4D578B2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
@@ -772,11 +772,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoPilot_Admin/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Admin;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App would like to access your camera so you can send push notifications";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App would like to access your photos so you can send push notifications";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -802,11 +804,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoPilot_Admin/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Admin;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App would like to access your camera so you can send push notifications";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App would like to access your photos so you can send push notifications";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

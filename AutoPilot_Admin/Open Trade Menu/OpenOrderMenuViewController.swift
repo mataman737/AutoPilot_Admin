@@ -1,5 +1,5 @@
 //
-//  OpenTradeMenuViewController.swift
+//  OpenOrderMenuViewController.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 9/6/23.
@@ -8,13 +8,13 @@
 import UIKit
 import Lottie
 
-protocol OpenTradeMenuViewControllerDelegate: AnyObject {
+protocol OpenOrderMenuViewControllerDelegate: AnyObject {
     //func didTapModifyTrade(signal: MTInstantTradeStatus)
     //func didTapCloseTrade(signal: MTInstantTradeStatus)
     //func didSubscribeUnsubscibe(signal: MTInstantTradeStatus)
 }
 
-class OpenTradeMenuViewController: UIViewController {
+class OpenOrderMenuViewController: UIViewController {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -72,7 +72,7 @@ class OpenTradeMenuViewController: UIViewController {
     var leadName: String = ""
     var isCrypto = false
             
-    weak var delegate: OpenTradeMenuViewControllerDelegate?
+    weak var delegate: OpenOrderMenuViewControllerDelegate?
     var entryPriceLock = UIImageView()
     
     var textColor: UIColor = UIColor.white
@@ -90,7 +90,7 @@ class OpenTradeMenuViewController: UIViewController {
 
 //MARK: ACTIONS
 
-extension OpenTradeMenuViewController {
+extension OpenOrderMenuViewController {
     @objc func animateViewsIn() {
         UIView.animate(withDuration: 0.35) {
             self.opacityLayer.alpha = 0.75
@@ -160,7 +160,7 @@ extension OpenTradeMenuViewController {
 
 //MARK: SCROLLVIEW DELEGATE
 
-extension OpenTradeMenuViewController: UIScrollViewDelegate {
+extension OpenOrderMenuViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.tag == 1 {
             let yOffset = scrollView.contentOffset.y// + 44
