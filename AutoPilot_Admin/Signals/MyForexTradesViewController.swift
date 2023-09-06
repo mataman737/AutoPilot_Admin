@@ -333,7 +333,36 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         lightImpactGenerator()
         
-        
+        if indexPath.section == 0 {
+            
+            //----- Show Open Trade Menu -----//
+            
+            let signalOptionsVC = OpenTradeMenuViewController()
+            /*
+            var signal: MTInstantTradeStatus
+            signal = allPositions[indexPath.row]
+            signalOptionsVC?.forexSignal = signal
+            signalOptionsVC?.delegate = self
+            signalOptionsVC?.navTitleLabel.text = signal.order?.symbol
+            */
+            signalOptionsVC.modalPresentationStyle = .overFullScreen
+            self.present(signalOptionsVC, animated: false)
+        } else {
+            
+            //----- Show Pending Trade Menu -----//
+            
+            let signalOptionsVC = PendingTradeMenuViewController()
+            /*
+            var signal: MTInstantTradeStatus
+            signal = allOrders[indexPath.row]
+            signalOptionsVC.forexSignal = signal
+            signalOptionsVC.delegate = self
+            signalOptionsVC.navTitleLabel.text = signal.order?.symbol
+            */
+            signalOptionsVC.modalPresentationStyle = .overFullScreen
+            self.present(signalOptionsVC, animated: false)
+        }
+                
     }
 }
 
