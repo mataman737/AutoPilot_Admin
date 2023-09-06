@@ -189,7 +189,7 @@ extension MT_NewForexSignalViewController {
         //TAKE PROFIT TWO
         
         createContainer(containerView: takeProfitTwoContainer, sectionTitleLabel: takeProfitTwoTitleLabel, isFirst: false)
-        takeProfitTwoTitleLabel.text = "Take Profit 2"
+        takeProfitTwoTitleLabel.text = "Take Profit 2 (Optional)"
         takeProfitTwoContainer.topAnchor.constraint(equalTo: takeProfitContainer.bottomAnchor, constant: 0).isActive = true
         takeProfitTwoTextField.placeholder = "0.0"
         setupTextField(txtField: takeProfitTwoTextField, pinView: takeProfitTwoContainer, theText: "")
@@ -198,7 +198,7 @@ extension MT_NewForexSignalViewController {
         //TAKE PROFIT THREE
         
         createContainer(containerView: takeProfitThreeContainer, sectionTitleLabel: takeProfitThreeTitleLabel, isFirst: false)
-        takeProfitThreeTitleLabel.text = "Take Profit 3"
+        takeProfitThreeTitleLabel.text = "Take Profit 3 (Optional)"
         takeProfitThreeContainer.topAnchor.constraint(equalTo: takeProfitTwoContainer.bottomAnchor, constant: 0).isActive = true
         takeProfitThreeTextField.placeholder = "0.0"
         setupTextField(txtField: takeProfitThreeTextField, pinView: takeProfitThreeContainer, theText: "")
@@ -311,7 +311,7 @@ extension MT_NewForexSignalViewController {
         //
         
         swipeView.delegate = self
-        swipeView.swipeLabel.text = "Post Signal"
+        swipeView.swipeLabel.text = "Post Trade"
         swipeView.backgroundColor = .clear
         swipeView.layer.cornerRadius = .createAspectRatio(value: 56)/2
         swipeView.translatesAutoresizingMaskIntoConstraints = false

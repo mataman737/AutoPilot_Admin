@@ -43,7 +43,7 @@ extension MyProfileLinkViewController {
         cardHeight.isActive = true
         cardContainer.transform = CGAffineTransform(translationX: 0, y: .createAspectRatio(value: 385))
                 
-        titleLabel.text = "Share Your Site"
+        //titleLabel.text = "Share Your Site"
         titleLabel.textAlignment = .center
         titleLabel.textColor = textColor
         titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
@@ -102,7 +102,7 @@ extension MyProfileLinkViewController {
 //        settingsButton.leadingAnchor.constraint(equalTo: settingsImageView.leadingAnchor, constant: -10).isActive = true
 //        settingsButton.bottomAnchor.constraint(equalTo: settingsImageView.bottomAnchor, constant: 10).isActive = true
         
-        
+        /*
         if isNVUDemo.bool(forKey: "isNVUDemo") {
             pwSubSwitchContainer.isHidden = true
         }
@@ -130,6 +130,7 @@ extension MyProfileLinkViewController {
             //do something is switch is on
         }
         pwSubSwitchContainer.addSubview(pwSubSwitch)
+        */
         
         /*
         copyButton.backgroundColor = .clear

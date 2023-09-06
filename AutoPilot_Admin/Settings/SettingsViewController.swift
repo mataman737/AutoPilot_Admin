@@ -454,7 +454,15 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         //self.navigationController?.pushViewController(personalInfoVC, animated: true)
     }
     
-    @objc func didTapLink() {
+    @objc func didTapMyTeamAppLink() {
+        let profileLinkVC = MyProfileLinkViewController()
+        profileLinkVC.titleLabel.text = "My Team App Link"
+        profileLinkVC.webAlias = "App_Link"
+        profileLinkVC.modalPresentationStyle = .overFullScreen
+        self.present(profileLinkVC, animated: false, completion: nil)
+    }
+    
+    @objc func didTapMyTeamWebLink() {
         lightImpactGenerator()
         
         /*
@@ -462,18 +470,12 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         toastNoti.present(withMessage: "Coming soon")
         */
         
+        
         let profileLinkVC = MyProfileLinkViewController()
-        profileLinkVC.webAlias = "holachola"
+        profileLinkVC.titleLabel.text = "My Team Web Link"
+        profileLinkVC.webAlias = "Web_Link"
         profileLinkVC.modalPresentationStyle = .overFullScreen
         self.present(profileLinkVC, animated: false, completion: nil)
-        
-        
-        /*
-        let urlString = "https://qrco.de/be0IjS"
-        let items = [URL(string: urlString)]
-        let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
-        self.present(ac, animated: true)
-        */
     }
     
     @objc func didTapLanguage() {
@@ -747,9 +749,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
-                didTapLanguage()
+                didTapMyTeamAppLink()
             case 1:
-                didTapLink()
+                didTapMyTeamWebLink()
             case 2:
                 didTapMyOrders()
             //case 3:
