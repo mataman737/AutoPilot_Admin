@@ -35,6 +35,9 @@ class MyForexTradesViewController: UIViewController {
     var signalsTableViewCell = "signalsTableViewCell"
     var noSignalsTableViewCell = "noSignalsTableViewCell"
     
+    var openOrdersTableViewCell = "openOrdersTableViewCell"
+    var closedOrderTableViewCell = "closedOrderTableViewCell"
+    
     var messagesEmptyState = EmptyStateView()
     
     var plusImageView = UIImageView()
@@ -49,17 +52,6 @@ class MyForexTradesViewController: UIViewController {
     var allRemainingSignals = [Signal]()
     var sixMonthCount = [Signal]()
     var sixMonthSignalCount = 0
-        
-    var thisWeeksMondayDate = Date()
-    var thisWeeksSundayDate = Date()
-    
-    var currentWeekSaturday = Date()
-    var currentWeekLastSaturday = Date()
-    
-    var lastWeekSaturday = Date()
-    var lastLastWeekLastSaturday = Date()
-    
-    //var tradingPairs: [String] = ["AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "CADCHF", "CADJPY", "CHFJPY", "EURAUD", "EURCAD", "EURCHF", "EURGBP", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "SGDJPY", "USDCAD", "USDCHF", "USDCNH", "USDHKD", "USDJPY", "USDMXN", "USDZAR", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDSGD", "USDTRY", "USDZAR", "US100", "US30", "US500", "SPX500", "NAS100", "WTI", "XAGUSD", "XAUUSD", "XPTUSD", "XPDUSD", "BTCUSD", "ETHUSD", "GER30"]
     
     let tradingPairs = ["ADAUSD", "ALUMINIUM", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AUS200.spot", "AVEUSD", "BCHUSD", "BNBUSD", "BRAIND", "BRENT", "BRENT.spot", "BSVUSD", "BTCEUR", "BTCUSD", "BUND", "CADCHF", "CADJPY", "CHFJPY", "CHNIND", "CHNIND.spot", "COCOA", "COFFEE", "COPPER", "CORN", "COTTON", "DOGUSD", "DOTUSD", "DSHUSD", "EOSUSD", "ETHBTC", "ETHUSD", "EU50", "EU50.spot", "EURAUD", "EURCAD", "EURCHF", "EURCZK", "EURGBP", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "FRA40", "FRA40.spot", "GAUTRY", "GAUUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "GER30", "GER30.spot", "HKIND", "HKIND.spot", "IND50", "ITA40", "ITA40.spot", "JAP225", "JAP225.spot", "KOSP200", "LNKUSD", "LTCUSD", "MEXIND", "NGAS", "NGAS.spot", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "RUS50", "SA40", "SCHATZ", "SGDJPY", "SOYBEAN", "SPA35", "SPA35.spot", "SUGAR", "SUI20", "THTUSD", "TNOTE", "TRXUSD", "UK100", "UK100.spot", "UNIUSD", "US100", "US100.spot", "US2000", "US30", "US30.spot", "US500", "US500.spot", "USCUSD", "USDBIT", "USDCAD", "USDCHF", "USDCZK", "USDHKD", "USDHUF", "USDIDX", "USDINR", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDTRY", "USDZAR", "VETUSD", "VIX", "W20", "WHEAT", "WTI", "WTI.spot", "XAGUSD", "XAUEUR", "XAUTRY", "XAUUSD", "XEMUSD", "XLMUSD", "XMRUSD", "XPDUSD", "XPTUSD", "XRPEUR", "XRPUSD", "XTZUSD", "ZINC"]
     
@@ -270,181 +262,48 @@ extension MyForexTradesViewController {
 
 extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-        //return 1
+        return 2
+        
+        //Uncomment this after Dylan brings in live data
+        /*
+        if allPositions.count < 1 && allOrders.count < 1 {
+            activeEmptyState.showViews()
+            return 0
+        } else {
+            activeEmptyState.hidViews()
+            return 2
+        }
+        */
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            if weekZeroSignals.count > 0 {
-                return weekZeroSignals.count
-            } else {
-                return 1
-            }
-        case 1:
-            if weekOneSignals.count > 0 {
-                return weekOneSignals.count
-            } else {
-                return 1
-            }
-        case 2:
-            if weekTwoSignals.count > 0 {
-                return weekTwoSignals.count
-            } else {
-                return 1
-            }
-        default:
-            if allRemainingSignals.count > 0 {
-                return allRemainingSignals.count
-            } else {
-                return 1
-            }
-        }
+        return 1
         //return forexes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.section {
-        case 0:
-            
-            if weekZeroSignals.count > 0 {
-                signals = weekZeroSignals
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: noSignalsTableViewCell, for: indexPath) as! NoSignalsTableViewCell
-                return cell
-            }
-                        
-        case 1:
-            //signal = weekOneSignals[indexPath.row]
-            
-            if weekOneSignals.count > 0 {
-                //signal = weekOneSignals[indexPath.row]
-                signals = weekOneSignals
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: noSignalsTableViewCell, for: indexPath) as! NoSignalsTableViewCell
-                return cell
-            }
-            
-        case 2:
-            //signal = weekTwoSignals[indexPath.row]
-            
-            if weekTwoSignals.count > 0 {
-                //signal = weekTwoSignals[indexPath.row]
-                signals = weekTwoSignals
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: noSignalsTableViewCell, for: indexPath) as! NoSignalsTableViewCell
-                return cell
-            }
-            
-        default:
-            //signal = allRemainingSignals[indexPath.row]
-            
-            if allRemainingSignals.count > 0 {
-                //signal = allRemainingSignals[indexPath.row]
-                signals = allRemainingSignals
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: noSignalsTableViewCell, for: indexPath) as! NoSignalsTableViewCell
-                return cell
-            }
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: openOrdersTableViewCell, for: indexPath) as! OpenOrdersTableViewCell
         
-        var signal = signals[indexPath.row]//signals[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: signalsTableViewCell, for: indexPath) as! SignalsTableViewCell
-                                        
-        cell.currencyPairLabel.text = signal.asset
-        cell.signal = signal
-                        
-        cell.orderTypeLabel.text = signal.orderType
-        if let signalEntry = signal.entryPrice {
-            cell.entryPriceLabel.text = "\(signalEntry)"
-        }
-        
-        if let signalTP1 = signal.takeProfit1 {
-            if signalTP1 == "" {
-                cell.tpOnePriceLabel.text = "-"
-            } else {
-                cell.tpOnePriceLabel.text = "\(signalTP1)"
-            }
+        if indexPath.section == 0 {
+            setupActivePositions(cell: cell, indexPath: indexPath)
         } else {
-            cell.tpOnePriceLabel.text = "-"
-        }
-        
-        if let signalTP2 = signal.takeProfit2 {
-            if signalTP2 == "" {
-                cell.tpTwoPriceLabel.text = "-"
-            } else {
-                cell.tpTwoPriceLabel.text = "\(signalTP2)"
-            }
-        } else {
-            cell.tpTwoPriceLabel.text = "-"
-        }
-        
-        
-        if let signalTP3 = signal.takeProfit3 {
-            if signalTP3 == "" {
-                cell.tpThreePriceLabel.text = "-"
-            } else {
-                cell.tpThreePriceLabel.text = "\(signalTP3)"
-            }
-        } else {
-            cell.tpThreePriceLabel.text = "-"
-        }
-        
-        if let signalStop = signal.stopLoss {
-            cell.stopPriceLabel.text = "\(signalStop)"
-        }
-        
-        if let noteLabelText = signal.notes {
-            cell.noteLabel.setupLineHeight(myText: noteLabelText, myLineSpacing: 4)
-        }
-        
-        if signal.type == "forex" {
-            cell.assetImageView.image = UIImage(named: "forexBotIcon")
-            cell.tickerLabel.isHidden = true
-            cell.dividerLabel.isHidden = true
-            //print("did this 🍑🍑🍑 111")
-        } else {
-            cell.assetImageView.image = UIImage(named: "cryptoBotIcon")
-            cell.tickerLabel.isHidden = true
-            cell.dividerLabel.isHidden = true
-        }
-                        
-        if let signalDate = signal.added {
-            let formatter = DateFormatter()
-            formatter.timeZone = NSTimeZone.local
-            formatter.dateFormat = "h:mm aa M/dd/yy"
-            cell.signalTimeLabel.text = formatter.string(from: signalDate)
-        }
-        
-        if signal.active == true {
-            cell.contentView.alpha = 1.0
-        } else {
-            cell.contentView.alpha = 0.4
+            setupPendingOrders(cell: cell, indexPath: indexPath)
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = ForexSignalsHeaderView()
-        headerView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1.0)
-        switch section {
-        case 0:
-            headerView.dateLabel.text = "After \(self.currentWeekSaturday.setDateShortHand())"
-            headerView.signalCountLabel.text = "\(self.weekZeroSignals.count)"
-        case 1:
-            headerView.dateLabel.text = "Between \(self.currentWeekSaturday.setDateShortHand()) - \(self.currentWeekLastSaturday.setDateShortHand())"
-            headerView.signalCountLabel.text = "\(self.weekOneSignals.count)"
-        case 2:
-            headerView.dateLabel.text = "Between \(self.currentWeekLastSaturday.setDateShortHand()) - \(self.lastWeekSaturday.setDateShortHand())"
-            headerView.signalCountLabel.text = "\(self.weekTwoSignals.count)"
-        default:
-            headerView.dateLabel.text = "On or Before \(self.lastWeekSaturday.setDateShortHand())"
-            headerView.signalCountLabel.text = "\(self.allRemainingSignals.count)"
+        let headerView = ActivePendingHeaderView()
+        if section == 0 {
+            headerView.sectionLabel.text = "Open Orders"
+        } else {
+            headerView.sectionLabel.text = "Pending Orders"
         }
+                                            
+        headerView.backgroundColor = .clear//UIColor.white
+        headerView.sectionLabel.textColor = .black.withAlphaComponent(0.5)
         
         return headerView
     }
@@ -455,7 +314,11 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        if section == 0 {
+            return 0
+        } else {
+            return 60
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -463,85 +326,16 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        //return UITableView.automaticDimension
+        return .createAspectRatio(value: 173)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         lightImpactGenerator()
         
-        var canPresentUpdateVC = false
-        var signalsSelected = weekZeroSignals
         
-        switch indexPath.section {
-        case 0:
-            signalsSelected = weekZeroSignals
-            canPresentUpdateVC = weekZeroSignals.count > 0
-        case 1:
-            signalsSelected = weekOneSignals
-            canPresentUpdateVC = weekOneSignals.count > 0
-        case 2:
-            signalsSelected = weekTwoSignals
-            canPresentUpdateVC = weekTwoSignals.count > 0
-        default:
-            signalsSelected = allRemainingSignals
-            canPresentUpdateVC = allRemainingSignals.count > 0
-        }
-        
-        if canPresentUpdateVC {
-            /*
-            let updateSignalVC = UpdateSignalViewController()
-            updateSignalVC.delegate = self
-            updateSignalVC.signal = signalsSelected[indexPath.row]
-            updateSignalVC.isDeactivate = signalsSelected[indexPath.row].active
-            updateSignalVC.modalPresentationStyle = .overFullScreen
-            self.present(updateSignalVC, animated: false, completion: nil)
-            */
-        }
     }
 }
-
-//MARK: UPDATE SIGNALS DELEGATE
-/*
-extension MyForexTradesViewController: UpdateSignalViewControllerDelegate {
-    func didTapEditSignal(signal: Signal) {
-        
-        let modifyVC = ModifySignalViewController()
-        modifyVC.delegate = self
-        modifyVC.forexSignal = signal
-        modifyVC.modalPresentationStyle = .overFullScreen
-        self.present(modifyVC, animated: true, completion: nil)
-        
-    }
-    
-    func didTapViewSource() {
-        //
-    }
-    
-    func didTapViewContent(contentType: CGFloat) {
-        //
-    }
-    
-    func didTapShareWithLeads() {
-        //
-    }
-    
-    func didUpdateSignals() {
-        self.loadingContainer.alpha = 1.0
-        self.loadingContainer.isHidden = false
-        self.loadingLottie.play()
-        getForex()
-    }
-}
-*/
-
-//MARK: MODIFY SIGNAL DELEGATE
-/*
-extension MyForexTradesViewController: ModifySignalViewControllerDelegate {
-    func didModifySignal() {
-        getForex()
-    }
-}
-*/
 
 //MARK: PICK OPTIONS DELEGATE
 
@@ -573,3 +367,170 @@ extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
     }
 }
 
+//MARK: SETUP CELLS
+
+extension MyForexTradesViewController {
+    func setupActivePositions(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {
+        cell.assetImageView.image = UIImage(named: "forexBotIcon")
+        cell.currencyPairLabel.text = "EURUSD"
+        cell.signalTimeLabel.text = "9/2 @ 2:15pm"
+        cell.orderTypeLabel.text = "Buy"
+        cell.entryPriceLabel.text = "1.12345"
+        cell.currentPriceLabel.text = "1.12345"
+             
+        /*
+        let signal = allPositions[indexPath.row]                
+        
+        cell.mtSignal = signal
+        
+        if let tradingPairZero = signal.order?.symbol {
+            let updatedString = tradingPairZero
+            cell.currencyPairLabel.text = updatedString.removePeriodsAndDashes()
+        }
+                
+        if let openPrice = signal.order?.openPrice {
+            cell.entryPriceLabel.text = "\(openPrice)"
+        } else {
+            cell.entryPriceLabel.text = "nil"
+        }
+        
+        if let signalTradingPair = signal.order?.symbol {
+            let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
+            print("\(signalTradingPair) 🩳🩳🩳 \(forexPrice)")
+            cell.currentPriceLabel.text = forexPrice
+        }
+        
+        if let volume = signal.order?.lots { //signal.order?.ex?.volume
+            if let orderType = signal.order?.type {
+                //print("\(orderType) 🩳🩳🩳")
+                if orderType.contains("Sell") {
+                    cell.orderTypeLabel.text = "Sell \(volume)"
+                    cell.orderTypeLabel.textColor = UIColor(red: 191/255, green: 103/255, blue: 103/255, alpha: 1.0)
+                } else {
+                    cell.orderTypeLabel.text = "Buy \(volume)"
+                    cell.orderTypeLabel.textColor = UIColor(red: 103/255, green: 191/255, blue: 151/255, alpha: 1.0)
+                }
+            }
+        }
+        
+        if let time = signal.order?.openTime {
+            var date: Date?
+            let splitTime = time.components(separatedBy: "T")
+            let datePart = splitTime[0]
+            let timePart = splitTime[1].replacingOccurrences(of: ".000Z", with: "")
+            let timeString = "\(datePart) \(timePart)"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            date = dateFormatter.date(from:timeString)
+            
+            //Change the format of the string
+            //into one that is readable and matches the 'All' tab
+            if let sigDate = date {
+                if let estTimeZone = TimeZone(abbreviation: "GMT") {
+                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off //GMT is 13 hours off
+                    let startConverted = setTimeString(theDate: sigDate.convert(from: estTimeZone, to: TimeZone.current))
+                    //10 hour difference
+                    //cell.signalTimeLabel.text = "\(formatter.string(from: sigDate)) | \(startConverted)"
+                    cell.signalTimeLabel.text = startConverted
+                } else {
+                    print("invalid time zone 😹😹😹")
+                }
+            }
+        }
+        */
+    }
+    
+    func setupPendingOrders(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {
+        cell.assetImageView.image = UIImage(named: "forexBotIcon")
+        cell.currencyPairLabel.text = "EURUSD"
+        cell.signalTimeLabel.text = "9/2 @ 2:15pm"
+        cell.orderTypeLabel.text = "Buy"
+        cell.entryPriceLabel.text = "1.12345"
+        cell.currentPriceLabel.text = "1.12345"
+        
+        /*
+        let signal = allOrders[indexPath.row]
+        
+        if let tradingPairZero = signal.order?.symbol {
+            cell.currencyPairLabel.text = tradingPairZero
+        }
+        
+        if let openPrice = signal.order?.openPrice {
+            cell.entryPriceLabel.text = "\(openPrice)"
+        } else {
+            cell.entryPriceLabel.text = "nil"
+        }
+        
+        if let signalTradingPair = signal.order?.symbol {
+            let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
+            cell.currentPriceLabel.text = forexPrice
+        }
+                
+        cell.unrealizedProfitLabel.text = "N/A"
+        cell.unrealizedProfitLabel.textColor = .black.withAlphaComponent(0.25)
+        if let volume = signal.order?.lots {
+            if let orderType = signal.order?.type?.uppercased() {
+                cell.orderTypeLabel.text = "\(orderType.modifyNonMarketExecution()) \(volume)"
+                if orderType.contains("BUY") {
+                    cell.orderTypeLabel.textColor = UIColor(red: 43/255, green: 226/255, blue: 139/255, alpha: 1.0)
+                } else {
+                    cell.orderTypeLabel.textColor = UIColor(red: 226/255, green: 43/255, blue: 43/255, alpha: 1.0)
+                }
+            }
+        }
+        
+        if let time = signal.order?.openTime {
+            var date: Date?
+            let splitTime = time.components(separatedBy: "T")
+            let datePart = splitTime[0]
+            let timePart = splitTime[1].replacingOccurrences(of: ".000Z", with: "")
+            let timeString = "\(datePart) \(timePart)"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            date = dateFormatter.date(from:timeString)
+            
+            //Change the format of the string
+            if let sigDate = date {
+                if let estTimeZone = TimeZone(abbreviation: "GMT") {
+                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off
+                    let startConverted = setTimeString(theDate: sigDate.convert(from: estTimeZone, to: TimeZone.current))
+                    //10 hour difference
+                    //cell.signalTimeLabel.text = "\(formatter.string(from: sigDate)) | \(startConverted)"
+                    cell.signalTimeLabel.text = startConverted
+                } else {
+                    print("invalid time zone 😹😹😹")
+                }
+            }
+        }
+        */
+    }
+    
+    func setTimeString(theDate: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = NSTimeZone.local
+        formatter.dateFormat = "h:mmaa M/dd/yy"
+        formatter.amSymbol = "am"
+        formatter.pmSymbol = "pm"
+        return formatter.string(from: theDate)
+    }
+    
+    @objc func updateForexPriceEverySecond(signalSymbol: String) -> String {
+        /*
+        if let livePrice = MyTabBarController.orderProfitUpdate?.livePrices.priceForSymbol(symbol: signalSymbol.removePeriodsAndDashes()) {
+            if countDecimalPlaces(livePrice) > 5 {
+                let roundToFive = roundToFiveDecimalPlaces(livePrice)
+                return String(roundToFive)
+            } else {
+                return String(livePrice)
+            }
+        } else {
+            return "0.0"
+        }
+        */
+        return "0.0"
+    }
+}

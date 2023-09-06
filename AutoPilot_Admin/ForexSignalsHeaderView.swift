@@ -49,5 +49,33 @@ extension ForexSignalsHeaderView {
     }
 }
 
+class ActivePendingHeaderView: UIView {
+    
+    var sectionLabel = UILabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
+}
+
+// MARK: VIEWS
+
+extension ActivePendingHeaderView {
+    func setupViews() {
+        sectionLabel.textAlignment = .left
+        sectionLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        sectionLabel.textColor = .black.withAlphaComponent(0.5)
+        sectionLabel.numberOfLines = 0
+        sectionLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(sectionLabel)
+        sectionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
+        sectionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -.createAspectRatio(value: 18)).isActive = true
+    }
+}
 

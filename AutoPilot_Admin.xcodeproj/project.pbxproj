@@ -17,6 +17,19 @@
 		DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57872AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift */; };
 		DE4D578B2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D578A2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift */; };
 		DE4D578D2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D578C2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift */; };
+		DE4D57902AA77A44008E2B6B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D578F2AA77A44008E2B6B /* SettingsViewController.swift */; };
+		DE4D57922AA77A4B008E2B6B /* SettingsViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57912AA77A4B008E2B6B /* SettingsViewController+Views.swift */; };
+		DE4D57942AA77BD2008E2B6B /* ProfileImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57932AA77BD2008E2B6B /* ProfileImageTableViewCell.swift */; };
+		DE4D57962AA77BE4008E2B6B /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57952AA77BE4008E2B6B /* SettingsTableViewCell.swift */; };
+		DE4D57982AA77C06008E2B6B /* SettingsSwitchTableViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57972AA77C06008E2B6B /* SettingsSwitchTableViewCellTableViewCell.swift */; };
+		DE4D579A2AA77C24008E2B6B /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57992AA77C24008E2B6B /* LogoutTableViewCell.swift */; };
+		DE4D579C2AA77C6F008E2B6B /* SupportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D579B2AA77C6F008E2B6B /* SupportTableViewCell.swift */; };
+		DE4D579E2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D579D2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift */; };
+		DE4D57A02AA8291F008E2B6B /* MyProfileLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D579F2AA8291E008E2B6B /* MyProfileLinkViewController.swift */; };
+		DE4D57A22AA82926008E2B6B /* MyProfileLinkViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57A12AA82926008E2B6B /* MyProfileLinkViewController+Views.swift */; };
+		DE4D57A42AA82B11008E2B6B /* UpgradeAccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57A32AA82B11008E2B6B /* UpgradeAccountButton.swift */; };
+		DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57A62AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift */; };
+		DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57A82AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift */; };
 		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
 		DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */; };
 		DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */; };
@@ -78,6 +91,19 @@
 		DE4D57872AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifyOpenOrderViewController+Views.swift"; sourceTree = "<group>"; };
 		DE4D578A2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPendingOrderViewController.swift; sourceTree = "<group>"; };
 		DE4D578C2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifyPendingOrderViewController+Views.swift"; sourceTree = "<group>"; };
+		DE4D578F2AA77A44008E2B6B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DE4D57912AA77A4B008E2B6B /* SettingsViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+Views.swift"; sourceTree = "<group>"; };
+		DE4D57932AA77BD2008E2B6B /* ProfileImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCell.swift; sourceTree = "<group>"; };
+		DE4D57952AA77BE4008E2B6B /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		DE4D57972AA77C06008E2B6B /* SettingsSwitchTableViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		DE4D57992AA77C24008E2B6B /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
+		DE4D579B2AA77C6F008E2B6B /* SupportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportTableViewCell.swift; sourceTree = "<group>"; };
+		DE4D579D2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitchImageTableViewCell.swift; sourceTree = "<group>"; };
+		DE4D579F2AA8291E008E2B6B /* MyProfileLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileLinkViewController.swift; sourceTree = "<group>"; };
+		DE4D57A12AA82926008E2B6B /* MyProfileLinkViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyProfileLinkViewController+Views.swift"; sourceTree = "<group>"; };
+		DE4D57A32AA82B11008E2B6B /* UpgradeAccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeAccountButton.swift; sourceTree = "<group>"; };
+		DE4D57A62AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrdersTableViewCell.swift; sourceTree = "<group>"; };
+		DE4D57A82AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedOrderTableViewCell.swift; sourceTree = "<group>"; };
 		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTwoViewController.swift; sourceTree = "<group>"; };
 		DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashTwoViewController+Views.swift"; sourceTree = "<group>"; };
@@ -194,6 +220,33 @@
 			path = "Modify Pending Order";
 			sourceTree = "<group>";
 		};
+		DE4D578E2AA77A3D008E2B6B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DE4D578F2AA77A44008E2B6B /* SettingsViewController.swift */,
+				DE4D579F2AA8291E008E2B6B /* MyProfileLinkViewController.swift */,
+				DE4D57A32AA82B11008E2B6B /* UpgradeAccountButton.swift */,
+				DE4D57A12AA82926008E2B6B /* MyProfileLinkViewController+Views.swift */,
+				DE4D579B2AA77C6F008E2B6B /* SupportTableViewCell.swift */,
+				DE4D57992AA77C24008E2B6B /* LogoutTableViewCell.swift */,
+				DE4D57972AA77C06008E2B6B /* SettingsSwitchTableViewCellTableViewCell.swift */,
+				DE4D57952AA77BE4008E2B6B /* SettingsTableViewCell.swift */,
+				DE4D57912AA77A4B008E2B6B /* SettingsViewController+Views.swift */,
+				DE4D579D2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift */,
+				DE4D57932AA77BD2008E2B6B /* ProfileImageTableViewCell.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DE4D57A52AA8C780008E2B6B /* Orders Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE4D57A62AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift */,
+				DE4D57A82AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift */,
+			);
+			path = "Orders Cell";
+			sourceTree = "<group>";
+		};
 		DE6643A12AA56D1200DA27BE /* Media */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +298,8 @@
 				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
 				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DE4D57A52AA8C780008E2B6B /* Orders Cell */,
+				DE4D578E2AA77A3D008E2B6B /* Settings */,
 				DE4D57892AA6E0CA008E2B6B /* Modify Pending Order */,
 				DE4D57842AA6DE1D008E2B6B /* Modify Open Order */,
 				DE6E43FA2A9D9D1000C76B71 /* New Notification */,
@@ -476,31 +531,41 @@
 			files = (
 				DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */,
 				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
+				DE4D57982AA77C06008E2B6B /* SettingsSwitchTableViewCellTableViewCell.swift in Sources */,
+				DE4D579C2AA77C6F008E2B6B /* SupportTableViewCell.swift in Sources */,
 				DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */,
 				DE4D57862AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift in Sources */,
 				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
+				DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
 				DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */,
+				DE4D57962AA77BE4008E2B6B /* SettingsTableViewCell.swift in Sources */,
 				DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */,
+				DE4D57A02AA8291F008E2B6B /* MyProfileLinkViewController.swift in Sources */,
 				DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */,
 				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
+				DE4D57922AA77A4B008E2B6B /* SettingsViewController+Views.swift in Sources */,
 				DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
+				DE4D57A22AA82926008E2B6B /* MyProfileLinkViewController+Views.swift in Sources */,
 				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
+				DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
 				DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
 				DE4D578D2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift in Sources */,
+				DE4D579E2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift in Sources */,
 				DE4D578B2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
 				DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */,
+				DE4D57A42AA82B11008E2B6B /* UpgradeAccountButton.swift in Sources */,
 				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,
 				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
 				FCC4DD252A93FE0100185168 /* API.swift in Sources */,
@@ -508,9 +573,12 @@
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
+				DE4D57942AA77BD2008E2B6B /* ProfileImageTableViewCell.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
+				DE4D57902AA77A44008E2B6B /* SettingsViewController.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
 				DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */,
+				DE4D579A2AA77C24008E2B6B /* LogoutTableViewCell.swift in Sources */,
 				DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */,
 				DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */,
 				DE66439E2AA56CD400DA27BE /* CustomVisualEffectView.swift in Sources */,

@@ -109,6 +109,10 @@ extension MyForexTradesViewController {
         mainFeedTableView.dataSource = self
         mainFeedTableView.register(NoSignalsTableViewCell.self, forCellReuseIdentifier: noSignalsTableViewCell)
         mainFeedTableView.register(SignalsTableViewCell.self, forCellReuseIdentifier: signalsTableViewCell)
+        
+        mainFeedTableView.register(OpenOrdersTableViewCell.self, forCellReuseIdentifier: openOrdersTableViewCell)
+        mainFeedTableView.register(ClosedOrderTableViewCell.self, forCellReuseIdentifier: closedOrderTableViewCell)
+        
         mainFeedTableView.allowsSelection = true
         mainFeedTableView.allowsMultipleSelection = false
         mainFeedTableView.contentInset = .zero

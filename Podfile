@@ -31,5 +31,6 @@ pod 'PWSwitch'
 pod 'NWWebSocket'
 pod 'FSCalendar'
 pod 'DateTimePicker'
+pod 'EFQRCode', '~> 6.2.0'
 pod 'YPImagePicker', :git => 'https://github.com/LawrenceNorman/YPImagePicker.git'
 end

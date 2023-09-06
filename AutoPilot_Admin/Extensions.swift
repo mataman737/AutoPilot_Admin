@@ -1032,5 +1032,13 @@ extension Date {
         return arrDates
     }
     
+    func convertToTimeZone(initTimeZone: TimeZone, timeZone: TimeZone) -> Date {
+         let delta = TimeInterval(timeZone.secondsFromGMT(for: self) - initTimeZone.secondsFromGMT(for: self))
+         return addingTimeInterval(delta)
+    }
+    
+    func convert(from initTimeZone: TimeZone, to targetTimeZone: TimeZone) -> Date {
+        let delta = TimeInterval(targetTimeZone.secondsFromGMT(for: self) - initTimeZone.secondsFromGMT(for: self))
+        return addingTimeInterval(delta)
+    }
 }
-

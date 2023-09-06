@@ -33,6 +33,8 @@ PODS:
     - AWSCore (= 2.33.3)
   - DateTimePicker (2.5.3)
   - Disk (0.6.4)
+  - EFQRCode (6.2.1):
+    - swift_qrcodejs (~> 2.2.2)
   - FlagPhoneNumber (0.8.0):
     - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
   - FlagPhoneNumber/libPhoneNumberiOS (0.8.0)
@@ -57,6 +59,7 @@ DEPENDENCIES:
   - AWSS3
   - DateTimePicker
   - Disk
+  - EFQRCode (~> 6.2.0)
   - FlagPhoneNumber
   - FSCalendar
   - Kingfisher
@@ -75,6 +78,7 @@ SPEC REPOS:
     - AWSS3
     - DateTimePicker
     - Disk
+    - EFQRCode
     - FlagPhoneNumber
     - FSCalendar
     - Kingfisher
@@ -103,6 +107,7 @@ SPEC CHECKSUMS:
   AWSS3: a10a6e1fdbe6ccacceac2fd8454c9f7cd8b9ad86
   DateTimePicker: 52701ddf656a50856d3510955933f767cd2c947c
   Disk: dcee5c2e98fb72f9a924cde8da8435b08244a80e
+  EFQRCode: a4d39ec3466b68dffa71de3b5caef7c9ceefdc53
   FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   Kingfisher: 59f908b6d2f403b0a3e539debb0eec05cb27002c
@@ -117,6 +122,6 @@ SPEC CHECKSUMS:
   WXImageCompress: 86c7a4d028c7fc9c74181468c318a9ec688fcdac
   YPImagePicker: e7f9a34273fdf56283ac03ec2efa0601f946489f
 
-PODFILE CHECKSUM: b001fe7990cea1dfe8cd465f68a097980c6b40e3
+PODFILE CHECKSUM: 520b1ccf08e189c87251e28f97b7ef96632d247c
 
 COCOAPODS: 1.12.1
