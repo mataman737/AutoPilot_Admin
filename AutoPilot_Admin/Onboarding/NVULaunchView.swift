@@ -19,7 +19,9 @@ class NVULaunchView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .black
+        if let color = UIColor.hexToUIColor("#202020") {
+            self.backgroundColor = color
+        }        
         setupViews()
    }
    
@@ -33,14 +35,14 @@ class NVULaunchView: UIView {
 
 extension NVULaunchView {
     func setupViews() {
-        swLogoImageView.image = UIImage(named: "splash")
+        swLogoImageView.image = UIImage(named: "smartTraderLogoDark")
         swLogoImageView.contentMode = .scaleAspectFit
         swLogoImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(swLogoImageView)
         swLogoImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         swLogoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        swLogoImageView.heightAnchor.constraint(equalToConstant: 111).isActive = true
-        swLogoImageView.widthAnchor.constraint(equalToConstant: 210).isActive = true
+        swLogoImageView.heightAnchor.constraint(equalToConstant: 128).isActive = true
+        swLogoImageView.widthAnchor.constraint(equalToConstant: 240).isActive = true
     }
     
     @objc func hideLaunch() {

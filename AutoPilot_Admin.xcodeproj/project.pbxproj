@@ -36,8 +36,8 @@
 		DE4D57B32AA9086E008E2B6B /* PendingOrderMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B22AA9086E008E2B6B /* PendingOrderMenuViewController.swift */; };
 		DE4D57B52AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */; };
 		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
-		DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */; };
-		DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */; };
+		DE6643982AA56A4000DA27BE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashViewController.swift */; };
+		DE66439A2AA56A4800DA27BE /* SplashViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashViewController+Views.swift */; };
 		DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66439B2AA56CAF00DA27BE /* BlurredView.swift */; };
 		DE66439E2AA56CD400DA27BE /* CustomVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66439D2AA56CD400DA27BE /* CustomVisualEffectView.swift */; };
 		DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66439F2AA56CE500DA27BE /* NVULaunchView.swift */; };
@@ -54,8 +54,8 @@
 		DEC9A4BF2A93DB3B000DBE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */; };
 		DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4C02A93DB3B000DBE39 /* LaunchScreen.storyboard */; };
 		DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */; };
-		DEC9A4CD2A93E73D000DBE39 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4CC2A93E73D000DBE39 /* SplashViewController.swift */; };
-		DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4CE2A93E742000DBE39 /* SplashViewController+Views.swift */; };
+		DEC9A4CD2A93E73D000DBE39 /* SetupAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4CC2A93E73D000DBE39 /* SetupAccountViewController.swift */; };
+		DEC9A4CF2A93E742000DBE39 /* SetupAccountViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4CE2A93E742000DBE39 /* SetupAccountViewController+Views.swift */; };
 		DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */; };
 		DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */; };
 		DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */; };
@@ -115,8 +115,8 @@
 		DE4D57B22AA9086E008E2B6B /* PendingOrderMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOrderMenuViewController.swift; sourceTree = "<group>"; };
 		DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PendingOrderMenuViewController+Views.swift"; sourceTree = "<group>"; };
 		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
-		DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTwoViewController.swift; sourceTree = "<group>"; };
-		DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashTwoViewController+Views.swift"; sourceTree = "<group>"; };
+		DE6643972AA56A4000DA27BE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DE6643992AA56A4800DA27BE /* SplashViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashViewController+Views.swift"; sourceTree = "<group>"; };
 		DE66439B2AA56CAF00DA27BE /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
 		DE66439D2AA56CD400DA27BE /* CustomVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisualEffectView.swift; sourceTree = "<group>"; };
 		DE66439F2AA56CE500DA27BE /* NVULaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVULaunchView.swift; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 		DEC9A4C12A93DB3B000DBE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC9A4C32A93DB3B000DBE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
-		DEC9A4CC2A93E73D000DBE39 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		DEC9A4CE2A93E742000DBE39 /* SplashViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashViewController+Views.swift"; sourceTree = "<group>"; };
+		DEC9A4CC2A93E73D000DBE39 /* SetupAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAccountViewController.swift; sourceTree = "<group>"; };
+		DEC9A4CE2A93E742000DBE39 /* SetupAccountViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetupAccountViewController+Views.swift"; sourceTree = "<group>"; };
 		DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyForexTradesViewController+Views.swift"; sourceTree = "<group>"; };
 		DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSignalsTableViewCell.swift; sourceTree = "<group>"; };
 		DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableViewCell.swift; sourceTree = "<group>"; };
@@ -350,14 +350,14 @@
 		DEC9A4CB2A93E732000DBE39 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				DE6643972AA56A4000DA27BE /* SplashTwoViewController.swift */,
+				DE6643972AA56A4000DA27BE /* SplashViewController.swift */,
 				DE66439F2AA56CE500DA27BE /* NVULaunchView.swift */,
 				DE66439B2AA56CAF00DA27BE /* BlurredView.swift */,
 				DE66439D2AA56CD400DA27BE /* CustomVisualEffectView.swift */,
-				DE6643992AA56A4800DA27BE /* SplashTwoViewController+Views.swift */,
-				DEC9A4CC2A93E73D000DBE39 /* SplashViewController.swift */,
+				DE6643992AA56A4800DA27BE /* SplashViewController+Views.swift */,
+				DEC9A4CC2A93E73D000DBE39 /* SetupAccountViewController.swift */,
 				DE6643A42AA5841D00DA27BE /* SignupProgressView.swift */,
-				DEC9A4CE2A93E742000DBE39 /* SplashViewController+Views.swift */,
+				DEC9A4CE2A93E742000DBE39 /* SetupAccountViewController+Views.swift */,
 				DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */,
 			);
 			path = Onboarding;
@@ -571,9 +571,9 @@
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
-				DE66439A2AA56A4800DA27BE /* SplashTwoViewController+Views.swift in Sources */,
+				DE66439A2AA56A4800DA27BE /* SplashViewController+Views.swift in Sources */,
 				DE4D57962AA77BE4008E2B6B /* SettingsTableViewCell.swift in Sources */,
-				DEC9A4CF2A93E742000DBE39 /* SplashViewController+Views.swift in Sources */,
+				DEC9A4CF2A93E742000DBE39 /* SetupAccountViewController+Views.swift in Sources */,
 				DE4D57A02AA8291F008E2B6B /* MyProfileLinkViewController.swift in Sources */,
 				DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */,
 				DE4D57AE2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift in Sources */,
@@ -612,13 +612,13 @@
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DE4D57902AA77A44008E2B6B /* SettingsViewController.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
-				DE6643982AA56A4000DA27BE /* SplashTwoViewController.swift in Sources */,
+				DE6643982AA56A4000DA27BE /* SplashViewController.swift in Sources */,
 				DE4D57B02AA905EB008E2B6B /* OptionsView.swift in Sources */,
 				DE4D579A2AA77C24008E2B6B /* LogoutTableViewCell.swift in Sources */,
 				DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */,
 				DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */,
 				DE66439E2AA56CD400DA27BE /* CustomVisualEffectView.swift in Sources */,
-				DEC9A4CD2A93E73D000DBE39 /* SplashViewController.swift in Sources */,
+				DEC9A4CD2A93E73D000DBE39 /* SetupAccountViewController.swift in Sources */,
 				FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */,
 				FCE556A42A9D40DA00C2B394 /* CustomChatChannelVC.swift in Sources */,
 			);

@@ -398,6 +398,23 @@ extension UIColor {
             blue: rgb & 0xFF
         )
     }
+    
+    static func hexToUIColor(_ hex: String) -> UIColor? {
+        var formattedHex = hex
+        if formattedHex.hasPrefix("#") {
+            formattedHex.removeFirst()
+        }
+        
+        guard formattedHex.count == 6, let hexValue = Int(formattedHex, radix: 16) else {
+            return nil
+        }
+        
+        let red = CGFloat((hexValue >> 16) & 0xFF) / 255.0
+        let green = CGFloat((hexValue >> 8) & 0xFF) / 255.0
+        let blue = CGFloat(hexValue & 0xFF) / 255.0
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
 }
 
 extension String {
