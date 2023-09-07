@@ -234,7 +234,8 @@ extension SplashViewController {
         codeTextField.leadingAnchor.constraint(equalTo: codeContainer.leadingAnchor, constant: .createAspectRatio(value: 27)).isActive = true
         codeTextField.trailingAnchor.constraint(equalTo: codeContainer.trailingAnchor, constant: -.createAspectRatio(value: 27)).isActive = true
         codeTextField.topAnchor.constraint(equalTo: codeLabel.bottomAnchor, constant: .createAspectRatio(value: 41)).isActive = true
-        codeTextField.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87)).isActive = true
+        //codeTextField.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87)).isActive = true
+        codeTextField.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 70)).isActive = true
         
         transitionView.isHidden = true
         transitionView.alpha = 0

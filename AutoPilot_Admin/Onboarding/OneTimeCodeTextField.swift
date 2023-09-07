@@ -16,6 +16,7 @@ class OneTimeCodeTextField: UITextField {
     private var isConfigured = false
     
     private var digitLabels = [UILabel]()
+    var isFour = false
     
     private lazy var tapRecognizer: UITapGestureRecognizer = {
         let recognizer = UITapGestureRecognizer()
@@ -23,7 +24,7 @@ class OneTimeCodeTextField: UITextField {
         return recognizer
     }()
     
-    func configure(with slotCount: Int = 4) {
+    func configure(with slotCount: Int = 6) { //4 or 6
         guard isConfigured == false else { return }
         isConfigured.toggle()
         
@@ -58,7 +59,11 @@ class OneTimeCodeTextField: UITextField {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-        stackView.spacing = 18
+        if isFour {
+            stackView.spacing = 18
+        } else {
+            stackView.spacing = 12
+        }
         stackView.backgroundColor = .clear
         stackView.layer.cornerRadius = 8
         stackView.layer.masksToBounds = true
@@ -68,7 +73,11 @@ class OneTimeCodeTextField: UITextField {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.textAlignment = .center
-            label.font = .systemFont(ofSize: 40)
+            if isFour {
+                label.font = .systemFont(ofSize: 40)
+            } else {
+                label.font = .systemFont(ofSize: 35) //30
+            }
             label.textColor = .black
             label.isUserInteractionEnabled = true
             label.text = defaultCharacter
