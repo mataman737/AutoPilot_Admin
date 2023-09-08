@@ -124,7 +124,6 @@ class MyForexTradesViewController: UIViewController {
     
     @objc func orderProfits(notification: NSNotification) {
         if let orderUpdate = notification.userInfo?["orderUpdate"] as? OrderProfitUpdate {
-            print(orderUpdate)
             let orders = orderUpdate.data.orders
             
             if let balance = orderUpdate.data.balance?.rounded(toPlaces: 2) {
