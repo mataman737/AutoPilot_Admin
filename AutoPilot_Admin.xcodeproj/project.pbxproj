@@ -312,6 +312,17 @@
 			path = "Update Access Code";
 			sourceTree = "<group>";
 		};
+		DE80EF812AAB9BBC00603EF3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
+				DEC9A4DC2A93EA75000DBE39 /* EmptyStateView.swift */,
+				DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */,
+				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -333,31 +344,23 @@
 		DEC9A4B42A93DB38000DBE39 /* AutoPilot_Admin */ = {
 			isa = PBXGroup;
 			children = (
+				DEC9A4ED2A93ED76000DBE39 /* Assets */,
+				FCC4DD232A93FDF800185168 /* Singletons */,
+				DEC9A4D72A93E9F3000DBE39 /* Models */,
 				DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */,
 				DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */,
-				FCC4DD232A93FDF800185168 /* Singletons */,
-				DEC9A4ED2A93ED76000DBE39 /* Assets */,
 				DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */,
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
-				DEC9A4DC2A93EA75000DBE39 /* EmptyStateView.swift */,
-				DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */,
-				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
-				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DE80EF812AAB9BBC00603EF3 /* Custom Views */,
 				DE80EF7C2AAB840000603EF3 /* Update Access Code */,
-				DE4D57B12AA90829008E2B6B /* Pending Order Menu */,
-				DE4D57AA2AA90503008E2B6B /* Open Trade Menu */,
 				DE4D57A52AA8C780008E2B6B /* Orders Cell */,
 				DE4D578E2AA77A3D008E2B6B /* Settings */,
-				DE4D57892AA6E0CA008E2B6B /* Modify Pending Order */,
-				DE4D57842AA6DE1D008E2B6B /* Modify Open Order */,
 				DE6E43FA2A9D9D1000C76B71 /* New Notification */,
 				DE0E20412A9BE8F30067C719 /* Connect */,
-				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
 				DEC9A4DE2A93EAC5000DBE39 /* Pick Option */,
-				DEC9A4D72A93E9F3000DBE39 /* Models */,
 				DEC9A4CB2A93E732000DBE39 /* Onboarding */,
-				DEC9A4D02A93E8F6000DBE39 /* Signals */,
+				DEC9A4D02A93E8F6000DBE39 /* Forex Trades */,
 				DEC9A4BB2A93DB38000DBE39 /* Main.storyboard */,
 				DEC9A4C02A93DB3B000DBE39 /* LaunchScreen.storyboard */,
 				DEC9A4C32A93DB3B000DBE39 /* Info.plist */,
@@ -381,15 +384,20 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		DEC9A4D02A93E8F6000DBE39 /* Signals */ = {
+		DEC9A4D02A93E8F6000DBE39 /* Forex Trades */ = {
 			isa = PBXGroup;
 			children = (
+				DE4D57892AA6E0CA008E2B6B /* Modify Pending Order */,
+				DE4D57842AA6DE1D008E2B6B /* Modify Open Order */,
+				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
+				DE4D57B12AA90829008E2B6B /* Pending Order Menu */,
+				DE4D57AA2AA90503008E2B6B /* Open Trade Menu */,
 				DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */,
 				DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */,
 				DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */,
 				DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */,
 			);
-			path = Signals;
+			path = "Forex Trades";
 			sourceTree = "<group>";
 		};
 		DEC9A4D72A93E9F3000DBE39 /* Models */ = {
