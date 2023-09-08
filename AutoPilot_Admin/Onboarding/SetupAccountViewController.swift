@@ -142,6 +142,8 @@ extension SetupAccountViewController {
         } else if isStepTwo {
             
             if phoneNubmerIsValid {
+                nextButton.showLoader()
+                nextButton.isUserInteractionEnabled = false
                 API.sharedInstance.sendSMSVerify(user: AdminSignup(phone: phoneNumber)) { (success, _, error) in
                     guard error == nil else {
                         print(error!)
@@ -158,6 +160,8 @@ extension SetupAccountViewController {
                         self?.showOTC()
                         self?.progressTwo.showProgress()
                         self?.isStepTwo = false
+                        self?.nextButton.showOriginalLabel()
+                        self?.nextButton.isUserInteractionEnabled = true
                     }
                 }
             } else {

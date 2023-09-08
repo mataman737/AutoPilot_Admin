@@ -169,6 +169,7 @@ extension ContinueButton {
             self.checkmarkLottie.alpha = 0
             self.confirmLabel.transform = CGAffineTransform(translationX: 0, y: -50)
             self.confirmLabel.alpha = 0
+            self.spinner.alpha = 0
         }) { (success) in
             UIView.animate(withDuration: 0.5) {
                 self.continueLabel.transform = CGAffineTransform(translationX: 0, y: 0)
