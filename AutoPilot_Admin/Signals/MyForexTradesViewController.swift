@@ -181,7 +181,7 @@ class MyForexTradesViewController: UIViewController {
             
             for index in 0...activeOrders.count {
                 if let cell = mainFeedTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? OpenOrdersTableViewCell {
-                    if let currentOrder = orders.first(where: {$0.ticket == cell.orderStatus?.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
+                    if let currentOrder = orders.first(where: {$0.ticket == cell.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
                         let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
                         //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
                         

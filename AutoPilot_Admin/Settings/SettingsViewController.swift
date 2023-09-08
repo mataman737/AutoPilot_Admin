@@ -54,6 +54,8 @@ class SettingsViewController: UIViewController {
     var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Delete Account"]
     var supportNVU: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions", "Delete Account"]
     
+    var teamAccessCode = "SlimJim"
+    
     var dismissArrowImageView = UIImageView()
     
     var textColor: UIColor = UIColor.white
@@ -322,34 +324,18 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         }
     }
     
+    @objc func presentUpdateAccessCode() {
+        lightImpactGenerator()
+        let updateAccessCodeVC = UpdateAccessCodeViewController()
+        updateAccessCodeVC.promoCodeTextField.text = teamAccessCode
+        updateAccessCodeVC.modalPresentationStyle = .overFullScreen
+        self.present(updateAccessCodeVC, animated: false)
+    }
+    
     @objc func dismissVC() {
         lightImpactGenerator()
         self.dismiss(animated: true, completion: nil)
         self.delegate?.didDismissSettings()
-    }
-    
-    /*
-    @objc func didTapUpgradeAccount() {
-        let upgradeAccVC = UpgradeAccountViewController()
-        //upgradeAccVC.modalPresentationStyle = .overFullScreen
-        self.present(upgradeAccVC, animated: true, completion: nil)
-    }
-    */
-    
-    @objc func didTapUpgradeAccount() {
-        /*
-        let eventSourceVC = EventSourceWebViewController()
-        eventSourceVC.urlString = "https://office.enigmanetwork.io/v1/AccountUpgrade/"
-        self.present(eventSourceVC, animated: true) {
-            //
-        }
-        */
-        if let url = URL(string: "https://office.bfxstandard.com/v1/AccountUpgrade/") {
-            let config = SFSafariViewController.Configuration()
-            config.entersReaderIfAvailable = true
-            let vc = SFSafariViewController(url: url, configuration: config)
-            present(vc, animated: true)
-        }
     }
     
     @objc func didTapLogout() {
@@ -392,6 +378,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     @objc func didTapSocial(cell: Int) {
+        /*
         switch cell {
         case 1:
             var fbURL = "https://www.facebook.com/go.nvisionu/"
@@ -435,6 +422,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
                 }
             }
         }
+        */
     }
     
     @objc func didTapFAQ() {
@@ -581,23 +569,27 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 1 {
             //if indexPath.row != accountSettings.count - 1 {
             
-                let cell = tableView.dequeueReusableCell(withIdentifier: settingsTableViewCell, for: indexPath) as! SettingsTableViewCell
-                cell.generalImageView.image = UIImage(named: accountImages[indexPath.row])
-                cell.generalImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack)
+            let cell = tableView.dequeueReusableCell(withIdentifier: settingsTableViewCell, for: indexPath) as! SettingsTableViewCell
+            cell.generalImageView.image = UIImage(named: accountImages[indexPath.row])
+            cell.generalImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack)
+            if indexPath.row == 2 {
+                cell.titleLabel.text = "Access Code: \(teamAccessCode)"
+            } else {
                 cell.titleLabel.text = accountSettings[indexPath.row]//.localiz()
-                cell.titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack
-                cell.dividerLine.backgroundColor = isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.12) : .newBlack.withAlphaComponent(0.12)
-                cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
-                
-                if indexPath.row == accountImages.count - 1 {
-                    cell.dividerLine.isHidden = true
-                } else {
-                    cell.dividerLine.isHidden = false
-                }
-                
-                cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
-                
-                return cell
+            }
+            cell.titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack
+            cell.dividerLine.backgroundColor = isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.12) : .newBlack.withAlphaComponent(0.12)
+            cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
+            
+            if indexPath.row == accountImages.count - 1 {
+                cell.dividerLine.isHidden = true
+            } else {
+                cell.dividerLine.isHidden = false
+            }
+            
+            cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
+            
+            return cell
         } else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: settingsSwitchTableViewCellTableViewCell, for: indexPath) as! SettingsSwitchTableViewCellTableViewCell
             cell.titleLabel.text = notifications[indexPath.row]//.localiz()
@@ -753,7 +745,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             case 1:
                 didTapMyTeamWebLink()
             case 2:
-                didTapMyOrders()
+                //didTapMyOrders()
+                presentUpdateAccessCode()
             //case 3:
                 //didTapPastResults()
             default:

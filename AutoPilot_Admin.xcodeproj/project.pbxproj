@@ -47,6 +47,8 @@
 		DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */; };
 		DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */; };
 		DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */; };
+		DE80EF7E2AAB842000603EF3 /* UpdateAccessCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF7D2AAB842000603EF3 /* UpdateAccessCodeViewController.swift */; };
+		DE80EF802AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF7F2AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -128,6 +130,8 @@
 		DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewNotificationViewController+Views.swift"; sourceTree = "<group>"; };
 		DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageVideoViewController.swift; sourceTree = "<group>"; };
 		DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAlertView.swift; sourceTree = "<group>"; };
+		DE80EF7D2AAB842000603EF3 /* UpdateAccessCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccessCodeViewController.swift; sourceTree = "<group>"; };
+		DE80EF7F2AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateAccessCodeViewController+Views.swift"; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -299,6 +303,15 @@
 			path = "New Notification";
 			sourceTree = "<group>";
 		};
+		DE80EF7C2AAB840000603EF3 /* Update Access Code */ = {
+			isa = PBXGroup;
+			children = (
+				DE80EF7D2AAB842000603EF3 /* UpdateAccessCodeViewController.swift */,
+				DE80EF7F2AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift */,
+			);
+			path = "Update Access Code";
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +344,7 @@
 				DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */,
 				DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DE80EF7C2AAB840000603EF3 /* Update Access Code */,
 				DE4D57B12AA90829008E2B6B /* Pending Order Menu */,
 				DE4D57AA2AA90503008E2B6B /* Open Trade Menu */,
 				DE4D57A52AA8C780008E2B6B /* Orders Cell */,
@@ -577,9 +591,11 @@
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
+				DE80EF802AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift in Sources */,
 				DE66439A2AA56A4800DA27BE /* SplashViewController+Views.swift in Sources */,
 				DE4D57962AA77BE4008E2B6B /* SettingsTableViewCell.swift in Sources */,
 				DEC9A4CF2A93E742000DBE39 /* SetupAccountViewController+Views.swift in Sources */,
+				DE80EF7E2AAB842000603EF3 /* UpdateAccessCodeViewController.swift in Sources */,
 				DE4D57A02AA8291F008E2B6B /* MyProfileLinkViewController.swift in Sources */,
 				DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */,
 				DE4D57AE2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift in Sources */,
