@@ -54,33 +54,7 @@ extension SettingsViewController {
         purpGradientBG.backgroundColor = .black
         purpGradientBG.contentMode = .scaleAspectFill
         self.view.addSubview(purpGradientBG)
-        purpGradientBG.fillSuperview()
-        
-        /*
-        enigmaEImageView.image = UIImage(named: "bullXSherbert")
-        enigmaEImageView.contentMode = .scaleAspectFill
-        enigmaEImageView.translatesAutoresizingMaskIntoConstraints = false
-        purpGradientBG.addSubview(enigmaEImageView)
-        enigmaEImageView.centerYAnchor.constraint(equalTo: purpGradientBG.centerYAnchor, constant: 0).isActive = true
-        enigmaEImageView.centerXAnchor.constraint(equalTo: purpGradientBG.centerXAnchor).isActive = true
-        enigmaEImageView.heightAnchor.constraint(equalToConstant: 188).isActive = true
-        enigmaEImageView.widthAnchor.constraint(equalToConstant: 188).isActive = true //167.32
-        */
-        
-        /*
-        enigmaEImageView.isHidden = true
-        //enigmaEImageView.alpha = 0
-        enigmaEImageView.image = UIImage(named: "bull_sherbert") //bull_sherbert //newEnigmaE
-        enigmaEImageView.contentMode = .scaleAspectFill
-        enigmaEImageView.backgroundColor = .green.withAlphaComponent(0.5)
-        enigmaEImageView.translatesAutoresizingMaskIntoConstraints = false
-        purpGradientBG.addSubview(enigmaEImageView)
-        //enigmaE.centerYAnchor.constraint(equalTo: transitionView.centerYAnchor).isActive = true
-        enigmaEImageView.centerYAnchor.constraint(equalTo: purpGradientBG.centerYAnchor, constant: -17).isActive = true
-        enigmaEImageView.centerXAnchor.constraint(equalTo: purpGradientBG.centerXAnchor).isActive = true
-        enigmaEImageView.heightAnchor.constraint(equalToConstant: 181).isActive = true
-        enigmaEImageView.widthAnchor.constraint(equalToConstant: 167.32).isActive = true
-        */
+        purpGradientBG.fillSuperview()        
     }
 }
 
