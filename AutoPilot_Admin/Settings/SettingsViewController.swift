@@ -327,7 +327,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     @objc func presentUpdateAccessCode() {
         lightImpactGenerator()
         let updateAccessCodeVC = UpdateAccessCodeViewController()
-        updateAccessCodeVC.promoCodeTextField.text = teamAccessCode
+        updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
     }
