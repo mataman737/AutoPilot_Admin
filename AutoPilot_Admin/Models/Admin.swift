@@ -13,8 +13,7 @@ final class Admin: Codable {
     var teamId: String?
     var isLive: Bool?
     var username: String?
-    var firstName: String?
-    var lastName: String?
+    var displayName: String?
     var email: String?
     var profilePhotoUrl: String?
     
@@ -88,14 +87,12 @@ final class LoginResponse: Codable {
 final class SMSLoginAttempt: Codable {
     var code: String!
     var phone: String!
-    var firstName: String!
-    var lastName: String!
+    var displayName: String!
     
-    init(code: String, phone: String, firstName: String, lastName: String) {
+    init(code: String, phone: String, displayName: String) {
         self.code = code
         self.phone = phone
-        self.firstName = firstName
-        self.lastName = lastName
+        self.displayName = displayName
     }
 }
 
