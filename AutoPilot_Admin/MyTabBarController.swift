@@ -206,7 +206,7 @@ extension MyTabBarController: WebSocketConnectionDelegate {
             do {
                 let orderUpdate = try JSONDecoder().decode(OrderProfitUpdate.self, from: data)
                 MyTabBarController.orderProfitUpdate = orderUpdate
-                
+                print("did this 🧑‍🎤🧑‍🎤🧑‍🎤 \(string)")
                 NotificationCenter.default.post(name: NSNotification.Name("orderUpdate"), object: nil, userInfo: ["orderUpdate": orderUpdate])
                 lastUpdatedSocketConnection = Date()
                 

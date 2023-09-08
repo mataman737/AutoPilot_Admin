@@ -616,7 +616,8 @@ extension MyForexTradesViewController {
     }
     
     @objc func updateForexPriceEverySecond(signalSymbol: String) -> String {
-        print("did this 🤷‍♂️🤷‍♂️🤷‍♂️")
+        print("did this 🤷‍♂️🤷‍♂️🤷‍♂️ \(signalSymbol.removePeriodsAndDashes())")
+        
         if let livePrice = MyTabBarController.orderProfitUpdate?.livePrices.priceForSymbol(symbol: signalSymbol.removePeriodsAndDashes()) {
             if countDecimalPlaces(livePrice) > 5 {
                 let roundToFive = roundToFiveDecimalPlaces(livePrice)
@@ -625,7 +626,7 @@ extension MyForexTradesViewController {
                 return String(livePrice)
             }
         } else {
-            return "0.0"
+            return "no live price"
         }
     }
     
