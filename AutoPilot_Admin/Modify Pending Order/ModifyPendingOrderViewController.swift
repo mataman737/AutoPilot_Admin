@@ -22,11 +22,12 @@ class ModifyPendingOrderViewController: UIViewController {
         return false
     }
     
+    weak var delegate: ModifyPendingOrderViewControllerDelegate?
+
     var isNVUDemo = UserDefaults()
     var isDarkMode = UserDefaults()
     var varBlackColor: UIColor = UIColor.black
     var variableWhiteColor: UIColor = UIColor.white
-    weak var delegate: ModifyPendingOrderViewControllerDelegate?
     var mainScrollView = UIScrollView()
     var contentContainer = UIView()
     var opacityLayer = UIView()
@@ -92,7 +93,7 @@ class ModifyPendingOrderViewController: UIViewController {
     var gradientImageView = UIImageView()
     var orderTypeSelected = ""
     
-    //var forexSignal: MTInstantTradeStatus!
+    var forexSignal: MTInstantTradeStatus!
     var contentSize: CGFloat = 1.25
     var takeProfitSelected: String = "0.0"
     var brokers = [String]()
@@ -111,7 +112,6 @@ class ModifyPendingOrderViewController: UIViewController {
         setupLoadingView()
         
         self.lotSizeTextField.becomeFirstResponder()
-        /*
         if let forexTPPrice1 = forexSignal?.instantTrade?.takeProfit1 {
             if forexTPPrice1 != "" {
                 takeProfitOptions.append("Take Profit 1 - \(forexTPPrice1)")
@@ -129,7 +129,6 @@ class ModifyPendingOrderViewController: UIViewController {
                 takeProfitOptions.append("Take Profit 3 - \(forexTPPrice3)")
             }
         }
-        */
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeround), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
@@ -195,7 +194,6 @@ extension ModifyPendingOrderViewController {
 
 extension ModifyPendingOrderViewController: UITextFieldDelegate {
     
-    /*
     internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newText = textField.text!.replacingCharacters(in: Range(range, in: textField.text!)!, with: string)
         if let range = newText.range(of: ".") {
@@ -210,7 +208,6 @@ extension ModifyPendingOrderViewController: UITextFieldDelegate {
         self.lotSizeUSDLabel.text = "$\(roundedValue)0 per PIP"
         return true
     }
-    */
     
 }
 
@@ -222,7 +219,6 @@ extension ModifyPendingOrderViewController: PickOptionViewControllerDelegate {
     }
     
     func didPickOption(optionSelected: String) {
-        /*
         if optionSelected.contains("Take Profit 1") {
             self.takeProfitTextField.text = forexSignal.instantTrade?.takeProfit1
         } else if optionSelected.contains("Take Profit 2") {
@@ -230,7 +226,6 @@ extension ModifyPendingOrderViewController: PickOptionViewControllerDelegate {
         } else {
             self.takeProfitTextField.text = forexSignal.instantTrade?.takeProfit3
         }
-        */
     }
 }
 
@@ -319,14 +314,12 @@ extension ModifyPendingOrderViewController: SwipeConfirmViewDelegate {
             } else {
                 placedInstantTrade = true
                 
-                /*
                 let signalOrderTypeSelected = "ORDER_MODIFY"
-                guard let ticket = forexSignal.order?.ticket else { return }
-                let backofficeSignal = InstantTrade(orderId: String(ticket), positionId: String(ticket), signalId: nil, userId: User.current.id, enigmaId: User.current.enigmaId, account: self.account, tradingPair: nil, orderType: signalOrderTypeSelected, lotSize: nil, entryPrice: entryPriceTextField.text, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
+                let backofficeSignal = InstantTrade(orderId: forexSignal.instantTrade?.orderId, positionId: forexSignal.instantTrade?.orderId, signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: nil, orderType: signalOrderTypeSelected, lotSize: nil, entryPrice: entryPriceTextField.text, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
                 
                 //print("\(signalOrderTypeSelected) 🔥🔥🔥 \(signalOrderType) 🔥🔥🔥")
                 
-                API.sharedInstance.modifyMTInstantTrade(signal: backofficeSignal) { success, signalResponse, error in
+                API.sharedInstance.updateSignal(signal: backofficeSignal) { success, signalResponse, error in
                     guard error == nil else {
                         print(error!)
                         DispatchQueue.main.async { [weak self] in
@@ -340,33 +333,11 @@ extension ModifyPendingOrderViewController: SwipeConfirmViewDelegate {
                     
                     //print("🧴🧴🧴 \(backofficeSignal) 🧴🧴🧴 \(signalOrderType)")
                     
-                    guard success, let signalResponse = signalResponse, signalResponse.status != "error" else {
-                        //print("🐰🐰🐰 \(signalResponse?.errorMsg?.message) 🐰🐰🐰 \(signalOrderType)")
-                        
-                        DispatchQueue.main.async { [weak self] in
-                            //print("Did this 🫀🫀🫀 222")
-                            print("error posting instant forex trade")
-                            if let sigErrorMsg = signalResponse?.errorMsg?.message {
-                                if sigErrorMsg == "Member does not have a signal account." {
-                                    ToastNotificationView().present(withMessage: "Create signal account")
-                                    
-                                } else if sigErrorMsg == "Invalid S/L or T/P" {
-                                    ToastNotificationView().present(withMessage: "Invalid Stop Loss or Take Profit")
-                                } else if sigErrorMsg == "Not enough money" {
-                                    ToastNotificationView().present(withMessage: "Not enough money")
-                                } else if sigErrorMsg == "Market is closed" {
-                                    ToastNotificationView().present(withMessage: "Market is closed")
-                                } else {
-                                    ToastNotificationView().present(withMessage: sigErrorMsg) //Invalid order type
-                                }
-                                self?.errorImpactGenerator()
-                                self?.placedInstantTrade = false
-                                print(sigErrorMsg)
-                                                            
-                                self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.1)
-                            }
-                            
-                            self?.swipeView.resetSwipe()
+                    guard success else {
+                        print("error posting trade")
+                        DispatchQueue.main.async {
+                            ToastNotificationView().present(withMessage: "Error posting trade")
+                            self.errorImpactGenerator()
                         }
                         return
                     }
@@ -387,7 +358,6 @@ extension ModifyPendingOrderViewController: SwipeConfirmViewDelegate {
                         }
                     }
                 }
-                */
             }
         }
     }

@@ -181,7 +181,7 @@ class MyForexTradesViewController: UIViewController {
             
             for index in 0...activeOrders.count {
                 if let cell = mainFeedTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? OpenOrdersTableViewCell {
-                    if let currentOrder = orders.first(where: {$0.ticket == cell.pendingOrder?.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
+                    if let currentOrder = orders.first(where: {$0.ticket == cell.orderStatus?.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
                         let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
                         //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
                         
@@ -323,12 +323,13 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
             let order = activeOrders[indexPath.row]
             
             let signalOptionsVC = OpenOrderMenuViewController() //ModifyOpenOrderViewController()
-            signalOptionsVC.order = order
+            signalOptionsVC.forexSignal = order
+            signalOptionsVC.delegate = self
+            
             /*
             var signal: MTInstantTradeStatus
             signal = allPositions[indexPath.row]
             signalOptionsVC?.forexSignal = signal
-            signalOptionsVC?.delegate = self
             signalOptionsVC?.navTitleLabel.text = signal.order?.symbol
             */
             signalOptionsVC.modalPresentationStyle = .overFullScreen
@@ -341,12 +342,12 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
             
             let signalOptionsVC = PendingOrderMenuViewController() //ModifyPendingOrderViewController()
             signalOptionsVC.order = order
+            signalOptionsVC.delegate = self
             
             /*
             var signal: MTInstantTradeStatus
             signal = allOrders[indexPath.row]
             signalOptionsVC.forexSignal = signal
-            signalOptionsVC.delegate = self
             signalOptionsVC.navTitleLabel.text = signal.order?.symbol
             */
             signalOptionsVC.modalPresentationStyle = .overFullScreen
@@ -355,6 +356,81 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
                 
     }
 }
+
+//MARK: OPEN TRADE DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
+
+extension MyForexTradesViewController: OpenOrderMenuViewControllerDelegate {
+    func didTapModifyTrade(signal: MTInstantTradeStatus) {
+        let signalOptionsVC = ModifyOpenOrderViewController()
+//        signalOptionsVC.account = brokers.first
+        signalOptionsVC.forexSignal = signal
+        signalOptionsVC.delegate = self
+        signalOptionsVC.modalPresentationStyle = .overFullScreen
+        self.present(signalOptionsVC, animated: true)
+    }
+    
+    func didTapCloseTrade(signal: MTInstantTradeStatus) {
+//        let closeOderVC = CloseOrderViewController()
+//        closeOderVC.account = brokers.first
+//        closeOderVC.delegate = self
+//        closeOderVC.forexSignal = signal
+//        closeOderVC.modalPresentationStyle = .overFullScreen
+//        self.present(closeOderVC, animated: false)
+    }
+    
+    func didSubscribeUnsubscibe(signal: MTInstantTradeStatus) {
+        //
+    }
+}
+
+//MARK: PENDING TRADE DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
+
+extension MyForexTradesViewController: PendingOrderMenuViewControllerDelegate {
+    func didTapModifyPendingTrade(signal: MTInstantTradeStatus) {
+        let signalOptionsVC = ModifyPendingOrderViewController()
+        signalOptionsVC.delegate = self
+//        signalOptionsVC.account = brokers.first
+        signalOptionsVC.forexSignal = signal
+        signalOptionsVC.modalPresentationStyle = .overFullScreen
+        self.present(signalOptionsVC, animated: true)
+    }
+    
+    func didTapClosePendingTrade(signal: MTInstantTradeStatus) {
+//        let signalOptionsVC = CancelPendingTradeViewController()
+////        signalOptionsVC.account = brokers.first
+//        signalOptionsVC.delegate = self
+//        signalOptionsVC.forexSignal = signal
+//        signalOptionsVC.modalPresentationStyle = .overFullScreen
+//        self.present(signalOptionsVC, animated: false)
+    }
+    
+    func didSubscribeUnsubscibePending(signal: MTInstantTradeStatus) {
+        //
+    }
+    
+    
+}
+
+//MARK: MODIFY OPEN ORDER DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
+
+extension MyForexTradesViewController: ModifyOpenOrderViewControllerDelegate {
+    func didModifyOpenOrder() {
+        getOpenOrders()
+//        showLoader()
+//        getAccounts()
+    }
+}
+
+//MARK: MODIFY PENDING ORDER DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
+
+extension MyForexTradesViewController: ModifyPendingOrderViewControllerDelegate {
+    func didModifyPendingOrder() {
+        getOpenOrders()
+//        showLoader()
+//        getAccounts()
+    }
+}
+
 
 //MARK: PICK OPTIONS DELEGATE
 

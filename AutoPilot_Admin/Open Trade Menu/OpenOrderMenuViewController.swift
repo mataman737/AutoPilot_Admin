@@ -9,9 +9,9 @@ import UIKit
 import Lottie
 
 protocol OpenOrderMenuViewControllerDelegate: AnyObject {
-    //func didTapModifyTrade(signal: MTInstantTradeStatus)
-    //func didTapCloseTrade(signal: MTInstantTradeStatus)
-    //func didSubscribeUnsubscibe(signal: MTInstantTradeStatus)
+    func didTapModifyTrade(signal: MTInstantTradeStatus)
+    func didTapCloseTrade(signal: MTInstantTradeStatus)
+    func didSubscribeUnsubscibe(signal: MTInstantTradeStatus)
 }
 
 class OpenOrderMenuViewController: UIViewController {
@@ -77,7 +77,7 @@ class OpenOrderMenuViewController: UIViewController {
     
     var textColor: UIColor = UIColor.white
     
-    var order: MTInstantTradeStatus!
+    var forexSignal: MTInstantTradeStatus!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,15 +142,15 @@ extension OpenOrderMenuViewController {
         } completion: { (success) in
             self.dismiss(animated: false) {
                 if self.isOneClick {
-                    //self.delegate?.didTapModifyTrade(signal: self.order)
+                    self.delegate?.didTapModifyTrade(signal: self.forexSignal)
                 }
                 
                 else if self.isCopyValues {
-                    //self.delegate?.didTapCloseTrade(signal: self.order)
+                    self.delegate?.didTapCloseTrade(signal: self.forexSignal)
                 }
                 
                 else if self.isNotification {
-                    //self.delegate?.didSubscribeUnsubscibe(signal: self.order)
+                    self.delegate?.didSubscribeUnsubscibe(signal: self.forexSignal)
                 }
                 
             }
