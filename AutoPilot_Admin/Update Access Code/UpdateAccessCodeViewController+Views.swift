@@ -35,7 +35,7 @@ extension UpdateAccessCodeViewController {
         cardContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 530)).isActive = true
         cardContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
-        titleLabel.text = "Access Code"
+        titleLabel.text = isTeamNameChange ? "Team Name" : "Access Code"
         titleLabel.textAlignment = .center
         titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .black
         titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
@@ -85,7 +85,7 @@ extension UpdateAccessCodeViewController {
         accessCodeTextField.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
         accessCodeTextField.autocorrectionType = .no
         accessCodeTextField.tintColor = .nvuBlueOne
-        accessCodeTextField.attributedPlaceholder = NSAttributedString(string: "Access Code", attributes: [
+        accessCodeTextField.attributedPlaceholder = NSAttributedString(string: isTeamNameChange ? "Team Name" : "Access Code", attributes: [
             .foregroundColor: isDarkMode.bool(forKey: "isDarkMode") ? UIColor.white.withAlphaComponent(0.5) : UIColor.black.withAlphaComponent(0.5),
             .font: UIFont.sofiaProMedium(ofSize: .createAspectRatio(value: 14))
         ])        
