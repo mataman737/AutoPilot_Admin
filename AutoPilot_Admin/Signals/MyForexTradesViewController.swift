@@ -181,7 +181,7 @@ class MyForexTradesViewController: UIViewController {
             
             for index in 0...activeOrders.count {
                 if let cell = mainFeedTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? OpenOrdersTableViewCell {
-                    if let currentOrder = orders.first(where: {$0.ticket == cell.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
+                    if let currentOrder = orders.first(where: {$0.ticket == cell.pendingOrder?.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
                         let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
                         //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
                         
@@ -391,11 +391,13 @@ extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
 extension MyForexTradesViewController {
     func setupActivePositions(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {
         cell.assetImageView.image = UIImage(named: "forexBotIcon")
+        /*
         cell.currencyPairLabel.text = "EURUSD"
         cell.signalTimeLabel.text = "9/2 @ 2:15pm"
         cell.orderTypeLabel.text = "Buy"
         cell.entryPriceLabel.text = "1.12345"
         cell.currentPriceLabel.text = "1.12345"
+        */
              
         let signal = activeOrders[indexPath.row]
         
