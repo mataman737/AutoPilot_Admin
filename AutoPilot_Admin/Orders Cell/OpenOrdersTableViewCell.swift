@@ -65,12 +65,12 @@ class OpenOrdersTableViewCell: UITableViewCell {
     var unreadLabel = UILabel()
     
     //var signal: InstantTradeStatus?//Signal?
+    var order: Order?
     var pendingOrder: MTInstantTradeStatus?//Signal?
     var signalDate: Date?
     var signalTimeFrom: String?
     //var instantTrade: InstantTradeStatus?
     //var activeOrder: MetaPositionStatusResponse?
-    
     var timer = Timer()
 
     var currentPricePipTimeLabel = UILabel()

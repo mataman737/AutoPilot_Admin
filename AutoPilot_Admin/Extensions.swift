@@ -337,6 +337,9 @@ extension String {
 extension UIColor {
     
     static let swBlue = UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0)
+    static let brightGreen = UIColor(red: 58/255, green: 160/255, blue: 255/255, alpha: 1.0)
+    static let brightRed = UIColor(red: 226/255, green: 43/255, blue: 43/255, alpha: 1.0)
+    static let metaTraderBlue = UIColor(red: 47/255, green: 138/255, blue: 222/255, alpha: 1.0)
     
     //DARK MODE COLORS
     static let darkModeBackground = UIColor(red: 15/255, green: 15/255, blue: 15/255, alpha: 1.0)
@@ -702,6 +705,17 @@ extension Double {
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 16 //maximum digits in Double after dot (maximum precision)
         return String(formatter.string(from: number) ?? "")
+    }
+    
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+    
+    func withCommas() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(from: NSNumber(value:self))!
     }
 }
 
