@@ -69,7 +69,7 @@ class MyTabBarController: UITabBarController {
                 return
             }
             
-            //self.setupSocket()
+            self.setupSocket()
         }
     }
     

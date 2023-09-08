@@ -74,7 +74,6 @@ class MyForexTradesViewController: UIViewController {
         }
         */
         
-        getOpenOrders()
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
     }
@@ -82,7 +81,9 @@ class MyForexTradesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         edgesForExtendedLayout = UIRectEdge.all
         extendedLayoutIncludesOpaqueBars = true
-        self.loadingLottie.play()
+        
+        getOpenOrders()
+        loadingLottie.play()
     }
     
     func getOpenOrders() {
@@ -123,15 +124,15 @@ class MyForexTradesViewController: UIViewController {
     
     @objc func orderProfits(notification: NSNotification) {
         if let orderUpdate = notification.userInfo?["orderUpdate"] as? OrderProfitUpdate {
+            print(orderUpdate)
             let orders = orderUpdate.data.orders
             
-            /*
             if let balance = orderUpdate.data.balance?.rounded(toPlaces: 2) {
-                storedBalance = "$\(balance.withCommas())"
-                navTitleLabel.text = "$\(balance.withCommas())"
-                tradingAccBalanceBC?.navTitleLabel.text = "\(balance.withCommas())"
-                balanceAmount = "\(balance.withCommas())"
-                balanceDouble = balance
+//                storedBalance = "$\(balance.withCommas())"
+//                navTitleLabel.text = "$\(balance.withCommas())"
+//                tradingAccBalanceBC?.navTitleLabel.text = "\(balance.withCommas())"
+//                balanceAmount = "\(balance.withCommas())"
+//                balanceDouble = balance
                 
                 /*
                 if self.brokers.count == 0 {
@@ -155,10 +156,9 @@ class MyForexTradesViewController: UIViewController {
                 //print("\(hideBalance.bool(forKey: "hideBalance")) 📬📬📬")
                 
             } else {
-                navTitleLabel.text = "Einstein"
-                tradingAccBalanceBC?.balanceLabel.text = "-"
+//                navTitleLabel.text = "Einstein"
+//                tradingAccBalanceBC?.balanceLabel.text = "-"
             }
-            */
             
             /*
             if let equity = orderUpdate.data.equity?.rounded(toPlaces: 2) {
@@ -400,7 +400,8 @@ extension MyForexTradesViewController {
              
         let signal = activeOrders[indexPath.row]
         
-        cell.pendingOrder = signal
+        cell.order = signal.order
+        cell.orderStatus = signal
         
         if let tradingPairZero = signal.order?.symbol {
             let updatedString = tradingPairZero
@@ -469,6 +470,9 @@ extension MyForexTradesViewController {
         cell.currentPriceLabel.text = "1.12345"
         
         let signal = pendingOrders[indexPath.row]
+        
+        cell.order = signal.order
+        cell.orderStatus = signal
         
         if let tradingPairZero = signal.order?.symbol {
             cell.currencyPairLabel.text = tradingPairZero

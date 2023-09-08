@@ -66,7 +66,7 @@ class OpenOrdersTableViewCell: UITableViewCell {
     
     //var signal: InstantTradeStatus?//Signal?
     var order: Order?
-    var pendingOrder: MTInstantTradeStatus?//Signal?
+    var orderStatus: MTInstantTradeStatus?//Signal?
     var signalDate: Date?
     var signalTimeFrom: String?
     //var instantTrade: InstantTradeStatus?

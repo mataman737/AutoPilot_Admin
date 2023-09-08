@@ -92,7 +92,7 @@ struct OrderProfitDataClass: Codable {
     let balance, equity: Double?
     let margin: Double?
     let freeMargin, profit: Double?
-    let orders: [OrderProfit]
+    let orders: [Order]
 
     enum CodingKeys: String, CodingKey {
         case balance = "Balance"
@@ -101,91 +101,6 @@ struct OrderProfitDataClass: Codable {
         case freeMargin = "FreeMargin"
         case profit = "Profit"
         case orders = "Orders"
-    }
-}
-
-// MARK: - OrderProfit
-struct OrderProfit: Codable {
-    let ticket: Int?
-    let openTime, closeTime, expiration, type: String?
-    let lots: Double?
-    let symbol: String?
-    let openPrice: Double?
-    let stopLoss, takeProfit: Double?
-    let closePrice: Double?
-    let magicNumber: Double?
-    let swap, commission: Double?
-    let comment: String?
-    let profit: Double?
-    let rateOpen, rateClose, rateMargin: Double?
-    let ex: OrderProfitEx?
-    let placedType: String?
-
-    enum CodingKeys: String, CodingKey {
-        case ticket = "Ticket"
-        case openTime = "OpenTime"
-        case closeTime = "CloseTime"
-        case expiration = "Expiration"
-        case type = "Type"
-        case lots = "Lots"
-        case symbol = "Symbol"
-        case openPrice = "OpenPrice"
-        case stopLoss = "StopLoss"
-        case takeProfit = "TakeProfit"
-        case closePrice = "ClosePrice"
-        case magicNumber = "MagicNumber"
-        case swap = "Swap"
-        case commission = "Commission"
-        case comment = "Comment"
-        case profit = "Profit"
-        case rateOpen = "RateOpen"
-        case rateClose = "RateClose"
-        case rateMargin = "RateMargin"
-        case ex = "Ex"
-        case placedType = "PlacedType"
-    }
-}
-
-// MARK: - OrderProfitEx
-struct OrderProfitEx: Codable {
-    let order, login: Double?
-    let symbol: String?
-    let digits, cmd, volume, openTime: Double?
-    let state: Double?
-    let openPrice: Double?
-    let sl, tp, closeTime, valueDate: Double?
-    let expiration, placeType: Double?
-    let convRates: [Double]?
-    let commission: Double?
-    let commissionAgent: Double?
-    let storage, closePrice, profit: Double?
-    let taxes, magic: Double?
-    let comment: String?
-    let internalID, activation, spread, marginRate: Double?
-    let timestamp: Double?
-    let reserved: [Double]?
-    let next: Double?
-
-    enum CodingKeys: String, CodingKey {
-        case order, login, symbol, digits, cmd, volume
-        case openTime = "open_time"
-        case state
-        case openPrice = "open_price"
-        case sl, tp
-        case closeTime = "close_time"
-        case valueDate = "value_date"
-        case expiration
-        case placeType = "place_type"
-        case convRates = "conv_rates"
-        case commission
-        case commissionAgent = "commission_agent"
-        case storage
-        case closePrice = "close_price"
-        case profit, taxes, magic, comment
-        case internalID = "internal_id"
-        case activation, spread
-        case marginRate = "margin_rate"
-        case timestamp, reserved, next
     }
 }
 
