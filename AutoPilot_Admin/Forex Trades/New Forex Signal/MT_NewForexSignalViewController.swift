@@ -743,7 +743,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
         self.showLoading()
         self.mainScrollView.isUserInteractionEnabled = false
         
-        let forexSignal = SignalRequest(id: nil, hostId: Admin.current.id, providerId: nil, signalType: signalTypeSelected, enigmaId: Admin.current.enigmaId, asset: tradingPairSelected, orderType: orderTypeSelected, entryPrice: entryPriceTextField.text, takeProfit1: takeProfitTextField.text, takeProfit2: takeProfitTwoTextField.text, takeProfit3: takeProfitThreeTextField.text, stopLoss: stopLossTextField.text, active: true, time: nil, notes: nil, type: "forex", added: Date(), isTesting: demoSignalSelected) //demoSignalSelected //isInTestMode
+        let forexSignal = SignalRequest(id: nil, hostId: Admin.current.id, providerId: nil, signalType: signalTypeSelected, teamId: Admin.current.teamId, asset: tradingPairSelected, orderType: orderTypeSelected, entryPrice: entryPriceTextField.text, takeProfit1: takeProfitTextField.text, takeProfit2: takeProfitTwoTextField.text, takeProfit3: takeProfitThreeTextField.text, stopLoss: stopLossTextField.text, active: true, time: nil, notes: nil, type: "forex", added: Date(), isTesting: demoSignalSelected) //demoSignalSelected //isInTestMode
         
         print("posted a signal! \(isInTestMode) 😸😸😸 \(forexSignal)")
                 

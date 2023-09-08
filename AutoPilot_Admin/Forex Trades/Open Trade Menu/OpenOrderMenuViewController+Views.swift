@@ -109,14 +109,13 @@ extension OpenOrderMenuViewController {
         entryPriceTitleLabel.leadingAnchor.constraint(equalTo: tradeDetailsContainer.leadingAnchor, constant: .createAspectRatio(value: 32)).isActive = true
         entryPriceTitleLabel.topAnchor.constraint(equalTo: tradeDetailsContainer.topAnchor, constant: .createAspectRatio(value: 59)).isActive = true
         
-        /*
         if let entryPrice = forexSignal.order?.openPrice {
             entryPriceLabel.text = String(entryPrice)
         } else {
             entryPriceLabel.text = "nil"
         }
-        */
-        entryPriceLabel.text = "1.12345"
+        
+//        entryPriceLabel.text = "1.12345"
         entryPriceLabel.textColor = varBlackColor.withAlphaComponent(0.75)
         entryPriceLabel.textAlignment = .left
         entryPriceLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
@@ -136,7 +135,7 @@ extension OpenOrderMenuViewController {
         arrowImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 10)).isActive = true
         arrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 18)).isActive = true
         
-        currentPriceLabel.text = "1.12345"
+//        currentPriceLabel.text = "1.12345"
         currentPriceLabel.textColor = varBlackColor.withAlphaComponent(0.75)
         currentPriceLabel.textAlignment = .left
         currentPriceLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
@@ -193,7 +192,6 @@ extension OpenOrderMenuViewController {
         stopLossTitleLabel.leadingAnchor.constraint(equalTo: entryPriceTitleLabel.leadingAnchor, constant: 0).isActive = true
         stopLossTitleLabel.topAnchor.constraint(equalTo: entryPriceLabel.bottomAnchor, constant: .createAspectRatio(value: 40)).isActive = true
         
-        /*
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             //print(self?.forexSignal.order?.ticket)
             if let order = MyTabBarController.orderProfitUpdate?.data.orders.first(where: {$0.ticket == self?.forexSignal.order?.ticket}), let stopLoss = order.stopLoss {
@@ -218,8 +216,8 @@ extension OpenOrderMenuViewController {
                 }
             }
         }
-        */
-        stopLossLabel.text = "1.12345"
+        
+//        stopLossLabel.text = "1.12345"
         stopLossLabel.textColor = varBlackColor.withAlphaComponent(0.75)
         stopLossLabel.textAlignment = .left
         stopLossLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
@@ -239,14 +237,13 @@ extension OpenOrderMenuViewController {
         takeProfitTitleLabel.trailingAnchor.constraint(equalTo: unrealizedProfitTitleLabel.trailingAnchor, constant: 0).isActive = true
         takeProfitTitleLabel.centerYAnchor.constraint(equalTo: stopLossTitleLabel.centerYAnchor, constant: 0).isActive = true
         
-        /*
         if let takeProfit = forexSignal.order?.takeProfit {
             takeProfitLabel.text = String(takeProfit)
         } else {
             takeProfitLabel.text = "nil"
         }
-        */
-        takeProfitLabel.text = "1.12345"
+        
+//        takeProfitLabel.text = "1.12345"
         takeProfitLabel.textColor = varBlackColor.withAlphaComponent(0.75)
         takeProfitLabel.textAlignment = .right
         takeProfitLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))

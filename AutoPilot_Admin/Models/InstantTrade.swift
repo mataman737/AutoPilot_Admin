@@ -13,7 +13,7 @@ struct InstantTrade: Codable {
     var positionId: String?
     var signalId: UUID?
     var userId: UUID?
-    var enigmaId: String?
+    var adminId: String?
     var signalType: String?
     var account: String?
     var tradingPair: String?

@@ -202,7 +202,7 @@ extension NewNotificationViewController {
                     return
                 }
                       
-                let notification = Notification(title: self?.notificationNameTextField.text, userId: nil/*Admin.current.id*/, enigmaId: Admin.current.enigmaId, subtitle: nil, body: self?.messageTextView.text, itemUrl: nil, imageUrl: url, language: nil, userType: nil, added: Date(), scheduled: nil)
+                let notification = Notification(title: self?.notificationNameTextField.text, userId: nil/*Admin.current.id*/, teamId: Admin.current.teamId, subtitle: nil, body: self?.messageTextView.text, itemUrl: nil, imageUrl: url, language: nil, userType: nil, added: Date(), scheduled: nil)
                 print("\(notification) 🚨🚨🚨")
                 self?.delegate?.showNotiLoading()
                 API.sharedInstance.sendNotification(notification: notification) { success, _, error in
@@ -222,7 +222,7 @@ extension NewNotificationViewController {
                 }
             })
         } else {
-            let notification = Notification(title: self.notificationNameTextField.text, userId: nil/*Admin.current.id*/, enigmaId: Admin.current.enigmaId, subtitle: nil, body: self.messageTextView.text, itemUrl: nil, imageUrl: nil, language: nil, userType: nil, added: Date(), scheduled: nil)
+            let notification = Notification(title: self.notificationNameTextField.text, userId: nil/*Admin.current.id*/, teamId: Admin.current.teamId, subtitle: nil, body: self.messageTextView.text, itemUrl: nil, imageUrl: nil, language: nil, userType: nil, added: Date(), scheduled: nil)
             self.delegate?.showNotiLoading()
             API.sharedInstance.sendNotification(notification: notification) { success, _, error in
                 guard error == nil else {

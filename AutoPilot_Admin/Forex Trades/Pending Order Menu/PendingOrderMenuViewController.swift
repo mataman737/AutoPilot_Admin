@@ -9,9 +9,9 @@ import UIKit
 import Lottie
 
 protocol PendingOrderMenuViewControllerDelegate: AnyObject {
-    //func didTapModifyPendingTrade(signal: MTInstantTradeStatus)
-    //func didTapClosePendingTrade(signal: MTInstantTradeStatus)
-    //func didSubscribeUnsubscibePending(signal: MTInstantTradeStatus)
+    func didTapModifyPendingTrade(signal: MTInstantTradeStatus)
+    func didTapClosePendingTrade(signal: MTInstantTradeStatus)
+    func didSubscribeUnsubscibePending(signal: MTInstantTradeStatus)
 }
 
 class PendingOrderMenuViewController: UIViewController {
@@ -140,15 +140,15 @@ extension PendingOrderMenuViewController {
         } completion: { (success) in
             self.dismiss(animated: false) {
                 if self.isOneClick {
-                    //self.delegate?.didTapModifyPendingTrade(signal: self.order)
+                    self.delegate?.didTapModifyPendingTrade(signal: self.order)
                 }
                 
                 else if self.isCopyValues {
-                    //self.delegate?.didTapClosePendingTrade(signal: self.order)
+                    self.delegate?.didTapClosePendingTrade(signal: self.order)
                 }
                 
                 else if self.isNotification {
-                    //self.delegate?.didSubscribeUnsubscibePending(signal: self.order)
+                    self.delegate?.didSubscribeUnsubscibePending(signal: self.order)
                 }
                 
             }

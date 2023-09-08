@@ -86,9 +86,8 @@ extension ModifyOpenOrderViewController {
         downArrowImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 12)).isActive = true
         downArrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 17)).isActive = true
         
-        /*
-        if let orderT = forexSignal.positionStatus?.type {
-            if let volume = forexSignal.positionStatus?.volume {
+        if let orderT = forexSignal.order?.type {
+            if let volume = forexSignal.order?.lots {
                 if orderT.contains("SELL") {
                     orderTypeLabel.text = "Sell \(volume)"
                     orderTypeLabel.textColor = UIColor(red: 191/255, green: 103/255, blue: 103/255, alpha: 1.0)
@@ -98,7 +97,7 @@ extension ModifyOpenOrderViewController {
                 }
             }
         }
-        */
+        
         orderTypeLabel.textColor = .black
         orderTypeLabel.textAlignment = .right
         orderTypeLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 12))
@@ -132,13 +131,12 @@ extension ModifyOpenOrderViewController {
         takeProfitTitleLabel.text = "Take Profit"
         takeProfitContainer.topAnchor.constraint(equalTo: assetTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 26)).isActive = true
         takeProfitTextField.placeholder = "0.0"
-        /*
+        
         if let tpString = forexSignal.instantTrade?.takeProfitSelected {
             setupTextField(txtField: takeProfitTextField, pinView: takeProfitContainer, theText: tpString)
         } else {
             setupTextField(txtField: takeProfitTextField, pinView: takeProfitContainer, theText: "0.0")
         }
-        */
         
         //print("\(forexSignal.instantTrade?.takeProfitSelected) - \(forexSignal.instantTrade?.takeProfit1)")
                         
@@ -168,8 +166,7 @@ extension ModifyOpenOrderViewController {
         stopLossTitleLabel.text = "Stop Loss"
         stopLossContainer.topAnchor.constraint(equalTo: takeProfitContainer.bottomAnchor, constant: 0).isActive = true
                
-        /*
-        if let stopString = forexSignal.positionStatus?.stopLoss {
+        if let stopString = forexSignal.order?.stopLoss {
             setupTextField(txtField: stopLossTextField, pinView: stopLossContainer, theText: String(stopString))
         } else {
             if let stopStringTwo = forexSignal.instantTrade?.stopLoss {
@@ -178,7 +175,7 @@ extension ModifyOpenOrderViewController {
                 setupTextField(txtField: stopLossTextField, pinView: stopLossContainer, theText: "0.0")
             }
         }
-        */
+        
         stopLossTextField.placeholder = "0.0"
                 
         stopLossUSDLabel.isHidden = true

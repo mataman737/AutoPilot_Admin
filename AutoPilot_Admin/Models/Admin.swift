@@ -10,7 +10,7 @@ import Disk
 
 final class Admin: Codable {
     var id: UUID?
-    var enigmaId: String?
+    var teamId: String?
     var isLive: Bool?
     var username: String?
     var displayName: String?

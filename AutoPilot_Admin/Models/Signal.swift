@@ -27,32 +27,12 @@ struct Signal: Codable {
     var added: Date?
 }
 
-struct SignalModifyRequest: Codable {
-    var id: UUID?
-    var hostId: UUID?
-    var enigmaId: String?
-    var signalType: String?
-    var asset: String?
-    var orderType: String?
-    var entryPrice: String?
-    var takeProfit1: String?
-    var takeProfit2: String?
-    var takeProfit3: String?
-    var stopLoss: String?
-    var active: Bool
-    var time: String?
-    var notes: String?
-    var image: String?
-    var type: String?
-    var added: Date?
-}
-
 struct SignalRequest: Codable {
     var id: UUID?
     var hostId: UUID?
     var providerId: Int?
     var signalType: String?
-    var enigmaId: String?
+    var teamId: String?
     var asset: String?
     var orderType: String?
     var entryPrice: String?

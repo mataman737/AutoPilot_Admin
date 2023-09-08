@@ -10,7 +10,7 @@ import Foundation
 struct Notification: Codable {
     let title: String?
     let userId: UUID?
-    let enigmaId: String?
+    let teamId: String?
     let subtitle: String?
     let body: String?
     let itemUrl: String?

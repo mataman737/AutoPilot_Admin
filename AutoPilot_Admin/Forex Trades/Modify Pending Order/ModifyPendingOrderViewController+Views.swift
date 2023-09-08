@@ -98,7 +98,6 @@ extension ModifyPendingOrderViewController {
         downArrowImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 12)).isActive = true
         downArrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 17)).isActive = true
         
-        /*
         if let orderT = forexSignal.order?.type {
             if let volume = forexSignal.order?.ex?.volume {
                 if orderT.contains("SELL") {
@@ -110,7 +109,7 @@ extension ModifyPendingOrderViewController {
                 }
             }
         }
-        */
+        
         orderTypeLabel.textColor = varBlackColor
         orderTypeLabel.textAlignment = .right
         orderTypeLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 12))
@@ -142,7 +141,6 @@ extension ModifyPendingOrderViewController {
         
         entryPriceTextField.placeholder = "0.0"
         
-        /*
         if let entryPrice = forexSignal.order?.openPrice { //forexSignal.instantTrade?.entryPrice
             //entryPriceTextField.text = String(entryPrice)
             //print("\(forexSignal.order?.openPrice) 🧟‍♂️🧟‍♂️🧟‍♂️ \(String(entryPrice))")
@@ -150,7 +148,7 @@ extension ModifyPendingOrderViewController {
         } else {
             setupTextField(txtField: entryPriceTextField, pinView: entryPriceContainer, theText: "0.0")
         }
-        */
+        
         //TAKE PROFIT
         
         createContainer(containerView: takeProfitContainer, sectionTitleLabel: takeProfitTitleLabel, isFirst: false)
@@ -158,14 +156,13 @@ extension ModifyPendingOrderViewController {
         takeProfitContainer.topAnchor.constraint(equalTo: entryPriceContainer.bottomAnchor, constant: 0).isActive = true
         takeProfitTextField.placeholder = "0.0"
         
-        /*
         
         if let takeProfit = forexSignal.order?.takeProfit {
             setupTextField(txtField: takeProfitTextField, pinView: takeProfitContainer, theText: String(takeProfit))
         } else {
             setupTextField(txtField: takeProfitTextField, pinView: takeProfitContainer, theText: "0.0")
         }
-        */
+        
         takeProfitUSDLabel.isHidden = true
         
         takeProfitArrowImageView.image = UIImage(named: "downGradient")
@@ -190,7 +187,7 @@ extension ModifyPendingOrderViewController {
         createContainer(containerView: stopLossContainer, sectionTitleLabel: stopLossTitleLabel, isFirst: false)
         stopLossTitleLabel.text = "Stop Loss"
         stopLossContainer.topAnchor.constraint(equalTo: takeProfitContainer.bottomAnchor, constant: 0).isActive = true
-        /*
+
         if let stopLossString = forexSignal?.order?.stopLoss {
             setupTextField(txtField: stopLossTextField, pinView: stopLossContainer, theText: String(stopLossString))
         } else {
@@ -200,15 +197,12 @@ extension ModifyPendingOrderViewController {
                 setupTextField(txtField: stopLossTextField, pinView: stopLossContainer, theText: "0.0")
             }
         }
-        */
         
-        /*
         if let stopString = forexSignal.order?.stopLoss {
             setupTextField(txtField: stopLossTextField, pinView: stopLossContainer, theText: String(stopString))
         } else {
             setupTextField(txtField: stopLossTextField, pinView: stopLossContainer, theText: "0.0")
         }
-        */
         //print("\(forexSignal) 🧠🧠🧠")
         
         stopLossTextField.placeholder = "0.0"
