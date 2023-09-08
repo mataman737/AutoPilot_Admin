@@ -6,16 +6,16 @@
 //
 
 import UIKit
-//import NWWebSocket
+import NWWebSocket
 import Disk
 import Network
 
 class MyTabBarController: UITabBarController {
     
-    //var socket: NWWebSocket?
+    var socket: NWWebSocket?
     var lastUpdatedSocketConnection: Date = Date()
     
-    //static var orderProfitUpdate: OrderProfitUpdate?
+    static var orderProfitUpdate: OrderProfitUpdate?
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -50,14 +50,13 @@ class MyTabBarController: UITabBarController {
         //hideTabBarBorder()
         //setupRoundedTabBar()
         
-        //let notificationCenter = NotificationCenter.default
-        //notificationCenter.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("refresh"), object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("refresh"), object: nil)
         
-        //triggerTimer()
+        triggerTimer()
         
     }
     
-    /*
     @objc func refresh() {
         API.sharedInstance.pingTradingServer { success, error in
             guard error == nil else {
@@ -73,19 +72,16 @@ class MyTabBarController: UITabBarController {
             //self.setupSocket()
         }
     }
-    */
     
-    /*
     func setupSocket() {
         DispatchQueue.main.async { [weak self] in
-            if let socketURL = URL(string: "ws://ab1b9cff49db78aad.awsglobalaccelerator.com/ws?account=s") {
+            if let socketURL = URL(string: "ws://ab1b9cff49db78aad.awsglobalaccelerator.com/wsadmin?account=s") {
                 self?.socket = NWWebSocket(url: socketURL)
                 self?.socket?.delegate = self
                 self?.socket?.connect()
             }
         }
     }
-    */
 
     func checkIfDataIsRecent() {
         let currentTime = Date()
@@ -162,7 +158,6 @@ class MyTabBarController: UITabBarController {
     
 }
 
-/*
 extension MyTabBarController: WebSocketConnectionDelegate {
     func webSocketDidConnect(connection: WebSocketConnection) {
         // Respond to a WebSocket connection event
@@ -234,7 +229,6 @@ extension MyTabBarController: WebSocketConnectionDelegate {
             print("got data")
         }
 }
-*/
 
 extension MyTabBarController: UITabBarControllerDelegate  {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

@@ -77,7 +77,7 @@ class OpenOrderMenuViewController: UIViewController {
     
     var textColor: UIColor = UIColor.white
     
-    //var forexSignal: MTInstantTradeStatus!
+    var order: MTInstantTradeStatus!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,15 +142,15 @@ extension OpenOrderMenuViewController {
         } completion: { (success) in
             self.dismiss(animated: false) {
                 if self.isOneClick {
-                    //self.delegate?.didTapModifyTrade(signal: self.forexSignal)
+                    //self.delegate?.didTapModifyTrade(signal: self.order)
                 }
                 
                 else if self.isCopyValues {
-                    //self.delegate?.didTapCloseTrade(signal: self.forexSignal)
+                    //self.delegate?.didTapCloseTrade(signal: self.order)
                 }
                 
                 else if self.isNotification {
-                    //self.delegate?.didSubscribeUnsubscibe(signal: self.forexSignal)
+                    //self.delegate?.didSubscribeUnsubscibe(signal: self.order)
                 }
                 
             }

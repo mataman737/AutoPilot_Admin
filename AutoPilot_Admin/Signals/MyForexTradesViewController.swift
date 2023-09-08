@@ -53,6 +53,9 @@ class MyForexTradesViewController: UIViewController {
     var sixMonthCount = [Signal]()
     var sixMonthSignalCount = 0
     
+    var activeOrders = [MTInstantTradeStatus]()
+    var pendingOrders = [MTInstantTradeStatus]()
+    
     let tradingPairs = ["ADAUSD", "ALUMINIUM", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AUS200.spot", "AVEUSD", "BCHUSD", "BNBUSD", "BRAIND", "BRENT", "BRENT.spot", "BSVUSD", "BTCEUR", "BTCUSD", "BUND", "CADCHF", "CADJPY", "CHFJPY", "CHNIND", "CHNIND.spot", "COCOA", "COFFEE", "COPPER", "CORN", "COTTON", "DOGUSD", "DOTUSD", "DSHUSD", "EOSUSD", "ETHBTC", "ETHUSD", "EU50", "EU50.spot", "EURAUD", "EURCAD", "EURCHF", "EURCZK", "EURGBP", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "FRA40", "FRA40.spot", "GAUTRY", "GAUUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "GER30", "GER30.spot", "HKIND", "HKIND.spot", "IND50", "ITA40", "ITA40.spot", "JAP225", "JAP225.spot", "KOSP200", "LNKUSD", "LTCUSD", "MEXIND", "NGAS", "NGAS.spot", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "RUS50", "SA40", "SCHATZ", "SGDJPY", "SOYBEAN", "SPA35", "SPA35.spot", "SUGAR", "SUI20", "THTUSD", "TNOTE", "TRXUSD", "UK100", "UK100.spot", "UNIUSD", "US100", "US100.spot", "US2000", "US30", "US30.spot", "US500", "US500.spot", "USCUSD", "USDBIT", "USDCAD", "USDCHF", "USDCZK", "USDHKD", "USDHUF", "USDIDX", "USDINR", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDTRY", "USDZAR", "VETUSD", "VIX", "W20", "WHEAT", "WTI", "WTI.spot", "XAGUSD", "XAUEUR", "XAUTRY", "XAUUSD", "XEMUSD", "XLMUSD", "XMRUSD", "XPDUSD", "XPTUSD", "XRPEUR", "XRPUSD", "XTZUSD", "ZINC"]
     
     override func viewDidLoad() {
@@ -71,7 +74,7 @@ class MyForexTradesViewController: UIViewController {
         }
         */
         
-        getForex()
+        getOpenOrders()
                 
     }
     
@@ -81,121 +84,25 @@ class MyForexTradesViewController: UIViewController {
         self.loadingLottie.play()
     }
     
-    func getForex() {
-        /*
-        API.sharedInstance.getForexSignals { success, forexes, error in
+    func getOpenOrders() {
+        API.sharedInstance.getOpenOrders { success, orders, error in
             guard error == nil else {
-                print("🍑🍑🍑 \(error!) 🍑🍑🍑")
+                print("\(error!) 👹👹👹 111")
                 return
             }
             
-            guard success, let forexes = forexes else {
-                print("🤷‍♂️🤷‍♂️🤷‍♂️ error getting forexes 🤷‍♂️🤷‍♂️🤷‍♂️ ")
+            guard success, let orders = orders else {
+                print("error getting orders 👹👹👹 111")
                 return
             }
             
             DispatchQueue.main.async { [weak self] in
-                //self?.forexes = forexes
-                //self?.mainFeedTableView.reloadData()
-                print("\(forexes.count) 🚫🚫🚫")
+                self?.activeOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"})
+                self?.pendingOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"})
                 
-                /*
-                if let forexSignals = self?.forexes {
-                    self?.forexes = forexSignals.sorted(by: {($0.added ?? Date()) > ($1.added ?? Date())})
-                }
-                */
-                
-                if forexes.count < 1 {
-                    self?.messagesEmptyState.showViews()
-                    print("did this 111 🚫🚫🚫")
-                } else {
-                    print("did this 222 🚫🚫🚫")
-                }
-                self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
-                
-                // FILTERING OUT SIGNALS //
-                /*
-                let sevenDaysOutDate = Calendar.current.date(
-                    byAdding: .day,
-                    value: -7,
-                    to: Date()) ?? Date()
-                
-                let oneDayOut = Calendar.current.date(
-                    byAdding: .day,
-                    value: 1,
-                    to: Date()) ?? Date()
-                */
-                
-                //self?.forexes = (forexes.filter({($0.added ?? Date()) > sevenDaysOutDate})).sorted(by: {($0.added ?? Date()) > ($1.added ?? Date())})
-                self?.forexes = forexes.sorted(by: {($0.added ?? Date()) > ($1.added ?? Date())})
-                //self?.signals = signals.sorted(by: {($0.added ?? Date()) > ($1.added ?? Date())})
-                
-                //Uncomment this to see total # of trades over the past 6 months
-                /*
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy/MM/dd HH:mm"
-                if let sixMonthsAgo = formatter.date(from: "2022/07/31 00:00") {
-                    if let recentMonth = formatter.date(from: "2022/12/31 23:59") {
-                        //self?.sixMonthCount = ((forexes.filter({($0.added ?? Date()) > sixMonthsAgo})).filter({($0.added ?? Date()) < recentMonth})).count
-                        //print("\(self?.sixMonthCount.count) 🧠🧠🧠")
-                        self?.sixMonthSignalCount = ((forexes.filter({($0.added ?? Date()) > sixMonthsAgo})).filter({($0.added ?? Date()) < recentMonth})).count
-                        
-                        //print("\(self?.sixMonthSignalCount) 🧠🧠🧠")
-                    }
-                }
-                */
-                            
-                
-                print("\(Date.today().setDayString()) 👾👾👾 000")
-                
-                //let todayString = Date.today().setDayString()
-                
-                /*
-                let sevenDaysInFutureDate = Calendar.current.date(
-                    byAdding: .day,
-                    value: 4,
-                    to: Date()) ?? Date()
-                */
-                
-                let currentDate = Date().toLocalTime() //sevenDaysInFutureDate
-                self?.currentWeekSaturday = currentDate.previous(.saturday)
-                self?.currentWeekLastSaturday = currentDate.previous(.saturday).previous(.saturday)
-                self?.lastWeekSaturday = currentDate.previous(.saturday).previous(.saturday).previous(.saturday)
-                
-                /*
-                print("🧚‍♂️🧚‍♂️🧚‍♂️")
-                print("\(self?.currentWeekSaturday)")
-                print("\(self?.currentWeekLastSaturday)")
-                print("\(self?.lastWeekSaturday)")
-                print("🧚‍♂️🧚‍♂️🧚‍♂️")
-                */
-                
-                //Current Weeks Siganls
-                
-                if let cws = self?.currentWeekSaturday {
-                    if let lws = self?.currentWeekLastSaturday {
-                        if let llws = self?.lastWeekSaturday {
-                            self?.weekZeroSignals = forexes.filter({($0.added ?? Date()) > cws && $0.signalType?.lowercased() == "einstein"}).sorted(by: {($0.added ?? Date()) > ($1.added ?? Date())})
-                            self?.weekOneSignals = forexes.filter({($0.added ?? Date()) < cws && $0.signalType?.lowercased() == "einstein"}).filter({($0.added ?? Date()) > lws && $0.signalType?.lowercased() == "einstein"}).sorted(by: {($0.added ?? Date()) > ($1.added ?? Date())})
-                            self?.weekTwoSignals = forexes.filter({($0.added ?? Date()) < lws && $0.signalType?.lowercased() == "einstein"}).filter({($0.added ?? Date()) > llws && $0.signalType?.lowercased() == "einstein"}).sorted(by: {($0.added ?? Date()) > ($1.added ?? Date())})
-                            self?.allRemainingSignals = forexes.filter({($0.added ?? Date()) < llws && $0.signalType?.lowercased() == "einstein"}).sorted(by: {($0.added ?? Date()) > ($1.added ?? Date())})
-                            self?.mainFeedTableView.reloadData()
-                            //print("✍️✍️✍️ \(self?.forexes.count)")
-                            if let wZero = self?.weekZeroSignals.count {
-                                if let wOne = self?.weekOneSignals.count {
-                                    if let wTwo = self?.weekTwoSignals.count {
-                                        if let allR = self?.allRemainingSignals.count {
-                                            print("✍️✍️✍️ \(wZero) - \(wOne) - \(wTwo) - \(allR) | \(wZero + wOne + wTwo + allR)")
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                self?.mainFeedTableView.reloadData()
             }
         }
-        */
     }
     
     func showErrorEmptyState() {
@@ -262,23 +169,21 @@ extension MyForexTradesViewController {
 
 extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-        
-        //Uncomment this after Dylan brings in live data
-        /*
-        if allPositions.count < 1 && allOrders.count < 1 {
-            activeEmptyState.showViews()
+        if activeOrders.count < 1 && pendingOrders.count < 1 {
+//            activeEmptyState.showViews()
             return 0
         } else {
-            activeEmptyState.hidViews()
+//            activeEmptyState.hidViews()
             return 2
         }
-        */
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-        //return forexes.count
+        if section == 0 {
+            return activeOrders.count
+        } else {
+            return pendingOrders.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -337,7 +242,10 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
             
             //----- Show Open Trade Menu -----//
             
+            let order = activeOrders[indexPath.row]
+            
             let signalOptionsVC = OpenOrderMenuViewController() //ModifyOpenOrderViewController()
+            signalOptionsVC.order = order
             /*
             var signal: MTInstantTradeStatus
             signal = allPositions[indexPath.row]
@@ -351,7 +259,11 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
             
             //----- Show Pending Trade Menu -----//
             
+            let order = pendingOrders[indexPath.row]
+            
             let signalOptionsVC = PendingOrderMenuViewController() //ModifyPendingOrderViewController()
+            signalOptionsVC.order = order
+            
             /*
             var signal: MTInstantTradeStatus
             signal = allOrders[indexPath.row]
@@ -407,10 +319,9 @@ extension MyForexTradesViewController {
         cell.entryPriceLabel.text = "1.12345"
         cell.currentPriceLabel.text = "1.12345"
              
-        /*
-        let signal = allPositions[indexPath.row]                
+        let signal = activeOrders[indexPath.row]
         
-        cell.mtSignal = signal
+        cell.pendingOrder = signal
         
         if let tradingPairZero = signal.order?.symbol {
             let updatedString = tradingPairZero
@@ -468,7 +379,6 @@ extension MyForexTradesViewController {
                 }
             }
         }
-        */
     }
     
     func setupPendingOrders(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {
@@ -479,8 +389,7 @@ extension MyForexTradesViewController {
         cell.entryPriceLabel.text = "1.12345"
         cell.currentPriceLabel.text = "1.12345"
         
-        /*
-        let signal = allOrders[indexPath.row]
+        let signal = pendingOrders[indexPath.row]
         
         if let tradingPairZero = signal.order?.symbol {
             cell.currencyPairLabel.text = tradingPairZero
@@ -535,7 +444,6 @@ extension MyForexTradesViewController {
                 }
             }
         }
-        */
     }
     
     func setTimeString(theDate: Date) -> String {
@@ -548,7 +456,6 @@ extension MyForexTradesViewController {
     }
     
     @objc func updateForexPriceEverySecond(signalSymbol: String) -> String {
-        /*
         if let livePrice = MyTabBarController.orderProfitUpdate?.livePrices.priceForSymbol(symbol: signalSymbol.removePeriodsAndDashes()) {
             if countDecimalPlaces(livePrice) > 5 {
                 let roundToFive = roundToFiveDecimalPlaces(livePrice)
@@ -559,7 +466,29 @@ extension MyForexTradesViewController {
         } else {
             return "0.0"
         }
-        */
-        return "0.0"
+    }
+    
+    func roundToFiveDecimalPlaces(_ number: Double) -> Double {
+        let decimalNumber = Decimal(number)
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 5
+        formatter.roundingMode = .halfUp
+
+        if let roundedNumber = formatter.string(from: decimalNumber as NSDecimalNumber),
+           let result = Double(roundedNumber) {
+            return result
+        } else {
+            return number
+        }
+    }
+    
+    func countDecimalPlaces(_ number: Double) -> Int {
+        let numberString = String(number)
+        if let decimalIndex = numberString.firstIndex(of: ".") {
+            let decimalPlacesCount = numberString.distance(from: decimalIndex, to: numberString.endIndex) - 1
+            return max(0, decimalPlacesCount) // Ensure non-negative count
+        }
+        return 0 // No decimal point found
     }
 }

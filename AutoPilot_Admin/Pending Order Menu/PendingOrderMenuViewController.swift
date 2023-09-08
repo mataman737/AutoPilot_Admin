@@ -75,7 +75,7 @@ class PendingOrderMenuViewController: UIViewController {
     
     var textColor: UIColor = UIColor.white
     
-    //var forexSignal: MTInstantTradeStatus!
+    var order: MTInstantTradeStatus!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,15 +140,15 @@ extension PendingOrderMenuViewController {
         } completion: { (success) in
             self.dismiss(animated: false) {
                 if self.isOneClick {
-                    //self.delegate?.didTapModifyPendingTrade(signal: self.forexSignal)
+                    //self.delegate?.didTapModifyPendingTrade(signal: self.order)
                 }
                 
                 else if self.isCopyValues {
-                    //self.delegate?.didTapClosePendingTrade(signal: self.forexSignal)
+                    //self.delegate?.didTapClosePendingTrade(signal: self.order)
                 }
                 
                 else if self.isNotification {
-                    //self.delegate?.didSubscribeUnsubscibePending(signal: self.forexSignal)
+                    //self.delegate?.didSubscribeUnsubscibePending(signal: self.order)
                 }
                 
             }

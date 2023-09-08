@@ -65,7 +65,7 @@ class OpenOrdersTableViewCell: UITableViewCell {
     var unreadLabel = UILabel()
     
     //var signal: InstantTradeStatus?//Signal?
-    //var mtSignal: MTInstantTradeStatus?//Signal?
+    var pendingOrder: MTInstantTradeStatus?//Signal?
     var signalDate: Date?
     var signalTimeFrom: String?
     //var instantTrade: InstantTradeStatus?

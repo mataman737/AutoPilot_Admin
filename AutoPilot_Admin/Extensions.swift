@@ -402,6 +402,49 @@ extension UIColor {
 
 extension String {
     
+    func modifyNonMarketExecution() -> String {
+        
+        var updatedOrderString = ""
+        
+        switch self.lowercased() {
+        case "buystop":
+            updatedOrderString = "Buy Stop"
+        case "selllimit":
+            updatedOrderString = "Sell Limit"
+        case "sellstop":
+            updatedOrderString = "Sell Stop"
+        case "buylimit":
+            updatedOrderString = "Buy Limit"
+        case "buy stop":
+            updatedOrderString = "Buy Stop"
+        case "sell limit":
+            updatedOrderString = "Sell Limit"
+        case "sell stop":
+            updatedOrderString = "Sell Stop"
+        case "buy limit":
+            updatedOrderString = "Buy Limit"
+        case "buy":
+            updatedOrderString = "Buy"
+        case "sell":
+            updatedOrderString = "Sell"
+        default:
+            updatedOrderString = ""
+        }
+        
+        return updatedOrderString
+    }
+    
+    func removePeriodsAndDashes() -> String {
+        var result = ""
+        for char in self {
+            if char == "." || char == "-" {
+                break
+            }
+            result.append(char)
+        }
+        return result
+    }
+    
     subscript (i: Int) -> Character {
         return self[index(startIndex, offsetBy: i)]
     }

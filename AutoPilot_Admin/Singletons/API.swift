@@ -25,6 +25,7 @@ class API: NSObject {
     }
     
     static let serverUrl = isTestEnvironment ? "http://afd0806fd43fa970f.awsglobalaccelerator.com/" : "http://afd0806fd43fa970f.awsglobalaccelerator.com/" // "http://localhost:8080/" // "https://api.lynkapp.co/"
+    static let tradingUrl = isTestEnvironment ? "http://ab1b9cff49db78aad.awsglobalaccelerator.com/" : "http://ab1b9cff49db78aad.awsglobalaccelerator.com/"
     
     func performRequest<T: Codable>(endpoint: String, method: String, authenticated: Bool = true, object: T?, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
         guard let url = URL(string: API.serverUrl + endpoint) else {
@@ -422,6 +423,142 @@ class API: NSObject {
                 completionHandler(false, nil, error)
             }
         }
+    }
+    
+    func pingTradingServer(completionHandler: @escaping (Bool, Error?) -> ()) {
+        print(signal)
+        var request = URLRequest(url: URL(string: "\(API.tradingUrl)adminping")!)
+        request.httpMethod = "POST"
+        //HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addAuthTokens()
+        
+//        do {
+//            let encoder = JSONEncoder()
+//            encoder.dateEncodingStrategy = .iso8601
+//            let data = try encoder.encode(signal)
+//            request.httpBody = data
+//        } catch {
+//            print(error)
+//            completionHandler(false, nil, error)
+//        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, error)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 201, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                completionHandler(false, error)
+                return
+            }
+            
+//            do {
+//                let signalResponse = try JSONDecoder().decode(CreateSignalResponse.self, from: data)
+                
+                completionHandler(true, nil)
+//            } catch {
+//                print(error)
+//                completionHandler(false, error)
+//            }
+        }
+        
+        task.resume()
+    }
+    
+    func getOpenOrders(completionHandler: @escaping (Bool, [MTInstantTradeStatus]?, Error?) -> ()) {
+        var request = URLRequest(url: URL(string: "\(API.tradingUrl)adminopenorders")!)
+        request.httpMethod = "GET"
+        //HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addAuthTokens()
+        
+//        do {
+//            let encoder = JSONEncoder()
+//            encoder.dateEncodingStrategy = .iso8601
+//            let data = try encoder.encode(tokenRequest)
+//            request.httpBody = data
+//        } catch {
+//            print(error)
+//            completionHandler(false, nil, error)
+//        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                completionHandler(false, nil, error)
+                return
+            }
+            
+            do {
+                let orders = try JSONDecoder().decode([MTInstantTradeStatus].self, from: data)
+                
+                completionHandler(true, orders, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func getClosedOrders(completionHandler: @escaping (Bool, [Order]?, Error?) -> ()) {
+        var request = URLRequest(url: URL(string: "\(API.tradingUrl)adminorderhistory")!)
+        request.httpMethod = "GET"
+        //HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addAuthTokens()
+        
+//        do {
+//            let encoder = JSONEncoder()
+//            encoder.dateEncodingStrategy = .iso8601
+//            let data = try encoder.encode(tokenRequest)
+//            request.httpBody = data
+//        } catch {
+//            print(error)
+//            completionHandler(false, nil, error)
+//        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                completionHandler(false, nil, error)
+                return
+            }
+            
+            do {
+                let orders = try JSONDecoder().decode([Order].self, from: data)
+                
+                completionHandler(true, orders, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+        
+        task.resume()
     }
 }
 

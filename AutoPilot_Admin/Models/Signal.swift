@@ -27,6 +27,26 @@ struct Signal: Codable {
     var added: Date?
 }
 
+struct SignalModifyRequest: Codable {
+    var id: UUID?
+    var hostId: UUID?
+    var enigmaId: String?
+    var signalType: String?
+    var asset: String?
+    var orderType: String?
+    var entryPrice: String?
+    var takeProfit1: String?
+    var takeProfit2: String?
+    var takeProfit3: String?
+    var stopLoss: String?
+    var active: Bool
+    var time: String?
+    var notes: String?
+    var image: String?
+    var type: String?
+    var added: Date?
+}
+
 struct SignalRequest: Codable {
     var id: UUID?
     var hostId: UUID?
@@ -49,14 +69,21 @@ struct SignalRequest: Codable {
     var isTesting: Bool
 }
 
+struct MTInstantTradeStatus: Codable {
+    let instantTrade: InstantTrade?
+    let order: Order?
+}
+
 struct OrderProfitUpdate: Codable {
     let type, id: String
         let data: OrderProfitDataClass
+    let livePrices: LivePrices
 
         enum CodingKeys: String, CodingKey {
             case type = "Type"
             case id = "Id"
             case data = "Data"
+            case livePrices = "LivePrices"
         }
 }
 

@@ -76,6 +76,8 @@
 		DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */; };
 		DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */; };
 		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
+		FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D42AAA6A3A0097BDF1 /* Order.swift */; };
+		FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */; };
 		FCC4DD252A93FE0100185168 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD242A93FE0100185168 /* API.swift */; };
 		FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD262A93FE7B00185168 /* Admin.swift */; };
 		FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9669A2A9F8CC70088DD2A /* Notification.swift */; };
@@ -157,6 +159,8 @@
 		DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
 		DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeConfirmView.swift; sourceTree = "<group>"; };
 		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
+		FC1747D42AAA6A3A0097BDF1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantTrade.swift; sourceTree = "<group>"; };
 		FCC4DD242A93FE0100185168 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FCC4DD262A93FE7B00185168 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		FCC9669A2A9F8CC70088DD2A /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -378,8 +382,10 @@
 			isa = PBXGroup;
 			children = (
 				DEC9A4D82A93E9F8000DBE39 /* Signal.swift */,
+				FC1747D42AAA6A3A0097BDF1 /* Order.swift */,
 				FCC4DD262A93FE7B00185168 /* Admin.swift */,
 				FCC9669A2A9F8CC70088DD2A /* Notification.swift */,
+				FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -600,9 +606,11 @@
 				DE4D578B2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
 				DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */,
+				FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */,
 				DE4D57A42AA82B11008E2B6B /* UpgradeAccountButton.swift in Sources */,
 				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,
 				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
+				FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */,
 				FCC4DD252A93FE0100185168 /* API.swift in Sources */,
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
