@@ -46,8 +46,8 @@ class SettingsViewController: UIViewController {
     var settingsSwitchImageTableViewCell = "settingsSwitchImageTableViewCell"
     var settingsSwitchTableViewCellTableViewCell = "settingsSwitchTableViewCellTableViewCell"
     
-    var accountImages: [String] = ["genLink", "genLink", "accessKey"] //dollardarkinactive //genBox
-    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "Access Code: SlimJim"]
+    var accountImages: [String] = ["genLink", "genLink", "accessKey", "atSign"] //dollardarkinactive //genBox
+    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", ""]
     var notifications: [String] = ["Announcements Update", "Events Update", "Livestream"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
@@ -55,6 +55,7 @@ class SettingsViewController: UIViewController {
     var supportNVU: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions", "Delete Account"]
     
     var teamAccessCode = "SlimJim"
+    var teamName = "The Trade Authority"
     
     var dismissArrowImageView = UIImageView()
     
@@ -112,22 +113,6 @@ class SettingsViewController: UIViewController {
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension SettingsViewController: MFMailComposeViewControllerDelegate {
-    @objc func didTapWeAreBFX() {
-        lightImpactGenerator()
-        /*
-        if #available(iOS 15.0, *) {
-            let weAreBFXVC = WeAreBFXViewController()
-            if let edgeRank = self.accountDetails?.result?.edgeRank.current {
-                weAreBFXVC.rank = edgeRank
-            }
-            //weAreBFXVC.originalImageView.kf.setImage(with: "")
-            self.present(weAreBFXVC, animated: true)
-        } else {
-            // Fallback on earlier versions
-        }
-        */
-    }
-    
     @objc func didTapDeleteAccount() {
 //        let profileLinkVC = SwipeDeleteAccountViewController()
 //        profileLinkVC.modalPresentationStyle = .overFullScreen
@@ -308,26 +293,15 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         */
     }
     
-    @objc func didTapMyOrders() {
-        lightImpactGenerator()
-                
-        if isNVUDemo.bool(forKey: "isNVUDemo") {
-            let toastNoti = ToastNotificationView()
-            toastNoti.present(withMessage: "Links required")
-        } else {
-            if let url = URL(string: "https://office.bfxstandard.com/v1/myCompensationPayout/") { //https://office.bfxstandard.com/v1/myCompensationPayout/   //https://office.bfxstandard.com/v1/myOrderStatus/
-                let config = SFSafariViewController.Configuration()
-                config.entersReaderIfAvailable = true
-                let vc = SFSafariViewController(url: url, configuration: config)
-                present(vc, animated: true)
-            }
-        }
-    }
-    
-    @objc func presentUpdateAccessCode() {
+    @objc func presentUpdateAccessCode(isTeamName: Bool) {
         lightImpactGenerator()
         let updateAccessCodeVC = UpdateAccessCodeViewController()
-        updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
+        updateAccessCodeVC.isTeamNameChange = isTeamName
+        if isTeamName {
+            updateAccessCodeVC.accessCodeTextField.text = teamName
+        } else {
+            updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
+        }
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
     }
@@ -559,10 +533,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.nameLabel.text = "Settings"
             
             cell.profileImageView.image = UIImage(named: "avatarph")
-            cell.profileImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack)
-            cell.dateJoinedLabel.text = "johngalt@gmail.com"
+            cell.profileImageView.setImageColor(color: .newBlack)
+            cell.dateJoinedLabel.text = Admin.current.displayName
             
-                cell.dismissArrowImageView.setImageColor(color: textColor)
+            cell.dismissArrowImageView.setImageColor(color: textColor)
             cell.nameLabel.textColor = textColor
             cell.dateJoinedLabel.textColor = textColor.withAlphaComponent(0.5)
             return cell
@@ -573,7 +547,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.generalImageView.image = UIImage(named: accountImages[indexPath.row])
             cell.generalImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack)
             if indexPath.row == 2 {
-                cell.titleLabel.text = "Access Code: \(teamAccessCode)"
+                cell.titleLabel.text = teamAccessCode
+            } else if indexPath.row == 3 {
+                cell.titleLabel.text = teamName
             } else {
                 cell.titleLabel.text = accountSettings[indexPath.row]//.localiz()
             }
@@ -745,13 +721,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             case 1:
                 didTapMyTeamWebLink()
             case 2:
-                //didTapMyOrders()
-                presentUpdateAccessCode()
-            //case 3:
-                //didTapPastResults()
+                presentUpdateAccessCode(isTeamName: false)
             default:
-                //didTapWeAreBFX()
-                print("nada")
+                presentUpdateAccessCode(isTeamName: true)
             }
         }
              

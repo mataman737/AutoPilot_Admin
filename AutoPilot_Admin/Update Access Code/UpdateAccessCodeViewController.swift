@@ -23,6 +23,7 @@ class UpdateAccessCodeViewController: UIViewController {
     var bulletOneLabel = UILabel()
     var bulletTwoLabel = UILabel()
     var bulletThreeLabel = UILabel()
+    var isTeamNameChange = false
         
     var premiumChannelButton = ContinueButton()
     
@@ -61,7 +62,11 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             if let tft = textField.text {
-                submitPromoCode(promo: tft)
+                if isTeamNameChange {
+                    submitTeamNameUpdate(name: tft)
+                } else {
+                    submitAccessCode(promo: tft)
+                }
             }
         } else {
             let toastNoti = ToastNotificationView()
@@ -72,9 +77,15 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
         return true
     }
     
-    func submitPromoCode(promo: String) {
+    func submitTeamNameUpdate(name: String) {
+        //DYLAN - NEED TO UDPATE TEAM NAME HERE
+        
+    }
+    
+    func submitAccessCode(promo: String) {
         
         //DYLAN - NEED TO UPDATE THIS FOR ACCESS CODE
+        
         /*
         API.sharedInstance.redeemFreeTrial(promo: promo) { success, info, error in
             guard error == nil else {
