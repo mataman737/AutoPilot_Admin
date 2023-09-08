@@ -358,7 +358,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         try? Disk.clear(.applicationSupport)
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SplashTwoViewController") as! SplashTwoViewController
+        let vc = sb.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
         let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
         sceneDelegate.window?.rootViewController = vc
     }
