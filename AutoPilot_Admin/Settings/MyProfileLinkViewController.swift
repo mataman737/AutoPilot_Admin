@@ -74,9 +74,7 @@ class MyProfileLinkViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         //setupSettings()
-        Task {
-            await generateLinkNoTrackingQRCode()
-        }
+        generateLinkNoTrackingQRCode()
         perform(#selector(presentViews), with: self, afterDelay: 0.05)
     }
 }
