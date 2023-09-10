@@ -155,9 +155,7 @@ extension MyProfileLinkViewController {
             nameContainer.badWiggle()
             errorImpactGenerator()
         } else {
-            Task {
-                await generateLinkTrackingQRCode()
-            }
+            generateLinkTrackingQRCode()
                                                 
             cardHeight.constant = 400 - 10
             UIView.animate(withDuration: 0.35) {
