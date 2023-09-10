@@ -408,12 +408,12 @@ extension MyForexTradesViewController: OpenOrderMenuViewControllerDelegate {
     }
     
     func didTapCloseTrade(signal: MTInstantTradeStatus) {
-//        let closeOderVC = CloseOrderViewController()
+        let closeOderVC = CloseOrderViewController()
 //        closeOderVC.account = brokers.first
-//        closeOderVC.delegate = self
-//        closeOderVC.forexSignal = signal
-//        closeOderVC.modalPresentationStyle = .overFullScreen
-//        self.present(closeOderVC, animated: false)
+        closeOderVC.delegate = self
+        closeOderVC.forexSignal = signal
+        closeOderVC.modalPresentationStyle = .overFullScreen
+        self.present(closeOderVC, animated: false)
     }
     
     func didSubscribeUnsubscibe(signal: MTInstantTradeStatus) {
@@ -435,12 +435,12 @@ extension MyForexTradesViewController: PendingOrderMenuViewControllerDelegate {
     }
     
     func didTapClosePendingTrade(signal: MTInstantTradeStatus) {
-//        let signalOptionsVC = CancelPendingTradeViewController()
-////        signalOptionsVC.account = brokers.first
-//        signalOptionsVC.delegate = self
-//        signalOptionsVC.forexSignal = signal
-//        signalOptionsVC.modalPresentationStyle = .overFullScreen
-//        self.present(signalOptionsVC, animated: false)
+        let signalOptionsVC = CancelPendingOrderViewController()
+//        signalOptionsVC.account = brokers.first
+        signalOptionsVC.delegate = self
+        signalOptionsVC.forexSignal = signal
+        signalOptionsVC.modalPresentationStyle = .overFullScreen
+        self.present(signalOptionsVC, animated: false)
     }
     
     func didSubscribeUnsubscibePending(signal: MTInstantTradeStatus) {
@@ -722,3 +722,20 @@ extension MyForexTradesViewController {
         return 0 // No decimal point found
     }
 }
+
+//MARK: CLOSE ORDER DELEGATE
+
+extension MyForexTradesViewController: CloseOrderViewControllerDelegate {
+    func didCloseOrder() {
+        //
+    }
+}
+
+//MARK: CLOSE ORDER DELEGATE
+
+extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate {
+    func didCancelOrder() {
+        //
+    }
+}
+

@@ -52,6 +52,11 @@
 		DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */; };
 		DE80EF862AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */; };
 		DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */; };
+		DEB44E382AAE5F070006887A /* FlagKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB44E372AAE5F060006887A /* FlagKit.xcassets */; };
+		DEB44E3B2AAE69AD0006887A /* CloseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3A2AAE69AD0006887A /* CloseOrderViewController.swift */; };
+		DEB44E3D2AAE69B40006887A /* CloseOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */; };
+		DEB44E402AAE6AC80006887A /* CancelPendingOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3F2AAE6AC80006887A /* CancelPendingOrderViewController.swift */; };
+		DEB44E422AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E412AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -139,6 +144,11 @@
 		DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamNameAndPhotoViewController.swift; sourceTree = "<group>"; };
 		DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateTeamNameAndPhotoViewController+Views.swift"; sourceTree = "<group>"; };
 		DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewCell.swift; sourceTree = "<group>"; };
+		DEB44E372AAE5F060006887A /* FlagKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagKit.xcassets; sourceTree = "<group>"; };
+		DEB44E3A2AAE69AD0006887A /* CloseOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseOrderViewController.swift; sourceTree = "<group>"; };
+		DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloseOrderViewController+Views.swift"; sourceTree = "<group>"; };
+		DEB44E3F2AAE6AC80006887A /* CancelPendingOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPendingOrderViewController.swift; sourceTree = "<group>"; };
+		DEB44E412AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CancelPendingOrderViewController+Views.swift"; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -341,6 +351,24 @@
 			path = "Update Team Name & Photo";
 			sourceTree = "<group>";
 		};
+		DEB44E392AAE69A20006887A /* Close Open Order */ = {
+			isa = PBXGroup;
+			children = (
+				DEB44E3A2AAE69AD0006887A /* CloseOrderViewController.swift */,
+				DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */,
+			);
+			path = "Close Open Order";
+			sourceTree = "<group>";
+		};
+		DEB44E3E2AAE6AA40006887A /* Cancel Pending Order */ = {
+			isa = PBXGroup;
+			children = (
+				DEB44E3F2AAE6AC80006887A /* CancelPendingOrderViewController.swift */,
+				DEB44E412AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift */,
+			);
+			path = "Cancel Pending Order";
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +398,8 @@
 				DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */,
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DEB44E3E2AAE6AA40006887A /* Cancel Pending Order */,
+				DEB44E392AAE69A20006887A /* Close Open Order */,
 				DE80EF822AABDB5D00603EF3 /* Update Team Name & Photo */,
 				DE80EF812AAB9BBC00603EF3 /* Custom Views */,
 				DE80EF7C2AAB840000603EF3 /* Update Access Code */,
@@ -468,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */,
+				DEB44E372AAE5F060006887A /* FlagKit.xcassets */,
 				DE4D577F2AA6B704008E2B6B /* Lottie */,
 				DE6643A12AA56D1200DA27BE /* Media */,
 				DEC9A4EC2A93ED6F000DBE39 /* Fonts */,
@@ -554,6 +585,7 @@
 				DE6643A32AA56D2500DA27BE /* splash.mp4 in Resources */,
 				DEC9A4F62A93ED96000DBE39 /* Sofia Pro Medium Az.otf in Resources */,
 				DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */,
+				DEB44E382AAE5F070006887A /* FlagKit.xcassets in Resources */,
 				DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */,
 				DEC9A4BF2A93DB3B000DBE39 /* Assets.xcassets in Resources */,
 				DEC9A4BD2A93DB38000DBE39 /* Main.storyboard in Resources */,
@@ -634,6 +666,8 @@
 				DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
 				DE4D57A22AA82926008E2B6B /* MyProfileLinkViewController+Views.swift in Sources */,
+				DEB44E3D2AAE69B40006887A /* CloseOrderViewController+Views.swift in Sources */,
+				DEB44E402AAE6AC80006887A /* CancelPendingOrderViewController.swift in Sources */,
 				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
@@ -660,6 +694,7 @@
 				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
 				FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */,
 				FCC4DD252A93FE0100185168 /* API.swift in Sources */,
+				DEB44E3B2AAE69AD0006887A /* CloseOrderViewController.swift in Sources */,
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,
@@ -668,6 +703,7 @@
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DE4D57902AA77A44008E2B6B /* SettingsViewController.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
+				DEB44E422AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift in Sources */,
 				DE6643982AA56A4000DA27BE /* SplashViewController.swift in Sources */,
 				DE4D57B02AA905EB008E2B6B /* OptionsView.swift in Sources */,
 				DE4D579A2AA77C24008E2B6B /* LogoutTableViewCell.swift in Sources */,
