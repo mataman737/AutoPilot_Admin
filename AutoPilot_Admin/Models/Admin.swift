@@ -7,6 +7,7 @@
 
 import Foundation
 import Disk
+import FirebaseDynamicLinks
 
 final class Admin: Codable {
     var id: UUID?
@@ -16,6 +17,29 @@ final class Admin: Codable {
     var displayName: String?
     var email: String?
     var profilePhotoUrl: String?
+    
+    func getShareLink() async -> String? {
+        guard let link = URL(string: "https://enigmalabs.page.link/download?teamid=\(Admin.current.teamId!)") else { return nil }
+        let dynamicLinksDomainURIPrefix = "https://enigmalabs.page.link"
+        guard let linkBuilder = DynamicLinkComponents(link: link, domainURIPrefix: dynamicLinksDomainURIPrefix) else {
+            return nil
+        }
+        linkBuilder.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.EnigmaLabs.SpainFX")
+        //linkBuilder.iOSParameters?.appStoreID = "1588642759"
+        //linkBuilder.androidParameters = DynamicLinkAndroidParameters(packageName: "com.enigma.trading")
+        //linkBuilder.otherPlatformParameters = DynamicLinkOtherPlatformParameters()
+
+        do {
+            let (url, warnings) = try await linkBuilder.shorten()
+            print(warnings)
+            
+            return url.absoluteString
+        } catch {
+            print(error)
+            
+            return nil
+        }
+    }
     
     init() {
         

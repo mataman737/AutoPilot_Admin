@@ -74,7 +74,9 @@ class MyProfileLinkViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         //setupSettings()
-        generateLinkNoTrackingQRCode()
+        Task {
+            await generateLinkNoTrackingQRCode()
+        }
         perform(#selector(presentViews), with: self, afterDelay: 0.05)
     }
 }
@@ -98,18 +100,17 @@ extension MyProfileLinkViewController {
     }
     
     @objc func generateLinkNoTrackingQRCode() {
-        
-       
-            if let image = EFQRCode.generate(
-                for: "https://www.enigma.xyz",
-                watermark: UIImage(named: "nvu_qr1")?.cgImage //nvu_qr1 //WWF //newEnigmaE //enigmaE //qrLinkZero
+        Task {
+            if let shareLink = await Admin.current.getShareLink(), let image = EFQRCode.generate(
+                    for: shareLink,
+                    watermark: UIImage(named: "nvu_qr1")?.cgImage //nvu_qr1 //WWF //newEnigmaE //enigmaE //qrLinkZero
             ) {
                 print("Create QRCode image success \(image)")
                 qrImageView.image = UIImage(cgImage: image)
             } else {
                 print("Create QRCode image failed!")
             }
-        
+        }
     }
     
     func removeEmailSpecialCharacters(_ email: String) -> String {
@@ -123,23 +124,25 @@ extension MyProfileLinkViewController {
     }
     
     @objc func generateLinkTrackingQRCode() {
-        if let textTracking = nameTextField.text {
-            if textTracking.contains(" ") {
-                let toastNoti = ToastNotificationView()
-                toastNoti.present(withMessage: "Remove spaces!!!")
-                nameContainer.badWiggle()
-                errorImpactGenerator()
-            } else {
-                self.detailLabel.text = textTracking
-                if let image = EFQRCode.generate(
-                    for: "https://www.enigma.xyz",
-                                        
-                    watermark: UIImage(named: "nvu_qr2")?.cgImage //WWF //newEnigmaE //enigmaE //qrLinkOne
-                ) {
-                    print("Create QRCode image success \(image)")
-                    qrLinkTrackingImageView.image = UIImage(cgImage: image)
+        Task {
+            if let textTracking = nameTextField.text {
+                if textTracking.contains(" ") {
+                    let toastNoti = ToastNotificationView()
+                    toastNoti.present(withMessage: "Remove spaces!!!")
+                    nameContainer.badWiggle()
+                    errorImpactGenerator()
                 } else {
-                    print("Create QRCode image failed!")
+                    self.detailLabel.text = textTracking
+                    if let shareLink = await Admin.current.getShareLink(), let image = EFQRCode.generate(
+                        for: shareLink,
+                                            
+                        watermark: UIImage(named: "nvu_qr2")?.cgImage //WWF //newEnigmaE //enigmaE //qrLinkOne
+                    ) {
+                        print("Create QRCode image success \(image)")
+                        qrLinkTrackingImageView.image = UIImage(cgImage: image)
+                    } else {
+                        print("Create QRCode image failed!")
+                    }
                 }
             }
         }
@@ -152,8 +155,9 @@ extension MyProfileLinkViewController {
             nameContainer.badWiggle()
             errorImpactGenerator()
         } else {
-            
-            generateLinkTrackingQRCode()
+            Task {
+                await generateLinkTrackingQRCode()
+            }
                                                 
             cardHeight.constant = 400 - 10
             UIView.animate(withDuration: 0.35) {
@@ -260,13 +264,15 @@ extension MyProfileLinkViewController {
     }
     
     @objc func linkCopied() {
-        lightImpactGenerator()
-        let pasteboard = UIPasteboard.general
-        print("did this 👑👑👑 111")
-        pasteboard.string = "https://www.enigma.xyz"
-        perform(#selector(dismissViews), with: self, afterDelay: 0.1)
-        let toastNoti = ToastNotificationView()
-        toastNoti.present(withMessage: "URL copied to clipboard")
+        Task {
+            lightImpactGenerator()
+            let pasteboard = UIPasteboard.general
+            print("did this 👑👑👑 111")
+            pasteboard.string = await Admin.current.getShareLink()
+            perform(#selector(dismissViews), with: self, afterDelay: 0.1)
+            let toastNoti = ToastNotificationView()
+            toastNoti.present(withMessage: "URL copied to clipboard")
+        }
     }
     
     @objc func dismissViews() {
@@ -285,14 +291,16 @@ extension MyProfileLinkViewController {
     }
     
     @objc func didTapShareURL() {
-        lightImpactGenerator()
-        if inSettingsMode {
-            didTapDone()
-        } else {
-            print("did this 👑👑👑 111")
-            let items = [URL(string: "https://www.enigma.xyz")]
-            let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
-            present(ac, animated: true)
+        Task {
+            lightImpactGenerator()
+            if inSettingsMode {
+                didTapDone()
+            } else if let shareLink = await Admin.current.getShareLink() {
+                print("did this 👑👑👑 111")
+                let items = [URL(string: shareLink)]
+                let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+                present(ac, animated: true)
+            }
         }
     }
     

@@ -80,6 +80,7 @@
 		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
 		FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D42AAA6A3A0097BDF1 /* Order.swift */; };
 		FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */; };
+		FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC6EF1002AAE3C77001075D9 /* GoogleService-Info.plist */; };
 		FCC4DD252A93FE0100185168 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD242A93FE0100185168 /* API.swift */; };
 		FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD262A93FE7B00185168 /* Admin.swift */; };
 		FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9669A2A9F8CC70088DD2A /* Notification.swift */; };
@@ -165,6 +166,7 @@
 		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
 		FC1747D42AAA6A3A0097BDF1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantTrade.swift; sourceTree = "<group>"; };
+		FC6EF1002AAE3C77001075D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCC4DD242A93FE0100185168 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FCC4DD262A93FE7B00185168 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		FCC9669A2A9F8CC70088DD2A /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				DEC9A4D02A93E8F6000DBE39 /* Forex Trades */,
 				DEC9A4BB2A93DB38000DBE39 /* Main.storyboard */,
 				DEC9A4C02A93DB3B000DBE39 /* LaunchScreen.storyboard */,
+				FC6EF1002AAE3C77001075D9 /* GoogleService-Info.plist */,
 				DEC9A4C32A93DB3B000DBE39 /* Info.plist */,
 			);
 			path = AutoPilot_Admin;
@@ -524,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */,
 				DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */,
 				DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */,
 				DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */,
