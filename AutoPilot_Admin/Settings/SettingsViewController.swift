@@ -14,6 +14,7 @@ import WXImageCompress
 import Disk
 import SafariServices
 import PWSwitch
+import Kingfisher
 
 protocol SettingsViewControllerDelegate: AnyObject {
     func didDismissSettings()
@@ -46,7 +47,7 @@ class SettingsViewController: UIViewController {
     var settingsSwitchImageTableViewCell = "settingsSwitchImageTableViewCell"
     var settingsSwitchTableViewCellTableViewCell = "settingsSwitchTableViewCellTableViewCell"
     
-    var accountImages: [String] = ["genLink", "genLink", "accessKey", "atSign"] //dollardarkinactive //genBox
+    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey"] //dollardarkinactive //genBox
     var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", ""]
     var notifications: [String] = ["Announcements Update", "Events Update", "Livestream"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
@@ -293,15 +294,18 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         */
     }
     
+    @objc func presentUpdateTeamNamePhoto() {
+        lightImpactGenerator()
+        let updateTeamNamePhotoVC = UpdateTeamNameAndPhotoViewController()
+        updateTeamNamePhotoVC.accessCodeTextField.text = teamName
+        updateTeamNamePhotoVC.modalPresentationStyle = .overFullScreen
+        self.present(updateTeamNamePhotoVC, animated: false)
+    }
+    
     @objc func presentUpdateAccessCode(isTeamName: Bool) {
         lightImpactGenerator()
         let updateAccessCodeVC = UpdateAccessCodeViewController()
-        updateAccessCodeVC.isTeamNameChange = isTeamName
-        if isTeamName {
-            updateAccessCodeVC.accessCodeTextField.text = teamName
-        } else {
-            updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
-        }
+        updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
     }
@@ -535,6 +539,20 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.profileImageView.image = UIImage(named: "avatarph")
             cell.profileImageView.setImageColor(color: .newBlack)
             cell.dateJoinedLabel.text = Admin.current.displayName
+            //print("\(Admin.current.profilePhotoUrl) 🤬🤬🤬")
+            
+            if let adminPhoto = Admin.current.profilePhotoUrl{
+                if let url = URL(string: adminPhoto) {
+                    cell.profileImageView.kf.setImage(with: url)
+                    cell.profileImageView.contentMode = .scaleAspectFill
+                } else {
+                    cell.profileImageView.image = UIImage(named: "avatarph")
+                    cell.profileImageView.contentMode = .scaleAspectFill
+                }
+            } else {
+                cell.profileImageView.image = UIImage(named: "avatarph")
+                cell.profileImageView.contentMode = .scaleAspectFill
+            }
             
             cell.dismissArrowImageView.setImageColor(color: textColor)
             cell.nameLabel.textColor = textColor
@@ -547,9 +565,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.generalImageView.image = UIImage(named: accountImages[indexPath.row])
             cell.generalImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack)
             if indexPath.row == 2 {
-                cell.titleLabel.text = teamAccessCode
-            } else if indexPath.row == 3 {
                 cell.titleLabel.text = teamName
+            } else if indexPath.row == 3 {
+                cell.titleLabel.text = teamAccessCode
             } else {
                 cell.titleLabel.text = accountSettings[indexPath.row]//.localiz()
             }
@@ -721,9 +739,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             case 1:
                 didTapMyTeamWebLink()
             case 2:
-                presentUpdateAccessCode(isTeamName: false)
+                presentUpdateTeamNamePhoto()
             default:
-                presentUpdateAccessCode(isTeamName: true)
+                presentUpdateAccessCode(isTeamName: false)
             }
         }
              

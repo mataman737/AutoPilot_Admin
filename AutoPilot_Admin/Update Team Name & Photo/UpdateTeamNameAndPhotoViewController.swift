@@ -1,5 +1,5 @@
 //
-//  UpdateAccessCodeViewController.swift
+//  UpdateTeamNameAndPhotoViewController.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 9/8/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpdateAccessCodeViewController: UIViewController {
+class UpdateTeamNameAndPhotoViewController: UIViewController {
     
     var isDarkMode = UserDefaults()
     var opacityLayer = UIView()
@@ -23,6 +23,8 @@ class UpdateAccessCodeViewController: UIViewController {
     var bulletOneLabel = UILabel()
     var bulletTwoLabel = UILabel()
     var bulletThreeLabel = UILabel()
+    var isTeamNameChange = false
+    var teamPhotoImageView = UIImageView()
         
     var premiumChannelButton = ContinueButton()
     
@@ -35,7 +37,7 @@ class UpdateAccessCodeViewController: UIViewController {
 
 //MARK: ACTIONS
 
-extension UpdateAccessCodeViewController {
+extension UpdateTeamNameAndPhotoViewController {
     @objc func prsentViews() {
         UIView.animate(withDuration: 0.25) {
             self.opacityLayer.alpha = 0.75
@@ -57,11 +59,11 @@ extension UpdateAccessCodeViewController {
 
 //MARK: TEXTFIELD DELEGATE
 
-extension UpdateAccessCodeViewController: UITextFieldDelegate {
+extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             if let tft = textField.text {
-                submitAccessCode(promo: tft)
+                submitTeamNameUpdate(name: tft)
             }
         } else {
             let toastNoti = ToastNotificationView()

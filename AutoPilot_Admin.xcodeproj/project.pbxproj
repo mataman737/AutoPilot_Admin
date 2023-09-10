@@ -49,6 +49,9 @@
 		DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */; };
 		DE80EF7E2AAB842000603EF3 /* UpdateAccessCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF7D2AAB842000603EF3 /* UpdateAccessCodeViewController.swift */; };
 		DE80EF802AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF7F2AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift */; };
+		DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */; };
+		DE80EF862AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */; };
+		DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -132,6 +135,9 @@
 		DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAlertView.swift; sourceTree = "<group>"; };
 		DE80EF7D2AAB842000603EF3 /* UpdateAccessCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccessCodeViewController.swift; sourceTree = "<group>"; };
 		DE80EF7F2AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateAccessCodeViewController+Views.swift"; sourceTree = "<group>"; };
+		DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamNameAndPhotoViewController.swift; sourceTree = "<group>"; };
+		DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateTeamNameAndPhotoViewController+Views.swift"; sourceTree = "<group>"; };
+		DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewCell.swift; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 				DE0E20422A9BE9040067C719 /* ConnectViewController.swift */,
 				DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */,
 				DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */,
+				DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */,
 			);
 			path = Connect;
 			sourceTree = "<group>";
@@ -323,6 +330,15 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
+		DE80EF822AABDB5D00603EF3 /* Update Team Name & Photo */ = {
+			isa = PBXGroup;
+			children = (
+				DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */,
+				DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */,
+			);
+			path = "Update Team Name & Photo";
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +368,7 @@
 				DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */,
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DE80EF822AABDB5D00603EF3 /* Update Team Name & Photo */,
 				DE80EF812AAB9BBC00603EF3 /* Custom Views */,
 				DE80EF7C2AAB840000603EF3 /* Update Access Code */,
 				DE4D57A52AA8C780008E2B6B /* Orders Cell */,
@@ -610,6 +627,7 @@
 				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
 				DE4D57922AA77A4B008E2B6B /* SettingsViewController+Views.swift in Sources */,
 				DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */,
+				DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
 				DE4D57A22AA82926008E2B6B /* MyProfileLinkViewController+Views.swift in Sources */,
 				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
@@ -617,6 +635,7 @@
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
+				DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */,
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
@@ -630,6 +649,7 @@
 				DE4D578B2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
 				DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */,
+				DE80EF862AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift in Sources */,
 				FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */,
 				DE4D57A42AA82B11008E2B6B /* UpgradeAccountButton.swift in Sources */,
 				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,

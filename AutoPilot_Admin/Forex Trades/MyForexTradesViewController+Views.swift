@@ -11,7 +11,15 @@ import Lottie
 
 extension MyForexTradesViewController {
     
+    func setupTransition() {        
+        fromLogin.setValue(false, forKey: "fromLogin")
+        transitionView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        transitionView.backgroundColor = .red
+        UIApplication.shared.windows.first(where: { $0.isKeyWindow})?.addSubview(transitionView)
+    }
+    
     func setupNav() {
+                          
         
         view.backgroundColor = UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
                         

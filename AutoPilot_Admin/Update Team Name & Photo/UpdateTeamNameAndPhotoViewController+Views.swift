@@ -1,5 +1,5 @@
 //
-//  UpdateAccessCodeViewController+Views.swift
+//  UpdateTeamNameAndPhotoViewController+Views.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 9/8/23.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UpdateAccessCodeViewController {
+extension UpdateTeamNameAndPhotoViewController {
  
     func setupViews() {
         
@@ -32,17 +32,17 @@ extension UpdateAccessCodeViewController {
         cardContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         cardContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         cardContainer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        cardContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 530)).isActive = true
+        cardContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 630)).isActive = true
         cardContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
-        titleLabel.text = "Access Code"
+        titleLabel.text = "Team Name & Photo"
         titleLabel.textAlignment = .center
         titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .black
         titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         cardContainer.addSubview(titleLabel)
-        titleLabel.topAnchor.constraint(equalTo: cardContainer.topAnchor, constant: .createAspectRatio(value: 20)).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: cardContainer.topAnchor, constant: .createAspectRatio(value: 18)).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: cardContainer.centerXAnchor).isActive = true
         
         downArrow.image = UIImage(named: "newDownArrow")
@@ -64,6 +64,16 @@ extension UpdateAccessCodeViewController {
         downButton.trailingAnchor.constraint(equalTo: downArrow.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         downButton.bottomAnchor.constraint(equalTo: downArrow.bottomAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         
+        teamPhotoImageView.image = UIImage(named: "avatarph")
+        teamPhotoImageView.contentMode = .scaleAspectFill
+        teamPhotoImageView.layer.cornerRadius = .createAspectRatio(value: 110)/2
+        teamPhotoImageView.translatesAutoresizingMaskIntoConstraints = false
+        cardContainer.addSubview(teamPhotoImageView)
+        teamPhotoImageView.centerXAnchor.constraint(equalTo: cardContainer.centerXAnchor).isActive = true
+        teamPhotoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: .createAspectRatio(value: 24)).isActive = true
+        teamPhotoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 110)).isActive = true
+        teamPhotoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 110)).isActive = true
+        
         //
                 
         accessCodeTextContainer.backgroundColor = .clear
@@ -74,7 +84,7 @@ extension UpdateAccessCodeViewController {
         cardContainer.addSubview(accessCodeTextContainer)
         accessCodeTextContainer.leadingAnchor.constraint(equalTo: cardContainer.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
         accessCodeTextContainer.trailingAnchor.constraint(equalTo: cardContainer.trailingAnchor, constant: -.createAspectRatio(value: 24)).isActive = true
-        accessCodeTextContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: .createAspectRatio(value: 36)).isActive = true
+        accessCodeTextContainer.topAnchor.constraint(equalTo: teamPhotoImageView.bottomAnchor, constant: .createAspectRatio(value: 24)).isActive = true
         accessCodeTextContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 58)).isActive = true
                 
         accessCodeTextField.becomeFirstResponder()
@@ -85,10 +95,10 @@ extension UpdateAccessCodeViewController {
         accessCodeTextField.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
         accessCodeTextField.autocorrectionType = .no
         accessCodeTextField.tintColor = .nvuBlueOne
-        accessCodeTextField.attributedPlaceholder = NSAttributedString(string: "Access Code", attributes: [
+        accessCodeTextField.attributedPlaceholder = NSAttributedString(string: "Team Name", attributes: [
             .foregroundColor: isDarkMode.bool(forKey: "isDarkMode") ? UIColor.white.withAlphaComponent(0.5) : UIColor.black.withAlphaComponent(0.5),
             .font: UIFont.sofiaProMedium(ofSize: .createAspectRatio(value: 14))
-        ])        
+        ])
         accessCodeTextField.delegate = self
         accessCodeTextField.translatesAutoresizingMaskIntoConstraints = false
         accessCodeTextContainer.addSubview(accessCodeTextField)

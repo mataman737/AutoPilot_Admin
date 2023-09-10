@@ -11,8 +11,10 @@ import StreamChat
 import StreamChatUI
 
 class MyForexTradesViewController: UIViewController {
+    
+    let fromLogin = UserDefaults()
     static var titleText: String?
-
+    var transitionView = UIView()
     var loadingContainer = UIView()
     var loadingLottie = LottieAnimationView()
     var navHeight: CGFloat = 90
@@ -56,6 +58,8 @@ class MyForexTradesViewController: UIViewController {
     var activeOrders = [MTInstantTradeStatus]()
     var pendingOrders = [MTInstantTradeStatus]()
     
+    var openOrderMenuVC: OpenOrderMenuViewController?
+    
     let tradingPairs = ["ADAUSD", "ALUMINIUM", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AUS200.spot", "AVEUSD", "BCHUSD", "BNBUSD", "BRAIND", "BRENT", "BRENT.spot", "BSVUSD", "BTCEUR", "BTCUSD", "BUND", "CADCHF", "CADJPY", "CHFJPY", "CHNIND", "CHNIND.spot", "COCOA", "COFFEE", "COPPER", "CORN", "COTTON", "DOGUSD", "DOTUSD", "DSHUSD", "EOSUSD", "ETHBTC", "ETHUSD", "EU50", "EU50.spot", "EURAUD", "EURCAD", "EURCHF", "EURCZK", "EURGBP", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "FRA40", "FRA40.spot", "GAUTRY", "GAUUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "GER30", "GER30.spot", "HKIND", "HKIND.spot", "IND50", "ITA40", "ITA40.spot", "JAP225", "JAP225.spot", "KOSP200", "LNKUSD", "LTCUSD", "MEXIND", "NGAS", "NGAS.spot", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "RUS50", "SA40", "SCHATZ", "SGDJPY", "SOYBEAN", "SPA35", "SPA35.spot", "SUGAR", "SUI20", "THTUSD", "TNOTE", "TRXUSD", "UK100", "UK100.spot", "UNIUSD", "US100", "US100.spot", "US2000", "US30", "US30.spot", "US500", "US500.spot", "USCUSD", "USDBIT", "USDCAD", "USDCHF", "USDCZK", "USDHKD", "USDHUF", "USDIDX", "USDINR", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDTRY", "USDZAR", "VETUSD", "VIX", "W20", "WHEAT", "WTI", "WTI.spot", "XAGUSD", "XAUEUR", "XAUTRY", "XAUUSD", "XEMUSD", "XLMUSD", "XMRUSD", "XPDUSD", "XPTUSD", "XRPEUR", "XRPUSD", "XTZUSD", "ZINC"]
     
     override func viewDidLoad() {
@@ -63,6 +67,8 @@ class MyForexTradesViewController: UIViewController {
         setupNav()
         setupTable()
         setupEmptyStates()
+        //setupTransition()
+        //hideTransitionView()
         //setupLoadingIndicator()
         
         /*
@@ -186,13 +192,26 @@ class MyForexTradesViewController: UIViewController {
                         //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
                         
                         let numberString = String(unrealizedProfit)
+                        /*
                         if numberString.contains("-") {
                             cell.unrealizedProfitLabel.textColor = .brightRed
                         } else {
                             cell.unrealizedProfitLabel.textColor = .brightGreen
                         }
+                        */
                         
                         cell.unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
+                        
+                        openOrderMenuVC?.loadingIndicator.isHidden = true
+                        openOrderMenuVC?.unrealizedProfitLabel.text = "\(unrealizedProfit)"
+                                                
+                        if numberString.contains("-") {
+                            openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightRed
+                            cell.unrealizedProfitLabel.textColor = .brightRed
+                        } else {
+                            openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightGreen
+                            cell.unrealizedProfitLabel.textColor = .brightGreen
+                        }
                     }
                 }
             }
@@ -204,6 +223,16 @@ class MyForexTradesViewController: UIViewController {
 //MARK: ACTIONS
 
 extension MyForexTradesViewController {
+    @objc func hideTransitionView() {
+        /*
+        UIView.animate(withDuration: 0.5) {
+            self.transitionView.alpha = 0
+        } completion: { success in
+            self.transitionView.isHidden = true
+        }
+        */
+    }
+    
     @objc func presentPastResultsManager() {
         lightImpactGenerator()
         /*
@@ -247,6 +276,8 @@ extension MyForexTradesViewController {
 
 extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
+        
+        
         if activeOrders.count < 1 && pendingOrders.count < 1 {
 //            activeEmptyState.showViews()
             return 0
@@ -300,7 +331,12 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
         if section == 0 {
             return 0
         } else {
-            return 60
+            
+            if pendingOrders.count < 1 {
+                return 0
+            } else {
+                return 60
+            }
         }
     }
     
@@ -322,10 +358,11 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
             
             let order = activeOrders[indexPath.row]
             
-            let signalOptionsVC = OpenOrderMenuViewController() //ModifyOpenOrderViewController()
+            let signalOptionsVC = OpenOrderMenuViewController()
             signalOptionsVC.forexSignal = order
             signalOptionsVC.delegate = self
             
+            signalOptionsVC.navTitleLabel.text = order.order?.symbol
             /*
             var signal: MTInstantTradeStatus
             signal = allPositions[indexPath.row]
@@ -340,7 +377,7 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
             
             let order = pendingOrders[indexPath.row]
             
-            let signalOptionsVC = PendingOrderMenuViewController() //ModifyPendingOrderViewController()
+            let signalOptionsVC = PendingOrderMenuViewController()
             signalOptionsVC.order = order
             signalOptionsVC.delegate = self
             
@@ -362,6 +399,7 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
 extension MyForexTradesViewController: OpenOrderMenuViewControllerDelegate {
     func didTapModifyTrade(signal: MTInstantTradeStatus) {
         let signalOptionsVC = ModifyOpenOrderViewController()
+        signalOptionsVC.assetTitleLabel.text = signal.order?.symbol
 //        signalOptionsVC.account = brokers.first
         signalOptionsVC.forexSignal = signal
         signalOptionsVC.delegate = self
@@ -389,6 +427,7 @@ extension MyForexTradesViewController: PendingOrderMenuViewControllerDelegate {
     func didTapModifyPendingTrade(signal: MTInstantTradeStatus) {
         let signalOptionsVC = ModifyPendingOrderViewController()
         signalOptionsVC.delegate = self
+        signalOptionsVC.assetTitleLabel.text = signal.order?.symbol
 //        signalOptionsVC.account = brokers.first
         signalOptionsVC.forexSignal = signal
         signalOptionsVC.modalPresentationStyle = .overFullScreen
@@ -510,6 +549,8 @@ extension MyForexTradesViewController {
             }
         }
         
+        print("\(signal.order?.openTime) 🙏🙏🙏 000")
+        
         if let time = signal.order?.openTime {
             var date: Date?
             let splitTime = time.components(separatedBy: "T")
@@ -522,8 +563,18 @@ extension MyForexTradesViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             date = dateFormatter.date(from:timeString)
             
+            //print("invalid time zone 😹😹😹 \(date)")
+            
+            if let formattedDate = formatDate(time) {
+                print("\(formattedDate) 😹😹😹")
+                cell.signalTimeLabel.text = formattedDate
+            } else {
+                print("Invalid date string 😹😹😹")
+            }
+            
             //Change the format of the string
             //into one that is readable and matches the 'All' tab
+            /*
             if let sigDate = date {
                 if let estTimeZone = TimeZone(abbreviation: "GMT") {
                     //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off //GMT is 13 hours off
@@ -535,7 +586,24 @@ extension MyForexTradesViewController {
                     print("invalid time zone 😹😹😹")
                 }
             }
+            */
         }
+    }
+    
+    func formatDate(_ dateString: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        
+        if let date = dateFormatter.date(from: dateString) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "M/d @ h:mma"
+            outputFormatter.amSymbol = "am"
+            outputFormatter.pmSymbol = "pm"
+            
+            return outputFormatter.string(from: date)
+        }
+        
+        return nil // Return nil if date parsing fails
     }
     
     func setupPendingOrders(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {

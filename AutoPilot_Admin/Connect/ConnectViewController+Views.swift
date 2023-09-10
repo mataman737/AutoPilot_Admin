@@ -125,20 +125,20 @@ extension ConnectViewController {
     }
     
     func setupTableView() {
-        discoverTableView = UITableView(frame: self.view.frame, style: .plain)
+        discoverTableView = UITableView(frame: self.view.frame, style: .grouped)
         discoverTableView.alpha = 1.0
         discoverTableView.isScrollEnabled = true
         discoverTableView.backgroundColor = .clear
         discoverTableView.delegate = self
         discoverTableView.dataSource = self
         discoverTableView.register(ConnectChannelTableViewCell.self, forCellReuseIdentifier: connectChannelTableViewCell)
-        
+        discoverTableView.register(TeamMemberTableViewCell.self, forCellReuseIdentifier: teamMemberTableViewCell)
         discoverTableView.allowsSelection = true
         discoverTableView.allowsMultipleSelection = false
         discoverTableView.contentInset = .zero
         discoverTableView.showsVerticalScrollIndicator = false
         discoverTableView.separatorStyle = .none
-        discoverTableView.contentInset = UIEdgeInsets(top: 11, left: 0, bottom: 100, right: 0)
+        discoverTableView.contentInset = UIEdgeInsets(top: .createAspectRatio(value: 20), left: 0, bottom: 100, right: 0)
         discoverTableView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(discoverTableView)
         discoverTableView.topAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true

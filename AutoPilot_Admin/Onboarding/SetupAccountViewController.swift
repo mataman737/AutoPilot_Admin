@@ -25,8 +25,8 @@ protocol SetupAccountViewControllerDelegate {
 
 class SetupAccountViewController: UIViewController {
 
+    let fromLogin = UserDefaults()
     var delegate: SetupAccountViewControllerDelegate!
-    
     var transitionView = UIView()
     var navView = UIView()
     var userInfoContainer = UIView()
@@ -142,6 +142,7 @@ extension SetupAccountViewController {
         } else if isStepTwo {
             
             if phoneNubmerIsValid {
+                print("\(phoneNumber) 😪😪😪")
                 nextButton.showLoader()
                 nextButton.isUserInteractionEnabled = false
                 API.sharedInstance.sendSMSVerify(user: AdminSignup(phone: phoneNumber)) { (success, _, error) in
@@ -173,7 +174,7 @@ extension SetupAccountViewController {
             if photoSet {
                 nextButton.showLoader()
                 nextButton.isUserInteractionEnabled = false
-                                
+                print("\(phoneNumber) 😪😪😪")
                 API.sharedInstance.sendSMSVerifyLogin(loginRequest: SMSLoginAttempt(code: codeTextField.text ?? "", phone: phoneNumber, displayName: usernameTextfield.text ?? "")) { [weak self] (success, admin, error, statusCode) in
                     if error != nil {
                         DispatchQueue.main.async {
@@ -243,6 +244,7 @@ extension SetupAccountViewController {
                                 Admin.saveCurrentAdmin()
                                 ChatClient.login()
                                 //self?.goToHome()
+                                self?.fromLogin.set(true, forKey: "fromLogin")
                                 self?.perform(#selector(self?.transitionHome), with: self, afterDelay: 0.5)
                             }
                         }
