@@ -28,6 +28,7 @@ class ConnectViewController: UIViewController {
     var bellButton = UIButton()
     var discoverTableView = UITableView()
     var connectChannelTableViewCell = "connectChannelTableViewCell"
+    var teamMemberTableViewCell = "teamMemberTableViewCell"
     var superGroupCIDs: [[String]] = [
         [ "MainSuperGroup"],
     ]
@@ -46,6 +47,8 @@ class ConnectViewController: UIViewController {
     
     var rewardsImageView = UIImageView()
     var rewardsButton = UIButton()
+    
+    var activePaidTeamMembers = [["John Glaude", "6/1/23"], ["Dave Marooney", "6/1/23"], ["Asohka Tano", "6/1/23"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -174,25 +177,60 @@ extension ConnectViewController {
 
 extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1//superGroupCIDs.count
+        if section == 0 {
+            return 1
+        } else {
+            return activePaidTeamMembers.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: connectChannelTableViewCell, for: indexPath) as! ConnectChannelTableViewCell
-        //New
-        cell.circleImageView.image = UIImage(named: "enigmaCommunity")
-        
-//        if let url = URL(string: superGroupCIDs[indexPath.row][2]) {
-            //cell.circleImageView.kf.setImage(with: url)
-//        }
-        
-        cell.chatNameLabel.text = "Community"//superGroupCIDs[indexPath.row][0]
-        cell.chatDescriptionLabel.text = "0 new messages"
-        cell.newMessageBubble.alpha = 0
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: connectChannelTableViewCell, for: indexPath) as! ConnectChannelTableViewCell
+            //New
+            cell.circleImageView.image = UIImage(named: "ttaIcon")
+            
+    //        if let url = URL(string: superGroupCIDs[indexPath.row][2]) {
+                //cell.circleImageView.kf.setImage(with: url)
+    //        }
+            
+            cell.chatNameLabel.text = "Community"
+            cell.chatDescriptionLabel.text = "0 new messages"
+            cell.newMessageBubble.alpha = 0
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
+            cell.chatNameLabel.text = activePaidTeamMembers[indexPath.row][0]
+            let memberDate = activePaidTeamMembers[indexPath.row][1]
+            cell.chatDescriptionLabel.text = "Member since: \(memberDate)"
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        let titleLabel = UILabel()
+        titleLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        titleLabel.textColor = .black
+        titleLabel.text = "Team Members (\(activePaidTeamMembers.count))"
+        titleLabel.numberOfLines = 0
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerView.addSubview(titleLabel)
+        titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -.createAspectRatio(value: 16)).isActive = true
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        } else {
+            return .createAspectRatio(value: 50)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -201,55 +239,37 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         lightImpactGenerator()
-//        let idString = superGroupCIDs[indexPath.row][1]
-        do {
-            let id = try ChannelId(cid: "gaming:MainSuperGroup")
-            let channelVC = CustomChatChannelVC()
-            channelVC.chatChannelDelegate = self
-            channelVC.channelController = ChatClient.shared.channelController(for: id)
-            
-            DispatchQueue.main.async { [weak self] in
-                let nav = UINavigationController(rootViewController: channelVC)
-                self?.present(nav, animated: true, completion: {
-//                    API.sharedInstance.updateAdmin(admin: Admin.current) { success, admin, error in
-//                        guard error == nil else {
-//                            print(error!)
-//                            return
-//                        }
-//                        
-//                        guard success, let _ = admin else {
-//                            print("error updating admin")
-//                            return
-//                        }
-//                    }
-                })
+        
+        if indexPath.section == 0 {
+            do {
+                let id = try ChannelId(cid: "gaming:MainSuperGroup")
+                let channelVC = CustomChatChannelVC()
+                channelVC.chatChannelDelegate = self
+                channelVC.channelController = ChatClient.shared.channelController(for: id)
+                
+                DispatchQueue.main.async { [weak self] in
+                    let nav = UINavigationController(rootViewController: channelVC)
+                    self?.present(nav, animated: true, completion: {
+    //                    API.sharedInstance.updateAdmin(admin: Admin.current) { success, admin, error in
+    //                        guard error == nil else {
+    //                            print(error!)
+    //                            return
+    //                        }
+    //
+    //                        guard success, let _ = admin else {
+    //                            print("error updating admin")
+    //                            return
+    //                        }
+    //                    }
+                    })
+                }
+            } catch {
+                print(error)
             }
-        } catch {
-            print(error)
+        } else {
+            
         }
     }
-    
-    /*
-    func goToPrivateChat(chat: PrivateChat) {
-        let idString = "privateChat\(chat.id!.uuidString)"
-
-        do {
-            let id = try ChannelId(cid: idString)
-            
-            let channelVC = CustomChatChannelVC()
-            channelVC.chatChannelDelegate = self
-            channelVC.channelController = ChatClient.shared.channelController(for: id)
-            channelVC.messageComposerVC.composerView.isUserInteractionEnabled = false
-            
-            DispatchQueue.main.async { [weak self] in
-                let nav = UINavigationController(rootViewController: channelVC)
-                self?.present(nav, animated: true, completion: nil)
-            }
-        } catch {
-            print(error)
-        }
-    }
-    */
     
 }
 

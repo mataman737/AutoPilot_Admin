@@ -69,7 +69,7 @@ extension OpenOrderMenuViewController {
         mainContainer.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor, constant: 0).isActive = true
         mainContainer.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor, constant: 0).isActive = true
         mainContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
-        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 520)).isActive = true //366 //285
+        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 450)).isActive = true //520
         mainContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
         keyLine.layer.cornerRadius = .createAspectRatio(value: 4)/2
@@ -164,6 +164,7 @@ extension OpenOrderMenuViewController {
         unrealizedProfitLabel.trailingAnchor.constraint(equalTo: tradeDetailsContainer.trailingAnchor, constant: -.createAspectRatio(value: 32)).isActive = true
         unrealizedProfitLabel.centerYAnchor.constraint(equalTo: entryPriceLabel.centerYAnchor).isActive = true
                 
+        loadingIndicator.color = .swBlue
         loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(loadingIndicator)
         loadingIndicator.centerYAnchor.constraint(equalTo: unrealizedProfitLabel.centerYAnchor).isActive = true
@@ -195,7 +196,7 @@ extension OpenOrderMenuViewController {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             //print(self?.forexSignal.order?.ticket)
             if let order = MyTabBarController.orderProfitUpdate?.data.orders.first(where: {$0.ticket == self?.forexSignal.order?.ticket}), let stopLoss = order.stopLoss {
-                print("stop loss: \(stopLoss)")
+                //print("stop loss: \(stopLoss)")
                 self?.stopLossLabel.text = "\(stopLoss)"
                 
                 if let symbol = order.symbol, let livePrice = MyTabBarController.orderProfitUpdate?.livePrices.priceForSymbol(symbol: symbol.removePeriodsAndDashes()) {
@@ -292,6 +293,7 @@ extension OpenOrderMenuViewController {
         sendContentOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: 0).isActive = true
         sendContentOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
         
+        shareOption.isHidden = true
         shareOption.optionButton.addTarget(self, action: #selector(didTapSubscribe), for: .touchUpInside)
         shareOption.iconImageView.image = UIImage(named: "thickBellNVU")//UIImage(named: "thickBell")
         shareOption.optionTitleLabel.text = "Receive Updates"

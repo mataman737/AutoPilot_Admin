@@ -68,7 +68,7 @@ extension PendingOrderMenuViewController {
         mainContainer.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor).isActive = true
         mainContainer.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor).isActive = true
         mainContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
-        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 520)).isActive = true
+        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 450)).isActive = true //520
         mainContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
         keyLine.layer.cornerRadius = 4/2
@@ -302,6 +302,7 @@ extension PendingOrderMenuViewController {
         sendContentOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor).isActive = true
         sendContentOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
         
+        shareOption.isHidden = true
         shareOption.optionButton.addTarget(self, action: #selector(didTapSubscribe), for: .touchUpInside)
         shareOption.iconImageView.image = UIImage(named: "thickBellNVU")
         shareOption.optionTitleLabel.text = "Receive Updates"
