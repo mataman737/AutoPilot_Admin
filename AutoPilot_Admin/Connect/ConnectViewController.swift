@@ -206,6 +206,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
             cell.chatNameLabel.text = activePaidTeamMembers[indexPath.row][0]
             let memberDate = activePaidTeamMembers[indexPath.row][1]
             cell.chatDescriptionLabel.text = "Member since: \(memberDate)"
+            cell.circleImageView.image = UIImage(named: "enigmaUserPH")
             return cell
         }
     }

@@ -86,41 +86,61 @@ extension MyForexTradesViewController {
         dividerLine.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
         dividerLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
-        //
+        // RIGHT SIDE OF NAV
         
         plusImageView.image = UIImage(named: "plusImg")
         plusImageView.contentMode = .scaleAspectFill
         plusImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(plusImageView)
-        plusImageView.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: -17).isActive = true
-        plusImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
-        plusImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        plusImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        plusImageView.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: -.createAspectRatio(value: 17)).isActive = true
+        plusImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        plusImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
+        plusImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
         
         plusButton.addTarget(self, action: #selector(didTapPlus), for: .touchUpInside)
         plusButton.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(plusButton)
-        plusButton.leadingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -10).isActive = true
-        plusButton.topAnchor.constraint(equalTo: plusImageView.topAnchor, constant: -10).isActive = true
-        plusButton.trailingAnchor.constraint(equalTo: plusImageView.trailingAnchor, constant: 10).isActive = true
-        plusButton.bottomAnchor.constraint(equalTo: plusImageView.bottomAnchor, constant: 10).isActive = true
+        plusButton.leadingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
+        plusButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
+        plusButton.trailingAnchor.constraint(equalTo: plusImageView.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        plusButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
+        
+        //LEFT SIDE OF NAV
         
         bookImageView.image = UIImage(named: "book")
         bookImageView.contentMode = .scaleAspectFill
         bookImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(bookImageView)
-        bookImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 17).isActive = true
-        bookImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
-        bookImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        bookImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        bookImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: .createAspectRatio(value: 17)).isActive = true
+        bookImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        bookImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
+        bookImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
         
         bookButton.addTarget(self, action: #selector(showOrderHistoryVC), for: .touchUpInside)
         bookButton.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(bookButton)
-        bookButton.leadingAnchor.constraint(equalTo: bookImageView.leadingAnchor, constant: -10).isActive = true
-        bookButton.topAnchor.constraint(equalTo: bookImageView.topAnchor, constant: -10).isActive = true
-        bookButton.trailingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 10).isActive = true
-        bookButton.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: 10).isActive = true
+        bookButton.leadingAnchor.constraint(equalTo: bookImageView.leadingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
+        bookButton.topAnchor.constraint(equalTo: bookImageView.topAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
+        bookButton.trailingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        bookButton.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        
+        brokerLinkImageView.image = UIImage(named: "brokerLink")
+        brokerLinkImageView.contentMode = .scaleAspectFill
+        brokerLinkImageView.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(brokerLinkImageView)
+        //brokerLinkImageView.trailingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -.createAspectRatio(value: 17)).isActive = true
+        brokerLinkImageView.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: .createAspectRatio(value: 17)).isActive = true
+        brokerLinkImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        brokerLinkImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
+        brokerLinkImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
+        
+        brokerLinkButton.addTarget(self, action: #selector(connectBrokerTapped), for: .touchUpInside)
+        brokerLinkButton.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(brokerLinkButton)
+        brokerLinkButton.leadingAnchor.constraint(equalTo: brokerLinkImageView.leadingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
+        brokerLinkButton.trailingAnchor.constraint(equalTo: brokerLinkImageView.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        brokerLinkButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
+        brokerLinkButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
     }
     
     func setupTable() {

@@ -39,6 +39,8 @@ class MyForexTradesViewController: UIViewController {
     var plusButton = UIButton()
     var bookImageView = UIImageView()
     var bookButton = UIButton()
+    var brokerLinkImageView = UIImageView()
+    var brokerLinkButton = UIButton()
 
     var forexes = [Signal]()
     var signals = [Signal]()
@@ -53,6 +55,8 @@ class MyForexTradesViewController: UIViewController {
     var openOrderMenuVC: OpenOrderMenuViewController?
     
     let tradingPairs = ["ADAUSD", "ALUMINIUM", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AUS200.spot", "AVEUSD", "BCHUSD", "BNBUSD", "BRAIND", "BRENT", "BRENT.spot", "BSVUSD", "BTCEUR", "BTCUSD", "BUND", "CADCHF", "CADJPY", "CHFJPY", "CHNIND", "CHNIND.spot", "COCOA", "COFFEE", "COPPER", "CORN", "COTTON", "DOGUSD", "DOTUSD", "DSHUSD", "EOSUSD", "ETHBTC", "ETHUSD", "EU50", "EU50.spot", "EURAUD", "EURCAD", "EURCHF", "EURCZK", "EURGBP", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "FRA40", "FRA40.spot", "GAUTRY", "GAUUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "GER30", "GER30.spot", "HKIND", "HKIND.spot", "IND50", "ITA40", "ITA40.spot", "JAP225", "JAP225.spot", "KOSP200", "LNKUSD", "LTCUSD", "MEXIND", "NGAS", "NGAS.spot", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "RUS50", "SA40", "SCHATZ", "SGDJPY", "SOYBEAN", "SPA35", "SPA35.spot", "SUGAR", "SUI20", "THTUSD", "TNOTE", "TRXUSD", "UK100", "UK100.spot", "UNIUSD", "US100", "US100.spot", "US2000", "US30", "US30.spot", "US500", "US500.spot", "USCUSD", "USDBIT", "USDCAD", "USDCHF", "USDCZK", "USDHKD", "USDHUF", "USDIDX", "USDINR", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDTRY", "USDZAR", "VETUSD", "VIX", "W20", "WHEAT", "WTI", "WTI.spot", "XAGUSD", "XAUEUR", "XAUTRY", "XAUUSD", "XEMUSD", "XLMUSD", "XMRUSD", "XPDUSD", "XPTUSD", "XRPEUR", "XRPUSD", "XTZUSD", "ZINC"]
+    
+    var isBrokerConnected = true
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -215,10 +219,22 @@ class MyForexTradesViewController: UIViewController {
 //MARK: ACTIONS
 
 extension MyForexTradesViewController {
+    @objc func connectBrokerTapped() {
+        lightImpactGenerator()
+        if isBrokerConnected {
+            let myBrokerVC = MyConnectedBrokerAccountViewController()
+            myBrokerVC.modalPresentationStyle = .overFullScreen
+            self.present(myBrokerVC, animated: false, completion: nil)
+        } else {
+            let connectBrokerVC = ConnectBrokerViewController()
+            connectBrokerVC.modalPresentationStyle = .overFullScreen
+            self.present(connectBrokerVC, animated: false, completion: nil)
+        }
+    }
+    
     @objc func showOrderHistoryVC() {
         lightImpactGenerator()
         let newNotiVC = OrderHistoryViewController()
-        //newNotiVC.modalPresentationStyle = .overFullScreen
         self.present(newNotiVC, animated: true, completion: nil)
     }
     
@@ -343,8 +359,7 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
         return 0
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //return UITableView.automaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {        
         return .createAspectRatio(value: 173)
     }
     

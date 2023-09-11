@@ -59,6 +59,13 @@
 		DEB44E422AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E412AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift */; };
 		DEB44E452AAEB96A0006887A /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E442AAEB96A0006887A /* OrderHistoryViewController.swift */; };
 		DEB44E472AAEB9720006887A /* OrderHistoryViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E462AAEB9720006887A /* OrderHistoryViewController+Views.swift */; };
+		DEB44E4A2AAFAB5F0006887A /* ConnectBrokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E492AAFAB5F0006887A /* ConnectBrokerViewController.swift */; };
+		DEB44E4C2AAFAB680006887A /* ConnectBrokerViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E4B2AAFAB680006887A /* ConnectBrokerViewController+Views.swift */; };
+		DEB44E4E2AAFADE10006887A /* ConnectBrokerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E4D2AAFADE10006887A /* ConnectBrokerTableViewCell.swift */; };
+		DEB44E512AAFB1EC0006887A /* MyConnectedBrokerAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E502AAFB1EC0006887A /* MyConnectedBrokerAccountViewController.swift */; };
+		DEB44E532AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E522AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift */; };
+		DEB44E552AAFB26E0006887A /* MyBrokersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E542AAFB26E0006887A /* MyBrokersHeader.swift */; };
+		DEB44E572AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E562AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -153,6 +160,13 @@
 		DEB44E412AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CancelPendingOrderViewController+Views.swift"; sourceTree = "<group>"; };
 		DEB44E442AAEB96A0006887A /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		DEB44E462AAEB9720006887A /* OrderHistoryViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderHistoryViewController+Views.swift"; sourceTree = "<group>"; };
+		DEB44E492AAFAB5F0006887A /* ConnectBrokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectBrokerViewController.swift; sourceTree = "<group>"; };
+		DEB44E4B2AAFAB680006887A /* ConnectBrokerViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectBrokerViewController+Views.swift"; sourceTree = "<group>"; };
+		DEB44E4D2AAFADE10006887A /* ConnectBrokerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectBrokerTableViewCell.swift; sourceTree = "<group>"; };
+		DEB44E502AAFB1EC0006887A /* MyConnectedBrokerAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConnectedBrokerAccountViewController.swift; sourceTree = "<group>"; };
+		DEB44E522AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyConnectedBrokerAccountViewController+Views.swift"; sourceTree = "<group>"; };
+		DEB44E542AAFB26E0006887A /* MyBrokersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBrokersHeader.swift; sourceTree = "<group>"; };
+		DEB44E562AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBrokerOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -382,6 +396,27 @@
 			path = "Order History";
 			sourceTree = "<group>";
 		};
+		DEB44E482AAFAB3F0006887A /* Connect Broker */ = {
+			isa = PBXGroup;
+			children = (
+				DEB44E492AAFAB5F0006887A /* ConnectBrokerViewController.swift */,
+				DEB44E4B2AAFAB680006887A /* ConnectBrokerViewController+Views.swift */,
+				DEB44E4D2AAFADE10006887A /* ConnectBrokerTableViewCell.swift */,
+			);
+			path = "Connect Broker";
+			sourceTree = "<group>";
+		};
+		DEB44E4F2AAFB1D60006887A /* My Connected Broker */ = {
+			isa = PBXGroup;
+			children = (
+				DEB44E502AAFB1EC0006887A /* MyConnectedBrokerAccountViewController.swift */,
+				DEB44E522AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift */,
+				DEB44E542AAFB26E0006887A /* MyBrokersHeader.swift */,
+				DEB44E562AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift */,
+			);
+			path = "My Connected Broker";
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +446,8 @@
 				DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */,
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DEB44E4F2AAFB1D60006887A /* My Connected Broker */,
+				DEB44E482AAFAB3F0006887A /* Connect Broker */,
 				DEB44E432AAEB9510006887A /* Order History */,
 				DEB44E3E2AAE6AA40006887A /* Cancel Pending Order */,
 				DEB44E392AAE69A20006887A /* Close Open Order */,
@@ -655,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB44E532AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift in Sources */,
 				DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */,
 				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
 				DE4D57982AA77C06008E2B6B /* SettingsSwitchTableViewCellTableViewCell.swift in Sources */,
@@ -663,6 +701,7 @@
 				DE4D57862AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift in Sources */,
 				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
 				DE4D57B52AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift in Sources */,
+				DEB44E4A2AAFAB5F0006887A /* ConnectBrokerViewController.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
@@ -676,6 +715,7 @@
 				DE4D57AE2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift in Sources */,
 				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
 				DE4D57922AA77A4B008E2B6B /* SettingsViewController+Views.swift in Sources */,
+				DEB44E552AAFB26E0006887A /* MyBrokersHeader.swift in Sources */,
 				DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */,
 				DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
@@ -683,6 +723,9 @@
 				DEB44E3D2AAE69B40006887A /* CloseOrderViewController+Views.swift in Sources */,
 				DEB44E402AAE6AC80006887A /* CancelPendingOrderViewController.swift in Sources */,
 				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
+				DEB44E512AAFB1EC0006887A /* MyConnectedBrokerAccountViewController.swift in Sources */,
+				DEB44E572AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift in Sources */,
+				DEB44E4E2AAFADE10006887A /* ConnectBrokerTableViewCell.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */,
@@ -691,6 +734,7 @@
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
+				DEB44E4C2AAFAB680006887A /* ConnectBrokerViewController+Views.swift in Sources */,
 				DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
