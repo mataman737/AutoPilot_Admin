@@ -11,7 +11,7 @@ import Lottie
 
 extension MyForexTradesViewController {
     
-    func setupTransition() {        
+    func setupTransition() {
         fromLogin.setValue(false, forKey: "fromLogin")
         transitionView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         transitionView.backgroundColor = .red
@@ -89,14 +89,13 @@ extension MyForexTradesViewController {
         //
         
         plusImageView.image = UIImage(named: "plusImg")
-        //plusImageView.backgroundColor = .blue
         plusImageView.contentMode = .scaleAspectFill
         plusImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(plusImageView)
         plusImageView.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: -17).isActive = true
         plusImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
-        plusImageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        plusImageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
+        plusImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        plusImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         
         plusButton.addTarget(self, action: #selector(didTapPlus), for: .touchUpInside)
         plusButton.translatesAutoresizingMaskIntoConstraints = false
@@ -105,6 +104,23 @@ extension MyForexTradesViewController {
         plusButton.topAnchor.constraint(equalTo: plusImageView.topAnchor, constant: -10).isActive = true
         plusButton.trailingAnchor.constraint(equalTo: plusImageView.trailingAnchor, constant: 10).isActive = true
         plusButton.bottomAnchor.constraint(equalTo: plusImageView.bottomAnchor, constant: 10).isActive = true
+        
+        bookImageView.image = UIImage(named: "book")
+        bookImageView.contentMode = .scaleAspectFill
+        bookImageView.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(bookImageView)
+        bookImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 17).isActive = true
+        bookImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
+        bookImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        bookImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        
+        bookButton.addTarget(self, action: #selector(showOrderHistoryVC), for: .touchUpInside)
+        bookButton.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(bookButton)
+        bookButton.leadingAnchor.constraint(equalTo: bookImageView.leadingAnchor, constant: -10).isActive = true
+        bookButton.topAnchor.constraint(equalTo: bookImageView.topAnchor, constant: -10).isActive = true
+        bookButton.trailingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 10).isActive = true
+        bookButton.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: 10).isActive = true
     }
     
     func setupTable() {
@@ -115,12 +131,10 @@ extension MyForexTradesViewController {
         mainFeedTableView.backgroundColor = .clear//UIColor(red: 244/255, green: 245/255, blue: 274/255, alpha: 1.0)
         mainFeedTableView.delegate = self
         mainFeedTableView.dataSource = self
-        mainFeedTableView.register(NoSignalsTableViewCell.self, forCellReuseIdentifier: noSignalsTableViewCell)
-        mainFeedTableView.register(SignalsTableViewCell.self, forCellReuseIdentifier: signalsTableViewCell)
-        
+        //mainFeedTableView.register(NoSignalsTableViewCell.self, forCellReuseIdentifier: noSignalsTableViewCell)
+        //mainFeedTableView.register(SignalsTableViewCell.self, forCellReuseIdentifier: signalsTableViewCell)
         mainFeedTableView.register(OpenOrdersTableViewCell.self, forCellReuseIdentifier: openOrdersTableViewCell)
         mainFeedTableView.register(ClosedOrderTableViewCell.self, forCellReuseIdentifier: closedOrderTableViewCell)
-        
         mainFeedTableView.allowsSelection = true
         mainFeedTableView.allowsMultipleSelection = false
         mainFeedTableView.contentInset = .zero

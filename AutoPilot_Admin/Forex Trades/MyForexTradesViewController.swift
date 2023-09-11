@@ -31,22 +31,16 @@ class MyForexTradesViewController: UIViewController {
     var pastResultsButton = UIButton()
     var padlockImageView = UIImageView()
     var padlockButton = UIButton()
-    
     var mainFeedTableView = UITableView()
-    var forexSignalsTableViewCell = "forexSignalsTableViewCell"
-    var signalsTableViewCell = "signalsTableViewCell"
-    var noSignalsTableViewCell = "noSignalsTableViewCell"
-    
     var openOrdersTableViewCell = "openOrdersTableViewCell"
     var closedOrderTableViewCell = "closedOrderTableViewCell"
-    
     var messagesEmptyState = EmptyStateView()
-    
     var plusImageView = UIImageView()
     var plusButton = UIButton()
+    var bookImageView = UIImageView()
+    var bookButton = UIButton()
 
     var forexes = [Signal]()
-    
     var signals = [Signal]()
     var weekZeroSignals = [Signal]()
     var weekOneSignals = [Signal]()
@@ -54,10 +48,8 @@ class MyForexTradesViewController: UIViewController {
     var allRemainingSignals = [Signal]()
     var sixMonthCount = [Signal]()
     var sixMonthSignalCount = 0
-    
     var activeOrders = [MTInstantTradeStatus]()
     var pendingOrders = [MTInstantTradeStatus]()
-    
     var openOrderMenuVC: OpenOrderMenuViewController?
     
     let tradingPairs = ["ADAUSD", "ALUMINIUM", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AUS200.spot", "AVEUSD", "BCHUSD", "BNBUSD", "BRAIND", "BRENT", "BRENT.spot", "BSVUSD", "BTCEUR", "BTCUSD", "BUND", "CADCHF", "CADJPY", "CHFJPY", "CHNIND", "CHNIND.spot", "COCOA", "COFFEE", "COPPER", "CORN", "COTTON", "DOGUSD", "DOTUSD", "DSHUSD", "EOSUSD", "ETHBTC", "ETHUSD", "EU50", "EU50.spot", "EURAUD", "EURCAD", "EURCHF", "EURCZK", "EURGBP", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "FRA40", "FRA40.spot", "GAUTRY", "GAUUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "GER30", "GER30.spot", "HKIND", "HKIND.spot", "IND50", "ITA40", "ITA40.spot", "JAP225", "JAP225.spot", "KOSP200", "LNKUSD", "LTCUSD", "MEXIND", "NGAS", "NGAS.spot", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "RUS50", "SA40", "SCHATZ", "SGDJPY", "SOYBEAN", "SPA35", "SPA35.spot", "SUGAR", "SUI20", "THTUSD", "TNOTE", "TRXUSD", "UK100", "UK100.spot", "UNIUSD", "US100", "US100.spot", "US2000", "US30", "US30.spot", "US500", "US500.spot", "USCUSD", "USDBIT", "USDCAD", "USDCHF", "USDCZK", "USDHKD", "USDHUF", "USDIDX", "USDINR", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDTRY", "USDZAR", "VETUSD", "VIX", "W20", "WHEAT", "WTI", "WTI.spot", "XAGUSD", "XAUEUR", "XAUTRY", "XAUUSD", "XEMUSD", "XLMUSD", "XMRUSD", "XPDUSD", "XPTUSD", "XRPEUR", "XRPUSD", "XTZUSD", "ZINC"]
@@ -223,6 +215,13 @@ class MyForexTradesViewController: UIViewController {
 //MARK: ACTIONS
 
 extension MyForexTradesViewController {
+    @objc func showOrderHistoryVC() {
+        lightImpactGenerator()
+        let newNotiVC = OrderHistoryViewController()
+        //newNotiVC.modalPresentationStyle = .overFullScreen
+        self.present(newNotiVC, animated: true, completion: nil)
+    }
+    
     @objc func hideTransitionView() {
         /*
         UIView.animate(withDuration: 0.5) {

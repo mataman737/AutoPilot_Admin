@@ -57,6 +57,8 @@
 		DEB44E3D2AAE69B40006887A /* CloseOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */; };
 		DEB44E402AAE6AC80006887A /* CancelPendingOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3F2AAE6AC80006887A /* CancelPendingOrderViewController.swift */; };
 		DEB44E422AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E412AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift */; };
+		DEB44E452AAEB96A0006887A /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E442AAEB96A0006887A /* OrderHistoryViewController.swift */; };
+		DEB44E472AAEB9720006887A /* OrderHistoryViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E462AAEB9720006887A /* OrderHistoryViewController+Views.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -149,6 +151,8 @@
 		DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloseOrderViewController+Views.swift"; sourceTree = "<group>"; };
 		DEB44E3F2AAE6AC80006887A /* CancelPendingOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPendingOrderViewController.swift; sourceTree = "<group>"; };
 		DEB44E412AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CancelPendingOrderViewController+Views.swift"; sourceTree = "<group>"; };
+		DEB44E442AAEB96A0006887A /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
+		DEB44E462AAEB9720006887A /* OrderHistoryViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderHistoryViewController+Views.swift"; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -369,6 +373,15 @@
 			path = "Cancel Pending Order";
 			sourceTree = "<group>";
 		};
+		DEB44E432AAEB9510006887A /* Order History */ = {
+			isa = PBXGroup;
+			children = (
+				DEB44E442AAEB96A0006887A /* OrderHistoryViewController.swift */,
+				DEB44E462AAEB9720006887A /* OrderHistoryViewController+Views.swift */,
+			);
+			path = "Order History";
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +411,7 @@
 				DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */,
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DEB44E432AAEB9510006887A /* Order History */,
 				DEB44E3E2AAE6AA40006887A /* Cancel Pending Order */,
 				DEB44E392AAE69A20006887A /* Close Open Order */,
 				DE80EF822AABDB5D00603EF3 /* Update Team Name & Photo */,
@@ -684,6 +698,7 @@
 				DE4D578D2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift in Sources */,
 				DE4D57AC2AA9051A008E2B6B /* OpenOrderMenuViewController.swift in Sources */,
 				DE4D579E2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift in Sources */,
+				DEB44E452AAEB96A0006887A /* OrderHistoryViewController.swift in Sources */,
 				DE4D578B2AA6E15E008E2B6B /* ModifyPendingOrderViewController.swift in Sources */,
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
 				DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */,
@@ -703,6 +718,7 @@
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DE4D57902AA77A44008E2B6B /* SettingsViewController.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
+				DEB44E472AAEB9720006887A /* OrderHistoryViewController+Views.swift in Sources */,
 				DEB44E422AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift in Sources */,
 				DE6643982AA56A4000DA27BE /* SplashViewController.swift in Sources */,
 				DE4D57B02AA905EB008E2B6B /* OptionsView.swift in Sources */,
