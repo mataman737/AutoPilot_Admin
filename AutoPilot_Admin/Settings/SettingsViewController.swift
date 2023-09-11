@@ -55,7 +55,9 @@ class SettingsViewController: UIViewController {
     var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Delete Account"]
     var supportNVU: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions", "Delete Account"]
     
-    var teamAccessCode = "SlimJim"
+    var teamAccessCode: String? {
+        return team?.accessCode
+    }
     var teamName = "The Trade Authority"
     
     var dismissArrowImageView = UIImageView()
@@ -74,6 +76,8 @@ class SettingsViewController: UIViewController {
     var newCryptoSignalOn = UserDefaults()
     var signalThreadUpdateOn = UserDefaults()
     //var nvuAccountInfo: NVUAccountInfo?
+    
+    var team: Team?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +111,26 @@ class SettingsViewController: UIViewController {
         //extendedLayoutIncludesOpaqueBars = true
         
         showTabBar()
+        getCurrentTeam()
+    }
+    
+    func getCurrentTeam() {
+        API.sharedInstance.getCurrentTeam { success, team, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let team = team else {
+                print("error getting team")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.team = team
+                self?.mainFeedTableView.reloadData()
+            }
+        }
     }
 
 }
