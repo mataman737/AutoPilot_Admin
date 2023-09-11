@@ -26,6 +26,8 @@ class UpdateAccessCodeViewController: UIViewController {
         
     var premiumChannelButton = ContinueButton()
     
+    var team: Team?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -73,16 +75,9 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
     }
     
     func submitTeamNameUpdate(name: String) {
-        //DYLAN - NEED TO UDPATE TEAM NAME HERE
-        
-    }
-    
-    func submitAccessCode(promo: String) {
-        
-        //DYLAN - NEED TO UPDATE THIS FOR ACCESS CODE
-        
-        /*
-        API.sharedInstance.redeemFreeTrial(promo: promo) { success, info, error in
+        guard var team = self.team else { return }
+        team.name = name
+        API.sharedInstance.updateTeam(team: team) { success, team, error in
             guard error == nil else {
                 //print(error!)
                 print("\(error!) 🤌🤌🤌 111 poop")
@@ -96,7 +91,7 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
                 return
             }
             
-            guard success, let info = info else {
+            guard success, let team = team else {
                 print("error submitting promo code 🤌🤌🤌")
                 return
             }
@@ -109,6 +104,37 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
                 self?.dismissViews()
             }
         }
-        */
+    }
+    
+    func submitAccessCode(promo: String) {
+        guard var team = self.team else { return }
+        team.accessCode = promo
+        API.sharedInstance.updateTeam(team: team) { success, team, error in
+            guard error == nil else {
+                //print(error!)
+                print("\(error!) 🤌🤌🤌 111 poop")
+                
+                DispatchQueue.main.async {
+                    let toastNoti = ToastNotificationView()
+                    toastNoti.present(withMessage: "Invalid Promo")
+                    self.errorImpactGenerator()
+                }
+                
+                return
+            }
+            
+            guard success, let team = team else {
+                print("error submitting promo code 🤌🤌🤌")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                print("did this 🤌🤌🤌  000")
+                let toastNoti = ToastNotificationView()
+                toastNoti.present(withMessage: "Promo Applied!")
+                self?.successImpactGenerator()
+                self?.dismissViews()
+            }
+        }
     }
 }
