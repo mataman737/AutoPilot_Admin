@@ -50,6 +50,7 @@ class MyForexTradesViewController: UIViewController {
     var sixMonthSignalCount = 0
     var activeOrders = [MTInstantTradeStatus]()
     var pendingOrders = [MTInstantTradeStatus]()
+    var closedOrders = [MTInstantTradeStatus]()
     var openOrderMenuVC: OpenOrderMenuViewController?
     
     let tradingPairs = ["ADAUSD", "ALUMINIUM", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AUS200.spot", "AVEUSD", "BCHUSD", "BNBUSD", "BRAIND", "BRENT", "BRENT.spot", "BSVUSD", "BTCEUR", "BTCUSD", "BUND", "CADCHF", "CADJPY", "CHFJPY", "CHNIND", "CHNIND.spot", "COCOA", "COFFEE", "COPPER", "CORN", "COTTON", "DOGUSD", "DOTUSD", "DSHUSD", "EOSUSD", "ETHBTC", "ETHUSD", "EU50", "EU50.spot", "EURAUD", "EURCAD", "EURCHF", "EURCZK", "EURGBP", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "FRA40", "FRA40.spot", "GAUTRY", "GAUUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "GER30", "GER30.spot", "HKIND", "HKIND.spot", "IND50", "ITA40", "ITA40.spot", "JAP225", "JAP225.spot", "KOSP200", "LNKUSD", "LTCUSD", "MEXIND", "NGAS", "NGAS.spot", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "RUS50", "SA40", "SCHATZ", "SGDJPY", "SOYBEAN", "SPA35", "SPA35.spot", "SUGAR", "SUI20", "THTUSD", "TNOTE", "TRXUSD", "UK100", "UK100.spot", "UNIUSD", "US100", "US100.spot", "US2000", "US30", "US30.spot", "US500", "US500.spot", "USCUSD", "USDBIT", "USDCAD", "USDCHF", "USDCZK", "USDHKD", "USDHUF", "USDIDX", "USDINR", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDTRY", "USDZAR", "VETUSD", "VIX", "W20", "WHEAT", "WTI", "WTI.spot", "XAGUSD", "XAUEUR", "XAUTRY", "XAUUSD", "XEMUSD", "XLMUSD", "XMRUSD", "XPDUSD", "XPTUSD", "XRPEUR", "XRPUSD", "XTZUSD", "ZINC"]
@@ -81,6 +82,7 @@ class MyForexTradesViewController: UIViewController {
         extendedLayoutIncludesOpaqueBars = true
         
         getOpenOrders()
+        getClosedOrders()
         loadingLottie.play()
     }
     
@@ -99,6 +101,26 @@ class MyForexTradesViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.activeOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"})
                 self?.pendingOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"})
+                
+                self?.mainFeedTableView.reloadData()
+            }
+        }
+    }
+    
+    func getClosedOrders() {
+        API.sharedInstance.getClosedOrders { success, orders, error in
+            guard error == nil else {
+                print("\(error!) 👹👹👹 111")
+                return
+            }
+            
+            guard success, let orders = orders else {
+                print("error getting closed orders 👹👹👹 111")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.closedOrders = orders
                 
                 self?.mainFeedTableView.reloadData()
             }
@@ -218,6 +240,7 @@ extension MyForexTradesViewController {
     @objc func showOrderHistoryVC() {
         lightImpactGenerator()
         let newNotiVC = OrderHistoryViewController()
+        newNotiVC.orders = self.closedOrders
         //newNotiVC.modalPresentationStyle = .overFullScreen
         self.present(newNotiVC, animated: true, completion: nil)
     }
@@ -673,15 +696,6 @@ extension MyForexTradesViewController {
         }
     }
     
-    func setTimeString(theDate: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = NSTimeZone.local
-        formatter.dateFormat = "h:mmaa M/dd/yy"
-        formatter.amSymbol = "am"
-        formatter.pmSymbol = "pm"
-        return formatter.string(from: theDate)
-    }
-    
     @objc func updateForexPriceEverySecond(signalSymbol: String) -> String {
         print("did this 🤷‍♂️🤷‍♂️🤷‍♂️ \(signalSymbol.removePeriodsAndDashes())")
         
@@ -738,3 +752,11 @@ extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate 
     }
 }
 
+func setTimeString(theDate: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.timeZone = NSTimeZone.local
+    formatter.dateFormat = "h:mmaa M/dd/yy"
+    formatter.amSymbol = "am"
+    formatter.pmSymbol = "pm"
+    return formatter.string(from: theDate)
+}
