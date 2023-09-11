@@ -359,7 +359,7 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
         return 0
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {        
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return .createAspectRatio(value: 173)
     }
     
