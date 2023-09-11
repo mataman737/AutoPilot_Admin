@@ -626,7 +626,7 @@ class API: NSObject {
         task.resume()
     }
     
-    func getClosedOrders(completionHandler: @escaping (Bool, [Order]?, Error?) -> ()) {
+    func getClosedOrders(completionHandler: @escaping (Bool, [MTInstantTradeStatus]?, Error?) -> ()) {
         var request = URLRequest(url: URL(string: "\(API.tradingUrl)adminorderhistory")!)
         request.httpMethod = "GET"
         //HTTP Headers
@@ -659,7 +659,7 @@ class API: NSObject {
             }
             
             do {
-                let orders = try JSONDecoder().decode([Order].self, from: data)
+                let orders = try JSONDecoder().decode([MTInstantTradeStatus].self, from: data)
                 
                 completionHandler(true, orders, nil)
             } catch {

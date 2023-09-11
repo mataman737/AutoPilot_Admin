@@ -16,6 +16,8 @@ class OrderHistoryViewController: UIViewController {
     
     var mainFeedTableView = UITableView()
     var closedOrderTableViewCell = "closedOrderTableViewCell"
+    
+    var orders = [MTInstantTradeStatus]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return orders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,8 +55,8 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
     
     func setupOrderHistoryValues(cell: ClosedOrderTableViewCell, indexPath: IndexPath) {
         cell.assetImageView.image = UIImage(named: "forexBotIcon")
-        /*
-        let signal = allOrderHistory[indexPath.row]
+
+        let signal = orders[indexPath.row]
         
         if let tradingPairZero = signal.order?.symbol {
             cell.currencyPairLabel.text = tradingPairZero.removePeriodsAndDashes()
@@ -146,6 +148,5 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
                 print("😹😹😹 111")
             }
         }
-        */
     }
 }
