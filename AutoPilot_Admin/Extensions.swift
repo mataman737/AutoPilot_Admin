@@ -319,6 +319,7 @@ extension UILabel {
 }
 
 extension String {
+    
  
     func index(at position: Int, from start: Index? = nil) -> Index? {
         let startingIndex = start ?? startIndex
@@ -335,6 +336,9 @@ extension String {
 }
 
 extension UIColor {
+    
+    static let liveDataRed = UIColor(red: 239/255, green: 76/255, blue: 76/255, alpha: 1.0)
+    static let liveDataGreen = UIColor(red: 43/255, green: 226/255, blue: 139/255, alpha: 1.0)
     
     static let swBlue = UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0)
     static let brightGreen = UIColor(red: 58/255, green: 160/255, blue: 255/255, alpha: 1.0)
@@ -422,10 +426,8 @@ extension UIColor {
 
 extension String {
     
-    func modifyNonMarketExecution() -> String {
-        
+    func modifyNonMarketExecution() -> String {        
         var updatedOrderString = ""
-        
         switch self.lowercased() {
         case "buystop":
             updatedOrderString = "Buy Stop"
@@ -463,6 +465,21 @@ extension String {
             result.append(char)
         }
         return result
+    }
+    
+    func slice(from: String, to: String) -> String? {
+        return (range(of: from)?.upperBound).flatMap { substringFrom in
+            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+                String(self[substringFrom..<substringTo])
+            }
+        }
+    }
+    
+    func trimAccount() -> String {
+        var delimiter = "~"
+        var newstr = self
+        var accountName = newstr.components(separatedBy: delimiter)
+        return accountName[0]
     }
     
     subscript (i: Int) -> Character {

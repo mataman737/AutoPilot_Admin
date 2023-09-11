@@ -51,7 +51,7 @@ class CloseOrderViewController: UIViewController {
     var bulletOne = UIView()
     var legalLabelZero = UILabel()
     var legalLabelOne = UILabel()
-    var disclaimerZero = "NVISIONU™ takes no responsibility for any losses or gains incurred based on any reliance on the information given."
+    var disclaimerZero = "Enigma Labs LLC takes no responsibility for any losses or gains incurred based on any reliance on the information given."
     var disclaimerOne = "Trading Forex, CFDs or any market carries great risks and can lead to complete loss of funds. Do not trade with any funds that you can’t afford to lose. Trade at your own Risk. (Please refer to Risk Disclosure Statement)"
     
     var isDismissing = false

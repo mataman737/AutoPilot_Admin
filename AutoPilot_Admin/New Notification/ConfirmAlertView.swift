@@ -550,5 +550,23 @@ extension ConfirmAlertView {
         self.delegate.popVCBack()
     }
     
+    @objc func showLoadingSpinner() {
+        uploadingLabel.text = "Deleting Account"
+        UIView.animate(withDuration: 0.35) {
+            self.contentView.transform = CGAffineTransform(scaleX: 0.35, y: 0.35)
+            self.contentView.alpha = 0
+        }
+                
+        self.loadingView.isHidden = false
+        self.spinner.alpha = 1.0
+        self.spinner.isHidden = false
+        UIView.animate(withDuration: 0.35, delay: 0.25, options: [], animations: {
+            self.loadingView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            self.loadingView.alpha = 1.0
+        }) { (succcess) in
+            //self.delegate.didCompleteLoadingAnimation()
+        }
+    }
+    
 }
 
