@@ -168,14 +168,13 @@ extension CloseOrderViewController: SwipeConfirmViewDelegate {
     func didConfirmDepositFunds() {
         
         print("👤👤👤 did this twice bitch")
-        /*
         let signalOrderTypeSelected = "POSITION_CLOSE_ID"
         guard let order = forexSignal.order, let tradingPair = order.symbol, let lotSize = order.lots, let ticket = order.ticket, let entryPrice = order.openPrice else { return }
-        let backofficeSignal = InstantTrade(orderId: String(ticket), positionId: String(ticket), signalId: nil, userId: User.current.id, enigmaId: User.current.enigmaId, account: self.account, tradingPair: tradingPair, orderType: signalOrderTypeSelected, lotSize: String(lotSize), entryPrice: String(entryPrice), takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: nil, stopLoss: nil, open: true)
+        let backofficeSignal = InstantTrade(orderId: String(ticket), positionId: String(ticket), signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: tradingPair, orderType: signalOrderTypeSelected, lotSize: String(lotSize), entryPrice: String(entryPrice), takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: nil, stopLoss: nil, open: true)
         
         //print("\(signalOrderTypeSelected) 🔥🔥🔥 \(signalOrderType) 🔥🔥🔥")
                                             
-        API.sharedInstance.newCloseMTInstantTrade(signal: backofficeSignal) { success, signalResponse, error in
+        API.sharedInstance.closeSignal(signal: backofficeSignal) { success, signalResponse, error in
             guard error == nil else {
                 print("\(error!) 🧕🧕🧕")
                 DispatchQueue.main.async {
@@ -187,31 +186,11 @@ extension CloseOrderViewController: SwipeConfirmViewDelegate {
             
             //print("🧴🧴🧴 \(backofficeSignal) 🧴🧴🧴 \(signalOrderType)")
             
-            guard success, let signalResponse = signalResponse, signalResponse.status != "error" else {
-                //print("🐰🐰🐰 \(signalResponse?.errorMsg?.message) 🐰🐰🐰 \(signalOrderType)")
-                
-                DispatchQueue.main.async { [weak self] in
-                    //print("Did this 🫀🫀🫀 222")
-                    print("error posting instant forex trade")
-                    if let sigErrorMsg = signalResponse?.errorMsg?.message {
-                        if sigErrorMsg == "Member does not have a signal account." {
-                            ToastNotificationView().present(withMessage: "Create signal account")
-                            
-                        } else if sigErrorMsg == "Invalid S/L or T/P" {
-                            ToastNotificationView().present(withMessage: "Invalid Stop Loss or Take Profit")
-                        } else if sigErrorMsg == "Not enough money" {
-                            ToastNotificationView().present(withMessage: "Not enough money")
-                        } else if sigErrorMsg == "Market is closed" {
-                            ToastNotificationView().present(withMessage: "Market is closed")
-                        } else {
-                            ToastNotificationView().present(withMessage: sigErrorMsg) //Invalid order type
-                        }
-                        self?.errorImpactGenerator()
-                        print(sigErrorMsg)
-                                                    
-                    }
-                    
-                    self?.swipeView.resetSwipe()
+            guard success else {
+                print("error posting trade")
+                DispatchQueue.main.async {
+                    ToastNotificationView().present(withMessage: "Error posting trade")
+                    self.errorImpactGenerator()
                 }
                 return
             }
@@ -231,7 +210,6 @@ extension CloseOrderViewController: SwipeConfirmViewDelegate {
                 }
             }
         }
-        */
     }
     
     @objc func showCheck() {

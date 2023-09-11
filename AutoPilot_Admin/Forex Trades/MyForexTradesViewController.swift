@@ -726,7 +726,7 @@ extension MyForexTradesViewController {
 
 extension MyForexTradesViewController: CloseOrderViewControllerDelegate {
     func didCloseOrder() {
-        //
+        self.getOpenOrders()
     }
 }
 
@@ -734,7 +734,7 @@ extension MyForexTradesViewController: CloseOrderViewControllerDelegate {
 
 extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate {
     func didCancelOrder() {
-        //
+        self.getOpenOrders()
     }
 }
 
