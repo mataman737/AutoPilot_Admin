@@ -66,6 +66,8 @@
 		DEB44E532AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E522AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift */; };
 		DEB44E552AAFB26E0006887A /* MyBrokersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E542AAFB26E0006887A /* MyBrokersHeader.swift */; };
 		DEB44E572AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E562AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift */; };
+		DEB44E592AAFD7390006887A /* tripleSpinner.json in Resources */ = {isa = PBXBuildFile; fileRef = DEB44E582AAFD7390006887A /* tripleSpinner.json */; };
+		DEB44E5B2AB0029A0006887A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E5A2AB0029A0006887A /* OnboardingView.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -168,6 +170,8 @@
 		DEB44E522AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyConnectedBrokerAccountViewController+Views.swift"; sourceTree = "<group>"; };
 		DEB44E542AAFB26E0006887A /* MyBrokersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBrokersHeader.swift; sourceTree = "<group>"; };
 		DEB44E562AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBrokerOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		DEB44E582AAFD7390006887A /* tripleSpinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tripleSpinner.json; sourceTree = "<group>"; };
+		DEB44E5A2AB0029A0006887A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 		DE4D577F2AA6B704008E2B6B /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				DEB44E582AAFD7390006887A /* tripleSpinner.json */,
 				DE4D57822AA6B818008E2B6B /* blueArrows.json */,
 				DE4D57802AA6B715008E2B6B /* gradientCheck.json */,
 			);
@@ -499,6 +504,7 @@
 				DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */,
 				DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */,
 				DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */,
+				DEB44E5A2AB0029A0006887A /* OnboardingView.swift */,
 			);
 			path = "Forex Trades";
 			sourceTree = "<group>";
@@ -630,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */,
+				DEB44E592AAFD7390006887A /* tripleSpinner.json in Resources */,
 				DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */,
 				DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */,
 				DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */,
@@ -776,6 +783,7 @@
 				DE66439E2AA56CD400DA27BE /* CustomVisualEffectView.swift in Sources */,
 				DEC9A4CD2A93E73D000DBE39 /* SetupAccountViewController.swift in Sources */,
 				FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */,
+				DEB44E5B2AB0029A0006887A /* OnboardingView.swift in Sources */,
 				FCE556A42A9D40DA00C2B394 /* CustomChatChannelVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

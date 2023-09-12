@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import PhotoCircleCrop
+import WXImageCompress
 
 class UpdateTeamNameAndPhotoViewController: UIViewController {
     
@@ -25,6 +27,8 @@ class UpdateTeamNameAndPhotoViewController: UIViewController {
     var bulletThreeLabel = UILabel()
     var isTeamNameChange = false
     var teamPhotoImageView = UIImageView()
+    var photo: UIImage?
+    var photoSet = false
         
     var premiumChannelButton = ContinueButton()
     
@@ -112,5 +116,49 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
             }
         }
         */
+    }
+}
+
+//MARK: CIRCLE PHOTO DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
+
+extension UpdateTeamNameAndPhotoViewController: CircleCropViewControllerDelegate {
+    @objc func replacePhotoClicked() {
+        lightImpactGenerator()
+        
+        ImagePickerManager().pickImage(self){ image in
+            if let image = image {
+                self.pickedImage(image: image)
+            } else {
+                print("no photo retrieved")
+            }
+        }
+    }
+    
+    func pickedImage(image: UIImage) {
+        self.photo = image
+        let circleCropController = CircleCropViewController()
+        circleCropController.delegate = self
+        circleCropController.image = image
+        self.present(circleCropController, animated: true, completion: nil)
+    }
+    
+    func uploadImage() {
+        guard let photo = self.photo else {
+            print("photo is nil, can't upload")
+            return
+        }
+        
+        self.photoSet = true
+        self.teamPhotoImageView.image = photo
+    }
+    
+    func circleCropDidCropImage(_ image: UIImage) {
+        self.photo = image.wxCompress()
+        uploadImage()
+        teamPhotoImageView.image = photo
+    }
+    
+    func circleCropDidCancel() {
+        print("User canceled the crop flow")
     }
 }

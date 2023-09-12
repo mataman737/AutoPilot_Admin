@@ -326,7 +326,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         self.present(updateTeamNamePhotoVC, animated: false)
     }
     
-    @objc func presentUpdateAccessCode(isTeamName: Bool) {
+    @objc func presentUpdateAccessCode() {
         lightImpactGenerator()
         let updateAccessCodeVC = UpdateAccessCodeViewController()
         updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
@@ -765,7 +765,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             case 2:
                 presentUpdateTeamNamePhoto()
             default:
-                presentUpdateAccessCode(isTeamName: false)
+                presentUpdateAccessCode()
             }
         }
              

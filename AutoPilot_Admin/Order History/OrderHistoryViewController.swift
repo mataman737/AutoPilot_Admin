@@ -13,17 +13,25 @@ class OrderHistoryViewController: UIViewController {
     var backImageView = UIImageView()
     var backButton = UIButton()
     var titleLabel = UILabel()
-    
     var mainFeedTableView = UITableView()
     var closedOrderTableViewCell = "closedOrderTableViewCell"
-    
     var orders = [MTInstantTradeStatus]()
+    
+    var orderHistoryEmptyState = EmptyStateView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupNav()
         setupTable()
+        setupEmptyStates()
+        
+        if orders.count > 1 {
+            orderHistoryEmptyState.isHidden = true
+        } else {
+            orderHistoryEmptyState.isHidden = false
+            orderHistoryEmptyState.showViews()
+        }
     }
 
 }
@@ -93,6 +101,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         //print("did this \(signal.order?.ex?.volume) 👘👘👘 333")
                 
         if let volume = signal.order?.lots {
+            print("did this \(signal.order?.type) 👘👘👘 ~~~")
             if let orderType = signal.order?.type {
                 if orderType.contains("Sell") {
                     cell.orderTypeLabel.text = "Sell \(volume.rounded(toPlaces: 2))"
@@ -109,12 +118,6 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         //print("invalid time zone 😹😹😹 111")
         
         if let time = signal.order?.openTime {
-            
-            //print("\(time) 😹😹😹 222")
-            
-            //First Separate components received from MetaAPI
-            //into a string that is formatted into a way that
-            //can be converted into a date
             var date: Date?
             let splitTime = time.components(separatedBy: "T")
             let datePart = splitTime[0]
@@ -126,17 +129,21 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             date = dateFormatter.date(from:timeString)
             
+            //print("invalid time zone 😹😹😹 \(date)")
+            
+            if let formattedDate = formatDate(time) {
+                print("\(formattedDate) 😹😹😹")
+                cell.signalTimeLabel.text = formattedDate
+            } else {
+                print("Invalid date string 😹😹😹")
+            }
+            
             //Change the format of the string
             //into one that is readable and matches the 'All' tab
+            /*
             if let sigDate = date {
-                                
-                //let formatter = DateFormatter()
-                //formatter.timeZone = NSTimeZone.local
-                //formatter.dateFormat = "h:mmaa M/dd/yy"
-                //cell.signalTimeLabel.text = formatter.string(from: sigDate)
-                
-                if let estTimeZone = TimeZone(abbreviation: "BST") {
-                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off
+                if let estTimeZone = TimeZone(abbreviation: "GMT") {
+                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off //GMT is 13 hours off
                     let startConverted = setTimeString(theDate: sigDate.convert(from: estTimeZone, to: TimeZone.current))
                     //10 hour difference
                     //cell.signalTimeLabel.text = "\(formatter.string(from: sigDate)) | \(startConverted)"
@@ -144,9 +151,24 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
                 } else {
                     print("invalid time zone 😹😹😹")
                 }
-            } else {
-                print("😹😹😹 111")
             }
+            */
         }
+    }
+    
+    func formatDate(_ dateString: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        
+        if let date = dateFormatter.date(from: dateString) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "M/d @ h:mma"
+            outputFormatter.amSymbol = "am"
+            outputFormatter.pmSymbol = "pm"
+            
+            return outputFormatter.string(from: date)
+        }
+        
+        return nil // Return nil if date parsing fails
     }
 }

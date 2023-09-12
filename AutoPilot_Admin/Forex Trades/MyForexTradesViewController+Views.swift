@@ -168,6 +168,16 @@ extension MyForexTradesViewController {
         mainFeedTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         mainFeedTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         mainFeedTableView.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
+        
+        adminOnboardingView.addTeamNamePhotoContainer.addTarget(self, action: #selector(presentUpdateTeamNamePhoto), for: .touchUpInside)
+        adminOnboardingView.accessCodeContainer.addTarget(self, action: #selector(presentUpdateAccessCode), for: .touchUpInside)
+        adminOnboardingView.brokerContainer.addTarget(self, action: #selector(connectBrokerTapped), for: .touchUpInside)
+        adminOnboardingView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(adminOnboardingView)
+        adminOnboardingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        adminOnboardingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        adminOnboardingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        adminOnboardingView.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
     }
     
     func setupEmptyStates() {

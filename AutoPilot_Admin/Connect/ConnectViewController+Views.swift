@@ -48,7 +48,7 @@ extension ConnectViewController {
         backButton.trailingAnchor.constraint(equalTo: backImageView.trailingAnchor, constant: 10).isActive = true
         backButton.bottomAnchor.constraint(equalTo: backImageView.bottomAnchor, constant: 10).isActive = true
         
-        titleLabel.text = "Connect"
+        titleLabel.text = "My Team"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .newBlack
         titleLabel.font = .sofiaProMedium(ofSize: 16)

@@ -74,4 +74,22 @@ extension OrderHistoryViewController {
         mainFeedTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         mainFeedTableView.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
     }
+    
+    func setupEmptyStates() {
+        orderHistoryEmptyState.isHidden = true
+        //orderHistoryEmptyState.delegate = self
+        orderHistoryEmptyState.lockLabel.text = "😭"
+        orderHistoryEmptyState.lockTitleLabel.text = "No Closed Orders"//"Chat with Addison"
+        orderHistoryEmptyState.lockDetailLabel.setupLineHeight(myText: "All of your closed orders will be displayed\nhere once you start trading!", myLineSpacing: 4)
+        orderHistoryEmptyState.lockDetailLabel.textAlignment = .center
+        orderHistoryEmptyState.squadUpButton.setTitle("Browse Darrell's Program", for: .normal)
+        orderHistoryEmptyState.squadUpButton.isHidden = true
+        orderHistoryEmptyState.backgroundColor = .clear
+        orderHistoryEmptyState.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(orderHistoryEmptyState)
+        orderHistoryEmptyState.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        orderHistoryEmptyState.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        orderHistoryEmptyState.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 245)).isActive = true
+        orderHistoryEmptyState.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 305)).isActive = true
+    }
 }

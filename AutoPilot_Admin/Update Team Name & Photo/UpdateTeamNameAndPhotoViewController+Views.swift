@@ -64,7 +64,10 @@ extension UpdateTeamNameAndPhotoViewController {
         downButton.trailingAnchor.constraint(equalTo: downArrow.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         downButton.bottomAnchor.constraint(equalTo: downArrow.bottomAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         
-        teamPhotoImageView.image = UIImage(named: "avatarph")
+        let photoTapped = UITapGestureRecognizer(target: self, action: #selector(replacePhotoClicked))
+        teamPhotoImageView.addGestureRecognizer(photoTapped)
+        teamPhotoImageView.isUserInteractionEnabled = true
+        teamPhotoImageView.image = UIImage(named: "enigmaUserPH")
         teamPhotoImageView.contentMode = .scaleAspectFill
         teamPhotoImageView.layer.cornerRadius = .createAspectRatio(value: 110)/2
         teamPhotoImageView.translatesAutoresizingMaskIntoConstraints = false

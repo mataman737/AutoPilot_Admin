@@ -316,6 +316,15 @@ extension UILabel {
         
     }
     
+    func setupLabel(text: String, txtColor: UIColor, font: UIFont, txtAlignment: NSTextAlignment) {
+        self.text = text
+        self.textColor = txtColor
+        self.font = font
+        self.textAlignment = txtAlignment
+        self.numberOfLines = 0
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
 }
 
 extension String {
@@ -426,7 +435,7 @@ extension UIColor {
 
 extension String {
     
-    func modifyNonMarketExecution() -> String {        
+    func modifyNonMarketExecution() -> String {
         var updatedOrderString = ""
         switch self.lowercased() {
         case "buystop":
