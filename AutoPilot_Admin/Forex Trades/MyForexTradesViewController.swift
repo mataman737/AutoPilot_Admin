@@ -76,7 +76,7 @@ class MyForexTradesViewController: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
         
-        print("\(team?.name) 🤬🤬🤬 333")
+        //print("\(team?.name) 🤬🤬🤬 333")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -835,7 +835,7 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
         }
                         
         if teamName != nil {
-            adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")            
+            adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
         }
         
         if teamAccessCode != nil {

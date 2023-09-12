@@ -15,6 +15,7 @@ import Disk
 import SafariServices
 import PWSwitch
 import Kingfisher
+import Lottie
 
 protocol SettingsViewControllerDelegate: AnyObject {
     func didDismissSettings()
@@ -31,8 +32,9 @@ class SettingsViewController: UIViewController {
     }
     
     //var navBar = NavView()
-    
-    var isNVUDemo = UserDefaults()
+    var loadingContainer = UIView()
+    var loadingLottie = LottieAnimationView()
+        
     weak var delegate: SettingsViewControllerDelegate?
     var isDarkMode = UserDefaults()
     var purpGradientBG = UIImageView()
@@ -99,6 +101,7 @@ class SettingsViewController: UIViewController {
         
         setupNav()
         setupTableView()
+        setupLoadingIndicator()
         setupLaunchTransition()
     }
     
@@ -132,6 +135,7 @@ class SettingsViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.team = team
                 self?.mainFeedTableView.reloadData()
+                self?.hideLoader()
             }
         }
     }
@@ -141,6 +145,14 @@ class SettingsViewController: UIViewController {
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    @objc func hideLoader() {
+        UIView.animate(withDuration: 0.5) {
+            self.loadingContainer.alpha = 0
+        } completion: { success in
+            self.loadingContainer.isHidden = true
+        }
+    }
+    
     @objc func didTapDeleteAccount() {
 //        let profileLinkVC = SwipeDeleteAccountViewController()
 //        profileLinkVC.modalPresentationStyle = .overFullScreen
@@ -798,49 +810,26 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if indexPath.section == 4 {
-            
-            if isNVUDemo.bool(forKey: "isNVUDemo") {
-                switch indexPath.row {
-                case 0:
-                    didTapTOS(cell: 1)
-                case 1:
-                    didTapTOS(cell: 2)
-                case 2:
-                    didTapTOS(cell: 3)
-                case 3:
-                    didTapTOS(cell: 4)
-                case 4:
-                    didTapTOS(cell: 5)
-                case 5:
-                    didTapTOS(cell: 6)
-                case 6:
-                    didTapDeleteAccount()
-                default:
-                    didTapLogout()
-                    //print("tapped this")
-                }
-            } else {
-                switch indexPath.row {
-                case 0:
-                    showFreshDeck()
-                case 1:
-                    didTapTOS(cell: 1)
-                case 2:
-                    didTapTOS(cell: 2)
-                case 3:
-                    didTapTOS(cell: 3)
-                case 4:
-                    didTapTOS(cell: 4)
-                case 5:
-                    didTapDeleteAccount()
-                default:
-                    didTapLogout()
-                    //print("tapped this")
-                }
+            switch indexPath.row {
+            case 0:
+                didTapTOS(cell: 1)
+            case 1:
+                didTapTOS(cell: 2)
+            case 2:
+                didTapTOS(cell: 3)
+            case 3:
+                didTapTOS(cell: 4)
+            case 4:
+                didTapTOS(cell: 5)
+            case 5:
+                didTapTOS(cell: 6)
+            case 6:
+                didTapDeleteAccount()
+            default:
+                didTapLogout()
             }
         }
     }
-    
 }
 
 //MARK: CIRCLE PHOTO DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
