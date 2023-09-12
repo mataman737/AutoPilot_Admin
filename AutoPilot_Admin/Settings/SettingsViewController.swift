@@ -54,11 +54,15 @@ class SettingsViewController: UIViewController {
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
     var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Delete Account"]
     var supportNVU: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions", "Delete Account"]
-    
+        
+    var team: Team?
     var teamAccessCode: String? {
         return team?.accessCode
     }
-    var teamName = "The Trade Authority"
+    var teamName: String? {
+        return team?.name
+    }
+    //var teamName = "The Trade Authority"
     
     var dismissArrowImageView = UIImageView()
     
@@ -75,14 +79,13 @@ class SettingsViewController: UIViewController {
     var newForexSignalOn = UserDefaults()
     var newCryptoSignalOn = UserDefaults()
     var signalThreadUpdateOn = UserDefaults()
-    //var nvuAccountInfo: NVUAccountInfo?
-    
-    var team: Team?
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         isDarkMode.set(false, forKey: "isDarkMode")
+        
         if notFirstTimeInSettings.bool(forKey: "notFirstTimeInSettings") {
             //Nada
         } else {
@@ -565,7 +568,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.dateJoinedLabel.text = Admin.current.displayName
             //print("\(Admin.current.profilePhotoUrl) 🤬🤬🤬")
             
-            if let adminPhoto = Admin.current.profilePhotoUrl{
+            if let adminPhoto = Admin.current.profilePhotoUrl {
                 if let url = URL(string: adminPhoto) {
                     cell.profileImageView.kf.setImage(with: url)
                     cell.profileImageView.contentMode = .scaleAspectFill
@@ -583,21 +586,34 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.dateJoinedLabel.textColor = textColor.withAlphaComponent(0.5)
             return cell
         } else if indexPath.section == 1 {
-            //if indexPath.row != accountSettings.count - 1 {
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: settingsTableViewCell, for: indexPath) as! SettingsTableViewCell
             cell.generalImageView.image = UIImage(named: accountImages[indexPath.row])
-            cell.generalImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack)
+            cell.generalImageView.setImageColor(color: .newBlack)
+            cell.titleLabel.textColor = .newBlack
+            
             if indexPath.row == 2 {
-                cell.titleLabel.text = teamName
+                if teamName != nil {
+                    cell.titleLabel.text = teamName
+                    cell.titleLabel.textColor = .newBlack
+                } else {
+                    cell.titleLabel.text = "Add Team Name"
+                    cell.titleLabel.textColor = .brightRed
+                }
+                
             } else if indexPath.row == 3 {
-                cell.titleLabel.text = teamAccessCode
+                if teamAccessCode != nil {
+                    cell.titleLabel.text = teamAccessCode
+                    cell.titleLabel.textColor = .newBlack
+                } else {
+                    cell.titleLabel.text = "Add Access Code"
+                    cell.titleLabel.textColor = .brightRed
+                }
             } else {
-                cell.titleLabel.text = accountSettings[indexPath.row]//.localiz()
+                cell.titleLabel.text = accountSettings[indexPath.row]
             }
-            cell.titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack
-            cell.dividerLine.backgroundColor = isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.12) : .newBlack.withAlphaComponent(0.12)
-            cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
+            
+            cell.dividerLine.backgroundColor = .newBlack.withAlphaComponent(0.12)
+            cell.arrowImageView.setImageColor(color: .newBlack.withAlphaComponent(0.5))
             
             if indexPath.row == accountImages.count - 1 {
                 cell.dividerLine.isHidden = true
@@ -605,14 +621,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.dividerLine.isHidden = false
             }
             
-            cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
+            cell.arrowImageView.setImageColor(color: .newBlack.withAlphaComponent(0.5))
             
             return cell
         } else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: settingsSwitchTableViewCellTableViewCell, for: indexPath) as! SettingsSwitchTableViewCellTableViewCell
             cell.titleLabel.text = notifications[indexPath.row]//.localiz()
-            cell.dividerLine.backgroundColor = isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.12) : .newBlack.withAlphaComponent(0.12)//.newBlack.withAlphaComponent(0.12)
-            cell.titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack
+            cell.dividerLine.backgroundColor = .newBlack.withAlphaComponent(0.12)
+            cell.titleLabel.textColor = .newBlack
             
             if indexPath.row == notifications.count - 1 {
                 cell.dividerLine.isHidden = true
@@ -659,17 +675,17 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
             */
                 
-            cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
+            cell.arrowImageView.setImageColor(color: .newBlack.withAlphaComponent(0.5))
             
             return cell
         } else if indexPath.section == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: settingsTableViewCell, for: indexPath) as! SettingsTableViewCell
             cell.generalImageView.image = UIImage(named: socialsIcons[indexPath.row])
-            cell.generalImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack)
+            cell.generalImageView.setImageColor(color: .newBlack)
             cell.titleLabel.text = socials[indexPath.row]
-            cell.titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack
-            cell.dividerLine.backgroundColor = isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.12) : .newBlack.withAlphaComponent(0.12)
-            cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
+            cell.titleLabel.textColor = .newBlack
+            cell.dividerLine.backgroundColor = .newBlack.withAlphaComponent(0.12)
+            cell.arrowImageView.setImageColor(color: .newBlack.withAlphaComponent(0.5))
             
             if indexPath.row == socials.count - 1 {
                 cell.dividerLine.isHidden = true
@@ -686,7 +702,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: supportTableViewCell, for: indexPath) as! SupportTableViewCell
                 cell.titleLabel.text = supportArray[indexPath.row]//.localiz()
-                cell.titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack
+                cell.titleLabel.textColor = .newBlack
                 cell.dividerLine.backgroundColor = textColor.withAlphaComponent(0.1)
                 cell.arrowImageView.setImageColor(color: .newBlack.withAlphaComponent(0.5))
                 if indexPath.row == supportArray.count - 1 {
@@ -695,7 +711,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.dividerLine.isHidden = false
                 }
                 
-                cell.arrowImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .newBlack.withAlphaComponent(0.5))
+                cell.arrowImageView.setImageColor(color: .newBlack.withAlphaComponent(0.5))
                 return cell
             }
         }
@@ -722,7 +738,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let headerView = UIView()
         let sectionTitleLabel = UILabel()
         sectionTitleLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 18))
-        sectionTitleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .newBlack
+        sectionTitleLabel.textColor = .newBlack
         sectionTitleLabel.textAlignment = .left
         sectionTitleLabel.numberOfLines = 0
         sectionTitleLabel.translatesAutoresizingMaskIntoConstraints = false

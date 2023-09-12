@@ -13,59 +13,46 @@ import StreamChatUI
 class MyForexTradesViewController: UIViewController {
     
     let fromLogin = UserDefaults()
-    static var titleText: String?
     var transitionView = UIView()
     var loadingContainer = UIView()
     var loadingLottie = LottieAnimationView()
-    var navHeight: CGFloat = 90
     var navView = UIView()
-    var backImageView = UIImageView()
-    var backButton = UIButton()
     var titleLabel = UILabel()
-    var detailContainer = UIView()
-    var assetLabel = UILabel()
-    var buyLabel = UILabel()
-    var sellLabel = UILabel()
     var dividerLine = UIView()
-    var pastResultsImageView = UIImageView()
-    var pastResultsButton = UIButton()
-    var padlockImageView = UIImageView()
-    var padlockButton = UIButton()
     var mainFeedTableView = UITableView()
     var openOrdersTableViewCell = "openOrdersTableViewCell"
     var closedOrderTableViewCell = "closedOrderTableViewCell"
-    var messagesEmptyState = EmptyStateView()
     var plusImageView = UIImageView()
     var plusButton = UIButton()
     var bookImageView = UIImageView()
     var bookButton = UIButton()
     var brokerLinkImageView = UIImageView()
     var brokerLinkButton = UIButton()
-    var forexes = [Signal]()
-    var signals = [Signal]()
-    var weekZeroSignals = [Signal]()
-    var weekOneSignals = [Signal]()
-    var weekTwoSignals = [Signal]()
-    var allRemainingSignals = [Signal]()
-    var sixMonthCount = [Signal]()
-    var sixMonthSignalCount = 0
     var activeOrders = [MTInstantTradeStatus]()
     var pendingOrders = [MTInstantTradeStatus]()
     var closedOrders = [MTInstantTradeStatus]()
     var openOrderMenuVC: OpenOrderMenuViewController?
-    var didGetOrders = false
-    var didGetClosedOrders = false
     var adminOnboardingView = OnboardingView()
+    var myForexTradesEmptyState = EmptyStateView()
     var didSetTeamNamePhoto = UserDefaults()
     var didSetAccessCode = UserDefaults()
     var didConnectBroker = UserDefaults()
-    let tradingPairs = ["ADAUSD", "ALUMINIUM", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AUS200.spot", "AVEUSD", "BCHUSD", "BNBUSD", "BRAIND", "BRENT", "BRENT.spot", "BSVUSD", "BTCEUR", "BTCUSD", "BUND", "CADCHF", "CADJPY", "CHFJPY", "CHNIND", "CHNIND.spot", "COCOA", "COFFEE", "COPPER", "CORN", "COTTON", "DOGUSD", "DOTUSD", "DSHUSD", "EOSUSD", "ETHBTC", "ETHUSD", "EU50", "EU50.spot", "EURAUD", "EURCAD", "EURCHF", "EURCZK", "EURGBP", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "FRA40", "FRA40.spot", "GAUTRY", "GAUUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "GER30", "GER30.spot", "HKIND", "HKIND.spot", "IND50", "ITA40", "ITA40.spot", "JAP225", "JAP225.spot", "KOSP200", "LNKUSD", "LTCUSD", "MEXIND", "NGAS", "NGAS.spot", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "RUS50", "SA40", "SCHATZ", "SGDJPY", "SOYBEAN", "SPA35", "SPA35.spot", "SUGAR", "SUI20", "THTUSD", "TNOTE", "TRXUSD", "UK100", "UK100.spot", "UNIUSD", "US100", "US100.spot", "US2000", "US30", "US30.spot", "US500", "US500.spot", "USCUSD", "USDBIT", "USDCAD", "USDCHF", "USDCZK", "USDHKD", "USDHUF", "USDIDX", "USDINR", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDTRY", "USDZAR", "VETUSD", "VIX", "W20", "WHEAT", "WTI", "WTI.spot", "XAGUSD", "XAUEUR", "XAUTRY", "XAUUSD", "XEMUSD", "XLMUSD", "XMRUSD", "XPDUSD", "XPTUSD", "XRPEUR", "XRPUSD", "XTZUSD", "ZINC"]
+    var didGetOrders = false
+    var didGetClosedOrders = false
     var isBrokerConnected = false
     var onboardingCompleted = false
-    var myForexTradesEmptyState = EmptyStateView()
+    
+    var team: Team?
+    var teamAccessCode: String? {
+        return team?.accessCode
+    }
+    var teamName: String? {
+        return team?.name
+    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        getCurrentTeam()
         setupNav()
         setupEmptyStates()
         setupTable()
@@ -81,23 +68,42 @@ class MyForexTradesViewController: UIViewController {
         }
         */
         
-        self.myForexTradesEmptyState.isHidden = false
-        self.myForexTradesEmptyState.showViews()
+        myForexTradesEmptyState.isHidden = false
+        myForexTradesEmptyState.showViews()
         
         hideLoader()
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
+        
+        print("\(team?.name) 🤬🤬🤬 333")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         edgesForExtendedLayout = UIRectEdge.all
         extendedLayoutIncludesOpaqueBars = true
-        
         //getOpenOrders()
         //getClosedOrders()
-        
         loadingLottie.play()
+    }
+    
+    func getCurrentTeam() {
+        API.sharedInstance.getCurrentTeam { success, team, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let team = team else {
+                print("error getting team")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.team = team
+                self?.updateOnboardingRows()
+            }
+        }
     }
     
     func getOpenOrders() {
@@ -168,13 +174,6 @@ class MyForexTradesViewController: UIViewController {
         }
     }
     
-    func showErrorEmptyState() {
-        self.messagesEmptyState.showViews()
-        self.messagesEmptyState.lockDetailLabel.setupLineHeight(myText: "Error loading signals", myLineSpacing: 4)
-        self.messagesEmptyState.lockDetailLabel.textAlignment = .center
-        self.perform(#selector(self.hideLoader), with: self, afterDelay: 0.5)
-    }
-    
     @objc func hideLoader() {
         UIView.animate(withDuration: 0.5) {
             self.loadingContainer.alpha = 0
@@ -187,6 +186,7 @@ class MyForexTradesViewController: UIViewController {
         if let orderUpdate = notification.userInfo?["orderUpdate"] as? OrderProfitUpdate {
             let orders = orderUpdate.data.orders
             
+            /*
             if let balance = orderUpdate.data.balance?.rounded(toPlaces: 2) {
 //                storedBalance = "$\(balance.withCommas())"
 //                navTitleLabel.text = "$\(balance.withCommas())"
@@ -216,8 +216,8 @@ class MyForexTradesViewController: UIViewController {
                 //print("\(hideBalance.bool(forKey: "hideBalance")) 📬📬📬")
                 
             } else {
-//                navTitleLabel.text = "Einstein"
-//                tradingAccBalanceBC?.balanceLabel.text = "-"
+                //navTitleLabel.text = "Einstein"
+                //tradingAccBalanceBC?.balanceLabel.text = "-"
             }
             
             /*
@@ -238,6 +238,7 @@ class MyForexTradesViewController: UIViewController {
             }
             */
             
+            */
             //orderUpdate.data.balance
             
             for index in 0...activeOrders.count {
@@ -331,7 +332,6 @@ extension MyForexTradesViewController {
             pickOptionVC.delegate = self
             pickOptionVC.modalPresentationStyle = .overFullScreen
             pickOptionVC.titleLabel.text = "Pick Trading Pair"
-            pickOptionVC.options = tradingPairs
             pickOptionVC.shareURLButton.continueLabel.text = "Confirm Traiding Pair"
             self.present(pickOptionVC, animated: false, completion: nil)
         } else {
@@ -820,6 +820,7 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
     }
     
     func updateOnboardingRows() {
+        /*
         if didSetTeamNamePhoto.bool(forKey: "didSetTeamNamePhoto") {
             adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
         }
@@ -827,16 +828,22 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
         if didSetAccessCode.bool(forKey: "didSetAccessCode") {
             adminOnboardingView.accessCodeImageView.image = UIImage(named: "onboardingGreenBubble")
         }
+        */
                 
         if didConnectBroker.bool(forKey: "didConnectBroker") {
             adminOnboardingView.connectBrokerImageView.image = UIImage(named: "onboardingGreenBubble")
         }
+                        
+        if teamName != nil {
+            adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")            
+        }
         
-        //print("\(didConnectBroker.bool(forKey: "didConnectBroker")) 🚧🚧🚧")
+        if teamAccessCode != nil {
+            adminOnboardingView.accessCodeImageView.image = UIImage(named: "onboardingGreenBubble")
+        }
         
         
-        
-        if didSetTeamNamePhoto.bool(forKey: "didSetTeamNamePhoto") && didSetAccessCode.bool(forKey: "didSetAccessCode") && didConnectBroker.bool(forKey: "didConnectBroker") {
+        if teamName != nil && teamAccessCode != nil && didConnectBroker.bool(forKey: "didConnectBroker") {
             adminOnboardingView.isHidden = true
             onboardingCompleted = true
         }

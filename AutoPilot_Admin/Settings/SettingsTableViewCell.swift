@@ -43,7 +43,7 @@ extension SettingsTableViewCell {
         
         titleLabel.text = "More Options"
         titleLabel.textAlignment = .center
-        titleLabel.textColor = .white//.white
+        titleLabel.textColor = .newBlack//.white
         titleLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 16))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

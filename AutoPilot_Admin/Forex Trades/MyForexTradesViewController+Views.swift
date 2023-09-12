@@ -30,7 +30,7 @@ extension MyForexTradesViewController {
         navView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         navView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         navView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        navView.heightAnchor.constraint(equalToConstant: navHeight).isActive = true
+        navView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 90)).isActive = true
                 
         //LEFT SIDE OF NAV
         
