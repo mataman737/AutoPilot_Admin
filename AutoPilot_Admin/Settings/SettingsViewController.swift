@@ -51,7 +51,7 @@ class SettingsViewController: UIViewController {
     
     var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey"] //dollardarkinactive //genBox
     var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", ""]
-    var notifications: [String] = ["Announcements Update", "Events Update", "Livestream"]
+    var notifications: [String] = ["New Community Message", "Trade Won", "Trade Lost", "New Team Member"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
     var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Delete Account"]
@@ -64,15 +64,12 @@ class SettingsViewController: UIViewController {
     var teamName: String? {
         return team?.name
     }
-    //var teamName = "The Trade Authority"
     
     var dismissArrowImageView = UIImageView()
     
     var textColor: UIColor = UIColor.white
     var upgradeHidden = true//false
-    
-    //var accountDetails: AccountDetails?
-    //var userInfo: UserInfo?
+        
     var photo: UIImage?
     
     var notFirstTimeInSettings = UserDefaults()
@@ -336,6 +333,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     @objc func presentUpdateTeamNamePhoto() {
         lightImpactGenerator()
         let updateTeamNamePhotoVC = UpdateTeamNameAndPhotoViewController()
+        updateTeamNamePhotoVC.delegate = self
         updateTeamNamePhotoVC.accessCodeTextField.text = teamName
         updateTeamNamePhotoVC.modalPresentationStyle = .overFullScreen
         self.present(updateTeamNamePhotoVC, animated: false)
@@ -344,6 +342,8 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     @objc func presentUpdateAccessCode() {
         lightImpactGenerator()
         let updateAccessCodeVC = UpdateAccessCodeViewController()
+        updateAccessCodeVC.team = self.team
+        updateAccessCodeVC.delegate = self
         updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
@@ -584,13 +584,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 if let url = URL(string: adminPhoto) {
                     cell.profileImageView.kf.setImage(with: url)
                     cell.profileImageView.contentMode = .scaleAspectFill
+                    cell.profileImageView.isHidden = false
                 } else {
-                    cell.profileImageView.image = UIImage(named: "avatarph")
-                    cell.profileImageView.contentMode = .scaleAspectFill
+                    cell.profileImageView.isHidden = true
+                    cell.profilePHImageView.isHidden = false
                 }
             } else {
-                cell.profileImageView.image = UIImage(named: "avatarph")
-                cell.profileImageView.contentMode = .scaleAspectFill
+                cell.profileImageView.isHidden = true
+                cell.profilePHImageView.isHidden = false
             }
             
             cell.dismissArrowImageView.setImageColor(color: textColor)
@@ -837,7 +838,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 extension SettingsViewController: CircleCropViewControllerDelegate {
     @objc func replacePhotoClicked() {
         lightImpactGenerator()
-        /*
+        
         ImagePickerManager().pickImage(self){ image in
             if let image = image {
                 self.pickedImage(image: image)
@@ -845,8 +846,6 @@ extension SettingsViewController: CircleCropViewControllerDelegate {
                 print("no photo retrieved")
             }
         }
-        */
-        
     }
     
     func pickedImage(image: UIImage) {
@@ -857,62 +856,31 @@ extension SettingsViewController: CircleCropViewControllerDelegate {
         self.present(circleCropController, animated: true, completion: nil)
     }
     
-    func uploadImage() {
-        
-        //self.profileImageView.image = UIImage.init(named: "userImagePH")
-        
-        
-        guard let photo = self.photo else {
-            print("photo is nil, can't upload")
-            return
-        }
-        
-        //profileImageView.image = photo
-        /*
-        ImageUploader.uploadImage(image: photo) { (error, success, url) in
-            if let error = error {
-                print(error)
-                return
-            }
-            
-            guard success else {
-                print("upload failed")
-                return
-            }
-            
-            User.current.profilePhotoUrl = url
-            
-//            self.delegate?.didUpdatePhoto?()
-            
-            API.sharedInstance.updateUser(user: User.current) { (success, user, error) in
-                guard error == nil else {
-                    print(error!)
-                    return
-                }
-                guard success, let user = user else {
-                    print("failed updating user")
-                    return
-                }
-                
-                DispatchQueue.main.async {
-                    User.current = user
-                    User.saveCurrentUser()
-                }
-            }
-        }
-        */
+    func circleCropDidCancel() {
+        print("User canceled the crop flow")
     }
     
     func circleCropDidCropImage(_ image: UIImage) {
         self.photo = image.wxCompress()
         uploadImage()
-        
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = mainFeedTableView.cellForRow(at: indexPath) as! ProfileImageTableViewCell
-        cell.profileImageView.image = photo
     }
     
-    func circleCropDidCancel() {
-        print("User canceled the crop flow")
+    func uploadImage() {
+        guard let photo = self.photo else {
+            print("photo is nil, can't upload")
+            return
+        }
+    }
+}
+
+//MARK: UPDATE TEAM NAME PHOTO DELEGATE, UPDATE ACCESS CODE DELEGATE
+
+extension SettingsViewController: UpdateTeamNameAndPhotoViewControllerDelegate, UpdateAccessCodeViewControllerDelegate {
+    func didUpdateAccessCode() {
+        getCurrentTeam()
+    }
+    
+    func didUpdateTeamNamePhoto() {
+        getCurrentTeam()
     }
 }

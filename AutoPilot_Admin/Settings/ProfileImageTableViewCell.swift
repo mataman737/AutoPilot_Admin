@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileImageTableViewCell: UITableViewCell {
     
+    var profilePHImageView = UIImageView()
     var profileImageView = UIImageView()
     var dismissArrowImageView = UIImageView()
     var dismissButton = UIButton()
@@ -64,7 +65,20 @@ extension ProfileImageTableViewCell {
         dismissButton.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         dismissButton.trailingAnchor.constraint(equalTo: dismissArrowImageView.trailingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
         dismissButton.bottomAnchor.constraint(equalTo: dismissArrowImageView.bottomAnchor, constant: .createAspectRatio(value: 30)).isActive = true
+                
+        profilePHImageView.image = UIImage(named: "avatarph")
+        profilePHImageView.backgroundColor = .clear
+        profilePHImageView.layer.cornerRadius = .createAspectRatio(value: 64)/2        
+        profilePHImageView.contentMode = .scaleAspectFill
+        profilePHImageView.layer.masksToBounds = true
+        profilePHImageView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(profilePHImageView)
+        profilePHImageView.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
+        profilePHImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.createAspectRatio(value: 22)).isActive = true
+        profilePHImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 64)).isActive = true
+        profilePHImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 64)).isActive = true
         
+        profileImageView.isHidden = true
         profileImageView.isUserInteractionEnabled = true
         profileImageView.backgroundColor = .clear
         profileImageView.layer.cornerRadius = .createAspectRatio(value: 64)/2

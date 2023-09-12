@@ -14,7 +14,6 @@ protocol UpdateAccessCodeViewControllerDelegate: AnyObject {
 class UpdateAccessCodeViewController: UIViewController {
     
     weak var delegate: UpdateAccessCodeViewControllerDelegate?
-    var isDarkMode = UserDefaults()
     var opacityLayer = UIView()
     var cardContainer = UIView()
     var titleLabel = UILabel()
@@ -22,16 +21,8 @@ class UpdateAccessCodeViewController: UIViewController {
     var downButton = UIButton()
     var accessCodeTextContainer = UIView()
     var accessCodeTextField = UITextField()
-    var disountPercentLabel = UILabel()
-    var discountPercentContainer = UIView()
-    var discountPercentTextField = UITextField()
-    var bulletOneLabel = UILabel()
-    var bulletTwoLabel = UILabel()
-    var bulletThreeLabel = UILabel()
     var didSetAccessCode = UserDefaults()
-        
-    var premiumChannelButton = ContinueButton()
-    
+    var spinner = UIActivityIndicatorView(style: .medium)
     var team: Team?
     
     override func viewDidLoad() {
@@ -73,7 +64,7 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
             }
         } else {
             let toastNoti = ToastNotificationView()
-            toastNoti.present(withMessage: "Invalid Code")
+            toastNoti.present(withMessage: "Invalid Access Code")
             errorImpactGenerator()
         }
         
@@ -83,42 +74,39 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
     
     
     func submitAccessCode(accessCode: String) {
-        
-        self.didSetAccessCode.set(true, forKey: "didSetAccessCode")
-        self.delegate?.didUpdateAccessCode()
-        self.successImpactGenerator()
-        self.dismissViews()
-                
+        spinner.isHidden = false
+        spinner.alpha = 1.0
         guard var team = self.team else {
             print("did this 🫦🫦🫦 000")
             return
-        }        
+        }
+        
         team.accessCode = accessCode
         API.sharedInstance.updateTeam(team: team) { success, team, error in
             guard error == nil else {
-                print("\(error!) 🤌🤌🤌")
-                
                 DispatchQueue.main.async {
                     let toastNoti = ToastNotificationView()
                     toastNoti.present(withMessage: "Code not saved!")
                     self.errorImpactGenerator()
+                    self.spinner.isHidden = true
+                    self.spinner.alpha = 0
                 }
                 
                 return
             }
             
             guard success, let team = team else {
-                print("error submitting promo code 🤌🤌🤌")
                 DispatchQueue.main.async {
                     let toastNoti = ToastNotificationView()
                     toastNoti.present(withMessage: "Code not saved!")
                     self.errorImpactGenerator()
+                    self.spinner.isHidden = true
+                    self.spinner.alpha = 0
                 }
                 return
             }
             
             DispatchQueue.main.async { [weak self] in
-                print("did this 🤌🤌🤌  000")
                 self?.didSetAccessCode.set(true, forKey: "didSetAccessCode")
                 self?.delegate?.didUpdateAccessCode()
                 self?.successImpactGenerator()

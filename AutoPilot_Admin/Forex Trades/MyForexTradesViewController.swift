@@ -290,6 +290,7 @@ extension MyForexTradesViewController {
     @objc func presentUpdateAccessCode() {
         lightImpactGenerator()
         let updateAccessCodeVC = UpdateAccessCodeViewController()
+        updateAccessCodeVC.team = self.team
         updateAccessCodeVC.delegate = self
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
@@ -813,10 +814,12 @@ extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate 
 extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDelegate, UpdateAccessCodeViewControllerDelegate {
     func didUpdateAccessCode() {
         updateOnboardingRows()
+        getCurrentTeam()
     }
     
     func didUpdateTeamNamePhoto() {
-        updateOnboardingRows()
+        //updateOnboardingRows()
+        getCurrentTeam()
     }
     
     func updateOnboardingRows() {

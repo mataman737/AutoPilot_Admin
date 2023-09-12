@@ -9,11 +9,7 @@ import Foundation
 import UIKit
 
 extension UpdateAccessCodeViewController {
- 
     func setupViews() {
-        
-        //isDarkMode.bool(forKey: "isDarkMode") ? .white : .black
-        
         let opacityTapped = UITapGestureRecognizer(target: self, action: #selector(dismissViews))
         opacityLayer.addGestureRecognizer(opacityTapped)
         opacityLayer.isUserInteractionEnabled = true
@@ -23,7 +19,7 @@ extension UpdateAccessCodeViewController {
         self.view.addSubview(opacityLayer)
         opacityLayer.fillSuperview()
         
-        cardContainer.backgroundColor = isDarkMode.bool(forKey: "isDarkMode") ? .darkModeCardBackground : .white//.darkModeCardBackground
+        cardContainer.backgroundColor = .white
         cardContainer.layer.cornerRadius = .createAspectRatio(value: 12)
         cardContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         cardContainer.layer.masksToBounds = true
@@ -37,7 +33,7 @@ extension UpdateAccessCodeViewController {
         
         titleLabel.text = "Access Code"
         titleLabel.textAlignment = .center
-        titleLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .black
+        titleLabel.textColor = .black
         titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +42,7 @@ extension UpdateAccessCodeViewController {
         titleLabel.centerXAnchor.constraint(equalTo: cardContainer.centerXAnchor).isActive = true
         
         downArrow.image = UIImage(named: "newDownArrow")
-        downArrow.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .black)
+        downArrow.setImageColor(color: .black)
         downArrow.contentMode = .scaleAspectFill
         downArrow.translatesAutoresizingMaskIntoConstraints = false
         cardContainer.addSubview(downArrow)
@@ -68,7 +64,7 @@ extension UpdateAccessCodeViewController {
                 
         accessCodeTextContainer.backgroundColor = .clear
         accessCodeTextContainer.layer.borderWidth = 1
-        accessCodeTextContainer.layer.borderColor = isDarkMode.bool(forKey: "isDarkMode") ? UIColor.white.cgColor : UIColor.black.cgColor//UIColor.white.cgColor
+        accessCodeTextContainer.layer.borderColor = UIColor.black.cgColor
         accessCodeTextContainer.layer.cornerRadius = .createAspectRatio(value: 10)
         accessCodeTextContainer.translatesAutoresizingMaskIntoConstraints = false
         cardContainer.addSubview(accessCodeTextContainer)
@@ -77,16 +73,19 @@ extension UpdateAccessCodeViewController {
         accessCodeTextContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: .createAspectRatio(value: 36)).isActive = true
         accessCodeTextContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 58)).isActive = true
                 
+        if team?.accessCode != nil {
+            accessCodeTextField.text = team?.accessCode
+        }
         accessCodeTextField.becomeFirstResponder()
         accessCodeTextField.autocapitalizationType = .none
         accessCodeTextField.alpha = 1.0
         accessCodeTextField.returnKeyType = .done
-        accessCodeTextField.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white : .black//.white
+        accessCodeTextField.textColor = .black
         accessCodeTextField.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
         accessCodeTextField.autocorrectionType = .no
         accessCodeTextField.tintColor = .nvuBlueOne
         accessCodeTextField.attributedPlaceholder = NSAttributedString(string: "Access Code", attributes: [
-            .foregroundColor: isDarkMode.bool(forKey: "isDarkMode") ? UIColor.white.withAlphaComponent(0.5) : UIColor.black.withAlphaComponent(0.5),
+            .foregroundColor: UIColor.black.withAlphaComponent(0.5),
             .font: UIFont.sofiaProMedium(ofSize: .createAspectRatio(value: 14))
         ])        
         accessCodeTextField.delegate = self
@@ -96,5 +95,14 @@ extension UpdateAccessCodeViewController {
         accessCodeTextField.centerYAnchor.constraint(equalTo: accessCodeTextContainer.centerYAnchor, constant: 0).isActive = true
         accessCodeTextField.trailingAnchor.constraint(equalTo: accessCodeTextContainer.trailingAnchor, constant: -.createAspectRatio(value: 15)).isActive = true
         accessCodeTextField.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 30)).isActive = true
+        
+        spinner.isHidden = true
+        spinner.alpha = 0
+        spinner.color = .black
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        accessCodeTextContainer.addSubview(spinner)
+        spinner.trailingAnchor.constraint(equalTo: accessCodeTextContainer.trailingAnchor, constant: -.createAspectRatio(value: 15)).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: accessCodeTextContainer.centerYAnchor).isActive = true
     }
 }

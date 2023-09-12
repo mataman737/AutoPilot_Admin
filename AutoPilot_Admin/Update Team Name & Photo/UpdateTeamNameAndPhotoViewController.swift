@@ -79,7 +79,7 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
             }
         } else {
             let toastNoti = ToastNotificationView()
-            toastNoti.present(withMessage: "Invalid Promo")
+            toastNoti.present(withMessage: "Team Name & Photo Required")
             errorImpactGenerator()
         }
         
