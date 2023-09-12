@@ -9,8 +9,13 @@ import UIKit
 import PhotoCircleCrop
 import WXImageCompress
 
+protocol UpdateTeamNameAndPhotoViewControllerDelegate: AnyObject {
+    func didUpdateTeamNamePhoto()
+}
+
 class UpdateTeamNameAndPhotoViewController: UIViewController {
     
+    weak var delegate: UpdateTeamNameAndPhotoViewControllerDelegate?
     var isDarkMode = UserDefaults()
     var opacityLayer = UIView()
     var cardContainer = UIView()
@@ -29,8 +34,8 @@ class UpdateTeamNameAndPhotoViewController: UIViewController {
     var teamPhotoImageView = UIImageView()
     var photo: UIImage?
     var photoSet = false
-        
     var premiumChannelButton = ContinueButton()
+    var didSetTeamNamePhoto = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +72,9 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             if let tft = textField.text {
-                submitTeamNameUpdate(name: tft)
+                if photoSet == true {
+                    submitTeamNameUpdate(name: tft)
+                }
             }
         } else {
             let toastNoti = ToastNotificationView()
@@ -79,8 +86,10 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
     }
     
     func submitTeamNameUpdate(name: String) {
-        //DYLAN - NEED TO UDPATE TEAM NAME HERE
-        
+        didSetTeamNamePhoto.set(true, forKey: "didSetTeamNamePhoto")
+        delegate?.didUpdateTeamNamePhoto()
+        dismissViews()
+        //DYLAN - NEED TO UDPATE TEAM NAME AND PHOTO HERE
     }
     
     func submitAccessCode(promo: String) {

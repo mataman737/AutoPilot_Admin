@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol UpdateAccessCodeViewControllerDelegate: AnyObject {
+    func didUpdateAccessCode()
+}
+
 class UpdateAccessCodeViewController: UIViewController {
     
+    weak var delegate: UpdateAccessCodeViewControllerDelegate?
     var isDarkMode = UserDefaults()
     var opacityLayer = UIView()
     var cardContainer = UIView()
@@ -23,6 +28,7 @@ class UpdateAccessCodeViewController: UIViewController {
     var bulletOneLabel = UILabel()
     var bulletTwoLabel = UILabel()
     var bulletThreeLabel = UILabel()
+    var didSetAccessCode = UserDefaults()
         
     var premiumChannelButton = ContinueButton()
     
@@ -63,11 +69,11 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             if let tft = textField.text {
-                submitAccessCode(promo: tft)
+                submitAccessCode(accessCode: tft)
             }
         } else {
             let toastNoti = ToastNotificationView()
-            toastNoti.present(withMessage: "Invalid Promo")
+            toastNoti.present(withMessage: "Invalid Code")
             errorImpactGenerator()
         }
         
@@ -79,8 +85,7 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
         team.name = name
         API.sharedInstance.updateTeam(team: team) { success, team, error in
             guard error == nil else {
-                //print(error!)
-                print("\(error!) 🤌🤌🤌 111 poop")
+                print("\(error!) 🤌🤌🤌")
                 
                 DispatchQueue.main.async {
                     let toastNoti = ToastNotificationView()
@@ -106,17 +111,26 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
         }
     }
     
-    func submitAccessCode(promo: String) {
-        guard var team = self.team else { return }
-        team.accessCode = promo
+    func submitAccessCode(accessCode: String) {
+        
+        self.didSetAccessCode.set(true, forKey: "didSetAccessCode")
+        self.delegate?.didUpdateAccessCode()
+        self.successImpactGenerator()
+        self.dismissViews()
+        
+        /*
+        guard var team = self.team else {
+            print("did this 🫦🫦🫦 000")
+            return
+        }        
+        team.accessCode = accessCode
         API.sharedInstance.updateTeam(team: team) { success, team, error in
             guard error == nil else {
-                //print(error!)
-                print("\(error!) 🤌🤌🤌 111 poop")
+                print("\(error!) 🤌🤌🤌")
                 
                 DispatchQueue.main.async {
                     let toastNoti = ToastNotificationView()
-                    toastNoti.present(withMessage: "Invalid Promo")
+                    toastNoti.present(withMessage: "Code not saved!")
                     self.errorImpactGenerator()
                 }
                 
@@ -125,16 +139,22 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
             
             guard success, let team = team else {
                 print("error submitting promo code 🤌🤌🤌")
+                DispatchQueue.main.async {
+                    let toastNoti = ToastNotificationView()
+                    toastNoti.present(withMessage: "Code not saved!")
+                    self.errorImpactGenerator()
+                }
                 return
             }
             
             DispatchQueue.main.async { [weak self] in
                 print("did this 🤌🤌🤌  000")
-                let toastNoti = ToastNotificationView()
-                toastNoti.present(withMessage: "Promo Applied!")
+                self?.didSetAccessCode.set(true, forKey: "didSetAccessCode")
+                self?.delegate?.didUpdateAccessCode()
                 self?.successImpactGenerator()
                 self?.dismissViews()
             }
         }
+        */
     }
 }

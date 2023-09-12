@@ -178,6 +178,12 @@ extension MyForexTradesViewController {
         adminOnboardingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         adminOnboardingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         adminOnboardingView.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
+        
+        didSetTeamNamePhoto.set(false, forKey: "didSetTeamNamePhoto")
+        
+        if didSetTeamNamePhoto.bool(forKey: "didSetTeamNamePhoto") {
+            adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
+        }
     }
     
     func setupEmptyStates() {

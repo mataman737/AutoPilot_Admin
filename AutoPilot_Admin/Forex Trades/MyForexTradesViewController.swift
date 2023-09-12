@@ -57,6 +57,8 @@ class MyForexTradesViewController: UIViewController {
     var didGetOrders = false
     var didGetClosedOrders = false
     var adminOnboardingView = OnboardingView()
+    var didSetTeamNamePhoto = UserDefaults()
+    var didSetAccessCode = UserDefaults()
     
     let tradingPairs = ["ADAUSD", "ALUMINIUM", "AUDCAD", "AUDCHF", "AUDJPY", "AUDNZD", "AUDUSD", "AUS200", "AUS200.spot", "AVEUSD", "BCHUSD", "BNBUSD", "BRAIND", "BRENT", "BRENT.spot", "BSVUSD", "BTCEUR", "BTCUSD", "BUND", "CADCHF", "CADJPY", "CHFJPY", "CHNIND", "CHNIND.spot", "COCOA", "COFFEE", "COPPER", "CORN", "COTTON", "DOGUSD", "DOTUSD", "DSHUSD", "EOSUSD", "ETHBTC", "ETHUSD", "EU50", "EU50.spot", "EURAUD", "EURCAD", "EURCHF", "EURCZK", "EURGBP", "EURHUF", "EURJPY", "EURNOK", "EURNZD", "EURPLN", "EURSEK", "EURTRY", "EURUSD", "FRA40", "FRA40.spot", "GAUTRY", "GAUUSD", "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD", "GBPUSD", "GER30", "GER30.spot", "HKIND", "HKIND.spot", "IND50", "ITA40", "ITA40.spot", "JAP225", "JAP225.spot", "KOSP200", "LNKUSD", "LTCUSD", "MEXIND", "NGAS", "NGAS.spot", "NZDCAD", "NZDCHF", "NZDJPY", "NZDUSD", "RUS50", "SA40", "SCHATZ", "SGDJPY", "SOYBEAN", "SPA35", "SPA35.spot", "SUGAR", "SUI20", "THTUSD", "TNOTE", "TRXUSD", "UK100", "UK100.spot", "UNIUSD", "US100", "US100.spot", "US2000", "US30", "US30.spot", "US500", "US500.spot", "USCUSD", "USDBIT", "USDCAD", "USDCHF", "USDCZK", "USDHKD", "USDHUF", "USDIDX", "USDINR", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDRUB", "USDSEK", "USDTRY", "USDZAR", "VETUSD", "VIX", "W20", "WHEAT", "WTI", "WTI.spot", "XAGUSD", "XAUEUR", "XAUTRY", "XAUUSD", "XEMUSD", "XLMUSD", "XMRUSD", "XPDUSD", "XPTUSD", "XRPEUR", "XRPUSD", "XTZUSD", "ZINC"]
     
@@ -256,6 +258,7 @@ extension MyForexTradesViewController {
     @objc func presentUpdateTeamNamePhoto() {
         lightImpactGenerator()
         let updateTeamNamePhotoVC = UpdateTeamNameAndPhotoViewController()
+        updateTeamNamePhotoVC.delegate = self
         updateTeamNamePhotoVC.modalPresentationStyle = .overFullScreen
         self.present(updateTeamNamePhotoVC, animated: false)
     }
@@ -263,6 +266,7 @@ extension MyForexTradesViewController {
     @objc func presentUpdateAccessCode() {
         lightImpactGenerator()
         let updateAccessCodeVC = UpdateAccessCodeViewController()
+        updateAccessCodeVC.delegate = self
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
     }
@@ -738,6 +742,15 @@ extension MyForexTradesViewController {
         }
     }
     
+    func setTimeString(theDate: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = NSTimeZone.local
+        formatter.dateFormat = "h:mmaa M/dd/yy"
+        formatter.amSymbol = "am"
+        formatter.pmSymbol = "pm"
+        return formatter.string(from: theDate)
+    }
+    
     @objc func updateForexPriceEverySecond(signalSymbol: String) -> String {
         print("did this 🤷‍♂️🤷‍♂️🤷‍♂️ \(signalSymbol.removePeriodsAndDashes())")
         
@@ -794,11 +807,25 @@ extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate 
     }
 }
 
-func setTimeString(theDate: Date) -> String {
-    let formatter = DateFormatter()
-    formatter.timeZone = NSTimeZone.local
-    formatter.dateFormat = "h:mmaa M/dd/yy"
-    formatter.amSymbol = "am"
-    formatter.pmSymbol = "pm"
-    return formatter.string(from: theDate)
+//MARK: UPDATE TEAM NAME PHOTO DELEGATE, UPDATE ACCESS CODE DELEGATE
+
+extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDelegate, UpdateAccessCodeViewControllerDelegate {
+    func didUpdateAccessCode() {
+        updateOnboardingRows()
+    }
+    
+    func didUpdateTeamNamePhoto() {
+        updateOnboardingRows()
+    }
+    
+    func updateOnboardingRows() {
+        if didSetTeamNamePhoto.bool(forKey: "didSetTeamNamePhoto") {
+            adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
+        }
+        
+        if didSetAccessCode.bool(forKey: "didSetAccessCode") {
+            adminOnboardingView.accessCodeImageView.image = UIImage(named: "onboardingGreenBubble")
+        }
+        
+    }
 }
