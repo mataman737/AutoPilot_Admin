@@ -29,6 +29,7 @@ class ConnectViewController: UIViewController {
     var discoverTableView = UITableView()
     var connectChannelTableViewCell = "connectChannelTableViewCell"
     var teamMemberTableViewCell = "teamMemberTableViewCell"
+    var teamMembersEmptyStateCell = "teamMembersEmptyStateCell"
     var superGroupCIDs: [[String]] = [
         [ "MainSuperGroup"],
     ]
@@ -48,7 +49,7 @@ class ConnectViewController: UIViewController {
     var rewardsImageView = UIImageView()
     var rewardsButton = UIButton()
     
-    var activePaidTeamMembers = [["John Glaude", "6/1/23"], ["Dave Marooney", "6/1/23"], ["Asohka Tano", "6/1/23"]]
+    var activePaidTeamMembers: [[String]] = []//[["John Glaude", "6/1/23"], ["Dave Marooney", "6/1/23"], ["Asohka Tano", "6/1/23"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,7 +184,11 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return activePaidTeamMembers.count
+            if activePaidTeamMembers.count > 0 {
+                return activePaidTeamMembers.count
+            } else {
+                return 1
+            }
         }
     }
     
@@ -202,12 +207,17 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
             cell.newMessageBubble.alpha = 0
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
-            cell.chatNameLabel.text = activePaidTeamMembers[indexPath.row][0]
-            let memberDate = activePaidTeamMembers[indexPath.row][1]
-            cell.chatDescriptionLabel.text = "Member since: \(memberDate)"
-            cell.circleImageView.image = UIImage(named: "enigmaUserPH")
-            return cell
+            if activePaidTeamMembers.count > 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
+                cell.chatNameLabel.text = activePaidTeamMembers[indexPath.row][0]
+                let memberDate = activePaidTeamMembers[indexPath.row][1]
+                cell.chatDescriptionLabel.text = "Member since: \(memberDate)"
+                cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: teamMembersEmptyStateCell, for: indexPath) as! TeamMembersEmptyStateCell
+                return cell
+            }
         }
     }
     
@@ -235,7 +245,15 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return .createAspectRatio(value: 73)
+        if indexPath.section == 0 {
+            return .createAspectRatio(value: 73)
+        } else {
+            if activePaidTeamMembers.count > 0 {
+                return .createAspectRatio(value: 73)
+            } else {
+                return .createAspectRatio(value: 400)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

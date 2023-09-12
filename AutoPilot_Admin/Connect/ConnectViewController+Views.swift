@@ -133,6 +133,7 @@ extension ConnectViewController {
         discoverTableView.dataSource = self
         discoverTableView.register(ConnectChannelTableViewCell.self, forCellReuseIdentifier: connectChannelTableViewCell)
         discoverTableView.register(TeamMemberTableViewCell.self, forCellReuseIdentifier: teamMemberTableViewCell)
+        discoverTableView.register(TeamMembersEmptyStateCell.self, forCellReuseIdentifier: teamMembersEmptyStateCell)        
         discoverTableView.allowsSelection = true
         discoverTableView.allowsMultipleSelection = false
         discoverTableView.contentInset = .zero

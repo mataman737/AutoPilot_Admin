@@ -11,6 +11,7 @@
 		DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20422A9BE9040067C719 /* ConnectViewController.swift */; };
 		DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */; };
 		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
+		DE410C8B2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */; };
 		DE4D57812AA6B715008E2B6B /* gradientCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = DE4D57802AA6B715008E2B6B /* gradientCheck.json */; };
 		DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */ = {isa = PBXBuildFile; fileRef = DE4D57822AA6B818008E2B6B /* blueArrows.json */; };
 		DE4D57862AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57852AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift */; };
@@ -115,6 +116,7 @@
 		DE0E20422A9BE9040067C719 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectViewController+Views.swift"; sourceTree = "<group>"; };
 		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
+		DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersEmptyStateCell.swift; sourceTree = "<group>"; };
 		DE4D57802AA6B715008E2B6B /* gradientCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gradientCheck.json; sourceTree = "<group>"; };
 		DE4D57822AA6B818008E2B6B /* blueArrows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blueArrows.json; sourceTree = "<group>"; };
 		DE4D57852AA6DE31008E2B6B /* ModifyOpenOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyOpenOrderViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */,
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
+				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
 				DEB44E4F2AAFB1D60006887A /* My Connected Broker */,
 				DEB44E482AAFAB3F0006887A /* Connect Broker */,
 				DEB44E432AAEB9510006887A /* Order History */,
@@ -758,6 +761,7 @@
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
 				DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */,
 				DE80EF862AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift in Sources */,
+				DE410C8B2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift in Sources */,
 				FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */,
 				DE4D57A42AA82B11008E2B6B /* UpgradeAccountButton.swift in Sources */,
 				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,
