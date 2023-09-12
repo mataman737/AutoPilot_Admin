@@ -80,36 +80,7 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
         return true
     }
     
-    func submitTeamNameUpdate(name: String) {
-        guard var team = self.team else { return }
-        team.name = name
-        API.sharedInstance.updateTeam(team: team) { success, team, error in
-            guard error == nil else {
-                print("\(error!) 🤌🤌🤌")
-                
-                DispatchQueue.main.async {
-                    let toastNoti = ToastNotificationView()
-                    toastNoti.present(withMessage: "Invalid Promo")
-                    self.errorImpactGenerator()
-                }
-                
-                return
-            }
-            
-            guard success, let team = team else {
-                print("error submitting promo code 🤌🤌🤌")
-                return
-            }
-            
-            DispatchQueue.main.async { [weak self] in
-                print("did this 🤌🤌🤌  000")
-                let toastNoti = ToastNotificationView()
-                toastNoti.present(withMessage: "Promo Applied!")
-                self?.successImpactGenerator()
-                self?.dismissViews()
-            }
-        }
-    }
+    
     
     func submitAccessCode(accessCode: String) {
         
@@ -117,8 +88,7 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
         self.delegate?.didUpdateAccessCode()
         self.successImpactGenerator()
         self.dismissViews()
-        
-        /*
+                
         guard var team = self.team else {
             print("did this 🫦🫦🫦 000")
             return
@@ -155,6 +125,6 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
                 self?.dismissViews()
             }
         }
-        */
+        
     }
 }

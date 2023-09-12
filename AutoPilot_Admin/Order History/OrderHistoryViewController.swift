@@ -16,7 +16,6 @@ class OrderHistoryViewController: UIViewController {
     var mainFeedTableView = UITableView()
     var closedOrderTableViewCell = "closedOrderTableViewCell"
     var orders = [MTInstantTradeStatus]()
-    
     var orderHistoryEmptyState = EmptyStateView()
 
     override func viewDidLoad() {

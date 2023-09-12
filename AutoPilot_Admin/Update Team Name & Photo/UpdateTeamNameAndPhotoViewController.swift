@@ -36,6 +36,7 @@ class UpdateTeamNameAndPhotoViewController: UIViewController {
     var photoSet = false
     var premiumChannelButton = ContinueButton()
     var didSetTeamNamePhoto = UserDefaults()
+    var team: Team?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,40 +87,40 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
     }
     
     func submitTeamNameUpdate(name: String) {
-        didSetTeamNamePhoto.set(true, forKey: "didSetTeamNamePhoto")
-        delegate?.didUpdateTeamNamePhoto()
-        dismissViews()
-        //DYLAN - NEED TO UDPATE TEAM NAME AND PHOTO HERE
-    }
-    
-    func submitAccessCode(promo: String) {
-        
-        //DYLAN - NEED TO UPDATE THIS FOR ACCESS CODE
+        self.didSetTeamNamePhoto.set(true, forKey: "didSetTeamNamePhoto")
+        self.delegate?.didUpdateTeamNamePhoto()
+        self.successImpactGenerator()
+        self.dismissViews()
         
         /*
-        API.sharedInstance.redeemFreeTrial(promo: promo) { success, info, error in
+        guard var team = self.team else { return }
+        team.name = name
+        API.sharedInstance.updateTeam(team: team) { success, team, error in
             guard error == nil else {
-                //print(error!)
-                print("\(error!) 🤌🤌🤌 111 poop")
-                
+                print("\(error!) 🤌🤌🤌")
                 DispatchQueue.main.async {
                     let toastNoti = ToastNotificationView()
-                    toastNoti.present(withMessage: "Invalid Promo")
+                    toastNoti.present(withMessage: "Error updating team")
                     self.errorImpactGenerator()
+                    self.dismissViews()
                 }
-                
                 return
             }
             
-            guard success, let info = info else {
+            guard success, let team = team else {
                 print("error submitting promo code 🤌🤌🤌")
+                DispatchQueue.main.async {
+                    let toastNoti = ToastNotificationView()
+                    toastNoti.present(withMessage: "Error updating team")
+                    self.errorImpactGenerator()
+                    self.dismissViews()
+                }
                 return
             }
             
             DispatchQueue.main.async { [weak self] in
-                print("did this 🤌🤌🤌  000")
-                let toastNoti = ToastNotificationView()
-                toastNoti.present(withMessage: "Promo Applied!")
+                self?.didSetTeamNamePhoto.set(true, forKey: "didSetTeamNamePhoto")
+                self?.delegate?.didUpdateTeamNamePhoto()
                 self?.successImpactGenerator()
                 self?.dismissViews()
             }

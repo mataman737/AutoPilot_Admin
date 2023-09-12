@@ -31,80 +31,7 @@ extension MyForexTradesViewController {
         navView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         navView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         navView.heightAnchor.constraint(equalToConstant: navHeight).isActive = true
-            
-        backImageView.image = UIImage(named: "pastResultsIcon")
-        backImageView.contentMode = .scaleAspectFill
-        backImageView.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(backImageView)
-        backImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 17).isActive = true
-        backImageView.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: -8).isActive = true
-        backImageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        backImageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        
-        backButton.addTarget(self, action: #selector(presentPastResultsManager), for: .touchUpInside)
-        backButton.backgroundColor = .clear
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(backButton)
-        backButton.leadingAnchor.constraint(equalTo: navView.leadingAnchor).isActive = true
-        backButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
-        backButton.trailingAnchor.constraint(equalTo: backImageView.trailingAnchor, constant: 10).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: backImageView.bottomAnchor, constant: 10).isActive = true
-        
-        padlockImageView.image = UIImage(named: "repeat")
-        padlockImageView.contentMode = .scaleAspectFill
-        padlockImageView.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(padlockImageView)
-        padlockImageView.leadingAnchor.constraint(equalTo: backImageView.trailingAnchor, constant: 17).isActive = true
-        padlockImageView.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: -8).isActive = true
-        padlockImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        padlockImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        
-        padlockButton.addTarget(self, action: #selector(presentSecretVC), for: .touchUpInside)
-        padlockButton.backgroundColor = .clear
-        padlockButton.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(padlockButton)
-        padlockButton.leadingAnchor.constraint(equalTo: backButton.trailingAnchor).isActive = true
-        padlockButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
-        padlockButton.trailingAnchor.constraint(equalTo: padlockImageView.trailingAnchor, constant: 10).isActive = true
-        padlockButton.bottomAnchor.constraint(equalTo: padlockImageView.bottomAnchor, constant: 10).isActive = true
-        
-        titleLabel.text = "My Trades"
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = .newBlack
-        titleLabel.font = .sofiaProMedium(ofSize: 16)
-        titleLabel.numberOfLines = 0
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(titleLabel)
-        titleLabel.centerXAnchor.constraint(equalTo: navView.centerXAnchor).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: backImageView.centerYAnchor).isActive = true
-        
-        dividerLine.backgroundColor = UIColor.newBlack.withAlphaComponent(0.1)
-        dividerLine.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(dividerLine)
-        dividerLine.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 0).isActive = true
-        dividerLine.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: 0).isActive = true
-        dividerLine.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
-        dividerLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        
-        // RIGHT SIDE OF NAV
-        
-        plusImageView.image = UIImage(named: "plusImg")
-        plusImageView.contentMode = .scaleAspectFill
-        plusImageView.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(plusImageView)
-        plusImageView.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: -.createAspectRatio(value: 17)).isActive = true
-        plusImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
-        plusImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
-        plusImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
-        
-        plusButton.addTarget(self, action: #selector(didTapPlus), for: .touchUpInside)
-        plusButton.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(plusButton)
-        plusButton.leadingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
-        plusButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
-        plusButton.trailingAnchor.constraint(equalTo: plusImageView.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
-        plusButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
-        
+                
         //LEFT SIDE OF NAV
         
         bookImageView.image = UIImage(named: "book")
@@ -112,7 +39,8 @@ extension MyForexTradesViewController {
         bookImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(bookImageView)
         bookImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: .createAspectRatio(value: 17)).isActive = true
-        bookImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        //bookImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        bookImageView.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: -8).isActive = true
         bookImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
         bookImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
         
@@ -128,9 +56,8 @@ extension MyForexTradesViewController {
         brokerLinkImageView.contentMode = .scaleAspectFill
         brokerLinkImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(brokerLinkImageView)
-        //brokerLinkImageView.trailingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -.createAspectRatio(value: 17)).isActive = true
         brokerLinkImageView.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: .createAspectRatio(value: 17)).isActive = true
-        brokerLinkImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        brokerLinkImageView.centerYAnchor.constraint(equalTo: bookImageView.centerYAnchor).isActive = true
         brokerLinkImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
         brokerLinkImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
         
@@ -141,6 +68,45 @@ extension MyForexTradesViewController {
         brokerLinkButton.trailingAnchor.constraint(equalTo: brokerLinkImageView.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         brokerLinkButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
         brokerLinkButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
+        
+        // RIGHT SIDE OF NAV
+        
+        plusImageView.image = UIImage(named: "plusImg")
+        plusImageView.contentMode = .scaleAspectFill
+        plusImageView.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(plusImageView)
+        plusImageView.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: -.createAspectRatio(value: 17)).isActive = true
+        plusImageView.centerYAnchor.constraint(equalTo: bookImageView.centerYAnchor).isActive = true
+        plusImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
+        plusImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
+        
+        plusButton.addTarget(self, action: #selector(didTapPlus), for: .touchUpInside)
+        plusButton.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(plusButton)
+        plusButton.leadingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
+        plusButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
+        plusButton.trailingAnchor.constraint(equalTo: plusImageView.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        plusButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
+        
+        // TITLE
+        
+        titleLabel.text = "My Trades"
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .newBlack
+        titleLabel.font = .sofiaProMedium(ofSize: 16)
+        titleLabel.numberOfLines = 0
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(titleLabel)
+        titleLabel.centerXAnchor.constraint(equalTo: navView.centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: brokerLinkImageView.centerYAnchor).isActive = true
+        
+        dividerLine.backgroundColor = UIColor.newBlack.withAlphaComponent(0.1)
+        dividerLine.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(dividerLine)
+        dividerLine.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 0).isActive = true
+        dividerLine.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: 0).isActive = true
+        dividerLine.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
+        dividerLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
     
     func setupTable() {
@@ -148,11 +114,9 @@ extension MyForexTradesViewController {
         mainFeedTableView.isScrollEnabled = false
         mainFeedTableView.alpha = 1.0
         mainFeedTableView.isScrollEnabled = true
-        mainFeedTableView.backgroundColor = .clear//UIColor(red: 244/255, green: 245/255, blue: 274/255, alpha: 1.0)
+        mainFeedTableView.backgroundColor = .clear
         mainFeedTableView.delegate = self
         mainFeedTableView.dataSource = self
-        //mainFeedTableView.register(NoSignalsTableViewCell.self, forCellReuseIdentifier: noSignalsTableViewCell)
-        //mainFeedTableView.register(SignalsTableViewCell.self, forCellReuseIdentifier: signalsTableViewCell)
         mainFeedTableView.register(OpenOrdersTableViewCell.self, forCellReuseIdentifier: openOrdersTableViewCell)
         mainFeedTableView.register(ClosedOrderTableViewCell.self, forCellReuseIdentifier: closedOrderTableViewCell)
         mainFeedTableView.allowsSelection = true
@@ -179,29 +143,32 @@ extension MyForexTradesViewController {
         adminOnboardingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         adminOnboardingView.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
         
+        /*
         didSetTeamNamePhoto.set(false, forKey: "didSetTeamNamePhoto")
-        
+        didSetAccessCode.set(false, forKey: "didSetAccessCode")
+        didConnectBroker.set(false, forKey: "didConnectBroker")
         if didSetTeamNamePhoto.bool(forKey: "didSetTeamNamePhoto") {
             adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
         }
+        */
     }
     
     func setupEmptyStates() {
-        messagesEmptyState.isHidden = true
-        //messagesEmptyState.delegate = self
-        messagesEmptyState.lockLabel.text = "😭"
-        messagesEmptyState.lockTitleLabel.text = "No Forex Signals"//"Chat with Addison"
-        messagesEmptyState.lockDetailLabel.setupLineHeight(myText: "We will send you a notificaiton when\na new signal is posted!", myLineSpacing: 4)
-        messagesEmptyState.lockDetailLabel.textAlignment = .center
-        messagesEmptyState.squadUpButton.setTitle("Browse Darrell's Program", for: .normal)
-        messagesEmptyState.squadUpButton.isHidden = true
-        messagesEmptyState.backgroundColor = .clear
-        messagesEmptyState.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(messagesEmptyState)
-        messagesEmptyState.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        messagesEmptyState.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive = true
-        messagesEmptyState.heightAnchor.constraint(equalToConstant: 245).isActive = true
-        messagesEmptyState.widthAnchor.constraint(equalToConstant: 305).isActive = true
+        myForexTradesEmptyState.isHidden = true
+        //myForexTradesEmptyState.delegate = self
+        myForexTradesEmptyState.lockLabel.text = "🚀"
+        myForexTradesEmptyState.lockTitleLabel.text = "No Active Orders"
+        myForexTradesEmptyState.lockDetailLabel.setupLineHeight(myText: "All of your active & pending orders will be\ndisplayed here once you start trading!\nTap the '+' to get started.", myLineSpacing: 4)
+        myForexTradesEmptyState.lockDetailLabel.textAlignment = .center
+        myForexTradesEmptyState.squadUpButton.setTitle("Browse Darrell's Program", for: .normal)
+        myForexTradesEmptyState.squadUpButton.isHidden = true
+        myForexTradesEmptyState.backgroundColor = .clear
+        myForexTradesEmptyState.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(myForexTradesEmptyState)
+        myForexTradesEmptyState.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        myForexTradesEmptyState.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        myForexTradesEmptyState.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 245)).isActive = true
+        myForexTradesEmptyState.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 305)).isActive = true
     }
     
     func setupLoadingIndicator() {
