@@ -22,8 +22,8 @@ class UpdateTeamNameAndPhotoViewController: UIViewController {
     var titleLabel = UILabel()
     var downArrow = UIImageView()
     var downButton = UIButton()
-    var accessCodeTextContainer = UIView()
-    var accessCodeTextField = UITextField()
+    var teamNameContainer = UIView()
+    var teamNameTextField = UITextField()
     var disountPercentLabel = UILabel()
     var discountPercentContainer = UIView()
     var discountPercentTextField = UITextField()
@@ -37,6 +37,7 @@ class UpdateTeamNameAndPhotoViewController: UIViewController {
     var premiumChannelButton = ContinueButton()
     var didSetTeamNamePhoto = UserDefaults()
     var team: Team?
+    var spinner = UIActivityIndicatorView(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,24 +76,33 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
             if let tft = textField.text {
                 if photoSet == true {
                     submitTeamNameUpdate(name: tft)
+                } else {
+                    presentErrorToast()
                 }
             }
         } else {
-            let toastNoti = ToastNotificationView()
-            toastNoti.present(withMessage: "Team Name & Photo Required")
-            errorImpactGenerator()
+            presentErrorToast()
         }
         
         return true
     }
     
-    func submitTeamNameUpdate(name: String) {
-        self.didSetTeamNamePhoto.set(true, forKey: "didSetTeamNamePhoto")
-        self.delegate?.didUpdateTeamNamePhoto()
-        self.successImpactGenerator()
-        self.dismissViews()
+    func presentErrorToast() {
+        let toastNoti = ToastNotificationView()
+        toastNoti.present(withMessage: "Team Name & Photo Required")
+        errorImpactGenerator()
+        if photoSet != true {
+            teamPhotoImageView.badWiggle()
+        }
         
-        /*
+        if teamNameTextField.text == "" {
+            teamNameContainer.badWiggle()
+        }
+    }
+    
+    func submitTeamNameUpdate(name: String) {
+        spinner.isHidden = false
+        spinner.alpha = 1.0
         guard var team = self.team else { return }
         team.name = name
         API.sharedInstance.updateTeam(team: team) { success, team, error in
@@ -103,6 +113,8 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
                     toastNoti.present(withMessage: "Error updating team")
                     self.errorImpactGenerator()
                     self.dismissViews()
+                    self.spinner.isHidden = true
+                    self.spinner.alpha = 0
                 }
                 return
             }
@@ -114,6 +126,8 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
                     toastNoti.present(withMessage: "Error updating team")
                     self.errorImpactGenerator()
                     self.dismissViews()
+                    self.spinner.isHidden = true
+                    self.spinner.alpha = 0
                 }
                 return
             }
@@ -125,7 +139,6 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
                 self?.dismissViews()
             }
         }
-        */
     }
 }
 

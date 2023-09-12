@@ -282,6 +282,7 @@ extension MyForexTradesViewController {
     @objc func presentUpdateTeamNamePhoto() {
         lightImpactGenerator()
         let updateTeamNamePhotoVC = UpdateTeamNameAndPhotoViewController()
+        updateTeamNamePhotoVC.team = self.team
         updateTeamNamePhotoVC.delegate = self
         updateTeamNamePhotoVC.modalPresentationStyle = .overFullScreen
         self.present(updateTeamNamePhotoVC, animated: false)

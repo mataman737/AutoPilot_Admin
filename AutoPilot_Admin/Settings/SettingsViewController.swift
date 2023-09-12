@@ -51,11 +51,11 @@ class SettingsViewController: UIViewController {
     
     var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey"] //dollardarkinactive //genBox
     var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", ""]
-    var notifications: [String] = ["New Community Message", "Trade Won", "Trade Lost", "New Team Member"]
+    var notifications: [String] = ["Trade Won", "Trade Lost", "New Community Message", "New Team Member"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
-    var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Delete Account"]
-    var supportNVU: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions", "Delete Account"]
+    //var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Delete Account"]
+    var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions", "Delete Account"]
         
     var team: Team?
     var teamAccessCode: String? {
@@ -333,8 +333,9 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     @objc func presentUpdateTeamNamePhoto() {
         lightImpactGenerator()
         let updateTeamNamePhotoVC = UpdateTeamNameAndPhotoViewController()
+        updateTeamNamePhotoVC.team = self.team
         updateTeamNamePhotoVC.delegate = self
-        updateTeamNamePhotoVC.accessCodeTextField.text = teamName
+        //updateTeamNamePhotoVC.teamNameTextField.text = teamName
         updateTeamNamePhotoVC.modalPresentationStyle = .overFullScreen
         self.present(updateTeamNamePhotoVC, animated: false)
     }
@@ -562,7 +563,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         } else if section == 3 {
             return socials.count
         } else {
-            return supportNVU.count + 1
+            return support.count + 1
             
         }
     }
@@ -708,7 +709,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             
-            var supportArray = supportNVU
+            var supportArray = support
             if indexPath.row == supportArray.count {
                 let cell = tableView.dequeueReusableCell(withIdentifier: logoutTableViewCell, for: indexPath) as! LogoutTableViewCell
                 return cell
