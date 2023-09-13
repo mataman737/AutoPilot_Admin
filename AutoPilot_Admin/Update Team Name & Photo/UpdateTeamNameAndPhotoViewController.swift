@@ -103,8 +103,31 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
     func submitTeamNameUpdate(name: String) {
         spinner.isHidden = false
         spinner.alpha = 1.0
+        
+        if let team = self.team, let image = self.photo {
+            let key = "team:\(team.id.uuidString)"
+            ImageUploader.uploadImage(image: image.wxCompress(), key: key, completion: { [weak self] (error, success, url) in
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                
+                guard success else {
+                    print("error uploading image")
+                    return
+                }
+                      
+                self?.updateTeam(name: name, imageUrl: url)
+            })
+        } else {
+            self.updateTeam(name: name, imageUrl: team?.photo)
+        }
+    }
+    
+    func updateTeam(name: String, imageUrl: String?) {
         guard var team = self.team else { return }
         team.name = name
+        team.photo = imageUrl
         API.sharedInstance.updateTeam(team: team) { success, team, error in
             guard error == nil else {
                 print("\(error!) 🤌🤌🤌")
@@ -139,6 +162,7 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
                 self?.dismissViews()
             }
         }
+
     }
 }
 

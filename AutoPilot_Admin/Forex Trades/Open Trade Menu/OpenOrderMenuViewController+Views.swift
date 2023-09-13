@@ -173,7 +173,20 @@ extension OpenOrderMenuViewController {
         loadingIndicator.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 30)).isActive = true
         loadingIndicator.startAnimating()
         
-        unrealizedProfitTitleLabel.text = "Unrealized Profit"
+        if let currentOrder = forexSignal.order, let profit = currentOrder.profit, let commission = currentOrder.commission {
+            let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
+            //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
+            
+            let numberString = String(unrealizedProfit)
+            if numberString.contains("-") {
+                unrealizedProfitLabel.textColor = .brightRed
+            } else {
+                unrealizedProfitLabel.textColor = .brightGreen
+            }
+            
+            unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
+        }
+        
         unrealizedProfitTitleLabel.textColor = varBlackColor.withAlphaComponent(0.5)
         unrealizedProfitTitleLabel.textAlignment = .right
         unrealizedProfitTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
