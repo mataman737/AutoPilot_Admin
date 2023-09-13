@@ -76,7 +76,7 @@ extension ConnectViewController {
         plusImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
         plusImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         
-        plusButton.addTarget(self, action: #selector(createNewEvent), for: .touchUpInside)
+        //plusButton.addTarget(self, action: #selector(createNewEvent), for: .touchUpInside)
         plusButton.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(plusButton)
         plusButton.leadingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -10).isActive = true

@@ -13,6 +13,7 @@ class TeamMemberTableViewCell: UITableViewCell {
     var arrowImageView = UIImageView()
     var chatNameLabel = UILabel()
     var chatDescriptionLabel = UILabel()
+    var last30DayPercentChange = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -69,5 +70,15 @@ extension TeamMemberTableViewCell {
         contentView.addSubview(chatDescriptionLabel)
         chatDescriptionLabel.leadingAnchor.constraint(equalTo: circleImageView.trailingAnchor, constant: .createAspectRatio(value: 12)).isActive = true
         chatDescriptionLabel.centerYAnchor.constraint(equalTo: circleImageView.centerYAnchor, constant: .createAspectRatio(value: 9)).isActive = true
+        
+        last30DayPercentChange.text = "0%"
+        last30DayPercentChange.textAlignment = .right
+        last30DayPercentChange.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 16))
+        last30DayPercentChange.textColor = .liveDataGreen
+        last30DayPercentChange.numberOfLines = 0
+        last30DayPercentChange.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(last30DayPercentChange)
+        last30DayPercentChange.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -.createAspectRatio(value: 8)).isActive = true
+        last30DayPercentChange.centerYAnchor.constraint(equalTo: arrowImageView.centerYAnchor).isActive = true
     }
 }

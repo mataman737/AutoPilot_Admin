@@ -49,14 +49,24 @@ class ConnectViewController: UIViewController {
     var rewardsImageView = UIImageView()
     var rewardsButton = UIButton()
     
-    var activePaidTeamMembers: [[String]] = []//[["John Glaude", "6/1/23"], ["Dave Marooney", "6/1/23"], ["Asohka Tano", "6/1/23"]]
+    var activePaidTeamMembers: [[String]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ChatClient.loginUser()
-        checkUnreadCount()
         
+        for _ in 1...12 {
+            let fullName = generateRandomFullName()
+            let phoneNumber = generateRandomPhoneNumber()
+            let date = generateRandomDateWithinLastThreeMonths()
+            //let number = generateRandomNumber()
+            
+            let array: [String] = [fullName, phoneNumber, date] //"\(number)"
+            activePaidTeamMembers.append(array)
+        }
+        
+        
+        //ChatClient.loginUser()
         modifyConstraints()
         setupNav()
         setupTableView()
@@ -107,44 +117,8 @@ class ConnectViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        checkUnreadCount()
+        //checkUnreadCount()
         loadingLottie.play()
-    }
-    
-    func checkUnreadCount() {
-        /*
-        ChatClient.loginUser { error in
-            print("🤌🤌🤌 111")
-            guard error == nil else {
-                //print(error!)
-                print("\(error!) 🤌🤌🤌 222")
-                return
-            }
-            do {
-                let id = try ChannelId(cid: "gaming:NVU_Forex")
-                let controller = ChatClient.shared.channelController(for: id)
-                controller.synchronize { error in
-                    guard error == nil else {
-                        //print(error!)
-                        print("\(error!) 🤌🤌🤌 333")
-                        return
-                    }
-                    self.forexUnreadCount = controller.channel?.unreadCount.messages ?? 0
-                    self.discoverTableView.reloadData()
-                    print("forex: \(controller.channel?.unreadCount.messages ?? 0) 😡😡😡 \(self.forexUnreadCount)")
-                    
-                    self.forexDone = true
-                    
-                    //if self.forexDone && self.supportDone && self.cryptoDone && self.commmunityDone && self.topLeadersDone {
-                        self.perform(#selector(self.hideLoader), with: self, afterDelay: 0.5)
-                    //}
-                    
-                }
-            } catch {
-                print(error)
-            }
-        }
-        */
     }
     
     @objc func hideLoader() {
@@ -163,14 +137,6 @@ extension ConnectViewController {
         lightImpactGenerator()
         let newNotiVC = NewNotificationViewController()
         self.present(newNotiVC, animated: true)
-    }
-    
-    @objc func createNewEvent() {
-        lightImpactGenerator()
-//        let pickResVC = PickLiveTypeViewController()
-//        pickResVC.delegate = self
-//        pickResVC.modalPresentationStyle = .overFullScreen
-//        self.present(pickResVC, animated: false) { }
     }
 }
 
@@ -198,9 +164,9 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
             //New
             cell.circleImageView.image = UIImage(named: "ttaIcon")
             
-    //        if let url = URL(string: superGroupCIDs[indexPath.row][2]) {
+            //if let url = URL(string: superGroupCIDs[indexPath.row][2]) {
                 //cell.circleImageView.kf.setImage(with: url)
-    //        }
+            //}
             
             cell.chatNameLabel.text = "Community"
             cell.chatDescriptionLabel.text = "0 new messages"
@@ -210,7 +176,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
             if activePaidTeamMembers.count > 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
                 cell.chatNameLabel.text = activePaidTeamMembers[indexPath.row][0]
-                let memberDate = activePaidTeamMembers[indexPath.row][1]
+                let memberDate = activePaidTeamMembers[indexPath.row][2]
                 cell.chatDescriptionLabel.text = "Member since: \(memberDate)"
                 cell.circleImageView.image = UIImage(named: "enigmaUserPH")
                 return cell
@@ -286,47 +252,75 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
                 print(error)
             }
         } else {
-            
+            if activePaidTeamMembers.count > 1 {
+                lightImpactGenerator()
+                let trainingOptionVC = MissedPaymentOptionsViewController()
+                trainingOptionVC.navTitleLabel.text = activePaidTeamMembers[indexPath.row][0]
+                trainingOptionVC.dateLabel.text = "Member since: \(activePaidTeamMembers[indexPath.row][2])"
+                trainingOptionVC.phoneNumber = activePaidTeamMembers[indexPath.row][1]
+                trainingOptionVC.modalPresentationStyle = .overFullScreen
+                self.present(trainingOptionVC, animated: false)
+            }
         }
+    }
+}
+
+//MARK CUSTOM CHAT DELEGATE
+
+extension ConnectViewController: CustomChatChannelVCDelegate {
+    func didCloseChannel() {
+        //checkUnreadCount()
+    }
+}
+
+//GENERATE RANDOM NAMES
+
+extension ConnectViewController {
+    func generateRandomFullName() -> String {
+        let firstNames = ["John", "Emma", "Liam", "Olivia", "Noah", "Ava", "William", "Sophia", "James", "Isabella"]
+        let lastNames = ["Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor"]
+        
+        let randomFirstNameIndex = Int.random(in: 0..<firstNames.count)
+        let randomLastNameIndex = Int.random(in: 0..<lastNames.count)
+        
+        let firstName = firstNames[randomFirstNameIndex]
+        let lastName = lastNames[randomLastNameIndex]
+        
+        return "\(firstName) \(lastName)"
+    }
+
+    // Function to generate a random US telephone number
+    func generateRandomPhoneNumber() -> String {
+        let areaCode = String(format: "%03d", Int.random(in: 0..<999))
+        let prefix = String(format: "%03d", Int.random(in: 0..<999))
+        let line = String(format: "%04d", Int.random(in: 0..<9999))
+        return "\(areaCode)-\(prefix)-\(line)"
     }
     
-}
-
-//MARK CUSTOM CHAT DELEGATE
-/*
-extension ConnectViewController: CustomChatChannelVCDelegate {
-    func didCloseChannel() {
-        checkUnreadCount()
+    /*
+    func generateRandomProduct() -> String {
+        let products = ["FL2.0", "Power 7 Pack"]
+        let randomIndex = Int.random(in: 0..<products.count)
+        return products[randomIndex]
     }
-}
-*/
-
-//MARK: PICK TYPE DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
-/*
-extension ConnectViewController: PickLiveTypeViewControllerDelegate {
-    func didPickLiveType(type: String) {
-        if type == "Drop" {
-            //let newEventVC = FutureDropDetailViewController()
-            //newEventVC.delegate = self
-            //newEventVC.navTitleLabel.text = "New Drop"
-            //self.navigationController?.pushViewController(newEventVC, animated: true)
-        } else if type == "Live Now" {
-            print("did this 😉😉😉 000")
-            let newEventVC = GoLiveDetailViewController()
-            //newEventVC.delegate = self
-            newEventVC.modalPresentationStyle = .overFullScreen
-            newEventVC.navTitleLabel.text = "Go Live"
-            self.present(newEventVC, animated: true)
-            //self.navigationController?.pushViewController(newEventVC, animated: true)
-        }
+    */
+    
+    func generateRandomDateWithinLastThreeMonths() -> String {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let threeMonthsAgo = calendar.date(byAdding: .month, value: -3, to: currentDate)!
+        
+        let randomTimeInterval = TimeInterval.random(in: threeMonthsAgo.timeIntervalSince1970...currentDate.timeIntervalSince1970)
+        let randomDate = Date(timeIntervalSince1970: randomTimeInterval)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M/d/yy"
+        
+        return dateFormatter.string(from: randomDate)
     }
-}
-*/
 
-//MARK CUSTOM CHAT DELEGATE
-
-extension ConnectViewController: CustomChatChannelVCDelegate {
-    func didCloseChannel() {
-        checkUnreadCount()
+    // Function to generate a random number between 1 and 12
+    func generateRandomNumber() -> Int {
+        return Int.random(in: 1...12)
     }
 }
