@@ -11,6 +11,7 @@ struct Team: Codable {
     var id: UUID
     var adminIds: [UUID]
     var name: String
+    var photo: String?
     var accessCode: String?
     var created: Date
 }
