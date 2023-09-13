@@ -269,12 +269,11 @@ struct MTServerBroker: Codable {
 }
 
 
-struct MTCreateAccountRequest: Codable {
+struct ConnectBrokerRequest: Codable {
     let login: String
     let password: String
     let name: String
     let server: String
     let platform: String
     let magic: Int
-    let lotSize: Double
 }

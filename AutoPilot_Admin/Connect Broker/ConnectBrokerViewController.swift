@@ -95,7 +95,6 @@ class ConnectBrokerViewController: UIViewController {
     }
     
     func getServers() {
-        /*
         API.sharedInstance.getMTServers { success, servers, error in
             guard error == nil else {
                 print(error!)
@@ -128,7 +127,6 @@ class ConnectBrokerViewController: UIViewController {
                 }
             }
         }
-        */
     }
 }
 
@@ -383,7 +381,6 @@ extension ConnectBrokerViewController {
     }
     
     func submitBrokerDetails() {
-        /*
         print("\(usernameEmailTextField.text) 🥶 \(passwordTextField.text) 🥶 \(accountusernameEmailTextField.text) 🥶 \(serverusernameEmailTextField.text) 🥶")
         guard let login = usernameEmailTextField.text, let password = passwordTextField.text, let name = accountusernameEmailTextField.text, let server = serverusernameEmailTextField.text else {
             print("missing fields 👕👕👕 000")
@@ -424,7 +421,6 @@ extension ConnectBrokerViewController {
                 self?.perform(#selector(self?.showSuccess), with: self, afterDelay: 1.5)
             }
         }
-        */
     }
     
     func submitAutopilotBrokerDetails() {

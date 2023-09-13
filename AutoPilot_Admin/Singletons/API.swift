@@ -183,6 +183,72 @@ class API: NSObject {
         }
     }
     
+    func getMTServers(completionHandler: @escaping (Bool, [MTServerBroker]?, Error?) -> ()) {
+        performRequest(endpoint: "mtservers", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let acounts = try decoder.decode([MTServerBroker].self, from: data)
+                
+                completionHandler(true, acounts, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
+    func submitMTBrokerDetails(details: ConnectBrokerRequest, completionHandler: @escaping (Bool, Error?) -> ()) {
+        print(details)
+        var request = URLRequest(url: URL(string: "\(API.tradingUrl)broker")!)
+        request.httpMethod = "POST"
+        //HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addAuthTokens()
+        
+        do {
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601
+            let data = try encoder.encode(details)
+            request.httpBody = data
+        } catch {
+            print(error)
+            completionHandler(false, error)
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, error)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 201 {           // check for http errors
+                print("statusCode should be 201, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                completionHandler(false, error)
+                return
+            }
+            
+//            do {
+//                let orders = try JSONDecoder().decode([Order].self, from: data)
+                
+                completionHandler(true, nil)
+//            } catch {
+//                print(error)
+//                completionHandler(false, nil, error)
+//            }
+        }
+        
+        task.resume()
+    }
+    
     func getForexSignals(completionHandler: @escaping (Bool, [Signal]?, Error?) -> ()) {
         performRequest(endpoint: "api/admin/signals", method: "GET", authenticated: true) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
