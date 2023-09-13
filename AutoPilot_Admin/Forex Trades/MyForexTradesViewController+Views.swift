@@ -151,6 +151,7 @@ extension MyForexTradesViewController {
             adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
         }
         */
+        didConnectBroker.set(true, forKey: "didConnectBroker")
     }
     
     func setupEmptyStates() {

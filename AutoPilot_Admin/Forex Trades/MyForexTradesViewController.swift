@@ -68,22 +68,23 @@ class MyForexTradesViewController: UIViewController {
         }
         */
         
-        myForexTradesEmptyState.isHidden = false
-        myForexTradesEmptyState.showViews()
+        //myForexTradesEmptyState.isHidden = false
+        //myForexTradesEmptyState.showViews()
         
         hideLoader()
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
         
-        //print("\(team?.name) 🤬🤬🤬 333")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         edgesForExtendedLayout = UIRectEdge.all
         extendedLayoutIncludesOpaqueBars = true
-        //getOpenOrders()
-        //getClosedOrders()
+//        if onboardingCompleted {
+            getOpenOrders()
+            getClosedOrders()
+//        }
         loadingLottie.play()
     }
     
@@ -129,8 +130,9 @@ class MyForexTradesViewController: UIViewController {
                     self?.hideLoader()
                     
                     if let activeOrdersCount = self?.activeOrders.count, let pendingOrdersCount = self?.pendingOrders.count {
-                        if activeOrdersCount > 1 || pendingOrdersCount > 1 {
+                        if activeOrdersCount > 0 || pendingOrdersCount > 0 {
                             self?.myForexTradesEmptyState.isHidden = true
+                            self?.myForexTradesEmptyState.hidViews()
                         } else {
                             self?.myForexTradesEmptyState.isHidden = false
                             self?.myForexTradesEmptyState.showViews()
@@ -161,14 +163,17 @@ class MyForexTradesViewController: UIViewController {
                 if self?.didGetOrders == true && self?.didGetClosedOrders == true {
                     self?.hideLoader()
                     
+                    /*
                     if let activeOrdersCount = self?.activeOrders.count, let pendingOrdersCount = self?.pendingOrders.count {
                         if activeOrdersCount > 1 || pendingOrdersCount > 1 {
                             self?.myForexTradesEmptyState.isHidden = true
+                            self?.myForexTradesEmptyState.hidViews()
                         } else {
-                            self?.myForexTradesEmptyState.isHidden = false
-                            self?.myForexTradesEmptyState.showViews()
+                            //self?.myForexTradesEmptyState.isHidden = false
+                            //self?.myForexTradesEmptyState.showViews()
                         }
                     }
+                    */
                 }
             }
         }
@@ -313,7 +318,9 @@ extension MyForexTradesViewController {
     @objc func showOrderHistoryVC() {
         lightImpactGenerator()
         let orderHistoryVC = OrderHistoryViewController()
-        //orderHistoryVC.orders = self.closedOrders
+        if onboardingCompleted {
+            orderHistoryVC.orders = self.closedOrders
+        }
         self.present(orderHistoryVC, animated: true, completion: nil)
     }
     
@@ -337,9 +344,15 @@ extension MyForexTradesViewController {
             pickOptionVC.shareURLButton.continueLabel.text = "Confirm Traiding Pair"
             self.present(pickOptionVC, animated: false, completion: nil)
         } else {
-            adminOnboardingView.brokerContainer.badWiggle()
-            adminOnboardingView.connectBrokerImageView.badWiggle()
-            errorImpactGenerator()
+            if didConnectBroker.bool(forKey: "didConnectBroker") {
+                let toastNoti = ToastNotificationView()
+                toastNoti.present(withMessage: "Complete onboarding first!")
+                errorImpactGenerator()
+            } else {
+                adminOnboardingView.brokerContainer.badWiggle()
+                adminOnboardingView.connectBrokerImageView.badWiggle()
+                errorImpactGenerator()
+            }
         }
     }
 }
@@ -360,6 +373,13 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if activeOrders.count > 0 || pendingOrders.count > 0 {
+            myForexTradesEmptyState.isHidden = true
+        } else {
+            myForexTradesEmptyState.isHidden = false
+        }
+        
         if section == 0 {
             return activeOrders.count
         } else {

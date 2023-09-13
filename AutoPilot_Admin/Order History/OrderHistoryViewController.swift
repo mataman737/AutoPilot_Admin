@@ -25,8 +25,11 @@ class OrderHistoryViewController: UIViewController {
         setupTable()
         setupEmptyStates()
         
-        if orders.count > 1 {
+        print("\(orders.count) 😅😅😅")
+        
+        if orders.count > 0 {
             orderHistoryEmptyState.isHidden = true
+            orderHistoryEmptyState.hidViews()
         } else {
             orderHistoryEmptyState.isHidden = false
             orderHistoryEmptyState.showViews()

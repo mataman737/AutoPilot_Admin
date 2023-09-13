@@ -76,8 +76,7 @@ extension OrderHistoryViewController {
     }
     
     func setupEmptyStates() {
-        orderHistoryEmptyState.isHidden = true
-        //orderHistoryEmptyState.delegate = self
+        orderHistoryEmptyState.isHidden = true        
         orderHistoryEmptyState.lockLabel.text = "😭"
         orderHistoryEmptyState.lockTitleLabel.text = "No Closed Orders"//"Chat with Addison"
         orderHistoryEmptyState.lockDetailLabel.setupLineHeight(myText: "All of your closed orders will be displayed\nhere once you start trading!", myLineSpacing: 4)
