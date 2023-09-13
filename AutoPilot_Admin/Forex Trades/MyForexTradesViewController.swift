@@ -71,7 +71,7 @@ class MyForexTradesViewController: UIViewController {
         //myForexTradesEmptyState.isHidden = false
         //myForexTradesEmptyState.showViews()
         
-        hideLoader()
+        //hideLoader()
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
@@ -81,10 +81,9 @@ class MyForexTradesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         edgesForExtendedLayout = UIRectEdge.all
         extendedLayoutIncludesOpaqueBars = true
-//        if onboardingCompleted {
-            getOpenOrders()
-            getClosedOrders()
-//        }
+        getOpenOrders()
+        getClosedOrders()
+
         loadingLottie.play()
     }
     
