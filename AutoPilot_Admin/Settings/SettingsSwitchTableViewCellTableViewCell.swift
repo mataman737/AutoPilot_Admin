@@ -68,13 +68,18 @@ extension SettingsSwitchTableViewCellTableViewCell {
         pwSwitch.layer.cornerRadius = .createAspectRatio(value: 26)/2
         pwSwitch.layer.masksToBounds = true
         //pwSwitch.backgroundColor = .red
+        pwSwitch.addTarget(self, action: #selector(didTapSwitc), for: .touchUpInside)
         
         //track
-        pwSwitch.trackOnFillColor = isNVUDemo.bool(forKey: "isNVUDemo") ? .swBlue : .themeOrange
-        pwSwitch.trackOffBorderColor = isDarkMode.bool(forKey: "isDarkMode") ? .darkModeCardBackground : UIColor(red: 218/255, green: 219/255, blue: 221/255, alpha: 1.0)
-        pwSwitch.trackOnBorderColor = isNVUDemo.bool(forKey: "isNVUDemo") ? .swBlue : .themeOrange
-        pwSwitch.trackOffFillColor = isDarkMode.bool(forKey: "isDarkMode") ? .darkModeCardBackground : .newBlack.withAlphaComponent(0.12)//UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
-        pwSwitch.trackOnBorderColor = isNVUDemo.bool(forKey: "isNVUDemo") ? .swBlue : .themeOrange
+        
+        if let greenColor = UIColor.hexToUIColor("73D24F") {
+            pwSwitch.trackOnFillColor = greenColor
+            pwSwitch.trackOffBorderColor = isDarkMode.bool(forKey: "isDarkMode") ? .darkModeCardBackground : UIColor(red: 218/255, green: 219/255, blue: 221/255, alpha: 1.0)
+            pwSwitch.trackOnBorderColor = greenColor
+            pwSwitch.trackOffFillColor = isDarkMode.bool(forKey: "isDarkMode") ? .darkModeCardBackground : .newBlack.withAlphaComponent(0.12)//UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
+            pwSwitch.trackOnBorderColor = greenColor
+        }
+        
         pwSwitch.trackOffPushBorderColor = .blue
         
         //thumb
@@ -95,4 +100,10 @@ extension SettingsSwitchTableViewCellTableViewCell {
     
 }
 
+//MARK: ACTIONS
 
+extension SettingsSwitchTableViewCellTableViewCell {
+    @objc func didTapSwitc() {
+        lightImpactGenerator()
+    }
+}

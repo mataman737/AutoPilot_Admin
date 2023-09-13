@@ -171,6 +171,16 @@ extension MyProfileLinkViewController {
         qrImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 182)).isActive = true
         qrImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 182)).isActive = true
         
+        spinner.isHidden = false
+        spinner.alpha = 1.0
+        spinner.color = .black
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        cardContainer.addSubview(spinner)
+        //spinner.trailingAnchor.constraint(equalTo: accessCodeTextContainer.trailingAnchor, constant: -.createAspectRatio(value: 15)).isActive = true
+        spinner.centerXAnchor.constraint(equalTo: qrImageView.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: qrImageView.centerYAnchor).isActive = true
+        
         qrLinkTrackingImageView.alpha = 0
         qrLinkTrackingImageView.image = UIImage(named: "phQR")
         qrLinkTrackingImageView.setImageColor(color: textColor)

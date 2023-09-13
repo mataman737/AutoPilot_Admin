@@ -461,6 +461,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     @objc func didTapMyTeamAppLink() {
+        lightImpactGenerator()
         let profileLinkVC = MyProfileLinkViewController()
         profileLinkVC.titleLabel.text = "My Team App Link"
         profileLinkVC.webAlias = "App_Link"
@@ -470,13 +471,6 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     
     @objc func didTapMyTeamWebLink() {
         lightImpactGenerator()
-        
-        /*
-        let toastNoti = ToastNotificationView()
-        toastNoti.present(withMessage: "Coming soon")
-        */
-        
-        
         let profileLinkVC = MyProfileLinkViewController()
         profileLinkVC.titleLabel.text = "My Team Web Link"
         profileLinkVC.webAlias = "Web_Link"

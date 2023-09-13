@@ -69,6 +69,7 @@ class MyProfileLinkViewController: UIViewController {
     var alternatingButton = UIButton()
     var smartButton = UIButton()
     var teamButton = UIButton()
+    var spinner = UIActivityIndicatorView(style: .medium)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,9 +102,11 @@ extension MyProfileLinkViewController {
         Task {
             if let shareLink = await Admin.current.getShareLink(), let image = EFQRCode.generate(
                     for: shareLink,
-                    watermark: UIImage(named: "nvu_qr1")?.cgImage //nvu_qr1 //WWF //newEnigmaE //enigmaE //qrLinkZero
+                    watermark: UIImage(named: "nvu_qr1")?.cgImage
             ) {
                 print("Create QRCode image success \(image)")
+                spinner.isHidden = true
+                spinner.alpha = 0
                 qrImageView.image = UIImage(cgImage: image)
             } else {
                 print("Create QRCode image failed!")
