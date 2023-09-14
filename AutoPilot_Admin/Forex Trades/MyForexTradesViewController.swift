@@ -42,6 +42,8 @@ class MyForexTradesViewController: UIViewController {
     var isBrokerConnected = false
     var onboardingCompleted = false
     
+    var brokers = [String]()
+    
     var team: Team?
     var teamAccessCode: String? {
         return team?.accessCode
@@ -81,10 +83,41 @@ class MyForexTradesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         edgesForExtendedLayout = UIRectEdge.all
         extendedLayoutIncludesOpaqueBars = true
-        getOpenOrders()
-        getClosedOrders()
+        getAccounts()
 
         loadingLottie.play()
+    }
+    
+    func getAccounts() {
+        API.sharedInstance.getMTTradingAccounts { success, accounts, error in
+            guard error == nil else {
+                print("\(error!)")
+                return
+            }
+            
+            guard success, let accounts = accounts else {
+                print("error getting accounts 👽👽👽")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                self?.brokers = accounts
+                self?.getOpenOrders()
+                self?.getClosedOrders()
+                if self?.brokers.count == 1 {
+//                    self?.usersPreferredBroker.set(self?.brokers[0], forKey: "selectedBroker")
+//                    self?.eyeImageView.isHidden = false
+//                    self?.eyeButton.isHidden = false
+                } else {
+//                    self?.navTitleLabel.text = "Ed. Ideas"
+//                    self?.eyeImageView.isHidden = true
+//                    self?.eyeButton.isHidden = true
+                }
+                
+                self?.mainFeedTableView.reloadData()
+            }
+        }
     }
     
     func getCurrentTeam() {

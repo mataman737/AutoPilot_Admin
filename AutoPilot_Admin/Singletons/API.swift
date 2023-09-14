@@ -203,9 +203,29 @@ class API: NSObject {
         }
     }
     
+    func getMTTradingAccounts(completionHandler: @escaping (Bool, [String]?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/mtbrokers", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let acounts = try decoder.decode([String].self, from: data)
+                
+                completionHandler(true, acounts, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func submitMTBrokerDetails(details: ConnectBrokerRequest, completionHandler: @escaping (Bool, Error?) -> ()) {
         print(details)
-        var request = URLRequest(url: URL(string: "\(API.tradingUrl)broker")!)
+        var request = URLRequest(url: URL(string: "\(API.tradingUrl)adminbroker")!)
         request.httpMethod = "POST"
         //HTTP Headers
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
