@@ -22,7 +22,7 @@ class OnboardingView: UIView {
     
     override init(frame: CGRect) {
        super.init(frame: frame)
-        self.backgroundColor = UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.9)
+        self.backgroundColor = .white
        setupViews()
        
    }

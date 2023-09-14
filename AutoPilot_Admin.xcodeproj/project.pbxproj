@@ -60,7 +60,7 @@
 		DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */; };
 		DE80EF862AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */; };
 		DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */; };
-		DEA21FF12AB39CCC007D1C3A /* attempt_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DEA21FF02AB39CCB007D1C3A /* attempt_2.mp4 */; };
+		DEA21FF52AB3A529007D1C3A /* attempt_4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DEA21FF42AB3A529007D1C3A /* attempt_4.mp4 */; };
 		DEB44E382AAE5F070006887A /* FlagKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB44E372AAE5F060006887A /* FlagKit.xcassets */; };
 		DEB44E3B2AAE69AD0006887A /* CloseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3A2AAE69AD0006887A /* CloseOrderViewController.swift */; };
 		DEB44E3D2AAE69B40006887A /* CloseOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */; };
@@ -173,7 +173,7 @@
 		DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamNameAndPhotoViewController.swift; sourceTree = "<group>"; };
 		DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateTeamNameAndPhotoViewController+Views.swift"; sourceTree = "<group>"; };
 		DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewCell.swift; sourceTree = "<group>"; };
-		DEA21FF02AB39CCB007D1C3A /* attempt_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = attempt_2.mp4; sourceTree = "<group>"; };
+		DEA21FF42AB3A529007D1C3A /* attempt_4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = attempt_4.mp4; sourceTree = "<group>"; };
 		DEB44E372AAE5F060006887A /* FlagKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagKit.xcassets; sourceTree = "<group>"; };
 		DEB44E3A2AAE69AD0006887A /* CloseOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseOrderViewController.swift; sourceTree = "<group>"; };
 		DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloseOrderViewController+Views.swift"; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				DE6643A22AA56D2500DA27BE /* splash.mp4 */,
-				DEA21FF02AB39CCB007D1C3A /* attempt_2.mp4 */,
+				DEA21FF42AB3A529007D1C3A /* attempt_4.mp4 */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -682,9 +682,9 @@
 				DEC9A4F62A93ED96000DBE39 /* Sofia Pro Medium Az.otf in Resources */,
 				DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */,
 				DEB44E382AAE5F070006887A /* FlagKit.xcassets in Resources */,
-				DEA21FF12AB39CCC007D1C3A /* attempt_2.mp4 in Resources */,
 				DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */,
 				DEC9A4BF2A93DB3B000DBE39 /* Assets.xcassets in Resources */,
+				DEA21FF52AB3A529007D1C3A /* attempt_4.mp4 in Resources */,
 				DEC9A4BD2A93DB38000DBE39 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

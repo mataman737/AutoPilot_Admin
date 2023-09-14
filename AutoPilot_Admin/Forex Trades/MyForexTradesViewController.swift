@@ -108,6 +108,9 @@ class MyForexTradesViewController: UIViewController {
                 print("\(accounts.count) 👽👽👽")
                 
                 self?.brokers = accounts
+                self?.updateOnboardingRows()
+                
+                print("\(self?.brokers.count) 😓😓😓 000")
                 
                 if accounts.count > 0 {
                     self?.getOpenOrders()
@@ -318,7 +321,7 @@ class MyForexTradesViewController: UIViewController {
 extension MyForexTradesViewController {
     private func playLoopingVideo() {
         // VIDEO
-        guard let path = Bundle.main.path(forResource: "attempt_2", ofType:"mp4") else {
+        guard let path = Bundle.main.path(forResource: "attempt_4", ofType:"mp4") else {
             debugPrint("video.m4v not found")
             return
         }
@@ -914,6 +917,8 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
         if teamAccessCode != nil {
             adminOnboardingView.accessCodeImageView.image = UIImage(named: "onboardingGreenBubble")
         }
+        
+        print("\(brokers.count) 😓😓😓")
         
         
         if teamName != nil && teamAccessCode != nil && brokers.count > 0 {
