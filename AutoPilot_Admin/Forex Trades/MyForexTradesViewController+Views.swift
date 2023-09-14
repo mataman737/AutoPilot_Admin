@@ -23,7 +23,7 @@ extension MyForexTradesViewController {
         
         view.backgroundColor = UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
                         
-        navView.backgroundColor = .white
+        //navView.backgroundColor = .white
         navView.backgroundColor = UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
         navView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(navView)

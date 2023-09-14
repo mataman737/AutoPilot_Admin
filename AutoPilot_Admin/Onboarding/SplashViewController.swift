@@ -9,7 +9,6 @@ import UIKit
 import AVFoundation
 import AVKit
 
-
 class SplashViewController: UIViewController {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

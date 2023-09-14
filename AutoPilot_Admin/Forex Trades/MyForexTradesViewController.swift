@@ -9,6 +9,8 @@ import UIKit
 import Lottie
 import StreamChat
 import StreamChatUI
+import AVFoundation
+import AVKit
 
 class MyForexTradesViewController: UIViewController {
     
@@ -39,11 +41,8 @@ class MyForexTradesViewController: UIViewController {
     var didConnectBroker = UserDefaults()
     var didGetOrders = false
     var didGetClosedOrders = false
-    var isBrokerConnected = false
     var onboardingCompleted = false
-    
     var brokers = [String]()
-    
     var team: Team?
     var teamAccessCode: String? {
         return team?.accessCode
@@ -52,6 +51,10 @@ class MyForexTradesViewController: UIViewController {
         return team?.name
     }
     
+    //Video & Audio
+    var player = AVPlayer()
+    var playerLoop = AVPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getCurrentTeam()
@@ -59,6 +62,7 @@ class MyForexTradesViewController: UIViewController {
         setupEmptyStates()
         setupTable()
         setupLoadingIndicator()
+        playLoopingVideo()
         updateOnboardingRows()
         
         /*
@@ -90,7 +94,7 @@ class MyForexTradesViewController: UIViewController {
     func getAccounts() {
         API.sharedInstance.getMTTradingAccounts { success, accounts, error in
             guard error == nil else {
-                print("\(error!)")
+                print("\(error!) 👽👽👽")
                 return
             }
             
@@ -101,17 +105,15 @@ class MyForexTradesViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 
+                print("\(accounts.count) 👽👽👽")
+                
                 self?.brokers = accounts
-                self?.getOpenOrders()
-                self?.getClosedOrders()
-                if self?.brokers.count == 1 {
-//                    self?.usersPreferredBroker.set(self?.brokers[0], forKey: "selectedBroker")
-//                    self?.eyeImageView.isHidden = false
-//                    self?.eyeButton.isHidden = false
+                
+                if accounts.count > 0 {
+                    self?.getOpenOrders()
+                    self?.getClosedOrders()
                 } else {
-//                    self?.navTitleLabel.text = "Ed. Ideas"
-//                    self?.eyeImageView.isHidden = true
-//                    self?.eyeButton.isHidden = true
+                    self?.hideLoader()
                 }
                 
                 self?.mainFeedTableView.reloadData()
@@ -309,10 +311,35 @@ class MyForexTradesViewController: UIViewController {
             }
         }
     }
-    
 }
 
-//MARK: ACTIONS
+//MARK: SET UP VIDEO & AUDIO ------------------------------------------------------------------------------------------------------------------------------------
+
+extension MyForexTradesViewController {
+    private func playLoopingVideo() {
+        // VIDEO
+        guard let path = Bundle.main.path(forResource: "attempt_2", ofType:"mp4") else {
+            debugPrint("video.m4v not found")
+            return
+        }
+      
+        playerLoop = AVPlayer(url: URL(fileURLWithPath: path))
+        let playerLayer = AVPlayerLayer(player: playerLoop)
+        playerLoop.isMuted = true
+        playerLayer.frame = CGRect(x: 0, y: 0, width: .createAspectRatio(value: 175), height: .createAspectRatio(value: 175))
+      
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        adminOnboardingView.animationView.layer.addSublayer(playerLayer)
+        self.playerLoop.play()
+        
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: playerLoop.currentItem, queue: .main) { [weak self] _ in
+            self?.playerLoop.seek(to: CMTime.zero)
+            self?.playerLoop.play()
+        }
+    }
+}
+
+//MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension MyForexTradesViewController {
     @objc func presentUpdateTeamNamePhoto() {
@@ -335,12 +362,13 @@ extension MyForexTradesViewController {
     
     @objc func connectBrokerTapped() {
         lightImpactGenerator()
-        if isBrokerConnected {
+        if brokers.count > 0 {
             let myBrokerVC = MyConnectedBrokerAccountViewController()
             myBrokerVC.modalPresentationStyle = .overFullScreen
             self.present(myBrokerVC, animated: false, completion: nil)
         } else {
             let connectBrokerVC = ConnectBrokerViewController()
+            connectBrokerVC.delegate = self
             connectBrokerVC.modalPresentationStyle = .overFullScreen
             self.present(connectBrokerVC, animated: false, completion: nil)
         }
@@ -388,7 +416,7 @@ extension MyForexTradesViewController {
     }
 }
 
-//MARK: TABLEVIEW DELEGATE & DATASOURCE
+//MARK: TABLEVIEW DELEGATE & DATASOURCE ------------------------------------------------------------------------------------------------------------------------------------
 
 extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -875,20 +903,10 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
     }
     
     func updateOnboardingRows() {
-        /*
-        if didSetTeamNamePhoto.bool(forKey: "didSetTeamNamePhoto") {
-            adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
-        }
-        
-        if didSetAccessCode.bool(forKey: "didSetAccessCode") {
-            adminOnboardingView.accessCodeImageView.image = UIImage(named: "onboardingGreenBubble")
-        }
-        */
-                
-        if didConnectBroker.bool(forKey: "didConnectBroker") {
+        if brokers.count > 0 {
             adminOnboardingView.connectBrokerImageView.image = UIImage(named: "onboardingGreenBubble")
         }
-                        
+        
         if teamName != nil {
             adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
         }
@@ -898,10 +916,22 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
         }
         
         
-        if teamName != nil && teamAccessCode != nil && didConnectBroker.bool(forKey: "didConnectBroker") {
+        if teamName != nil && teamAccessCode != nil && brokers.count > 0 {
             adminOnboardingView.isHidden = true
             onboardingCompleted = true
         }
         
+    }
+}
+
+//MARK: CONNECT BROKER DELEGATE
+
+extension MyForexTradesViewController: ConnectBrokerViewControllerDelegate {
+    func didAddBrokerAccount() {
+        self.getAccounts()
+    }
+    
+    func cantConnectBroker() {
+        //
     }
 }

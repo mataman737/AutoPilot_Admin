@@ -38,14 +38,14 @@ class OnboardingView: UIView {
 extension OnboardingView {
     func setupViews() {
         
-        animationView.backgroundColor = .lightGray
+        animationView.backgroundColor = .clear
         animationView.layer.cornerRadius = 8
         animationView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(animationView)
         animationView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         animationView.topAnchor.constraint(equalTo: self.topAnchor, constant: .createAspectRatio(value: 26)).isActive = true
         animationView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 175)).isActive = true
-        animationView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 230)).isActive = true
+        animationView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 175)).isActive = true
         
         welcomeLabel.setupLabel(text: "Welcome to Enigma!", txtColor: .black.withAlphaComponent(0.5), font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 15)), txtAlignment: .center)
         self.addSubview(welcomeLabel)
