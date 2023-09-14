@@ -104,21 +104,15 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                
-                print("\(accounts.count) 👽👽👽")
-                
+                //print("\(accounts.count) 👽👽👽")
                 self?.brokers = accounts
                 self?.updateOnboardingRows()
-                
-                print("\(self?.brokers.count) 😓😓😓 000")
-                
                 if accounts.count > 0 {
                     self?.getOpenOrders()
                     self?.getClosedOrders()
                 } else {
                     self?.hideLoader()
                 }
-                
                 self?.mainFeedTableView.reloadData()
             }
         }
@@ -499,7 +493,7 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return .createAspectRatio(value: 173)
+        return .createAspectRatio(value: 140) //173
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -702,50 +696,27 @@ extension MyForexTradesViewController {
             }
         }
         
-        print("\(signal.order?.openTime) 🙏🙏🙏 000")
-        
         if let time = signal.order?.openTime {
-            var date: Date?
-            let splitTime = time.components(separatedBy: "T")
-            let datePart = splitTime[0]
-            let timePart = splitTime[1].replacingOccurrences(of: ".000Z", with: "")
-            let timeString = "\(datePart) \(timePart)"
             
+            // Create a date formatter
             let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            date = dateFormatter.date(from:timeString)
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
             
-            //print("invalid time zone 😹😹😹 \(date)")
-            
-            if let formattedDate = formatDate(time) {
-                print("\(formattedDate) 😹😹😹")
+            // Convert the string to a Date object
+            if let date = dateFormatter.date(from: time) {
+                let outputFormatter = DateFormatter()
+                outputFormatter.dateFormat = "M/d @ h:mma"
+                let formattedDate = outputFormatter.string(from: date)
                 cell.signalTimeLabel.text = formattedDate
             } else {
-                print("Invalid date string 😹😹😹")
+                cell.signalTimeLabel.text = "Invalid date time"
             }
-            
-            //Change the format of the string
-            //into one that is readable and matches the 'All' tab
-            /*
-            if let sigDate = date {
-                if let estTimeZone = TimeZone(abbreviation: "GMT") {
-                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off //GMT is 13 hours off
-                    let startConverted = setTimeString(theDate: sigDate.convert(from: estTimeZone, to: TimeZone.current))
-                    //10 hour difference
-                    //cell.signalTimeLabel.text = "\(formatter.string(from: sigDate)) | \(startConverted)"
-                    cell.signalTimeLabel.text = startConverted
-                } else {
-                    print("invalid time zone 😹😹😹")
-                }
-            }
-            */
         }
     }
     
     func formatDate(_ dateString: String) -> String? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        dateFormatter.dateFormat = "YYYY-MM-DD HH:MM:SS"
         
         if let date = dateFormatter.date(from: dateString) {
             let outputFormatter = DateFormatter()
