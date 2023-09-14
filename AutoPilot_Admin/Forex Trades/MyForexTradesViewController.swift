@@ -74,8 +74,7 @@ class MyForexTradesViewController: UIViewController {
         //hideLoader()
         
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
-        
+        notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)        
     }
     
     override func viewWillAppear(_ animated: Bool) {
