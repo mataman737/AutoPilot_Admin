@@ -49,6 +49,7 @@ pod 'FSCalendar'
 pod 'DateTimePicker'
 pod 'EFQRCode', '~> 6.2.0'
 pod 'YPImagePicker', :git => 'https://github.com/LawrenceNorman/YPImagePicker.git'
+pod 'Charts'
 
 # Add the Firebase pod for Google Analytics
 pod 'FirebaseAnalytics'
