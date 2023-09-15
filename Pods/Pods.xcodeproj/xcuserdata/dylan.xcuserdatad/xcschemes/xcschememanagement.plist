@@ -32,6 +32,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>Charts.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>46</integer>
+		</dict>
 		<key>DateTimePicker-DateTimePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -248,6 +253,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>40</integer>
+		</dict>
+		<key>SwiftAlgorithms.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>45</integer>
 		</dict>
 		<key>WXImageCompress.xcscheme</key>
 		<dict>

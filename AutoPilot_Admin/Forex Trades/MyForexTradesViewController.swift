@@ -156,8 +156,8 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.activeOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"})
-                self?.pendingOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"})
+                self?.activeOrders = orders.filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"})
+                self?.pendingOrders = orders.filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"})
                 
                 self?.didGetOrders = true
                 self?.mainFeedTableView.reloadData()
@@ -199,17 +199,15 @@ class MyForexTradesViewController: UIViewController {
                 if self?.didGetOrders == true && self?.didGetClosedOrders == true {
                     self?.hideLoader()
                     
-                    /*
                     if let activeOrdersCount = self?.activeOrders.count, let pendingOrdersCount = self?.pendingOrders.count {
-                        if activeOrdersCount > 1 || pendingOrdersCount > 1 {
+                        if activeOrdersCount > 0 || pendingOrdersCount > 0 {
                             self?.myForexTradesEmptyState.isHidden = true
                             self?.myForexTradesEmptyState.hidViews()
                         } else {
-                            //self?.myForexTradesEmptyState.isHidden = false
-                            //self?.myForexTradesEmptyState.showViews()
+                            self?.myForexTradesEmptyState.isHidden = false
+                            self?.myForexTradesEmptyState.showViews()
                         }
                     }
-                    */
                 }
             }
         }
