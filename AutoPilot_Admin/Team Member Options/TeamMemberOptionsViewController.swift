@@ -1,5 +1,5 @@
 //
-//  MissedPaymentOptionsViewController.swift
+//  TeamMemberOptionsViewController.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 9/12/23.
@@ -10,13 +10,13 @@ import Lottie
 import EventKit
 import MessageUI
 
-protocol MissedPaymentOptionsViewControllerDelegate: AnyObject {
+protocol TeamMemberOptionsViewControllerDelegate: AnyObject {
     //func didTapJoinSession(training: LiveTraining)
     //func didTapSetReminder(training: LiveTraining)
     //func didTapMore()
 }
 
-class MissedPaymentOptionsViewController: UIViewController {
+class TeamMemberOptionsViewController: UIViewController {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -41,8 +41,10 @@ class MissedPaymentOptionsViewController: UIViewController {
     var isDismissing = false
     var leadName: String = ""
     var phoneNumber: String = ""
+    var lineGraphView = ChartsLineGraphView()
+    var totalPercentChangeLabel = UILabel()
             
-    weak var delegate: MissedPaymentOptionsViewControllerDelegate?
+    weak var delegate: TeamMemberOptionsViewControllerDelegate?
     var entryPriceLock = UIImageView()
     
     var textColor: UIColor = UIColor.white
@@ -50,6 +52,7 @@ class MissedPaymentOptionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupLineGraph()
         setupColors()
         perform(#selector(animateViewsIn), with: self, afterDelay: 0.01)
     }
@@ -57,7 +60,7 @@ class MissedPaymentOptionsViewController: UIViewController {
 
 //MARK: ACTIONS
 
-extension MissedPaymentOptionsViewController {
+extension TeamMemberOptionsViewController {
     @objc func animateViewsIn() {
         UIView.animate(withDuration: 0.35) {
             self.opacityLayer.alpha = 0.75
@@ -80,7 +83,7 @@ extension MissedPaymentOptionsViewController {
 
 //MARK: SCROLLVIEW DELEGATE
 
-extension MissedPaymentOptionsViewController: UIScrollViewDelegate {
+extension TeamMemberOptionsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.tag == 1 {
             let yOffset = scrollView.contentOffset.y// + 44
@@ -101,7 +104,7 @@ extension MissedPaymentOptionsViewController: UIScrollViewDelegate {
 
 //MARK: CALENDAR ACTION
 
-extension MissedPaymentOptionsViewController {
+extension TeamMemberOptionsViewController {
     func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         let eventStore = EKEventStore()
 
@@ -127,7 +130,7 @@ extension MissedPaymentOptionsViewController {
     }
 }
 
-extension MissedPaymentOptionsViewController: MFMessageComposeViewControllerDelegate {
+extension TeamMemberOptionsViewController: MFMessageComposeViewControllerDelegate {
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         if result == .sent {
             print("Message was sent!!!")

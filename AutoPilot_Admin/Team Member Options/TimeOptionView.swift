@@ -33,7 +33,7 @@ extension TimeOptionView {
         
         blueView.isHidden = false
         blueView.alpha = 0
-        blueView.backgroundColor = .white
+        blueView.backgroundColor = .black
         blueView.layer.cornerRadius = 28/2
         blueView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(blueView)
@@ -43,6 +43,7 @@ extension TimeOptionView {
         blueView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         blueView.widthAnchor.constraint(equalToConstant: 28).isActive = true
         
+        timeLabel.textColor = .swBlue
         timeLabel.textAlignment = .center
         timeLabel.font = .sofiaProMedium(ofSize: 11)
         timeLabel.textColor = UIColor.white.withAlphaComponent(0.5)
@@ -56,7 +57,7 @@ extension TimeOptionView {
     
     @objc func showBlueView() {
         UIView.animate(withDuration: 0.2) {
-            self.timeLabel.textColor = .newBlack
+            self.timeLabel.textColor = .white
             self.blueView.alpha = 1.0
             self.blueView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
@@ -64,7 +65,7 @@ extension TimeOptionView {
     
     @objc func hideBlueView() {
         UIView.animate(withDuration: 0.2) {
-            self.timeLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            self.timeLabel.textColor = UIColor.newBlack.withAlphaComponent(0.5)
             self.blueView.alpha = 0
             self.blueView.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         }

@@ -278,7 +278,7 @@ class UpdatedLineChart: UIView {
         //
         
         floatingContainer.isHidden = false
-        floatingContainer.backgroundColor = isDarkMode.bool(forKey: "isDarkMode") ? .darkModeBackground : .white
+        floatingContainer.backgroundColor = .white
         floatingContainer.translatesAutoresizingMaskIntoConstraints = false
         lineChartView.addSubview(floatingContainer)
         floatingContainer.topAnchor.constraint(equalTo: lineChartView.topAnchor, constant: -0).isActive = true

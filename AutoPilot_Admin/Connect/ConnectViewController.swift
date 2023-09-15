@@ -254,7 +254,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             if activePaidTeamMembers.count > 1 {
                 lightImpactGenerator()
-                let trainingOptionVC = MissedPaymentOptionsViewController()
+                let trainingOptionVC = TeamMemberOptionsViewController()
                 trainingOptionVC.navTitleLabel.text = activePaidTeamMembers[indexPath.row][0]
                 trainingOptionVC.dateLabel.text = "Member since: \(activePaidTeamMembers[indexPath.row][2])"
                 trainingOptionVC.phoneNumber = activePaidTeamMembers[indexPath.row][1]

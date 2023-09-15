@@ -12,8 +12,8 @@
 		DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */; };
 		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
 		DE410C8B2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */; };
-		DE410C8E2AB1341700F1F24F /* MissedPaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8D2AB1341700F1F24F /* MissedPaymentOptionsViewController.swift */; };
-		DE410C902AB1341D00F1F24F /* MissedPaymentOptionsViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8F2AB1341D00F1F24F /* MissedPaymentOptionsViewController+Views.swift */; };
+		DE410C8E2AB1341700F1F24F /* TeamMemberOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8D2AB1341700F1F24F /* TeamMemberOptionsViewController.swift */; };
+		DE410C902AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8F2AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift */; };
 		DE410C9B2AB35B4200F1F24F /* DashboardMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C9A2AB35B4200F1F24F /* DashboardMainHeaderView.swift */; };
 		DE410C9D2AB35B9500F1F24F /* ChartsLineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C9C2AB35B9500F1F24F /* ChartsLineGraphView.swift */; };
 		DE410C9F2AB35BC500F1F24F /* UpdatedLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C9E2AB35BC500F1F24F /* UpdatedLineChart.swift */; };
@@ -126,8 +126,8 @@
 		DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectViewController+Views.swift"; sourceTree = "<group>"; };
 		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
 		DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersEmptyStateCell.swift; sourceTree = "<group>"; };
-		DE410C8D2AB1341700F1F24F /* MissedPaymentOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissedPaymentOptionsViewController.swift; sourceTree = "<group>"; };
-		DE410C8F2AB1341D00F1F24F /* MissedPaymentOptionsViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissedPaymentOptionsViewController+Views.swift"; sourceTree = "<group>"; };
+		DE410C8D2AB1341700F1F24F /* TeamMemberOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberOptionsViewController.swift; sourceTree = "<group>"; };
+		DE410C8F2AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamMemberOptionsViewController+Views.swift"; sourceTree = "<group>"; };
 		DE410C9A2AB35B4200F1F24F /* DashboardMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMainHeaderView.swift; sourceTree = "<group>"; };
 		DE410C9C2AB35B9500F1F24F /* ChartsLineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLineGraphView.swift; sourceTree = "<group>"; };
 		DE410C9E2AB35BC500F1F24F /* UpdatedLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedLineChart.swift; sourceTree = "<group>"; };
@@ -277,8 +277,8 @@
 		DE410C8C2AB1340D00F1F24F /* Team Member Options */ = {
 			isa = PBXGroup;
 			children = (
-				DE410C8D2AB1341700F1F24F /* MissedPaymentOptionsViewController.swift */,
-				DE410C8F2AB1341D00F1F24F /* MissedPaymentOptionsViewController+Views.swift */,
+				DE410C8D2AB1341700F1F24F /* TeamMemberOptionsViewController.swift */,
+				DE410C8F2AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift */,
 				DE410C9A2AB35B4200F1F24F /* DashboardMainHeaderView.swift */,
 				DE410C9C2AB35B9500F1F24F /* ChartsLineGraphView.swift */,
 				DE410CA42AB360BF00F1F24F /* TimeOptionView.swift */,
@@ -761,7 +761,7 @@
 				DE4D57962AA77BE4008E2B6B /* SettingsTableViewCell.swift in Sources */,
 				DEC9A4CF2A93E742000DBE39 /* SetupAccountViewController+Views.swift in Sources */,
 				DE80EF7E2AAB842000603EF3 /* UpdateAccessCodeViewController.swift in Sources */,
-				DE410C8E2AB1341700F1F24F /* MissedPaymentOptionsViewController.swift in Sources */,
+				DE410C8E2AB1341700F1F24F /* TeamMemberOptionsViewController.swift in Sources */,
 				DE410C9F2AB35BC500F1F24F /* UpdatedLineChart.swift in Sources */,
 				DE4D57A02AA8291F008E2B6B /* MyProfileLinkViewController.swift in Sources */,
 				DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */,
@@ -815,7 +815,7 @@
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DE4D57942AA77BD2008E2B6B /* ProfileImageTableViewCell.swift in Sources */,
-				DE410C902AB1341D00F1F24F /* MissedPaymentOptionsViewController+Views.swift in Sources */,
+				DE410C902AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DE4D57902AA77A44008E2B6B /* SettingsViewController.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,

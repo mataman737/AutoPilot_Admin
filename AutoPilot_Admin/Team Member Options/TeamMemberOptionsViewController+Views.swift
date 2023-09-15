@@ -1,5 +1,5 @@
 //
-//  MissedPaymentOptionsViewController+Views.swift
+//  TeamMemberOptionsViewController+Views.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 9/12/23.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Lottie
 
-extension MissedPaymentOptionsViewController {
+extension TeamMemberOptionsViewController {
     
     func setupColors() {
         mainContainer.backgroundColor = .white
@@ -61,7 +61,7 @@ extension MissedPaymentOptionsViewController {
         mainContainer.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor).isActive = true
         mainContainer.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor).isActive = true
         mainContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
-        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 300)).isActive = true //376 //445
+        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 580)).isActive = true //300
         mainContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
         keyLine.layer.cornerRadius = .createAspectRatio(value: 4)/2
@@ -89,6 +89,24 @@ extension MissedPaymentOptionsViewController {
         dateLabel.topAnchor.constraint(equalTo: navTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 5)).isActive = true
         dateLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
         
+        totalPercentChangeLabel.text = "+30%"
+        totalPercentChangeLabel.textColor = .liveDataGreen
+        totalPercentChangeLabel.textAlignment = .right
+        totalPercentChangeLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 16))
+        totalPercentChangeLabel.numberOfLines = 0
+        totalPercentChangeLabel.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(totalPercentChangeLabel)
+        totalPercentChangeLabel.centerYAnchor.constraint(equalTo: navTitleLabel.centerYAnchor).isActive = true
+        totalPercentChangeLabel.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: -.createAspectRatio(value: 18)).isActive = true
+                
+        lineGraphView.backgroundColor = .clear
+        lineGraphView.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(lineGraphView)
+        lineGraphView.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        lineGraphView.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
+        lineGraphView.topAnchor.constraint(equalTo: navTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 35)).isActive = true //25
+        lineGraphView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 260)).isActive = true
+        
         newChannelOption.iconImageView.image = UIImage(named: "phonecall")
         newChannelOption.optionTitleLabel.text = "Call"
         newChannelOption.optionButton.addTarget(self, action: #selector(makePhoneCall), for: .touchUpInside)
@@ -96,7 +114,8 @@ extension MissedPaymentOptionsViewController {
         newChannelOption.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(newChannelOption)
         newChannelOption.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor).isActive = true
-        newChannelOption.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 70)).isActive = true
+        //newChannelOption.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 70)).isActive = true
+        newChannelOption.topAnchor.constraint(equalTo: lineGraphView.bottomAnchor, constant: .createAspectRatio(value: 20)).isActive = true
         newChannelOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor).isActive = true
         newChannelOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
         
@@ -110,6 +129,83 @@ extension MissedPaymentOptionsViewController {
         sendContentOption.topAnchor.constraint(equalTo: newChannelOption.bottomAnchor).isActive = true
         sendContentOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor).isActive = true
         sendContentOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
+    }
+    
+    func setupLineGraph(/*chartData: SignalChartData*/) {
+        lineGraphView.setUplineChart()
+        
+        lineGraphView.lineChart.priceDates = generate90Days()
+        lineGraphView.lineChart.usersBrokerHistoricalPrices = generateRandomDoubles()
+                                        
+                
+        let arrayCount = 90.0
+        let userBrokerEntry = 61.0
+        lineGraphView.lineChart.userBrokerEntryToAppend = Array(repeating: userBrokerEntry, count: Int(arrayCount))
+                
+        lineGraphView.lineChart.populateData()
+        lineGraphView.lineChart.lineChartSetup()
+                        
+    }
+    
+    func generateRandomDoubles() -> [Double] {
+        var randomDoubles = [Double]()
+
+        for _ in 1...10 {
+            let randomValue = Double.random(in: 500...550)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+        
+        for _ in 11...20 {
+            let randomValue = Double.random(in: 551...600)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+        
+        for _ in 21...30 {
+            let randomValue = Double.random(in: 601...650)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+        
+        for _ in 31...40 {
+            let randomValue = Double.random(in: 651...700)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+        
+        for _ in 41...50 {
+            let randomValue = Double.random(in: 701...750)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+        
+        for _ in 51...60 {
+            let randomValue = Double.random(in: 751...800)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+        
+        for _ in 61...70 {
+            let randomValue = Double.random(in: 851...900)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+        
+        for _ in 71...80 {
+            let randomValue = Double.random(in: 951...1000)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+        
+        for _ in 81...90 {
+            let randomValue = Double.random(in: 1001...1050)
+            randomDoubles.append(randomValue.rounded(toPlaces: 2))
+        }
+
+        return randomDoubles
+    }
+    
+    func generate90Days() -> [String] {
+        var dateArray = [String]()
+
+        for i in 1...90 {
+            dateArray.append("\(i)")
+        }
+
+        return dateArray
     }
     
 }
