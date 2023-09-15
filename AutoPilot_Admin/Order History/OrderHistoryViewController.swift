@@ -103,7 +103,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         //print("did this \(signal.order?.ex?.volume) 👘👘👘 333")
                 
         if let volume = signal.order?.lots {
-            print("did this \(signal.order?.type) 👘👘👘 ~~~")
+            //print("did this \(signal.order?.type) 👘👘👘 ~~~")
             if let orderType = signal.order?.type {
                 if orderType.contains("Sell") {
                     cell.orderTypeLabel.text = "Sell \(volume.rounded(toPlaces: 2))"
@@ -120,41 +120,20 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         //print("invalid time zone 😹😹😹 111")
         
         if let time = signal.order?.openTime {
-            var date: Date?
-            let splitTime = time.components(separatedBy: "T")
-            let datePart = splitTime[0]
-            let timePart = splitTime[1].replacingOccurrences(of: ".000Z", with: "")
-            let timeString = "\(datePart) \(timePart)"
             
+            // Create a date formatter
             let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            date = dateFormatter.date(from:timeString)
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
             
-            //print("invalid time zone 😹😹😹 \(date)")
-            
-            if let formattedDate = formatDate(time) {
-                print("\(formattedDate) 😹😹😹")
+            // Convert the string to a Date object
+            if let date = dateFormatter.date(from: time) {
+                let outputFormatter = DateFormatter()
+                outputFormatter.dateFormat = "M/d @ h:mma"
+                let formattedDate = outputFormatter.string(from: date)
                 cell.signalTimeLabel.text = formattedDate
             } else {
-                print("Invalid date string 😹😹😹")
+                cell.signalTimeLabel.text = "Invalid date time"
             }
-            
-            //Change the format of the string
-            //into one that is readable and matches the 'All' tab
-            /*
-            if let sigDate = date {
-                if let estTimeZone = TimeZone(abbreviation: "GMT") {
-                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off //GMT is 13 hours off
-                    let startConverted = setTimeString(theDate: sigDate.convert(from: estTimeZone, to: TimeZone.current))
-                    //10 hour difference
-                    //cell.signalTimeLabel.text = "\(formatter.string(from: sigDate)) | \(startConverted)"
-                    cell.signalTimeLabel.text = startConverted
-                } else {
-                    print("invalid time zone 😹😹😹")
-                }
-            }
-            */
         }
     }
     
@@ -172,5 +151,9 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         }
         
         return nil // Return nil if date parsing fails
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return .createAspectRatio(value: 140)
     }
 }

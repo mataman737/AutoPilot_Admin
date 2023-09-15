@@ -187,6 +187,7 @@ extension OpenOrderMenuViewController {
             unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
         }
         
+        unrealizedProfitTitleLabel.text = "Unrealized Profit"
         unrealizedProfitTitleLabel.textColor = varBlackColor.withAlphaComponent(0.5)
         unrealizedProfitTitleLabel.textAlignment = .right
         unrealizedProfitTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
@@ -231,7 +232,6 @@ extension OpenOrderMenuViewController {
             }
         }
         
-//        stopLossLabel.text = "1.12345"
         stopLossLabel.textColor = varBlackColor.withAlphaComponent(0.75)
         stopLossLabel.textAlignment = .left
         stopLossLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
