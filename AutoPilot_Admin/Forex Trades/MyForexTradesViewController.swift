@@ -219,7 +219,6 @@ class MyForexTradesViewController: UIViewController {
         if let orderUpdate = notification.userInfo?["orderUpdate"] as? OrderProfitUpdate {
             let orders = orderUpdate.data.orders
             
-            /*
             if let balance = orderUpdate.data.balance?.rounded(toPlaces: 2) {
 //                storedBalance = "$\(balance.withCommas())"
 //                navTitleLabel.text = "$\(balance.withCommas())"
@@ -269,7 +268,6 @@ class MyForexTradesViewController: UIViewController {
             if let profit = orderUpdate.data.profit?.rounded(toPlaces: 2) {
                 self.marginLvlPercentAmount = "\(profit.withCommas())"
             }
-            */
             
             */
             //orderUpdate.data.balance
