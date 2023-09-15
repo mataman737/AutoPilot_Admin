@@ -49,21 +49,21 @@ class ConnectViewController: UIViewController {
     var rewardsImageView = UIImageView()
     var rewardsButton = UIButton()
     
-    var activePaidTeamMembers: [[String]] = []
+    var members = [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        for _ in 1...12 {
-            let fullName = generateRandomFullName()
-            let phoneNumber = generateRandomPhoneNumber()
-            let date = generateRandomDateWithinLastThreeMonths()
-            //let number = generateRandomNumber()
-            
-            let array: [String] = [fullName, phoneNumber, date] //"\(number)"
-            activePaidTeamMembers.append(array)
-        }
+//        for _ in 1...12 {
+//            let fullName = generateRandomFullName()
+//            let phoneNumber = generateRandomPhoneNumber()
+//            let date = generateRandomDateWithinLastThreeMonths()
+//            //let number = generateRandomNumber()
+//            
+//            let array: [String] = [fullName, phoneNumber, date] //"\(number)"
+//            activePaidTeamMembers.append(array)
+//        }
         
         
         //ChatClient.loginUser()
@@ -119,6 +119,8 @@ class ConnectViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //checkUnreadCount()
         loadingLottie.play()
+        
+        getTeamMembers()
     }
     
     @objc func hideLoader() {
@@ -126,6 +128,25 @@ class ConnectViewController: UIViewController {
             self.loadingContainer.alpha = 0
         } completion: { success in
             //self.loadingContainer.isHidden = true
+        }
+    }
+    
+    func getTeamMembers() {
+        API.sharedInstance.getTeamMembers { success, users, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let users = users else {
+                print("error getting users")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.members = users
+                self?.discoverTableView.reloadData()
+            }
         }
     }
 }
@@ -150,8 +171,8 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            if activePaidTeamMembers.count > 0 {
-                return activePaidTeamMembers.count
+            if members.count > 0 {
+                return members.count
             } else {
                 return 1
             }
@@ -173,12 +194,21 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
             cell.newMessageBubble.alpha = 0
             return cell
         } else {
-            if activePaidTeamMembers.count > 0 {
+            if members.count > 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
-                cell.chatNameLabel.text = activePaidTeamMembers[indexPath.row][0]
-                let memberDate = activePaidTeamMembers[indexPath.row][2]
-                cell.chatDescriptionLabel.text = "Member since: \(memberDate)"
-                cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+                
+                let member = members[indexPath.row]
+                
+                cell.chatNameLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
+//                let memberDate = activePaidTeamMembers[indexPath.row][2]
+//                cell.chatDescriptionLabel.text = "Member since: \(memberDate)"
+                
+                if let urlString = member.profilePhotoUrl, let url = URL(string: urlString) {
+                    cell.circleImageView.kf.setImage(with: url)
+                } else {
+                    cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+                }
+                
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: teamMembersEmptyStateCell, for: indexPath) as! TeamMembersEmptyStateCell
@@ -193,7 +223,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         let titleLabel = UILabel()
         titleLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
         titleLabel.textColor = .black
-        titleLabel.text = "Team Members (\(activePaidTeamMembers.count))"
+        titleLabel.text = "Team Members \(members.count)"
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(titleLabel)
@@ -214,7 +244,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             return .createAspectRatio(value: 73)
         } else {
-            if activePaidTeamMembers.count > 0 {
+            if members.count > 0 {
                 return .createAspectRatio(value: 73)
             } else {
                 return .createAspectRatio(value: 400)
@@ -252,12 +282,13 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
                 print(error)
             }
         } else {
-            if activePaidTeamMembers.count > 1 {
+            if members.count > 0 {
                 lightImpactGenerator()
                 let trainingOptionVC = TeamMemberOptionsViewController()
-                trainingOptionVC.navTitleLabel.text = activePaidTeamMembers[indexPath.row][0]
-                trainingOptionVC.dateLabel.text = "Member since: \(activePaidTeamMembers[indexPath.row][2])"
-                trainingOptionVC.phoneNumber = activePaidTeamMembers[indexPath.row][1]
+                let member = members[indexPath.row]
+                trainingOptionVC.navTitleLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
+                trainingOptionVC.dateLabel.text = "" // "Member since: \(activePaidTeamMembers[indexPath.row][2])"
+                trainingOptionVC.phoneNumber = "" // activePaidTeamMembers[indexPath.row][1]
                 trainingOptionVC.modalPresentationStyle = .overFullScreen
                 self.present(trainingOptionVC, animated: false)
             }
