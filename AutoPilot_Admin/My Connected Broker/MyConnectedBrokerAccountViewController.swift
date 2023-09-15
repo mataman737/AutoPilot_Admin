@@ -38,9 +38,11 @@ class MyConnectedBrokerAccountViewController: UIViewController {
     var userLotSize = UserDefaults()
     var didSetTradingDefault = UserDefaults()
     //var tradingDefaults: TradingDefaults?
+    var brokerData: [String] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        brokerData = splitStringByTilde(brokers[0])
         setupViews()
         getAccounts()
         getTradingDefaults()
@@ -216,58 +218,34 @@ extension MyConnectedBrokerAccountViewController: UITableViewDelegate, UITableVi
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: myBrokerOptionsTableViewCell, for: indexPath) as! MyBrokerOptionsTableViewCell
-        cell.dividerLine.backgroundColor = UIColor(red: 228/255, green: 229/255, blue: 230/255, alpha: 1.0)
-        cell.containerView.backgroundColor = .white
-        let accountName = brokers[indexPath.row - 1].trimAccount()
-        
-        /*
-        if let userDefaultLot = tradingDefaults?.lotSize {
-            cell.serverLabel.text = "\(userDefaultLot) lot size"
-            self.didSetTradingDefault.setValue(true, forKey: "didSetTradingDefault")
-        } else {
-            cell.serverLabel.text = "Set default trading amount"
-        }
-        */
-        
-        /*
-         if didSetTradingDefault.bool(forKey: "didSetTradingDefault") {
-         if isTradingPercentBased.bool(forKey: "isTradingPercentBased") {
-         if let tradingPercent = userTradingPercent.string(forKey: "userTradingPercent") {
-         cell.serverLabel.text = "\(tradingPercent)%"
-         } else {
-         cell.serverLabel.text = "Set default trading amount"
-         }
-         } else {
-         
-         if let tradingPercent = userLotSize.string(forKey: "userLotSize") {
-         cell.serverLabel.text = "\(tradingPercent) lot size"
-         } else {
-         cell.serverLabel.text = "Set default trading amount"
-         }
-         }
-         } else {
-         cell.serverLabel.text = "Set default trading amount"
-         }
-         */
-        
-        cell.containerLabel.text = "\(accountName)"
-        //cell.serverLabel.text = brokers[indexPath.row - 1].getServer()
-        cell.delegate = self
         cell.backgroundColor = .white
         cell.contentView.backgroundColor = .white
+        cell.dividerLine.backgroundColor = UIColor(red: 228/255, green: 229/255, blue: 230/255, alpha: 1.0)
+        cell.containerView.backgroundColor = .white
+        cell.containerLabel.text = brokerData[2]
+        cell.serverLabel.text = "\(brokerData[3]) | \(brokerData[0])"
+        cell.delegate = self
         cell.containerLabel.textColor = .newBlack
         cell.serverLabel.textColor = .newBlack.withAlphaComponent(0.5)
         cell.threeDotsImageView.setImageColor(color: .newBlack.withAlphaComponent(0.5))
         
-        if let preferredBroker = usersPreferredBroker.value(forKey: "selectedBroker") {
-            if brokers[indexPath.row - 1] == preferredBroker as! String {
-                cell.selectedState()
-            }
-            cell.brokerIndex = indexPath.row - 1
-        }
+        //if let preferredBroker = usersPreferredBroker.value(forKey: "selectedBroker") {
+//        if brokers[0] == preferredBroker as! String {
+//            cell.selectedState()
+//        }
+//        cell.brokerIndex = indexPath.row - 1
+        
+        cell.selectedState()
+        
+        //}
         return cell
         
     }
+    
+    func splitStringByTilde(_ inputString: String) -> [String] {
+        return inputString.components(separatedBy: "~")
+    }
+
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return .createAspectRatio(value: 60)
@@ -278,15 +256,7 @@ extension MyConnectedBrokerAccountViewController: UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if canAddMultipleBrokers {
-            return .createAspectRatio(value: 80)
-        } else {
-            if indexPath.row == 0 {
-                return 0
-            } else {
-                return .createAspectRatio(value: 80)
-            }
-        }
+        return .createAspectRatio(value: 80)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -299,9 +269,9 @@ extension MyConnectedBrokerAccountViewController: UITableViewDelegate, UITableVi
         let headerView = MyBrokersHeader()
         headerView.dividerLine.backgroundColor = UIColor(red: 228/255, green: 229/255, blue: 230/255, alpha: 1.0)
         headerView.whiteView.backgroundColor = .white
-        headerView.checkoutTitleLabel.text = "My Brokers"
+        headerView.checkoutTitleLabel.text = "My Broker"
         headerView.checkoutTitleLabel.textColor = .newBlack
-        headerView.numberOfItemsLabel.text = brokers.count > 1 ? "\(brokers.count) connected brokers" : "\(brokers.count) connected broker"
+        headerView.numberOfItemsLabel.text = "\(brokers.count) connected broker"
         headerView.numberOfItemsLabel.textColor = .newBlack.withAlphaComponent(0.5)
         headerView.dismissButton.addTarget(self, action: #selector(dismissViews), for: .touchUpInside)
         headerView.invisibleButton.addTarget(self, action: #selector(dismissViews), for: .touchUpInside)
@@ -313,7 +283,6 @@ extension MyConnectedBrokerAccountViewController: UITableViewDelegate, UITableVi
             let cell = tableView.cellForRow(at: indexPath) as! MyBrokerOptionsTableViewCell
             cell.didMakeSelection()
             usersPreferredBroker.set(brokers[indexPath.row - 1], forKey: "selectedBroker")
-            //print("\(self.usersPreferredBroker.value(forKey: "selectedBroker")) 🔥🔥🔥")
             presentDefaultTradingAmtVC()
         } else {
             self.didSelectAddNewBroker = true
@@ -321,20 +290,6 @@ extension MyConnectedBrokerAccountViewController: UITableViewDelegate, UITableVi
             
         }
     }
-    
-    /*
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        //Uncomment when we want to allow multiple brokers
-        if canAddMultipleBrokers {
-            if indexPath.row != 0 {
-                let cell = tableView.cellForRow(at: indexPath) as! MyBrokerOptionsTableViewCell
-                cell.newOptionSelected()
-            }
-        }
-         
-        print("\(indexPath.row) 🩲🩲🩲")
-    }
-    */
 }
 
 //MARK: ITEM OPTIONS DELEGATE

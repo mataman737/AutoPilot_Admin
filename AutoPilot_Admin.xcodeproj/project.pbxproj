@@ -61,6 +61,7 @@
 		DE80EF862AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */; };
 		DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */; };
 		DEA21FF52AB3A529007D1C3A /* attempt_4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DEA21FF42AB3A529007D1C3A /* attempt_4.mp4 */; };
+		DEA21FF72AB3DB25007D1C3A /* radio.json in Resources */ = {isa = PBXBuildFile; fileRef = DEA21FF62AB3DB25007D1C3A /* radio.json */; };
 		DEB44E382AAE5F070006887A /* FlagKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB44E372AAE5F060006887A /* FlagKit.xcassets */; };
 		DEB44E3B2AAE69AD0006887A /* CloseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3A2AAE69AD0006887A /* CloseOrderViewController.swift */; };
 		DEB44E3D2AAE69B40006887A /* CloseOrderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */; };
@@ -174,6 +175,7 @@
 		DE80EF852AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateTeamNameAndPhotoViewController+Views.swift"; sourceTree = "<group>"; };
 		DE80EF892AACEF7200603EF3 /* TeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewCell.swift; sourceTree = "<group>"; };
 		DEA21FF42AB3A529007D1C3A /* attempt_4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = attempt_4.mp4; sourceTree = "<group>"; };
+		DEA21FF62AB3DB25007D1C3A /* radio.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = radio.json; sourceTree = "<group>"; };
 		DEB44E372AAE5F060006887A /* FlagKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagKit.xcassets; sourceTree = "<group>"; };
 		DEB44E3A2AAE69AD0006887A /* CloseOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseOrderViewController.swift; sourceTree = "<group>"; };
 		DEB44E3C2AAE69B40006887A /* CloseOrderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloseOrderViewController+Views.swift"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		DE4D577F2AA6B704008E2B6B /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				DEA21FF62AB3DB25007D1C3A /* radio.json */,
 				DEB44E582AAFD7390006887A /* tripleSpinner.json */,
 				DE4D57822AA6B818008E2B6B /* blueArrows.json */,
 				DE4D57802AA6B715008E2B6B /* gradientCheck.json */,
@@ -674,6 +677,7 @@
 				DEB44E592AAFD7390006887A /* tripleSpinner.json in Resources */,
 				DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */,
 				DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */,
+				DEA21FF72AB3DB25007D1C3A /* radio.json in Resources */,
 				DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */,
 				DE4D57812AA6B715008E2B6B /* gradientCheck.json in Resources */,
 				DEC9A4F52A93ED96000DBE39 /* Sofia Pro Light Az.otf in Resources */,

@@ -150,8 +150,8 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.activeOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"})
-                self?.pendingOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"})
+                self?.activeOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"}).reversed()
+                self?.pendingOrders = orders.filter({$0.instantTrade?.signalType == "Einstein" || $0.instantTrade?.signalType == "Magnus" || $0.instantTrade?.signalType == nil}).filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"}).reversed()
                 
                 self?.didGetOrders = true
                 self?.mainFeedTableView.reloadData()
@@ -186,7 +186,7 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.closedOrders = orders
+                self?.closedOrders = orders.reversed()
                 self?.didGetClosedOrders = true
                 self?.mainFeedTableView.reloadData()
                 
@@ -361,6 +361,7 @@ extension MyForexTradesViewController {
         lightImpactGenerator()
         if brokers.count > 0 {
             let myBrokerVC = MyConnectedBrokerAccountViewController()
+            myBrokerVC.brokers = self.brokers
             myBrokerVC.modalPresentationStyle = .overFullScreen
             self.present(myBrokerVC, animated: false, completion: nil)
         } else {
@@ -772,28 +773,19 @@ extension MyForexTradesViewController {
         }
         
         if let time = signal.order?.openTime {
-            var date: Date?
-            let splitTime = time.components(separatedBy: "T")
-            let datePart = splitTime[0]
-            let timePart = splitTime[1].replacingOccurrences(of: ".000Z", with: "")
-            let timeString = "\(datePart) \(timePart)"
             
+            // Create a date formatter
             let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            date = dateFormatter.date(from:timeString)
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
             
-            //Change the format of the string
-            if let sigDate = date {
-                if let estTimeZone = TimeZone(abbreviation: "GMT") {
-                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off
-                    let startConverted = setTimeString(theDate: sigDate.convert(from: estTimeZone, to: TimeZone.current))
-                    //10 hour difference
-                    //cell.signalTimeLabel.text = "\(formatter.string(from: sigDate)) | \(startConverted)"
-                    cell.signalTimeLabel.text = startConverted
-                } else {
-                    print("invalid time zone 😹😹😹")
-                }
+            // Convert the string to a Date object
+            if let date = dateFormatter.date(from: time) {
+                let outputFormatter = DateFormatter()
+                outputFormatter.dateFormat = "M/d @ h:mma"
+                let formattedDate = outputFormatter.string(from: date)
+                cell.signalTimeLabel.text = formattedDate
+            } else {
+                cell.signalTimeLabel.text = "Invalid date time"
             }
         }
     }
