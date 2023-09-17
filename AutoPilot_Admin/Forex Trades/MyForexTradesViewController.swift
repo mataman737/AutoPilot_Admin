@@ -219,7 +219,6 @@ class MyForexTradesViewController: UIViewController {
         if let orderUpdate = notification.userInfo?["orderUpdate"] as? OrderProfitUpdate {
             let orders = orderUpdate.data.orders
             
-            /*
             if let balance = orderUpdate.data.balance?.rounded(toPlaces: 2) {
 //                storedBalance = "$\(balance.withCommas())"
 //                navTitleLabel.text = "$\(balance.withCommas())"
@@ -269,7 +268,6 @@ class MyForexTradesViewController: UIViewController {
             if let profit = orderUpdate.data.profit?.rounded(toPlaces: 2) {
                 self.marginLvlPercentAmount = "\(profit.withCommas())"
             }
-            */
             
             */
             //orderUpdate.data.balance
@@ -277,6 +275,10 @@ class MyForexTradesViewController: UIViewController {
             for index in 0...activeOrders.count {
                 if let cell = mainFeedTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? OpenOrdersTableViewCell {
                     if let currentOrder = orders.first(where: {$0.ticket == cell.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
+                        if let signalTradingPair = currentOrder.symbol {
+                            let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
+                            cell.currentPriceLabel.text = forexPrice
+                        }
                         let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
                         //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
                         
