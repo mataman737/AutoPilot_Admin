@@ -14,4 +14,5 @@ struct User: Codable {
     var lastName: String?
     var profilePhotoUrl: String?
     var language: String
+    var teamJoinDate: Date?
 }
