@@ -697,9 +697,15 @@ extension MyForexTradesViewController {
         
         if let time = signal.order?.openTime {
             
+            //let date = Date()
+            //let formattedDate = dateFormatter.string(from: date)
+            //print(formattedDate)
+            
             // Create a date formatter
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            dateFormatter.dateFormat = detectDateFormat(from: time)
+            
+            print("\(time) 🚀🚀🚀")
             
             // Convert the string to a Date object
             if let date = dateFormatter.date(from: time) {
@@ -713,30 +719,7 @@ extension MyForexTradesViewController {
         }
     }
     
-    func formatDate(_ dateString: String) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD HH:MM:SS"
-        
-        if let date = dateFormatter.date(from: dateString) {
-            let outputFormatter = DateFormatter()
-            outputFormatter.dateFormat = "M/d @ h:mma"
-            outputFormatter.amSymbol = "am"
-            outputFormatter.pmSymbol = "pm"
-            
-            return outputFormatter.string(from: date)
-        }
-        
-        return nil // Return nil if date parsing fails
-    }
-    
     func setupPendingOrders(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {
-        cell.assetImageView.image = UIImage(named: "forexBotIcon")
-        cell.currencyPairLabel.text = "EURUSD"
-        cell.signalTimeLabel.text = "9/2 @ 2:15pm"
-        cell.orderTypeLabel.text = "Buy"
-        cell.entryPriceLabel.text = "1.12345"
-        cell.currentPriceLabel.text = "1.12345"
-        
         let signal = pendingOrders[indexPath.row]
         
         cell.order = signal.order
@@ -774,7 +757,7 @@ extension MyForexTradesViewController {
             
             // Create a date formatter
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            dateFormatter.dateFormat = detectDateFormat(from: time)
             
             // Convert the string to a Date object
             if let date = dateFormatter.date(from: time) {
@@ -786,6 +769,48 @@ extension MyForexTradesViewController {
                 cell.signalTimeLabel.text = "Invalid date time"
             }
         }
+    }
+    
+    func detectDateFormat(from dateString: String) -> String? {
+        let dateFormats: [String] = [
+            "yyyy-MM-dd'T'HH:mm:ss.SSS",
+            "yyyy-MM-dd'T'HH:mm:ss.SS",
+            "YYYY-MM-DD HH:MM:SS",
+            "YYYY-MM-DD'T'HH:MM:SS",
+            "yyyy-MM-dd'T'HH:mm:ss.S",
+            "yyyy-MM-dd HH:mm:ss.SSS",
+            "yyyy-MM-dd HH:mm:ss.SS",
+            "yyyy-MM-dd HH:mm:ss.S",
+            "yyyy-MM-dd HH:mm:ss",
+            "yyyy/MM/dd HH:mm:ss.SSS",
+            "yyyy/MM/dd HH:mm:ss.SS",
+            "yyyy/MM/dd HH:mm:ss.S",
+            "yyyy/MM/dd HH:mm:ss",
+            "yyyy.MM.dd HH:mm:ss.SSS",
+            "yyyy.MM.dd HH:mm:ss.SS",
+            "yyyy.MM.dd HH:mm:ss.S",
+            "yyyy.MM.dd HH:mm:ss",
+            "MM/dd/yyyy HH:mm:ss.SSS",
+            "MM/dd/yyyy HH:mm:ss.SS",
+            "MM/dd/yyyy HH:mm:ss.S",
+            "MM/dd/yyyy HH:mm:ss",
+            "dd/MM/yyyy HH:mm:ss.SSS",
+            "dd/MM/yyyy HH:mm:ss.SS",
+            "dd/MM/yyyy HH:mm:ss.S",
+            "dd/MM/yyyy HH:mm:ss",
+            // Add more date formats as needed
+        ]
+        
+        let dateFormatter = DateFormatter()
+        
+        for format in dateFormats {
+            dateFormatter.dateFormat = format
+            if let _ = dateFormatter.date(from: dateString) {
+                return format
+            }
+        }
+        
+        return nil // If no format matches
     }
     
     func setTimeString(theDate: Date) -> String {

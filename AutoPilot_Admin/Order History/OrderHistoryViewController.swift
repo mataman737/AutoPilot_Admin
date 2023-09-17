@@ -123,7 +123,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
             
             // Create a date formatter
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            dateFormatter.dateFormat = detectDateFormat(from: time)//"yyyy-MM-dd'T'HH:mm:ss"
             
             // Convert the string to a Date object
             if let date = dateFormatter.date(from: time) {
@@ -137,21 +137,63 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func formatDate(_ dateString: String) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+    func detectDateFormat(from dateString: String) -> String? {
+        let dateFormats: [String] = [
+            "yyyy-MM-dd'T'HH:mm:ss.SSS",
+            "yyyy-MM-dd'T'HH:mm:ss.SS",
+            "YYYY-MM-DD HH:MM:SS",
+            "YYYY-MM-DD'T'HH:MM:SS",
+            "yyyy-MM-dd'T'HH:mm:ss.S",
+            "yyyy-MM-dd HH:mm:ss.SSS",
+            "yyyy-MM-dd HH:mm:ss.SS",
+            "yyyy-MM-dd HH:mm:ss.S",
+            "yyyy-MM-dd HH:mm:ss",
+            "yyyy/MM/dd HH:mm:ss.SSS",
+            "yyyy/MM/dd HH:mm:ss.SS",
+            "yyyy/MM/dd HH:mm:ss.S",
+            "yyyy/MM/dd HH:mm:ss",
+            "yyyy.MM.dd HH:mm:ss.SSS",
+            "yyyy.MM.dd HH:mm:ss.SS",
+            "yyyy.MM.dd HH:mm:ss.S",
+            "yyyy.MM.dd HH:mm:ss",
+            "MM/dd/yyyy HH:mm:ss.SSS",
+            "MM/dd/yyyy HH:mm:ss.SS",
+            "MM/dd/yyyy HH:mm:ss.S",
+            "MM/dd/yyyy HH:mm:ss",
+            "dd/MM/yyyy HH:mm:ss.SSS",
+            "dd/MM/yyyy HH:mm:ss.SS",
+            "dd/MM/yyyy HH:mm:ss.S",
+            "dd/MM/yyyy HH:mm:ss",
+            // Add more date formats as needed
+        ]
         
-        if let date = dateFormatter.date(from: dateString) {
-            let outputFormatter = DateFormatter()
-            outputFormatter.dateFormat = "M/d @ h:mma"
-            outputFormatter.amSymbol = "am"
-            outputFormatter.pmSymbol = "pm"
-            
-            return outputFormatter.string(from: date)
+        let dateFormatter = DateFormatter()
+        
+        for format in dateFormats {
+            dateFormatter.dateFormat = format
+            if let _ = dateFormatter.date(from: dateString) {
+                return format
+            }
         }
         
-        return nil // Return nil if date parsing fails
+        return nil // If no format matches
     }
+    
+//    func formatDate(_ dateString: String) -> String? {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+//
+//        if let date = dateFormatter.date(from: dateString) {
+//            let outputFormatter = DateFormatter()
+//            outputFormatter.dateFormat = "M/d @ h:mma"
+//            outputFormatter.amSymbol = "am"
+//            outputFormatter.pmSymbol = "pm"
+//
+//            return outputFormatter.string(from: date)
+//        }
+//
+//        return nil // Return nil if date parsing fails
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return .createAspectRatio(value: 140)
