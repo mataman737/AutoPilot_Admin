@@ -62,15 +62,25 @@ class TeamMemberOptionsViewController: UIViewController {
 
 extension TeamMemberOptionsViewController {
     @objc func animateViewsIn() {
-        UIView.animate(withDuration: 0.35) {
+        UIView.animate(withDuration: 0.25) {
             self.opacityLayer.alpha = 0.75
-            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.keyLine.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.keyLine.transform = CGAffineTransform(translationX: 0, y: -10)
+        } completion: { (success) in
+            UIView.animate(withDuration: 0.15) {
+                self.mainContainer.transform = CGAffineTransform(translationX: 0, y: 5)
+                self.keyLine.transform = CGAffineTransform(translationX: 0, y: 5)
+            } completion: { (success) in
+                UIView.animate(withDuration: 0.15) {
+                    self.mainContainer.transform = CGAffineTransform(translationX: 0, y: 0)
+                    self.keyLine.transform = CGAffineTransform(translationX: 0, y: 0)
+                }
+            }
         }
     }
     
     @objc func dimissVC() {
-        UIView.animate(withDuration: 0.28) {
+        UIView.animate(withDuration: 0.25) {
             self.mainScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
             self.opacityLayer.alpha = 0
         } completion: { (success) in

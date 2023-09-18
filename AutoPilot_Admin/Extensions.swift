@@ -722,6 +722,48 @@ extension String {
             return false
         }
     }
+    
+    func detectDateFormat() -> String? {
+        let dateFormats: [String] = [
+            "yyyy-MM-dd'T'HH:mm:ss.SSS",
+            "yyyy-MM-dd'T'HH:mm:ss.SS",
+            "YYYY-MM-DD HH:MM:SS",
+            "YYYY-MM-DD'T'HH:MM:SS",
+            "yyyy-MM-dd'T'HH:mm:ss.S",
+            "yyyy-MM-dd HH:mm:ss.SSS",
+            "yyyy-MM-dd HH:mm:ss.SS",
+            "yyyy-MM-dd HH:mm:ss.S",
+            "yyyy-MM-dd HH:mm:ss",
+            "yyyy/MM/dd HH:mm:ss.SSS",
+            "yyyy/MM/dd HH:mm:ss.SS",
+            "yyyy/MM/dd HH:mm:ss.S",
+            "yyyy/MM/dd HH:mm:ss",
+            "yyyy.MM.dd HH:mm:ss.SSS",
+            "yyyy.MM.dd HH:mm:ss.SS",
+            "yyyy.MM.dd HH:mm:ss.S",
+            "yyyy.MM.dd HH:mm:ss",
+            "MM/dd/yyyy HH:mm:ss.SSS",
+            "MM/dd/yyyy HH:mm:ss.SS",
+            "MM/dd/yyyy HH:mm:ss.S",
+            "MM/dd/yyyy HH:mm:ss",
+            "dd/MM/yyyy HH:mm:ss.SSS",
+            "dd/MM/yyyy HH:mm:ss.SS",
+            "dd/MM/yyyy HH:mm:ss.S",
+            "dd/MM/yyyy HH:mm:ss",
+            // Add more date formats as needed
+        ]
+        
+        let dateFormatter = DateFormatter()
+        
+        for format in dateFormats {
+            dateFormatter.dateFormat = format
+            if let _ = dateFormatter.date(from: self) {
+                return format
+            }
+        }
+        
+        return nil // If no format matches
+    }
 }
 
 extension Double {

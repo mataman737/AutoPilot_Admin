@@ -228,10 +228,11 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
                 let member = members[indexPath.row]
                 
                 cell.chatNameLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
-                let joinDate = member.teamJoinDate
-                cell.chatDescriptionLabel.text = "Member since: \(joinDate)"
-                
-                print("\(joinDate) 💀💀💀")
+                if let joinDate = member.teamJoinDate {
+                    cell.chatDescriptionLabel.text = "Member since: \(convertToDateFormatted(joinDate))"
+                } else {
+                    cell.chatDescriptionLabel.text = "No join date"
+                }
                 
                 if let urlString = member.profilePhotoUrl, let url = URL(string: urlString) {
                     cell.circleImageView.kf.setImage(with: url)
@@ -247,13 +248,21 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func convertToDateFormatted(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/d/yy"
+        
+        let formattedDate = dateFormatter.string(from: date)
+        return formattedDate
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = .clear
         let titleLabel = UILabel()
         titleLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
         titleLabel.textColor = .black
-        titleLabel.text = "Team Members \(members.count)"
+        titleLabel.text = "Team Members: \(members.count)"
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(titleLabel)
