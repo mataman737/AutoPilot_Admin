@@ -55,7 +55,7 @@ class SettingsViewController: UIViewController {
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
     //var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Delete Account"]
-    var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions", "Delete Account"]
+    var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions"/*, "Delete Account"*/]
         
     var team: Team?
     var teamAccessCode: String? {
@@ -106,13 +106,6 @@ class SettingsViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         edgesForExtendedLayout = UIRectEdge.all
         extendedLayoutIncludesOpaqueBars = true
-                
-        //navigationController?.navigationBar.isHidden = true
-        //tabBarController?.tabBar.shadowImage = UIImage()
-        //tabBarController?.tabBar.backgroundImage = UIImage()
-        //tabBarController?.tabBar.clipsToBounds = true
-        //extendedLayoutIncludesOpaqueBars = true
-        
         showTabBar()
         getCurrentTeam()
     }
@@ -136,7 +129,6 @@ class SettingsViewController: UIViewController {
             }
         }
     }
-
 }
 
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
@@ -799,7 +791,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 didTapSocial(cell: 2)
             default:
                 didTapSocial(cell: 3)
-                //print("tapped this")
             }
         }
         
@@ -817,8 +808,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 didTapTOS(cell: 5)
             case 5:
                 didTapTOS(cell: 6)
+                /*
             case 6:
                 didTapDeleteAccount()
+                */
             default:
                 didTapLogout()
             }
