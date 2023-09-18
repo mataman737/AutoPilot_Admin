@@ -558,7 +558,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             return socials.count
         } else {
             return support.count + 1
-            
         }
     }
     
@@ -607,7 +606,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.titleLabel.text = "Add Team Name"
                     cell.titleLabel.textColor = .brightRed
                 }
-                
             } else if indexPath.row == 3 {
                 if teamAccessCode != nil {
                     cell.titleLabel.text = teamAccessCode

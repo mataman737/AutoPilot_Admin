@@ -8,6 +8,7 @@
 import UIKit
 import PhotoCircleCrop
 import WXImageCompress
+import Kingfisher
 
 protocol UpdateTeamNameAndPhotoViewControllerDelegate: AnyObject {
     func didUpdateTeamNamePhoto()
@@ -42,6 +43,9 @@ class UpdateTeamNameAndPhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
+        //print("🎯🎯🎯 \(team) 🎯🎯🎯")
+        
         perform(#selector(prsentViews), with: self, afterDelay: 0.05)
     }
 }

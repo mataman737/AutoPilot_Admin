@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 extension UpdateTeamNameAndPhotoViewController {
  
@@ -62,10 +63,19 @@ extension UpdateTeamNameAndPhotoViewController {
         downButton.trailingAnchor.constraint(equalTo: downArrow.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         downButton.bottomAnchor.constraint(equalTo: downArrow.bottomAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         
+        teamPhotoImageView.image = UIImage(named: "enigmaUserPH")
+        if let teamPhoto = team?.photo {
+            if let url = URL(string: teamPhoto) {
+                teamPhotoImageView.kf.setImage(with: url)
+                teamPhotoImageView.contentMode = .scaleAspectFill
+            } else {
+                teamPhotoImageView.image = UIImage(named: "enigmaUserPH")
+            }
+        }
         let photoTapped = UITapGestureRecognizer(target: self, action: #selector(replacePhotoClicked))
         teamPhotoImageView.addGestureRecognizer(photoTapped)
+        teamPhotoImageView.backgroundColor = .lightGray
         teamPhotoImageView.isUserInteractionEnabled = true
-        teamPhotoImageView.image = UIImage(named: "enigmaUserPH")
         teamPhotoImageView.contentMode = .scaleAspectFill
         teamPhotoImageView.layer.cornerRadius = .createAspectRatio(value: 110)/2
         teamPhotoImageView.translatesAutoresizingMaskIntoConstraints = false
