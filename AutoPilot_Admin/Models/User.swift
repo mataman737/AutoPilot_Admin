@@ -13,6 +13,8 @@ struct User: Codable {
     var firstName: String?
     var lastName: String?
     var profilePhotoUrl: String?
+    var phone: String?
     var language: String
+    var country: String?
     var teamJoinDate: Date?
 }
