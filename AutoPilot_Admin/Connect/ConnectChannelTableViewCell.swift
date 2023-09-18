@@ -94,7 +94,7 @@ extension ConnectChannelTableViewCell {
         arrowImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 12)).isActive = true
         arrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 12)).isActive = true
         
-        newMessageBubble.backgroundColor = .blue
+        newMessageBubble.backgroundColor = .lightGray
         newMessageBubble.layer.cornerRadius = .createAspectRatio(value: 12)/2
         newMessageBubble.layer.masksToBounds = true
         newMessageBubble.translatesAutoresizingMaskIntoConstraints = false

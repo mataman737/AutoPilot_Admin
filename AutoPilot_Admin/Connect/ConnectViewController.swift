@@ -33,6 +33,7 @@ class ConnectViewController: UIViewController {
     var superGroupCIDs: [[String]] = [
         [ "MainSuperGroup"],
     ]
+    var teamPhotoString = ""
     var communityUnreadCount: Int = 0
     var supportnreadCount: Int = 0
     var cryptoUnreadCount: Int = 0
@@ -70,10 +71,8 @@ class ConnectViewController: UIViewController {
         modifyConstraints()
         setupNav()
         setupTableView()
-        //setupLoadingIndicator()
-        
-        self.perform(#selector(self.hideLoader), with: self, afterDelay: 0.5)
-        
+        setupLoadingIndicator()
+                
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         ChatClient.loginUser { error in
@@ -119,8 +118,8 @@ class ConnectViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //checkUnreadCount()
         loadingLottie.play()
-        
         getTeamMembers()
+        getCurrentTeam()
     }
     
     @objc func hideLoader() {
@@ -128,6 +127,28 @@ class ConnectViewController: UIViewController {
             self.loadingContainer.alpha = 0
         } completion: { success in
             //self.loadingContainer.isHidden = true
+        }
+    }
+    
+    func getCurrentTeam() {
+        API.sharedInstance.getCurrentTeam { success, team, error in
+            guard error == nil else {
+                //print(error!)
+                print("\(error!) 🤑🤑🤑")
+                return
+            }
+            
+            guard success, let team = team else {
+                print("error getting team")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                if let teamPhoto = team.photo {
+                    self?.teamPhotoString = teamPhoto
+                }
+                self?.discoverTableView.reloadData()
+            }
         }
     }
     
@@ -146,6 +167,7 @@ class ConnectViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.members = users
                 self?.discoverTableView.reloadData()
+                self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
             }
         }
     }
@@ -183,11 +205,17 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: connectChannelTableViewCell, for: indexPath) as! ConnectChannelTableViewCell
             //New
-            cell.circleImageView.image = UIImage(named: "ttaIcon")
+            //cell.circleImageView.image = UIImage(named: "ttaIcon")
             
-            //if let url = URL(string: superGroupCIDs[indexPath.row][2]) {
-                //cell.circleImageView.kf.setImage(with: url)
-            //}
+            if teamPhotoString != "" {
+                if let url = URL(string: teamPhotoString) {
+                    cell.circleImageView.kf.setImage(with: url)
+                } else {
+                    cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+                }
+            } else {
+                cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+            }
             
             cell.chatNameLabel.text = "Community"
             cell.chatDescriptionLabel.text = "0 new messages"
@@ -200,8 +228,10 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
                 let member = members[indexPath.row]
                 
                 cell.chatNameLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
-//                let memberDate = activePaidTeamMembers[indexPath.row][2]
-//                cell.chatDescriptionLabel.text = "Member since: \(memberDate)"
+                let joinDate = member.teamJoinDate
+                cell.chatDescriptionLabel.text = "Member since: \(joinDate)"
+                
+                print("\(joinDate) 💀💀💀")
                 
                 if let urlString = member.profilePhotoUrl, let url = URL(string: urlString) {
                     cell.circleImageView.kf.setImage(with: url)
@@ -287,8 +317,10 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
                 let trainingOptionVC = TeamMemberOptionsViewController()
                 let member = members[indexPath.row]
                 trainingOptionVC.navTitleLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
-                trainingOptionVC.dateLabel.text = "" // "Member since: \(activePaidTeamMembers[indexPath.row][2])"
-                trainingOptionVC.phoneNumber = "" // activePaidTeamMembers[indexPath.row][1]
+                trainingOptionVC.dateLabel.text = ""
+                if let memberPhone = member.phone {
+                    trainingOptionVC.phoneNumber = memberPhone
+                }
                 trainingOptionVC.modalPresentationStyle = .overFullScreen
                 self.present(trainingOptionVC, animated: false)
             }
