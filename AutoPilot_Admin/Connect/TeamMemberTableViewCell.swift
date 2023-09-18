@@ -9,6 +9,7 @@ import UIKit
 
 class TeamMemberTableViewCell: UITableViewCell {
     
+    var circleEmptyStateImageView = UIImageView()
     var circleImageView = UIImageView()
     var arrowImageView = UIImageView()
     var chatNameLabel = UILabel()
@@ -32,13 +33,22 @@ class TeamMemberTableViewCell: UITableViewCell {
 
 extension TeamMemberTableViewCell {
     func setupViews() {
-        circleImageView.backgroundColor = .blue
+        circleEmptyStateImageView.image = UIImage(named: "enigmaUserPH")
+        circleEmptyStateImageView.layer.cornerRadius = .createAspectRatio(value: 57)/2
+        circleEmptyStateImageView.layer.masksToBounds = true
+        circleEmptyStateImageView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(circleEmptyStateImageView)
+        circleEmptyStateImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
+        circleEmptyStateImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        circleEmptyStateImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 57)).isActive = true
+        circleEmptyStateImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 57)).isActive = true
+                
         circleImageView.layer.cornerRadius = .createAspectRatio(value: 57)/2
         circleImageView.layer.masksToBounds = true
         circleImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(circleImageView)
-        circleImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
-        circleImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        circleImageView.centerXAnchor.constraint(equalTo: circleEmptyStateImageView.centerXAnchor).isActive = true
+        circleImageView.centerYAnchor.constraint(equalTo: circleEmptyStateImageView.centerYAnchor).isActive = true
         circleImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 57)).isActive = true
         circleImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 57)).isActive = true
         
