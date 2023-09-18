@@ -11,7 +11,6 @@ import Lottie
 protocol OpenOrderMenuViewControllerDelegate: AnyObject {
     func didTapModifyTrade(signal: MTInstantTradeStatus)
     func didTapCloseTrade(signal: MTInstantTradeStatus)
-    func didSubscribeUnsubscibe(signal: MTInstantTradeStatus)
 }
 
 class OpenOrderMenuViewController: UIViewController {
@@ -24,10 +23,8 @@ class OpenOrderMenuViewController: UIViewController {
         return false
     }
     
-    var isNVUDemo = UserDefaults()
+    weak var delegate: OpenOrderMenuViewControllerDelegate?
     var isDarkMode = UserDefaults()
-    var varBlackColor: UIColor = UIColor.black
-    var variableWhiteColor: UIColor = UIColor.white
     var opacityLayer = UIView()
     var mainScrollView = UIScrollView()
     var wrapper = UIView()
@@ -46,92 +43,43 @@ class OpenOrderMenuViewController: UIViewController {
     var stopLossTitleLabel = UILabel()
     var stopLossLabel = UILabel()
     var loadingIndicator = UIActivityIndicatorView(style: .medium)
-    
+    var cpLoadingIndicator = UIActivityIndicatorView(style: .medium)
     var navView = UIView()
     var navTitleLabel = UILabel()
     var keyLine = UIView()
-    var leadImageView = UIImageView()
-    var leadNameLabel = UILabel()
-    var newChatOption = OptionsView()
-    var newGroupOption = OptionsView()
-    var newChannelOption = OptionsView()
-    var shareOption = OptionsView()
-    var sendContentOption = OptionsView()
-    var successCheck = LottieAnimationView()
-    var addedToWatchListLabel = UILabel()
-    let toastView = ToastNotificationView()
-    
+    var modifyTradeOption = OptionsView()
+    var closeTradeOption = OptionsView()
     var isDismissing = false
-    var goToReminders = false
-    var isOneClick = false
-    var isCopyValues = false
-    var isNotification = false
-    var isSubscribed = false
-    //var isLink = false
-    var contentType: CGFloat = 0
-    var leadName: String = ""
-    var isCrypto = false
-            
-    weak var delegate: OpenOrderMenuViewControllerDelegate?
-    var entryPriceLock = UIImageView()
-    
-    var textColor: UIColor = UIColor.white
-    
+    var isModifyTrade = false
+    var isCloseTrade = false
     var forexSignal: MTInstantTradeStatus!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupColors()
         setupViews()
         perform(#selector(animateViewsIn), with: self, afterDelay: 0.01)
     }
-
 }
 
 //MARK: ACTIONS
 
 extension OpenOrderMenuViewController {
     @objc func animateViewsIn() {
-        UIView.animate(withDuration: 0.35) {
+        UIView.animate(withDuration: 0.25) {
             self.opacityLayer.alpha = 0.75
             self.mainContainer.transform = CGAffineTransform(translationX: 0, y: 0)
             self.keyLine.transform = CGAffineTransform(translationX: 0, y: 0)
         }
     }
     
-    @objc func newFollowupReminderTapped() {
-        if isCrypto {
-            errorImpactGenerator()
-            newChannelOption.badWiggle()
-            entryPriceLock.badWiggle()
-        } else {
-            lightImpactGenerator()
-            isOneClick = true
-            self.dimissVC()
-        }
-    }
-    
-    @objc func didTapMarketingCenter() {
+    @objc func didTapModifyCloseOrder(sender: UIButton) {
         lightImpactGenerator()
-        isCopyValues = true
-        self.dimissVC()
-    }
-    
-    @objc func didTapSubscribe() {
-        lightImpactGenerator()
-        isNotification = true
-        if isSubscribed {
-            shareOption.iconImageView.image = UIImage(named: "thickBell")
-            shareOption.optionTitleLabel.text = "Receive Updates"
-            shareOption.optionDetailLabel.text = "Be notified when there is an update"
-            isSubscribed = false
-        } else {
-            shareOption.iconImageView.image = UIImage(named: "thickBellUnsub")
-            shareOption.optionTitleLabel.text = "Cancel Updates"
-            shareOption.optionDetailLabel.text = "Cancel notifications for updates"
-            isSubscribed = true
+        switch sender.tag {
+        case 1:
+            isModifyTrade = true
+        default:
+            isCloseTrade = true
         }
-        
         self.dimissVC()
     }
     
@@ -141,18 +89,13 @@ extension OpenOrderMenuViewController {
             self.opacityLayer.alpha = 0
         } completion: { (success) in
             self.dismiss(animated: false) {
-                if self.isOneClick {
+                if self.isModifyTrade {
                     self.delegate?.didTapModifyTrade(signal: self.forexSignal)
                 }
                 
-                else if self.isCopyValues {
+                else if self.isCloseTrade {
                     self.delegate?.didTapCloseTrade(signal: self.forexSignal)
                 }
-                
-                else if self.isNotification {
-                    self.delegate?.didSubscribeUnsubscibe(signal: self.forexSignal)
-                }
-                
             }
         }
     }

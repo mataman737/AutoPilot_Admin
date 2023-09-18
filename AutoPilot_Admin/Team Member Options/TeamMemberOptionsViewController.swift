@@ -43,10 +43,8 @@ class TeamMemberOptionsViewController: UIViewController {
     var phoneNumber: String = ""
     var lineGraphView = ChartsLineGraphView()
     var totalPercentChangeLabel = UILabel()
-            
     weak var delegate: TeamMemberOptionsViewControllerDelegate?
-    var entryPriceLock = UIImageView()
-    
+    var entryPriceLock = UIImageView()    
     var textColor: UIColor = UIColor.white
 
     override func viewDidLoad() {

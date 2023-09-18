@@ -14,19 +14,13 @@ class ConnectViewController: UIViewController {
     
     var loadingContainer = UIView()
     var loadingLottie = LottieAnimationView()
-    var navHeight: CGFloat = 90
     var navView = UIView()
     var backImageView = UIImageView()
-    var backButton = UIButton()
     var titleLabel = UILabel()
     var dividerLine = UIView()
-    var plusImageView = UIImageView()
-    var plusButton = UIButton()
-    var editRowsImageView = UIImageView()
-    var editRowsButton = UIButton()
     var bellImageView = UIImageView()
     var bellButton = UIButton()
-    var discoverTableView = UITableView()
+    var mainfeedTableView = UITableView()
     var connectChannelTableViewCell = "connectChannelTableViewCell"
     var teamMemberTableViewCell = "teamMemberTableViewCell"
     var teamMembersEmptyStateCell = "teamMembersEmptyStateCell"
@@ -34,23 +28,11 @@ class ConnectViewController: UIViewController {
         [ "MainSuperGroup"],
     ]
     var teamPhotoString = ""
-    var communityUnreadCount: Int = 0
-    var supportnreadCount: Int = 0
-    var cryptoUnreadCount: Int = 0
-    var forexUnreadCount: Int = 0
-    var topLeadersUnreadCount: Int = 0
-    var signalsUnreadCount: Int = 0
-    
-    var commmunityDone = false
-    var supportDone = false
-    var cryptoDone = false
-    var forexDone = false
-    var topLeadersDone = false
-    
     var rewardsImageView = UIImageView()
     var rewardsButton = UIButton()
-    
     var members = [User]()
+    var didGetTeamMembers = false
+    var didGetCurrentTeam = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,7 +115,6 @@ class ConnectViewController: UIViewController {
     func getCurrentTeam() {
         API.sharedInstance.getCurrentTeam { success, team, error in
             guard error == nil else {
-                //print(error!)
                 print("\(error!) 🤑🤑🤑")
                 return
             }
@@ -147,7 +128,12 @@ class ConnectViewController: UIViewController {
                 if let teamPhoto = team.photo {
                     self?.teamPhotoString = teamPhoto
                 }
-                self?.discoverTableView.reloadData()
+                self?.mainfeedTableView.reloadData()
+                
+                self?.didGetCurrentTeam = true
+                if self?.didGetCurrentTeam == true && self?.didGetTeamMembers == true {
+                    self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
+                }
             }
         }
     }
@@ -166,8 +152,13 @@ class ConnectViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 self?.members = users
-                self?.discoverTableView.reloadData()
-                self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
+                self?.mainfeedTableView.reloadData()
+                
+                self?.didGetTeamMembers = true
+                if self?.didGetCurrentTeam == true && self?.didGetTeamMembers == true {
+                    self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
+                }
+                
             }
         }
     }

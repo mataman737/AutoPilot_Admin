@@ -11,29 +11,14 @@ import Lottie
 
 extension OpenOrderMenuViewController {
     
-    func setupColors() {
-        if isDarkMode.bool(forKey: "isDarkMode") {
-            varBlackColor = .white
-            variableWhiteColor = .darkModeBackground
-        } else {
-            varBlackColor = .newBlack
-            variableWhiteColor = .white
-        }
-    }
-    
     func setupViews() {
             
-        mainContainer.backgroundColor = variableWhiteColor
-        keyLine.backgroundColor = variableWhiteColor
-        textColor = varBlackColor
-        shareOption.optionDetailLabel.textColor = varBlackColor.withAlphaComponent(0.6)
-        newGroupOption.optionDetailLabel.textColor = varBlackColor.withAlphaComponent(0.6)
-        newChannelOption.optionDetailLabel.textColor = varBlackColor.withAlphaComponent(0.6)
-        sendContentOption.optionDetailLabel.textColor = varBlackColor.withAlphaComponent(0.6)
-        
-        shareOption.optionTitleLabel.textColor = varBlackColor
-        newChannelOption.optionTitleLabel.textColor = varBlackColor
-        sendContentOption.optionTitleLabel.textColor = varBlackColor
+        mainContainer.backgroundColor = .white
+        keyLine.backgroundColor = .white
+        modifyTradeOption.optionDetailLabel.textColor = .newBlack.withAlphaComponent(0.6)
+        closeTradeOption.optionDetailLabel.textColor = .newBlack.withAlphaComponent(0.6)
+        modifyTradeOption.optionTitleLabel.textColor = .newBlack
+        closeTradeOption.optionTitleLabel.textColor = .newBlack
                 
         opacityLayer.backgroundColor = .black
         opacityLayer.alpha = 0
@@ -81,7 +66,7 @@ extension OpenOrderMenuViewController {
         keyLine.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 4)).isActive = true
         keyLine.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
-        tradeDetailsContainer.backgroundColor = variableWhiteColor
+        tradeDetailsContainer.backgroundColor = .white
         tradeDetailsContainer.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(tradeDetailsContainer)
         tradeDetailsContainer.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor).isActive = true
@@ -89,7 +74,7 @@ extension OpenOrderMenuViewController {
         tradeDetailsContainer.topAnchor.constraint(equalTo: mainContainer.topAnchor).isActive = true
         tradeDetailsContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 192)).isActive = true
         
-        detailDivider.backgroundColor = varBlackColor.withAlphaComponent(0.1)
+        detailDivider.backgroundColor = .newBlack.withAlphaComponent(0.1)
         detailDivider.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(detailDivider)
         detailDivider.bottomAnchor.constraint(equalTo: tradeDetailsContainer.bottomAnchor).isActive = true
@@ -100,7 +85,7 @@ extension OpenOrderMenuViewController {
         //
         
         entryPriceTitleLabel.text = "Entry Price"
-        entryPriceTitleLabel.textColor = varBlackColor.withAlphaComponent(0.5)
+        entryPriceTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         entryPriceTitleLabel.textAlignment = .left
         entryPriceTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
         entryPriceTitleLabel.numberOfLines = 0
@@ -116,7 +101,7 @@ extension OpenOrderMenuViewController {
         }
         
 //        entryPriceLabel.text = "1.12345"
-        entryPriceLabel.textColor = varBlackColor.withAlphaComponent(0.75)
+        entryPriceLabel.textColor = .newBlack.withAlphaComponent(0.75)
         entryPriceLabel.textAlignment = .left
         entryPriceLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
         entryPriceLabel.numberOfLines = 0
@@ -126,7 +111,7 @@ extension OpenOrderMenuViewController {
         entryPriceLabel.topAnchor.constraint(equalTo: entryPriceTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 8)).isActive = true
                 
         arrowImageView.image = UIImage(named: "sigArrow")
-        arrowImageView.setImageColor(color: varBlackColor)
+        arrowImageView.setImageColor(color: .newBlack)
         arrowImageView.contentMode = .scaleAspectFill
         arrowImageView.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(arrowImageView)
@@ -135,8 +120,7 @@ extension OpenOrderMenuViewController {
         arrowImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 10)).isActive = true
         arrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 18)).isActive = true
         
-//        currentPriceLabel.text = "1.12345"
-        currentPriceLabel.textColor = varBlackColor.withAlphaComponent(0.75)
+        currentPriceLabel.textColor = .newBlack.withAlphaComponent(0.75)
         currentPriceLabel.textAlignment = .left
         currentPriceLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
         currentPriceLabel.numberOfLines = 0
@@ -146,7 +130,7 @@ extension OpenOrderMenuViewController {
         currentPriceLabel.centerYAnchor.constraint(equalTo: entryPriceLabel.centerYAnchor).isActive = true
         
         currentPriceTitleLabel.text = "Current Price"
-        currentPriceTitleLabel.textColor = varBlackColor.withAlphaComponent(0.5)
+        currentPriceTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         currentPriceTitleLabel.textAlignment = .left
         currentPriceTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
         currentPriceTitleLabel.numberOfLines = 0
@@ -163,32 +147,9 @@ extension OpenOrderMenuViewController {
         tradeDetailsContainer.addSubview(unrealizedProfitLabel)
         unrealizedProfitLabel.trailingAnchor.constraint(equalTo: tradeDetailsContainer.trailingAnchor, constant: -.createAspectRatio(value: 32)).isActive = true
         unrealizedProfitLabel.centerYAnchor.constraint(equalTo: entryPriceLabel.centerYAnchor).isActive = true
-                
-        loadingIndicator.color = .swBlue
-        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
-        tradeDetailsContainer.addSubview(loadingIndicator)
-        loadingIndicator.centerYAnchor.constraint(equalTo: unrealizedProfitLabel.centerYAnchor).isActive = true
-        loadingIndicator.trailingAnchor.constraint(equalTo: unrealizedProfitLabel.trailingAnchor).isActive = true
-        loadingIndicator.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 30)).isActive = true
-        loadingIndicator.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 30)).isActive = true
-        loadingIndicator.startAnimating()
-        
-        if let currentOrder = forexSignal.order, let profit = currentOrder.profit, let commission = currentOrder.commission {
-            let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
-            //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
-            
-            let numberString = String(unrealizedProfit)
-            if numberString.contains("-") {
-                unrealizedProfitLabel.textColor = .brightRed
-            } else {
-                unrealizedProfitLabel.textColor = .brightGreen
-            }
-            
-            unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
-        }
-        
+
         unrealizedProfitTitleLabel.text = "Unrealized Profit"
-        unrealizedProfitTitleLabel.textColor = varBlackColor.withAlphaComponent(0.5)
+        unrealizedProfitTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         unrealizedProfitTitleLabel.textAlignment = .right
         unrealizedProfitTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
         unrealizedProfitTitleLabel.numberOfLines = 0
@@ -198,7 +159,7 @@ extension OpenOrderMenuViewController {
         unrealizedProfitTitleLabel.centerYAnchor.constraint(equalTo: entryPriceTitleLabel.centerYAnchor, constant: 0).isActive = true
         
         stopLossTitleLabel.text = "Stop Loss"
-        stopLossTitleLabel.textColor = varBlackColor.withAlphaComponent(0.5)
+        stopLossTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         stopLossTitleLabel.textAlignment = .left
         stopLossTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
         stopLossTitleLabel.numberOfLines = 0
@@ -207,32 +168,7 @@ extension OpenOrderMenuViewController {
         stopLossTitleLabel.leadingAnchor.constraint(equalTo: entryPriceTitleLabel.leadingAnchor, constant: 0).isActive = true
         stopLossTitleLabel.topAnchor.constraint(equalTo: entryPriceLabel.bottomAnchor, constant: .createAspectRatio(value: 40)).isActive = true
         
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
-            //print(self?.forexSignal.order?.ticket)
-            if let order = MyTabBarController.orderProfitUpdate?.data.orders.first(where: {$0.ticket == self?.forexSignal.order?.ticket}), let stopLoss = order.stopLoss {
-                //print("stop loss: \(stopLoss)")
-                self?.stopLossLabel.text = "\(stopLoss)"
-                
-                if let symbol = order.symbol, let livePrice = MyTabBarController.orderProfitUpdate?.livePrices.priceForSymbol(symbol: symbol.removePeriodsAndDashes()) {
-                    if let liveDecCount = self?.countDecimalPlaces(livePrice), let roundToFive = self?.roundToFiveDecimalPlaces(livePrice) {
-                        if liveDecCount > 5 {
-                            self?.currentPriceLabel.text = "\(roundToFive)"
-                        } else {
-                            self?.currentPriceLabel.text = String(livePrice)
-                        }
-                    }
-                    //self?.currentPriceLabel.text = String(livePrice)
-                }
-            } else {
-                if let stopLossTwo = self?.forexSignal.order?.stopLoss {
-                    self?.stopLossLabel.text = "\(stopLossTwo)"
-                } else {
-                    self?.stopLossLabel.text = "nil"
-                }
-            }
-        }
-        
-        stopLossLabel.textColor = varBlackColor.withAlphaComponent(0.75)
+        stopLossLabel.textColor = .newBlack.withAlphaComponent(0.75)
         stopLossLabel.textAlignment = .left
         stopLossLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
         stopLossLabel.numberOfLines = 0
@@ -242,7 +178,7 @@ extension OpenOrderMenuViewController {
         stopLossLabel.topAnchor.constraint(equalTo: stopLossTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 8)).isActive = true
         
         takeProfitTitleLabel.text = "Take Profit"
-        takeProfitTitleLabel.textColor = varBlackColor.withAlphaComponent(0.5)
+        takeProfitTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         takeProfitTitleLabel.textAlignment = .right
         takeProfitTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
         takeProfitTitleLabel.numberOfLines = 0
@@ -257,8 +193,13 @@ extension OpenOrderMenuViewController {
             takeProfitLabel.text = "nil"
         }
         
-//        takeProfitLabel.text = "1.12345"
-        takeProfitLabel.textColor = varBlackColor.withAlphaComponent(0.75)
+        if let stopLoss = forexSignal.order?.stopLoss {
+            stopLossLabel.text = String(stopLoss)
+        } else {
+            stopLossLabel.text = "nil"
+        }
+        
+        takeProfitLabel.textColor = .newBlack.withAlphaComponent(0.75)
         takeProfitLabel.textAlignment = .right
         takeProfitLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
         takeProfitLabel.numberOfLines = 0
@@ -270,7 +211,7 @@ extension OpenOrderMenuViewController {
         //
                 
         navTitleLabel.textAlignment = .center
-        navTitleLabel.textColor = varBlackColor
+        navTitleLabel.textColor = .newBlack
         navTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 19))
         navTitleLabel.numberOfLines = 0
         navTitleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -278,46 +219,84 @@ extension OpenOrderMenuViewController {
         navTitleLabel.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 18)).isActive = true
         navTitleLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
                         
-        newChannelOption.iconImageView.image = UIImage(named: "modifyImgNVU")
-        newChannelOption.optionTitleLabel.text = "Modify Trade"
-        newChannelOption.optionButton.addTarget(self, action: #selector(newFollowupReminderTapped), for: .touchUpInside)
-        newChannelOption.optionDetailLabel.text = "Modify Take Profit and Stop Loss"
-        newChannelOption.translatesAutoresizingMaskIntoConstraints = false
-        mainContainer.addSubview(newChannelOption)
-        newChannelOption.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: 0).isActive = true
-        newChannelOption.topAnchor.constraint(equalTo: tradeDetailsContainer.bottomAnchor, constant: .createAspectRatio(value: 25)).isActive = true
-        newChannelOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: 0).isActive = true
-        newChannelOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
-        
-        if isCrypto {
-            createLock(lockIV: entryPriceLock)
-            entryPriceLock.leadingAnchor.constraint(equalTo: newChannelOption.optionTitleLabel.trailingAnchor, constant: .createAspectRatio(value: 5)).isActive = true
-            entryPriceLock.centerYAnchor.constraint(equalTo: newChannelOption.optionTitleLabel.centerYAnchor, constant: -.createAspectRatio(value: 2)).isActive = true
-        }
+        modifyTradeOption.optionButton.addTarget(self, action: #selector(didTapModifyCloseOrder(sender:)), for: .touchUpInside)
+        modifyTradeOption.optionButton.tag = 1
+        modifyTradeOption.iconImageView.image = UIImage(named: "modifyImgNVU")
+        modifyTradeOption.optionTitleLabel.text = "Modify Trade"
+        modifyTradeOption.optionDetailLabel.text = "Modify Take Profit and Stop Loss"
+        modifyTradeOption.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(modifyTradeOption)
+        modifyTradeOption.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: 0).isActive = true
+        modifyTradeOption.topAnchor.constraint(equalTo: tradeDetailsContainer.bottomAnchor, constant: .createAspectRatio(value: 25)).isActive = true
+        modifyTradeOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: 0).isActive = true
+        modifyTradeOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
                         
-        sendContentOption.optionButton.addTarget(self, action: #selector(didTapMarketingCenter), for: .touchUpInside)
-        sendContentOption.iconImageView.image = UIImage(named: "closeOrderImgNVU")
-        sendContentOption.optionTitleLabel.text = "Close Trade"
-        sendContentOption.optionDetailLabel.text = "Close an order immediately"
-        sendContentOption.translatesAutoresizingMaskIntoConstraints = false
-        mainContainer.addSubview(sendContentOption)
-        sendContentOption.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: 0).isActive = true
-        sendContentOption.topAnchor.constraint(equalTo: newChannelOption.bottomAnchor, constant: 0).isActive = true
-        sendContentOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: 0).isActive = true
-        sendContentOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
+        closeTradeOption.optionButton.addTarget(self, action: #selector(didTapModifyCloseOrder(sender:)), for: .touchUpInside)
+        closeTradeOption.optionButton.tag = 2
+        closeTradeOption.iconImageView.image = UIImage(named: "closeOrderImgNVU")
+        closeTradeOption.optionTitleLabel.text = "Close Trade"
+        closeTradeOption.optionDetailLabel.text = "Close an order immediately"
+        closeTradeOption.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(closeTradeOption)
+        closeTradeOption.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: 0).isActive = true
+        closeTradeOption.topAnchor.constraint(equalTo: modifyTradeOption.bottomAnchor, constant: 0).isActive = true
+        closeTradeOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: 0).isActive = true
+        closeTradeOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
         
-        shareOption.isHidden = true
-        shareOption.optionButton.addTarget(self, action: #selector(didTapSubscribe), for: .touchUpInside)
-        shareOption.iconImageView.image = UIImage(named: "thickBellNVU")//UIImage(named: "thickBell")
-        shareOption.optionTitleLabel.text = "Receive Updates"
-        shareOption.optionDetailLabel.text = "Be notified when there is an update"
-        shareOption.translatesAutoresizingMaskIntoConstraints = false
-        mainContainer.addSubview(shareOption)
-        shareOption.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: 0).isActive = true
-        shareOption.topAnchor.constraint(equalTo: sendContentOption.bottomAnchor, constant: 0).isActive = true
-        shareOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: 0).isActive = true
-        shareOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
+        //SET UP LOADERS
         
+        setupLoadingIndicator(activityIndicator: loadingIndicator, viewToPin: unrealizedProfitLabel, viewToPinTrailing: unrealizedProfitLabel, isOffset: false)
+        setupLoadingIndicator(activityIndicator: cpLoadingIndicator, viewToPin: currentPriceLabel, viewToPinTrailing: currentPriceTitleLabel, isOffset: false)
+        
+        //SET LABEL VALUES
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+            if let order = MyTabBarController.orderProfitUpdate?.data.orders.first(where: {$0.ticket == self?.forexSignal.order?.ticket}),
+               let currentOrder = self?.forexSignal.order,
+               let profit = currentOrder.profit,
+               let commission = currentOrder.commission {
+                
+                self?.loadingIndicator.stopAnimating()
+                self?.cpLoadingIndicator.stopAnimating()
+                                
+                let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
+                let numberString = String(unrealizedProfit)
+                if numberString.contains("-") {
+                    self?.unrealizedProfitLabel.textColor = .brightRed
+                } else {
+                    self?.unrealizedProfitLabel.textColor = .brightGreen
+                }
+                
+                self?.unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
+                
+                
+                if let symbol = order.symbol, let livePrice = MyTabBarController.orderProfitUpdate?.livePrices.priceForSymbol(symbol: symbol.removePeriodsAndDashes()) {
+                    if let liveDecCount = self?.countDecimalPlaces(livePrice), let roundToFive = self?.roundToFiveDecimalPlaces(livePrice) {
+                        if liveDecCount > 5 {
+                            self?.currentPriceLabel.text = "\(roundToFive)"
+                        } else {
+                            self?.currentPriceLabel.text = String(livePrice)
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    func setupLoadingIndicator(activityIndicator: UIActivityIndicatorView, viewToPin: UIView, viewToPinTrailing: UIView, isOffset: Bool) {
+        activityIndicator.color = .swBlue
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        tradeDetailsContainer.addSubview(activityIndicator)
+        if isOffset {
+            activityIndicator.centerYAnchor.constraint(equalTo: viewToPin.centerYAnchor, constant: .createAspectRatio(value: 5)).isActive = true
+        } else {
+            activityIndicator.centerYAnchor.constraint(equalTo: viewToPin.centerYAnchor).isActive = true
+        }
+        activityIndicator.trailingAnchor.constraint(equalTo: viewToPinTrailing.trailingAnchor).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 30)).isActive = true
+        activityIndicator.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 30)).isActive = true
+        activityIndicator.startAnimating()
     }
     
     func createLock(lockIV: UIImageView) {

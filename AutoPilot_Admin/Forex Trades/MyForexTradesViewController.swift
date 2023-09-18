@@ -219,59 +219,6 @@ class MyForexTradesViewController: UIViewController {
         if let orderUpdate = notification.userInfo?["orderUpdate"] as? OrderProfitUpdate {
             let orders = orderUpdate.data.orders
             
-            if let balance = orderUpdate.data.balance?.rounded(toPlaces: 2) {
-//                storedBalance = "$\(balance.withCommas())"
-//                navTitleLabel.text = "$\(balance.withCommas())"
-//                tradingAccBalanceBC?.navTitleLabel.text = "\(balance.withCommas())"
-//                balanceAmount = "\(balance.withCommas())"
-//                balanceDouble = balance
-                
-                /*
-                if self.brokers.count == 0 {
-                    navTitleLabel.text = "Ed. Ideas"
-                    self.eyeImageView.isHidden = true
-                    self.eyeButton.isHidden = true
-                } else {
-                    self.eyeImageView.isHidden = false
-                    self.eyeButton.isHidden = false
-                }
-                */
-                
-                /*
-                if hideBalance.bool(forKey: "hideBalance") == true {
-                    navTitleLabel.text = "$•••••"
-                    eyeImageView.image = UIImage(named: "eye-off")
-                    eyeImageView.setImageColor(color: isDarkMode.bool(forKey: "isDarkMode") ? .white : .black)
-                }
-                */
-                
-                //print("\(hideBalance.bool(forKey: "hideBalance")) 📬📬📬")
-                
-            } else {
-                //navTitleLabel.text = "Einstein"
-                //tradingAccBalanceBC?.balanceLabel.text = "-"
-            }
-            
-            /*
-            if let equity = orderUpdate.data.equity?.rounded(toPlaces: 2) {
-                self.equityAmount = "\(equity.withCommas())"
-            }
-            
-            if let margin = orderUpdate.data.margin?.rounded(toPlaces: 2) {
-                self.marginAmount = "\(margin.withCommas())"
-            }
-            
-            if let freeMargin = orderUpdate.data.freeMargin?.rounded(toPlaces: 2) {
-                self.freeMarginAmount = "\(freeMargin.withCommas())"
-            }
-            
-            if let profit = orderUpdate.data.profit?.rounded(toPlaces: 2) {
-                self.marginLvlPercentAmount = "\(profit.withCommas())"
-            }
-            
-            */
-            //orderUpdate.data.balance
-            
             for index in 0...activeOrders.count {
                 if let cell = mainFeedTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? OpenOrdersTableViewCell {
                     if let currentOrder = orders.first(where: {$0.ticket == cell.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
@@ -283,18 +230,14 @@ class MyForexTradesViewController: UIViewController {
                         //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
                         
                         let numberString = String(unrealizedProfit)
-                        /*
-                        if numberString.contains("-") {
-                            cell.unrealizedProfitLabel.textColor = .brightRed
-                        } else {
-                            cell.unrealizedProfitLabel.textColor = .brightGreen
-                        }
-                        */
                         
                         cell.unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
                         
-                        openOrderMenuVC?.loadingIndicator.isHidden = true
-                        openOrderMenuVC?.unrealizedProfitLabel.text = "\(unrealizedProfit)"
+                        //openOrderMenuVC?.loadingIndicator.isHidden = true
+                        //openOrderMenuVC?.loadingIndicator.stopAnimating()
+                        
+                        print("did this 🥱🥱🥱")
+                        //openOrderMenuVC?.unrealizedProfitLabel.text = "\(unrealizedProfit)"
                                                 
                         if numberString.contains("-") {
                             openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightRed

@@ -35,23 +35,14 @@ extension ConnectViewController {
         backImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(backImageView)
         backImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 13).isActive = true
-        backImageView.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: -8).isActive = true
+        backImageView.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: -.createAspectRatio(value: 8)).isActive = true
         backImageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
         backImageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        
-        
-        backButton.backgroundColor = .clear
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(backButton)
-        backButton.leadingAnchor.constraint(equalTo: navView.leadingAnchor).isActive = true
-        backButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
-        backButton.trailingAnchor.constraint(equalTo: backImageView.trailingAnchor, constant: 10).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: backImageView.bottomAnchor, constant: 10).isActive = true
         
         titleLabel.text = "My Team"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .newBlack
-        titleLabel.font = .sofiaProMedium(ofSize: 16)
+        titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(titleLabel)
@@ -61,91 +52,53 @@ extension ConnectViewController {
         dividerLine.backgroundColor = UIColor.newBlack.withAlphaComponent(0.1)
         dividerLine.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(dividerLine)
-        dividerLine.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 0).isActive = true
-        dividerLine.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: 0).isActive = true
-        dividerLine.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
+        dividerLine.leadingAnchor.constraint(equalTo: navView.leadingAnchor).isActive = true
+        dividerLine.trailingAnchor.constraint(equalTo: navView.trailingAnchor).isActive = true
+        dividerLine.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
         dividerLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
-            
-        plusImageView.image = UIImage(named: "videoIcon")
-        plusImageView.setImageColor(color: .black)
-        plusImageView.contentMode = .scaleAspectFill
-        plusImageView.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(plusImageView)
-        plusImageView.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: -24).isActive = true
-        plusImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
-        plusImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        plusImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         
-        //plusButton.addTarget(self, action: #selector(createNewEvent), for: .touchUpInside)
-        plusButton.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(plusButton)
-        plusButton.leadingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -10).isActive = true
-        plusButton.topAnchor.constraint(equalTo: plusImageView.topAnchor, constant: -10).isActive = true
-        plusButton.trailingAnchor.constraint(equalTo: plusImageView.trailingAnchor, constant: 10).isActive = true
-        plusButton.bottomAnchor.constraint(equalTo: plusImageView.bottomAnchor, constant: 10).isActive = true
-                        
         bellImageView.image = UIImage(named: "notiBell")
         bellImageView.setImageColor(color: .black)
         bellImageView.contentMode = .scaleAspectFill
         bellImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(bellImageView)
-        bellImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 17).isActive = true
-        bellImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
-        bellImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        bellImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        bellImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: .createAspectRatio(value: 17)).isActive = true
+        bellImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        bellImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
+        bellImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
         
         bellButton.addTarget(self, action: #selector(didTapNotiBell), for: .touchUpInside)
         bellButton.backgroundColor = .clear
         bellButton.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(bellButton)
-        bellButton.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 0).isActive = true
-        bellButton.topAnchor.constraint(equalTo: navView.topAnchor, constant: 0).isActive = true
-        bellButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
-        bellButton.trailingAnchor.constraint(equalTo: bellImageView.trailingAnchor, constant: 20).isActive = true
-        
-        rewardsImageView.image = UIImage(named: "whitelistKey")
-        rewardsImageView.setImageColor(color: .black)
-        rewardsImageView.contentMode = .scaleAspectFill
-        rewardsImageView.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(rewardsImageView)
-        rewardsImageView.trailingAnchor.constraint(equalTo: plusImageView.leadingAnchor, constant: -15).isActive = true
-        rewardsImageView.centerYAnchor.constraint(equalTo: plusImageView.centerYAnchor, constant: 0).isActive = true
-        rewardsImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        rewardsImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        
-        //rewardsButton.addTarget(self, action: #selector(didTapWhiteList), for: .touchUpInside)
-        rewardsButton.backgroundColor = .clear
-        rewardsButton.translatesAutoresizingMaskIntoConstraints = false
-        navView.addSubview(rewardsButton)
-        rewardsButton.leadingAnchor.constraint(equalTo: rewardsImageView.leadingAnchor, constant: -15).isActive = true
-        rewardsButton.topAnchor.constraint(equalTo: navView.topAnchor, constant: 0).isActive = true
-        rewardsButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
-        rewardsButton.trailingAnchor.constraint(equalTo: plusButton.leadingAnchor, constant: 0).isActive = true
-        
+        bellButton.leadingAnchor.constraint(equalTo: navView.leadingAnchor).isActive = true
+        bellButton.topAnchor.constraint(equalTo: navView.topAnchor).isActive = true
+        bellButton.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
+        bellButton.trailingAnchor.constraint(equalTo: bellImageView.trailingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
     }
     
     func setupTableView() {
-        discoverTableView = UITableView(frame: self.view.frame, style: .grouped)
-        discoverTableView.alpha = 1.0
-        discoverTableView.isScrollEnabled = true
-        discoverTableView.backgroundColor = .clear
-        discoverTableView.delegate = self
-        discoverTableView.dataSource = self
-        discoverTableView.register(ConnectChannelTableViewCell.self, forCellReuseIdentifier: connectChannelTableViewCell)
-        discoverTableView.register(TeamMemberTableViewCell.self, forCellReuseIdentifier: teamMemberTableViewCell)
-        discoverTableView.register(TeamMembersEmptyStateCell.self, forCellReuseIdentifier: teamMembersEmptyStateCell)        
-        discoverTableView.allowsSelection = true
-        discoverTableView.allowsMultipleSelection = false
-        discoverTableView.contentInset = .zero
-        discoverTableView.showsVerticalScrollIndicator = false
-        discoverTableView.separatorStyle = .none
-        discoverTableView.contentInset = UIEdgeInsets(top: .createAspectRatio(value: 20), left: 0, bottom: 100, right: 0)
-        discoverTableView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(discoverTableView)
-        discoverTableView.topAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
-        discoverTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-        discoverTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-        discoverTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        mainfeedTableView = UITableView(frame: self.view.frame, style: .grouped)
+        mainfeedTableView.alpha = 1.0
+        mainfeedTableView.isScrollEnabled = true
+        mainfeedTableView.backgroundColor = .clear
+        mainfeedTableView.delegate = self
+        mainfeedTableView.dataSource = self
+        mainfeedTableView.register(ConnectChannelTableViewCell.self, forCellReuseIdentifier: connectChannelTableViewCell)
+        mainfeedTableView.register(TeamMemberTableViewCell.self, forCellReuseIdentifier: teamMemberTableViewCell)
+        mainfeedTableView.register(TeamMembersEmptyStateCell.self, forCellReuseIdentifier: teamMembersEmptyStateCell)
+        mainfeedTableView.allowsSelection = true
+        mainfeedTableView.allowsMultipleSelection = false
+        mainfeedTableView.contentInset = .zero
+        mainfeedTableView.showsVerticalScrollIndicator = false
+        mainfeedTableView.separatorStyle = .none
+        mainfeedTableView.contentInset = UIEdgeInsets(top: .createAspectRatio(value: 20), left: 0, bottom: 100, right: 0)
+        mainfeedTableView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(mainfeedTableView)
+        mainfeedTableView.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
+        mainfeedTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        mainfeedTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        mainfeedTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
     
     func setupLoadingIndicator() {
