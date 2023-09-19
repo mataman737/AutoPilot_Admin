@@ -25,9 +25,10 @@ protocol SetupAccountViewControllerDelegate {
 
 class SetupAccountViewController: UIViewController {
 
+    var transitionView = UIView()
+    var appLogoImageView = UIImageView()
     let fromLogin = UserDefaults()
     var delegate: SetupAccountViewControllerDelegate!
-    var transitionView = UIView()
     var navView = UIView()
     var userInfoContainer = UIView()
     var profilePhotoImageView = UIImageView()
@@ -75,6 +76,7 @@ class SetupAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupTransition()
         self.perform(#selector(animateFirstProgress), with: self, afterDelay: 0.5)
     }
 
@@ -263,6 +265,8 @@ extension SetupAccountViewController {
     }
     
     @objc func transitionHome() {
+        self.transitionView.isHidden = false
+        self.transitionView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.35, delay: 0, options: []) {
             self.navView.alpha = 0
             self.mainScrollView.alpha = 0

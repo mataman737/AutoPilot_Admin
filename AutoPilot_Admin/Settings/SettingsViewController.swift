@@ -573,7 +573,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.profileImageView.isHidden = false
                 } else {
                     cell.profileImageView.isHidden = true
-                    cell.profilePHImageView.isHidden = false
+                    //cell.profilePHImageView.isHidden = false
                 }
             } else {
                 cell.profileImageView.isHidden = true

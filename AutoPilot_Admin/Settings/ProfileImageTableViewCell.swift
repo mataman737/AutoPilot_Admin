@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileImageTableViewCell: UITableViewCell {
     
+    var profilePhotoEmptyState = UIImageView()
     var profilePHImageView = UIImageView()
     var profileImageView = UIImageView()
     var dismissArrowImageView = UIImageView()
@@ -66,7 +67,7 @@ extension ProfileImageTableViewCell {
         dismissButton.trailingAnchor.constraint(equalTo: dismissArrowImageView.trailingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
         dismissButton.bottomAnchor.constraint(equalTo: dismissArrowImageView.bottomAnchor, constant: .createAspectRatio(value: 30)).isActive = true
                 
-        profilePHImageView.image = UIImage(named: "avatarph")
+        profilePHImageView.image = UIImage(named: "enigmaUserPH")
         profilePHImageView.backgroundColor = .clear
         profilePHImageView.layer.cornerRadius = .createAspectRatio(value: 64)/2        
         profilePHImageView.contentMode = .scaleAspectFill

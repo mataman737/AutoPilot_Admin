@@ -16,6 +16,7 @@ class MyForexTradesViewController: UIViewController {
     
     let fromLogin = UserDefaults()
     var transitionView = UIView()
+    var appLogoImageView = UIImageView()
     var loadingContainer = UIView()
     var loadingLottie = LottieAnimationView()
     var navView = UIView()
@@ -64,6 +65,9 @@ class MyForexTradesViewController: UIViewController {
         setupLoadingIndicator()
         playLoopingVideo()
         updateOnboardingRows()
+        setupTransition()
+        
+        self.perform(#selector(hideTransitionView), with: self, afterDelay: 1.0)
         
         /*
         ChatClient.loginUser { error in
@@ -73,12 +77,7 @@ class MyForexTradesViewController: UIViewController {
             }
         }
         */
-        
-        //myForexTradesEmptyState.isHidden = false
-        //myForexTradesEmptyState.showViews()
-        
-        //hideLoader()
-        
+                
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)        
     }
@@ -325,13 +324,19 @@ extension MyForexTradesViewController {
     }
     
     @objc func hideTransitionView() {
-        /*
-        UIView.animate(withDuration: 0.5) {
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.appLogoImageView.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+            self.appLogoImageView.alpha = 0
+        })
+        
+        UIView.animate(withDuration: 0.5, animations: {
             self.transitionView.alpha = 0
-        } completion: { success in
-            self.transitionView.isHidden = true
+        }) { (success) in
+            self.transitionView.removeFromSuperview()
+            self.view.isUserInteractionEnabled = true
         }
-        */
+        
     }
     
     @objc func didTapPlus() {

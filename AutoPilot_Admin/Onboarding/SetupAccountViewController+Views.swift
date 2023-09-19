@@ -10,6 +10,24 @@ import UIKit
 
 extension SetupAccountViewController {
     
+    func setupTransition() {
+        transitionView.alpha = 0
+        transitionView.layer.zPosition = 100
+        transitionView.isUserInteractionEnabled = false
+        transitionView.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0)
+        transitionView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(transitionView)
+        transitionView.fillSuperview()
+        
+        appLogoImageView.image = UIImage(named: "smartTraderLogoDark")
+        appLogoImageView.translatesAutoresizingMaskIntoConstraints = false
+        transitionView.addSubview(appLogoImageView)
+        appLogoImageView.centerYAnchor.constraint(equalTo: transitionView.centerYAnchor).isActive = true
+        appLogoImageView.centerXAnchor.constraint(equalTo: transitionView.centerXAnchor).isActive = true
+        appLogoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 240)).isActive = true
+        appLogoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 128)).isActive = true
+    }
+    
     func setupViews() {
         self.view.backgroundColor = .white
         
@@ -236,14 +254,6 @@ extension SetupAccountViewController {
         codeTextField.topAnchor.constraint(equalTo: codeLabel.bottomAnchor, constant: .createAspectRatio(value: 41)).isActive = true
         //codeTextField.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87)).isActive = true
         codeTextField.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 70)).isActive = true
-        
-        transitionView.isHidden = true
-        transitionView.alpha = 0
-        transitionView.backgroundColor = .swBlue
-        transitionView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(transitionView)
-        transitionView.fillSuperview()
-        
     }
     
     func setupProgressView(progressView: SignupProgressView) {

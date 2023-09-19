@@ -17,7 +17,7 @@ class SplashViewController: UIViewController {
     
     override var shouldAutorotate: Bool {
         return false
-    }
+    }        
     
     //Video & Audio
     var player = AVPlayer()

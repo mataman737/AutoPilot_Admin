@@ -12,10 +12,38 @@ import Lottie
 extension MyForexTradesViewController {
     
     func setupTransition() {
+        /*
         fromLogin.setValue(false, forKey: "fromLogin")
         transitionView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         transitionView.backgroundColor = .red
         UIApplication.shared.windows.first(where: { $0.isKeyWindow})?.addSubview(transitionView)
+        
+        self.view.addSubview(.re)
+        */
+        
+        UIApplication.shared.windows.first?.addSubview(transitionView)
+        
+        transitionView.layer.zPosition = 100
+        transitionView.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0)
+        transitionView.translatesAutoresizingMaskIntoConstraints = false
+        //let currentWindow: UIWindow? = UIApplication.shared.keyWindow
+        //currentWindow?.addSubview(transitionView)
+        transitionView.fillSuperview()
+        
+        appLogoImageView.image = UIImage(named: "smartTraderLogoDark")
+        appLogoImageView.translatesAutoresizingMaskIntoConstraints = false
+        transitionView.addSubview(appLogoImageView)
+        appLogoImageView.centerYAnchor.constraint(equalTo: transitionView.centerYAnchor).isActive = true
+        appLogoImageView.centerXAnchor.constraint(equalTo: transitionView.centerXAnchor).isActive = true
+        appLogoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 240)).isActive = true
+        appLogoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 128)).isActive = true
+        
+        
+        //let view = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        //view.backgroundColor = .black
+        //let _: Void? = UIApplication.shared.windows.first?.addSubview(view)
+        //UIApplication.shared.windows.first?.addSubview(view)
+        //window.addSubview(view)
     }
     
     func setupNav() {
