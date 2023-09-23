@@ -33,6 +33,7 @@ class ConnectViewController: UIViewController {
     var members = [User]()
     var didGetTeamMembers = false
     var didGetCurrentTeam = false
+    var supergroupUnreadCount: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,13 +96,21 @@ class ConnectViewController: UIViewController {
             }
         }
         */
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeround), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         //checkUnreadCount()
         loadingLottie.play()
+        getUnreadCount()
         getTeamMembers()
         getCurrentTeam()
+    }
+    
+    @objc func appMovedToForeround() {
+        getUnreadCount()
     }
     
     @objc func hideLoader() {
@@ -162,6 +171,43 @@ class ConnectViewController: UIViewController {
             }
         }
     }
+    
+    func getUnreadCount() {
+        ChatClient.loginUser { error in
+            guard error == nil else {
+                print(error!) // Print the error if login fails
+                return
+            }
+            
+            do {
+                let id = try ChannelId(cid: "gaming:MainSuperGroup")
+                let channelController = ChatClient.shared.channelController(for: id)
+                
+                channelController.synchronize { error in
+                    guard error == nil else {
+                        return // Skip to the next channel if synchronization fails
+                    }
+                    
+                    if let unreadCount = channelController.channel?.unreadCount.messages {
+                        self.supergroupUnreadCount = 5//unreadCount
+                        print("📬📬📬 \(unreadCount)")
+                        
+                        //self.myTraderDetailLabel.text = unreadCount == 1 ? "\(unreadCount) new message" : "\(unreadCount) new messages"
+                    } else {
+                        print("📬📬📬 111")
+                    }
+                    
+                    // Update UI on the main thread
+                    DispatchQueue.main.async { [weak self] in
+                        //self?.updateUI() // Call the updateUI function to refresh the collection view
+                        self?.mainfeedTableView.reloadData()
+                    }
+                }
+            } catch {
+                print("\(error) 🐔🐔🐔") // Print the error if an exception occurs while fetching the channel ID
+            }
+        }
+    }
 }
 
 //MARK ACTIONS
@@ -209,7 +255,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             cell.chatNameLabel.text = "Community"
-            cell.chatDescriptionLabel.text = "0 new messages"
+            cell.chatDescriptionLabel.text = supergroupUnreadCount == 1 ? "\(supergroupUnreadCount) new message" : "\(supergroupUnreadCount) new messages"
             cell.newMessageBubble.alpha = 0
             return cell
         } else {
@@ -282,6 +328,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         lightImpactGenerator()
         
@@ -294,19 +341,14 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 DispatchQueue.main.async { [weak self] in
                     let nav = UINavigationController(rootViewController: channelVC)
-                    self?.present(nav, animated: true, completion: {
-    //                    API.sharedInstance.updateAdmin(admin: Admin.current) { success, admin, error in
-    //                        guard error == nil else {
-    //                            print(error!)
-    //                            return
-    //                        }
-    //
-    //                        guard success, let _ = admin else {
-    //                            print("error updating admin")
-    //                            return
-    //                        }
-    //                    }
-                    })
+                    
+                    let completionHandler: (() -> Void) = {
+                        self?.supergroupUnreadCount = 0
+                        self?.mainfeedTableView.reloadData()
+                    }
+                    
+                    self?.present(nav, animated: true, completion: completionHandler)
+                    
                 }
             } catch {
                 print(error)
@@ -325,14 +367,6 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
                 self.present(trainingOptionVC, animated: false)
             }
         }
-    }
-}
-
-//MARK CUSTOM CHAT DELEGATE
-
-extension ConnectViewController: CustomChatChannelVCDelegate {
-    func didCloseChannel() {
-        //checkUnreadCount()
     }
 }
 
@@ -385,5 +419,13 @@ extension ConnectViewController {
     // Function to generate a random number between 1 and 12
     func generateRandomNumber() -> Int {
         return Int.random(in: 1...12)
+    }
+}
+
+//MARK: CUSTOM CHAT DELEGATE
+
+extension ConnectViewController: CustomChatChannelVCDelegate {
+    func didCloseChannel() {
+        getUnreadCount()
     }
 }
