@@ -107,6 +107,13 @@
 		DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */; };
 		DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */; };
 		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
+		DED14C312ABFD5DE00E3E88D /* PaymentHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C302ABFD5DD00E3E88D /* PaymentHistoryViewController.swift */; };
+		DED14C332ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C322ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift */; };
+		DED14C352ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C342ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift */; };
+		DED14C372AC09ED400E3E88D /* SubscriberCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C362AC09ED400E3E88D /* SubscriberCountTableViewCell.swift */; };
+		DED14C392AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C382AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift */; };
+		DED14C3B2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C3A2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift */; };
+		DED14C3D2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C3C2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift */; };
 		FC14F8F32AB4F0BD006D02DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC14F8F22AB4F0BD006D02DC /* User.swift */; };
 		FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D42AAA6A3A0097BDF1 /* Order.swift */; };
 		FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */; };
@@ -224,6 +231,13 @@
 		DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
 		DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeConfirmView.swift; sourceTree = "<group>"; };
 		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
+		DED14C302ABFD5DD00E3E88D /* PaymentHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryViewController.swift; sourceTree = "<group>"; };
+		DED14C322ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentHistoryViewController+Views.swift"; sourceTree = "<group>"; };
+		DED14C342ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePayoutSubscribersTableViewCell.swift; sourceTree = "<group>"; };
+		DED14C362AC09ED400E3E88D /* SubscriberCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberCountTableViewCell.swift; sourceTree = "<group>"; };
+		DED14C382AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLineMiniGraphView.swift; sourceTree = "<group>"; };
+		DED14C3A2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedMiniLineChart.swift; sourceTree = "<group>"; };
+		DED14C3C2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthLineGraphTableViewCell.swift; sourceTree = "<group>"; };
 		FC14F8F22AB4F0BD006D02DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FC1747D42AAA6A3A0097BDF1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantTrade.swift; sourceTree = "<group>"; };
@@ -333,6 +347,7 @@
 				DE4D57912AA77A4B008E2B6B /* SettingsViewController+Views.swift */,
 				DE4D579D2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift */,
 				DE4D57932AA77BD2008E2B6B /* ProfileImageTableViewCell.swift */,
+				DED14C342ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -492,6 +507,7 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
 				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
+				DED14C2F2ABFD59000E3E88D /* Payment History */,
 				DE410C8C2AB1340D00F1F24F /* Team Member Options */,
 				DEB44E4F2AAFB1D60006887A /* My Connected Broker */,
 				DEB44E482AAFAB3F0006887A /* Connect Broker */,
@@ -605,6 +621,19 @@
 				DEC9A4EC2A93ED6F000DBE39 /* Fonts */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		DED14C2F2ABFD59000E3E88D /* Payment History */ = {
+			isa = PBXGroup;
+			children = (
+				DED14C302ABFD5DD00E3E88D /* PaymentHistoryViewController.swift */,
+				DED14C322ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift */,
+				DED14C362AC09ED400E3E88D /* SubscriberCountTableViewCell.swift */,
+				DED14C382AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift */,
+				DED14C3A2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift */,
+				DED14C3C2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift */,
+			);
+			path = "Payment History";
 			sourceTree = "<group>";
 		};
 		FCC4DD232A93FDF800185168 /* Singletons */ = {
@@ -745,9 +774,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED14C3D2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift in Sources */,
 				DEB44E532AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift in Sources */,
 				DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */,
 				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
+				DED14C312ABFD5DE00E3E88D /* PaymentHistoryViewController.swift in Sources */,
 				DE4D57982AA77C06008E2B6B /* SettingsSwitchTableViewCellTableViewCell.swift in Sources */,
 				DE4D579C2AA77C6F008E2B6B /* SupportTableViewCell.swift in Sources */,
 				DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */,
@@ -755,6 +786,7 @@
 				DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */,
 				DE4D57B52AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift in Sources */,
 				DEB44E4A2AAFAB5F0006887A /* ConnectBrokerViewController.swift in Sources */,
+				DED14C332ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
@@ -787,12 +819,14 @@
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
+				DED14C392AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift in Sources */,
 				DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */,
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
 				DEB44E4C2AAFAB680006887A /* ConnectBrokerViewController+Views.swift in Sources */,
 				DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */,
+				DED14C3B2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
 				DE4D57B32AA9086E008E2B6B /* PendingOrderMenuViewController.swift in Sources */,
@@ -817,12 +851,14 @@
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,
+				DED14C352ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift in Sources */,
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DE4D57942AA77BD2008E2B6B /* ProfileImageTableViewCell.swift in Sources */,
 				DE410C902AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
 				DE4D57902AA77A44008E2B6B /* SettingsViewController.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
+				DED14C372AC09ED400E3E88D /* SubscriberCountTableViewCell.swift in Sources */,
 				DEB44E472AAEB9720006887A /* OrderHistoryViewController+Views.swift in Sources */,
 				DE410CA32AB3609400F1F24F /* UpdatedCandleStickChart.swift in Sources */,
 				DEB44E422AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift in Sources */,

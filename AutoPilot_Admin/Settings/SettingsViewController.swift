@@ -45,12 +45,13 @@ class SettingsViewController: UIViewController {
     var settingsTableViewCell = "settingsTableViewCell"
     var supportTableViewCell = "supportTableViewCell"
     var logoutTableViewCell = "logoutTableViewCell"
+    var activePayoutSubscribersTableViewCell = "activePayoutSubscribersTableViewCell"
     var upgradeAccountTableViewCell = "upgradeAccountTableViewCell"
     var settingsSwitchImageTableViewCell = "settingsSwitchImageTableViewCell"
     var settingsSwitchTableViewCellTableViewCell = "settingsSwitchTableViewCellTableViewCell"
     
-    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey"] //dollardarkinactive //genBox
-    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", ""]
+    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey", "dollarSign"] //dollardarkinactive //genBox
+    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "Direct Deposit"]
     var notifications: [String] = ["Trade Won", "Trade Lost", "New Community Message", "New Team Member"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
@@ -342,6 +343,10 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         self.present(updateAccessCodeVC, animated: false)
     }
     
+    @objc  func presentBankDebitCard() {
+        
+    }
+    
     @objc func dismissVC() {
         lightImpactGenerator()
         self.dismiss(animated: true, completion: nil)
@@ -452,6 +457,16 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         //self.navigationController?.pushViewController(personalInfoVC, animated: true)
     }
     
+    @objc func didTapPaymentHistory() {
+        lightImpactGenerator()
+        print("did this 😰😰😰")
+        let paymentHistoryVC = PaymentHistoryViewController()
+        //self.navigationController?.pushViewController(paymentHistoryVC, animated: true)
+        
+        paymentHistoryVC.modalPresentationStyle = .overFullScreen
+        self.present(paymentHistoryVC, animated: true, completion: nil)
+    }
+    
     @objc func didTapMyTeamAppLink() {
         lightImpactGenerator()
         let profileLinkVC = MyProfileLinkViewController()
@@ -541,7 +556,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return 2
         } else if section == 1 {
             return accountSettings.count
         } else if section == 2 {
@@ -555,35 +570,43 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: profileImageTableViewCell, for: indexPath) as! ProfileImageTableViewCell
-            let profileImageTapped = UITapGestureRecognizer(target: self, action: #selector(replacePhotoClicked))
-            cell.profileImageView.addGestureRecognizer(profileImageTapped)
-            cell.dismissButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
-            cell.nameLabel.text = "Settings"
-            
-            cell.profileImageView.image = UIImage(named: "avatarph")
-            cell.profileImageView.setImageColor(color: .newBlack)
-            cell.dateJoinedLabel.text = Admin.current.displayName
-            //print("\(Admin.current.profilePhotoUrl) 🤬🤬🤬")
-            
-            if let adminPhoto = Admin.current.profilePhotoUrl {
-                if let url = URL(string: adminPhoto) {
-                    cell.profileImageView.kf.setImage(with: url)
-                    cell.profileImageView.contentMode = .scaleAspectFill
-                    cell.profileImageView.isHidden = false
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: profileImageTableViewCell, for: indexPath) as! ProfileImageTableViewCell
+                let profileImageTapped = UITapGestureRecognizer(target: self, action: #selector(replacePhotoClicked))
+                cell.profileImageView.addGestureRecognizer(profileImageTapped)
+                cell.dismissButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
+                cell.nameLabel.text = "Settings"
+                
+                cell.profileImageView.image = UIImage(named: "avatarph")
+                cell.profileImageView.setImageColor(color: .newBlack)
+                cell.dateJoinedLabel.text = Admin.current.displayName
+                //print("\(Admin.current.profilePhotoUrl) 🤬🤬🤬")
+                
+                if let adminPhoto = Admin.current.profilePhotoUrl {
+                    if let url = URL(string: adminPhoto) {
+                        cell.profileImageView.kf.setImage(with: url)
+                        cell.profileImageView.contentMode = .scaleAspectFill
+                        cell.profileImageView.isHidden = false
+                    } else {
+                        cell.profileImageView.isHidden = true
+                        //cell.profilePHImageView.isHidden = false
+                    }
                 } else {
                     cell.profileImageView.isHidden = true
-                    //cell.profilePHImageView.isHidden = false
+                    cell.profilePHImageView.isHidden = false
                 }
+                
+                cell.dismissArrowImageView.setImageColor(color: textColor)
+                cell.nameLabel.textColor = textColor
+                cell.dateJoinedLabel.textColor = textColor.withAlphaComponent(0.5)
+                return cell
             } else {
-                cell.profileImageView.isHidden = true
-                cell.profilePHImageView.isHidden = false
+                let cell = tableView.dequeueReusableCell(withIdentifier: activePayoutSubscribersTableViewCell, for: indexPath) as! ActivePayoutSubscribersTableViewCell
+                cell.payoutLabel.text = "$39,400.00"
+                cell.payoutDetailLabel.text = "Sep Payout"
+                cell.subLabel.text = "280"
+                return cell
             }
-            
-            cell.dismissArrowImageView.setImageColor(color: textColor)
-            cell.nameLabel.textColor = textColor
-            cell.dateJoinedLabel.textColor = textColor.withAlphaComponent(0.5)
-            return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: settingsTableViewCell, for: indexPath) as! SettingsTableViewCell
             cell.generalImageView.image = UIImage(named: accountImages[indexPath.row])
@@ -721,11 +744,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == 0 {
                 return .createAspectRatio(value: 110) //146
             } else {
-                if upgradeHidden {
-                    return 0
-                } else {
-                    return .createAspectRatio(value: 96)
-                }
+                return .createAspectRatio(value: 136)
             }
         } else {
             return .createAspectRatio(value: 62)
@@ -770,6 +789,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            if indexPath.row == 1 {
+                didTapPaymentHistory()
+            }
+        }
         if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
@@ -778,8 +802,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 didTapMyTeamWebLink()
             case 2:
                 presentUpdateTeamNamePhoto()
-            default:
+            case 3:
                 presentUpdateAccessCode()
+            default:
+                presentBankDebitCard()
             }
         }
              

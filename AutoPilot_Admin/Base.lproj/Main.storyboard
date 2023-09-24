@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="Gq3-BK-OIK">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="fF8-Dp-VGb" customClass="SettingsViewController" customModule="AutoPilot_Admin" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,12 +19,11 @@
                         <viewLayoutGuide key="safeArea" id="Iy5-Ig-lJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTab" id="WKL-1U-zPp"/>
                     <navigationItem key="navigationItem" id="jxO-5g-2oM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMp-tW-SEG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-416" y="610"/>
+            <point key="canvasLocation" x="510.68702290076334" y="609.85915492957747"/>
         </scene>
         <!--My Team-->
         <scene sceneID="g0f-6d-VIJ">
@@ -73,7 +73,7 @@
                     <connections>
                         <segue destination="Fea-7m-wJS" kind="relationship" relationship="viewControllers" id="u8o-FC-Fqm"/>
                         <segue destination="2uh-bh-dpy" kind="relationship" relationship="viewControllers" id="9Yy-zc-yi1"/>
-                        <segue destination="fF8-Dp-VGb" kind="relationship" relationship="viewControllers" id="R1l-3Q-UgI"/>
+                        <segue destination="Z7q-2A-dTn" kind="relationship" relationship="viewControllers" id="R1l-3Q-UgI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQj-m3-fIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -94,6 +94,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2378" y="-116"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="DQx-VE-nQL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z7q-2A-dTn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTab" id="WKL-1U-zPp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cys-Wc-8an">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fF8-Dp-VGb" kind="relationship" relationship="rootViewController" id="Jc1-gz-adU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5JD-CF-Kzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="610"/>
         </scene>
     </scenes>
     <resources>

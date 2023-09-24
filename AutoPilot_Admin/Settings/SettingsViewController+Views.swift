@@ -35,6 +35,7 @@ extension SettingsViewController {
         mainFeedTableView.register(ProfileImageTableViewCell.self, forCellReuseIdentifier: profileImageTableViewCell)
         mainFeedTableView.register(SupportTableViewCell.self, forCellReuseIdentifier: supportTableViewCell)
         mainFeedTableView.register(LogoutTableViewCell.self, forCellReuseIdentifier: logoutTableViewCell)
+        mainFeedTableView.register(ActivePayoutSubscribersTableViewCell.self, forCellReuseIdentifier: activePayoutSubscribersTableViewCell)        
         mainFeedTableView.allowsSelection = true
         mainFeedTableView.allowsMultipleSelection = false
         mainFeedTableView.contentInset = .zero

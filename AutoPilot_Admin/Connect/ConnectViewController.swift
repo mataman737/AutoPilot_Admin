@@ -37,18 +37,7 @@ class ConnectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        for _ in 1...12 {
-//            let fullName = generateRandomFullName()
-//            let phoneNumber = generateRandomPhoneNumber()
-//            let date = generateRandomDateWithinLastThreeMonths()
-//            //let number = generateRandomNumber()
-//            
-//            let array: [String] = [fullName, phoneNumber, date] //"\(number)"
-//            activePaidTeamMembers.append(array)
-//        }
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)                
         
         //ChatClient.loginUser()
         modifyConstraints()

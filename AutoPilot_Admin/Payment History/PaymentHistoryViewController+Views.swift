@@ -1,24 +1,18 @@
 //
-//  ConnectViewController+Views.swift
+//  PaymentHistoryViewController+Views.swift
 //  AutoPilot_Admin
 //
-//  Created by Stephen Mata on 8/27/23.
+//  Created by Stephen Mata on 9/23/23.
 //
 
 import Foundation
 import UIKit
 import Lottie
 
-extension ConnectViewController {
-    
-    func modifyConstraints() {
-        
-        
-    }
-    
+extension PaymentHistoryViewController {
     func setupNav() {
         
-        view.backgroundColor = UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
+        view.backgroundColor = .white//UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
                         
         navView.backgroundColor = .white
         navView.backgroundColor = UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
@@ -29,17 +23,17 @@ extension ConnectViewController {
         navView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         navView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 90)).isActive = true
         
-        backImageView.image = UIImage(named: "arrowLeft")
+        backImageView.image = UIImage(named: "xImage") //xImage //arrowLeft
         backImageView.setImageColor(color: .black)
         backImageView.contentMode = .scaleAspectFill
         backImageView.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(backImageView)
         backImageView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 13).isActive = true
         backImageView.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: -.createAspectRatio(value: 8)).isActive = true
-        backImageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        backImageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
+        backImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        backImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         
-        titleLabel.text = "My Team"
+        titleLabel.text = "Payment History"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .newBlack
         titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
@@ -57,6 +51,7 @@ extension ConnectViewController {
         dividerLine.bottomAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
         dividerLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
+        bellImageView.isHidden = true
         bellImageView.image = UIImage(named: "arrowLeft")
         bellImageView.setImageColor(color: .black)
         bellImageView.contentMode = .scaleAspectFill
@@ -67,7 +62,7 @@ extension ConnectViewController {
         bellImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
         bellImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
         
-        bellButton.addTarget(self, action: #selector(didTapNotiBell), for: .touchUpInside)
+        bellButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         bellButton.backgroundColor = .clear
         bellButton.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(bellButton)
@@ -84,15 +79,14 @@ extension ConnectViewController {
         mainfeedTableView.backgroundColor = .clear
         mainfeedTableView.delegate = self
         mainfeedTableView.dataSource = self
-        mainfeedTableView.register(ConnectChannelTableViewCell.self, forCellReuseIdentifier: connectChannelTableViewCell)
-        mainfeedTableView.register(TeamMemberTableViewCell.self, forCellReuseIdentifier: teamMemberTableViewCell)
-        mainfeedTableView.register(TeamMembersEmptyStateCell.self, forCellReuseIdentifier: teamMembersEmptyStateCell)
+        mainfeedTableView.register(MonthLineGraphTableViewCell.self, forCellReuseIdentifier: monthLineGraphTableViewCell)
+        mainfeedTableView.register(SubscriberCountTableViewCell.self, forCellReuseIdentifier: subscriberCountTableViewCell)
         mainfeedTableView.allowsSelection = true
         mainfeedTableView.allowsMultipleSelection = false
         mainfeedTableView.contentInset = .zero
         mainfeedTableView.showsVerticalScrollIndicator = false
         mainfeedTableView.separatorStyle = .none
-        mainfeedTableView.contentInset = UIEdgeInsets(top: .createAspectRatio(value: 20), left: 0, bottom: 100, right: 0)
+        mainfeedTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         mainfeedTableView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(mainfeedTableView)
         mainfeedTableView.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
@@ -100,52 +94,4 @@ extension ConnectViewController {
         mainfeedTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         mainfeedTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
-    
-    func setupLoadingIndicator() {
-        
-        loadingContainer.isHidden = false
-        loadingContainer.alpha = 1.0
-        loadingContainer.backgroundColor = .white//UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
-        loadingContainer.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(loadingContainer)
-        loadingContainer.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
-        loadingContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        loadingContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        loadingContainer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
-        let checkAnimation = LottieAnimation.named("tripleSpinner")
-        loadingLottie.isUserInteractionEnabled = false
-        loadingLottie.alpha = 1.0
-        loadingLottie.loopMode = .loop
-        loadingLottie.animation = checkAnimation
-        loadingLottie.contentMode = .scaleAspectFill
-        loadingLottie.backgroundColor = .clear
-        loadingLottie.translatesAutoresizingMaskIntoConstraints = false
-        loadingContainer.addSubview(loadingLottie)
-        loadingLottie.centerYAnchor.constraint(equalTo: loadingContainer.centerYAnchor).isActive = true
-        loadingLottie.centerXAnchor.constraint(equalTo: loadingContainer.centerXAnchor).isActive = true
-        loadingLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        loadingLottie.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        loadingLottie.play()
-        //print("😀😀😀 - \(loadingLottie.logHierarchyKeypaths()) - 😀😀😀")
-    
-        var i = 0
-        let loadingLayers = ["Shape Layer 1.Ellipse 1.Stroke 1.Color", "Shape Layer 2.Ellipse 1.Stroke 1.Color", "Shape Layer 3.Ellipse 1.Stroke 1.Color"]
-        for layer in 1...loadingLayers.count {
-            let keyPath = AnimationKeypath(keypath: "\(loadingLayers[layer - 1])")
-            if i == 0 {
-                let colorProvider = ColorValueProvider(UIColor(red: 225/255, green: 61/255, blue: 227/255, alpha: 1.0).lottieColorValue)
-                loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
-            } else if i == 1 {
-                let colorProvider = ColorValueProvider(UIColor(red: 229/255, green: 93/255, blue: 132/255, alpha: 1.0).lottieColorValue)
-                loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
-            } else {
-                let colorProvider = ColorValueProvider(UIColor(red: 232/255, green: 121/255, blue: 47/255, alpha: 1.0).lottieColorValue)
-                loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
-            }
-            i += 1
-        }
-    }
-    
 }
-
