@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="510.68702290076334" y="609.85915492957747"/>
         </scene>
-        <!--My Team-->
+        <!--Community-->
         <scene sceneID="g0f-6d-VIJ">
             <objects>
                 <viewController storyboardIdentifier="ConnectViewController" id="2uh-bh-dpy" customClass="ConnectViewController" customModule="AutoPilot_Admin" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="QG4-8L-R3H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Team" image="connectTab" id="qwo-cc-rhC"/>
+                    <tabBarItem key="tabBarItem" title="Community" image="connectTab" id="qwo-cc-rhC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lif-c2-Tct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

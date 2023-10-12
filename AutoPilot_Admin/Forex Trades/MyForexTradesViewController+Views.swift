@@ -164,6 +164,7 @@ extension MyForexTradesViewController {
         adminOnboardingView.addTeamNamePhotoContainer.addTarget(self, action: #selector(presentUpdateTeamNamePhoto), for: .touchUpInside)
         adminOnboardingView.accessCodeContainer.addTarget(self, action: #selector(presentUpdateAccessCode), for: .touchUpInside)
         adminOnboardingView.brokerContainer.addTarget(self, action: #selector(connectBrokerTapped), for: .touchUpInside)
+        adminOnboardingView.connectMyFXBookContainer.addTarget(self, action: #selector(didTapMyFXBook), for: .touchUpInside)
         adminOnboardingView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(adminOnboardingView)
         adminOnboardingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true

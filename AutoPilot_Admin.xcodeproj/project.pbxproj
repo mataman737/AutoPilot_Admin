@@ -11,6 +11,10 @@
 		DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20422A9BE9040067C719 /* ConnectViewController.swift */; };
 		DE0E20452A9BE9140067C719 /* ConnectViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */; };
 		DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */; };
+		DE2C18922ACC580E00CB509A /* MyTradersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C18912ACC580E00CB509A /* MyTradersViewController.swift */; };
+		DE2C18942ACC581A00CB509A /* MyTradersViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C18932ACC581A00CB509A /* MyTradersViewController+Views.swift */; };
+		DE2C18962ACCF74B00CB509A /* AddTraderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C18952ACCF74B00CB509A /* AddTraderViewController.swift */; };
+		DE2C18982ACCF75600CB509A /* AddTraderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C18972ACCF75600CB509A /* AddTraderViewController+Views.swift */; };
 		DE410C8B2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */; };
 		DE410C8E2AB1341700F1F24F /* TeamMemberOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8D2AB1341700F1F24F /* TeamMemberOptionsViewController.swift */; };
 		DE410C902AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8F2AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift */; };
@@ -55,6 +59,8 @@
 		DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */; };
 		DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */; };
 		DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */; };
+		DE76E6FA2AD78BC800FC11B8 /* SetMyFXBookLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76E6F92AD78BC800FC11B8 /* SetMyFXBookLinkViewController.swift */; };
+		DE76E6FC2AD78BCE00FC11B8 /* SetMyFXBookLinkViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76E6FB2AD78BCE00FC11B8 /* SetMyFXBookLinkViewController+Views.swift */; };
 		DE80EF7E2AAB842000603EF3 /* UpdateAccessCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF7D2AAB842000603EF3 /* UpdateAccessCodeViewController.swift */; };
 		DE80EF802AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF7F2AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift */; };
 		DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */; };
@@ -133,6 +139,10 @@
 		DE0E20422A9BE9040067C719 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		DE0E20442A9BE9140067C719 /* ConnectViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectViewController+Views.swift"; sourceTree = "<group>"; };
 		DE0E20462A9C00610067C719 /* ConnectChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectChannelTableViewCell.swift; sourceTree = "<group>"; };
+		DE2C18912ACC580E00CB509A /* MyTradersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTradersViewController.swift; sourceTree = "<group>"; };
+		DE2C18932ACC581A00CB509A /* MyTradersViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyTradersViewController+Views.swift"; sourceTree = "<group>"; };
+		DE2C18952ACCF74B00CB509A /* AddTraderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTraderViewController.swift; sourceTree = "<group>"; };
+		DE2C18972ACCF75600CB509A /* AddTraderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTraderViewController+Views.swift"; sourceTree = "<group>"; };
 		DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersEmptyStateCell.swift; sourceTree = "<group>"; };
 		DE410C8D2AB1341700F1F24F /* TeamMemberOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberOptionsViewController.swift; sourceTree = "<group>"; };
 		DE410C8F2AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamMemberOptionsViewController+Views.swift"; sourceTree = "<group>"; };
@@ -177,6 +187,8 @@
 		DE6E43FF2A9D9D5700C76B71 /* NewNotificationViewController+Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewNotificationViewController+Views.swift"; sourceTree = "<group>"; };
 		DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageVideoViewController.swift; sourceTree = "<group>"; };
 		DE6E44022A9D9D6000C76B71 /* ConfirmAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAlertView.swift; sourceTree = "<group>"; };
+		DE76E6F92AD78BC800FC11B8 /* SetMyFXBookLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMyFXBookLinkViewController.swift; sourceTree = "<group>"; };
+		DE76E6FB2AD78BCE00FC11B8 /* SetMyFXBookLinkViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetMyFXBookLinkViewController+Views.swift"; sourceTree = "<group>"; };
 		DE80EF7D2AAB842000603EF3 /* UpdateAccessCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccessCodeViewController.swift; sourceTree = "<group>"; };
 		DE80EF7F2AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateAccessCodeViewController+Views.swift"; sourceTree = "<group>"; };
 		DE80EF832AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamNameAndPhotoViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +302,17 @@
 			path = Connect;
 			sourceTree = "<group>";
 		};
+		DE2C18902ACC57E200CB509A /* My Traders */ = {
+			isa = PBXGroup;
+			children = (
+				DE2C18912ACC580E00CB509A /* MyTradersViewController.swift */,
+				DE2C18932ACC581A00CB509A /* MyTradersViewController+Views.swift */,
+				DE2C18952ACCF74B00CB509A /* AddTraderViewController.swift */,
+				DE2C18972ACCF75600CB509A /* AddTraderViewController+Views.swift */,
+			);
+			path = "My Traders";
+			sourceTree = "<group>";
+		};
 		DE410C8C2AB1340D00F1F24F /* Team Member Options */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +325,13 @@
 				DE410C9E2AB35BC500F1F24F /* UpdatedLineChart.swift */,
 			);
 			path = "Team Member Options";
+			sourceTree = "<group>";
+		};
+		DE4226D22AC3A5D1005D7967 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		DE4D577F2AA6B704008E2B6B /* Lottie */ = {
@@ -398,6 +428,15 @@
 				DE6E44012A9D9D5F00C76B71 /* PickImageVideoViewController.swift */,
 			);
 			path = "New Notification";
+			sourceTree = "<group>";
+		};
+		DE76E6F82AD78ACD00FC11B8 /* Set MyFXBook */ = {
+			isa = PBXGroup;
+			children = (
+				DE76E6F92AD78BC800FC11B8 /* SetMyFXBookLinkViewController.swift */,
+				DE76E6FB2AD78BCE00FC11B8 /* SetMyFXBookLinkViewController+Views.swift */,
+			);
+			path = "Set MyFXBook";
 			sourceTree = "<group>";
 		};
 		DE80EF7C2AAB840000603EF3 /* Update Access Code */ = {
@@ -507,6 +546,9 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
 				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
+				DE76E6F82AD78ACD00FC11B8 /* Set MyFXBook */,
+				DE2C18902ACC57E200CB509A /* My Traders */,
+				DE4226D22AC3A5D1005D7967 /* Login */,
 				DED14C2F2ABFD59000E3E88D /* Payment History */,
 				DE410C8C2AB1340D00F1F24F /* Team Member Options */,
 				DEB44E4F2AAFB1D60006887A /* My Connected Broker */,
@@ -808,9 +850,11 @@
 				DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
 				DE4D57A22AA82926008E2B6B /* MyProfileLinkViewController+Views.swift in Sources */,
+				DE2C18922ACC580E00CB509A /* MyTradersViewController.swift in Sources */,
 				FC4836DA2AAFAE2400056CE3 /* Team.swift in Sources */,
 				DEB44E3D2AAE69B40006887A /* CloseOrderViewController+Views.swift in Sources */,
 				DEB44E402AAE6AC80006887A /* CancelPendingOrderViewController.swift in Sources */,
+				DE2C18982ACCF75600CB509A /* AddTraderViewController+Views.swift in Sources */,
 				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
 				DEB44E512AAFB1EC0006887A /* MyConnectedBrokerAccountViewController.swift in Sources */,
 				DEB44E572AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift in Sources */,
@@ -818,6 +862,7 @@
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */,
+				DE76E6FA2AD78BC800FC11B8 /* SetMyFXBookLinkViewController.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
 				DED14C392AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift in Sources */,
 				DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */,
@@ -845,12 +890,14 @@
 				DE410C9D2AB35B9500F1F24F /* ChartsLineGraphView.swift in Sources */,
 				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
 				FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */,
+				DE76E6FC2AD78BCE00FC11B8 /* SetMyFXBookLinkViewController+Views.swift in Sources */,
 				FCC4DD252A93FE0100185168 /* API.swift in Sources */,
 				DEB44E3B2AAE69AD0006887A /* CloseOrderViewController.swift in Sources */,
 				FC14F8F32AB4F0BD006D02DC /* User.swift in Sources */,
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,
+				DE2C18962ACCF74B00CB509A /* AddTraderViewController.swift in Sources */,
 				DED14C352ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift in Sources */,
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DE4D57942AA77BD2008E2B6B /* ProfileImageTableViewCell.swift in Sources */,
@@ -860,6 +907,7 @@
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
 				DED14C372AC09ED400E3E88D /* SubscriberCountTableViewCell.swift in Sources */,
 				DEB44E472AAEB9720006887A /* OrderHistoryViewController+Views.swift in Sources */,
+				DE2C18942ACC581A00CB509A /* MyTradersViewController+Views.swift in Sources */,
 				DE410CA32AB3609400F1F24F /* UpdatedCandleStickChart.swift in Sources */,
 				DEB44E422AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift in Sources */,
 				DE6643982AA56A4000DA27BE /* SplashViewController.swift in Sources */,

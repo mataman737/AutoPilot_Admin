@@ -281,6 +281,14 @@ extension MyForexTradesViewController {
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension MyForexTradesViewController {
+    @objc func didTapMyFXBook() {
+        lightImpactGenerator()
+        let updateAccessCodeVC = SetMyFXBookLinkViewController()
+        //updateAccessCodeVC.delegate = self
+        updateAccessCodeVC.modalPresentationStyle = .overFullScreen
+        self.present(updateAccessCodeVC, animated: false)
+    }
+    
     @objc func presentUpdateTeamNamePhoto() {
         lightImpactGenerator()
         let updateTeamNamePhotoVC = UpdateTeamNameAndPhotoViewController()
@@ -815,7 +823,7 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
         print("\(brokers.count) 😓😓😓")
         
         
-        if teamName != nil && teamAccessCode != nil && brokers.count > 0 {
+        if teamName != nil && teamAccessCode != nil && brokers.count > 2 {
             adminOnboardingView.isHidden = true
             onboardingCompleted = true
         }

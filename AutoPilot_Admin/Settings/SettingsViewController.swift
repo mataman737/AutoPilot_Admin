@@ -50,8 +50,8 @@ class SettingsViewController: UIViewController {
     var settingsSwitchImageTableViewCell = "settingsSwitchImageTableViewCell"
     var settingsSwitchTableViewCellTableViewCell = "settingsSwitchTableViewCellTableViewCell"
     
-    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey", "dollarSign"] //dollardarkinactive //genBox
-    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "Direct Deposit"]
+    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign"]
+    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit"]
     var notifications: [String] = ["Trade Won", "Trade Lost", "New Community Message", "New Team Member"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
@@ -79,10 +79,15 @@ class SettingsViewController: UIViewController {
     var newForexSignalOn = UserDefaults()
     var newCryptoSignalOn = UserDefaults()
     var signalThreadUpdateOn = UserDefaults()
-        
+    var accountType = "Admin"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if accountType == "Admin" {
+            accountImages = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign", "users15"]
+            accountSettings = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit", "My Traders"]
+        }
                 
         isDarkMode.set(false, forKey: "isDarkMode")
         
@@ -347,6 +352,13 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         
     }
     
+    @objc func presentMyTeamSettings() {
+        lightImpactGenerator()
+        let myTradersVC = MyTradersViewController()
+        myTradersVC.modalPresentationStyle = .overFullScreen
+        self.present(myTradersVC, animated: true, completion: nil)
+    }
+    
     @objc func dismissVC() {
         lightImpactGenerator()
         self.dismiss(animated: true, completion: nil)
@@ -467,6 +479,14 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         self.present(paymentHistoryVC, animated: true, completion: nil)
     }
     
+    @objc func didTapMyFXBook() {
+        lightImpactGenerator()
+        let updateAccessCodeVC = SetMyFXBookLinkViewController()
+        //updateAccessCodeVC.delegate = self
+        updateAccessCodeVC.modalPresentationStyle = .overFullScreen
+        self.present(updateAccessCodeVC, animated: false)
+    }
+    
     @objc func didTapMyTeamAppLink() {
         lightImpactGenerator()
         let profileLinkVC = MyProfileLinkViewController()
@@ -579,7 +599,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 cell.profileImageView.image = UIImage(named: "avatarph")
                 cell.profileImageView.setImageColor(color: .newBlack)
-                cell.dateJoinedLabel.text = Admin.current.displayName
+                if let displayName = Admin.current.displayName {
+                    cell.dateJoinedLabel.text = "\(accountType): \(displayName)"
+                }
                 //print("\(Admin.current.profilePhotoUrl) 🤬🤬🤬")
                 
                 if let adminPhoto = Admin.current.profilePhotoUrl {
@@ -794,6 +816,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 didTapPaymentHistory()
             }
         }
+        
         if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
@@ -804,8 +827,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 presentUpdateTeamNamePhoto()
             case 3:
                 presentUpdateAccessCode()
-            default:
+            case 4:
+                didTapMyFXBook()
+            case 5:
                 presentBankDebitCard()
+            default:
+                presentMyTeamSettings()
             }
         }
              

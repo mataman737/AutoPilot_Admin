@@ -20,6 +20,9 @@ class OnboardingView: UIView {
     var accessCodeImageView = UIImageView()
     var connectBrokerImageView = UIImageView()
     
+    var connectMyFXBookContainer = UIButton()
+    var connectMyFXBookImageView = UIImageView()
+    
     override init(frame: CGRect) {
        super.init(frame: frame)
         self.backgroundColor = .white
@@ -30,7 +33,6 @@ class OnboardingView: UIView {
    required init?(coder aDecoder: NSCoder) {
        fatalError("init(coder:) has not been implemented")
    }
-
 }
 
 // MARK: Helpers
@@ -60,10 +62,12 @@ extension OnboardingView {
         createContainer(container: addTeamNamePhotoContainer, containerImageView: namePhotoImageView, containerString: "Add team name & photo", isFirst: true, viewToPin: setupAccLabel)
         createContainer(container: accessCodeContainer, containerImageView: accessCodeImageView, containerString: "Set access code", isFirst: false, viewToPin: addTeamNamePhotoContainer)
         createContainer(container: brokerContainer, containerImageView: connectBrokerImageView, containerString: "Connect a broker", isFirst: false, viewToPin: accessCodeContainer)
+        createContainer(container: connectMyFXBookContainer, containerImageView: connectMyFXBookImageView, containerString: "Add MyFXBook Link", isFirst: false, viewToPin: brokerContainer)
         
         namePhotoImageView.image = UIImage(named: "namePhotoBubble")
         accessCodeImageView.image = UIImage(named: "codeBubble")
         connectBrokerImageView.image = UIImage(named: "brokerBubble")
+        connectMyFXBookImageView.image = UIImage(named: "myFXBookBubble")
     }
     
     func createContainer(container: UIButton, containerImageView: UIImageView, containerString: String, isFirst: Bool, viewToPin: UIView) {

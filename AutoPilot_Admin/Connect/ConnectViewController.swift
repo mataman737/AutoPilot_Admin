@@ -178,7 +178,7 @@ class ConnectViewController: UIViewController {
                     }
                     
                     if let unreadCount = channelController.channel?.unreadCount.messages {
-                        self.supergroupUnreadCount = 5//unreadCount
+                        self.supergroupUnreadCount = unreadCount //5
                         print("📬📬📬 \(unreadCount)")
                         
                         //self.myTraderDetailLabel.text = unreadCount == 1 ? "\(unreadCount) new message" : "\(unreadCount) new messages"
