@@ -55,8 +55,11 @@ class SettingsViewController: UIViewController {
     var notifications: [String] = ["Trade Won", "Trade Lost", "New Community Message", "New Team Member"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
-    //var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Delete Account"]
     var support: [String] = ["Terms of Service", "Policies & Procedures", "Privacy Policy", "Refund Policy", "Income Disclosure Statement", "Subscription Terms and Conditions"/*, "Delete Account"*/]
+    var newTradeNotificationEnabled = true
+    var tradeWonNotificationEnabled = true
+    var tradeLostNotificationEnabled = true
+    var teamChatNotificationEnabled = true
         
     var team: Team?
     var teamAccessCode: String? {
@@ -677,6 +680,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.dividerLine.isHidden = true
             } else {
                 cell.dividerLine.isHidden = false
+            }
+            
+            if indexPath.row == 0 {
+                if newTradeNotificationEnabled {
+                    cell.pwSwitch.setOn(true, animated: false)
+                } else {
+                    cell.pwSwitch.setOn(false, animated: false)
+                }
             }
             
             /*

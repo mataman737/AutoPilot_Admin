@@ -24,7 +24,6 @@ class MyForexTradesViewController: UIViewController {
     var dividerLine = UIView()
     var mainFeedTableView = UITableView()
     var openOrdersTableViewCell = "openOrdersTableViewCell"
-    var closedOrderTableViewCell = "closedOrderTableViewCell"
     var plusImageView = UIImageView()
     var plusButton = UIButton()
     var bookImageView = UIImageView()
@@ -79,7 +78,8 @@ class MyForexTradesViewController: UIViewController {
         */
                 
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)        
+        notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeround), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,7 +87,12 @@ class MyForexTradesViewController: UIViewController {
         extendedLayoutIncludesOpaqueBars = true
         getAccounts()
 
+        playerLoop.play()
         loadingLottie.play()
+    }
+    
+    @objc func appMovedToForeround() {
+        self.playerLoop.play()
     }
     
     func getAccounts() {
@@ -357,7 +362,10 @@ extension MyForexTradesViewController {
             pickOptionVC.shareURLButton.continueLabel.text = "Confirm Traiding Pair"
             self.present(pickOptionVC, animated: false, completion: nil)
         } else {
-            if didConnectBroker.bool(forKey: "didConnectBroker") {
+            
+            if self.brokers.count > 0 {
+            
+            //if didConnectBroker.bool(forKey: "didConnectBroker") {
                 let toastNoti = ToastNotificationView()
                 toastNoti.present(withMessage: "Complete onboarding first!")
                 errorImpactGenerator()
@@ -823,7 +831,7 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
         print("\(brokers.count) 😓😓😓")
         
         
-        if teamName != nil && teamAccessCode != nil && brokers.count > 2 {
+        if teamName != nil && teamAccessCode != nil && brokers.count > 0 {
             adminOnboardingView.isHidden = true
             onboardingCompleted = true
         }

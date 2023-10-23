@@ -26,12 +26,11 @@ class ConnectChannelTableViewCell: UITableViewCell {
     //New Views
     
     var circleImageView = UIImageView()
+    var phImageView = UIImageView()
     var chatNameLabel = UILabel()
     var chatDescriptionLabel = UILabel()
     var dividerLine = UIView()
     var newMessageBubble = UIView()
-    //var arrowImageView = UIImageView()
-    
     
     var channelUrl: String?
     
@@ -55,7 +54,18 @@ extension ConnectChannelTableViewCell {
     
     func setupNewViews() {
         
-        circleImageView.backgroundColor = .blue
+        phImageView.image = UIImage(named: "enigmaUserPH")
+        phImageView.backgroundColor = .clear
+        phImageView.layer.cornerRadius = .createAspectRatio(value: 57)/2
+        phImageView.layer.masksToBounds = true
+        phImageView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(phImageView)
+        phImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
+        phImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        phImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 57)).isActive = true
+        phImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 57)).isActive = true
+        
+        circleImageView.backgroundColor = .clear
         circleImageView.layer.cornerRadius = .createAspectRatio(value: 57)/2
         circleImageView.layer.masksToBounds = true
         circleImageView.translatesAutoresizingMaskIntoConstraints = false

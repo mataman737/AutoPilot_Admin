@@ -146,7 +146,6 @@ extension MyForexTradesViewController {
         mainFeedTableView.delegate = self
         mainFeedTableView.dataSource = self
         mainFeedTableView.register(OpenOrdersTableViewCell.self, forCellReuseIdentifier: openOrdersTableViewCell)
-        mainFeedTableView.register(ClosedOrderTableViewCell.self, forCellReuseIdentifier: closedOrderTableViewCell)
         mainFeedTableView.allowsSelection = true
         mainFeedTableView.allowsMultipleSelection = false
         mainFeedTableView.contentInset = .zero
@@ -172,16 +171,7 @@ extension MyForexTradesViewController {
         adminOnboardingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         adminOnboardingView.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
         
-        /*
-        didSetTeamNamePhoto.set(false, forKey: "didSetTeamNamePhoto")
-        didSetAccessCode.set(false, forKey: "didSetAccessCode")
-        didConnectBroker.set(false, forKey: "didConnectBroker")
-        if didSetTeamNamePhoto.bool(forKey: "didSetTeamNamePhoto") {
-            adminOnboardingView.namePhotoImageView.image = UIImage(named: "onboardingGreenBubble")
-        }
-        */
-        
-        didConnectBroker.set(false, forKey: "didConnectBroker")
+        //didConnectBroker.set(false, forKey: "didConnectBroker")
     }
     
     func setupEmptyStates() {

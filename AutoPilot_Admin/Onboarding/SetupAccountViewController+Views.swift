@@ -185,26 +185,21 @@ extension SetupAccountViewController {
         emailContainerView.trailingAnchor.constraint(equalTo: phoneNumberContainer.trailingAnchor, constant: -.createAspectRatio(value: 24)).isActive = true
         emailContainerView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 48)).isActive = true
                 
-        phoneNumberTextField.tag = 1
-        phoneNumberTextField.setFlag(key: .US)
+        phoneNumberTextField.tag = 2
+        //phoneNumberTextField.setFlag(key: .US)
         phoneNumberTextField.delegate = self
+        phoneNumberTextField.delegateTwo = self
         phoneNumberTextField.keyboardType = .numberPad
         phoneNumberTextField.autocorrectionType = .no
         phoneNumberTextField.textColor = .black
         phoneNumberTextField.tintColor = .black
         phoneNumberTextField.returnKeyType = .next
-        var placeHolder = NSMutableAttributedString()
-        let Name  = "Phone Number"
-        placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font: UIFont.sofiaProMedium(ofSize: 18)])
-        placeHolder.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range:NSRange(location:0,length:Name.count))
-        phoneNumberTextField.attributedPlaceholder = placeHolder
         phoneNumberTextField.translatesAutoresizingMaskIntoConstraints = false
         emailContainerView.addSubview(phoneNumberTextField)
         phoneNumberTextField.leadingAnchor.constraint(equalTo: emailContainerView.leadingAnchor, constant: .createAspectRatio(value: 13)).isActive = true
         phoneNumberTextField.trailingAnchor.constraint(equalTo: emailContainerView.trailingAnchor, constant: -.createAspectRatio(value: 13)).isActive = true
         phoneNumberTextField.centerYAnchor.constraint(equalTo: emailContainerView.centerYAnchor).isActive = true
-        
-        let accessoryContainer = UIView()
+                
         accessoryContainer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: .createAspectRatio(value: 99))
         accessoryContainer.backgroundColor = .clear
         

@@ -120,6 +120,36 @@
 		DED14C392AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C382AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift */; };
 		DED14C3B2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C3A2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift */; };
 		DED14C3D2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C3C2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift */; };
+		DEF830A52AE5FFAA00268370 /* FPNCountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830732AE5FF9500268370 /* FPNCountryListViewController.swift */; };
+		DEF830A62AE5FFAA00268370 /* FPNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830742AE5FF9500268370 /* FPNTextField.swift */; };
+		DEF830A72AE5FFAA00268370 /* FPNCountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830762AE5FF9500268370 /* FPNCountryRepository.swift */; };
+		DEF830A82AE5FFAA00268370 /* FPNCountryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF830782AE5FF9500268370 /* FPNCountryView.xib */; };
+		DEF830A92AE5FFAA00268370 /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEF830792AE5FF9500268370 /* countryCodes.json */; };
+		DEF830AA2AE5FFAA00268370 /* FlagKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEF8307A2AE5FF9500268370 /* FlagKit.xcassets */; };
+		DEF830AB2AE5FFAA00268370 /* NBAsYouTypeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8307D2AE5FF9500268370 /* NBAsYouTypeFormatter.m */; };
+		DEF830AC2AE5FFAA00268370 /* NBPhoneMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8307E2AE5FF9500268370 /* NBPhoneMetaData.m */; };
+		DEF830AD2AE5FFAA00268370 /* NBPhoneNumberUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8307F2AE5FF9500268370 /* NBPhoneNumberUtil.m */; };
+		DEF830AE2AE5FFAA00268370 /* NSArray+NBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF830802AE5FF9500268370 /* NSArray+NBAdditions.m */; };
+		DEF830AF2AE5FFAA00268370 /* NBRegExMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF830862AE5FF9500268370 /* NBRegExMatcher.m */; };
+		DEF830B02AE5FFAA00268370 /* NBRegularExpressionCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF830872AE5FF9500268370 /* NBRegularExpressionCache.m */; };
+		DEF830B12AE5FFAA00268370 /* GeneratePhoneNumberHeader.sh in Resources */ = {isa = PBXBuildFile; fileRef = DEF830882AE5FF9500268370 /* GeneratePhoneNumberHeader.sh */; };
+		DEF830B22AE5FFAA00268370 /* NBNumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF830892AE5FF9500268370 /* NBNumberFormat.m */; };
+		DEF830B32AE5FFAA00268370 /* NBPhoneNumberUtil+ShortNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8308B2AE5FF9500268370 /* NBPhoneNumberUtil+ShortNumber.m */; };
+		DEF830B42AE5FFAA00268370 /* NBPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8308D2AE5FF9500268370 /* NBPhoneNumber.m */; };
+		DEF830B52AE5FFAA00268370 /* NBMetadataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8308F2AE5FF9500268370 /* NBMetadataHelper.m */; };
+		DEF830B62AE5FFAA00268370 /* NBPhoneNumberMetadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF830922AE5FF9500268370 /* NBPhoneNumberMetadata.plist */; };
+		DEF830B72AE5FFAA00268370 /* NBPhoneNumberDesc.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF830952AE5FF9500268370 /* NBPhoneNumberDesc.m */; };
+		DEF830B82AE5FFAA00268370 /* NBPhoneNumberDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF830972AE5FF9500268370 /* NBPhoneNumberDefines.m */; };
+		DEF830B92AE5FFAA00268370 /* FPNNibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830992AE5FF9500268370 /* FPNNibLoadingView.swift */; };
+		DEF830BA2AE5FFAA00268370 /* FPNCountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF8309A2AE5FF9500268370 /* FPNCountryPicker.swift */; };
+		DEF830BB2AE5FFAA00268370 /* FPNCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF8309B2AE5FF9500268370 /* FPNCountryView.swift */; };
+		DEF830BC2AE5FFAA00268370 /* FPNFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF8309E2AE5FF9500268370 /* FPNFormat.swift */; };
+		DEF830BD2AE5FFAA00268370 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF8309F2AE5FF9600268370 /* Bundle+Extension.swift */; };
+		DEF830BE2AE5FFAA00268370 /* FPNCountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830A02AE5FF9600268370 /* FPNCountryCode.swift */; };
+		DEF830BF2AE5FFAA00268370 /* FPNTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830A12AE5FF9600268370 /* FPNTextFieldDelegate.swift */; };
+		DEF830C02AE5FFAA00268370 /* FPNOBJCCountryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830A22AE5FF9600268370 /* FPNOBJCCountryKey.swift */; };
+		DEF830C12AE5FFAA00268370 /* FPNUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830A32AE5FF9600268370 /* FPNUtils.swift */; };
+		DEF830C22AE5FFAA00268370 /* FPNCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830A42AE5FF9600268370 /* FPNCountry.swift */; };
 		FC14F8F32AB4F0BD006D02DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC14F8F22AB4F0BD006D02DC /* User.swift */; };
 		FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D42AAA6A3A0097BDF1 /* Order.swift */; };
 		FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */; };
@@ -250,6 +280,51 @@
 		DED14C382AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLineMiniGraphView.swift; sourceTree = "<group>"; };
 		DED14C3A2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedMiniLineChart.swift; sourceTree = "<group>"; };
 		DED14C3C2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthLineGraphTableViewCell.swift; sourceTree = "<group>"; };
+		DEF830732AE5FF9500268370 /* FPNCountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNCountryListViewController.swift; sourceTree = "<group>"; };
+		DEF830742AE5FF9500268370 /* FPNTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNTextField.swift; sourceTree = "<group>"; };
+		DEF830752AE5FF9500268370 /* FlagPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagPhoneNumber.h; sourceTree = "<group>"; };
+		DEF830762AE5FF9500268370 /* FPNCountryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNCountryRepository.swift; sourceTree = "<group>"; };
+		DEF830782AE5FF9500268370 /* FPNCountryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPNCountryView.xib; sourceTree = "<group>"; };
+		DEF830792AE5FF9500268370 /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
+		DEF8307A2AE5FF9500268370 /* FlagKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagKit.xcassets; sourceTree = "<group>"; };
+		DEF8307C2AE5FF9500268370 /* NBPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBPhoneNumber.h; sourceTree = "<group>"; };
+		DEF8307D2AE5FF9500268370 /* NBAsYouTypeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBAsYouTypeFormatter.m; sourceTree = "<group>"; };
+		DEF8307E2AE5FF9500268370 /* NBPhoneMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBPhoneMetaData.m; sourceTree = "<group>"; };
+		DEF8307F2AE5FF9500268370 /* NBPhoneNumberUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBPhoneNumberUtil.m; sourceTree = "<group>"; };
+		DEF830802AE5FF9500268370 /* NSArray+NBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NBAdditions.m"; sourceTree = "<group>"; };
+		DEF830812AE5FF9500268370 /* NBMetadataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBMetadataHelper.h; sourceTree = "<group>"; };
+		DEF830822AE5FF9500268370 /* NBPhoneNumberDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBPhoneNumberDefines.h; sourceTree = "<group>"; };
+		DEF830842AE5FF9500268370 /* NBRegExMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBRegExMatcher.h; sourceTree = "<group>"; };
+		DEF830852AE5FF9500268370 /* NBRegularExpressionCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBRegularExpressionCache.h; sourceTree = "<group>"; };
+		DEF830862AE5FF9500268370 /* NBRegExMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBRegExMatcher.m; sourceTree = "<group>"; };
+		DEF830872AE5FF9500268370 /* NBRegularExpressionCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBRegularExpressionCache.m; sourceTree = "<group>"; };
+		DEF830882AE5FF9500268370 /* GeneratePhoneNumberHeader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = GeneratePhoneNumberHeader.sh; sourceTree = "<group>"; };
+		DEF830892AE5FF9500268370 /* NBNumberFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBNumberFormat.m; sourceTree = "<group>"; };
+		DEF8308A2AE5FF9500268370 /* NBPhoneNumberDesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBPhoneNumberDesc.h; sourceTree = "<group>"; };
+		DEF8308B2AE5FF9500268370 /* NBPhoneNumberUtil+ShortNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NBPhoneNumberUtil+ShortNumber.m"; sourceTree = "<group>"; };
+		DEF8308C2AE5FF9500268370 /* NBAsYouTypeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBAsYouTypeFormatter.h; sourceTree = "<group>"; };
+		DEF8308D2AE5FF9500268370 /* NBPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBPhoneNumber.m; sourceTree = "<group>"; };
+		DEF8308E2AE5FF9500268370 /* NBPhoneMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBPhoneMetaData.h; sourceTree = "<group>"; };
+		DEF8308F2AE5FF9500268370 /* NBMetadataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBMetadataHelper.m; sourceTree = "<group>"; };
+		DEF830902AE5FF9500268370 /* NSArray+NBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NBAdditions.h"; sourceTree = "<group>"; };
+		DEF830912AE5FF9500268370 /* NBPhoneNumberUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBPhoneNumberUtil.h; sourceTree = "<group>"; };
+		DEF830922AE5FF9500268370 /* NBPhoneNumberMetadata.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NBPhoneNumberMetadata.plist; sourceTree = "<group>"; };
+		DEF830932AE5FF9500268370 /* NBGeneratedPhoneNumberMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBGeneratedPhoneNumberMetaData.h; sourceTree = "<group>"; };
+		DEF830942AE5FF9500268370 /* NBPhoneNumberUtil+ShortNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NBPhoneNumberUtil+ShortNumber.h"; sourceTree = "<group>"; };
+		DEF830952AE5FF9500268370 /* NBPhoneNumberDesc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBPhoneNumberDesc.m; sourceTree = "<group>"; };
+		DEF830962AE5FF9500268370 /* NBNumberFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBNumberFormat.h; sourceTree = "<group>"; };
+		DEF830972AE5FF9500268370 /* NBPhoneNumberDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBPhoneNumberDefines.m; sourceTree = "<group>"; };
+		DEF830992AE5FF9500268370 /* FPNNibLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNNibLoadingView.swift; sourceTree = "<group>"; };
+		DEF8309A2AE5FF9500268370 /* FPNCountryPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNCountryPicker.swift; sourceTree = "<group>"; };
+		DEF8309B2AE5FF9500268370 /* FPNCountryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNCountryView.swift; sourceTree = "<group>"; };
+		DEF8309C2AE5FF9500268370 /* FlagPhoneNumber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlagPhoneNumber-Bridging-Header.h"; sourceTree = "<group>"; };
+		DEF8309E2AE5FF9500268370 /* FPNFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNFormat.swift; sourceTree = "<group>"; };
+		DEF8309F2AE5FF9600268370 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		DEF830A02AE5FF9600268370 /* FPNCountryCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNCountryCode.swift; sourceTree = "<group>"; };
+		DEF830A12AE5FF9600268370 /* FPNTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNTextFieldDelegate.swift; sourceTree = "<group>"; };
+		DEF830A22AE5FF9600268370 /* FPNOBJCCountryKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNOBJCCountryKey.swift; sourceTree = "<group>"; };
+		DEF830A32AE5FF9600268370 /* FPNUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNUtils.swift; sourceTree = "<group>"; };
+		DEF830A42AE5FF9600268370 /* FPNCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNCountry.swift; sourceTree = "<group>"; };
 		FC14F8F22AB4F0BD006D02DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FC1747D42AAA6A3A0097BDF1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantTrade.swift; sourceTree = "<group>"; };
@@ -546,6 +621,7 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
 				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
+				DEF830722AE5FF9500268370 /* Sources */,
 				DE76E6F82AD78ACD00FC11B8 /* Set MyFXBook */,
 				DE2C18902ACC57E200CB509A /* My Traders */,
 				DE4226D22AC3A5D1005D7967 /* Login */,
@@ -678,6 +754,98 @@
 			path = "Payment History";
 			sourceTree = "<group>";
 		};
+		DEF830722AE5FF9500268370 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DEF830732AE5FF9500268370 /* FPNCountryListViewController.swift */,
+				DEF830742AE5FF9500268370 /* FPNTextField.swift */,
+				DEF830752AE5FF9500268370 /* FlagPhoneNumber.h */,
+				DEF830762AE5FF9500268370 /* FPNCountryRepository.swift */,
+				DEF830772AE5FF9500268370 /* Resources */,
+				DEF8307B2AE5FF9500268370 /* libPhoneNumber */,
+				DEF830982AE5FF9500268370 /* FPNCountryPicker */,
+				DEF8309C2AE5FF9500268370 /* FlagPhoneNumber-Bridging-Header.h */,
+				DEF8309D2AE5FF9500268370 /* Helpers */,
+				DEF830A42AE5FF9600268370 /* FPNCountry.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DEF830772AE5FF9500268370 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEF830782AE5FF9500268370 /* FPNCountryView.xib */,
+				DEF830792AE5FF9500268370 /* countryCodes.json */,
+				DEF8307A2AE5FF9500268370 /* FlagKit.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DEF8307B2AE5FF9500268370 /* libPhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				DEF8307C2AE5FF9500268370 /* NBPhoneNumber.h */,
+				DEF8307D2AE5FF9500268370 /* NBAsYouTypeFormatter.m */,
+				DEF8307E2AE5FF9500268370 /* NBPhoneMetaData.m */,
+				DEF8307F2AE5FF9500268370 /* NBPhoneNumberUtil.m */,
+				DEF830802AE5FF9500268370 /* NSArray+NBAdditions.m */,
+				DEF830812AE5FF9500268370 /* NBMetadataHelper.h */,
+				DEF830822AE5FF9500268370 /* NBPhoneNumberDefines.h */,
+				DEF830832AE5FF9500268370 /* Internal */,
+				DEF830882AE5FF9500268370 /* GeneratePhoneNumberHeader.sh */,
+				DEF830892AE5FF9500268370 /* NBNumberFormat.m */,
+				DEF8308A2AE5FF9500268370 /* NBPhoneNumberDesc.h */,
+				DEF8308B2AE5FF9500268370 /* NBPhoneNumberUtil+ShortNumber.m */,
+				DEF8308C2AE5FF9500268370 /* NBAsYouTypeFormatter.h */,
+				DEF8308D2AE5FF9500268370 /* NBPhoneNumber.m */,
+				DEF8308E2AE5FF9500268370 /* NBPhoneMetaData.h */,
+				DEF8308F2AE5FF9500268370 /* NBMetadataHelper.m */,
+				DEF830902AE5FF9500268370 /* NSArray+NBAdditions.h */,
+				DEF830912AE5FF9500268370 /* NBPhoneNumberUtil.h */,
+				DEF830922AE5FF9500268370 /* NBPhoneNumberMetadata.plist */,
+				DEF830932AE5FF9500268370 /* NBGeneratedPhoneNumberMetaData.h */,
+				DEF830942AE5FF9500268370 /* NBPhoneNumberUtil+ShortNumber.h */,
+				DEF830952AE5FF9500268370 /* NBPhoneNumberDesc.m */,
+				DEF830962AE5FF9500268370 /* NBNumberFormat.h */,
+				DEF830972AE5FF9500268370 /* NBPhoneNumberDefines.m */,
+			);
+			path = libPhoneNumber;
+			sourceTree = "<group>";
+		};
+		DEF830832AE5FF9500268370 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				DEF830842AE5FF9500268370 /* NBRegExMatcher.h */,
+				DEF830852AE5FF9500268370 /* NBRegularExpressionCache.h */,
+				DEF830862AE5FF9500268370 /* NBRegExMatcher.m */,
+				DEF830872AE5FF9500268370 /* NBRegularExpressionCache.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		DEF830982AE5FF9500268370 /* FPNCountryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DEF830992AE5FF9500268370 /* FPNNibLoadingView.swift */,
+				DEF8309A2AE5FF9500268370 /* FPNCountryPicker.swift */,
+				DEF8309B2AE5FF9500268370 /* FPNCountryView.swift */,
+			);
+			path = FPNCountryPicker;
+			sourceTree = "<group>";
+		};
+		DEF8309D2AE5FF9500268370 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DEF8309E2AE5FF9500268370 /* FPNFormat.swift */,
+				DEF8309F2AE5FF9600268370 /* Bundle+Extension.swift */,
+				DEF830A02AE5FF9600268370 /* FPNCountryCode.swift */,
+				DEF830A12AE5FF9600268370 /* FPNTextFieldDelegate.swift */,
+				DEF830A22AE5FF9600268370 /* FPNOBJCCountryKey.swift */,
+				DEF830A32AE5FF9600268370 /* FPNUtils.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FCC4DD232A93FDF800185168 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,14 +917,19 @@
 			files = (
 				FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */,
 				DEB44E592AAFD7390006887A /* tripleSpinner.json in Resources */,
+				DEF830A92AE5FFAA00268370 /* countryCodes.json in Resources */,
+				DEF830A82AE5FFAA00268370 /* FPNCountryView.xib in Resources */,
 				DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */,
+				DEF830B62AE5FFAA00268370 /* NBPhoneNumberMetadata.plist in Resources */,
 				DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */,
 				DEA21FF72AB3DB25007D1C3A /* radio.json in Resources */,
 				DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */,
 				DE4D57812AA6B715008E2B6B /* gradientCheck.json in Resources */,
 				DEC9A4F52A93ED96000DBE39 /* Sofia Pro Light Az.otf in Resources */,
+				DEF830AA2AE5FFAA00268370 /* FlagKit.xcassets in Resources */,
 				DEC9A4F82A93ED96000DBE39 /* Sofia Pro Bold Az.otf in Resources */,
 				DE6643A32AA56D2500DA27BE /* splash.mp4 in Resources */,
+				DEF830B12AE5FFAA00268370 /* GeneratePhoneNumberHeader.sh in Resources */,
 				DEC9A4F62A93ED96000DBE39 /* Sofia Pro Medium Az.otf in Resources */,
 				DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */,
 				DEB44E382AAE5F070006887A /* FlagKit.xcassets in Resources */,
@@ -818,6 +991,8 @@
 			files = (
 				DED14C3D2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift in Sources */,
 				DEB44E532AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift in Sources */,
+				DEF830A52AE5FFAA00268370 /* FPNCountryListViewController.swift in Sources */,
+				DEF830AB2AE5FFAA00268370 /* NBAsYouTypeFormatter.m in Sources */,
 				DE0E20432A9BE9040067C719 /* ConnectViewController.swift in Sources */,
 				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
 				DED14C312ABFD5DE00E3E88D /* PaymentHistoryViewController.swift in Sources */,
@@ -831,6 +1006,7 @@
 				DED14C332ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift in Sources */,
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */,
+				DEF830C02AE5FFAA00268370 /* FPNOBJCCountryKey.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
 				DE80EF802AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift in Sources */,
 				DE66439A2AA56A4800DA27BE /* SplashViewController+Views.swift in Sources */,
@@ -845,7 +1021,9 @@
 				DE4D57AE2AA90522008E2B6B /* OpenOrderMenuViewController+Views.swift in Sources */,
 				DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */,
 				DE4D57922AA77A4B008E2B6B /* SettingsViewController+Views.swift in Sources */,
+				DEF830BC2AE5FFAA00268370 /* FPNFormat.swift in Sources */,
 				DEB44E552AAFB26E0006887A /* MyBrokersHeader.swift in Sources */,
+				DEF830B52AE5FFAA00268370 /* NBMetadataHelper.m in Sources */,
 				DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */,
 				DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
@@ -857,14 +1035,19 @@
 				DE2C18982ACCF75600CB509A /* AddTraderViewController+Views.swift in Sources */,
 				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
 				DEB44E512AAFB1EC0006887A /* MyConnectedBrokerAccountViewController.swift in Sources */,
+				DEF830B22AE5FFAA00268370 /* NBNumberFormat.m in Sources */,
 				DEB44E572AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift in Sources */,
 				DEB44E4E2AAFADE10006887A /* ConnectBrokerTableViewCell.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */,
+				DEF830BD2AE5FFAA00268370 /* Bundle+Extension.swift in Sources */,
 				DE76E6FA2AD78BC800FC11B8 /* SetMyFXBookLinkViewController.swift in Sources */,
 				DEC9A4E02A93EACD000DBE39 /* PickOptionViewController.swift in Sources */,
+				DEF830AF2AE5FFAA00268370 /* NBRegExMatcher.m in Sources */,
 				DED14C392AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift in Sources */,
+				DEF830AC2AE5FFAA00268370 /* NBPhoneMetaData.m in Sources */,
+				DEF830B02AE5FFAA00268370 /* NBRegularExpressionCache.m in Sources */,
 				DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */,
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */,
@@ -874,7 +1057,9 @@
 				DED14C3B2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift in Sources */,
 				FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */,
 				DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */,
+				DEF830BB2AE5FFAA00268370 /* FPNCountryView.swift in Sources */,
 				DE4D57B32AA9086E008E2B6B /* PendingOrderMenuViewController.swift in Sources */,
+				DEF830C12AE5FFAA00268370 /* FPNUtils.swift in Sources */,
 				DE4D578D2AA6E164008E2B6B /* ModifyPendingOrderViewController+Views.swift in Sources */,
 				DE4D57AC2AA9051A008E2B6B /* OpenOrderMenuViewController.swift in Sources */,
 				DE4D579E2AA77D0E008E2B6B /* SettingsSwitchImageTableViewCell.swift in Sources */,
@@ -885,7 +1070,9 @@
 				DE80EF862AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift in Sources */,
 				DE410C8B2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift in Sources */,
 				FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */,
+				DEF830AD2AE5FFAA00268370 /* NBPhoneNumberUtil.m in Sources */,
 				DE4D57A42AA82B11008E2B6B /* UpgradeAccountButton.swift in Sources */,
+				DEF830A62AE5FFAA00268370 /* FPNTextField.swift in Sources */,
 				DEC9A4DD2A93EA75000DBE39 /* EmptyStateView.swift in Sources */,
 				DE410C9D2AB35B9500F1F24F /* ChartsLineGraphView.swift in Sources */,
 				DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */,
@@ -895,24 +1082,35 @@
 				DEB44E3B2AAE69AD0006887A /* CloseOrderViewController.swift in Sources */,
 				FC14F8F32AB4F0BD006D02DC /* User.swift in Sources */,
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
+				DEF830B32AE5FFAA00268370 /* NBPhoneNumberUtil+ShortNumber.m in Sources */,
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,
 				DE2C18962ACCF74B00CB509A /* AddTraderViewController.swift in Sources */,
 				DED14C352ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift in Sources */,
+				DEF830BA2AE5FFAA00268370 /* FPNCountryPicker.swift in Sources */,
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DE4D57942AA77BD2008E2B6B /* ProfileImageTableViewCell.swift in Sources */,
+				DEF830AE2AE5FFAA00268370 /* NSArray+NBAdditions.m in Sources */,
 				DE410C902AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
+				DEF830B82AE5FFAA00268370 /* NBPhoneNumberDefines.m in Sources */,
 				DE4D57902AA77A44008E2B6B /* SettingsViewController.swift in Sources */,
+				DEF830BF2AE5FFAA00268370 /* FPNTextFieldDelegate.swift in Sources */,
 				DEC9A4DB2A93EA3D000DBE39 /* Extensions.swift in Sources */,
 				DED14C372AC09ED400E3E88D /* SubscriberCountTableViewCell.swift in Sources */,
+				DEF830B72AE5FFAA00268370 /* NBPhoneNumberDesc.m in Sources */,
 				DEB44E472AAEB9720006887A /* OrderHistoryViewController+Views.swift in Sources */,
+				DEF830BE2AE5FFAA00268370 /* FPNCountryCode.swift in Sources */,
 				DE2C18942ACC581A00CB509A /* MyTradersViewController+Views.swift in Sources */,
 				DE410CA32AB3609400F1F24F /* UpdatedCandleStickChart.swift in Sources */,
 				DEB44E422AAE6AD70006887A /* CancelPendingOrderViewController+Views.swift in Sources */,
+				DEF830B42AE5FFAA00268370 /* NBPhoneNumber.m in Sources */,
 				DE6643982AA56A4000DA27BE /* SplashViewController.swift in Sources */,
+				DEF830B92AE5FFAA00268370 /* FPNNibLoadingView.swift in Sources */,
+				DEF830A72AE5FFAA00268370 /* FPNCountryRepository.swift in Sources */,
 				DE4D57B02AA905EB008E2B6B /* OptionsView.swift in Sources */,
 				DE4D579A2AA77C24008E2B6B /* LogoutTableViewCell.swift in Sources */,
+				DEF830C22AE5FFAA00268370 /* FPNCountry.swift in Sources */,
 				DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */,
 				DE6E44002A9D9D5700C76B71 /* NewNotificationViewController+Views.swift in Sources */,
 				DE66439E2AA56CD400DA27BE /* CustomVisualEffectView.swift in Sources */,

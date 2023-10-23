@@ -12,7 +12,7 @@
 //  Created by Stephen Mata on 8/21/23.
 //
 
-import FlagPhoneNumber
+//import FlagPhoneNumber
 import StreamChat
 import UIKit
 import PhotoCircleCrop
@@ -43,6 +43,7 @@ class SetupAccountViewController: UIViewController {
     var joinDescriptionLabel = UILabel()
     var emailContainerView = UIView()
     var phoneNumberTextField = FPNTextField()
+    let accessoryContainer = UIView()
     
     var passwordContainer = UIView()
     var codeTextField = OneTimeCodeTextField()
@@ -75,16 +76,74 @@ class SetupAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUsersRegion()
         setupViews()
         setupTransition()
         self.perform(#selector(animateFirstProgress), with: self, afterDelay: 0.5)
     }
+    
+    func getUsersRegion() {
+        // Get the user's current locale
+        let userLocale = Locale.current
+        let demoSpecificRegion = false
 
+        // Extract the country code from the user's locale
+        if let countryCode = userLocale.region?.identifier {
+            if demoSpecificRegion {
+                if #available(iOS 16, *) {
+                    let region = Locale.Region.brazil.identifier
+                    
+                    // Convert the country code to an integer
+                    if let country = FPNCountryCode(rawValue: region) {
+                        // Set the flag using the country code
+                        //print("\(country) 🤓🤓🤓")
+                        print("doing this 🫦🫦🫦 000")
+                        //usersCountry = country
+                        phoneNumberTextField.setFlag(countryCode: country)
+                    } else {
+                        // Handle the case where the user's locale doesn't provide a valid country code
+                        print("doing this 🫦🫦🫦 222")
+                    }
+                } else {
+                    // Fallback on earlier versions
+                    print("doing this 🫦🫦🫦 111")
+                }
+            } else {
+                if let country = FPNCountryCode(rawValue: countryCode) {
+                    // Set the flag using the country code
+                    //print("\(country) 🤓🤓🤓")
+                    //usersCountry = country
+                    phoneNumberTextField.setFlag(countryCode: country)
+                } else {
+                    // Handle the case where the user's locale doesn't provide a valid country code
+                }
+            }
+        } else {
+            // Handle the case where the user's locale doesn't provide a country code
+        }
+    }
+
+}
+
+//MARK: TEXTFIELD DELEGATE
+
+extension SetupAccountViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 2 {
+            phoneNumberTextField.inputAccessoryView = accessoryContainer
+        }
+    }
 }
 
 //MARK: FLAG DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
 
-extension SetupAccountViewController: FPNTextFieldDelegate {
+extension SetupAccountViewController: FPNTextFieldDelegate, FPNTextFieldDelegateTwo {
+    func didDismissCountries() {
+        print("did this 🤡🤡🤡")
+        self.phoneNumberTextField.becomeFirstResponder()
+        self.phoneNumberTextField.inputAccessoryView = accessoryContainer
+    }
+    
     func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
         print(name, dialCode, code)
     }
