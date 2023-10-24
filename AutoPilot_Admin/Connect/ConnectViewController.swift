@@ -169,7 +169,7 @@ class ConnectViewController: UIViewController {
             }
             
             do {
-                let id = try ChannelId(cid: "gaming:MainSuperGroup")
+                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!)")
                 let channelController = ChatClient.shared.channelController(for: id)
                 
                 channelController.synchronize { error in
@@ -323,7 +323,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             do {
-                let id = try ChannelId(cid: "gaming:MainSuperGroup")
+                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!)")
                 let channelVC = CustomChatChannelVC()
                 channelVC.chatChannelDelegate = self
                 channelVC.channelController = ChatClient.shared.channelController(for: id)
