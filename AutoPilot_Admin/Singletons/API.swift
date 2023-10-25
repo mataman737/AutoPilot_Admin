@@ -24,8 +24,8 @@ class API: NSObject {
         #endif
     }
     
-    static let serverUrl = isTestEnvironment ? "http://afd0806fd43fa970f.awsglobalaccelerator.com/" : "http://afd0806fd43fa970f.awsglobalaccelerator.com/" // "http://localhost:8080/" // "https://api.lynkapp.co/"
-    static let tradingUrl = isTestEnvironment ? "http://ab1b9cff49db78aad.awsglobalaccelerator.com/" : "http://ab1b9cff49db78aad.awsglobalaccelerator.com/"
+    static let serverUrl = isTestEnvironment ? "https://smarttradeapi.com/" : "https://smarttradeapi.com/" // "http://localhost:8080/" // "https://api.lynkapp.co/"
+    static let tradingUrl = isTestEnvironment ? "https://smarttradeterminal.com/" : "https://smarttradeterminal.com/" //"http://localhost:5000/"
     
     func performRequest<T: Codable>(endpoint: String, method: String, authenticated: Bool = true, object: T?, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
         guard let url = URL(string: API.serverUrl + endpoint) else {
@@ -77,8 +77,62 @@ class API: NSObject {
         task.resume()
     }
     
+    func performTradingRequest<T: Codable>(endpoint: String, method: String, authenticated: Bool = true, object: T?, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        guard let url = URL(string: API.tradingUrl + endpoint) else {
+            print("error generating url")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = method
+        //HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("*/*", forHTTPHeaderField: "Accept")
+        if authenticated {
+            request.addAuthTokens()
+        }
+        
+        if let object = object {
+            do {
+                let encoder = JSONEncoder()
+                encoder.dateEncodingStrategy = .iso8601
+                let data = try encoder.encode(object)
+                request.httpBody = data
+            } catch {
+                print(error)
+                completionHandler(nil, nil, error)
+            }
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(nil, response, error)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                if httpStatus.statusCode == 401 && authenticated {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.setWelcomeScreenAsRoot()
+                    }
+                }
+                completionHandler(data, response, error)
+                return
+            }
+            
+            completionHandler(data, response, error)
+        }
+        task.resume()
+    }
+    
     func performRequest(endpoint: String, method: String, authenticated: Bool = true, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
         return performRequest(endpoint: endpoint, method: method, object: Object.Nil, completionHandler: completionHandler)
+    }
+    
+    func performTradingRequest(endpoint: String, method: String, authenticated: Bool = true, completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        return performTradingRequest(endpoint: endpoint, method: method, object: Object.Nil, completionHandler: completionHandler)
     }
     
     func setWelcomeScreenAsRoot() {
@@ -291,7 +345,7 @@ class API: NSObject {
     
     func postForexSignal(signal: SignalRequest, completionHandler: @escaping (Bool, Signal?, Error?) -> ()) {
         print(signal)
-        performRequest(endpoint: "api/admin/signals", method: "POST", authenticated: true, object: signal) { (data, response, error) in
+        performTradingRequest(endpoint: "signal", method: "POST", authenticated: true, object: signal) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
                 completionHandler(false, nil, error)
