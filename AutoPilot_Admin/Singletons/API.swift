@@ -754,7 +754,9 @@ class API: NSObject {
             }
             
             do {
-                let orders = try JSONDecoder().decode([MTInstantTradeStatus].self, from: data)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let orders = try decoder.decode([MTInstantTradeStatus].self, from: data)
                 
                 completionHandler(true, orders, nil)
             } catch {
@@ -799,7 +801,9 @@ class API: NSObject {
             }
             
             do {
-                let orders = try JSONDecoder().decode([MTInstantTradeStatus].self, from: data)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let orders = try decoder.decode([MTInstantTradeStatus].self, from: data)
                 
                 completionHandler(true, orders, nil)
             } catch {
