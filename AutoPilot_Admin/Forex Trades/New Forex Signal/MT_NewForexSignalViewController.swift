@@ -13,7 +13,7 @@ import Network
 
 protocol MT_NewForexSignalViewControllerDelegate: AnyObject {
     //func didPostNewManualInstantTrade()
-    func didCreateForexSignal(signal: Signal)
+    func didCreateForexSignal()
     func showNotiLoading()
 }
 
@@ -762,7 +762,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                 return
             }
             
-            guard success, var signal = signal else {
+            guard success else {
                 print("error posting signal")
                 
                 DispatchQueue.main.async { [weak self] in
@@ -779,7 +779,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                 print("posted a signal! 😸😸😸 333")
                 self?.delegate?.showNotiLoading()
                 //self?.perform(#selector(self?.broadcastSuccessDelay), with: self, afterDelay: 0.5)
-                self?.delegate?.didCreateForexSignal(signal: signal)
+                self?.delegate?.didCreateForexSignal()
                 
                 print("posted a signal! 🍗🍗🍗 444")
                 

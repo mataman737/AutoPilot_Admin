@@ -607,7 +607,7 @@ extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
         self.loadingContainer.isHidden = false
     }
     
-    func didCreateForexSignal(signal: Signal) {
+    func didCreateForexSignal() {
         //getForex()
         print("did this 🤞🤞🤞")
     }
