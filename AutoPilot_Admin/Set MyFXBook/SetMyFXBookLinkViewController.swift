@@ -86,7 +86,43 @@ extension SetMyFXBookLinkViewController: UITextFieldDelegate {
         if isValidURL(myFXBookString) {
             print("Valid URL")
             
-            //DYLAN, SAVE MYFXBOOK LINK HERE
+            guard var team = self.team else {
+                print("did this 🫦🫦🫦 000")
+                return
+            }
+            
+            team.fxBook = myFXBookString
+            API.sharedInstance.updateTeamFXBook(team: team) { success, team, error in
+                guard error == nil else {
+                    DispatchQueue.main.async {
+                        let toastNoti = ToastNotificationView()
+                        toastNoti.present(withMessage: "Code not saved!")
+                        self.errorImpactGenerator()
+                        self.spinner.isHidden = true
+                        self.spinner.alpha = 0
+                    }
+                    
+                    return
+                }
+                
+                guard success, let team = team else {
+                    DispatchQueue.main.async {
+                        let toastNoti = ToastNotificationView()
+                        toastNoti.present(withMessage: "Code not saved!")
+                        self.errorImpactGenerator()
+                        self.spinner.isHidden = true
+                        self.spinner.alpha = 0
+                    }
+                    return
+                }
+                
+                DispatchQueue.main.async { [weak self] in
+                    self?.didSetAccessCode.set(true, forKey: "didSetAccessCode")
+                    self?.delegate?.didUpdateAccessCode()
+                    self?.successImpactGenerator()
+                    self?.dismissViews()
+                }
+            }
             
         } else {
             print("Invalid URL")

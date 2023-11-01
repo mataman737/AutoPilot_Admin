@@ -13,5 +13,6 @@ struct Team: Codable {
     var name: String
     var photo: String?
     var accessCode: String?
+    var fxBook: String?
     var created: Date
 }

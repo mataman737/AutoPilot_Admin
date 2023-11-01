@@ -485,6 +485,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     @objc func didTapMyFXBook() {
         lightImpactGenerator()
         let updateAccessCodeVC = SetMyFXBookLinkViewController()
+        updateAccessCodeVC.team = self.team
         //updateAccessCodeVC.delegate = self
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)

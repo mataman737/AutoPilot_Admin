@@ -257,6 +257,26 @@ class API: NSObject {
         }
     }
     
+    func updateTeamFXBook(team: Team, completionHandler: @escaping (Bool, Team?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/fxbook", method: "PUT", authenticated: true, object: team) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let team = try decoder.decode(Team.self, from: data)
+                
+                completionHandler(true, team, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func getMTServers(completionHandler: @escaping (Bool, [MTServerBroker]?, Error?) -> ()) {
         performRequest(endpoint: "mtservers", method: "GET", authenticated: true) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
