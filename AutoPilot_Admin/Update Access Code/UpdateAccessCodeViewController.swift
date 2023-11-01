@@ -82,7 +82,7 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
         }
         
         team.accessCode = accessCode
-        API.sharedInstance.updateTeam(team: team) { success, team, error in
+        API.sharedInstance.updateTeamAccessCode(team: team) { success, team, error in
             guard error == nil else {
                 DispatchQueue.main.async {
                     let toastNoti = ToastNotificationView()
