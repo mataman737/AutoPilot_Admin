@@ -85,7 +85,7 @@ class MyForexTradesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         edgesForExtendedLayout = UIRectEdge.all
         extendedLayoutIncludesOpaqueBars = true
-        getAccounts()
+        //getAccounts()
 
         playerLoop.play()
         loadingLottie.play()
@@ -108,13 +108,14 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                //print("\(accounts.count) 👽👽👽")
                 self?.brokers = accounts
                 self?.updateOnboardingRows()
-                if accounts.count > 0 {
+                print("\(accounts.count) 👽👽👽 \(self?.onboardingCompleted)")
+                if accounts.count > 0 && self?.onboardingCompleted == true {
                     self?.getOpenOrders()
                     self?.getClosedOrders()
                 } else {
+                    print("plooop")
                     self?.hideLoader()
                 }
                 self?.mainFeedTableView.reloadData()
@@ -137,6 +138,7 @@ class MyForexTradesViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.team = team
                 self?.updateOnboardingRows()
+                self?.getAccounts()
             }
         }
     }
@@ -832,8 +834,10 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
         
         
         if teamName != nil && teamAccessCode != nil && brokers.count > 0 {
-            adminOnboardingView.isHidden = true
-            onboardingCompleted = true
+            //adminOnboardingView.isHidden = true
+            //onboardingCompleted = true
+        } else {
+            adminOnboardingView.isHidden = false
         }
         
     }

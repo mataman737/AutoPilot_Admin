@@ -28,7 +28,7 @@
         <!--Community-->
         <scene sceneID="g0f-6d-VIJ">
             <objects>
-                <viewController storyboardIdentifier="ConnectViewController" id="2uh-bh-dpy" customClass="ConnectViewController" customModule="AutoPilot_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommunityViewController" id="2uh-bh-dpy" customClass="CommunityViewController" customModule="AutoPilot_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Usg-Ub-qpS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

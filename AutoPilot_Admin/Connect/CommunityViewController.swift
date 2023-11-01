@@ -1,5 +1,5 @@
 //
-//  ConnectViewController.swift
+//  CommunityViewController.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 8/27/23.
@@ -10,7 +10,7 @@ import StreamChat
 import StreamChatUI
 import Lottie
 
-class ConnectViewController: UIViewController {
+class CommunityViewController: UIViewController {
     
     var loadingContainer = UIView()
     var loadingLottie = LottieAnimationView()
@@ -201,7 +201,7 @@ class ConnectViewController: UIViewController {
 
 //MARK ACTIONS
 
-extension ConnectViewController {
+extension CommunityViewController {
     @objc func didTapNotiBell() {
         lightImpactGenerator()
         let newNotiVC = NewNotificationViewController()
@@ -211,7 +211,7 @@ extension ConnectViewController {
 
 //MARK: TABLEVIEW DELEGATE & DATASOURCE
 
-extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
+extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -361,7 +361,7 @@ extension ConnectViewController: UITableViewDelegate, UITableViewDataSource {
 
 //GENERATE RANDOM NAMES
 
-extension ConnectViewController {
+extension CommunityViewController {
     func generateRandomFullName() -> String {
         let firstNames = ["John", "Emma", "Liam", "Olivia", "Noah", "Ava", "William", "Sophia", "James", "Isabella"]
         let lastNames = ["Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor"]
@@ -413,7 +413,7 @@ extension ConnectViewController {
 
 //MARK: CUSTOM CHAT DELEGATE
 
-extension ConnectViewController: CustomChatChannelVCDelegate {
+extension CommunityViewController: CustomChatChannelVCDelegate {
     func didCloseChannel() {
         getUnreadCount()
     }

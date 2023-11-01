@@ -1,5 +1,5 @@
 //
-//  ConnectViewController+Views.swift
+//  CommunityViewController+Views.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 8/27/23.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Lottie
 
-extension ConnectViewController {
+extension CommunityViewController {
     
     func modifyConstraints() {
         
