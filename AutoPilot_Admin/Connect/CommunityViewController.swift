@@ -48,7 +48,7 @@ class CommunityViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         ChatClient.loginUser { error in
-            print("🤌🤌🤌 111")
+            //print("🤌🤌🤌 111")
             guard error == nil else {
                 //print(error!)
                 print("\(error!) 🤌🤌🤌 222")
@@ -161,6 +161,7 @@ class CommunityViewController: UIViewController {
         }
     }
     
+    /*
     func getUnreadCount() {
         ChatClient.loginUser { error in
             guard error == nil else {
@@ -190,6 +191,45 @@ class CommunityViewController: UIViewController {
                     DispatchQueue.main.async { [weak self] in
                         //self?.updateUI() // Call the updateUI function to refresh the collection view
                         self?.mainfeedTableView.reloadData()
+                    }
+                }
+            } catch {
+                print("\(error) 🐔🐔🐔") // Print the error if an exception occurs while fetching the channel ID
+            }
+        }
+    }
+    */
+    
+    func getUnreadCount() {
+        ChatClient.loginUser { error in
+            guard error == nil else {
+                print(error!) // Print the error if login fails
+                return
+            }
+            
+            do {
+                //let id = try ChannelId(cid: "gaming:team\(User.current.teamId!.uuidString)")
+                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!)")
+                let channelController = ChatClient.shared.channelController(for: id)
+                
+                channelController.synchronize { error in
+                    guard error == nil else {
+                        return // Skip to the next channel if synchronization fails
+                    }
+                    
+                    if let unreadCount = channelController.channel?.unreadCount.messages {
+                        //self.supergroupUnreadCount = unreadCount
+                        print("📬📬📬 000 : \(unreadCount)")
+                        var messageString = unreadCount == 1 ? "new message" : "new messages"
+                        //self.myTraderDetailLabel.text = "\(unreadCount) \(messageString)"//unreadCount == 1 ? "\(unreadCount) new message" : "\(unreadCount) new messages"
+                    } else {
+                        print("📬📬📬 111")
+                    }
+                    
+                    // Update UI on the main thread
+                    DispatchQueue.main.async { [weak self] in
+                        //self?.updateUI()
+                        print("📬📬📬 333 : \(channelController.channel?.unreadCount.messages)")
                     }
                 }
             } catch {

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SetMyFXBookLinkViewControllerDelegate: AnyObject {
-    func didUpdateAccessCode()
+    func didUpdateMyFXBookLink()
 }
 
 class SetMyFXBookLinkViewController: UIViewController {
@@ -21,7 +21,7 @@ class SetMyFXBookLinkViewController: UIViewController {
     var downButton = UIButton()
     var myFXBookTextContainer = UIView()
     var myFXBookLinkTextField = UITextField()
-    var didSetAccessCode = UserDefaults()
+    var didSetMyFXBookLink = UserDefaults()
     var spinner = UIActivityIndicatorView(style: .medium)
     var team: Team?
     
@@ -67,6 +67,7 @@ extension SetMyFXBookLinkViewController {
 
 extension SetMyFXBookLinkViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("doing this 🧠🧠🧠 \(self.team)")
         if textField.text != "" {
             if let tft = textField.text {
                 submitMyFXBookLink(myFXBookString: tft)
@@ -117,8 +118,8 @@ extension SetMyFXBookLinkViewController: UITextFieldDelegate {
                 }
                 
                 DispatchQueue.main.async { [weak self] in
-                    self?.didSetAccessCode.set(true, forKey: "didSetAccessCode")
-                    self?.delegate?.didUpdateAccessCode()
+                    self?.didSetMyFXBookLink.set(true, forKey: "didSetMyFXBookLink")
+                    self?.delegate?.didUpdateMyFXBookLink()
                     self?.successImpactGenerator()
                     self?.dismissViews()
                 }

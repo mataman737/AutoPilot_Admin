@@ -51,6 +51,10 @@ class MyForexTradesViewController: UIViewController {
         return team?.name
     }
     
+    var teamMyFxBookLink: String? {
+        return team?.fxBook
+    }
+    
     //Video & Audio
     var player = AVPlayer()
     var playerLoop = AVPlayer()
@@ -114,8 +118,7 @@ class MyForexTradesViewController: UIViewController {
                 if accounts.count > 0 && self?.onboardingCompleted == true {
                     self?.getOpenOrders()
                     self?.getClosedOrders()
-                } else {
-                    print("plooop")
+                } else {                    
                     self?.hideLoader()
                 }
                 self?.mainFeedTableView.reloadData()
@@ -291,6 +294,7 @@ extension MyForexTradesViewController {
     @objc func didTapMyFXBook() {
         lightImpactGenerator()
         let updateAccessCodeVC = SetMyFXBookLinkViewController()
+        updateAccessCodeVC.team = self.team
         //updateAccessCodeVC.delegate = self
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
@@ -804,6 +808,17 @@ extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate 
     }
 }
 
+//MARK: CLOSE ORDER DELEGATE
+
+extension MyForexTradesViewController: SetMyFXBookLinkViewControllerDelegate {
+    func didUpdateMyFXBookLink() {
+        //updateOnboardingRows()
+        getCurrentTeam()
+    }
+    
+    
+}
+
 //MARK: UPDATE TEAM NAME PHOTO DELEGATE, UPDATE ACCESS CODE DELEGATE
 
 extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDelegate, UpdateAccessCodeViewControllerDelegate {
@@ -830,12 +845,16 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
             adminOnboardingView.accessCodeImageView.image = UIImage(named: "onboardingGreenBubble")
         }
         
-        print("\(brokers.count) 😓😓😓")
+        if teamMyFxBookLink != nil {
+            adminOnboardingView.connectMyFXBookImageView.image = UIImage(named: "onboardingGreenBubble")
+        }
+        
+        print("\(brokers.count) 😓😓😓 \(teamMyFxBookLink)")
         
         
-        if teamName != nil && teamAccessCode != nil && brokers.count > 0 {
-            //adminOnboardingView.isHidden = true
-            //onboardingCompleted = true
+        if teamName != nil && teamAccessCode != nil && teamMyFxBookLink != nil && brokers.count > 0 {
+            adminOnboardingView.isHidden = true
+            onboardingCompleted = true
         } else {
             adminOnboardingView.isHidden = false
         }

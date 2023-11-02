@@ -74,7 +74,7 @@ extension SetMyFXBookLinkViewController {
         myFXBookTextContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 58)).isActive = true
                 
         if team?.accessCode != nil {
-            myFXBookLinkTextField.text = team?.accessCode
+            myFXBookLinkTextField.text = team?.fxBook
         }
         myFXBookLinkTextField.becomeFirstResponder()
         myFXBookLinkTextField.autocapitalizationType = .none
