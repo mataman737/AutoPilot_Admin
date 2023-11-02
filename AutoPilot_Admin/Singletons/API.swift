@@ -391,16 +391,16 @@ class API: NSObject {
                 completionHandler(false, nil, error)
                 return
             }
-            do {
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                let signal = try decoder.decode(Signal.self, from: data)
+//            do {
+//                let decoder = JSONDecoder()
+//                decoder.dateDecodingStrategy = .iso8601
+//                let signal = try decoder.decode(Signal.self, from: data)
                 
-                completionHandler(true, signal, nil)
-            } catch {
-                print(error)
-                completionHandler(false, nil, error)
-            }
+                completionHandler(true, nil, nil)
+//            } catch {
+//                print(error)
+//                completionHandler(false, nil, error)
+//            }
         }
     }
     

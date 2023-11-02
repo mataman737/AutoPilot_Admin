@@ -747,7 +747,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
         
         print("posted a signal! \(isInTestMode) 😸😸😸 \(forexSignal)")
                 
-        API.sharedInstance.postForexSignal(signal: forexSignal) { success, signal, error in
+        API.sharedInstance.postForexSignal(signal: forexSignal) { success, _, error in
             
             guard error == nil else {
                 print("\(error!) 😸😸😸 222")
