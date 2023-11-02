@@ -84,6 +84,8 @@ extension SetMyFXBookLinkViewController: UITextFieldDelegate {
     
     
     func submitMyFXBookLink(myFXBookString: String) {
+        spinner.isHidden = false
+        spinner.alpha = 1.0
         if isValidURL(myFXBookString) {
             print("Valid URL")
             
