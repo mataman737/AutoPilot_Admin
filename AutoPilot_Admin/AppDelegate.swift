@@ -79,7 +79,7 @@ extension ChatClient {
         }
         
         
-        ChatClient.shared.connectUser(userInfo: .init(id: Admin.current.id!.uuidString.uppercased(), name: Admin.current.displayName, imageURL: URL(string: Admin.current.profilePhotoUrl ?? "")), tokenProvider: tokenProvider) { error in
+        ChatClient.shared.connectUser(userInfo: .init(id: "admin\(Admin.current.id!.uuidString.uppercased())", name: Admin.current.displayName, imageURL: URL(string: Admin.current.profilePhotoUrl ?? "")), tokenProvider: tokenProvider) { error in
             if error == nil {
                 ChatClient.loggedIn = true
             }
