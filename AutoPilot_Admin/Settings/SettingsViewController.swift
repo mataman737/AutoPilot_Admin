@@ -486,7 +486,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         lightImpactGenerator()
         let updateAccessCodeVC = SetMyFXBookLinkViewController()
         updateAccessCodeVC.team = self.team
-        //updateAccessCodeVC.delegate = self
+        updateAccessCodeVC.delegate = self
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
     }
@@ -569,6 +569,12 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true)
     }
     
+}
+
+extension SettingsViewController: SetMyFXBookLinkViewControllerDelegate {
+    func didUpdateMyFXBookLink() {
+        getCurrentTeam()
+    }
 }
 
 //MARK: TABLEVIEW DELEGATE & DATASOURCE ------------------------------------------------------------------------------------------------------------------------------------

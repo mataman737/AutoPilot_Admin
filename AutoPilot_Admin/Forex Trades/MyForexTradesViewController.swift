@@ -295,7 +295,7 @@ extension MyForexTradesViewController {
         lightImpactGenerator()
         let updateAccessCodeVC = SetMyFXBookLinkViewController()
         updateAccessCodeVC.team = self.team
-        //updateAccessCodeVC.delegate = self
+        updateAccessCodeVC.delegate = self
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
     }
@@ -844,6 +844,8 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
         if teamAccessCode != nil {
             adminOnboardingView.accessCodeImageView.image = UIImage(named: "onboardingGreenBubble")
         }
+        
+        print(teamMyFxBookLink)
         
         if teamMyFxBookLink != nil {
             adminOnboardingView.connectMyFXBookImageView.image = UIImage(named: "onboardingGreenBubble")
