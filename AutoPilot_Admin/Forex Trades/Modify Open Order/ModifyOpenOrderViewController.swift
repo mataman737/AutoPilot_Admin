@@ -312,7 +312,7 @@ extension ModifyOpenOrderViewController: SwipeConfirmViewDelegate {
         } else {
             placedInstantTrade = true
             let signalOrderTypeSelected = "POSITION_MODIFY"
-            let backofficeSignal = InstantTrade(orderId: forexSignal.instantTrade?.orderId, positionId: forexSignal.instantTrade?.orderId, signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: nil, orderType: signalOrderTypeSelected, lotSize: nil, entryPrice: nil, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
+            let backofficeSignal = InstantTrade(orderId: forexSignal.instantTrade?.orderId, positionId: forexSignal.instantTrade?.orderId, signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: nil, orderType: signalOrderTypeSelected, lotSize: nil, entryPrice: self.forexSignal.instantTrade?.entryPrice, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
             
             //print("\(signalOrderTypeSelected) 🔥🔥🔥 \(signalOrderType) 🔥🔥🔥")
             
