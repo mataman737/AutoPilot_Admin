@@ -68,9 +68,11 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
 
         let signal = orders[indexPath.row]
         
+        /*
         if let tradingPairZero = signal.order?.symbol {
             cell.currencyPairLabel.text = tradingPairZero.removePeriodsAndDashes()
         }
+        */
         
         cell.entryPriceLabel.text = "entry price"
         
@@ -133,6 +135,16 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
                 cell.signalTimeLabel.text = formattedDate
             } else {
                 cell.signalTimeLabel.text = "Invalid date time"
+            }
+        }
+        
+        if let tradingPairZero = signal.order?.symbol {
+            print("😨😨😨 \(tradingPairZero) 😨😨😨")
+            if tradingPairZero != "" {
+                cell.currencyPairLabel.text = tradingPairZero
+            } else {
+                cell.currencyPairLabel.text = "Deposit"
+                cell.orderTypeLabel.text = "+"
             }
         }
     }

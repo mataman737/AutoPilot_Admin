@@ -189,17 +189,17 @@ extension ModifyOpenOrderViewController {
 extension ModifyOpenOrderViewController: UITextFieldDelegate {
     
     internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newText = textField.text!.replacingCharacters(in: Range(range, in: textField.text!)!, with: string)
-        if let range = newText.range(of: ".") {
-            let phone = newText[range.upperBound...]
-            if phone.count == 3 {
-                return false
-            }
-        }
-        let valueZero = Float("\(newText)")
-        let multiplier = (valueZero ?? 0) * 10.0
-        let roundedValue = round(multiplier * 100) / 100.0
-        self.lotSizeUSDLabel.text = "$\(roundedValue)0 per PIP"
+//        let newText = textField.text!.replacingCharacters(in: Range(range, in: textField.text!)!, with: string)
+//        if let range = newText.range(of: ".") {
+//            let phone = newText[range.upperBound...]
+//            if phone.count == 3 {
+//                return false
+//            }
+//        }
+//        let valueZero = Float("\(newText)")
+//        let multiplier = (valueZero ?? 0) * 10.0
+//        let roundedValue = round(multiplier * 100) / 100.0
+//        self.lotSizeUSDLabel.text = "$\(roundedValue)0 per PIP"
         return true
     }
     
@@ -314,7 +314,7 @@ extension ModifyOpenOrderViewController: SwipeConfirmViewDelegate {
             let signalOrderTypeSelected = "POSITION_MODIFY"
             let backofficeSignal = InstantTrade(orderId: forexSignal.instantTrade?.orderId, positionId: forexSignal.instantTrade?.orderId, signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: self.forexSignal.instantTrade?.tradingPair, orderType: signalOrderTypeSelected, lotSize: nil, entryPrice: self.forexSignal.instantTrade?.entryPrice, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
             
-            //print("\(signalOrderTypeSelected) 🔥🔥🔥 \(signalOrderType) 🔥🔥🔥")
+            print("\(signalOrderTypeSelected) 🔥🔥🔥 \(backofficeSignal) 🔥🔥🔥")
             
             API.sharedInstance.updateSignal(signal: backofficeSignal) { success, signalResponse, error in
                 guard error == nil else {

@@ -443,7 +443,7 @@ extension ConnectBrokerViewController {
         
         //
         
-        let checkAnimationGradient = LottieAnimation.named(isNVUDemo.bool(forKey: "isNVUDemo") ? "gradientCheckNVU" : "gradientCheck")
+        let checkAnimationGradient = LottieAnimation.named("gradientCheck")
         checkmarkOneLottie.isUserInteractionEnabled = false
         checkmarkOneLottie.alpha = 0
         checkmarkOneLottie.animation = checkAnimationGradient

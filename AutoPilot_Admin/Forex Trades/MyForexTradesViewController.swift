@@ -616,6 +616,7 @@ extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
     func didCreateForexSignal() {
         //getForex()
         print("did this 🤞🤞🤞")
+        self.getOpenOrders()
     }
 }
 

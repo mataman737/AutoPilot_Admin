@@ -195,6 +195,7 @@ extension ModifyPendingOrderViewController {
 extension ModifyPendingOrderViewController: UITextFieldDelegate {
     
     internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        /*
         let newText = textField.text!.replacingCharacters(in: Range(range, in: textField.text!)!, with: string)
         if let range = newText.range(of: ".") {
             let phone = newText[range.upperBound...]
@@ -206,6 +207,7 @@ extension ModifyPendingOrderViewController: UITextFieldDelegate {
         let multiplier = (valueZero ?? 0) * 10.0
         let roundedValue = round(multiplier * 100) / 100.0
         self.lotSizeUSDLabel.text = "$\(roundedValue)0 per PIP"
+        */
         return true
     }
     

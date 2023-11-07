@@ -144,7 +144,7 @@ extension CancelPendingOrderViewController {
         
         //
         
-        let checkAnimation = LottieAnimation.named("gradientCheckNVU")
+        let checkAnimation = LottieAnimation.named("gradientCheck")
         checkmarkOneLottie.isUserInteractionEnabled = false
         checkmarkOneLottie.alpha = 0
         checkmarkOneLottie.animation = checkAnimation

@@ -48,6 +48,7 @@
 		DE4D57B32AA9086E008E2B6B /* PendingOrderMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B22AA9086E008E2B6B /* PendingOrderMenuViewController.swift */; };
 		DE4D57B52AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */; };
 		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
+		DE65093D2AF9E0E70089084C /* broadcastSent.json in Resources */ = {isa = PBXBuildFile; fileRef = DE65093C2AF9E0E60089084C /* broadcastSent.json */; };
 		DE6643982AA56A4000DA27BE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashViewController.swift */; };
 		DE66439A2AA56A4800DA27BE /* SplashViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashViewController+Views.swift */; };
 		DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66439B2AA56CAF00DA27BE /* BlurredView.swift */; };
@@ -206,6 +207,7 @@
 		DE4D57B22AA9086E008E2B6B /* PendingOrderMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOrderMenuViewController.swift; sourceTree = "<group>"; };
 		DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PendingOrderMenuViewController+Views.swift"; sourceTree = "<group>"; };
 		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
+		DE65093C2AF9E0E60089084C /* broadcastSent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = broadcastSent.json; sourceTree = "<group>"; };
 		DE6643972AA56A4000DA27BE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DE6643992AA56A4800DA27BE /* SplashViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashViewController+Views.swift"; sourceTree = "<group>"; };
 		DE66439B2AA56CAF00DA27BE /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 		DE4D577F2AA6B704008E2B6B /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				DE65093C2AF9E0E60089084C /* broadcastSent.json */,
 				DEA21FF62AB3DB25007D1C3A /* radio.json */,
 				DEB44E582AAFD7390006887A /* tripleSpinner.json */,
 				DE4D57822AA6B818008E2B6B /* blueArrows.json */,
@@ -915,6 +918,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE65093D2AF9E0E70089084C /* broadcastSent.json in Resources */,
 				FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */,
 				DEB44E592AAFD7390006887A /* tripleSpinner.json in Resources */,
 				DEF830A92AE5FFAA00268370 /* countryCodes.json in Resources */,

@@ -299,7 +299,7 @@ extension ModifyPendingOrderViewController {
         
         //
         
-        let checkAnimation = LottieAnimation.named(isNVUDemo.bool(forKey: "isNVUDemo") ? "gradientCheckNVU" : "gradientCheck")
+        let checkAnimation = LottieAnimation.named("gradientCheck")
         checkmarkOneLottie.isUserInteractionEnabled = false
         checkmarkOneLottie.alpha = 0
         checkmarkOneLottie.animation = checkAnimation

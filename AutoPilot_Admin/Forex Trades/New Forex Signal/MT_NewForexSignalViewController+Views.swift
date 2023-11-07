@@ -1,3 +1,4 @@
+
 //
 //  MT_NewForexSignalViewController+Views.swift
 //  AutoPilot_Admin
@@ -433,9 +434,15 @@ extension MT_NewForexSignalViewController {
         txtField.text = theText//forexSignal?.takeProfit1
         txtField.delegate = self
         txtField.keyboardType = .decimalPad
-        txtField.tintColor = UIColor(red: 225/255, green: 67/255, blue: 206/255, alpha: 1.0)
+        txtField.tintColor = .swBlue.withAlphaComponent(0.75)
+    
+        txtField.attributedPlaceholder = NSAttributedString(
+            string: "0.0",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(0.5)]
+        )
+        
         txtField.textAlignment = .right
-        txtField.textColor = variableColor
+        txtField.textColor = .black
         txtField.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
         txtField.translatesAutoresizingMaskIntoConstraints = false
         pinView.addSubview(txtField)

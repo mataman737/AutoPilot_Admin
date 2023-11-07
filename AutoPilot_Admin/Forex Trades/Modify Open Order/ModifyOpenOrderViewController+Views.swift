@@ -269,7 +269,7 @@ extension ModifyOpenOrderViewController {
         
         //
         
-        let checkAnimation = LottieAnimation.named("gradientCheckNVU")
+        let checkAnimation = LottieAnimation.named("gradientCheck")
         checkmarkOneLottie.isUserInteractionEnabled = false
         checkmarkOneLottie.alpha = 0
         checkmarkOneLottie.animation = checkAnimation
@@ -286,7 +286,7 @@ extension ModifyOpenOrderViewController {
         //checkmarkOneLottie.play()
         
         orderPlaced.alpha = 0
-        orderPlaced.text = "Order Placed!"
+        orderPlaced.text = "Order Modified!"
         orderPlaced.textColor = .black
         orderPlaced.textAlignment = .center
         orderPlaced.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 25))

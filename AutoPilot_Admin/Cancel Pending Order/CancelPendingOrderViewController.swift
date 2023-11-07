@@ -218,5 +218,5 @@ extension CancelPendingOrderViewController: SwipeConfirmViewDelegate {
             self.orderPlaced.alpha = 1.0
         }
     }
-        
+    
 }
