@@ -165,9 +165,9 @@ extension CancelPendingOrderViewController: UIScrollViewDelegate {
 
 extension CancelPendingOrderViewController: SwipeConfirmViewDelegate {
     func didConfirmDepositFunds() {
-        let signalOrderTypeSelected = "ORDER_CANCEL"
+//        let signalOrderTypeSelected = "ORDER_CANCEL"
         guard let order = forexSignal.order, let tradingPair = order.symbol, let lotSize = order.lots, let ticket = order.ticket, let entryPrice = order.openPrice else { return }
-        let backofficeSignal = InstantTrade(orderId: String(ticket), positionId: String(ticket), signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: tradingPair, orderType: signalOrderTypeSelected, lotSize: String(lotSize), entryPrice: String(entryPrice), takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: nil, stopLoss: nil, open: true)
+        let backofficeSignal = InstantTrade(orderId: String(ticket), positionId: String(ticket), signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: tradingPair, orderType: forexSignal.order?.type, lotSize: String(lotSize), entryPrice: String(entryPrice), takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: nil, stopLoss: nil, open: true)
         
         //print("\(signalOrderTypeSelected) 🔥🔥🔥 \(signalOrderType) 🔥🔥🔥")
                                             

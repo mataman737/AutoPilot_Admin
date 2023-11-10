@@ -177,8 +177,8 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.activeOrders = orders.filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"}).reversed()
-                self?.pendingOrders = orders.filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"}).reversed()
+                self?.activeOrders = orders.filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"}).sorted(by: {($0.instantTrade?.added ?? Date()) > ($1.instantTrade?.added ?? Date())})
+                self?.pendingOrders = orders.filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"}).sorted(by: {($0.instantTrade?.added ?? Date()) > ($1.instantTrade?.added ?? Date())})
                 
                 self?.didGetOrders = true
                 self?.mainFeedTableView.reloadData()
@@ -213,7 +213,7 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.closedOrders = orders.reversed()
+                self?.closedOrders = orders.sorted(by: {($0.instantTrade?.added ?? Date()) > ($1.instantTrade?.added ?? Date())})
                 self?.didGetClosedOrders = true
                 self?.mainFeedTableView.reloadData()
                 
@@ -750,6 +750,7 @@ extension MyForexTradesViewController {
             
             // Create a date formatter
             let dateFormatter = DateFormatter()
+            print(time.detectDateFormat())
             dateFormatter.dateFormat = time.detectDateFormat()//detectDateFormat(from: time)
             
             // Convert the string to a Date object

@@ -727,9 +727,10 @@ extension String {
         let dateFormats: [String] = [
             "yyyy-MM-dd'T'HH:mm:ss.SSS",
             "yyyy-MM-dd'T'HH:mm:ss.SS",
+            "yyyy-MM-dd'T'HH:mm:ss.S",
+            "yyyy-MM-dd'T'HH:mm:ss",
             "YYYY-MM-DD HH:MM:SS",
             "YYYY-MM-DD'T'HH:MM:SS",
-            "yyyy-MM-dd'T'HH:mm:ss.S",
             "yyyy-MM-dd HH:mm:ss.SSS",
             "yyyy-MM-dd HH:mm:ss.SS",
             "yyyy-MM-dd HH:mm:ss.S",
