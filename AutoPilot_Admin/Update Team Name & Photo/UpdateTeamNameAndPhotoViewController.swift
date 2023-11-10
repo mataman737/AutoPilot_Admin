@@ -109,7 +109,7 @@ extension UpdateTeamNameAndPhotoViewController: UITextFieldDelegate {
         spinner.alpha = 1.0
         
         if let team = self.team, let image = self.photo {
-            let key = "team:\(team.id.uuidString)"
+            let key = "team:\(team.id.uuidString)-\(UUID().uuidString)"
             ImageUploader.uploadImage(image: image.wxCompress(), key: key, completion: { [weak self] (error, success, url) in
                 guard error == nil else {
                     print(error!)

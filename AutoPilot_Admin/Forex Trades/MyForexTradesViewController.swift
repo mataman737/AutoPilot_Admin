@@ -84,6 +84,24 @@ class MyForexTradesViewController: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeround), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in
+            if let error = error {
+                print("D'oh: \(error.localizedDescription)")
+            } else {
+                DispatchQueue.main.async {
+                    center.delegate = appDelegate.notificationDelegate
+                    let deafultCategory = UNNotificationCategory(identifier: "signal", actions: [], intentIdentifiers: [],      hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
+                    
+                    let openAction = UNNotificationAction(identifier: "OpenNotification", title: NSLocalizedString("Open", comment: ""), options: UNNotificationActionOptions.foreground)
+                    let imageCategory = UNNotificationCategory(identifier: "CustomSamplePush", actions: [openAction], intentIdentifiers: [], options: [])
+                    center.setNotificationCategories(Set([deafultCategory, imageCategory]))
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -228,32 +246,34 @@ class MyForexTradesViewController: UIViewController {
         if let orderUpdate = notification.userInfo?["orderUpdate"] as? OrderProfitUpdate {
             let orders = orderUpdate.data.orders
             
-            for index in 0...activeOrders.count {
-                if let cell = mainFeedTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? OpenOrdersTableViewCell {
-                    if let currentOrder = orders.first(where: {$0.ticket == cell.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
-                        if let signalTradingPair = currentOrder.symbol {
-                            let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
-                            cell.currentPriceLabel.text = forexPrice
-                        }
-                        let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
-                        //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
-                        
-                        let numberString = String(unrealizedProfit)
-                        
-                        cell.unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
-                        
-                        //openOrderMenuVC?.loadingIndicator.isHidden = true
-                        //openOrderMenuVC?.loadingIndicator.stopAnimating()
-                        
-                        print("did this 🥱🥱🥱")
-                        //openOrderMenuVC?.unrealizedProfitLabel.text = "\(unrealizedProfit)"
-                                                
-                        if numberString.contains("-") {
-                            openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightRed
-                            cell.unrealizedProfitLabel.textColor = .brightRed
-                        } else {
-                            openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightGreen
-                            cell.unrealizedProfitLabel.textColor = .brightGreen
+            for index in 0...orders.count {
+                for section in 0...1 {
+                    if let cell = mainFeedTableView.cellForRow(at: IndexPath(row: index, section: section)) as? OpenOrdersTableViewCell {
+                        if let currentOrder = orders.first(where: {$0.ticket == cell.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
+                            if let signalTradingPair = currentOrder.symbol {
+                                let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
+                                cell.currentPriceLabel.text = forexPrice
+                            }
+                            let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
+                            //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
+                            
+                            let numberString = String(unrealizedProfit)
+                            
+                            cell.unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
+                            
+                            //openOrderMenuVC?.loadingIndicator.isHidden = true
+                            //openOrderMenuVC?.loadingIndicator.stopAnimating()
+                            
+                            print("did this 🥱🥱🥱")
+                            //openOrderMenuVC?.unrealizedProfitLabel.text = "\(unrealizedProfit)"
+                            
+                            if numberString.contains("-") {
+                                openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightRed
+                                cell.unrealizedProfitLabel.textColor = .brightRed
+                            } else {
+                                openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightGreen
+                                cell.unrealizedProfitLabel.textColor = .brightGreen
+                            }
                         }
                     }
                 }

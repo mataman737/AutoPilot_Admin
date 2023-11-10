@@ -304,11 +304,13 @@ extension ModifyPendingOrderViewController: SwipeConfirmViewDelegate {
             }
             
             print("😪😪😪 \(self.account) 😪😪😪")
-        } else if self.account == nil {
-            errorImpactGenerator()
-            ToastNotificationView().present(withMessage: "Broker not selected")
-            swipeView.resetSwipe()
-        } else {
+        }
+//        else if self.account == nil {
+//            errorImpactGenerator()
+//            ToastNotificationView().present(withMessage: "Broker not selected")
+//            swipeView.resetSwipe()
+//        }
+        else {
             self.showLoading()
             
             if placedInstantTrade {
