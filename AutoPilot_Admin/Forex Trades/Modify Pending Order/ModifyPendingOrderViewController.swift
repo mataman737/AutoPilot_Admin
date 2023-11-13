@@ -304,11 +304,13 @@ extension ModifyPendingOrderViewController: SwipeConfirmViewDelegate {
             }
             
             print("😪😪😪 \(self.account) 😪😪😪")
-        } else if self.account == nil {
-            errorImpactGenerator()
-            ToastNotificationView().present(withMessage: "Broker not selected")
-            swipeView.resetSwipe()
-        } else {
+        }
+//        else if self.account == nil {
+//            errorImpactGenerator()
+//            ToastNotificationView().present(withMessage: "Broker not selected")
+//            swipeView.resetSwipe()
+//        }
+        else {
             self.showLoading()
             
             if placedInstantTrade {
@@ -316,8 +318,8 @@ extension ModifyPendingOrderViewController: SwipeConfirmViewDelegate {
             } else {
                 placedInstantTrade = true
                 
-                let signalOrderTypeSelected = "ORDER_MODIFY"
-                let backofficeSignal = InstantTrade(orderId: forexSignal.instantTrade?.orderId, positionId: forexSignal.instantTrade?.orderId, signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: nil, orderType: signalOrderTypeSelected, lotSize: nil, entryPrice: entryPriceTextField.text, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
+//                let signalOrderTypeSelected = "ORDER_MODIFY"
+                let backofficeSignal = InstantTrade(orderId: forexSignal.instantTrade?.orderId, positionId: forexSignal.instantTrade?.orderId, signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: nil, orderType: forexSignal.order?.type, lotSize: nil, entryPrice: entryPriceTextField.text, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
                 
                 //print("\(signalOrderTypeSelected) 🔥🔥🔥 \(signalOrderType) 🔥🔥🔥")
                 

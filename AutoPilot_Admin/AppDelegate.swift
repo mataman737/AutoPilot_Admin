@@ -12,7 +12,7 @@ import FirebaseCore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let notificationDelegate = SampleNotificationDelegate()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -34,7 +34,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        print(token)
+        #if DEBUG
+        API.sharedInstance.sendTokenSandbox(token: AToken(token: token)) { (success, _, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success else {
+                print("error sending token")
+                return
+            }
+        }
+        #else
+        API.sharedInstance.sendToken(token: AToken(token: token)) { (success, _, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success else {
+                print("error sending token")
+                return
+            }
+        }
+        #endif
+    }
 }
 
 extension ChatClient {

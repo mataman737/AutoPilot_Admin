@@ -311,10 +311,10 @@ extension ModifyOpenOrderViewController: SwipeConfirmViewDelegate {
             print("Don't place order again 🤓🤓🤓")
         } else {
             placedInstantTrade = true
-            let signalOrderTypeSelected = "POSITION_MODIFY"
-            let backofficeSignal = InstantTrade(orderId: forexSignal.instantTrade?.orderId, positionId: forexSignal.instantTrade?.orderId, signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: self.forexSignal.instantTrade?.tradingPair, orderType: signalOrderTypeSelected, lotSize: nil, entryPrice: self.forexSignal.instantTrade?.entryPrice, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
+//            let signalOrderTypeSelected = "POSITION_MODIFY"
+            let backofficeSignal = InstantTrade(orderId: forexSignal.instantTrade?.orderId, positionId: forexSignal.instantTrade?.orderId, signalId: self.forexSignal.instantTrade?.signalId, userId: nil, account: self.account, tradingPair: self.forexSignal.instantTrade?.tradingPair, orderType: self.forexSignal.order?.type, lotSize: nil, entryPrice: self.forexSignal.instantTrade?.entryPrice, takeProfit1: nil, takeProfit2: nil, takeProfit3: nil, takeProfitSelected: self.takeProfitTextField.text, stopLoss: stopLossTextField.text, open: true)
             
-            print("\(signalOrderTypeSelected) 🔥🔥🔥 \(backofficeSignal) 🔥🔥🔥")
+//            print("\(signalOrderTypeSelected) 🔥🔥🔥 \(backofficeSignal) 🔥🔥🔥")
             
             API.sharedInstance.updateSignal(signal: backofficeSignal) { success, signalResponse, error in
                 guard error == nil else {
