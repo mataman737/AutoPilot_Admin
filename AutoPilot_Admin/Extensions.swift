@@ -328,7 +328,11 @@ extension UILabel {
 }
 
 extension String {
-    
+    func convertToDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = self.detectDateFormat()
+        return dateFormatter.date(from: self)!
+    }
  
     func index(at position: Int, from start: Index? = nil) -> Index? {
         let startingIndex = start ?? startIndex
@@ -751,6 +755,7 @@ extension String {
             "dd/MM/yyyy HH:mm:ss.SS",
             "dd/MM/yyyy HH:mm:ss.S",
             "dd/MM/yyyy HH:mm:ss",
+            //"yyyy-MM-dd\'T\'HH:mm:ss.SSS",
             // Add more date formats as needed
         ]
         
@@ -1015,35 +1020,14 @@ extension Date {
         return formatterTwo.string(from: self)
     }
     
-    /*
-    func getWeekDaysInEnglish() -> [String] {
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.locale = Locale(identifier: "en_US_POSIX")
-        return calendar.weekdaySymbols
+    func monthDayAndTime() -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = NSTimeZone.local
+        formatter.dateFormat = "M/d @ h:mma"//"h:mmaa M/dd/yy"
+        formatter.amSymbol = "am"
+        formatter.pmSymbol = "pm"
+        return formatter.string(from: self)
     }
-    
-    enum Weekday: String {
-        case monday, tuesday, wednesday, thursday, friday, saturday, sunday
-    }
-    
-    enum SearchDirection {
-        case next
-        case previous
-        
-        var calendarSearchDirection: Calendar.SearchDirection {
-            switch self {
-            case .next:
-                return .forward
-            case .previous:
-                return .backward
-            }
-        }
-    }
-    
-    static func today() -> Date {
-        return Date()
-    }
-     */
     
     func getWeekDaysInEnglish() -> [String] {
       var calendar = Calendar(identifier: .gregorian)

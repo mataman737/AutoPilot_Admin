@@ -177,8 +177,8 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.activeOrders = orders.filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"}).sorted(by: {($0.instantTrade?.added ?? Date()) > ($1.instantTrade?.added ?? Date())})
-                self?.pendingOrders = orders.filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"}).sorted(by: {($0.instantTrade?.added ?? Date()) > ($1.instantTrade?.added ?? Date())})
+                self?.activeOrders = orders.filter({$0.order?.type == "Buy" || $0.order?.type == "Sell"}).sorted(by: {($0.order?.openTime?.convertToDate() ?? Date()) > ($1.order?.openTime?.convertToDate() ?? Date())})
+                self?.pendingOrders = orders.filter({$0.order?.type != "Buy" && $0.order?.type != "Sell"}).sorted(by: {($0.order?.openTime?.convertToDate() ?? Date()) > ($1.order?.openTime?.convertToDate() ?? Date())})
                 
                 self?.didGetOrders = true
                 self?.mainFeedTableView.reloadData()
@@ -213,7 +213,7 @@ class MyForexTradesViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.closedOrders = orders.sorted(by: {($0.instantTrade?.added ?? Date()) > ($1.instantTrade?.added ?? Date())})
+                self?.closedOrders = orders.sorted(by: {($0.order?.closeTime?.convertToDate() ?? Date()) > ($1.order?.closeTime?.convertToDate() ?? Date())})
                 self?.didGetClosedOrders = true
                 self?.mainFeedTableView.reloadData()
                 
@@ -264,7 +264,7 @@ class MyForexTradesViewController: UIViewController {
                             //openOrderMenuVC?.loadingIndicator.isHidden = true
                             //openOrderMenuVC?.loadingIndicator.stopAnimating()
                             
-                            print("did this 🥱🥱🥱")
+                            //print("did this 🥱🥱🥱")
                             //openOrderMenuVC?.unrealizedProfitLabel.text = "\(unrealizedProfit)"
                             
                             if numberString.contains("-") {
@@ -644,15 +644,6 @@ extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
 
 extension MyForexTradesViewController {
     func setupActivePositions(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {
-        cell.assetImageView.image = UIImage(named: "forexBotIcon")
-        /*
-        cell.currencyPairLabel.text = "EURUSD"
-        cell.signalTimeLabel.text = "9/2 @ 2:15pm"
-        cell.orderTypeLabel.text = "Buy"
-        cell.entryPriceLabel.text = "1.12345"
-        cell.currentPriceLabel.text = "1.12345"
-        */
-             
         let signal = activeOrders[indexPath.row]
         
         cell.order = signal.order
@@ -671,13 +662,11 @@ extension MyForexTradesViewController {
         
         if let signalTradingPair = signal.order?.symbol {
             let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
-            print("\(signalTradingPair) 🩳🩳🩳 \(forexPrice)")
             cell.currentPriceLabel.text = forexPrice
         }
         
         if let volume = signal.order?.lots { //signal.order?.ex?.volume
             if let orderType = signal.order?.type {
-                //print("\(orderType) 🩳🩳🩳")
                 if orderType.contains("Sell") {
                     cell.orderTypeLabel.text = "Sell \(volume)"
                     cell.orderTypeLabel.textColor = UIColor(red: 191/255, green: 103/255, blue: 103/255, alpha: 1.0)
@@ -689,23 +678,19 @@ extension MyForexTradesViewController {
         }
         
         if let time = signal.order?.openTime {
-            
-            //let date = Date()
-            //let formattedDate = dateFormatter.string(from: date)
-            //print(formattedDate)
-            
             // Create a date formatter
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = time.detectDateFormat()//detectDateFormat(from: time)
-            
-            print("\(time) 🚀🚀🚀")
+            dateFormatter.dateFormat = time.detectDateFormat()
             
             // Convert the string to a Date object
             if let date = dateFormatter.date(from: time) {
-                let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "M/d @ h:mma"
-                let formattedDate = outputFormatter.string(from: date)
-                cell.signalTimeLabel.text = formattedDate
+                if let eetTimeZone = TimeZone(abbreviation: "EET") {
+                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off
+                    let convertedDate = date.convert(from: eetTimeZone, to: TimeZone.current).monthDayAndTime()
+                    cell.signalTimeLabel.text = convertedDate
+                } else {
+                    cell.signalTimeLabel.text = "Invalid time zone"
+                }
             } else {
                 cell.signalTimeLabel.text = "Invalid date time"
             }
@@ -747,18 +732,19 @@ extension MyForexTradesViewController {
         }
         
         if let time = signal.order?.openTime {
-            
             // Create a date formatter
             let dateFormatter = DateFormatter()
-            print(time.detectDateFormat())
-            dateFormatter.dateFormat = time.detectDateFormat()//detectDateFormat(from: time)
+            dateFormatter.dateFormat = time.detectDateFormat()
             
             // Convert the string to a Date object
             if let date = dateFormatter.date(from: time) {
-                let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "M/d @ h:mma"
-                let formattedDate = outputFormatter.string(from: date)
-                cell.signalTimeLabel.text = formattedDate
+                if let eetTimeZone = TimeZone(abbreviation: "EET") {
+                    //CET & MSD is 11 hours off. we need 10 - EET //BST is 12 hours off
+                    let convertedDate = date.convert(from: eetTimeZone, to: TimeZone.current).monthDayAndTime()
+                    cell.signalTimeLabel.text = convertedDate
+                } else {
+                    print("invalid time zone 😹😹😹")
+                }
             } else {
                 cell.signalTimeLabel.text = "Invalid date time"
             }
@@ -775,7 +761,7 @@ extension MyForexTradesViewController {
     }
     
     @objc func updateForexPriceEverySecond(signalSymbol: String) -> String {
-        print("did this 🤷‍♂️🤷‍♂️🤷‍♂️ \(signalSymbol.removePeriodsAndDashes())")
+        //print("did this 🤷‍♂️🤷‍♂️🤷‍♂️ \(signalSymbol.removePeriodsAndDashes())")
         
         if let livePrice = MyTabBarController.orderProfitUpdate?.livePrices.priceForSymbol(symbol: signalSymbol.removePeriodsAndDashes()) {
             if countDecimalPlaces(livePrice) > 5 {
@@ -819,6 +805,7 @@ extension MyForexTradesViewController {
 extension MyForexTradesViewController: CloseOrderViewControllerDelegate {
     func didCloseOrder() {
         self.getOpenOrders()
+        self.getClosedOrders()
     }
 }
 
@@ -827,6 +814,7 @@ extension MyForexTradesViewController: CloseOrderViewControllerDelegate {
 extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate {
     func didCancelOrder() {
         self.getOpenOrders()
+        self.getClosedOrders()
     }
 }
 
