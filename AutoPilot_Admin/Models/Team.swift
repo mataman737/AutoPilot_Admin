@@ -14,5 +14,7 @@ struct Team: Codable {
     var photo: String?
     var accessCode: String?
     var fxBook: String?
+    var mtBrokers: [String]?
+    var mtIds: [String]?
     var created: Date
 }
