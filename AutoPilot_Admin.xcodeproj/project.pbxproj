@@ -49,6 +49,8 @@
 		DE4D57B52AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */; };
 		DE62B5C22A9FBEC400140546 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */; };
 		DE65093D2AF9E0E70089084C /* broadcastSent.json in Resources */ = {isa = PBXBuildFile; fileRef = DE65093C2AF9E0E60089084C /* broadcastSent.json */; };
+		DE6509402AFABC960089084C /* SignalResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65093F2AFABC950089084C /* SignalResultsViewController.swift */; };
+		DE6509422AFABCB10089084C /* SignalResultsViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6509412AFABCB10089084C /* SignalResultsViewController+Views.swift */; };
 		DE6643982AA56A4000DA27BE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643972AA56A4000DA27BE /* SplashViewController.swift */; };
 		DE66439A2AA56A4800DA27BE /* SplashViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6643992AA56A4800DA27BE /* SplashViewController+Views.swift */; };
 		DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66439B2AA56CAF00DA27BE /* BlurredView.swift */; };
@@ -208,6 +210,8 @@
 		DE4D57B42AA9087B008E2B6B /* PendingOrderMenuViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PendingOrderMenuViewController+Views.swift"; sourceTree = "<group>"; };
 		DE62B5C12A9FBEC400140546 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		DE65093C2AF9E0E60089084C /* broadcastSent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = broadcastSent.json; sourceTree = "<group>"; };
+		DE65093F2AFABC950089084C /* SignalResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalResultsViewController.swift; sourceTree = "<group>"; };
+		DE6509412AFABCB10089084C /* SignalResultsViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignalResultsViewController+Views.swift"; sourceTree = "<group>"; };
 		DE6643972AA56A4000DA27BE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DE6643992AA56A4800DA27BE /* SplashViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashViewController+Views.swift"; sourceTree = "<group>"; };
 		DE66439B2AA56CAF00DA27BE /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
@@ -489,6 +493,15 @@
 			path = "Pending Order Menu";
 			sourceTree = "<group>";
 		};
+		DE65093E2AFABB560089084C /* Signal Results */ = {
+			isa = PBXGroup;
+			children = (
+				DE65093F2AFABC950089084C /* SignalResultsViewController.swift */,
+				DE6509412AFABCB10089084C /* SignalResultsViewController+Views.swift */,
+			);
+			path = "Signal Results";
+			sourceTree = "<group>";
+		};
 		DE6643A12AA56D1200DA27BE /* Media */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +639,7 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
 				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
+				DE65093E2AFABB560089084C /* Signal Results */,
 				DEF830722AE5FF9500268370 /* Sources */,
 				DE76E6F82AD78ACD00FC11B8 /* Set MyFXBook */,
 				DE2C18902ACC57E200CB509A /* My Traders */,
@@ -1029,6 +1043,7 @@
 				DE4D57922AA77A4B008E2B6B /* SettingsViewController+Views.swift in Sources */,
 				DEF830BC2AE5FFAA00268370 /* FPNFormat.swift in Sources */,
 				DEB44E552AAFB26E0006887A /* MyBrokersHeader.swift in Sources */,
+				DE6509422AFABCB10089084C /* SignalResultsViewController+Views.swift in Sources */,
 				DEF830B52AE5FFAA00268370 /* NBMetadataHelper.m in Sources */,
 				DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */,
 				DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */,
@@ -1042,6 +1057,7 @@
 				DE66439C2AA56CAF00DA27BE /* BlurredView.swift in Sources */,
 				DEB44E512AAFB1EC0006887A /* MyConnectedBrokerAccountViewController.swift in Sources */,
 				DEF830B22AE5FFAA00268370 /* NBNumberFormat.m in Sources */,
+				DE6509402AFABC960089084C /* SignalResultsViewController.swift in Sources */,
 				DEB44E572AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift in Sources */,
 				DEB44E4E2AAFADE10006887A /* ConnectBrokerTableViewCell.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,

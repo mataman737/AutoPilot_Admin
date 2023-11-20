@@ -123,6 +123,7 @@ extension OpenOrdersTableViewCell {
     
     func setupViews() {
         
+        assetImageView.image = UIImage(named: "forexBotIcon")        
         assetImageView.layer.cornerRadius = .createAspectRatio(value: 4)
         assetImageView.layer.masksToBounds = true
         assetImageView.contentMode = .scaleAspectFill
