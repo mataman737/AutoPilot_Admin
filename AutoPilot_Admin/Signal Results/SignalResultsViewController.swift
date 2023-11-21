@@ -15,5 +15,23 @@ class SignalResultsViewController: UIViewController {
         
         
     }
+    
+    func getResults() {
+        API.sharedInstance.getTradeResults { success, trades, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let trades = trades else {
+                print("error getting trade results")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                
+            }
+        }
+    }
 
 }

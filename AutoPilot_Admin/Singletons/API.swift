@@ -317,6 +317,26 @@ class API: NSObject {
         }
     }
     
+    func getTradeResults(completionHandler: @escaping (Bool, [InstantTrade]?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/team/results", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let trades = try decoder.decode([InstantTrade].self, from: data)
+                
+                completionHandler(true, trades, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func submitMTBrokerDetails(details: ConnectBrokerRequest, completionHandler: @escaping (Bool, Error?) -> ()) {
         print(details)
         var request = URLRequest(url: URL(string: "\(API.tradingUrl)adminbroker")!)
