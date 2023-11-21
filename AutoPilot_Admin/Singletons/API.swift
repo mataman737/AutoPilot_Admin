@@ -318,7 +318,7 @@ class API: NSObject {
     }
     
     func getTradeResults(completionHandler: @escaping (Bool, [InstantTrade]?, Error?) -> ()) {
-        performRequest(endpoint: "api/admin/team/results", method: "GET", authenticated: true) { (data, response, error) in
+        performRequest(endpoint: "api/admin/teams/results", method: "GET", authenticated: true) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
                 completionHandler(false, nil, error)
