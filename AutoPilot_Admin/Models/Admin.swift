@@ -17,6 +17,99 @@ final class Admin: Codable {
     var displayName: String?
     var email: String?
     var profilePhotoUrl: String?
+    var permissions: [String]?
+    
+    var tradeWonNotiSetting: Int {
+        get {
+            guard let permissions = permissions, permissions.indices.contains(0) else { return 1 }
+            
+            let components = permissions[0].components(separatedBy: ":")
+            guard let intValue = Int(components[1]) else { return 1 }
+            
+            return intValue
+        }
+        set (newValue) {
+            guard var p = permissions else {
+                permissions = [String(newValue)]
+                return
+            }
+            
+            while !p.indices.contains(0) { //method of migration when we add new permissions - add default 1 for any to this expected index
+                p.append("tradeWon:1")
+            }
+            p[0] = "tradeWon:\(newValue)"
+            permissions = p
+        }
+    }
+    
+    var tradeLostNotiSetting: Int {
+        get {
+            guard let permissions = permissions, permissions.indices.contains(1) else { return 1 }
+            
+            let components = permissions[1].components(separatedBy: ":")
+            guard let intValue = Int(components[1]) else { return 1 }
+            
+            return intValue
+        }
+        set (newValue) {
+            guard var p = permissions else {
+                permissions = [String(newValue)]
+                return
+            }
+            
+            while !p.indices.contains(1) { //method of migration when we add new permissions - add default 1 for any to this expected index
+                p.append("tradeLost:1")
+            }
+            p[1] = "tradeLost:\(newValue)"
+            permissions = p
+        }
+    }
+    
+    var teamChatNotiSetting: Int {
+        get {
+            guard let permissions = permissions, permissions.indices.contains(2) else { return 1 }
+            
+            let components = permissions[2].components(separatedBy: ":")
+            guard let intValue = Int(components[1]) else { return 1 }
+            
+            return intValue
+        }
+        set (newValue) {
+            guard var p = permissions else {
+                permissions = [String(newValue)]
+                return
+            }
+            
+            while !p.indices.contains(2) { //method of migration when we add new permissions - add default 1 for any to this expected index
+                p.append("teamChat:1")
+            }
+            p[2] = "teamChat:\(newValue)"
+            permissions = p
+        }
+    }
+    
+    var teamMemberNotiSetting: Int {
+        get {
+            guard let permissions = permissions, permissions.indices.contains(3) else { return 1 }
+            
+            let components = permissions[3].components(separatedBy: ":")
+            guard let intValue = Int(components[1]) else { return 1 }
+            
+            return intValue
+        }
+        set (newValue) {
+            guard var p = permissions else {
+                permissions = [String(newValue)]
+                return
+            }
+            
+            while !p.indices.contains(3) { //method of migration when we add new permissions - add default 1 for any to this expected index
+                p.append("newTeamMember:1")
+            }
+            p[3] = "newTeamMember:\(newValue)"
+            permissions = p
+        }
+    }
     
     func getShareLink() async -> String? {
         guard let link = URL(string: "https://enigmalabs.page.link/download?teamid=\(Admin.current.teamId!)") else { return nil }
