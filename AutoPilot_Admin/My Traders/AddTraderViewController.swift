@@ -74,4 +74,27 @@ extension AddTraderViewController: UITextFieldDelegate {
         */
         return true
     }
+    
+    func inviteMemberToTeam() {
+        guard let teamIdString = Admin.current.teamId, let teamId = UUID(uuidString: teamIdString) else {
+            print("no team id")
+            return
+        }
+        
+        API.sharedInstance.inviteMemberToTeam(pendingAdminRequest: PendingAdminRequest(teamId: teamId, name: "Name", phone: "Phone", adminType: "trader")) { success, _, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success else {
+                print("error adding team member")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                //team member added
+            }
+        }
+    }
 }

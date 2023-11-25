@@ -277,6 +277,26 @@ class API: NSObject {
         }
     }
     
+    func inviteMemberToTeam(pendingAdminRequest: PendingAdminRequest, completionHandler: @escaping (Bool, PendingAdminRequest?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/pendingadmin", method: "POST", authenticated: true, object: pendingAdminRequest) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+//            do {
+//                let decoder = JSONDecoder()
+//                decoder.dateDecodingStrategy = .iso8601
+//                let signal = try decoder.decode(Signal.self, from: data)
+                
+                completionHandler(true, nil, nil)
+//            } catch {
+//                print(error)
+//                completionHandler(false, nil, error)
+//            }
+        }
+    }
+    
     func getMTServers(completionHandler: @escaping (Bool, [MTServerBroker]?, Error?) -> ()) {
         performRequest(endpoint: "mtservers", method: "GET", authenticated: true) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error

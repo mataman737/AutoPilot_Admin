@@ -223,3 +223,9 @@ final class LoginAttempt: Codable {
     }
 }
 
+struct PendingAdminRequest: Codable {
+    let teamId: UUID?
+    let name: String?
+    let phone: String?
+    let adminType: String?
+}
