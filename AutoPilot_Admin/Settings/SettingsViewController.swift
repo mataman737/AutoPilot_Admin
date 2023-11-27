@@ -295,6 +295,55 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         */
     }
     
+    @objc func updateNotificationSetting(sender: PWSwitch) {
+        switch sender.tag {
+        case 0:
+            if Admin.current.tradeWonNotiSetting == 1 {
+                Admin.current.tradeWonNotiSetting = 0
+            } else {
+                Admin.current.tradeWonNotiSetting = 1
+            }
+        case 1:
+            if Admin.current.tradeLostNotiSetting == 1 {
+                Admin.current.tradeLostNotiSetting = 0
+            } else {
+                Admin.current.tradeLostNotiSetting = 1
+            }
+        case 2:
+            if Admin.current.teamChatNotiSetting == 1 {
+                Admin.current.teamChatNotiSetting = 0
+            } else {
+                Admin.current.teamChatNotiSetting = 1
+            }
+        default:
+            if Admin.current.teamMemberNotiSetting == 1 {
+                Admin.current.teamMemberNotiSetting = 0
+            } else {
+                Admin.current.teamMemberNotiSetting = 1
+            }
+        }
+        
+        API.sharedInstance.updateAdmin(admin: Admin.current) { success, admin, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let admin = admin else {
+                print("error updating admin")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                Admin.current = admin
+                Admin.saveCurrentAdmin()
+                //self?.goToHome()
+                //self?.fromLogin.set(true, forKey: "fromLogin")
+                //self?.perform(#selector(self?.transitionHome), with: self, afterDelay: 0.5)
+            }
+        }
+    }
+    
     @objc func didSwitchLightDarkMode() {
         if isDarkMode.bool(forKey: "isDarkMode") {
             isDarkMode.set(false, forKey: "isDarkMode")
@@ -400,11 +449,6 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
             //
         }
         */
-    }
-    
-    @objc func showFreshDeck() {
-        let toastNoti = ToastNotificationView()
-        toastNoti.present(withMessage: "Link required")
     }
     
     @objc func didTapSocial(cell: Int) {
@@ -679,7 +723,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: settingsSwitchTableViewCellTableViewCell, for: indexPath) as! SettingsSwitchTableViewCellTableViewCell
-            cell.titleLabel.text = notifications[indexPath.row]//.localiz()
+            cell.pwSwitch.tag = indexPath.row
+            cell.pwSwitch.addTarget(self, action: #selector(updateNotificationSetting(sender:)), for: .touchUpInside)
+            cell.titleLabel.text = notifications[indexPath.row]
             cell.dividerLine.backgroundColor = .newBlack.withAlphaComponent(0.12)
             cell.titleLabel.textColor = .newBlack
             
@@ -689,6 +735,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.dividerLine.isHidden = false
             }
             
+            /*
             if indexPath.row == 0 {
                 if newTradeNotificationEnabled {
                     cell.pwSwitch.setOn(true, animated: false)
@@ -696,45 +743,20 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.pwSwitch.setOn(false, animated: false)
                 }
             }
-            
-            /*
-            if indexPath.row == 0 {
-                if User.current.announcementNotiSetting == 1 {
-                    cell.pwSwitch.setOn(true, animated: false)
-                } else {
-                    cell.pwSwitch.setOn(false, animated: false)
-                }
-                cell.pwSwitch.addTarget(self, action: #selector(didSwitchAnnouncementNoti), for: .valueChanged)
-            } else if indexPath.row == 1 {
-                if User.current.eventsNotiSetting == 1 {
-                    cell.pwSwitch.setOn(true, animated: false)
-                } else {
-                    cell.pwSwitch.setOn(false, animated: false)
-                }
-                cell.pwSwitch.addTarget(self, action: #selector(didSwitchEventsUpdate), for: .valueChanged)
-            } else if indexPath.row == 2 {
-                if User.current.forexSignalNotiSetting == 1 {
-                    cell.pwSwitch.setOn(true, animated: false)
-                } else {
-                    cell.pwSwitch.setOn(false, animated: false)
-                }
-                cell.pwSwitch.addTarget(self, action: #selector(didSwitchNewForexSignal), for: .valueChanged)
-            } else if indexPath.row == 3 {
-                if User.current.cryptoSignalNotiSetting == 1 {
-                    cell.pwSwitch.setOn(true, animated: false)
-                } else {
-                    cell.pwSwitch.setOn(false, animated: false)
-                }
-                cell.pwSwitch.addTarget(self, action: #selector(didSwitchNewCryptoSignal), for: .valueChanged)
-            } else if indexPath.row == 4 {
-                if User.current.signalThreadNotiSetting == 1 {
-                    cell.pwSwitch.setOn(true, animated: false)
-                } else {
-                    cell.pwSwitch.setOn(false, animated: false)
-                }
-                cell.pwSwitch.addTarget(self, action: #selector(didSwitchSignalThreadUpdate), for: .valueChanged)
-            }
             */
+            
+            let user = Admin.current
+            switch indexPath.row {
+            case 0:
+                cell.pwSwitch.setOn(user.tradeWonNotiSetting == 1, animated: false)
+            case 1:
+                cell.pwSwitch.setOn(user.tradeLostNotiSetting == 1, animated: false)
+            case 2:
+                cell.pwSwitch.setOn(user.teamChatNotiSetting == 1, animated: false)
+            default:
+                cell.pwSwitch.setOn(user.teamMemberNotiSetting == 1, animated: false)
+            }
+                        
                 
             cell.arrowImageView.setImageColor(color: .newBlack.withAlphaComponent(0.5))
             

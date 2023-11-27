@@ -61,6 +61,7 @@ class MyForexTradesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCurrentAdmin()
         getCurrentTeam()
         setupNav()
         setupEmptyStates()
@@ -158,6 +159,7 @@ class MyForexTradesViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 Admin.current = admin
+                print("\(admin.permissions) 👽👽👽")
                 Admin.saveCurrentAdmin()
             }
         }

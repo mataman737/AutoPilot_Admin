@@ -101,5 +101,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Please allow access to your microphone for audio rooms</string>
 </dict>
 </plist>
