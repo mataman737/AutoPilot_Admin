@@ -144,6 +144,25 @@ class MyForexTradesViewController: UIViewController {
         }
     }
     
+    func getCurrentAdmin() {
+        API.sharedInstance.getCurrentAdmin { success, admin, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let admin = admin else {
+                print("error getting admin")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                Admin.current = admin
+                Admin.saveCurrentAdmin()
+            }
+        }
+    }
+    
     func getCurrentTeam() {
         API.sharedInstance.getCurrentTeam { success, team, error in
             guard error == nil else {

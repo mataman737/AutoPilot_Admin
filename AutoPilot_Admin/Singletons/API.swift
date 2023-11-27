@@ -297,6 +297,26 @@ class API: NSObject {
         }
     }
     
+    func getCurrentAdmin(completionHandler: @escaping (Bool, Admin?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let admin = try decoder.decode(Admin.self, from: data)
+                
+                completionHandler(true, admin, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func getMTServers(completionHandler: @escaping (Bool, [MTServerBroker]?, Error?) -> ()) {
         performRequest(endpoint: "mtservers", method: "GET", authenticated: true) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
