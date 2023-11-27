@@ -39,6 +39,8 @@ class MyForexTradesViewController: UIViewController {
     var didSetTeamNamePhoto = UserDefaults()
     var didSetAccessCode = UserDefaults()
     var didConnectBroker = UserDefaults()
+    var didGetAdmin = false
+    var didGetTeam = false
     var didGetOrders = false
     var didGetClosedOrders = false
     var onboardingCompleted = false
@@ -133,7 +135,7 @@ class MyForexTradesViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.brokers = accounts
                 self?.updateOnboardingRows()
-                print("\(accounts.count) 👽👽👽 \(self?.onboardingCompleted)")
+                //print("\(accounts.count) 👽👽👽 \(self?.onboardingCompleted)")
                 if accounts.count > 0 && self?.onboardingCompleted == true {
                     self?.getOpenOrders()
                     self?.getClosedOrders()
@@ -159,7 +161,7 @@ class MyForexTradesViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 Admin.current = admin
-                print("\(admin.permissions) 👽👽👽")
+                //print("\(admin.permissions) 👽👽👽")
                 Admin.saveCurrentAdmin()
             }
         }
