@@ -29,6 +29,7 @@ class AddTraderViewController: UIViewController {
     var nextButton = ContinueButton()
     var phoneNubmerIsValid = false
     var phoneNumber = ""
+    var traderType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,13 +81,13 @@ extension AddTraderViewController: UITextFieldDelegate {
     @objc func inviteMemberToTeam() {
         lightImpactGenerator()
         
-        if phoneNubmerIsValid && phoneNumber != "" {
+        if phoneNubmerIsValid && phoneNumber != "" && traderType != "" {
             guard let teamIdString = Admin.current.teamId, let teamId = UUID(uuidString: teamIdString) else {
                 print("no team id")
                 return
             }
             
-            API.sharedInstance.inviteMemberToTeam(pendingAdminRequest: PendingAdminRequest(teamId: teamId, name: "Name", phone: phoneNumber, adminType: "trader")) { success, _, error in
+            API.sharedInstance.inviteMemberToTeam(pendingAdminRequest: PendingAdminRequest(teamId: teamId, name: "Name", phone: phoneNumber, adminType: traderType)) { success, _, error in
                 guard error == nil else {
                     print(error!)
                     DispatchQueue.main.async {

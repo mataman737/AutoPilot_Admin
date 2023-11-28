@@ -31,7 +31,7 @@ extension AddTraderViewController {
         cardContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 530)).isActive = true
         cardContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
-        titleLabel.text = "Add New Trader"
+        //titleLabel.text = "Add New Trader"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .black
         titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))

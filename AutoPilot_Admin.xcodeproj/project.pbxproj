@@ -153,6 +153,8 @@
 		DEF830C02AE5FFAA00268370 /* FPNOBJCCountryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830A22AE5FF9600268370 /* FPNOBJCCountryKey.swift */; };
 		DEF830C12AE5FFAA00268370 /* FPNUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830A32AE5FF9600268370 /* FPNUtils.swift */; };
 		DEF830C22AE5FFAA00268370 /* FPNCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830A42AE5FF9600268370 /* FPNCountry.swift */; };
+		DEFB41622B15A4030006DD45 /* PickTraderTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB41612B15A4030006DD45 /* PickTraderTypeViewController.swift */; };
+		DEFB41642B15A40A0006DD45 /* PickTraderTypeViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB41632B15A40A0006DD45 /* PickTraderTypeViewController+Views.swift */; };
 		FC14F8F32AB4F0BD006D02DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC14F8F22AB4F0BD006D02DC /* User.swift */; };
 		FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D42AAA6A3A0097BDF1 /* Order.swift */; };
 		FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */; };
@@ -331,6 +333,8 @@
 		DEF830A22AE5FF9600268370 /* FPNOBJCCountryKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNOBJCCountryKey.swift; sourceTree = "<group>"; };
 		DEF830A32AE5FF9600268370 /* FPNUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNUtils.swift; sourceTree = "<group>"; };
 		DEF830A42AE5FF9600268370 /* FPNCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNCountry.swift; sourceTree = "<group>"; };
+		DEFB41612B15A4030006DD45 /* PickTraderTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickTraderTypeViewController.swift; sourceTree = "<group>"; };
+		DEFB41632B15A40A0006DD45 /* PickTraderTypeViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PickTraderTypeViewController+Views.swift"; sourceTree = "<group>"; };
 		FC14F8F22AB4F0BD006D02DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FC1747D42AAA6A3A0097BDF1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantTrade.swift; sourceTree = "<group>"; };
@@ -639,6 +643,7 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
 				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
+				DEFB41602B15A3E60006DD45 /* Pick Trader Type */,
 				DE65093E2AFABB560089084C /* Signal Results */,
 				DEF830722AE5FF9500268370 /* Sources */,
 				DE76E6F82AD78ACD00FC11B8 /* Set MyFXBook */,
@@ -865,6 +870,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		DEFB41602B15A3E60006DD45 /* Pick Trader Type */ = {
+			isa = PBXGroup;
+			children = (
+				DEFB41612B15A4030006DD45 /* PickTraderTypeViewController.swift */,
+				DEFB41632B15A40A0006DD45 /* PickTraderTypeViewController+Views.swift */,
+			);
+			path = "Pick Trader Type";
+			sourceTree = "<group>";
+		};
 		FCC4DD232A93FDF800185168 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
@@ -1029,6 +1043,7 @@
 				DEF830C02AE5FFAA00268370 /* FPNOBJCCountryKey.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
 				DE80EF802AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift in Sources */,
+				DEFB41622B15A4030006DD45 /* PickTraderTypeViewController.swift in Sources */,
 				DE66439A2AA56A4800DA27BE /* SplashViewController+Views.swift in Sources */,
 				DE410C9B2AB35B4200F1F24F /* DashboardMainHeaderView.swift in Sources */,
 				DE4D57962AA77BE4008E2B6B /* SettingsTableViewCell.swift in Sources */,
@@ -1074,6 +1089,7 @@
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */,
 				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
+				DEFB41642B15A40A0006DD45 /* PickTraderTypeViewController+Views.swift in Sources */,
 				DEB44E4C2AAFAB680006887A /* ConnectBrokerViewController+Views.swift in Sources */,
 				DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */,
 				DED14C3B2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift in Sources */,
