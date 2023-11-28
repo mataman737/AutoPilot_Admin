@@ -12,6 +12,7 @@ import FirebaseDynamicLinks
 final class Admin: Codable {
     var id: UUID?
     var teamId: String?
+    var adminType: String?
     var isLive: Bool?
     var username: String?
     var displayName: String?
