@@ -161,7 +161,7 @@ class MyForexTradesViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 Admin.current = admin
-                //print("\(admin.permissions) 👽👽👽")
+                //print("\(admin.) 👽👽👽")
                 Admin.saveCurrentAdmin()
             }
         }
