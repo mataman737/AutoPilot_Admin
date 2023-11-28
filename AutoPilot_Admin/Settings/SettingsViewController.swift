@@ -50,8 +50,8 @@ class SettingsViewController: UIViewController {
     var settingsSwitchImageTableViewCell = "settingsSwitchImageTableViewCell"
     var settingsSwitchTableViewCellTableViewCell = "settingsSwitchTableViewCellTableViewCell"
     
-    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign"]
-    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit"]
+    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign", "users15"]
+    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit", "My Traders"]
     var accountSettingsNonAdmin: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook"]
     var notifications: [String] = ["Trade Won", "Trade Lost", "New Community Message", "New Team Member"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
@@ -88,11 +88,6 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if accountType == "Admin" {
-//            accountImages = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign", "users15"]
-//            accountSettings = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit", "My Traders"]
-//        }
-                
         isDarkMode.set(false, forKey: "isDarkMode")
         
         if notFirstTimeInSettings.bool(forKey: "notFirstTimeInSettings") {
@@ -382,7 +377,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     @objc func presentUpdateTeamNamePhoto() {
-        if Admin.current.adminType == "admin" {
+        if Admin.current.adminType != "admin" {
             errorImpactGenerator()
             let toastNoti = ToastNotificationView()
             toastNoti.present(withMessage: "Admin only!")
@@ -398,7 +393,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     @objc func presentUpdateAccessCode() {
-        if Admin.current.adminType == "admin" {
+        if Admin.current.adminType != "admin" {
             errorImpactGenerator()
             let toastNoti = ToastNotificationView()
             toastNoti.present(withMessage: "Admin only!")
@@ -540,7 +535,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     @objc func didTapMyFXBook() {
-        if Admin.current.adminType == "admin" {
+        if Admin.current.adminType != "admin" {
             errorImpactGenerator()
             let toastNoti = ToastNotificationView()
             toastNoti.present(withMessage: "Admin only!")
@@ -649,13 +644,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            if Admin.current.adminType == "admin" {
+            if Admin.current.adminType != "admin" {
                 return 1
             } else {
                 return 2
             }
         } else if section == 1 {
-            if Admin.current.adminType == "admin" {
+            if Admin.current.adminType != "admin" {
                 return accountSettingsNonAdmin.count
             } else {
                 return accountSettings.count
