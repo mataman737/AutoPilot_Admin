@@ -52,6 +52,7 @@ class SettingsViewController: UIViewController {
     
     var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign"]
     var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit"]
+    var accountSettingsNonAdmin: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook"]
     var notifications: [String] = ["Trade Won", "Trade Lost", "New Community Message", "New Team Member"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
     var socialsIcons: [String] = ["fbIcon", "ytIcon", "igIcon"]
@@ -87,10 +88,10 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if accountType == "Admin" {
-            accountImages = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign", "users15"]
-            accountSettings = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit", "My Traders"]
-        }
+//        if accountType == "Admin" {
+//            accountImages = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign", "users15"]
+//            accountSettings = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit", "My Traders"]
+//        }
                 
         isDarkMode.set(false, forKey: "isDarkMode")
         
@@ -381,23 +382,35 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     @objc func presentUpdateTeamNamePhoto() {
-        lightImpactGenerator()
-        let updateTeamNamePhotoVC = UpdateTeamNameAndPhotoViewController()
-        updateTeamNamePhotoVC.team = self.team
-        updateTeamNamePhotoVC.delegate = self
-        //updateTeamNamePhotoVC.teamNameTextField.text = teamName
-        updateTeamNamePhotoVC.modalPresentationStyle = .overFullScreen
-        self.present(updateTeamNamePhotoVC, animated: false)
+        if Admin.current.adminType == "admin" {
+            errorImpactGenerator()
+            let toastNoti = ToastNotificationView()
+            toastNoti.present(withMessage: "Admin only!")
+        } else {
+            lightImpactGenerator()
+            let updateTeamNamePhotoVC = UpdateTeamNameAndPhotoViewController()
+            updateTeamNamePhotoVC.team = self.team
+            updateTeamNamePhotoVC.delegate = self
+            //updateTeamNamePhotoVC.teamNameTextField.text = teamName
+            updateTeamNamePhotoVC.modalPresentationStyle = .overFullScreen
+            self.present(updateTeamNamePhotoVC, animated: false)
+        }
     }
     
     @objc func presentUpdateAccessCode() {
-        lightImpactGenerator()
-        let updateAccessCodeVC = UpdateAccessCodeViewController()
-        updateAccessCodeVC.team = self.team
-        updateAccessCodeVC.delegate = self
-        updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
-        updateAccessCodeVC.modalPresentationStyle = .overFullScreen
-        self.present(updateAccessCodeVC, animated: false)
+        if Admin.current.adminType == "admin" {
+            errorImpactGenerator()
+            let toastNoti = ToastNotificationView()
+            toastNoti.present(withMessage: "Admin only!")
+        } else {
+            lightImpactGenerator()
+            let updateAccessCodeVC = UpdateAccessCodeViewController()
+            updateAccessCodeVC.team = self.team
+            updateAccessCodeVC.delegate = self
+            updateAccessCodeVC.accessCodeTextField.text = teamAccessCode
+            updateAccessCodeVC.modalPresentationStyle = .overFullScreen
+            self.present(updateAccessCodeVC, animated: false)
+        }
     }
     
     @objc  func presentBankDebitCard() {
@@ -527,12 +540,18 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     @objc func didTapMyFXBook() {
-        lightImpactGenerator()
-        let updateAccessCodeVC = SetMyFXBookLinkViewController()
-        updateAccessCodeVC.team = self.team
-        updateAccessCodeVC.delegate = self
-        updateAccessCodeVC.modalPresentationStyle = .overFullScreen
-        self.present(updateAccessCodeVC, animated: false)
+        if Admin.current.adminType == "admin" {
+            errorImpactGenerator()
+            let toastNoti = ToastNotificationView()
+            toastNoti.present(withMessage: "Admin only!")
+        } else {
+            lightImpactGenerator()
+            let updateAccessCodeVC = SetMyFXBookLinkViewController()
+            updateAccessCodeVC.team = self.team
+            updateAccessCodeVC.delegate = self
+            updateAccessCodeVC.modalPresentationStyle = .overFullScreen
+            self.present(updateAccessCodeVC, animated: false)
+        }
     }
     
     @objc func didTapMyTeamAppLink() {
@@ -630,9 +649,17 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            if Admin.current.adminType == "admin" {
+                return 1
+            } else {
+                return 2
+            }
         } else if section == 1 {
-            return accountSettings.count
+            if Admin.current.adminType == "admin" {
+                return accountSettingsNonAdmin.count
+            } else {
+                return accountSettings.count
+            }
         } else if section == 2 {
             return notifications.count
         } else if section == 3 {
@@ -653,8 +680,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 cell.profileImageView.image = UIImage(named: "avatarph")
                 cell.profileImageView.setImageColor(color: .newBlack)
-                if let displayName = Admin.current.displayName {
-                    cell.dateJoinedLabel.text = "\(accountType): \(displayName)"
+                if let displayName = Admin.current.displayName, let adminType = Admin.current.adminType {
+                    cell.dateJoinedLabel.text = "\(adminType.capitalized): \(displayName)"
                 }
                 //print("\(Admin.current.profilePhotoUrl) 🤬🤬🤬")
                 
