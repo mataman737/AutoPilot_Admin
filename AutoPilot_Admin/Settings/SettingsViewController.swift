@@ -50,8 +50,9 @@ class SettingsViewController: UIViewController {
     var settingsSwitchImageTableViewCell = "settingsSwitchImageTableViewCell"
     var settingsSwitchTableViewCellTableViewCell = "settingsSwitchTableViewCellTableViewCell"
     
-    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign", "users15"]
-    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit", "My Traders"]
+    var accountImages: [String] = ["appStack", "genLink", "atSign", "accessKey", "myFxBookIcon", "dollarSign", "users15", "affiliateIcon"]
+    //var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit", "My Traders"]
+    var accountSettings: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook", "Direct Deposit", "My Traders", "Affilate Program"]
     var accountSettingsNonAdmin: [String] = ["My Team App Link", "My Team Web Link", "", "", "MyFXBook"]
     var notifications: [String] = ["Trade Won", "Trade Lost", "New Community Message", "New Team Member"]
     var socials: [String] = ["Facebook", "Youtube", "Instagram"]
@@ -111,8 +112,9 @@ class SettingsViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         edgesForExtendedLayout = UIRectEdge.all
         extendedLayoutIncludesOpaqueBars = true
-        showTabBar()
+        //showTabBar()
         getCurrentTeam()
+        //self.hidesBottomBarWhenPushed = false
     }
     
     func getCurrentTeam() {
@@ -134,11 +136,22 @@ class SettingsViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.hidesBottomBarWhenPushed = false
+    }
 }
 
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    @objc func goToAffiliateProgram() {
+        lightImpactGenerator()
+        let affiliateVC = AffiliateProgramViewController()
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(affiliateVC, animated: true)
+    }
+    
     @objc func hideLoader() {
         UIView.animate(withDuration: 0.5) {
             self.loadingContainer.alpha = 0
@@ -893,8 +906,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 didTapMyFXBook()
             case 5:
                 presentBankDebitCard()
-            default:
+            case 6:
                 presentMyTeamSettings()
+            default:
+                goToAffiliateProgram()
             }
         }
              

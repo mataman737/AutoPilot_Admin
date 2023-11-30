@@ -82,7 +82,7 @@ extension MyBrokerOptionsTableViewCell {
         
         serverLabel.textAlignment = .left
         serverLabel.textColor = UIColor(red: 17/255, green: 18/255, blue: 19/255, alpha: 1.0)
-        serverLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        serverLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
         serverLabel.numberOfLines = 0
         serverLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(serverLabel)

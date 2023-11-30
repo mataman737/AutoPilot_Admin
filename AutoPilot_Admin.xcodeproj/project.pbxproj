@@ -116,6 +116,12 @@
 		DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */; };
 		DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */; };
 		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
+		DECCEA752B183DCA006AE4AD /* AffiliateProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA742B183DCA006AE4AD /* AffiliateProgramViewController.swift */; };
+		DECCEA772B183DD0006AE4AD /* AffiliateProgramViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA762B183DD0006AE4AD /* AffiliateProgramViewController+Views.swift */; };
+		DECCEA792B189BE9006AE4AD /* CircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA782B189BE9006AE4AD /* CircularSlider.swift */; };
+		DECCEA7B2B189EB6006AE4AD /* RotationGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA7A2B189EB6006AE4AD /* RotationGesture.swift */; };
+		DECCEA7E2B18AB3D006AE4AD /* AffiliatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA7D2B18AB3D006AE4AD /* AffiliatesViewController.swift */; };
+		DECCEA802B18AB45006AE4AD /* AffiliatesViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA7F2B18AB44006AE4AD /* AffiliatesViewController+Views.swift */; };
 		DED14C312ABFD5DE00E3E88D /* PaymentHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C302ABFD5DD00E3E88D /* PaymentHistoryViewController.swift */; };
 		DED14C332ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C322ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift */; };
 		DED14C352ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C342ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift */; };
@@ -281,6 +287,12 @@
 		DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
 		DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeConfirmView.swift; sourceTree = "<group>"; };
 		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
+		DECCEA742B183DCA006AE4AD /* AffiliateProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateProgramViewController.swift; sourceTree = "<group>"; };
+		DECCEA762B183DD0006AE4AD /* AffiliateProgramViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AffiliateProgramViewController+Views.swift"; sourceTree = "<group>"; };
+		DECCEA782B189BE9006AE4AD /* CircularSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSlider.swift; sourceTree = "<group>"; };
+		DECCEA7A2B189EB6006AE4AD /* RotationGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGesture.swift; sourceTree = "<group>"; };
+		DECCEA7D2B18AB3D006AE4AD /* AffiliatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesViewController.swift; sourceTree = "<group>"; };
+		DECCEA7F2B18AB44006AE4AD /* AffiliatesViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AffiliatesViewController+Views.swift"; sourceTree = "<group>"; };
 		DED14C302ABFD5DD00E3E88D /* PaymentHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryViewController.swift; sourceTree = "<group>"; };
 		DED14C322ABFD5E500E3E88D /* PaymentHistoryViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentHistoryViewController+Views.swift"; sourceTree = "<group>"; };
 		DED14C342ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePayoutSubscribersTableViewCell.swift; sourceTree = "<group>"; };
@@ -643,6 +655,7 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
 				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
+				DECCEA732B183DAA006AE4AD /* Affiliate Program */,
 				DEFB41602B15A3E60006DD45 /* Pick Trader Type */,
 				DE65093E2AFABB560089084C /* Signal Results */,
 				DEF830722AE5FF9500268370 /* Sources */,
@@ -763,6 +776,27 @@
 				DEC9A4EC2A93ED6F000DBE39 /* Fonts */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		DECCEA732B183DAA006AE4AD /* Affiliate Program */ = {
+			isa = PBXGroup;
+			children = (
+				DECCEA742B183DCA006AE4AD /* AffiliateProgramViewController.swift */,
+				DECCEA782B189BE9006AE4AD /* CircularSlider.swift */,
+				DECCEA7A2B189EB6006AE4AD /* RotationGesture.swift */,
+				DECCEA762B183DD0006AE4AD /* AffiliateProgramViewController+Views.swift */,
+				DECCEA7C2B18AB2E006AE4AD /* Affiliates */,
+			);
+			path = "Affiliate Program";
+			sourceTree = "<group>";
+		};
+		DECCEA7C2B18AB2E006AE4AD /* Affiliates */ = {
+			isa = PBXGroup;
+			children = (
+				DECCEA7D2B18AB3D006AE4AD /* AffiliatesViewController.swift */,
+				DECCEA7F2B18AB44006AE4AD /* AffiliatesViewController+Views.swift */,
+			);
+			path = Affiliates;
 			sourceTree = "<group>";
 		};
 		DED14C2F2ABFD59000E3E88D /* Payment History */ = {
@@ -1025,11 +1059,13 @@
 			files = (
 				DED14C3D2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift in Sources */,
 				DEB44E532AAFB1F50006887A /* MyConnectedBrokerAccountViewController+Views.swift in Sources */,
+				DECCEA772B183DD0006AE4AD /* AffiliateProgramViewController+Views.swift in Sources */,
 				DEF830A52AE5FFAA00268370 /* FPNCountryListViewController.swift in Sources */,
 				DEF830AB2AE5FFAA00268370 /* NBAsYouTypeFormatter.m in Sources */,
 				DE0E20432A9BE9040067C719 /* CommunityViewController.swift in Sources */,
 				DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */,
 				DED14C312ABFD5DE00E3E88D /* PaymentHistoryViewController.swift in Sources */,
+				DECCEA792B189BE9006AE4AD /* CircularSlider.swift in Sources */,
 				DE4D57982AA77C06008E2B6B /* SettingsSwitchTableViewCellTableViewCell.swift in Sources */,
 				DE4D579C2AA77C6F008E2B6B /* SupportTableViewCell.swift in Sources */,
 				DE6E44042A9D9D6000C76B71 /* ConfirmAlertView.swift in Sources */,
@@ -1062,7 +1098,9 @@
 				DEF830B52AE5FFAA00268370 /* NBMetadataHelper.m in Sources */,
 				DE6643A52AA5841D00DA27BE /* SignupProgressView.swift in Sources */,
 				DE80EF842AABDB7800603EF3 /* UpdateTeamNameAndPhotoViewController.swift in Sources */,
+				DECCEA752B183DCA006AE4AD /* AffiliateProgramViewController.swift in Sources */,
 				DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */,
+				DECCEA7B2B189EB6006AE4AD /* RotationGesture.swift in Sources */,
 				DE4D57A22AA82926008E2B6B /* MyProfileLinkViewController+Views.swift in Sources */,
 				DE2C18922ACC580E00CB509A /* MyTradersViewController.swift in Sources */,
 				FC4836DA2AAFAE2400056CE3 /* Team.swift in Sources */,
@@ -1106,6 +1144,7 @@
 				DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */,
 				DE6E43FC2A9D9D1B00C76B71 /* NewNotificationViewController.swift in Sources */,
 				DE80EF862AABDB7F00603EF3 /* UpdateTeamNameAndPhotoViewController+Views.swift in Sources */,
+				DECCEA7E2B18AB3D006AE4AD /* AffiliatesViewController.swift in Sources */,
 				DE410C8B2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift in Sources */,
 				FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */,
 				DEF830AD2AE5FFAA00268370 /* NBPhoneNumberUtil.m in Sources */,
@@ -1117,6 +1156,7 @@
 				FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */,
 				DE76E6FC2AD78BCE00FC11B8 /* SetMyFXBookLinkViewController+Views.swift in Sources */,
 				FCC4DD252A93FE0100185168 /* API.swift in Sources */,
+				DECCEA802B18AB45006AE4AD /* AffiliatesViewController+Views.swift in Sources */,
 				DEB44E3B2AAE69AD0006887A /* CloseOrderViewController.swift in Sources */,
 				FC14F8F32AB4F0BD006D02DC /* User.swift in Sources */,
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
@@ -1304,7 +1344,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AutoPilot_Admin/AutoPilot_Admin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = M32NGP6PG5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoPilot_Admin/Info.plist;
@@ -1337,7 +1377,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AutoPilot_Admin/AutoPilot_Admin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = M32NGP6PG5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoPilot_Admin/Info.plist;

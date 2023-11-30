@@ -110,7 +110,7 @@ extension PickTraderTypeViewController {
         dateLabel.topAnchor.constraint(equalTo: navTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 5)).isActive = true
         dateLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
         
-        recentSignalsOption.iconImageView.image = UIImage(named: "clockGrad")
+        recentSignalsOption.iconImageView.image = UIImage(named: "traderGrad")
         recentSignalsOption.optionTitleLabel.text = "New Trader"
         recentSignalsOption.optionButton.addTarget(self, action: #selector(newFollowupReminderTapped), for: .touchUpInside)
         recentSignalsOption.optionDetailLabel.text = "Add a trader to the team"
@@ -133,7 +133,7 @@ extension PickTraderTypeViewController {
         arrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 20)).isActive = true
         
         longTermSignalsOption.optionButton.addTarget(self, action: #selector(didTapMarketingCenter), for: .touchUpInside)
-        longTermSignalsOption.iconImageView.image = UIImage(named: "calGrad")
+        longTermSignalsOption.iconImageView.image = UIImage(named: "adminCoffeeGrad")
         longTermSignalsOption.optionTitleLabel.text = "New Admin"
         longTermSignalsOption.optionDetailLabel.text = "Add a admin to the team"
         longTermSignalsOption.translatesAutoresizingMaskIntoConstraints = false
