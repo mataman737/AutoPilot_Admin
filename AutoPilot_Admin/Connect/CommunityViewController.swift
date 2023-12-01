@@ -363,6 +363,7 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             do {
+                print("\(Admin.current.teamId!) 🧠🧠🧠")
                 let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!)")
                 let channelVC = CustomChatChannelVC()
                 channelVC.chatChannelDelegate = self

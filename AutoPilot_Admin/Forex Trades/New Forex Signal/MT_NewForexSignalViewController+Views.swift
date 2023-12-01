@@ -127,6 +127,16 @@ extension MT_NewForexSignalViewController {
         contentContainer.addSubview(assetTitleLabel)
         assetTitleLabel.leadingAnchor.constraint(equalTo: dismissImageView.leadingAnchor, constant: 0).isActive = true
         assetTitleLabel.topAnchor.constraint(equalTo: dismissImageView.bottomAnchor, constant: .createAspectRatio(value: 34)).isActive = true
+        
+        //requiredFormatLabel.text = "Format: x.xxxxx"
+        requiredFormatLabel.textColor = variableColor.withAlphaComponent(0.5)
+        requiredFormatLabel.textAlignment = .left
+        requiredFormatLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
+        requiredFormatLabel.numberOfLines = 0
+        requiredFormatLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(requiredFormatLabel)
+        requiredFormatLabel.leadingAnchor.constraint(equalTo: dismissImageView.leadingAnchor, constant: 0).isActive = true
+        requiredFormatLabel.topAnchor.constraint(equalTo: assetTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 10)).isActive = true
                 
         let accessoryContainer = UIView()
         accessoryContainer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 66)
@@ -152,24 +162,16 @@ extension MT_NewForexSignalViewController {
         continueButton.trailingAnchor.constraint(equalTo: accessoryContainer.trailingAnchor, constant: -.createAspectRatio(value: 24)).isActive = true
         continueButton.topAnchor.constraint(equalTo: accessoryContainer.topAnchor, constant: 0).isActive = true
         continueButton.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 56)).isActive = true
-        
-        //LIVE PRICE
-        /*
-        createContainer(containerView: livePriceContainer, sectionTitleLabel: livePriceTitleLabel, isFirst: true)
-        livePriceTitleLabel.text = "Live Price"
-        //entryPriceContainer.topAnchor.constraint(equalTo: lotSizeContainer.bottomAnchor, constant: 0).isActive = true
-        livePriceContainer.topAnchor.constraint(equalTo: assetTitleLabel.bottomAnchor, constant: 26).isActive = true
-        
-        setupLiveLabel(liveLabel: livePriceLabel, pinView: livePriceContainer, theText: "0.0 | 0 pips")
-        */
+                
         //ENTRY PRICE
         
         createContainer(containerView: entryPriceContainer, sectionTitleLabel: entryPriceTitleLabel, isFirst: false)
         entryPriceTitleLabel.text = "Entry Price"
+        entryPriceHeight = entryPriceContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87))
+        entryPriceHeight.isActive = true
         //entryPriceContainer.topAnchor.constraint(equalTo: lotSizeContainer.bottomAnchor, constant: 0).isActive = true
         //entryPriceContainer.topAnchor.constraint(equalTo: assetTitleLabel.bottomAnchor, constant: 26).isActive = true
         entryPriceContainer.topAnchor.constraint(equalTo: assetTitleLabel.bottomAnchor, constant: 26).isActive = true
-        //entryPriceContainer.topAnchor.constraint(equalTo: livePriceContainer.bottomAnchor, constant: 0).isActive = true
         
         
         //entryPriceTextField
@@ -181,14 +183,15 @@ extension MT_NewForexSignalViewController {
         //TAKE PROFIT ONE
         
         createContainer(containerView: takeProfitContainer, sectionTitleLabel: takeProfitTitleLabel, isFirst: false)
-        takeProfitTitleLabel.text = "Take Profit 1"
+        takeProfitTitleLabel.text = "Take Profit"
+        takeProfitContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87)).isActive = true
         takeProfitContainer.topAnchor.constraint(equalTo: entryPriceContainer.bottomAnchor, constant: 0).isActive = true
         takeProfitTextField.placeholder = "0.0"
         setupTextField(txtField: takeProfitTextField, pinView: takeProfitContainer, theText: "")
         setupDetailLabel(detailLabel: takeProfitDetailLabel, viewToPin: takeProfitContainer)
         
         //TAKE PROFIT TWO
-        
+        /*
         createContainer(containerView: takeProfitTwoContainer, sectionTitleLabel: takeProfitTwoTitleLabel, isFirst: false)
         takeProfitTwoTitleLabel.text = "Take Profit 2 (Optional)"
         takeProfitTwoContainer.topAnchor.constraint(equalTo: takeProfitContainer.bottomAnchor, constant: 0).isActive = true
@@ -204,13 +207,14 @@ extension MT_NewForexSignalViewController {
         takeProfitThreeTextField.placeholder = "0.0"
         setupTextField(txtField: takeProfitThreeTextField, pinView: takeProfitThreeContainer, theText: "")
         setupDetailLabel(detailLabel: takeProfitThreeDetailLabel, viewToPin: takeProfitThreeContainer)
-        
+        */
         //STOP LOSS
         
         createContainer(containerView: stopLossContainer, sectionTitleLabel: stopLossTitleLabel, isFirst: false)
         stopLossTitleLabel.text = "Stop Loss"
         stopLossTitleLabel.isUserInteractionEnabled = false
-        stopLossContainer.topAnchor.constraint(equalTo: takeProfitThreeContainer.bottomAnchor, constant: 0).isActive = true
+        stopLossContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87)).isActive = true
+        stopLossContainer.topAnchor.constraint(equalTo: takeProfitContainer.bottomAnchor, constant: 0).isActive = true
         setupTextField(txtField: stopLossTextField, pinView: stopLossContainer, theText: "")
         stopLossTextField.placeholder = "0.0"
         stopLossUSDLabel.isHidden = true
@@ -233,29 +237,7 @@ extension MT_NewForexSignalViewController {
         */
         
         //DEMO SIGNAL
-                
-        /*
-        createDemoContainer(containerView: demoSignalContainer, sectionTitleLabel: demoSignalTitleLabel)
-        demoSignalTitleLabel.text = "Send Demo Signal"
-        demoSignalContainer.topAnchor.constraint(equalTo: tradeTypeContainer.bottomAnchor, constant: 0).isActive = true
-        
-        demoSignalCheckBoxImageView.image = UIImage(named: "emptyCheckBoxBlack")
-        demoSignalCheckBoxImageView.contentMode = .scaleAspectFill
-        demoSignalCheckBoxImageView.translatesAutoresizingMaskIntoConstraints = false
-        demoSignalContainer.addSubview(demoSignalCheckBoxImageView)
-        demoSignalCheckBoxImageView.trailingAnchor.constraint(equalTo: demoSignalContainer.trailingAnchor, constant: 0).isActive = true
-        demoSignalCheckBoxImageView.centerYAnchor.constraint(equalTo: demoSignalContainer.centerYAnchor, constant: 0).isActive = true
-        demoSignalCheckBoxImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
-        demoSignalCheckBoxImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
-                                
-        demoSignalButton.addTarget(self, action: #selector(demoSignalTapped), for: .touchUpInside)
-        demoSignalButton.translatesAutoresizingMaskIntoConstraints = false
-        demoSignalContainer.addSubview(demoSignalButton)
-        demoSignalButton.trailingAnchor.constraint(equalTo: demoSignalContainer.trailingAnchor).isActive = true
-        demoSignalButton.topAnchor.constraint(equalTo: demoSignalContainer.topAnchor).isActive = true
-        demoSignalButton.bottomAnchor.constraint(equalTo: demoSignalContainer.bottomAnchor).isActive = true
-        demoSignalButton.leadingAnchor.constraint(equalTo: demoSignalContainer.centerXAnchor).isActive = true
-        */
+                        
         
         bulletZero.backgroundColor = variableColor.withAlphaComponent(0.75)
         bulletZero.layer.cornerRadius = .createAspectRatio(value: 4)/2
@@ -362,7 +344,6 @@ extension MT_NewForexSignalViewController {
         self.view.addSubview(checkBackOfficeLabel)
         checkBackOfficeLabel.topAnchor.constraint(equalTo: orderPlaced.bottomAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         checkBackOfficeLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        
     }
     
     func createContainer(containerView: UIView, sectionTitleLabel: UILabel, isFirst: Bool) {
@@ -370,7 +351,7 @@ extension MT_NewForexSignalViewController {
         contentContainer.addSubview(containerView)
         containerView.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: .createAspectRatio(value: 18)).isActive = true
         containerView.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -.createAspectRatio(value: 18)).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87)).isActive = true
+        //containerView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 87)).isActive = true
         
         let dividerLine = UIView()
         dividerLine.backgroundColor = variableColor.withAlphaComponent(0.1)
