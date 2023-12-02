@@ -88,6 +88,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         isDarkMode.set(false, forKey: "isDarkMode")
         
@@ -998,5 +999,11 @@ extension SettingsViewController: UpdateTeamNameAndPhotoViewControllerDelegate, 
     
     func didUpdateTeamNamePhoto() {
         getCurrentTeam()
+    }
+}
+
+extension SettingsViewController:UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
