@@ -391,6 +391,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     @objc func presentUpdateTeamNamePhoto() {
+        print("\(Admin.current.adminType) 😡😡😡 \(Admin.current.displayName)")
         if Admin.current.adminType != "admin" {
             errorImpactGenerator()
             let toastNoti = ToastNotificationView()

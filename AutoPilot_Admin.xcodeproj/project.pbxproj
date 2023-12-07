@@ -1350,10 +1350,12 @@
 				INFOPLIST_FILE = AutoPilot_Admin/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Admin;
 				INFOPLIST_KEY_NSCameraUsageDescription = "App would like to access your camera so you can send push notifications";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow access to your microphone for audio rooms";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App would like to access your photos so you can send push notifications";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1383,10 +1385,12 @@
 				INFOPLIST_FILE = AutoPilot_Admin/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Admin;
 				INFOPLIST_KEY_NSCameraUsageDescription = "App would like to access your camera so you can send push notifications";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow access to your microphone for audio rooms";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App would like to access your photos so you can send push notifications";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
