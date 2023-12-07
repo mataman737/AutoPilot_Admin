@@ -37,7 +37,20 @@ extension MyTradersViewController {
     
     @objc func goToAddTrader() {
         lightImpactGenerator()
+        let updateAccessCodeVC = PickTraderTypeViewController()//AddTraderViewController()
+        updateAccessCodeVC.delegate = self
+        updateAccessCodeVC.modalPresentationStyle = .overFullScreen
+        self.present(updateAccessCodeVC, animated: false)
+    }
+}
+
+//MARK: PICK TRADER TYPE DELEGATE
+
+extension MyTradersViewController: PickTraderTypeViewControllerDelegate {
+    func didTapTrader(type: String) {
         let updateAccessCodeVC = AddTraderViewController()
+        updateAccessCodeVC.traderType = type
+        updateAccessCodeVC.titleLabel.text = type == "admin" ? "Add New Admin" : "Add New Trader"
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
     }
@@ -57,7 +70,7 @@ extension MyTradersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
         cell.chatNameLabel.text = "John Doe"
-        cell.chatDescriptionLabel.text = "45 trades posted"
+        cell.chatDescriptionLabel.text = "Trader"
         cell.circleImageView.image = UIImage(named: "enigmaUserPH")
         cell.last30DayPercentChange.isHidden = true
         return cell

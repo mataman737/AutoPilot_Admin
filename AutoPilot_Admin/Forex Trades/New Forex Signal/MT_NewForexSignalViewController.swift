@@ -38,6 +38,7 @@ class MT_NewForexSignalViewController: UIViewController {
     var loadingIndicator = UIActivityIndicatorView(style: .white)
     var tradingPairSelected = ""
     var orderTypeSelected = "Pick Order Type"
+    var isEntryNil = false
     
     var dismissTop: CGFloat = 54
     var dismissImageView = UIImageView()
@@ -60,6 +61,7 @@ class MT_NewForexSignalViewController: UIViewController {
     var lotSizeTextField = UITextField()
     
     var entryPriceContainer = UIView()
+    var entryPriceHeight: NSLayoutConstraint!
     var entryPriceTitleLabel = UILabel()
     var entryPriceDetailLabel = UILabel()
     var entryPriceUSDLabel = UILabel()
@@ -87,7 +89,6 @@ class MT_NewForexSignalViewController: UIViewController {
     var tradetypeTitleLabel = UILabel()
     var tradeTypeTextField = UITextField()
     var signalTypeButton = UIButton()
-    var signalTypeSelected = ""
     
     var demoSignalContainer = UIView()
     var demoSignalTitleLabel = UILabel()
@@ -119,7 +120,6 @@ class MT_NewForexSignalViewController: UIViewController {
     
     var forexSignal: Signal?
     var contentSize: CGFloat = 1.5
-    var takeProfitSelected: String = "0.0"
     var brokers = [String]()
     
     var placedInstantTrade = false
@@ -127,8 +127,6 @@ class MT_NewForexSignalViewController: UIViewController {
     var isPickingSignalType = false
     var isPostingSignal = false
     var account: String?
-    var usersPreferredBroker = UserDefaults()
-    var demoSignalSelected = false
     
     var signalEntryPrice = "143.123"
     var signalAsset = "USDJPY"
@@ -136,13 +134,8 @@ class MT_NewForexSignalViewController: UIViewController {
     var isTypeSell = false
     var isPendingOrderType = false
     var canPlaceInstantTrade = false
-    
-    var livePriceContainer = UIView()
-    var livePriceTitleLabel = UILabel()
-    var livePriceLabel = UILabel()
-    
-    var forexBadAssets: [String] = ["XAUUSD", "XAGUSD", "WTI", "ETHUSD", "BTCUSD", "XPDUSD", "XPTUSD", "US100", "SPX500", "US500", "GER30", "NAS100", "USDJPY"]
-    
+    var requiredFormatLabel = UILabel()
+        
     var socket: NWWebSocket?
     
     override func viewDidLoad() {
@@ -168,62 +161,62 @@ class MT_NewForexSignalViewController: UIViewController {
 
 extension MT_NewForexSignalViewController: WebSocketConnectionDelegate {
     func webSocketDidConnect(connection: WebSocketConnection) {
-            // Respond to a WebSocket connection event
+        // Respond to a WebSocket connection event
         print("did connect to ws")
-        }
-
-        func webSocketDidDisconnect(connection: WebSocketConnection,
-                                    closeCode: NWProtocolWebSocket.CloseCode, reason: Data?) {
-            // Respond to a WebSocket disconnection event
-            print("disconnected from ws")
-        }
-
-        func webSocketViabilityDidChange(connection: WebSocketConnection, isViable: Bool) {
-            // Respond to a WebSocket connection viability change event
-        }
-
+    }
+    
+    func webSocketDidDisconnect(connection: WebSocketConnection,
+                                closeCode: NWProtocolWebSocket.CloseCode, reason: Data?) {
+        // Respond to a WebSocket disconnection event
+        print("disconnected from ws")
+    }
+    
+    func webSocketViabilityDidChange(connection: WebSocketConnection, isViable: Bool) {
+        // Respond to a WebSocket connection viability change event
+    }
+    
     func webSocketDidAttemptBetterPathMigration(result: Result<WebSocketConnection, NWError>) {
-            // Respond to when a WebSocket connection migrates to a better network path
-            // (e.g. A device moves from a cellular connection to a Wi-Fi connection)
+        // Respond to when a WebSocket connection migrates to a better network path
+        // (e.g. A device moves from a cellular connection to a Wi-Fi connection)
+    }
+    
+    func webSocketDidReceiveError(connection: WebSocketConnection, error: NWError) {
+        // Respond to a WebSocket error event
+        print("got ws error")
+        print(error)
+    }
+    
+    func webSocketDidReceivePong(connection: WebSocketConnection) {
+        // Respond to a WebSocket connection receiving a Pong from the peer
+    }
+    
+    func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
+        // Respond to a WebSocket connection receiving a `String` message
+        //print("got message")
+        //print("\(string) 👽👽👽 111")
+        
+        guard let data = string.data(using: .utf8) else {
+            print("couldn't convert string to data")
+            return
         }
-
-        func webSocketDidReceiveError(connection: WebSocketConnection, error: NWError) {
-            // Respond to a WebSocket error event
-            print("got ws error")
-            print(error)
-        }
-
-        func webSocketDidReceivePong(connection: WebSocketConnection) {
-            // Respond to a WebSocket connection receiving a Pong from the peer
-        }
-
-        func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
-            // Respond to a WebSocket connection receiving a `String` message
-            //print("got message")
-            //print("\(string) 👽👽👽 111")
+        
+        //print("👽👽👽 222")
+        
+        do {
+            let livePrices = try JSONDecoder().decode(LivePrices.self, from: data)
             
-            guard let data = string.data(using: .utf8) else {
-                print("couldn't convert string to data")
-                return
+            if let livePrice = livePrices.priceForSymbol(symbol: tradingPairSelected) {
+                //self.livePriceLabel.text = "$\(livePrice)"
             }
-            
-            //print("👽👽👽 222")
-            
-            do {
-                let livePrices = try JSONDecoder().decode(LivePrices.self, from: data)
-                
-                if let livePrice = livePrices.priceForSymbol(symbol: tradingPairSelected) {
-                    self.livePriceLabel.text = "$\(livePrice)"
-                }
-            } catch {
-                //print("\(error) 👽👽👽 444")
-            }
+        } catch {
+            //print("\(error) 👽👽👽 444")
         }
+    }
 
-        func webSocketDidReceiveMessage(connection: WebSocketConnection, data: Data) {
-            // Respond to a WebSocket connection receiving a binary `Data` message
-            print("got data")
-        }
+    func webSocketDidReceiveMessage(connection: WebSocketConnection, data: Data) {
+        // Respond to a WebSocket connection receiving a binary `Data` message
+        print("got data")
+    }
     
     public enum RoundingPrecision {
         case ones
@@ -247,126 +240,34 @@ extension MT_NewForexSignalViewController: WebSocketConnectionDelegate {
 
 extension MT_NewForexSignalViewController {
     
-    @objc func checkPrevailLivePrice() {
-        
-        /*
-        if signalOrderType.contains("Buy") {
-            isTypeSell = false
-        } else {
-            isTypeSell = true
-        }
-        
-        if signalOrderType != "Buy" && signalOrderType != "Sell" {
-            isPendingOrderType = true
-        } else {
-            isPendingOrderType = false
-        }
-        
-        var forexPrice = "0"
-        //forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalAsset)
-        let decimalPlaces = signalEntryPrice.components(separatedBy: ".")[1]
-        let entryPriceFloat = Float(signalEntryPrice)
-        let lastBid = Float(forexPrice) //Float(quote.last.bid)
-        let pipDifference = (((lastBid ?? 0) - (entryPriceFloat ?? 0)) * 10).rounded()
-        let tip: Float = lastBid ?? 0
-        let currentPriceUpdated: String = String(format: "%.\(decimalPlaces.count)f", tip)
-        //cell.currentPrice = currentPriceUpdated
-        //cell.pipDifference = Double(pipDifference)
-                
-            
-            let noDecmialCurrentPrice = currentPriceUpdated.replacingOccurrences(of: ".", with: "")
-            let noDecmialEntryPrice = signalEntryPrice.replacingOccurrences(of: ".", with: "")
-            
-            let livePriceDouble = Double(noDecmialCurrentPrice) ?? 0
-            let signalEntryDouble = Double(noDecmialEntryPrice) ?? 0
-            
-            var pipvalue = 0.0
-            
-            if livePriceDouble > signalEntryDouble {
-                //print("Live price is greater than Entry Price")
-                pipvalue = ((livePriceDouble * 0.1) - (signalEntryDouble * 0.1)).rounded(toPlaces: 1)
-                
-                livePriceLabel.text = isTypeSell ? "Live: \(currentPriceUpdated) | -\(pipvalue) pips" : "Live: \(currentPriceUpdated) | \(pipvalue) pips"
-                
-                    if pipvalue > 15 {
-                        //let pipDiff = pipvalue - 15
-                        let pipDiff = ((pipvalue - 15).rounded(toPlaces: 2)).withCommas()
-                        //cell.instantTradeDeactivatedLabel.text = "Instant Trade Deactivated by \(pipDiff) pips".localiz()
-                        /*
-                        if self.canDoDemoSignals || isPendingOrderType {
-                            //cell.canPlaceInstantTrade = true
-                            //cell.instantTradeDeactivatedLabel.text = ""
-                        } else {
-                            //cell.canPlaceInstantTrade = false
-                        }
-                        */
-                    } else {
-                        //cell.canPlaceInstantTrade = true
-                        //cell.instantTradeDeactivatedLabel.text = ""
-                    }
-                
-            } else {
-                
-                //print("Live Price is less than Entry Price")
-                
-                pipvalue = ((signalEntryDouble * 0.1) - (livePriceDouble * 0.1)).rounded(toPlaces: 1)
-                
-                livePriceLabel.text = isTypeSell ? "Live: \(currentPriceUpdated) | -\(pipvalue) pips" : "Live: \(currentPriceUpdated) | \(pipvalue) pips"
-                
-                    if pipvalue > 15 {
-                        let pipDiff = ((pipvalue - 15).rounded(toPlaces: 2)).withCommas()
-                        //cell.instantTradeDeactivatedLabel.text = "Instant Trade Deactivated by \(pipDiff) pips".localiz()
-                        /*
-                        if self.canDoDemoSignals || isPendingOrderType {
-                            //cell.canPlaceInstantTrade = true
-                            //cell.instantTradeDeactivatedLabel.text = ""
-                        } else {
-                            //cell.canPlaceInstantTrade = false
-                        }
-                        */
-                    } else {
-                        //cell.canPlaceInstantTrade = true
-                        //cell.instantTradeDeactivatedLabel.text = ""
-                    }
-                                    
-            }
-            
-            //cell.currentPricePipTimeLabel.textColor = cell.currentPricePipTimeLabel.text?.contains("-") == true ? .liveDataRed : .liveDataGreen
-            
-            let cpZeroCheck = currentPriceUpdated.removing(charactersOf: ".") //"0".removing(charactersOf: ".")
-            if let czc = Int(cpZeroCheck) {
-                //print("\(czc) 🥰🥰🥰 111")
-                if Int(cpZeroCheck) == 0 {
-                    canPlaceInstantTrade = false
-                }
-            }
-            
-        */
-        
-    }
-    
-    @objc func demoSignalTapped() {
-        lightImpactGenerator()
-        if demoSignalSelected {
-            demoSignalCheckBoxImageView.image = UIImage(named: "emptyCheckBoxBlack")
-            demoSignalSelected = false
-        } else {
-            demoSignalCheckBoxImageView.image = UIImage(named: "checkBoxFill")
-            demoSignalSelected = true
-        }
-    }
-    
     @objc func didTapSignalOptions() {
         lightImpactGenerator()
-        isPickingSignalType = true
-        self.view.endEditing(true)
-        let pickOptionsVC = PickOptionViewController()
-        pickOptionsVC.delegate = self
-        pickOptionsVC.titleLabel.text = "Signal Type Options"
-        pickOptionsVC.options = signalTypeOptions
-        pickOptionsVC.shareURLButton.continueLabel.text = "Confirm"
-        pickOptionsVC.modalPresentationStyle = .overFullScreen
-        self.present(pickOptionsVC, animated: false)
+        
+         isPickingSignalType = true
+         self.view.endEditing(true)
+         let pickOptionsVC = PickOptionViewController()
+         pickOptionsVC.delegate = self
+         pickOptionsVC.titleLabel.text = "Signal Type Options"
+         pickOptionsVC.options = signalTypeOptions
+         pickOptionsVC.shareURLButton.continueLabel.text = "Confirm"
+         pickOptionsVC.modalPresentationStyle = .overFullScreen
+         self.present(pickOptionsVC, animated: false)
+    }
+    
+    @objc func animateEntry(orderString: String) {
+        if orderString == "Buy" || orderString == "Sell" {
+            self.entryPriceHeight.constant = 0
+            UIView.animate(withDuration: 0.35) {
+                self.entryPriceContainer.alpha = 0
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            self.entryPriceHeight.constant = 87
+            UIView.animate(withDuration: 0.35) {
+                self.entryPriceContainer.alpha = 1.0
+                self.view.layoutIfNeeded()
+            }
+        }
     }
     
     @objc func dismissVC() {
@@ -438,16 +339,14 @@ extension MT_NewForexSignalViewController: PickOptionViewControllerDelegate {
     }
     
     func didPickOption(optionSelected: String) {
-        if isPickingSignalType {
-            tradeTypeTextField.text = optionSelected
-            signalTypeSelected = optionSelected
+        animateEntry(orderString: optionSelected)
+        orderTypeLabel.text = optionSelected
+        orderTypeSelected = optionSelected
+        if orderTypeSelected == "Buy" || orderTypeSelected == "Sell" {
+            orderTypeSelected = "Market execution"
+            isEntryNil = true
         } else {
-            orderTypeLabel.text = optionSelected
-            if orderTypeSelected == "Buy" || orderTypeSelected == "Sell" {
-                orderTypeSelected = "Market execution"
-            } else {
-                orderTypeSelected = optionSelected
-            }
+            isEntryNil = false
         }
     }
 }
@@ -530,6 +429,33 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
         }
     }
     
+    func returnFormatString(tradingPair: String) {
+        if tradingPair.contains("JPY") == true {
+            requiredFormatLabel.text = "Format: xxx.xxx"
+        } else if tradingPair.contains("US30") == true {
+            requiredFormatLabel.text = "Format: xxxx.xx"
+        } else if tradingPair.contains("US500") == true ||  tradingPair.contains("SPX500") == true {
+            requiredFormatLabel.text = "Format: xxxx.xx"
+        } else if tradingPair.contains("XAUUSD") == true {
+            requiredFormatLabel.text = "Format: xxxx.xxx"
+        } else if tradingPair.contains("XAGUSD") == true {
+            requiredFormatLabel.text = "Format: xx.xxxxx"
+        } else if tradingPair.contains("USDMXN") == true {
+            requiredFormatLabel.text = "Format: xx.xxxxx"
+        } else if tradingPair.contains("USDZAR") == true {
+            requiredFormatLabel.text = "Format: xx.xxxxx"
+        }  else if tradingPair.contains("GER30") == true {
+            //return checkForValidEntry(entryString: entryString, wiggleView: containerView, countZero: 5, countOne: 2)
+            requiredFormatLabel.text = "Format: xxxxx.xx"
+        } else if tradingPair.contains("NAS100") == true {
+            requiredFormatLabel.text = "Format: xxxxx.xx"
+        } else if tradingPair.contains("US100") == true {
+            requiredFormatLabel.text = "Format: xxxxx.xx"
+        } else {
+            requiredFormatLabel.text = "Format: x.xxxxx"
+        }
+    }
+    
     private func checkForValidEntry(entryString: String, wiggleView: UIView, countZero: Int, countOne: Int) -> Bool {
         let smth = entryString
         if let index = (smth.range(of: ".")?.lowerBound) {
@@ -541,6 +467,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                 errorImpactGenerator()
                 let toastNoti = ToastNotificationView()
                 toastNoti.present(withMessage: "Invalid Format")
+                self.requiredFormatLabel.badWiggle()
                 self.perform(#selector(swipeViewReset), with: self, afterDelay: 0.01)
                 print("this one 🧚‍♂️🧚‍♂️🧚‍♂️ 111")
                 return false
@@ -554,7 +481,8 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                         wiggleView.badWiggle()
                         errorImpactGenerator()
                         let toastNoti = ToastNotificationView()
-                        toastNoti.present(withMessage: "Invalid")
+                        toastNoti.present(withMessage: "Invalid Format")
+                        self.requiredFormatLabel.badWiggle()
                         self.perform(#selector(swipeViewReset), with: self, afterDelay: 0.01)
                         print("this one 🧚‍♂️🧚‍♂️🧚‍♂️ 222")
                         return false
@@ -619,120 +547,139 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
     ///////////////////
     
     @objc func didTapConfirm() {
-        if tradingPairSelected != "" && orderTypeSelected != "Pick Order Type" && entryPriceTextField.text != "" && takeProfitTextField.text != "" && stopLossTextField.text != "" && signalTypeSelected != "" {
-            if let entryString = entryPriceTextField.text {
-                if !entryString.contains(".") {
-                    print("did this crap 👘👘👘 000")
-                    entryPriceContainer.badWiggle()
-                    errorImpactGenerator()
-                    self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
-                    return
-                } else {
-                    print("did this crap 👘👘👘 111")
-                    if checkTradingPair(tradingPair: tradingPairSelected, containerView: entryPriceContainer, entryString: entryString) == false {
-                        swipeView.resetSwipe()
+        
+        if isEntryNil {
+            if tradingPairSelected != "" && orderTypeSelected != "Pick Order Type" && takeProfitTextField.text != "" && stopLossTextField.text != "" {
+                if let takeProfitString = takeProfitTextField.text {
+                    if !takeProfitString.contains(".") {
+                        takeProfitContainer.badWiggle()
+                        errorImpactGenerator()
+                        self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
                         return
+                    } else {
+                        if checkTradingPair(tradingPair: tradingPairSelected, containerView: takeProfitContainer, entryString: takeProfitString) == false {
+                            swipeView.resetSwipe()
+                            return
+                        }
                     }
                 }
+                
+                if let stopLossString = stopLossTextField.text {
+                    if !stopLossString.contains(".") {
+                        stopLossContainer.badWiggle()
+                        errorImpactGenerator()
+                        self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
+                        return
+                    } else {
+                        if checkTradingPair(tradingPair: tradingPairSelected, containerView: stopLossContainer, entryString: stopLossString) == false {
+                            swipeView.resetSwipe()
+                            return
+                        }
+                        
+                    }
+                }
+                
+                if !isPostingSignal {
+                    isPostingSignal = true
+                    postSignal()
+                }
+                
             } else {
-                print("did this crap 👘👘👘 222")
-            }
-            
-            if let takeProfitString = takeProfitTextField.text {
-                if !takeProfitString.contains(".") {
+                errorImpactGenerator()
+                //swipeView.resetSwipe()
+                self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
+                
+                if takeProfitTextField.text == "" {
                     takeProfitContainer.badWiggle()
-                    errorImpactGenerator()
-                    self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
-                    return
-                } else {
-                    if checkTradingPair(tradingPair: tradingPairSelected, containerView: takeProfitContainer, entryString: takeProfitString) == false {
-                        swipeView.resetSwipe()
-                        return
-                    }
                 }
-            }
-            
-            if let stopLossString = stopLossTextField.text {
-                if !stopLossString.contains(".") {
+                
+                if stopLossTextField.text == "" {
                     stopLossContainer.badWiggle()
-                    errorImpactGenerator()
-                    self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
-                    return
-                } else {
-                    if checkTradingPair(tradingPair: tradingPairSelected, containerView: stopLossContainer, entryString: stopLossString) == false {
-                        swipeView.resetSwipe()
-                        return
-                    }
-                    
                 }
-            }
-            
-            if takeProfitTwoTextField.text != "" {
-                if let takeProfitString = takeProfitTwoTextField.text {
-                    if !takeProfitString.contains(".") {
-                        takeProfitTwoContainer.badWiggle()
-                        errorImpactGenerator()
-                        self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
-                        return
-                    } else {
-                        if checkTradingPair(tradingPair: tradingPairSelected, containerView: takeProfitTwoContainer, entryString: takeProfitString) == false {
-                            swipeView.resetSwipe()
-                            return
-                        }
-                        
-                    }
+                
+                if orderTypeLabel.text == "Pick Order Type" {
+                    orderTypeLabel.badWiggle()
                 }
-            }
-            
-            if takeProfitThreeTextField.text != "" {
-                if let takeProfitString = takeProfitThreeTextField.text {
-                    if !takeProfitString.contains(".") {
-                        takeProfitThreeContainer.badWiggle()
-                        errorImpactGenerator()
-                        self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
-                        return
-                    } else {
-                        if checkTradingPair(tradingPair: tradingPairSelected, containerView: takeProfitThreeContainer, entryString: takeProfitString) == false {
-                            swipeView.resetSwipe()
-                            return
-                        }
-                        
-                    }
-                }
-            }
-                        
-            //confirmView.animateViewsin()
-            
-            if !isPostingSignal {
-                isPostingSignal = true
-                postSignal()
             }
             
         } else {
-            errorImpactGenerator()
-            //swipeView.resetSwipe()
-            self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
-            
-            if entryPriceTextField.text == "" {
-                entryPriceContainer.badWiggle()
-            }
-            
-            if takeProfitTextField.text == "" {
-                takeProfitContainer.badWiggle()
-            }
-            
-            if stopLossTextField.text == "" {
-                stopLossContainer.badWiggle()
-            }
-            
-            if orderTypeLabel.text == "Pick Order Type" {
-                orderTypeLabel.badWiggle()
-            }
-            
-            if signalTypeSelected == "" {
-                tradeTypeContainer.badWiggle()
+            if tradingPairSelected != "" && orderTypeSelected != "Pick Order Type" && entryPriceTextField.text != "" && takeProfitTextField.text != "" && stopLossTextField.text != "" {
+                
+                if let entryString = entryPriceTextField.text {
+                    if !entryString.contains(".") {
+                        print("did this 👘👘👘 000")
+                        entryPriceContainer.badWiggle()
+                        errorImpactGenerator()
+                        self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
+                        return
+                    } else {
+                        print("did this 👘👘👘 111")
+                        if checkTradingPair(tradingPair: tradingPairSelected, containerView: entryPriceContainer, entryString: entryString) == false {
+                            swipeView.resetSwipe()
+                            return
+                        }
+                    }
+                } else {
+                    print("did this 👘👘👘 222")
+                }
+                
+                if let takeProfitString = takeProfitTextField.text {
+                    if !takeProfitString.contains(".") {
+                        takeProfitContainer.badWiggle()
+                        errorImpactGenerator()
+                        self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
+                        return
+                    } else {
+                        if checkTradingPair(tradingPair: tradingPairSelected, containerView: takeProfitContainer, entryString: takeProfitString) == false {
+                            swipeView.resetSwipe()
+                            return
+                        }
+                    }
+                }
+                
+                if let stopLossString = stopLossTextField.text {
+                    if !stopLossString.contains(".") {
+                        stopLossContainer.badWiggle()
+                        errorImpactGenerator()
+                        self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
+                        return
+                    } else {
+                        if checkTradingPair(tradingPair: tradingPairSelected, containerView: stopLossContainer, entryString: stopLossString) == false {
+                            swipeView.resetSwipe()
+                            return
+                        }
+                        
+                    }
+                }
+                
+                if !isPostingSignal {
+                    isPostingSignal = true
+                    postSignal()
+                }
+                
+            } else {
+                errorImpactGenerator()
+                //swipeView.resetSwipe()
+                self.perform(#selector(resetDelay), with: self, afterDelay: 0.1)
+                
+                if entryPriceTextField.text == "" {
+                    entryPriceContainer.badWiggle()
+                }
+                
+                if takeProfitTextField.text == "" {
+                    takeProfitContainer.badWiggle()
+                }
+                
+                if stopLossTextField.text == "" {
+                    stopLossContainer.badWiggle()
+                }
+                
+                if orderTypeLabel.text == "Pick Order Type" {
+                    orderTypeLabel.badWiggle()
+                }
             }
         }
+                
     }
     
     @objc func resetDelay() {
@@ -743,7 +690,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
         self.showLoading()
         self.mainScrollView.isUserInteractionEnabled = false
         
-        let forexSignal = SignalRequest(id: nil, hostId: Admin.current.id, providerId: nil, signalType: signalTypeSelected, teamId: Admin.current.teamId, asset: tradingPairSelected, orderType: orderTypeSelected, entryPrice: entryPriceTextField.text, takeProfit1: takeProfitTextField.text, takeProfit2: takeProfitTwoTextField.text, takeProfit3: takeProfitThreeTextField.text, stopLoss: stopLossTextField.text, active: true, time: nil, notes: nil, type: "forex", added: Date(), isTesting: demoSignalSelected) //demoSignalSelected //isInTestMode
+        let forexSignal = SignalRequest(id: nil, hostId: Admin.current.id, providerId: nil, signalType: nil, teamId: Admin.current.teamId, asset: tradingPairSelected, orderType: orderTypeSelected, entryPrice: isEntryNil ? nil : entryPriceTextField.text, takeProfit1: takeProfitTextField.text, takeProfit2: nil/*takeProfitTwoTextField.text*/, takeProfit3: nil/*takeProfitThreeTextField.text*/, stopLoss: stopLossTextField.text, active: true, time: nil, notes: nil, type: "forex", added: Date(), isTesting: false)
         
         print("posted a signal! \(isInTestMode) 😸😸😸 \(forexSignal)")
                 
@@ -753,7 +700,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                 print("\(error!) 😸😸😸 222")
                 
                 DispatchQueue.main.async { [weak self] in
-                    print("posted a signal! 🍗🍗🍗 pee")
+                    print("Error posting 🍗🍗🍗 000")
                     let toastNoti = ToastNotificationView()
                     toastNoti.present(withMessage: "Unable to send signal!")
                     self?.isPostingSignal = false
@@ -766,7 +713,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                 print("error posting signal")
                 
                 DispatchQueue.main.async { [weak self] in
-                    print("posted a signal! 🍗🍗🍗 poop")
+                    print("Error posting 🍗🍗🍗 111")
                     let toastNoti = ToastNotificationView()
                     toastNoti.present(withMessage: "Unable to send signal!")
                     self?.isPostingSignal = false
@@ -783,7 +730,6 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                 
                 print("posted a signal! 🍗🍗🍗 444")
                 
-                
                 self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.1)
                 UIView.animate(withDuration: 0.35, delay: 0.5, options: []) {
                     self?.contentContainer.alpha = 0
@@ -797,21 +743,5 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                 }
             }
         }
-        
-        
-        //Uncomment this to demo
-        /*
-        self.perform(#selector(self.hideLoader), with: self, afterDelay: 0.1)
-        UIView.animate(withDuration: 0.35, delay: 0.5, options: []) {
-            self.contentContainer.alpha = 0
-            self.contentContainer.transform = CGAffineTransform(scaleX: 0.45, y: 0.35)
-            self.swipeView.alpha = 0
-            self.contentContainer.transform = CGAffineTransform(scaleX: 0.45, y: 0.35)
-        } completion: { success in
-            self.checkmarkOneLottie.alpha = 1.0
-            //guard let s = self else { return }
-            self.perform(#selector(self.showCheck), with: self, afterDelay: 1.25)
-        }
-        */        
     }
 }

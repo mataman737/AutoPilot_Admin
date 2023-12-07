@@ -31,7 +31,7 @@ extension AddTraderViewController {
         cardContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 530)).isActive = true
         cardContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
-        titleLabel.text = "Add New Trader"
+        //titleLabel.text = "Add New Trader"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .black
         titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
@@ -77,6 +77,7 @@ extension AddTraderViewController {
         phoneNumberTextField.tag = 1
         phoneNumberTextField.setFlag(key: .US)
         phoneNumberTextField.delegate = self
+        phoneNumberTextField.delegateTwo = self
         phoneNumberTextField.keyboardType = .numberPad
         phoneNumberTextField.autocorrectionType = .no
         phoneNumberTextField.textColor = .black
@@ -108,7 +109,7 @@ extension AddTraderViewController {
 //        accessoryContainer.backgroundColor = .clear
         
         nextButton.addShadow(shadowColor: .black, shadowOffset: CGSize(width: 4, height: 4), shadowOpacity: 0.2, shadowRadius: 4, shadowCornerRadius: 0)
-        //nextButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(inviteMemberToTeam), for: .touchUpInside)
         nextButton.purpleBG.backgroundColor = .swBlue
         nextButton.continueLabel.text = "Send Invite"
         nextButton.continueLabel.textColor = .white

@@ -27,6 +27,9 @@ class AddTraderViewController: UIViewController {
     var team: Team?
     var phoneNumberTextField = FPNTextField()
     var nextButton = ContinueButton()
+    var phoneNubmerIsValid = false
+    var phoneNumber = ""
+    var traderType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,26 +78,93 @@ extension AddTraderViewController: UITextFieldDelegate {
         return true
     }
     
-    func inviteMemberToTeam() {
-        guard let teamIdString = Admin.current.teamId, let teamId = UUID(uuidString: teamIdString) else {
-            print("no team id")
+    @objc func inviteMemberToTeam() {
+        lightImpactGenerator()
+        
+        if phoneNubmerIsValid && phoneNumber != "" && traderType != "" {
+            guard let teamIdString = Admin.current.teamId, let teamId = UUID(uuidString: teamIdString) else {
+                print("no team id")
+                return
+            }
+            
+            API.sharedInstance.inviteMemberToTeam(pendingAdminRequest: PendingAdminRequest(teamId: teamId, name: "Name", phone: phoneNumber, adminType: traderType)) { success, _, error in
+                guard error == nil else {
+                    print(error!)
+                    DispatchQueue.main.async {
+                        self.presentError()
+                    }
+                    return
+                }
+                
+                guard success else {
+                    print("error adding team member")
+                    DispatchQueue.main.async {
+                        self.presentError()
+                    }
+                    
+                    return
+                }
+                
+                DispatchQueue.main.async { [weak self] in
+                    //team member added
+                    self?.dismissViews()
+                    self?.presentSuccessToast()
+                }
+            }
+        } else {
+            errorImpactGenerator()
+            let toastNoti = ToastNotificationView()
+            toastNoti.present(withMessage: "Invalid phone number!")
+        }
+    }
+    
+    func presentSuccessToast() {
+        successImpactGenerator()
+        let toastNoti = ToastNotificationView()
+        toastNoti.present(withMessage: "Invite sent!")
+    }
+    
+    func presentError() {
+        errorImpactGenerator()
+        let toastNoti = ToastNotificationView()
+        toastNoti.present(withMessage: "Error sending invite!")
+    }
+}
+
+//MARK: FLAG DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
+
+extension AddTraderViewController: FPNTextFieldDelegate, FPNTextFieldDelegateTwo {
+    func didDismissCountries() {
+        print("did this 🤡🤡🤡")
+        self.phoneNumberTextField.becomeFirstResponder()
+        //self.phoneNumberTextField.inputAccessoryView = accessoryContainer
+    }
+    
+    func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
+        print(name, dialCode, code)
+    }
+    
+    func fpnDidValidatePhoneNumber(textField: FPNTextField, isValid: Bool) {
+        
+        if isValid {
+            print("valid!!!")
+            phoneNubmerIsValid = true
+        } else {
+            print("Invalid!!!")
+            phoneNubmerIsValid = false
+        }
+        
+        guard let number = textField.getFormattedPhoneNumber(format: FPNFormat.E164), isValid else {
+            //disableContinue()
             return
         }
         
-        API.sharedInstance.inviteMemberToTeam(pendingAdminRequest: PendingAdminRequest(teamId: teamId, name: "Name", phone: "Phone", adminType: "trader")) { success, _, error in
-            guard error == nil else {
-                print(error!)
-                return
-            }
-            
-            guard success else {
-                print("error adding team member")
-                return
-            }
-            
-            DispatchQueue.main.async { [weak self] in
-                //team member added
-            }
-        }
+        self.phoneNumber = number
     }
+    
+    func fpnDisplayCountryList() {
+        //
+    }
+    
+    
 }

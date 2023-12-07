@@ -79,6 +79,7 @@ class SetupAccountViewController: UIViewController {
         getUsersRegion()
         setupViews()
         setupTransition()
+        
         self.perform(#selector(animateFirstProgress), with: self, afterDelay: 0.5)
     }
     

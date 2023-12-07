@@ -161,7 +161,7 @@ class MyForexTradesViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 Admin.current = admin
-                //print("\(admin.permissions) 👽👽👽")
+                print("\(admin.adminType) 🎃🎃🎃")
                 Admin.saveCurrentAdmin()
             }
         }
@@ -638,11 +638,12 @@ extension MyForexTradesViewController: PickOptionViewControllerDelegate {
     func didPickOption(optionSelected: String) {
         print("did this bitch 🎃🎃🎃 000")
         let newNotiVC = MT_NewForexSignalViewController()
-        newNotiVC.signalTypeSelected = "Einstein"
+        //newNotiVC.signalTypeSelected = "Einstein"
         newNotiVC.tradeTypeTextField.text = "Einstein"
         newNotiVC.delegate = self
         newNotiVC.tradingPairSelected = optionSelected
         newNotiVC.assetTitleLabel.text = optionSelected
+        newNotiVC.returnFormatString(tradingPair: optionSelected)
         newNotiVC.modalPresentationStyle = .overFullScreen
         self.present(newNotiVC, animated: true, completion: nil)
     }
