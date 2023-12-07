@@ -30,7 +30,7 @@ class CommunityViewController: UIViewController {
     var teamPhotoString = ""
     var rewardsImageView = UIImageView()
     var rewardsButton = UIButton()
-    var members = [User]()
+    var members = [UserWithBalanceRecord]()
     var didGetTeamMembers = false
     var didGetCurrentTeam = false
     var supergroupUnreadCount: Int = 0
@@ -291,7 +291,7 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
             if members.count > 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
                 
-                let member = members[indexPath.row]
+                let member = members[indexPath.row].user
                 
                 cell.chatNameLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
                 if let joinDate = member.teamJoinDate {
@@ -387,7 +387,7 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
             if members.count > 0 {
                 lightImpactGenerator()
                 let trainingOptionVC = TeamMemberOptionsViewController()
-                let member = members[indexPath.row]
+                let member = members[indexPath.row].user
                 trainingOptionVC.navTitleLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
                 trainingOptionVC.dateLabel.text = ""
                 if let memberPhone = member.phone {

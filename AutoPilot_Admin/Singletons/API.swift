@@ -942,7 +942,7 @@ class API: NSObject {
         task.resume()
     }
     
-    func getTeamMembers(completionHandler: @escaping (Bool, [User]?, Error?) -> ()) {
+    func getTeamMembers(completionHandler: @escaping (Bool, [UserWithBalanceRecord]?, Error?) -> ()) {
         var request = URLRequest(url: URL(string: "\(API.serverUrl)api/admin/teams/members")!)
         request.httpMethod = "GET"
         //HTTP Headers
@@ -977,7 +977,7 @@ class API: NSObject {
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
-                let users = try decoder.decode([User].self, from: data)
+                let users = try decoder.decode([UserWithBalanceRecord].self, from: data)
                 
                 completionHandler(true, users, nil)
             } catch {

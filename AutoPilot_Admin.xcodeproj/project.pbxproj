@@ -165,6 +165,7 @@
 		FC1747D52AAA6A3A0097BDF1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D42AAA6A3A0097BDF1 /* Order.swift */; };
 		FC1747D92AAA893F0097BDF1 /* InstantTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */; };
 		FC4836DA2AAFAE2400056CE3 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4836D92AAFAE2400056CE3 /* Team.swift */; };
+		FC69D7552B22618D00B2F6D0 /* BalanceRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69D7542B22618D00B2F6D0 /* BalanceRecord.swift */; };
 		FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC6EF1002AAE3C77001075D9 /* GoogleService-Info.plist */; };
 		FCC4DD252A93FE0100185168 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD242A93FE0100185168 /* API.swift */; };
 		FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD262A93FE7B00185168 /* Admin.swift */; };
@@ -352,6 +353,7 @@
 		FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantTrade.swift; sourceTree = "<group>"; };
 		FC2721092AFEB8C100E4A2C0 /* AutoPilot_Admin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoPilot_Admin.entitlements; sourceTree = "<group>"; };
 		FC4836D92AAFAE2400056CE3 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		FC69D7542B22618D00B2F6D0 /* BalanceRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRecord.swift; sourceTree = "<group>"; };
 		FC6EF1002AAE3C77001075D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCC4DD242A93FE0100185168 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FCC4DD262A93FE7B00185168 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 				FC1747D42AAA6A3A0097BDF1 /* Order.swift */,
 				FCC4DD262A93FE7B00185168 /* Admin.swift */,
 				FC14F8F22AB4F0BD006D02DC /* User.swift */,
+				FC69D7542B22618D00B2F6D0 /* BalanceRecord.swift */,
 				FCC9669A2A9F8CC70088DD2A /* Notification.swift */,
 				FC4836D92AAFAE2400056CE3 /* Team.swift */,
 				FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */,
@@ -1194,6 +1197,7 @@
 				DE66439E2AA56CD400DA27BE /* CustomVisualEffectView.swift in Sources */,
 				DEC9A4CD2A93E73D000DBE39 /* SetupAccountViewController.swift in Sources */,
 				FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */,
+				FC69D7552B22618D00B2F6D0 /* BalanceRecord.swift in Sources */,
 				DEB44E5B2AB0029A0006887A /* OnboardingView.swift in Sources */,
 				FCE556A42A9D40DA00C2B394 /* CustomChatChannelVC.swift in Sources */,
 				DE410CA52AB360BF00F1F24F /* TimeOptionView.swift in Sources */,
