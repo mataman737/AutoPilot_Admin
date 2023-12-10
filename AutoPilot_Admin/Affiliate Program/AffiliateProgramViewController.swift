@@ -56,6 +56,8 @@ class AffiliateProgramViewController: UIViewController {
     var commissionPercent = 0.25
     var dollarAmount = "0"
     
+    var team: Team?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.masksToBounds = true
@@ -73,6 +75,39 @@ class AffiliateProgramViewController: UIViewController {
 //MARK: ACTIONS
 
 extension AffiliateProgramViewController {
+    func updateTeam(referralsOn: Bool) {
+        guard var team = self.team else {
+            print("did this 🫦🫦🫦 000")
+            return
+        }
+
+        team.referralsOn = referralsOn
+        API.sharedInstance.updateTeam(team: team) { success, team, error in
+            guard error == nil else {
+                DispatchQueue.main.async { [weak self] in
+                    let toastNoti = ToastNotificationView()
+                    toastNoti.present(withMessage: "Team not saved!")
+                    self?.errorImpactGenerator()
+                }
+                
+                return
+            }
+            
+            guard success, let team = team else {
+                DispatchQueue.main.async { [weak self] in
+                    let toastNoti = ToastNotificationView()
+                    toastNoti.present(withMessage: "Team not saved!")
+                    self?.errorImpactGenerator()
+                }
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.successImpactGenerator()
+            }
+        }
+    }
+    
     @objc func goToAffiliateProgram() {
         lightImpactGenerator()
         let affiliateVC = AffiliatesViewController()
