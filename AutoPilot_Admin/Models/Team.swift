@@ -16,5 +16,6 @@ struct Team: Codable {
     var fxBook: String?
     var mtBrokers: [String]?
     var mtIds: [String]?
+    var referralsOn: Bool?
     var created: Date
 }
