@@ -149,6 +149,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     @objc func goToAffiliateProgram() {
         lightImpactGenerator()
         let affiliateVC = AffiliateProgramViewController()
+        affiliateVC.team = self.team
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(affiliateVC, animated: true)
     }
