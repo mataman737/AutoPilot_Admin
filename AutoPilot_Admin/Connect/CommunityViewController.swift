@@ -31,6 +31,8 @@ class CommunityViewController: UIViewController {
     var rewardsImageView = UIImageView()
     var rewardsButton = UIButton()
     var members = [UserWithBalanceRecord]()
+    var paidMembers = [UserWithBalanceRecord]()
+    var unpaidMembers = [UserWithBalanceRecord]()
     var didGetTeamMembers = false
     var didGetCurrentTeam = false
     var supergroupUnreadCount: Int = 0
@@ -150,6 +152,17 @@ class CommunityViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 self?.members = users
+                
+                self?.paidMembers = users
+                    .filter({$0.user.isSubscribed == true} )
+                
+                self?.unpaidMembers = users
+                    .filter({$0.user.isSubscribed == false} )
+                
+                
+                print("\(self?.paidMembers.count) 💩💩💩 000")
+                print("\(self?.unpaidMembers.count) 💩💩💩 111")
+                
                 self?.mainfeedTableView.reloadData()
                 
                 self?.didGetTeamMembers = true
@@ -253,14 +266,20 @@ extension CommunityViewController {
 
 extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
+        } else if section == 1 {
+            if paidMembers.count > 0 {
+                return paidMembers.count
+            } else {
+                return 1
+            }
         } else {
-            if members.count > 0 {
-                return members.count
+            if unpaidMembers.count > 0 {
+                return unpaidMembers.count
             } else {
                 return 1
             }
@@ -270,9 +289,6 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: connectChannelTableViewCell, for: indexPath) as! ConnectChannelTableViewCell
-            //New
-            //cell.circleImageView.image = UIImage(named: "ttaIcon")
-            
             if teamPhotoString != "" {
                 if let url = URL(string: teamPhotoString) {
                     cell.circleImageView.kf.setImage(with: url)
@@ -287,11 +303,13 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
             cell.chatDescriptionLabel.text = supergroupUnreadCount == 1 ? "\(supergroupUnreadCount) new message" : "\(supergroupUnreadCount) new messages"
             cell.newMessageBubble.alpha = 0
             return cell
-        } else {
-            if members.count > 0 {
+        } else if indexPath.section == 1 {
+            if paidMembers.count > 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
                 
-                let member = members[indexPath.row].user
+                let member = paidMembers[indexPath.row].user
+                
+                print("\(member.isSubscribed) 🤢🤢🤢")
                 
                 cell.chatNameLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
                 if let joinDate = member.teamJoinDate {
@@ -309,6 +327,34 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: teamMembersEmptyStateCell, for: indexPath) as! TeamMembersEmptyStateCell
+                cell.emptyStateLabel.text = "No paid members"
+                return cell
+            }
+        } else {
+            if unpaidMembers.count > 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
+                
+                let member = unpaidMembers[indexPath.row].user
+                
+                print("\(member.isSubscribed) 🤢🤢🤢")
+                
+                cell.chatNameLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
+                if let joinDate = member.teamJoinDate {
+                    cell.chatDescriptionLabel.text = "Member since: \(convertToDateFormatted(joinDate))"
+                } else {
+                    cell.chatDescriptionLabel.text = "No join date"
+                }
+                
+                if let urlString = member.profilePhotoUrl, let url = URL(string: urlString) {
+                    cell.circleImageView.kf.setImage(with: url)
+                } else {
+                    cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+                }
+                
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: teamMembersEmptyStateCell, for: indexPath) as! TeamMembersEmptyStateCell
+                cell.emptyStateLabel.text = "No unpaid members"
                 return cell
             }
         }
@@ -328,7 +374,11 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
         let titleLabel = UILabel()
         titleLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
         titleLabel.textColor = .black
-        titleLabel.text = "Team Members: \(members.count)"
+        if section == 1 {
+            titleLabel.text = "Paid Members: \(paidMembers.count)"
+        } else {
+            titleLabel.text = "Unpaid Members: \(unpaidMembers.count)"
+        }
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(titleLabel)
@@ -348,11 +398,17 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return .createAspectRatio(value: 73)
-        } else {
-            if members.count > 0 {
+        } else if indexPath.section == 1 {
+            if paidMembers.count > 0 {
                 return .createAspectRatio(value: 73)
             } else {
-                return .createAspectRatio(value: 400)
+                return .createAspectRatio(value: 73)
+            }
+        } else {
+            if unpaidMembers.count > 0 {
+                return .createAspectRatio(value: 73)
+            } else {
+                return .createAspectRatio(value: 73)
             }
         }
     }

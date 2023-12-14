@@ -116,6 +116,8 @@
 		DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */; };
 		DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */; };
 		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
+		DEC9C8BB2B2387FF00B14E83 /* eyeOnOff.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC9C8BA2B2387FF00B14E83 /* eyeOnOff.json */; };
+		DEC9C8BD2B23880A00B14E83 /* broker_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC9C8BC2B23880A00B14E83 /* broker_loading.json */; };
 		DECCEA752B183DCA006AE4AD /* AffiliateProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA742B183DCA006AE4AD /* AffiliateProgramViewController.swift */; };
 		DECCEA772B183DD0006AE4AD /* AffiliateProgramViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA762B183DD0006AE4AD /* AffiliateProgramViewController+Views.swift */; };
 		DECCEA792B189BE9006AE4AD /* CircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCEA782B189BE9006AE4AD /* CircularSlider.swift */; };
@@ -288,6 +290,8 @@
 		DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
 		DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeConfirmView.swift; sourceTree = "<group>"; };
 		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
+		DEC9C8BA2B2387FF00B14E83 /* eyeOnOff.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eyeOnOff.json; sourceTree = "<group>"; };
+		DEC9C8BC2B23880A00B14E83 /* broker_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = broker_loading.json; sourceTree = "<group>"; };
 		DECCEA742B183DCA006AE4AD /* AffiliateProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateProgramViewController.swift; sourceTree = "<group>"; };
 		DECCEA762B183DD0006AE4AD /* AffiliateProgramViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AffiliateProgramViewController+Views.swift"; sourceTree = "<group>"; };
 		DECCEA782B189BE9006AE4AD /* CircularSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSlider.swift; sourceTree = "<group>"; };
@@ -437,6 +441,8 @@
 		DE4D577F2AA6B704008E2B6B /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				DEC9C8BC2B23880A00B14E83 /* broker_loading.json */,
+				DEC9C8BA2B2387FF00B14E83 /* eyeOnOff.json */,
 				DE65093C2AF9E0E60089084C /* broadcastSent.json */,
 				DEA21FF62AB3DB25007D1C3A /* radio.json */,
 				DEB44E582AAFD7390006887A /* tripleSpinner.json */,
@@ -985,8 +991,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC9C8BB2B2387FF00B14E83 /* eyeOnOff.json in Resources */,
 				DE65093D2AF9E0E70089084C /* broadcastSent.json in Resources */,
 				FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */,
+				DEC9C8BD2B23880A00B14E83 /* broker_loading.json in Resources */,
 				DEB44E592AAFD7390006887A /* tripleSpinner.json in Resources */,
 				DEF830A92AE5FFAA00268370 /* countryCodes.json in Resources */,
 				DEF830A82AE5FFAA00268370 /* FPNCountryView.xib in Resources */,

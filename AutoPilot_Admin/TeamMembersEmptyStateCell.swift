@@ -11,6 +11,7 @@ import UIKit
 class TeamMembersEmptyStateCell: UITableViewCell {
 
     var teamMemberEmptyState = EmptyStateView()
+    var emptyStateLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -29,12 +30,13 @@ class TeamMembersEmptyStateCell: UITableViewCell {
 
 extension TeamMembersEmptyStateCell {
     func setupViews() {
+        /*
         teamMemberEmptyState.isHidden = false
         teamMemberEmptyState.showViews()
         teamMemberEmptyState.lockLabel.text = "🦄"
-        teamMemberEmptyState.lockTitleLabel.text = "No Team Members"
+        //teamMemberEmptyState.lockTitleLabel.text = "No Team Members"
         teamMemberEmptyState.lockDetailLabel.setupLineHeight(myText: "Everyone that joins your team\nwill show up here. Team members\nare active paid subscribers.", myLineSpacing: 4)
-        teamMemberEmptyState.lockDetailLabel.textAlignment = .center
+        teamMemberEmptyState.lockDetailLabel.textAlignment = .left
         teamMemberEmptyState.squadUpButton.setTitle("Browse Darrell's Program", for: .normal)
         teamMemberEmptyState.squadUpButton.isHidden = true
         teamMemberEmptyState.backgroundColor = .clear
@@ -44,5 +46,11 @@ extension TeamMembersEmptyStateCell {
         teamMemberEmptyState.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
         teamMemberEmptyState.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 245)).isActive = true
         teamMemberEmptyState.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 305)).isActive = true
+        */
+        
+        emptyStateLabel.setupLabel(text: "", txtColor: .black.withAlphaComponent(0.5), font: .sofiaProRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .left)
+        self.contentView.addSubview(emptyStateLabel)
+        emptyStateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
+        emptyStateLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: 0).isActive = true
     }
 }
