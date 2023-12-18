@@ -239,21 +239,6 @@ extension MT_NewForexSignalViewController: WebSocketConnectionDelegate {
 //MARK: ACTIONS
 
 extension MT_NewForexSignalViewController {
-    
-    @objc func didTapSignalOptions() {
-        lightImpactGenerator()
-        
-         isPickingSignalType = true
-         self.view.endEditing(true)
-         let pickOptionsVC = PickOptionViewController()
-         pickOptionsVC.delegate = self
-         pickOptionsVC.titleLabel.text = "Signal Type Options"
-         pickOptionsVC.options = signalTypeOptions
-         pickOptionsVC.shareURLButton.continueLabel.text = "Confirm"
-         pickOptionsVC.modalPresentationStyle = .overFullScreen
-         self.present(pickOptionsVC, animated: false)
-    }
-    
     @objc func animateEntry(orderString: String) {
         if orderString == "Buy" || orderString == "Sell" {
             self.entryPriceHeight.constant = 0
@@ -339,15 +324,9 @@ extension MT_NewForexSignalViewController: PickOptionViewControllerDelegate {
     }
     
     func didPickOption(optionSelected: String) {
-        animateEntry(orderString: optionSelected)
         orderTypeLabel.text = optionSelected
         orderTypeSelected = optionSelected
-        if orderTypeSelected == "Buy" || orderTypeSelected == "Sell" {
-            orderTypeSelected = "Market execution"
-            isEntryNil = true
-        } else {
-            isEntryNil = false
-        }
+        print("\(orderTypeSelected) 🧔🏻🧔🏻🧔🏻")
     }
 }
 

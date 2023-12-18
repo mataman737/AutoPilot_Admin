@@ -49,7 +49,7 @@ extension OnboardingView {
         animationView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 175)).isActive = true
         animationView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 175)).isActive = true
         
-        welcomeLabel.setupLabel(text: "Welcome to Enigma!", txtColor: .black.withAlphaComponent(0.5), font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 15)), txtAlignment: .center)
+        welcomeLabel.setupLabel(text: "Welcome to Omni!", txtColor: .black.withAlphaComponent(0.5), font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 15)), txtAlignment: .center)
         self.addSubview(welcomeLabel)
         welcomeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         welcomeLabel.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: .createAspectRatio(value: 34)).isActive = true
