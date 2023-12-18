@@ -818,11 +818,26 @@ class SampleNotificationDelegate: NSObject , UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        print(userInfo)
+        
         switch response.actionIdentifier {
         case UNNotificationDismissActionIdentifier:
             print("Dismiss Action")
         case UNNotificationDefaultActionIdentifier:
             print("Open Action")
+            
+            if let signalString = userInfo["signal"] as? String, let data = signalString.data(using: .utf8) {
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    let signal = try JSONDecoder().decode(Signal.self, from: data)
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("newTrade"), object: nil, userInfo: nil)
+                } catch {
+                    print(error)
+                }
+            }
         case "Snooze":
             print("Snooze")
         case "Delete":
@@ -850,6 +865,9 @@ class NotificationService: UNNotificationServiceExtension {
     var bestAttemptContent: UNMutableNotificationContent?
 
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+        
+        let userInfo = request.content.userInfo
+        
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
@@ -879,6 +897,26 @@ class NotificationService: UNNotificationServiceExtension {
             }
             
             contentHandler(bestAttemptContent)
+        }
+        
+        if let signalString = userInfo["signal"] as? String, let data = signalString.data(using: .utf8) {
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let signal = try decoder.decode(Signal.self, from: data)
+                
+                NotificationCenter.default.post(name: NSNotification.Name("newTrade"), object: nil, userInfo: ["signal": signal])
+                
+                print("did this 🦾🦾🦾 111")
+                
+//                if signal.signalType == "Einstein" {
+//                    coordinateToSignalsVC(signal: signal, isEinstein: true)
+//                } else {
+//                    coordinateToSignalsVC(signal: signal, isEinstein: false)
+//                }
+            } catch {
+                print(error)
+            }
         }
     }
     

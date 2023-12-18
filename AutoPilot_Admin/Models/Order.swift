@@ -120,3 +120,26 @@ struct TickerPriceUpdate: Codable {
     let symbol: String
     let price: Double
 }
+
+struct TradeLog: Codable {
+    var id: UUID
+    var signalId: UUID
+    var adminId: UUID?
+    var userId: UUID?
+    var teamId: String?
+    var asset: String?
+    var orderType: String?
+    var entryPrice: String?
+    var livePrice: String?
+    var takeProfit: String?
+    var stopLoss: String?
+    var error: String?
+    var server: String?
+    var date: Date?
+}
+
+struct SignalResult: Codable {
+    let signal: Signal
+    let instantTrade: InstantTrade?
+    let tradeLog: TradeLog?
+}

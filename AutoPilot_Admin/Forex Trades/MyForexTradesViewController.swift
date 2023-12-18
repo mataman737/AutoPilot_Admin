@@ -87,6 +87,7 @@ class MyForexTradesViewController: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(orderProfits(notification:)), name: NSNotification.Name("orderUpdate"), object: nil)
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeround), name: UIApplication.willEnterForegroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(newTrade(notification:)), name: NSNotification.Name("newTrade"), object: nil)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let center = UNUserNotificationCenter.current()
@@ -254,6 +255,19 @@ class MyForexTradesViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    @objc func newTrade(notification: NSNotification) {
+        
+        print("new trade received 😮😮😮")
+        
+//        loadingView.isHidden = false
+//        loadingLottie.loading.play()
+//        loadingView.alpha = 1.0
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.getOpenOrders()
         }
     }
     

@@ -8,6 +8,8 @@
 import UIKit
 
 class SignalResultsViewController: UIViewController {
+    
+    var results = [SignalResult]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,19 +19,19 @@ class SignalResultsViewController: UIViewController {
     }
     
     func getResults() {
-        API.sharedInstance.getTradeResults { success, trades, error in
+        API.sharedInstance.getSignalResults { success, results, error in
             guard error == nil else {
                 print(error!)
                 return
             }
             
-            guard success, let trades = trades else {
-                print("error getting trade results")
+            guard success, let results = results else {
+                print("error getting signal results")
                 return
             }
             
             DispatchQueue.main.async { [weak self] in
-                
+                self?.results = results
             }
         }
     }
