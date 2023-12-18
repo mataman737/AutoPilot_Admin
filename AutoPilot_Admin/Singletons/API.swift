@@ -1035,6 +1035,53 @@ class API: NSObject {
         
         task.resume()
     }
+    
+    func getTeamTraders(completionHandler: @escaping (Bool, [Admin]?, Error?) -> ()) {
+        var request = URLRequest(url: URL(string: "\(API.serverUrl)api/admin/teams/traders")!)
+        request.httpMethod = "GET"
+        //HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addAuthTokens()
+        
+//        do {
+//            let encoder = JSONEncoder()
+//            encoder.dateEncodingStrategy = .iso8601
+//            let data = try encoder.encode(tokenRequest)
+//            request.httpBody = data
+//        } catch {
+//            print(error)
+//            completionHandler(false, nil, error)
+//        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                completionHandler(false, nil, error)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let admins = try decoder.decode([Admin].self, from: data)
+                
+                completionHandler(true, admins, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+        
+        task.resume()
+    }
 }
 
 struct LToken: Codable {

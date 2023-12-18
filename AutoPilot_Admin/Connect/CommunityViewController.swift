@@ -33,6 +33,9 @@ class CommunityViewController: UIViewController {
     var members = [UserWithBalanceRecord]()
     var paidMembers = [UserWithBalanceRecord]()
     var unpaidMembers = [UserWithBalanceRecord]()
+    
+    var traders = [Admin]()
+    
     var didGetTeamMembers = false
     var didGetCurrentTeam = false
     var supergroupUnreadCount: Int = 0
@@ -97,6 +100,7 @@ class CommunityViewController: UIViewController {
         loadingLottie.play()
         getUnreadCount()
         getTeamMembers()
+        getTeamTraders()
         getCurrentTeam()
     }
     
@@ -170,6 +174,26 @@ class CommunityViewController: UIViewController {
                     self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
                 }
                 
+            }
+        }
+    }
+    
+    func getTeamTraders() {
+        API.sharedInstance.getTeamTraders { success, traders, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let traders = traders else {
+                print("error getting traders")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.traders = traders
+                
+                //Stephen, do your thing here
             }
         }
     }
