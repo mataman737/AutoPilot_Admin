@@ -28,15 +28,12 @@ class SplashViewController: UIViewController {
     var launchView = NVULaunchView()
     var blurredView = BlurredView()
     var detailsLabel = UILabel()
-    var joinWaitingListButton = UIButton()
+    var joinButton = UIButton()
     var loginButton = UIButton()
-    var codeButton = UIButton()
-    var codeLabel = UILabel()
-    var dividerLine = UIView()
-    var loginLabel = UILabel()
     var logoImageView = UIImageView()
     
     var isFromTeamLink = false
+    var joinTeamButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,21 +94,14 @@ extension SplashViewController {
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension SplashViewController {
-    @objc func joinWaitingListTapped() {
-//        lightImpactGenerator()
-//        let joinWaitingListVC = JoinWaitingListViewController()
-//        joinWaitingListVC.modalPresentationStyle = .overFullScreen
-//        self.present(joinWaitingListVC, animated: true, completion: nil)
-    }
-    
-    @objc func accessCodeTapped() {
-//        lightImpactGenerator()
-//        let createAccountVC = CreateAccountViewController()
-//        createAccountVC.modalPresentationStyle = .overFullScreen
-//        self.present(createAccountVC, animated: true, completion: nil)
-    }
-    
     @objc func goToLogin() {
+        lightImpactGenerator()
+        let setupAccountVC = LoginViewController()
+        setupAccountVC.modalPresentationStyle = .overFullScreen
+        self.present(setupAccountVC, animated: true, completion: nil)
+    }
+    
+    @objc func goToJoin() {
         lightImpactGenerator()
         let setupAccountVC = SetupAccountViewController()
         setupAccountVC.modalPresentationStyle = .overFullScreen

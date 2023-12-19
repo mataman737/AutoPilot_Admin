@@ -87,6 +87,8 @@
 		DEB44E572AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E562AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift */; };
 		DEB44E592AAFD7390006887A /* tripleSpinner.json in Resources */ = {isa = PBXBuildFile; fileRef = DEB44E582AAFD7390006887A /* tripleSpinner.json */; };
 		DEB44E5B2AB0029A0006887A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB44E5A2AB0029A0006887A /* OnboardingView.swift */; };
+		DEB669CC2B3141670081C3B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB669CB2B3141670081C3B1 /* LoginViewController.swift */; };
+		DEB669CE2B31416D0081C3B1 /* LoginViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB669CD2B31416D0081C3B1 /* LoginViewController+Views.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
 		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
@@ -259,6 +261,8 @@
 		DEB44E562AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBrokerOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		DEB44E582AAFD7390006887A /* tripleSpinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tripleSpinner.json; sourceTree = "<group>"; };
 		DEB44E5A2AB0029A0006887A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DEB669CB2B3141670081C3B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DEB669CD2B31416D0081C3B1 /* LoginViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Views.swift"; sourceTree = "<group>"; };
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -632,6 +636,15 @@
 			path = "My Connected Broker";
 			sourceTree = "<group>";
 		};
+		DEB669CA2B31414A0081C3B1 /* Login VC */ = {
+			isa = PBXGroup;
+			children = (
+				DEB669CB2B3141670081C3B1 /* LoginViewController.swift */,
+				DEB669CD2B31416D0081C3B1 /* LoginViewController+Views.swift */,
+			);
+			path = "Login VC";
+			sourceTree = "<group>";
+		};
 		DEC9A4A92A93DB38000DBE39 = {
 			isa = PBXGroup;
 			children = (
@@ -663,6 +676,7 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
 				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
+				DEB669CA2B31414A0081C3B1 /* Login VC */,
 				DECCEA732B183DAA006AE4AD /* Affiliate Program */,
 				DEFB41602B15A3E60006DD45 /* Pick Trader Type */,
 				DE65093E2AFABB560089084C /* Signal Results */,
@@ -1088,6 +1102,7 @@
 				DEC9A4E22A93EADD000DBE39 /* PickOptionViewController+Views.swift in Sources */,
 				DE4D57A72AA8C79E008E2B6B /* OpenOrdersTableViewCell.swift in Sources */,
 				DEF830C02AE5FFAA00268370 /* FPNOBJCCountryKey.swift in Sources */,
+				DEB669CC2B3141670081C3B1 /* LoginViewController.swift in Sources */,
 				DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */,
 				DE80EF802AAB842800603EF3 /* UpdateAccessCodeViewController+Views.swift in Sources */,
 				DEFB41622B15A4030006DD45 /* PickTraderTypeViewController.swift in Sources */,
@@ -1171,6 +1186,7 @@
 				DEB44E3B2AAE69AD0006887A /* CloseOrderViewController.swift in Sources */,
 				FC14F8F32AB4F0BD006D02DC /* User.swift in Sources */,
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
+				DEB669CE2B31416D0081C3B1 /* LoginViewController+Views.swift in Sources */,
 				DEF830B32AE5FFAA00268370 /* NBPhoneNumberUtil+ShortNumber.m in Sources */,
 				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,

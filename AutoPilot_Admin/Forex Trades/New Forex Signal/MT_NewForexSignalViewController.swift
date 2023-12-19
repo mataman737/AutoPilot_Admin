@@ -242,12 +242,14 @@ extension MT_NewForexSignalViewController {
     @objc func animateEntry(orderString: String) {
         if orderString == "Buy" || orderString == "Sell" {
             self.entryPriceHeight.constant = 0
+            self.isEntryNil = true
             UIView.animate(withDuration: 0.35) {
                 self.entryPriceContainer.alpha = 0
                 self.view.layoutIfNeeded()
             }
         } else {
             self.entryPriceHeight.constant = 87
+            self.isEntryNil = false
             UIView.animate(withDuration: 0.35) {
                 self.entryPriceContainer.alpha = 1.0
                 self.view.layoutIfNeeded()
@@ -326,6 +328,7 @@ extension MT_NewForexSignalViewController: PickOptionViewControllerDelegate {
     func didPickOption(optionSelected: String) {
         orderTypeLabel.text = optionSelected
         orderTypeSelected = optionSelected
+        animateEntry(orderString: optionSelected)
         print("\(orderTypeSelected) 🧔🏻🧔🏻🧔🏻")
     }
 }

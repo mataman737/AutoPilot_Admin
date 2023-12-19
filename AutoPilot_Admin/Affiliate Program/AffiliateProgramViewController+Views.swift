@@ -49,6 +49,16 @@ extension AffiliateProgramViewController {
         titleLabel.centerXAnchor.constraint(equalTo: navView.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: backImageView.centerYAnchor).isActive = true
         
+        spinner.isHidden = true
+        spinner.alpha = 0
+        spinner.color = .white
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        navView.addSubview(spinner)
+        spinner.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: -.createAspectRatio(value: 24)).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        spinner.startAnimating()
+        
 //        loadingLottie.loading.play()
 //        loadingLottie.isUserInteractionEnabled = false
 //        loadingLottie.alpha = 1.0

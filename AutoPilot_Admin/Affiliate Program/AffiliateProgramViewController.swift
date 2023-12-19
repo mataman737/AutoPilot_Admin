@@ -57,6 +57,7 @@ class AffiliateProgramViewController: UIViewController {
     var dollarAmount = "0"
     
     var team: Team?
+    var spinner = UIActivityIndicatorView(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +77,10 @@ class AffiliateProgramViewController: UIViewController {
 
 extension AffiliateProgramViewController {
     func updateTeam(referralsOn: Bool) {
+        activeButton.isUserInteractionEnabled = false
+        inactiveButton.isUserInteractionEnabled = false
+        self.spinner.alpha = 1.0
+        self.spinner.isHidden = false
         guard var team = self.team else {
             print("did this 🫦🫦🫦 000")
             return
@@ -104,6 +109,10 @@ extension AffiliateProgramViewController {
             
             DispatchQueue.main.async { [weak self] in
                 self?.successImpactGenerator()
+                self?.spinner.isHidden = true
+                self?.spinner.alpha = 0
+                self?.activeButton.isUserInteractionEnabled = true
+                self?.inactiveButton.isUserInteractionEnabled = true
             }
         }
     }
@@ -140,6 +149,7 @@ extension AffiliateProgramViewController {
         lightImpactGenerator()
         switch sender.tag {
         case 1:
+            updateTeam(referralsOn: true)
             activeButton.backgroundColor = UIColor(red: 114/255, green: 71/255, blue: 147/255, alpha: 1.0)
             activeButton.setTitleColor(.white, for: .normal)
             inactiveButton.backgroundColor = .white.withAlphaComponent(0.1)
@@ -149,6 +159,7 @@ extension AffiliateProgramViewController {
             inactiveButton.setTitleColor(.white, for: .normal)
             activeButton.backgroundColor = .white.withAlphaComponent(0.1)
             activeButton.setTitleColor(.white.withAlphaComponent(0.3), for: .normal)
+            updateTeam(referralsOn: false)
         }
     }
 }

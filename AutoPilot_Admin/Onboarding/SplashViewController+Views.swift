@@ -22,20 +22,37 @@ extension SplashViewController {
         self.view.addSubview(blurredView)
         blurredView.fillSuperview()
                             
-        joinWaitingListButton.setTitle("Log in", for: .normal)
-        joinWaitingListButton.alpha = 1.0
-        joinWaitingListButton.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
-        joinWaitingListButton.titleLabel?.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
-        joinWaitingListButton.setTitleColor(.white, for: .normal)
-        joinWaitingListButton.backgroundColor = UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0)
-        joinWaitingListButton.layer.cornerRadius = .createAspectRatio(value: 56)/2
-        joinWaitingListButton.layer.masksToBounds = true
-        joinWaitingListButton.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(joinWaitingListButton)
-        joinWaitingListButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
-        joinWaitingListButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -.createAspectRatio(value: 20)).isActive = true
-        joinWaitingListButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -.createAspectRatio(value: 50)).isActive = true //40
-        joinWaitingListButton.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 56)).isActive = true
+        loginButton.setTitle("Log in", for: .normal)
+        loginButton.alpha = 1.0
+        loginButton.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
+        loginButton.titleLabel?.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.backgroundColor = UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0)
+        loginButton.layer.cornerRadius = .createAspectRatio(value: 56)/2
+        loginButton.layer.masksToBounds = true
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(loginButton)
+        loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: .createAspectRatio(value: 20)).isActive = true
+        loginButton.trailingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: -.createAspectRatio(value: 8)).isActive = true
+        loginButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -.createAspectRatio(value: 50)).isActive = true //40
+        loginButton.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 56)).isActive = true
+        
+        joinButton.setTitle("Join", for: .normal)
+        joinButton.alpha = 1.0
+        joinButton.addTarget(self, action: #selector(goToJoin), for: .touchUpInside)
+        joinButton.titleLabel?.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
+        joinButton.setTitleColor(.white, for: .normal)
+        joinButton.backgroundColor = .clear
+        joinButton.layer.borderColor = UIColor.white.cgColor//UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0).cgColor
+        joinButton.layer.borderWidth = 2
+        joinButton.layer.cornerRadius = .createAspectRatio(value: 56)/2
+        joinButton.layer.masksToBounds = true
+        joinButton.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(joinButton)
+        joinButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -.createAspectRatio(value: 20)).isActive = true
+        joinButton.leadingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: .createAspectRatio(value: 8)).isActive = true
+        joinButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -.createAspectRatio(value: 50)).isActive = true //40
+        joinButton.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 56)).isActive = true
         
         let detailsLabelText = "Manage\nyour trades,\nteam, and\nmore"
         detailsLabel.setupLineHeight(myText: detailsLabelText, myLineSpacing: .createAspectRatio(value: 12))
@@ -46,8 +63,8 @@ extension SplashViewController {
         detailsLabel.numberOfLines = 0
         detailsLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(detailsLabel)
-        detailsLabel.leadingAnchor.constraint(equalTo: joinWaitingListButton.leadingAnchor, constant: 0).isActive = true
-        detailsLabel.bottomAnchor.constraint(equalTo: joinWaitingListButton.topAnchor, constant: -.createAspectRatio(value: 163)).isActive = true
+        detailsLabel.leadingAnchor.constraint(equalTo: loginButton.leadingAnchor, constant: 0).isActive = true
+        detailsLabel.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -.createAspectRatio(value: 163)).isActive = true
         
         logoImageView.alpha = 1.0
         logoImageView.image = UIImage(named: "smartTraderLogoDark")
