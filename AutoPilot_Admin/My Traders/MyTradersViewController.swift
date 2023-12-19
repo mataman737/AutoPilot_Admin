@@ -18,12 +18,39 @@ class MyTradersViewController: UIViewController {
     var mainfeedTableView = UITableView()
     var teamMemberTableViewCell = "teamMemberTableViewCell"
     var plusButton = UIButton()
+    var traders = [Admin]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .red
         setupNav()
         setupTableView()
+        getTeamTraders()
+    }
+    
+    func getTeamTraders() {
+        API.sharedInstance.getTeamTraders { success, traders, error in
+            guard error == nil else {
+                print(error!)
+                print("\(error!) 😶‍🌫️😶‍🌫️😶‍🌫️ 000")
+                return
+            }
+            
+            guard success, let traders = traders else {
+                print("error getting traders 😶‍🌫️😶‍🌫️😶‍🌫️ 111")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.traders = traders
+                print("\(traders.count) did this 😶‍🌫️😶‍🌫️😶‍🌫️ 222 \n\(traders[0])")
+                for trader in traders {
+                    print("\(trader.displayName) 😶‍🌫️😶‍🌫️😶‍🌫️ \(trader.adminType)")
+                }
+                
+                self?.mainfeedTableView.reloadData()
+            }
+        }
     }
 }
 
@@ -64,14 +91,26 @@ extension MyTradersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return traders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
-        cell.chatNameLabel.text = "John Doe"
-        cell.chatDescriptionLabel.text = "Trader"
-        cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+        let tradersIndex = traders[indexPath.row]
+        cell.chatNameLabel.text = tradersIndex.displayName
+        if let adminType = tradersIndex.adminType {
+            cell.chatDescriptionLabel.text = tradersIndex.adminType
+        } else {
+            cell.chatDescriptionLabel.text = "No type"
+        }
+        //cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+        
+        if let urlString = tradersIndex.profilePhotoUrl, let url = URL(string: urlString) {
+            cell.circleImageView.kf.setImage(with: url)
+        } else {
+            cell.circleImageView.image = UIImage(named: "enigmaUserPH")
+        }
+        
         cell.last30DayPercentChange.isHidden = true
         return cell
     }

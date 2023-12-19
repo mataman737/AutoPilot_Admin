@@ -91,14 +91,14 @@
 		DEB669CE2B31416D0081C3B1 /* LoginViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB669CD2B31416D0081C3B1 /* LoginViewController+Views.swift */; };
 		DEC9A4B62A93DB38000DBE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */; };
 		DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */; };
-		DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */; };
+		DEC9A4BA2A93DB38000DBE39 /* AutoPilotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4B92A93DB38000DBE39 /* AutoPilotViewController.swift */; };
 		DEC9A4BD2A93DB38000DBE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4BB2A93DB38000DBE39 /* Main.storyboard */; };
 		DEC9A4BF2A93DB3B000DBE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */; };
 		DEC9A4C22A93DB3B000DBE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4C02A93DB3B000DBE39 /* LaunchScreen.storyboard */; };
 		DEC9A4CA2A93E649000DBE39 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */; };
 		DEC9A4CD2A93E73D000DBE39 /* SetupAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4CC2A93E73D000DBE39 /* SetupAccountViewController.swift */; };
 		DEC9A4CF2A93E742000DBE39 /* SetupAccountViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4CE2A93E742000DBE39 /* SetupAccountViewController+Views.swift */; };
-		DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */; };
+		DEC9A4D22A93E934000DBE39 /* AutoPilotViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D12A93E934000DBE39 /* AutoPilotViewController+Views.swift */; };
 		DEC9A4D42A93E9C5000DBE39 /* NoSignalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */; };
 		DEC9A4D62A93E9DB000DBE39 /* SignalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */; };
 		DEC9A4D92A93E9F8000DBE39 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4D82A93E9F8000DBE39 /* Signal.swift */; };
@@ -266,7 +266,7 @@
 		DEC9A4B22A93DB38000DBE39 /* AutoPilot_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPilot_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC9A4B52A93DB38000DBE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC9A4B72A93DB38000DBE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyForexTradesViewController.swift; sourceTree = "<group>"; };
+		DEC9A4B92A93DB38000DBE39 /* AutoPilotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPilotViewController.swift; sourceTree = "<group>"; };
 		DEC9A4BC2A93DB38000DBE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEC9A4BE2A93DB3B000DBE39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC9A4C12A93DB3B000DBE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 		DEC9A4C92A93E649000DBE39 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		DEC9A4CC2A93E73D000DBE39 /* SetupAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAccountViewController.swift; sourceTree = "<group>"; };
 		DEC9A4CE2A93E742000DBE39 /* SetupAccountViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetupAccountViewController+Views.swift"; sourceTree = "<group>"; };
-		DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyForexTradesViewController+Views.swift"; sourceTree = "<group>"; };
+		DEC9A4D12A93E934000DBE39 /* AutoPilotViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoPilotViewController+Views.swift"; sourceTree = "<group>"; };
 		DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSignalsTableViewCell.swift; sourceTree = "<group>"; };
 		DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableViewCell.swift; sourceTree = "<group>"; };
 		DEC9A4D82A93E9F8000DBE39 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
@@ -733,8 +733,8 @@
 				DEC9A4EB2A93ECCC000DBE39 /* New Forex Signal */,
 				DE4D57B12AA90829008E2B6B /* Pending Order Menu */,
 				DE4D57AA2AA90503008E2B6B /* Open Trade Menu */,
-				DEC9A4B92A93DB38000DBE39 /* MyForexTradesViewController.swift */,
-				DEC9A4D12A93E934000DBE39 /* MyForexTradesViewController+Views.swift */,
+				DEC9A4B92A93DB38000DBE39 /* AutoPilotViewController.swift */,
+				DEC9A4D12A93E934000DBE39 /* AutoPilotViewController+Views.swift */,
 				DEC9A4D52A93E9DB000DBE39 /* SignalsTableViewCell.swift */,
 				DEC9A4D32A93E9C5000DBE39 /* NoSignalsTableViewCell.swift */,
 				DEB44E5A2AB0029A0006887A /* OnboardingView.swift */,
@@ -1152,7 +1152,7 @@
 				DE80EF8A2AACEF7200603EF3 /* TeamMemberTableViewCell.swift in Sources */,
 				FCC9669D2A9F8D160088DD2A /* ImageUploader.swift in Sources */,
 				DE4D57A92AA8C7C2008E2B6B /* ClosedOrderTableViewCell.swift in Sources */,
-				DEC9A4BA2A93DB38000DBE39 /* MyForexTradesViewController.swift in Sources */,
+				DEC9A4BA2A93DB38000DBE39 /* AutoPilotViewController.swift in Sources */,
 				DEFB41642B15A40A0006DD45 /* PickTraderTypeViewController+Views.swift in Sources */,
 				DEB44E4C2AAFAB680006887A /* ConnectBrokerViewController+Views.swift in Sources */,
 				DE6643A02AA56CE500DA27BE /* NVULaunchView.swift in Sources */,
@@ -1188,7 +1188,7 @@
 				DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */,
 				DEB669CE2B31416D0081C3B1 /* LoginViewController+Views.swift in Sources */,
 				DEF830B32AE5FFAA00268370 /* NBPhoneNumberUtil+ShortNumber.m in Sources */,
-				DEC9A4D22A93E934000DBE39 /* MyForexTradesViewController+Views.swift in Sources */,
+				DEC9A4D22A93E934000DBE39 /* AutoPilotViewController+Views.swift in Sources */,
 				DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */,
 				DE2C18962ACCF74B00CB509A /* AddTraderViewController.swift in Sources */,
 				DED14C352ABFD60500E3E88D /* ActivePayoutSubscribersTableViewCell.swift in Sources */,

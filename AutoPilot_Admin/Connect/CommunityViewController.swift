@@ -100,7 +100,7 @@ class CommunityViewController: UIViewController {
         loadingLottie.play()
         getUnreadCount()
         getTeamMembers()
-        getTeamTraders()
+        //getTeamTraders()
         getCurrentTeam()
     }
     
@@ -178,25 +178,31 @@ class CommunityViewController: UIViewController {
         }
     }
     
+    /*
     func getTeamTraders() {
         API.sharedInstance.getTeamTraders { success, traders, error in
             guard error == nil else {
                 print(error!)
+                print("\(error!) 😶‍🌫️😶‍🌫️😶‍🌫️ 000")
                 return
             }
             
             guard success, let traders = traders else {
-                print("error getting traders")
+                print("error getting traders 😶‍🌫️😶‍🌫️😶‍🌫️ 111")
                 return
             }
             
             DispatchQueue.main.async { [weak self] in
                 self?.traders = traders
-                
+                print("\(traders.count) did this 😶‍🌫️😶‍🌫️😶‍🌫️ 222 \n\(traders[0])")
+                for trader in traders {
+                    print("\(trader.displayName) 😶‍🌫️😶‍🌫️😶‍🌫️ \(trader.adminType)")
+                }
                 //Stephen, do your thing here
             }
         }
     }
+    */
     
     /*
     func getUnreadCount() {

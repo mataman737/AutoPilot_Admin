@@ -1,5 +1,5 @@
 //
-//  MyForexTradesViewController.swift
+//  AutoPilotViewController.swift
 //  AutoPilot_Admin
 //
 //  Created by Stephen Mata on 8/21/23.
@@ -12,7 +12,7 @@ import StreamChatUI
 import AVFoundation
 import AVKit
 
-class MyForexTradesViewController: UIViewController {
+class AutoPilotViewController: UIViewController {
     
     let fromLogin = UserDefaults()
     var transitionView = UIView()
@@ -321,7 +321,7 @@ class MyForexTradesViewController: UIViewController {
 
 //MARK: SET UP VIDEO & AUDIO ------------------------------------------------------------------------------------------------------------------------------------
 
-extension MyForexTradesViewController {
+extension AutoPilotViewController {
     private func playLoopingVideo() {
         // VIDEO
         guard let path = Bundle.main.path(forResource: "attempt_4", ofType:"mp4") else {
@@ -347,7 +347,7 @@ extension MyForexTradesViewController {
 
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
-extension MyForexTradesViewController {
+extension AutoPilotViewController {
     @objc func didTapMyFXBook() {
         lightImpactGenerator()
         let updateAccessCodeVC = SetMyFXBookLinkViewController()
@@ -443,7 +443,7 @@ extension MyForexTradesViewController {
 
 //MARK: TABLEVIEW DELEGATE & DATASOURCE ------------------------------------------------------------------------------------------------------------------------------------
 
-extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSource {
+extension AutoPilotViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         
         
@@ -571,7 +571,7 @@ extension MyForexTradesViewController: UITableViewDelegate, UITableViewDataSourc
 
 //MARK: OPEN TRADE DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
 
-extension MyForexTradesViewController: OpenOrderMenuViewControllerDelegate {
+extension AutoPilotViewController: OpenOrderMenuViewControllerDelegate {
     func didTapModifyTrade(signal: MTInstantTradeStatus) {
         let signalOptionsVC = ModifyOpenOrderViewController()
         signalOptionsVC.assetTitleLabel.text = signal.order?.symbol
@@ -598,7 +598,7 @@ extension MyForexTradesViewController: OpenOrderMenuViewControllerDelegate {
 
 //MARK: PENDING TRADE DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
 
-extension MyForexTradesViewController: PendingOrderMenuViewControllerDelegate {
+extension AutoPilotViewController: PendingOrderMenuViewControllerDelegate {
     func didTapModifyPendingTrade(signal: MTInstantTradeStatus) {
         let signalOptionsVC = ModifyPendingOrderViewController()
         signalOptionsVC.delegate = self
@@ -627,7 +627,7 @@ extension MyForexTradesViewController: PendingOrderMenuViewControllerDelegate {
 
 //MARK: MODIFY OPEN ORDER DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
 
-extension MyForexTradesViewController: ModifyOpenOrderViewControllerDelegate {
+extension AutoPilotViewController: ModifyOpenOrderViewControllerDelegate {
     func didModifyOpenOrder() {
         getOpenOrders()
 //        showLoader()
@@ -637,7 +637,7 @@ extension MyForexTradesViewController: ModifyOpenOrderViewControllerDelegate {
 
 //MARK: MODIFY PENDING ORDER DELEGATE ------------------------------------------------------------------------------------------------------------------------------------
 
-extension MyForexTradesViewController: ModifyPendingOrderViewControllerDelegate {
+extension AutoPilotViewController: ModifyPendingOrderViewControllerDelegate {
     func didModifyPendingOrder() {
         getOpenOrders()
 //        showLoader()
@@ -648,7 +648,7 @@ extension MyForexTradesViewController: ModifyPendingOrderViewControllerDelegate 
 
 //MARK: PICK OPTIONS DELEGATE
 
-extension MyForexTradesViewController: PickOptionViewControllerDelegate {
+extension AutoPilotViewController: PickOptionViewControllerDelegate {
     func didPickOption(optionSelected: String) {
         print("did this bitch 🎃🎃🎃 000")
         let newNotiVC = MT_NewForexSignalViewController()
@@ -665,7 +665,7 @@ extension MyForexTradesViewController: PickOptionViewControllerDelegate {
 
 //MARK: NEW FOREX SIGNAL POSTED
 
-extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
+extension AutoPilotViewController: MT_NewForexSignalViewControllerDelegate {
     func showNotiLoading() {
         self.loadingContainer.alpha = 1.0
         self.loadingContainer.isHidden = false
@@ -680,7 +680,7 @@ extension MyForexTradesViewController: MT_NewForexSignalViewControllerDelegate {
 
 //MARK: SETUP CELLS
 
-extension MyForexTradesViewController {
+extension AutoPilotViewController {
     func setupActivePositions(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {
         let signal = activeOrders[indexPath.row]
         
@@ -840,7 +840,7 @@ extension MyForexTradesViewController {
 
 //MARK: CLOSE ORDER DELEGATE
 
-extension MyForexTradesViewController: CloseOrderViewControllerDelegate {
+extension AutoPilotViewController: CloseOrderViewControllerDelegate {
     func didCloseOrder() {
         self.getOpenOrders()
         self.getClosedOrders()
@@ -849,7 +849,7 @@ extension MyForexTradesViewController: CloseOrderViewControllerDelegate {
 
 //MARK: CLOSE ORDER DELEGATE
 
-extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate {
+extension AutoPilotViewController: CancelPendingOrderViewControllerDelegate {
     func didCancelOrder() {
         self.getOpenOrders()
         self.getClosedOrders()
@@ -858,7 +858,7 @@ extension MyForexTradesViewController: CancelPendingOrderViewControllerDelegate 
 
 //MARK: CLOSE ORDER DELEGATE
 
-extension MyForexTradesViewController: SetMyFXBookLinkViewControllerDelegate {
+extension AutoPilotViewController: SetMyFXBookLinkViewControllerDelegate {
     func didUpdateMyFXBookLink() {
         //updateOnboardingRows()
         getCurrentTeam()
@@ -869,7 +869,7 @@ extension MyForexTradesViewController: SetMyFXBookLinkViewControllerDelegate {
 
 //MARK: UPDATE TEAM NAME PHOTO DELEGATE, UPDATE ACCESS CODE DELEGATE
 
-extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDelegate, UpdateAccessCodeViewControllerDelegate {
+extension AutoPilotViewController: UpdateTeamNameAndPhotoViewControllerDelegate, UpdateAccessCodeViewControllerDelegate {
     func didUpdateAccessCode() {
         updateOnboardingRows()
         getCurrentTeam()
@@ -914,7 +914,7 @@ extension MyForexTradesViewController: UpdateTeamNameAndPhotoViewControllerDeleg
 
 //MARK: CONNECT BROKER DELEGATE
 
-extension MyForexTradesViewController: ConnectBrokerViewControllerDelegate {
+extension AutoPilotViewController: ConnectBrokerViewControllerDelegate {
     func didAddBrokerAccount() {
         self.getAccounts()
     }
