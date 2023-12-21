@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Lottie
+import Lottie
 
 extension MyTradersViewController {
     func setupNav() {
@@ -100,5 +101,51 @@ extension MyTradersViewController {
         mainfeedTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         mainfeedTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         mainfeedTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+    }
+    
+    func setupLoadingIndicator() {
+        
+        loadingContainer.isHidden = false
+        loadingContainer.alpha = 1.0
+        loadingContainer.backgroundColor = .white//UIColor(red: 244/255, green: 245/255, blue: 247/255, alpha: 1.0)
+        loadingContainer.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(loadingContainer)
+        loadingContainer.topAnchor.constraint(equalTo: navView.bottomAnchor).isActive = true
+        loadingContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        loadingContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        loadingContainer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        let checkAnimation = LottieAnimation.named("tripleSpinner")
+        loadingLottie.isUserInteractionEnabled = false
+        loadingLottie.alpha = 1.0
+        loadingLottie.loopMode = .loop
+        loadingLottie.animation = checkAnimation
+        loadingLottie.contentMode = .scaleAspectFill
+        loadingLottie.backgroundColor = .clear
+        loadingLottie.translatesAutoresizingMaskIntoConstraints = false
+        loadingContainer.addSubview(loadingLottie)
+        loadingLottie.centerYAnchor.constraint(equalTo: loadingContainer.centerYAnchor).isActive = true
+        loadingLottie.centerXAnchor.constraint(equalTo: loadingContainer.centerXAnchor).isActive = true
+        loadingLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        loadingLottie.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        loadingLottie.play()
+        //print("😀😀😀 - \(loadingLottie.logHierarchyKeypaths()) - 😀😀😀")
+    
+        var i = 0
+        let loadingLayers = ["Shape Layer 1.Ellipse 1.Stroke 1.Color", "Shape Layer 2.Ellipse 1.Stroke 1.Color", "Shape Layer 3.Ellipse 1.Stroke 1.Color"]
+        for layer in 1...loadingLayers.count {
+            let keyPath = AnimationKeypath(keypath: "\(loadingLayers[layer - 1])")
+            if i == 0 {
+                let colorProvider = ColorValueProvider(UIColor(red: 225/255, green: 61/255, blue: 227/255, alpha: 1.0).lottieColorValue)
+                loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
+            } else if i == 1 {
+                let colorProvider = ColorValueProvider(UIColor(red: 229/255, green: 93/255, blue: 132/255, alpha: 1.0).lottieColorValue)
+                loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
+            } else {
+                let colorProvider = ColorValueProvider(UIColor(red: 232/255, green: 121/255, blue: 47/255, alpha: 1.0).lottieColorValue)
+                loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
+            }
+            i += 1
+        }
     }
 }

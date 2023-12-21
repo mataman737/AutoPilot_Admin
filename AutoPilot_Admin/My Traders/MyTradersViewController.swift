@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Lottie
 
 class MyTradersViewController: UIViewController {
 
+    var loadingContainer = UIView()
+    var loadingLottie = LottieAnimationView()
     var navView = UIView()
     var backImageView = UIImageView()
     var titleLabel = UILabel()
@@ -25,6 +28,7 @@ class MyTradersViewController: UIViewController {
         self.view.backgroundColor = .red
         setupNav()
         setupTableView()
+        setupLoadingIndicator()
         getTeamTraders()
     }
     
@@ -42,12 +46,14 @@ class MyTradersViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.traders = traders
-                print("\(traders.count) did this 😶‍🌫️😶‍🌫️😶‍🌫️ 222 \n\(traders[0])")
-                for trader in traders {
-                    print("\(trader.displayName) 😶‍🌫️😶‍🌫️😶‍🌫️ \(trader.adminType)")
-                }
+                self?.traders = traders     
                 
+                
+                
+                
+                print("🍿🍿🍿 \(traders[2].displayName) 🍿🍿🍿")
+                
+                self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
                 self?.mainfeedTableView.reloadData()
             }
         }
@@ -57,6 +63,14 @@ class MyTradersViewController: UIViewController {
 //MARK: ACTIONS
 
 extension MyTradersViewController {
+    @objc func hideLoader() {
+        UIView.animate(withDuration: 0.5) {
+            self.loadingContainer.alpha = 0
+        } completion: { success in
+            //self.loadingContainer.isHidden = true
+        }
+    }
+    
     @objc func dismissVC() {
         lightImpactGenerator()
         self.dismiss(animated: true, completion: nil)
