@@ -525,6 +525,18 @@ class API: NSObject {
                 completionHandler(false, nil, error)
                 return
             }
+            
+            guard let response = response as? HTTPURLResponse else {
+                completionHandler(false, nil, nil)
+                return
+            }
+            
+            guard response.statusCode == 200 else {
+                let responseString = String(data: data, encoding: .utf8)
+                let error = NSError(domain: "", code: 400, userInfo: [ NSLocalizedDescriptionKey: responseString ?? "Error Posting Trade"])
+                completionHandler(false, nil, error)
+                return
+            }
 //            do {
 //                let decoder = JSONDecoder()
 //                decoder.dateDecodingStrategy = .iso8601
@@ -1132,7 +1144,7 @@ extension URLRequest {
         let lToken = try? Disk.retrieve("token", from: .applicationSupport, as: LToken.self)
         if let token = lToken?.token {
             print(token)
-            addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            addValue("Bearer MTE2OTIzOTE1MTU4MTM1MTk5MTIxNzI4NTkyMTc3NzAxMTMyMDEyMDc5MjMyODIxODM1NzE3ODIxNTYyNDkyNDI1NTE4NDExNDExMDE5NzY5", forHTTPHeaderField: "Authorization")
         }
     }
 }
