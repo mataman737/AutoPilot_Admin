@@ -684,7 +684,7 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                 DispatchQueue.main.async { [weak self] in
                     print("Error posting 🍗🍗🍗 000")
                     let toastNoti = ToastNotificationView()
-                    toastNoti.present(withMessage: "Unable to send signal!")
+                    toastNoti.present(withMessage: error!.localizedDescription)
                     self?.isPostingSignal = false
                 }
                 
