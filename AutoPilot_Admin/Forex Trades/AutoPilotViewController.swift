@@ -286,31 +286,56 @@ class AutoPilotViewController: UIViewController {
             for index in 0...orders.count {
                 for section in 0...1 {
                     if let cell = mainFeedTableView.cellForRow(at: IndexPath(row: index, section: section)) as? OpenOrdersTableViewCell {
-                        if let currentOrder = orders.first(where: {$0.ticket == cell.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission {
+                        if let currentOrder = orders.first(where: {$0.ticket == cell.order?.ticket}), let profit = currentOrder.profit, let commission = currentOrder.commission, let entryPrice = currentOrder.openPrice {
                             if let signalTradingPair = currentOrder.symbol {
                                 let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
                                 cell.currentPriceLabel.text = forexPrice
+                                
+                                let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
+                                //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
+                                
+                                let numberString = String(unrealizedProfit)
+                                
+                                cell.unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
+                                
+                                if let forexPriceDouble = Double(forexPrice), let pipDifference = calculatePipDifference(tradingPair: signalTradingPair, entryPriceStr: entryPrice, closePriceStr: forexPriceDouble) {
+                                    let isSingular = pipDifference == 1
+                                    let pipText = isSingular ? "pip" : "pips"
+                                    cell.tickerLabel.text = "\(pipDifference) \(pipText)"
+                                    
+                                    if unrealizedProfit > 0 {
+                                        cell.tickerLabel.text = "+\(pipDifference) \(pipText)"
+                                    } else if unrealizedProfit == 0 {
+                                        cell.tickerLabel.text = "\(pipDifference) pips"
+                                    } else {
+                                        cell.tickerLabel.text = "-\(pipDifference) \(pipText)"
+                                    }
+                                }
+                                
+                                if numberString.contains("-") {
+                                    openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightRed
+                                    cell.unrealizedProfitLabel.textColor = .brightRed
+                                } else {
+                                    openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightGreen
+                                    cell.unrealizedProfitLabel.textColor = .brightGreen
+                                }
                             }
-                            let unrealizedProfit = (profit + commission).rounded(toPlaces: 2)
-                            //cell.unrealizedProfitLabel.textColor = unrealizedProfit >= 0 ? .brightGreen : .brightRed
-                            
-                            let numberString = String(unrealizedProfit)
-                            
-                            cell.unrealizedProfitLabel.text = "\(unrealizedProfit.withCommas())"
                             
                             //openOrderMenuVC?.loadingIndicator.isHidden = true
                             //openOrderMenuVC?.loadingIndicator.stopAnimating()
                             
                             //print("did this 🥱🥱🥱")
                             //openOrderMenuVC?.unrealizedProfitLabel.text = "\(unrealizedProfit)"
+                                                        
                             
-                            if numberString.contains("-") {
-                                openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightRed
-                                cell.unrealizedProfitLabel.textColor = .brightRed
-                            } else {
-                                openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightGreen
-                                cell.unrealizedProfitLabel.textColor = .brightGreen
-                            }
+                            
+//                            if numberString.contains("-") {
+//                                openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightRed
+//                                cell.unrealizedProfitLabel.textColor = .brightRed
+//                            } else {
+//                                openOrderMenuVC?.unrealizedProfitLabel.textColor = .brightGreen
+//                                cell.unrealizedProfitLabel.textColor = .brightGreen
+//                            }
                         }
                     }
                 }
@@ -348,6 +373,22 @@ extension AutoPilotViewController {
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension AutoPilotViewController {
+    func calculatePipDifference(tradingPair: String, entryPriceStr: Double, closePriceStr: Double) -> Int? {
+        var pipValue: Double = 0.0001 // Default pip value for most currency pairs
+        
+        // Check trading pair type
+        if tradingPair.hasSuffix("JPY") {
+            pipValue = 0.01
+        } else if tradingPair.contains("XAUUSD") || tradingPair.contains("30") || tradingPair.contains("100") || tradingPair.contains("500") {
+            pipValue = 0.1
+        } else if tradingPair == "US30" {
+            pipValue = 1
+        }
+        
+        let pipDifferenceStopLoss = Int(round(abs(closePriceStr - entryPriceStr) / pipValue))
+        return pipDifferenceStopLoss
+    }
+    
     @objc func didTapMyFXBook() {
         lightImpactGenerator()
         let updateAccessCodeVC = SetMyFXBookLinkViewController()
@@ -687,21 +728,28 @@ extension AutoPilotViewController {
         cell.order = signal.order
         cell.orderStatus = signal
         
-        if let tradingPairZero = signal.order?.symbol {
+        if let tradingPairZero = signal.order?.symbol, let openPrice = signal.order?.openPrice {
             let updatedString = tradingPairZero
             cell.currencyPairLabel.text = updatedString.removePeriodsAndDashes()
-        }
-                
-        if let openPrice = signal.order?.openPrice {
+            
+            let forexPrice = self.updateForexPriceEverySecond(signalSymbol: tradingPairZero)
+            cell.currentPriceLabel.text = forexPrice
             cell.entryPriceLabel.text = "\(openPrice)"
+            
         } else {
             cell.entryPriceLabel.text = "nil"
         }
+                
+//        if let openPrice = signal.order?.openPrice {
+//            cell.entryPriceLabel.text = "\(openPrice)"
+//        } else {
+//            cell.entryPriceLabel.text = "nil"
+//        }
         
-        if let signalTradingPair = signal.order?.symbol {
-            let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
-            cell.currentPriceLabel.text = forexPrice
-        }
+//        if let signalTradingPair = signal.order?.symbol {
+//            let forexPrice = self.updateForexPriceEverySecond(signalSymbol: signalTradingPair)
+//            cell.currentPriceLabel.text = forexPrice
+//        }
         
         if let volume = signal.order?.lots { //signal.order?.ex?.volume
             if let orderType = signal.order?.type {
@@ -733,6 +781,24 @@ extension AutoPilotViewController {
                 cell.signalTimeLabel.text = "Invalid date time"
             }
         }
+        
+        /*
+        if let forexPriceDouble = Double(forexPrice), let pipDifference = calculatePipDifference(tradingPair: signalTradingPair, entryPriceStr: entryPrice, closePriceStr: forexPriceDouble) {
+            let isSingular = pipDifference == 1
+            let pipText = isSingular ? "pip" : "pips"
+            cell.tickerLabel.text = "\(pipDifference) \(pipText)"
+            
+            if unrealizedProfit > 0 {
+                cell.tickerLabel.text = "+\(pipDifference) \(pipText)"
+            } else if unrealizedProfit == 0 {
+                cell.tickerLabel.text = "\(pipDifference) pips"
+            } else {
+                cell.tickerLabel.text = "-\(pipDifference) \(pipText)"
+            }
+        }
+        */
+        
+        
     }
     
     func setupPendingOrders(cell: OpenOrdersTableViewCell, indexPath: IndexPath) {

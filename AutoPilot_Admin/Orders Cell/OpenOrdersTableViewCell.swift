@@ -140,15 +140,26 @@ extension OpenOrdersTableViewCell {
         currencyPairLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(currencyPairLabel)
         currencyPairLabel.leadingAnchor.constraint(equalTo: assetImageView.trailingAnchor, constant: .createAspectRatio(value: 6)).isActive = true
-        currencyPairLabel.centerYAnchor.constraint(equalTo: assetImageView.centerYAnchor).isActive = true
+        currencyPairLabel.centerYAnchor.constraint(equalTo: assetImageView.centerYAnchor, constant: -.createAspectRatio(value: 6)).isActive = true
+        
+//        centeredCurrencyPairLabel.isHidden = true
+//        centeredCurrencyPairLabel.textAlignment = .left
+//        centeredCurrencyPairLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 16))
+//        centeredCurrencyPairLabel.numberOfLines = 0
+//        centeredCurrencyPairLabel.translatesAutoresizingMaskIntoConstraints = false
+//        contentView.addSubview(centeredCurrencyPairLabel)
+//        centeredCurrencyPairLabel.leadingAnchor.constraint(equalTo: assetImageView.trailingAnchor, constant: .createAspectRatio(value: 6)).isActive = true
+//        centeredCurrencyPairLabel.centerYAnchor.constraint(equalTo: assetImageView.centerYAnchor).isActive = true
                 
+        tickerLabel.text = "-"
+        tickerLabel.alpha = 0.5
         tickerLabel.textAlignment = .left
-        tickerLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 16))
+        tickerLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
         tickerLabel.numberOfLines = 0
         tickerLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tickerLabel)
-        tickerLabel.leadingAnchor.constraint(equalTo: currencyPairLabel.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
-        tickerLabel.centerYAnchor.constraint(equalTo: currencyPairLabel.centerYAnchor).isActive = true
+        tickerLabel.leadingAnchor.constraint(equalTo: assetImageView.trailingAnchor, constant: .createAspectRatio(value: 6)).isActive = true
+        tickerLabel.centerYAnchor.constraint(equalTo: assetImageView.centerYAnchor, constant: .createAspectRatio(value: 9)).isActive = true
                 
         signalTimeLabel.textAlignment = .left
         signalTimeLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
