@@ -213,7 +213,7 @@ class CommunityViewController: UIViewController {
             }
             
             do {
-                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!)")
+                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!.uppercased())")
                 let channelController = ChatClient.shared.channelController(for: id)
                 
                 channelController.synchronize { error in
@@ -252,7 +252,7 @@ class CommunityViewController: UIViewController {
             
             do {
                 //let id = try ChannelId(cid: "gaming:team\(User.current.teamId!.uuidString)")
-                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!)")
+                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!.uppercased())")
                 let channelController = ChatClient.shared.channelController(for: id)
                 
                 channelController.synchronize { error in
@@ -450,7 +450,7 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             do {
                 print("\(Admin.current.teamId!) 🧠🧠🧠")
-                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!)")
+                let id = try ChannelId(cid: "gaming:team\(Admin.current.teamId!.uppercased())")
                 let channelVC = CustomChatChannelVC()
                 channelVC.chatChannelDelegate = self
                 channelVC.channelController = ChatClient.shared.channelController(for: id)
