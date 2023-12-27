@@ -19,6 +19,7 @@ final class Admin: Codable {
     var email: String?
     var profilePhotoUrl: String?
     var permissions: [String]?
+    var phone: String?
     
     var tradeWonNotiSetting: Int {
         get {
