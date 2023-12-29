@@ -1144,7 +1144,7 @@ extension URLRequest {
         let lToken = try? Disk.retrieve("token", from: .applicationSupport, as: LToken.self)
         if let token = lToken?.token {
             print(token)
-            addValue("Bearer MTE2OTIzOTE1MTU4MTM1MTk5MTIxNzI4NTkyMTc3NzAxMTMyMDEyMDc5MjMyODIxODM1NzE3ODIxNTYyNDkyNDI1NTE4NDExNDExMDE5NzY5", forHTTPHeaderField: "Authorization")
+            addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
     }
 }
