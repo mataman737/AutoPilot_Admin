@@ -113,6 +113,5 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
                 self?.dismissViews()
             }
         }
-        
     }
 }

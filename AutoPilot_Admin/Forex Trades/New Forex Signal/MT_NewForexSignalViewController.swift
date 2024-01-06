@@ -686,6 +686,8 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                     let toastNoti = ToastNotificationView()
                     toastNoti.present(withMessage: error!.localizedDescription)
                     self?.isPostingSignal = false
+                    self?.mainScrollView.isUserInteractionEnabled = false
+                    self?.hideLoader()
                 }
                 
                 return
@@ -699,6 +701,8 @@ extension MT_NewForexSignalViewController: SwipeConfirmViewDelegate {
                     let toastNoti = ToastNotificationView()
                     toastNoti.present(withMessage: "Unable to send signal!")
                     self?.isPostingSignal = false
+                    self?.mainScrollView.isUserInteractionEnabled = false
+                    self?.hideLoader()
                 }
                 
                 return
