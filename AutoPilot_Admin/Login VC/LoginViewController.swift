@@ -182,8 +182,7 @@ extension LoginViewController {
         } else {
             nextButton.showLoader()
             nextButton.isUserInteractionEnabled = false
-            print("\(phoneNumber) 😪😪😪")
-            API.sharedInstance.sendSMSVerifyLogin(loginRequest: SMSLoginAttempt(code: codeTextField.text ?? "", phone: phoneNumber, displayName: "")) { [weak self] (success, admin, error, statusCode) in
+            API.sharedInstance.sendSMSVerifyLogin(loginRequest: SMSLoginAttempt(code: codeTextField.text ?? "", phone: phoneNumber, displayName: "")) { [weak self] (success, admin, error, statusCode) in                
                 if error != nil {
                     DispatchQueue.main.async {
                         print("failed verifying sms code")
@@ -221,41 +220,12 @@ extension LoginViewController {
                     return
                 }
                 
-                guard let photo = self?.photo else { return }
-                
-                ImageUploader.uploadImage(image: photo, key: "admin:\(admin.id!.uuidString)") { error, success, uploadedUrl in
-                    guard error == nil else {
-                        print(error!)
-                        return
-                    }
-                    
-                    guard success else {
-                        print("error uploading image")
-                        return
-                    }
-                    
-                    Admin.current.profilePhotoUrl = uploadedUrl
-                    
-                    API.sharedInstance.updateAdmin(admin: Admin.current) { success, admin, error in
-                        guard error == nil else {
-                            print(error!)
-                            return
-                        }
-                        
-                        guard success, let admin = admin else {
-                            print("error updating admin")
-                            return
-                        }
-                        
-                        DispatchQueue.main.async {
-                            Admin.current = admin
-                            Admin.saveCurrentAdmin()
-                            ChatClient.login()
-                            //self?.goToHome()
-                            self?.fromLogin.set(true, forKey: "fromLogin")
-                            self?.perform(#selector(self?.transitionHome), with: self, afterDelay: 0.5)
-                        }
-                    }
+                DispatchQueue.main.async {
+                    Admin.current = admin
+                    Admin.saveCurrentAdmin()
+                    ChatClient.login()
+                    self?.fromLogin.set(true, forKey: "fromLogin")
+                    self?.perform(#selector(self?.transitionHome), with: self, afterDelay: 0.5)
                 }
             }
         }
@@ -302,7 +272,7 @@ extension LoginViewController {
     }
     
     @objc func showOTC() {
-        self.mainScrollView.setContentOffset(CGPoint(x: view.frame.width * 2, y: 0), animated: true)
+        self.mainScrollView.setContentOffset(CGPoint(x: view.frame.width * 1, y: 0), animated: true)
         codeTextField.becomeFirstResponder()
     }
     
