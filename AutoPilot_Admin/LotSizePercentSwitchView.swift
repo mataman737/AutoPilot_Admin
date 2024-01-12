@@ -40,7 +40,7 @@ class LotSizePercentSwitchView: UIView {
 extension LotSizePercentSwitchView {
     func setupViews() {
         
-        lotSizeContainer.tag = 1
+        lotSizeContainer.tag = 0
         lotSizeContainer.addTarget(self, action: #selector(didTapOption(sender:)), for: .touchUpInside)
         lotSizeContainer.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(lotSizeContainer)
@@ -49,7 +49,7 @@ extension LotSizePercentSwitchView {
         lotSizeContainer.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         lotSizeContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        percentContainer.tag = 2
+        percentContainer.tag = 1
         percentContainer.addTarget(self, action: #selector(didTapOption(sender:)), for: .touchUpInside)
         percentContainer.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(percentContainer)
@@ -111,5 +111,11 @@ extension LotSizePercentSwitchView {
                 self.percentLabel.alpha = 1.0
             }
         }
+    }
+    
+    @objc func tradingIsFalse() {
+        switchCenter.constant = .createAspectRatio(value: 43)
+        self.lotSizeLabel.alpha = 0.25
+        self.percentLabel.alpha = 1.0
     }
 }

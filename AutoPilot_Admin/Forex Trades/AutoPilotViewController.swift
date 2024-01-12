@@ -193,6 +193,11 @@ class AutoPilotViewController: UIViewController {
                 self?.team = team
                 self?.updateOnboardingRows()
                 self?.getAccounts()
+                
+                if team.copyTrading == false {
+                    self?.lotPercentView.tradingIsFalse()
+                }
+                print("\(self?.team?.copyTrading) 🥰🥰🥰 000")
             }
         }
     }
@@ -382,6 +387,46 @@ extension AutoPilotViewController {
 //MARK: ACTIONS ------------------------------------------------------------------------------------------------------------------------------------
 
 extension AutoPilotViewController {
+    func updateTeam(copyTrading: Bool) {
+        guard var team = self.team else {
+            print("did this 🫦🫦🫦 000")
+            return
+        }
+
+        team.copyTrading = copyTrading
+        print("\(copyTrading) 🧠🧠🧠")
+        API.sharedInstance.updateTeam(team: team) { success, team, error in
+            guard error == nil else {
+                DispatchQueue.main.async { [weak self] in
+                    let toastNoti = ToastNotificationView()
+                    toastNoti.present(withMessage: "Team not saved!")
+                    self?.errorImpactGenerator()
+                }
+                
+                return
+            }
+            
+            guard success, let team = team else {
+                DispatchQueue.main.async { [weak self] in
+                    let toastNoti = ToastNotificationView()
+                    toastNoti.present(withMessage: "Team not saved!")
+                    self?.errorImpactGenerator()
+                }
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.successImpactGenerator()
+                let toastNoti = ToastNotificationView()
+                if copyTrading {
+                    toastNoti.present(withMessage: "Copy Trading Enabled!")
+                } else {
+                    toastNoti.present(withMessage: "Copy Trading Disabled!")
+                }
+            }
+        }
+    }
+    
     func calculatePipDifference(tradingPair: String, entryPriceStr: Double, closePriceStr: Double) -> Int? {
         var pipValue: Double = 0.0001 // Default pip value for most currency pairs
         
@@ -1003,6 +1048,11 @@ extension AutoPilotViewController: ConnectBrokerViewControllerDelegate {
 
 extension AutoPilotViewController: LotSizePercentSwitchViewDelegate {
     func didTapSwitchOption(option: Int) {
+        if option == 0 {
+            updateTeam(copyTrading: true)
+        } else {
+            updateTeam(copyTrading: false)
+        }
         //animateTables(table: option)
     }
 }
