@@ -136,48 +136,7 @@ class SettingsViewController: UIViewController {
                 self?.hideLoader()
             }
         }
-    }
-    
-    func updateTeam(copyTrading: Bool) {
-//        activeButton.isUserInteractionEnabled = false
-//        inactiveButton.isUserInteractionEnabled = false
-//        self.spinner.alpha = 1.0
-//        self.spinner.isHidden = false
-        guard var team = self.team else {
-            print("did this 🫦🫦🫦 000")
-            return
-        }
-
-        team.copyTrading = copyTrading
-        API.sharedInstance.updateTeam(team: team) { success, team, error in
-            guard error == nil else {
-                DispatchQueue.main.async { [weak self] in
-                    let toastNoti = ToastNotificationView()
-                    toastNoti.present(withMessage: "Team not saved!")
-                    self?.errorImpactGenerator()
-                }
-                
-                return
-            }
-            
-            guard success, let team = team else {
-                DispatchQueue.main.async { [weak self] in
-                    let toastNoti = ToastNotificationView()
-                    toastNoti.present(withMessage: "Team not saved!")
-                    self?.errorImpactGenerator()
-                }
-                return
-            }
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.successImpactGenerator()
-//                self?.spinner.isHidden = true
-//                self?.spinner.alpha = 0
-//                self?.activeButton.isUserInteractionEnabled = true
-//                self?.inactiveButton.isUserInteractionEnabled = true
-            }
-        }
-    }
+    }        
     
     override func viewWillDisappear(_ animated: Bool) {
         self.hidesBottomBarWhenPushed = false
