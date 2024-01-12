@@ -46,13 +46,8 @@ class MyTradersViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.traders = traders     
-                
-                
-                
-                
-                print("🍿🍿🍿 \(traders[2].displayName) 🍿🍿🍿")
-                
+                self?.traders = traders
+                //print("🍿🍿🍿 \(traders[2].displayName) 🍿🍿🍿")
                 self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
                 self?.mainfeedTableView.reloadData()
             }
@@ -112,11 +107,15 @@ extension MyTradersViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: teamMemberTableViewCell, for: indexPath) as! TeamMemberTableViewCell
         let tradersIndex = traders[indexPath.row]
         cell.chatNameLabel.text = tradersIndex.displayName
-        if let adminType = tradersIndex.adminType {
-            cell.chatDescriptionLabel.text = tradersIndex.adminType
+        print("🧔🏻🧔🏻🧔🏻 \(tradersIndex.phone) 🧔🏻🧔🏻🧔🏻 \(indexPath.row)")
+        if let adminType = tradersIndex.adminType, let phoneNumber = tradersIndex.phone {
+            cell.chatDescriptionLabel.text = "\(adminType) | \(phoneNumber)"
         } else {
             cell.chatDescriptionLabel.text = "No type"
         }
+        
+        //print("\(tradersIndex.adminType) 🧔🏻🧔🏻🧔🏻")
+        
         //cell.circleImageView.image = UIImage(named: "enigmaUserPH")
         
         if let urlString = tradersIndex.profilePhotoUrl, let url = URL(string: urlString) {

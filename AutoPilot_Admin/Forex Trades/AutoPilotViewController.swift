@@ -14,6 +14,7 @@ import AVKit
 
 class AutoPilotViewController: UIViewController {
     
+    var lotPercentView = LotSizePercentSwitchView()
     let fromLogin = UserDefaults()
     var transitionView = UIView()
     var appLogoImageView = UIImageView()
@@ -164,6 +165,14 @@ class AutoPilotViewController: UIViewController {
                 Admin.current = admin
                 print("\(admin.adminType) 🎃🎃🎃")
                 Admin.saveCurrentAdmin()
+                
+                if Admin.current.adminType == "admin" {
+                    self?.titleLabel.isHidden = true
+                    self?.lotPercentView.isHidden = false
+                } else {
+                    self?.titleLabel.isHidden = false
+                    self?.lotPercentView.isHidden = true
+                }
             }
         }
     }
@@ -987,5 +996,13 @@ extension AutoPilotViewController: ConnectBrokerViewControllerDelegate {
     
     func cantConnectBroker() {
         //
+    }
+}
+
+//MARK: LOT SIZE PERCENT DELEGATE
+
+extension AutoPilotViewController: LotSizePercentSwitchViewDelegate {
+    func didTapSwitchOption(option: Int) {
+        //animateTables(table: option)
     }
 }

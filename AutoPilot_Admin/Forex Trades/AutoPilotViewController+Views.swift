@@ -128,6 +128,18 @@ extension AutoPilotViewController {
         titleLabel.centerXAnchor.constraint(equalTo: navView.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: brokerLinkImageView.centerYAnchor).isActive = true
         
+        lotPercentView.delegate = self
+        //lotPercentView.lotSizeContainer.addTarget(self, action: #selector(animateTables(sender:)), for: .touchUpInside)
+        //lotPercentView.percentContainer.addTarget(self, action: #selector(animateTables(sender:)), for: .touchUpInside)
+        lotPercentView.lotSizeContainer.tag = 0
+        lotPercentView.percentContainer.tag = 1
+        lotPercentView.translatesAutoresizingMaskIntoConstraints = false
+        navView.addSubview(lotPercentView)
+        lotPercentView.centerXAnchor.constraint(equalTo: navView.centerXAnchor).isActive = true
+        lotPercentView.centerYAnchor.constraint(equalTo: plusImageView.centerYAnchor).isActive = true
+        lotPercentView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 29)).isActive = true
+        lotPercentView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 178)).isActive = true
+        
         dividerLine.backgroundColor = UIColor.newBlack.withAlphaComponent(0.1)
         dividerLine.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(dividerLine)

@@ -15,6 +15,7 @@
 		DE2C18942ACC581A00CB509A /* MyTradersViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C18932ACC581A00CB509A /* MyTradersViewController+Views.swift */; };
 		DE2C18962ACCF74B00CB509A /* AddTraderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C18952ACCF74B00CB509A /* AddTraderViewController.swift */; };
 		DE2C18982ACCF75600CB509A /* AddTraderViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C18972ACCF75600CB509A /* AddTraderViewController+Views.swift */; };
+		DE31F6122B4CFF93006E6307 /* LotSizePercentSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F6112B4CFF93006E6307 /* LotSizePercentSwitchView.swift */; };
 		DE410C8B2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */; };
 		DE410C8E2AB1341700F1F24F /* TeamMemberOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8D2AB1341700F1F24F /* TeamMemberOptionsViewController.swift */; };
 		DE410C902AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE410C8F2AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift */; };
@@ -189,6 +190,7 @@
 		DE2C18932ACC581A00CB509A /* MyTradersViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyTradersViewController+Views.swift"; sourceTree = "<group>"; };
 		DE2C18952ACCF74B00CB509A /* AddTraderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTraderViewController.swift; sourceTree = "<group>"; };
 		DE2C18972ACCF75600CB509A /* AddTraderViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTraderViewController+Views.swift"; sourceTree = "<group>"; };
+		DE31F6112B4CFF93006E6307 /* LotSizePercentSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotSizePercentSwitchView.swift; sourceTree = "<group>"; };
 		DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersEmptyStateCell.swift; sourceTree = "<group>"; };
 		DE410C8D2AB1341700F1F24F /* TeamMemberOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberOptionsViewController.swift; sourceTree = "<group>"; };
 		DE410C8F2AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamMemberOptionsViewController+Views.swift"; sourceTree = "<group>"; };
@@ -676,6 +678,7 @@
 				DEC9A4DA2A93EA3D000DBE39 /* Extensions.swift */,
 				FCE556A32A9D40DA00C2B394 /* CustomChatChannelVC.swift */,
 				DE410C8A2AB0F2C200F1F24F /* TeamMembersEmptyStateCell.swift */,
+				DE31F6112B4CFF93006E6307 /* LotSizePercentSwitchView.swift */,
 				DEB669CA2B31414A0081C3B1 /* Login VC */,
 				DECCEA732B183DAA006AE4AD /* Affiliate Program */,
 				DEFB41602B15A3E60006DD45 /* Pick Trader Type */,
@@ -1195,6 +1198,7 @@
 				DEF830BA2AE5FFAA00268370 /* FPNCountryPicker.swift in Sources */,
 				DEC9A4B82A93DB38000DBE39 /* SceneDelegate.swift in Sources */,
 				DE4D57942AA77BD2008E2B6B /* ProfileImageTableViewCell.swift in Sources */,
+				DE31F6122B4CFF93006E6307 /* LotSizePercentSwitchView.swift in Sources */,
 				DEF830AE2AE5FFAA00268370 /* NSArray+NBAdditions.m in Sources */,
 				DE410C902AB1341D00F1F24F /* TeamMemberOptionsViewController+Views.swift in Sources */,
 				DEC9A4E42A93EAF0000DBE39 /* ContinueButton.swift in Sources */,
