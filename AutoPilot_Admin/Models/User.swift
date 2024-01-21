@@ -10,7 +10,6 @@ import Foundation
 struct User: Codable {
     var id: UUID
     var teamId: UUID?
-    var subscriptionStatus: Int?
     var firstName: String?
     var lastName: String?
     var profilePhotoUrl: String?
@@ -18,10 +17,8 @@ struct User: Codable {
     var language: String
     var country: String?
     var teamJoinDate: Date?
-    
-    var isSubscribed: Bool {
-        return subscriptionStatus == 2
-    }
+    var verified: Bool?
+    var paid: Bool?
 }
 
 struct UserUpdatePaidRequest: Codable {
