@@ -1048,6 +1048,26 @@ class API: NSObject {
         task.resume()
     }
     
+    func updateUserPaidStatus(paidUpdateRequest: UserUpdatePaidRequest, completionHandler: @escaping (Bool, User?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/members", method: "PUT", authenticated: true, object: paidUpdateRequest) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let user = try decoder.decode(User.self, from: data)
+                
+                completionHandler(true, user, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func getTeamTraders(completionHandler: @escaping (Bool, [Admin]?, Error?) -> ()) {
         var request = URLRequest(url: URL(string: "\(API.serverUrl)api/admin/teams/traders")!)
         request.httpMethod = "GET"

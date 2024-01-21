@@ -23,3 +23,8 @@ struct User: Codable {
         return subscriptionStatus == 2
     }
 }
+
+struct UserUpdatePaidRequest: Codable {
+    let phone: String
+    let paid: Bool
+}

@@ -196,4 +196,22 @@ extension TeamMemberOptionsViewController: LotSizePercentSwitchViewDelegate {
             
         }        
     }
+    
+    func updateUserPaidStatus(phone: String, paid: Bool) {
+        API.sharedInstance.updateUserPaidStatus(paidUpdateRequest: UserUpdatePaidRequest(phone: phone, paid: paid)) { success, user, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let user = user else {
+                print("error updating user status")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                
+            }
+        }
+    }
 }
