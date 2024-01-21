@@ -61,7 +61,7 @@ extension TeamMemberOptionsViewController {
         mainContainer.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor).isActive = true
         mainContainer.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor).isActive = true
         mainContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
-        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 580)).isActive = true //300
+        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 630)).isActive = true //580
         mainContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
         keyLine.layer.cornerRadius = .createAspectRatio(value: 4)/2
@@ -98,13 +98,27 @@ extension TeamMemberOptionsViewController {
         mainContainer.addSubview(totalPercentChangeLabel)
         totalPercentChangeLabel.centerYAnchor.constraint(equalTo: navTitleLabel.centerYAnchor).isActive = true
         totalPercentChangeLabel.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: -.createAspectRatio(value: 18)).isActive = true
+        
+        lotPercentView.delegate = self
+        //lotPercentView.lotSizeContainer.addTarget(self, action: #selector(animateTables(sender:)), for: .touchUpInside)
+        //lotPercentView.percentContainer.addTarget(self, action: #selector(animateTables(sender:)), for: .touchUpInside)
+        lotPercentView.lotSizeLabel.text = "Paid"
+        lotPercentView.percentLabel.text = "Unpaid"
+        lotPercentView.lotSizeContainer.tag = 0
+        lotPercentView.percentContainer.tag = 1
+        lotPercentView.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(lotPercentView)
+        lotPercentView.centerXAnchor.constraint(equalTo: navTitleLabel.centerXAnchor).isActive = true
+        lotPercentView.topAnchor.constraint(equalTo: navTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 12)).isActive = true
+        lotPercentView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 29)).isActive = true
+        lotPercentView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 178)).isActive = true
                 
         lineGraphView.backgroundColor = .clear
         lineGraphView.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(lineGraphView)
         lineGraphView.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         lineGraphView.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
-        lineGraphView.topAnchor.constraint(equalTo: navTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 35)).isActive = true //25
+        lineGraphView.topAnchor.constraint(equalTo: lotPercentView.bottomAnchor, constant: .createAspectRatio(value: 35)).isActive = true //25
         lineGraphView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 260)).isActive = true
         
         newChannelOption.iconImageView.image = UIImage(named: "phonecall")

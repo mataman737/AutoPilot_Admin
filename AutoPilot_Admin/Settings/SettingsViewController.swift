@@ -136,7 +136,7 @@ class SettingsViewController: UIViewController {
                 self?.hideLoader()
             }
         }
-    }        
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.hidesBottomBarWhenPushed = false

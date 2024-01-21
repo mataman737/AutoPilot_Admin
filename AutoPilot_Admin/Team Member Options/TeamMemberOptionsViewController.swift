@@ -46,6 +46,7 @@ class TeamMemberOptionsViewController: UIViewController {
     weak var delegate: TeamMemberOptionsViewControllerDelegate?
     var entryPriceLock = UIImageView()    
     var textColor: UIColor = UIColor.white
+    var lotPercentView = LotSizePercentSwitchView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -185,3 +186,14 @@ extension TeamMemberOptionsViewController: MFMessageComposeViewControllerDelegat
     }
 }
 
+//MARK: LOT SIZE PERCENT DELEGATE
+
+extension TeamMemberOptionsViewController: LotSizePercentSwitchViewDelegate {
+    func didTapSwitchOption(option: Int) {
+        if option == 0 {
+            
+        } else {
+            
+        }        
+    }
+}
