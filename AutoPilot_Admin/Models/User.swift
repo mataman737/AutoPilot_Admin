@@ -19,6 +19,10 @@ struct User: Codable {
     var teamJoinDate: Date?
     var verified: Bool?
     var paid: Bool?
+    
+    var isSubscribed: Bool {
+        return paid ?? false
+    }
 }
 
 struct UserUpdatePaidRequest: Codable {
