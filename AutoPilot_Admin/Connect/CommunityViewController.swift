@@ -102,6 +102,8 @@ class CommunityViewController: UIViewController {
         getTeamMembers()
         //getTeamTraders()
         getCurrentTeam()
+        
+        getMetrics()
     }
     
     @objc func appMovedToForeround() {
@@ -174,6 +176,27 @@ class CommunityViewController: UIViewController {
                     self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
                 }
                 
+            }
+        }
+    }
+    
+    func getMetrics() {
+        API.sharedInstance.getTeamMetrics { success, metrics, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let metrics = metrics else {
+                print("error getting metrics")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                print("Today's lots: \(metrics.todaysLots)")
+                print("This week's lots: \(metrics.thisWeeksLots)")
+                print("Last week's lots: \(metrics.lastWeeksLots)")
+                print("This months's lots: \(metrics.thisMonthsLots)")
             }
         }
     }

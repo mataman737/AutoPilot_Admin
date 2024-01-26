@@ -172,6 +172,7 @@
 		FC4836DA2AAFAE2400056CE3 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4836D92AAFAE2400056CE3 /* Team.swift */; };
 		FC69D7552B22618D00B2F6D0 /* BalanceRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69D7542B22618D00B2F6D0 /* BalanceRecord.swift */; };
 		FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC6EF1002AAE3C77001075D9 /* GoogleService-Info.plist */; };
+		FCA6BC452B63CC6C00BAF303 /* TeamMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6BC442B63CC6C00BAF303 /* TeamMetrics.swift */; };
 		FCC4DD252A93FE0100185168 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD242A93FE0100185168 /* API.swift */; };
 		FCC4DD272A93FE7B00185168 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4DD262A93FE7B00185168 /* Admin.swift */; };
 		FCC9669B2A9F8CC70088DD2A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9669A2A9F8CC70088DD2A /* Notification.swift */; };
@@ -365,6 +366,7 @@
 		FC4836D92AAFAE2400056CE3 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FC69D7542B22618D00B2F6D0 /* BalanceRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRecord.swift; sourceTree = "<group>"; };
 		FC6EF1002AAE3C77001075D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCA6BC442B63CC6C00BAF303 /* TeamMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMetrics.swift; sourceTree = "<group>"; };
 		FCC4DD242A93FE0100185168 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FCC4DD262A93FE7B00185168 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		FCC9669A2A9F8CC70088DD2A /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -756,6 +758,7 @@
 				FCC9669A2A9F8CC70088DD2A /* Notification.swift */,
 				FC4836D92AAFAE2400056CE3 /* Team.swift */,
 				FC1747D82AAA893F0097BDF1 /* InstantTrade.swift */,
+				FCA6BC442B63CC6C00BAF303 /* TeamMetrics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1142,6 +1145,7 @@
 				DE6509402AFABC960089084C /* SignalResultsViewController.swift in Sources */,
 				DEB44E572AAFB2920006887A /* MyBrokerOptionsTableViewCell.swift in Sources */,
 				DEB44E4E2AAFADE10006887A /* ConnectBrokerTableViewCell.swift in Sources */,
+				FCA6BC452B63CC6C00BAF303 /* TeamMetrics.swift in Sources */,
 				DE0E20472A9C00610067C719 /* ConnectChannelTableViewCell.swift in Sources */,
 				DE6E44032A9D9D6000C76B71 /* PickImageVideoViewController.swift in Sources */,
 				DE4D57882AA6DE40008E2B6B /* ModifyOpenOrderViewController+Views.swift in Sources */,

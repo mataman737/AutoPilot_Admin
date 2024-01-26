@@ -660,6 +660,26 @@ class API: NSObject {
         }
     }
     
+    func getTeamMetrics(completionHandler: @escaping (Bool, TeamMetrics?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/results/today", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let metrics = try decoder.decode(TeamMetrics.self, from: data)
+                
+                completionHandler(true, metrics, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func sendNotification(notification: Notification, completionHandler: @escaping (Bool, Signal?, Error?) -> ()) {
         performRequest(endpoint: "sendpush", method: "POST", authenticated: true, object: notification) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
