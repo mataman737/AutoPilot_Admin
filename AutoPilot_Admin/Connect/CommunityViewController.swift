@@ -105,6 +105,7 @@ class CommunityViewController: UIViewController {
         
         getLotsMetrics()
         getSubMetrics()
+        getUserPayments()
     }
     
     @objc func appMovedToForeround() {
@@ -218,6 +219,24 @@ class CommunityViewController: UIViewController {
                 print("Free count: \(metrics.freeCount)")
                 print("Paid count: \(metrics.paidCount)")
                 print("Historical count: \(metrics.historicalCount)")
+            }
+        }
+    }
+    
+    func getUserPayments() {
+        API.sharedInstance.getUserPayments { success, payments, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let payments = payments else {
+                print("error getting user payments")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                print("Payments count: \(payments.count)")
             }
         }
     }

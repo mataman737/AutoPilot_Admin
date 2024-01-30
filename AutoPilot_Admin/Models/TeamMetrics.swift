@@ -15,10 +15,17 @@ struct LotsMetrics: Codable {
 }
 
 struct SubMetrics: Codable {
-    var id: UUID?
+    var id: UUID
     var teamId: UUID
     var freeCount: Int
     var paidCount: Int
     var historicalCount: Int
+    var added: Date
+}
+
+struct UserPayment: Codable {
+    var id: UUID
+    var userId: UUID
+    var teamId: UUID
     var added: Date
 }

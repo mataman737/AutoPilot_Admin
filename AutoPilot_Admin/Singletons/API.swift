@@ -700,6 +700,26 @@ class API: NSObject {
         }
     }
     
+    func getUserPayments(completionHandler: @escaping (Bool, [UserPayment]?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/payments", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let payments = try decoder.decode([UserPayment].self, from: data)
+                
+                completionHandler(true, payments, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func sendNotification(notification: Notification, completionHandler: @escaping (Bool, Signal?, Error?) -> ()) {
         performRequest(endpoint: "sendpush", method: "POST", authenticated: true, object: notification) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
