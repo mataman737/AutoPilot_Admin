@@ -103,7 +103,8 @@ class CommunityViewController: UIViewController {
         //getTeamTraders()
         getCurrentTeam()
         
-        getMetrics()
+        getLotsMetrics()
+        getSubMetrics()
     }
     
     @objc func appMovedToForeround() {
@@ -180,15 +181,15 @@ class CommunityViewController: UIViewController {
         }
     }
     
-    func getMetrics() {
-        API.sharedInstance.getTeamMetrics { success, metrics, error in
+    func getLotsMetrics() {
+        API.sharedInstance.getLotsMetrics { success, metrics, error in
             guard error == nil else {
                 print(error!)
                 return
             }
             
             guard success, let metrics = metrics else {
-                print("error getting metrics")
+                print("error getting lots metrics")
                 return
             }
             
@@ -197,6 +198,26 @@ class CommunityViewController: UIViewController {
                 print("This week's lots: \(metrics.thisWeeksLots)")
                 print("Last week's lots: \(metrics.lastWeeksLots)")
                 print("This months's lots: \(metrics.thisMonthsLots)")
+            }
+        }
+    }
+    
+    func getSubMetrics() {
+        API.sharedInstance.getSubMetrics { success, metrics, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let metrics = metrics else {
+                print("error getting sub metrics")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                print("Free count: \(metrics.freeCount)")
+                print("Paid count: \(metrics.paidCount)")
+                print("Historical count: \(metrics.historicalCount)")
             }
         }
     }

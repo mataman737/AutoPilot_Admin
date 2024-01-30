@@ -660,8 +660,8 @@ class API: NSObject {
         }
     }
     
-    func getTeamMetrics(completionHandler: @escaping (Bool, TeamMetrics?, Error?) -> ()) {
-        performRequest(endpoint: "api/admin/teams/results/today", method: "GET", authenticated: true) { (data, response, error) in
+    func getLotsMetrics(completionHandler: @escaping (Bool, LotsMetrics?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/lotsmetrics", method: "GET", authenticated: true) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
                 completionHandler(false, nil, error)
@@ -670,7 +670,27 @@ class API: NSObject {
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
-                let metrics = try decoder.decode(TeamMetrics.self, from: data)
+                let metrics = try decoder.decode(LotsMetrics.self, from: data)
+                
+                completionHandler(true, metrics, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
+    func getSubMetrics(completionHandler: @escaping (Bool, SubMetrics?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/submetrics", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let metrics = try decoder.decode(SubMetrics.self, from: data)
                 
                 completionHandler(true, metrics, nil)
             } catch {

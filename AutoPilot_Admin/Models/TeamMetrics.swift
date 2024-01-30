@@ -7,9 +7,18 @@
 
 import Foundation
 
-struct TeamMetrics: Codable {
+struct LotsMetrics: Codable {
     let todaysLots: Double
     let thisWeeksLots: Double
     let lastWeeksLots: Double
     let thisMonthsLots: Double
+}
+
+struct SubMetrics: Codable {
+    var id: UUID?
+    var teamId: UUID
+    var freeCount: Int
+    var paidCount: Int
+    var historicalCount: Int
+    var added: Date
 }
