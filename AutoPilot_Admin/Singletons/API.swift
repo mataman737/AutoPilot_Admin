@@ -1128,6 +1128,26 @@ class API: NSObject {
         }
     }
     
+    func setGlobalAnnouncement(announcement: GlobalAnnouncement, completionHandler: @escaping (Bool, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/announcements/global", method: "POST", authenticated: true, object: announcement) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let announcement = try decoder.decode(GlobalAnnouncement.self, from: data)
+                
+                completionHandler(true, nil)
+            } catch {
+                print(error)
+                completionHandler(false, error)
+            }
+        }
+    }
+    
     func getTeamTraders(completionHandler: @escaping (Bool, [Admin]?, Error?) -> ()) {
         var request = URLRequest(url: URL(string: "\(API.serverUrl)api/admin/teams/traders")!)
         request.httpMethod = "GET"
