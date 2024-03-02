@@ -24,19 +24,19 @@ extension AutoPilotViewController {
         UIApplication.shared.windows.first?.addSubview(transitionView)
         
         transitionView.layer.zPosition = 100
-        transitionView.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0)
+        transitionView.backgroundColor = .white
         transitionView.translatesAutoresizingMaskIntoConstraints = false
         //let currentWindow: UIWindow? = UIApplication.shared.keyWindow
         //currentWindow?.addSubview(transitionView)
         transitionView.fillSuperview()
         
-        appLogoImageView.image = UIImage(named: "smartTraderLogoDark")
+        appLogoImageView.image = UIImage(named: "omniBlackCoin")
         appLogoImageView.translatesAutoresizingMaskIntoConstraints = false
         transitionView.addSubview(appLogoImageView)
         appLogoImageView.centerYAnchor.constraint(equalTo: transitionView.centerYAnchor).isActive = true
         appLogoImageView.centerXAnchor.constraint(equalTo: transitionView.centerXAnchor).isActive = true
-        appLogoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 240)).isActive = true
-        appLogoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 128)).isActive = true
+        appLogoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 122)).isActive = true
+        appLogoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 122)).isActive = true
         
         
         //let view = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
@@ -121,7 +121,7 @@ extension AutoPilotViewController {
         titleLabel.text = "My Trades"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .newBlack
-        titleLabel.font = .sofiaProMedium(ofSize: 16)
+        titleLabel.font = .poppinsMedium(ofSize: 16)
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(titleLabel)
@@ -237,13 +237,13 @@ extension AutoPilotViewController {
         for layer in 1...loadingLayers.count {
             let keyPath = AnimationKeypath(keypath: "\(loadingLayers[layer - 1])")
             if i == 0 {
-                let colorProvider = ColorValueProvider(UIColor(red: 225/255, green: 61/255, blue: 227/255, alpha: 1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.black.withAlphaComponent(0.33).lottieColorValue)
                 loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
             } else if i == 1 {
-                let colorProvider = ColorValueProvider(UIColor(red: 229/255, green: 93/255, blue: 132/255, alpha: 1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.black.withAlphaComponent(0.66).lottieColorValue)
                 loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
             } else {
-                let colorProvider = ColorValueProvider(UIColor(red: 232/255, green: 121/255, blue: 47/255, alpha: 1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.black.withAlphaComponent(1.0).lottieColorValue)
                 loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
             }
             i += 1

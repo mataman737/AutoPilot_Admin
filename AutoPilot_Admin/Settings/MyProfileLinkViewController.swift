@@ -19,7 +19,13 @@ class MyProfileLinkViewController: UIViewController {
         return false
     }
     
-    var isNVUDemo = UserDefaults()
+    var mainScrollView = UIScrollView()
+    var wrapper = UIView()
+    var mainContainer = UIView()
+    var navTitleLabel = UILabel()
+    var keyLine = UIView()
+    var isDismissing = false
+    
     var opacityLayer = UIView()
     var cardContainer = UIView()
     var cardHeight: NSLayoutConstraint!
@@ -74,7 +80,6 @@ class MyProfileLinkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        //setupSettings()
         generateLinkNoTrackingQRCode()
         perform(#selector(presentViews), with: self, afterDelay: 0.05)
     }
@@ -84,17 +89,11 @@ class MyProfileLinkViewController: UIViewController {
 
 extension MyProfileLinkViewController {
     @objc func presentViews() {
+        self.mainContainer.presentAndBounce()
         UIView.animate(withDuration: 0.2, animations: {
             self.opacityLayer.alpha = 0.4
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: -5)
         }) { (success) in
-            UIView.animate(withDuration: 0.15, animations: {
-                self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 5)
-            }) { (success) in
-                UIView.animate(withDuration: 0.1) {
-                    self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 0)
-                }
-            }
+            
         }
     }
     
@@ -278,11 +277,7 @@ extension MyProfileLinkViewController {
         lightImpactGenerator()
         UIView.animate(withDuration: 0.2, animations: {
             self.opacityLayer.alpha = 0
-            if self.isLinkWithoutTracking {
-                self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 385)
-            } else {
-                self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 600)
-            }
+            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)            
             self.view.endEditing(true)
         }) { (success) in
             self.dismiss(animated: false, completion: nil)
@@ -369,5 +364,25 @@ extension MyProfileLinkViewController {
 extension MyProfileLinkViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         didTapTextField()
+    }
+}
+
+//MARK: SCROLLVIEW DELEGATE
+
+extension MyProfileLinkViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.tag == 1 {
+            let yOffset = scrollView.contentOffset.y// + 44
+            if yOffset > 0 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            }
+            
+            if yOffset < -45 {
+                if !isDismissing {
+                    dismissViews()
+                    isDismissing = true
+                }
+            }
+        }                
     }
 }

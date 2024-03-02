@@ -221,7 +221,7 @@ class UpdatedLineChart: UIView {
         chartDataSet.drawCirclesEnabled = true
         
         //if let userBrokerColor = hexToUIColor("#3891a6")  {
-            createChartDataSet(chartData: chartDataSet, chartColors: [.swBlue])
+            createChartDataSet(chartData: chartDataSet, chartColors: [.mainThemeGreen])
         //}
                 
         let emptyVals = [Highlight]()
@@ -291,7 +291,7 @@ class UpdatedLineChart: UIView {
         floatingLabel.layer.zPosition = 3
         floatingLabel.textAlignment = .center
         floatingLabel.textColor = .black//.polar
-        floatingLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 12))//.aeonikMedium(ofSize: .createAspectRatio(value: 12))
+        floatingLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 12))//.aeonikMedium(ofSize: .createAspectRatio(value: 12))
         floatingLabel.numberOfLines = 0
         floatingLabel.translatesAutoresizingMaskIntoConstraints = false
         floatingContainer.addSubview(floatingLabel)

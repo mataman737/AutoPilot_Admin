@@ -36,7 +36,7 @@ extension PaymentHistoryViewController {
         titleLabel.text = "Payment History"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .newBlack
-        titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        titleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(titleLabel)

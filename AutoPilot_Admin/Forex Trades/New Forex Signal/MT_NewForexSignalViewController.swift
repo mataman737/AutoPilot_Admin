@@ -276,7 +276,7 @@ extension MT_NewForexSignalViewController {
         isPickingSignalType = false
         let pickOptionsVC = PickOptionViewController()
         pickOptionsVC.delegate = self
-        pickOptionsVC.titleLabel.text = "Order Type Options"
+        pickOptionsVC.navTitleLabel.text = "Order Type Options"
         pickOptionsVC.options = orderOptions
         pickOptionsVC.shareURLButton.continueLabel.text = "Confirm"
         pickOptionsVC.modalPresentationStyle = .overFullScreen

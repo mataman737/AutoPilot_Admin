@@ -42,7 +42,7 @@ extension AffiliateProgramViewController {
         titleLabel.text = "Affiliate Program"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .darkModeTextColor
-        titleLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        titleLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 18))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(titleLabel)
@@ -96,7 +96,7 @@ extension AffiliateProgramViewController {
         activeButton.backgroundColor = UIColor(red: 114/255, green: 71/255, blue: 147/255, alpha: 1.0)
         activeButton.layer.cornerRadius = 9
         activeButton.setTitle("Active", for: .normal)
-        activeButton.titleLabel?.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 20))
+        activeButton.titleLabel?.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 20))
         activeButton.setTitleColor(.white, for: .normal)
         activeButton.translatesAutoresizingMaskIntoConstraints = false
         activeInactiveContainer.addSubview(activeButton)
@@ -110,7 +110,7 @@ extension AffiliateProgramViewController {
         inactiveButton.backgroundColor = .white.withAlphaComponent(0.1)
         inactiveButton.layer.cornerRadius = 9
         inactiveButton.setTitle("Inactive", for: .normal)
-        inactiveButton.titleLabel?.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 20))
+        inactiveButton.titleLabel?.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 20))
         inactiveButton.setTitleColor(.white.withAlphaComponent(0.3), for: .normal)
         inactiveButton.translatesAutoresizingMaskIntoConstraints = false
         activeInactiveContainer.addSubview(inactiveButton)
@@ -129,7 +129,7 @@ extension AffiliateProgramViewController {
         perUserContainer.topAnchor.constraint(equalTo: activeInactiveContainer.bottomAnchor, constant: .createAspectRatio(value: 15)).isActive = true
         perUserContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 392)).isActive = true
                 
-        perUserAmountLabel.setupLabel(text: "Affiliate Commission", txtColor: .white, font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18)), txtAlignment: .center)
+        perUserAmountLabel.setupLabel(text: "Affiliate Commission", txtColor: .white, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 18)), txtAlignment: .center)
         perUserContainer.addSubview(perUserAmountLabel)
         perUserAmountLabel.topAnchor.constraint(equalTo: perUserContainer.topAnchor, constant: .createAspectRatio(value: 16)).isActive = true
         perUserAmountLabel.centerXAnchor.constraint(equalTo: perUserContainer.centerXAnchor).isActive = true
@@ -158,7 +158,7 @@ extension AffiliateProgramViewController {
         myInvestmentAmountLabel.text = "$5"
         myInvestmentAmountLabel.textAlignment = .center
         myInvestmentAmountLabel.textColor = .white
-        myInvestmentAmountLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 50))
+        myInvestmentAmountLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 50))
         myInvestmentAmountLabel.numberOfLines = 0
         myInvestmentAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         circularSliderContainer.addSubview(myInvestmentAmountLabel)
@@ -169,14 +169,14 @@ extension AffiliateProgramViewController {
         myInvestmentDetailLabel.text = "$0"
         myInvestmentDetailLabel.textAlignment = .center
         myInvestmentDetailLabel.textColor = .white.withAlphaComponent(0.5)
-        myInvestmentDetailLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 27))
+        myInvestmentDetailLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 27))
         myInvestmentDetailLabel.numberOfLines = 0
         myInvestmentDetailLabel.translatesAutoresizingMaskIntoConstraints = false
         circularSliderContainer.addSubview(myInvestmentDetailLabel)
         myInvestmentDetailLabel.topAnchor.constraint(equalTo: myInvestmentAmountLabel.bottomAnchor, constant: .createAspectRatio(value: 4)).isActive = true
         myInvestmentDetailLabel.centerXAnchor.constraint(equalTo: circularSliderContainer.centerXAnchor).isActive = true
         
-        perUserDetailLabel.setupLabel(text: "", txtColor: .white.withAlphaComponent(0.5), font: .sofiaProRegular(ofSize: .createAspectRatio(value: 13)), txtAlignment: .center)
+        perUserDetailLabel.setupLabel(text: "", txtColor: .white.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 13)), txtAlignment: .center)
         let perUserDetailLabelText = "Use the slider to determine what percentage of the subscription you would like to give your affiliates"
         perUserDetailLabel.setupLineHeight(myText: perUserDetailLabelText, myLineSpacing: .createAspectRatio(value: 8))
         perUserDetailLabel.textAlignment = .center
@@ -194,17 +194,17 @@ extension AffiliateProgramViewController {
         monthContainer.topAnchor.constraint(equalTo: perUserContainer.bottomAnchor, constant: .createAspectRatio(value: 15)).isActive = true
         monthContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 104)).isActive = true
         
-        payoutAmountLabel.setupLabel(text: "$2,480.50", txtColor: .white, font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 24)), txtAlignment: .center)
+        payoutAmountLabel.setupLabel(text: "$2,480.50", txtColor: .white, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 24)), txtAlignment: .center)
         monthContainer.addSubview(payoutAmountLabel)
         payoutAmountLabel.centerYAnchor.constraint(equalTo: monthContainer.centerYAnchor).isActive = true
         payoutAmountLabel.centerXAnchor.constraint(equalTo: monthContainer.centerXAnchor).isActive = true
         
-        monthLabel.setupLabel(text: "September", txtColor: .white.withAlphaComponent(0.2), font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 12)), txtAlignment: .center)
+        monthLabel.setupLabel(text: "September", txtColor: .white.withAlphaComponent(0.2), font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 12)), txtAlignment: .center)
         monthContainer.addSubview(monthLabel)
         monthLabel.bottomAnchor.constraint(equalTo: payoutAmountLabel.topAnchor, constant: -.createAspectRatio(value: 9)).isActive = true
         monthLabel.centerXAnchor.constraint(equalTo: monthContainer.centerXAnchor).isActive = true
         
-        payOutDateLabel.setupLabel(text: "Total payout to affiliates", txtColor: .white.withAlphaComponent(0.5), font: .sofiaProRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .center)
+        payOutDateLabel.setupLabel(text: "Total payout to affiliates", txtColor: .white.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .center)
         monthContainer.addSubview(payOutDateLabel)
         payOutDateLabel.topAnchor.constraint(equalTo: payoutAmountLabel.bottomAnchor, constant: .createAspectRatio(value: 9)).isActive = true
         payOutDateLabel.centerXAnchor.constraint(equalTo: monthContainer.centerXAnchor).isActive = true
@@ -218,12 +218,12 @@ extension AffiliateProgramViewController {
         currentSubsContainer.topAnchor.constraint(equalTo: monthContainer.bottomAnchor, constant: .createAspectRatio(value: 15)).isActive = true
         currentSubsContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 104)).isActive = true
                 
-        subCountLabel.setupLabel(text: "29", txtColor: .white, font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 24)), txtAlignment: .center)
+        subCountLabel.setupLabel(text: "29", txtColor: .white, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 24)), txtAlignment: .center)
         currentSubsContainer.addSubview(subCountLabel)
         subCountLabel.centerYAnchor.constraint(equalTo: currentSubsContainer.centerYAnchor, constant: -.createAspectRatio(value: 6)).isActive = true
         subCountLabel.centerXAnchor.constraint(equalTo: currentSubsContainer.centerXAnchor).isActive = true
         
-        subCountTitleLabel.setupLabel(text: "Affiliate subscribers", txtColor: .white.withAlphaComponent(0.5), font: .sofiaProRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .center)
+        subCountTitleLabel.setupLabel(text: "Affiliate subscribers", txtColor: .white.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .center)
         currentSubsContainer.addSubview(subCountTitleLabel)
         subCountTitleLabel.topAnchor.constraint(equalTo: subCountLabel.bottomAnchor, constant: .createAspectRatio(value: 15)).isActive = true
         subCountTitleLabel.centerXAnchor.constraint(equalTo: currentSubsContainer.centerXAnchor).isActive = true
@@ -239,20 +239,20 @@ extension AffiliateProgramViewController {
         lifetimeContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 104)).isActive = true
         
         lifeTimeCountLabel.isUserInteractionEnabled = false
-        lifeTimeCountLabel.setupLabel(text: "4", txtColor: .white, font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 24)), txtAlignment: .center)
+        lifeTimeCountLabel.setupLabel(text: "4", txtColor: .white, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 24)), txtAlignment: .center)
         lifetimeContainer.addSubview(lifeTimeCountLabel)
         lifeTimeCountLabel.centerYAnchor.constraint(equalTo: lifetimeContainer.centerYAnchor, constant: -.createAspectRatio(value: 6)).isActive = true
         lifeTimeCountLabel.centerXAnchor.constraint(equalTo: lifetimeContainer.centerXAnchor).isActive = true
         
         lifeTimeTitleLabel.isUserInteractionEnabled = false
-        lifeTimeTitleLabel.setupLabel(text: "# of Affiliates", txtColor: .white.withAlphaComponent(0.5), font: .sofiaProRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .center)
+        lifeTimeTitleLabel.setupLabel(text: "# of Affiliates", txtColor: .white.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .center)
         lifetimeContainer.addSubview(lifeTimeTitleLabel)
         lifeTimeTitleLabel.topAnchor.constraint(equalTo: lifeTimeCountLabel.bottomAnchor, constant: .createAspectRatio(value: 15)).isActive = true
         lifeTimeTitleLabel.centerXAnchor.constraint(equalTo: lifetimeContainer.centerXAnchor).isActive = true
         
         let termsLabelText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed."
         termsLabel.setupLineHeight(myText: termsLabelText, myLineSpacing: .createAspectRatio(value: 8))
-        termsLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 10))
+        termsLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 10))
         termsLabel.textAlignment = .left
         termsLabel.textColor = .white.withAlphaComponent(0.4)
         termsLabel.numberOfLines = 0

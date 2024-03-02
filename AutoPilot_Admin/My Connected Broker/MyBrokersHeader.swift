@@ -55,7 +55,7 @@ extension MyBrokersHeader {
         
         checkoutTitleLabel.textAlignment = .center
         checkoutTitleLabel.textColor = UIColor(red: 17/255, green: 18/255, blue: 19/255, alpha: 1.0)
-        checkoutTitleLabel.font = .sofiaProMedium(ofSize: 18)
+        checkoutTitleLabel.font = .poppinsMedium(ofSize: 18)
         checkoutTitleLabel.numberOfLines = 0
         checkoutTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         whiteView.addSubview(checkoutTitleLabel)
@@ -81,7 +81,7 @@ extension MyBrokersHeader {
         
         numberOfItemsLabel.textAlignment = .center
         numberOfItemsLabel.textColor = UIColor(red: 116/255, green: 117/255, blue: 118/255, alpha: 1.0)
-        numberOfItemsLabel.font = .sofiaProMedium(ofSize: 15)
+        numberOfItemsLabel.font = .poppinsMedium(ofSize: 15)
         numberOfItemsLabel.numberOfLines = 0
         numberOfItemsLabel.translatesAutoresizingMaskIntoConstraints = false
         whiteView.addSubview(numberOfItemsLabel)

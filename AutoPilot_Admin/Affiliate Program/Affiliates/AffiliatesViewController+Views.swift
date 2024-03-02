@@ -42,7 +42,7 @@ extension AffiliatesViewController {
         titleLabel.text = "Affiliates"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .darkModeTextColor
-        titleLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        titleLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 18))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(titleLabel)

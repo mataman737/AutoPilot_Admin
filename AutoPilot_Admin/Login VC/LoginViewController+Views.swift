@@ -14,18 +14,18 @@ extension LoginViewController {
         transitionView.alpha = 0
         transitionView.layer.zPosition = 100
         transitionView.isUserInteractionEnabled = false
-        transitionView.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0)
+        transitionView.backgroundColor = .white
         transitionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(transitionView)
         transitionView.fillSuperview()
         
-        appLogoImageView.image = UIImage(named: "smartTraderLogoDark")
+        appLogoImageView.image = UIImage(named: "omniBlackCoin")
         appLogoImageView.translatesAutoresizingMaskIntoConstraints = false
         transitionView.addSubview(appLogoImageView)
         appLogoImageView.centerYAnchor.constraint(equalTo: transitionView.centerYAnchor).isActive = true
         appLogoImageView.centerXAnchor.constraint(equalTo: transitionView.centerXAnchor).isActive = true
-        appLogoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 240)).isActive = true
-        appLogoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 128)).isActive = true
+        appLogoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 122)).isActive = true
+        appLogoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 122)).isActive = true
     }
     
     func setupViews() {
@@ -166,7 +166,7 @@ extension LoginViewController {
         phoneLabel.text = "Enter your phone number"
         phoneLabel.textAlignment = .left
         phoneLabel.textColor = .black
-        phoneLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 23))
+        phoneLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 23))
         phoneLabel.numberOfLines = 0
         phoneLabel.translatesAutoresizingMaskIntoConstraints = false
         phoneNumberContainer.addSubview(phoneLabel)
@@ -206,7 +206,7 @@ extension LoginViewController {
         
         nextButton.addShadow(shadowColor: .black, shadowOffset: CGSize(width: 4, height: 4), shadowOpacity: 0.2, shadowRadius: 4, shadowCornerRadius: 0)
         nextButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
-        nextButton.purpleBG.backgroundColor = .swBlue
+        nextButton.purpleBG.backgroundColor = .black
         nextButton.continueLabel.text = "Next"
         nextButton.continueLabel.textColor = .white
         nextButton.confirmLabel.text = "Confirm"
@@ -230,7 +230,7 @@ extension LoginViewController {
         codeLabel.text = "What is the access code?"
         codeLabel.textAlignment = .left
         codeLabel.textColor = .black
-        codeLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 23))
+        codeLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 23))
         codeLabel.numberOfLines = 0
         codeLabel.translatesAutoresizingMaskIntoConstraints = false
         codeContainer.addSubview(codeLabel)

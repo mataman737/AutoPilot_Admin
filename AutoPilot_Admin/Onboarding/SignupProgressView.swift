@@ -30,7 +30,7 @@ class SignupProgressView: UIView {
 
 extension SignupProgressView {
     func setupViews() {
-        progressBar.backgroundColor = .swBlue
+        progressBar.backgroundColor = .black
         progressBar.layer.cornerRadius = .createAspectRatio(value: 6)/2
         progressBar.layer.masksToBounds = true
         progressBar.translatesAutoresizingMaskIntoConstraints = false

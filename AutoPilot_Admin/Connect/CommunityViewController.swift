@@ -402,7 +402,7 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
         let headerView = UIView()
         headerView.backgroundColor = .clear
         let titleLabel = UILabel()
-        titleLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        titleLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 18))
         titleLabel.textColor = .black
         if section == 1 {
             titleLabel.text = "Paid Members: \(paidMembers.count)"
@@ -476,6 +476,7 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
                 let member = members[indexPath.row].user
                 trainingOptionVC.navTitleLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
                 trainingOptionVC.dateLabel.text = ""
+                print("🔥🔥🔥 \(members[indexPath.row].balanceRecord) 🔥🔥🔥")
                 if let memberPhone = member.phone {
                     trainingOptionVC.phoneNumber = memberPhone
                 }

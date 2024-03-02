@@ -13,6 +13,13 @@ protocol SetMyFXBookLinkViewControllerDelegate: AnyObject {
 
 class SetMyFXBookLinkViewController: UIViewController {
     
+    var mainScrollView = UIScrollView()
+    var wrapper = UIView()
+    var mainContainer = UIView()
+    var navTitleLabel = UILabel()
+    var keyLine = UIView()
+    var isDismissing = false
+    
     weak var delegate: SetMyFXBookLinkViewControllerDelegate?
     var opacityLayer = UIView()
     var cardContainer = UIView()
@@ -36,9 +43,9 @@ class SetMyFXBookLinkViewController: UIViewController {
 
 extension SetMyFXBookLinkViewController {
     @objc func prsentViews() {
+        self.mainContainer.presentAndBounce()
         UIView.animate(withDuration: 0.25) {
             self.opacityLayer.alpha = 0.75
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 0)
         }
     }
     
@@ -47,7 +54,7 @@ extension SetMyFXBookLinkViewController {
         UIView.animate(withDuration: 0.25) {
             self.view.endEditing(true)
             self.opacityLayer.alpha = 0
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
+            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
         } completion: { success in
             self.dismiss(animated: false)
         }
@@ -129,6 +136,26 @@ extension SetMyFXBookLinkViewController: UITextFieldDelegate {
             
         } else {
             print("Invalid URL")
+        }
+    }
+}
+
+//MARK: SCROLLVIEW DELEGATE
+
+extension SetMyFXBookLinkViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.tag == 1 {
+            let yOffset = scrollView.contentOffset.y// + 44
+            if yOffset > 0 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            }
+            
+            if yOffset < -45 {
+                if !isDismissing {
+                    dismissViews()
+                    isDismissing = true
+                }
+            }
         }
     }
 }

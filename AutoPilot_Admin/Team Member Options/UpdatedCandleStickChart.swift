@@ -104,7 +104,7 @@ class UpdatedCandleStickChart: UIView {
         floatingLabel.layer.zPosition = 3
         floatingLabel.textAlignment = .center
         floatingLabel.textColor = .black
-        floatingLabel.font = .sofiaProMedium(ofSize: 12)//.aeonikMedium(ofSize: 12)
+        floatingLabel.font = .poppinsMedium(ofSize: 12)//.aeonikMedium(ofSize: 12)
         floatingLabel.numberOfLines = 0
         floatingLabel.translatesAutoresizingMaskIntoConstraints = false
         candleStickChart.addSubview(floatingLabel)

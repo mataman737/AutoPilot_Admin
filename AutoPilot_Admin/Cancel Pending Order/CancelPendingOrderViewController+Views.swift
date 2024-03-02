@@ -81,7 +81,7 @@ extension CancelPendingOrderViewController {
         navTitleLabel.text = forexSignal.order?.symbol
         navTitleLabel.textAlignment = .center
         navTitleLabel.textColor = varBlackColor
-        navTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 19))
+        navTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 19))
         navTitleLabel.numberOfLines = 0
         navTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(navTitleLabel)
@@ -115,7 +115,7 @@ extension CancelPendingOrderViewController {
         legalLabelZero.setupLineHeight(myText: legalLabelZeroText, myLineSpacing: .createAspectRatio(value: 6))
         legalLabelZero.textColor = varBlackColor.withAlphaComponent(0.75)
         legalLabelZero.numberOfLines = 0
-        legalLabelZero.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        legalLabelZero.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         legalLabelZero.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(legalLabelZero)
         legalLabelZero.leadingAnchor.constraint(equalTo: bulletZero.trailingAnchor, constant: .createAspectRatio(value: 8)).isActive = true
@@ -135,7 +135,7 @@ extension CancelPendingOrderViewController {
         legalLabelOne.setupLineHeight(myText: legalLabelOneText, myLineSpacing: .createAspectRatio(value: 6))
         legalLabelOne.textColor = varBlackColor.withAlphaComponent(0.75)
         legalLabelOne.numberOfLines = 0
-        legalLabelOne.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        legalLabelOne.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         legalLabelOne.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(legalLabelOne)
         legalLabelOne.leadingAnchor.constraint(equalTo: bulletOne.trailingAnchor, constant: .createAspectRatio(value: 8)).isActive = true
@@ -163,7 +163,7 @@ extension CancelPendingOrderViewController {
         orderPlaced.text = "Order Canceled!"
         orderPlaced.textColor = varBlackColor
         orderPlaced.textAlignment = .center
-        orderPlaced.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 25))
+        orderPlaced.font = .poppinsMedium(ofSize: .createAspectRatio(value: 25))
         orderPlaced.numberOfLines = 0
         orderPlaced.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(orderPlaced)

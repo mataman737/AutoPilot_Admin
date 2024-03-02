@@ -47,7 +47,7 @@ class SplashViewController: UIViewController {
         */
                 
         self.view.isUserInteractionEnabled = true
-        playLoopingVideo()
+        //playLoopingVideo()
         setupViews()
         launchView.hideLaunch()
                                                 
@@ -61,7 +61,7 @@ class SplashViewController: UIViewController {
     }
     
     @objc func appMovedToForeround() {
-        self.playerLoop.play()
+        //self.playerLoop.play()
     }
 
 }

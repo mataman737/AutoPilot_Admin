@@ -12,9 +12,6 @@ import Kingfisher
 extension UpdateTeamNameAndPhotoViewController {
  
     func setupViews() {
-        
-        let opacityTapped = UITapGestureRecognizer(target: self, action: #selector(dismissViews))
-        opacityLayer.addGestureRecognizer(opacityTapped)
         opacityLayer.isUserInteractionEnabled = true
         opacityLayer.backgroundColor = .black
         opacityLayer.alpha = 0
@@ -22,46 +19,87 @@ extension UpdateTeamNameAndPhotoViewController {
         self.view.addSubview(opacityLayer)
         opacityLayer.fillSuperview()
         
-        cardContainer.backgroundColor = .white
-        cardContainer.layer.cornerRadius = .createAspectRatio(value: 12)
-        cardContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        cardContainer.layer.masksToBounds = true
-        cardContainer.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(cardContainer)
-        cardContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        cardContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        cardContainer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        cardContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 630)).isActive = true
-        cardContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
+        mainScrollView.tag = 1
+        mainScrollView.delegate = self
+        mainScrollView.showsVerticalScrollIndicator = false
+        mainScrollView.backgroundColor = .clear
+        mainScrollView.contentInsetAdjustmentBehavior = .never
+        mainScrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 1.1)
+        mainScrollView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(mainScrollView)
+        mainScrollView.fillSuperview()
         
-        titleLabel.text = "Team Name & Photo"
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = .black
-        titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
-        titleLabel.numberOfLines = 0
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(titleLabel)
-        titleLabel.topAnchor.constraint(equalTo: cardContainer.topAnchor, constant: .createAspectRatio(value: 18)).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: cardContainer.centerXAnchor).isActive = true
+        let opacityTapped = UITapGestureRecognizer(target: self, action: #selector(dismissViews))
+        wrapper.addGestureRecognizer(opacityTapped)
+        wrapper.isUserInteractionEnabled = true
+        wrapper.backgroundColor = .clear
+        wrapper.translatesAutoresizingMaskIntoConstraints = false
+        mainScrollView.addSubview(wrapper)
+        wrapper.topAnchor.constraint(equalTo: mainScrollView.topAnchor).isActive = true
+        wrapper.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor).isActive = true
+        wrapper.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        wrapper.heightAnchor.constraint(equalToConstant: self.view.frame.height).isActive = true
         
-        downArrow.image = UIImage(named: "newDownArrow")
-        downArrow.setImageColor(color: .black)
-        downArrow.contentMode = .scaleAspectFill
-        downArrow.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(downArrow)
-        downArrow.leadingAnchor.constraint(equalTo: cardContainer.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
-        downArrow.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor, constant: 0).isActive = true
-        downArrow.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
-        downArrow.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
+        mainContainer.backgroundColor = .white
+        mainContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        mainContainer.layer.cornerRadius = .createAspectRatio(value: 15)
+        mainContainer.layer.masksToBounds = true
+        mainContainer.translatesAutoresizingMaskIntoConstraints = false
+        wrapper.addSubview(mainContainer)
+        mainContainer.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor).isActive = true
+        mainContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 630)).isActive = true
+        mainContainer.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor, constant: 0).isActive = true
+        mainContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
-        downButton.addTarget(self, action: #selector(dismissViews), for: .touchUpInside)
-        downButton.backgroundColor = .clear
-        downButton.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(downButton)
-        downButton.leadingAnchor.constraint(equalTo: cardContainer.leadingAnchor, constant: 0).isActive = true
-        downButton.topAnchor.constraint(equalTo: cardContainer.topAnchor, constant: 0).isActive = true
-        downButton.trailingAnchor.constraint(equalTo: downArrow.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
-        downButton.bottomAnchor.constraint(equalTo: downArrow.bottomAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        keyLine.backgroundColor = .black.withAlphaComponent(0.25)
+        keyLine.layer.cornerRadius = .createAspectRatio(value: 4)/2
+        keyLine.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(keyLine)
+        keyLine.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
+        keyLine.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        keyLine.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 34)).isActive = true
+        keyLine.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 4)).isActive = true
+        
+        navTitleLabel.text = "Team Name & Photo"
+        navTitleLabel.textColor = .black
+        navTitleLabel.isUserInteractionEnabled = false
+        navTitleLabel.textAlignment = .center
+        navTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 19))
+        navTitleLabel.numberOfLines = 0
+        navTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(navTitleLabel)
+        navTitleLabel.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 32)).isActive = true
+        navTitleLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
+        
+//        navTitleLabel.text = "Team Name & Photo"
+//        navTitleLabel.textAlignment = .center
+//        navTitleLabel.textColor = .black
+//        navTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 18))
+//        navTitleLabel.numberOfLines = 0
+//        navTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        mainContainer.addSubview(navTitleLabel)
+//        navTitleLabel.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 18)).isActive = true
+//        navTitleLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
+//        
+//        downArrow.image = UIImage(named: "newDownArrow")
+//        downArrow.setImageColor(color: .black)
+//        downArrow.contentMode = .scaleAspectFill
+//        downArrow.translatesAutoresizingMaskIntoConstraints = false
+//        mainContainer.addSubview(downArrow)
+//        downArrow.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
+//        downArrow.centerYAnchor.constraint(equalTo: navTitleLabel.centerYAnchor, constant: 0).isActive = true
+//        downArrow.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
+//        downArrow.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
+//        
+//        downButton.addTarget(self, action: #selector(dismissViews), for: .touchUpInside)
+//        downButton.backgroundColor = .clear
+//        downButton.translatesAutoresizingMaskIntoConstraints = false
+//        mainContainer.addSubview(downButton)
+//        downButton.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: 0).isActive = true
+//        downButton.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: 0).isActive = true
+//        downButton.trailingAnchor.constraint(equalTo: downArrow.trailingAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+//        downButton.bottomAnchor.constraint(equalTo: downArrow.bottomAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         
         teamPhotoImageView.image = UIImage(named: "enigmaUserPH")
         if let teamPhoto = team?.photo {
@@ -79,9 +117,9 @@ extension UpdateTeamNameAndPhotoViewController {
         teamPhotoImageView.contentMode = .scaleAspectFill
         teamPhotoImageView.layer.cornerRadius = .createAspectRatio(value: 110)/2
         teamPhotoImageView.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(teamPhotoImageView)
-        teamPhotoImageView.centerXAnchor.constraint(equalTo: cardContainer.centerXAnchor).isActive = true
-        teamPhotoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: .createAspectRatio(value: 24)).isActive = true
+        mainContainer.addSubview(teamPhotoImageView)
+        teamPhotoImageView.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
+        teamPhotoImageView.topAnchor.constraint(equalTo: navTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 24)).isActive = true
         teamPhotoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 110)).isActive = true
         teamPhotoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 110)).isActive = true
         
@@ -92,9 +130,9 @@ extension UpdateTeamNameAndPhotoViewController {
         teamNameContainer.layer.borderColor = UIColor.black.cgColor
         teamNameContainer.layer.cornerRadius = .createAspectRatio(value: 10)
         teamNameContainer.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(teamNameContainer)
-        teamNameContainer.leadingAnchor.constraint(equalTo: cardContainer.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
-        teamNameContainer.trailingAnchor.constraint(equalTo: cardContainer.trailingAnchor, constant: -.createAspectRatio(value: 24)).isActive = true
+        mainContainer.addSubview(teamNameContainer)
+        teamNameContainer.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
+        teamNameContainer.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: -.createAspectRatio(value: 24)).isActive = true
         teamNameContainer.topAnchor.constraint(equalTo: teamPhotoImageView.bottomAnchor, constant: .createAspectRatio(value: 24)).isActive = true
         teamNameContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 58)).isActive = true
                 
@@ -106,12 +144,12 @@ extension UpdateTeamNameAndPhotoViewController {
         teamNameTextField.alpha = 1.0
         teamNameTextField.returnKeyType = .done
         teamNameTextField.textColor = .black
-        teamNameTextField.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
+        teamNameTextField.font = .poppinsMedium(ofSize: .createAspectRatio(value: 14))
         teamNameTextField.autocorrectionType = .no
         teamNameTextField.tintColor = .nvuBlueOne
         teamNameTextField.attributedPlaceholder = NSAttributedString(string: "Team Name", attributes: [
             .foregroundColor: UIColor.black.withAlphaComponent(0.5),
-            .font: UIFont.sofiaProMedium(ofSize: .createAspectRatio(value: 14))
+            .font: UIFont.poppinsMedium(ofSize: .createAspectRatio(value: 14))
         ])
         teamNameTextField.delegate = self
         teamNameTextField.translatesAutoresizingMaskIntoConstraints = false

@@ -14,10 +14,12 @@ extension SplashViewController {
     
     func setupViews() {
                 
+        loopingVideoContainer.backgroundColor = .white
         loopingVideoContainer.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(loopingVideoContainer)
         loopingVideoContainer.fillSuperview()
         
+        blurredView.isHidden = true
         blurredView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(blurredView)
         blurredView.fillSuperview()
@@ -25,9 +27,9 @@ extension SplashViewController {
         loginButton.setTitle("Log in", for: .normal)
         loginButton.alpha = 1.0
         loginButton.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
-        loginButton.titleLabel?.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
+        loginButton.titleLabel?.font = .poppinsMedium(ofSize: .createAspectRatio(value: 18))
         loginButton.setTitleColor(.white, for: .normal)
-        loginButton.backgroundColor = UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0)
+        loginButton.backgroundColor = .black
         loginButton.layer.cornerRadius = .createAspectRatio(value: 56)/2
         loginButton.layer.masksToBounds = true
         loginButton.translatesAutoresizingMaskIntoConstraints = false
@@ -40,10 +42,10 @@ extension SplashViewController {
         joinButton.setTitle("Join", for: .normal)
         joinButton.alpha = 1.0
         joinButton.addTarget(self, action: #selector(goToJoin), for: .touchUpInside)
-        joinButton.titleLabel?.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
-        joinButton.setTitleColor(.white, for: .normal)
+        joinButton.titleLabel?.font = .poppinsMedium(ofSize: .createAspectRatio(value: 18))
+        joinButton.setTitleColor(.black, for: .normal)
         joinButton.backgroundColor = .clear
-        joinButton.layer.borderColor = UIColor.white.cgColor//UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0).cgColor
+        joinButton.layer.borderColor = UIColor.black.cgColor//UIColor(red: 95/255, green: 201/255, blue: 207/255, alpha: 1.0).cgColor
         joinButton.layer.borderWidth = 2
         joinButton.layer.cornerRadius = .createAspectRatio(value: 56)/2
         joinButton.layer.masksToBounds = true
@@ -58,8 +60,8 @@ extension SplashViewController {
         detailsLabel.setupLineHeight(myText: detailsLabelText, myLineSpacing: .createAspectRatio(value: 12))
         detailsLabel.alpha = 1.0
         detailsLabel.textAlignment = .left
-        detailsLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 40))
-        detailsLabel.textColor = .white.withAlphaComponent(0.5)
+        detailsLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 40))
+        detailsLabel.textColor = .black.withAlphaComponent(0.5)
         detailsLabel.numberOfLines = 0
         detailsLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(detailsLabel)
@@ -67,14 +69,14 @@ extension SplashViewController {
         detailsLabel.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -.createAspectRatio(value: 163)).isActive = true
         
         logoImageView.alpha = 1.0
-        logoImageView.image = UIImage(named: "smartTraderLogoDark")
+        logoImageView.image = UIImage(named: "omniBlackCoin")
         logoImageView.contentMode = .scaleAspectFit
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(logoImageView)
         logoImageView.leadingAnchor.constraint(equalTo: detailsLabel.leadingAnchor).isActive = true
         logoImageView.bottomAnchor.constraint(equalTo: detailsLabel.topAnchor, constant: -.createAspectRatio(value: 21.45)).isActive = true
-        logoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 84.26)).isActive = true
-        logoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 161)).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 122)).isActive = true
+        logoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 122)).isActive = true
                 
         launchView.layer.zPosition = 100
         launchView.translatesAutoresizingMaskIntoConstraints = false

@@ -61,10 +61,9 @@ class PickTraderTypeViewController: UIViewController {
 
 extension PickTraderTypeViewController {
     @objc func animateViewsIn() {
-        UIView.animate(withDuration: 0.35) {
+        self.mainContainer.presentAndBounce()
+        UIView.animate(withDuration: 0.2) {
             self.opacityLayer.alpha = 0.75
-            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.keyLine.transform = CGAffineTransform(translationX: 0, y: 0)
         }
     }
     
@@ -81,7 +80,7 @@ extension PickTraderTypeViewController {
     }
     
     @objc func dimissVC() {
-        UIView.animate(withDuration: 0.28) {
+        UIView.animate(withDuration: 0.2) {
             self.mainScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
             self.opacityLayer.alpha = 0
         } completion: { (success) in

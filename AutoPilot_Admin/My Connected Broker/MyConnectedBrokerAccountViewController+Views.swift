@@ -80,9 +80,9 @@ extension MyConnectedBrokerAccountViewController {
         confirmButton.addTarget(self, action: #selector(dismissViews), for: .touchUpInside)
         confirmButton.backgroundColor = .themeBlack
         confirmButton.continueLabel.text = "Confirm"
-        confirmButton.continueLabel.font = .sofiaProBold(ofSize: 16)
+        confirmButton.continueLabel.font = .poppinsBold(ofSize: 16)
         confirmButton.setTitleColor(.white, for: .normal)
-        confirmButton.titleLabel?.font = .sofiaProMedium(ofSize: 19)
+        confirmButton.titleLabel?.font = .poppinsMedium(ofSize: 19)
         confirmButton.layer.cornerRadius = 10
         confirmButton.layer.masksToBounds = true
         confirmButton.translatesAutoresizingMaskIntoConstraints = false

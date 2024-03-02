@@ -61,39 +61,63 @@ extension UIFont {
         return font ?? UIFont.systemFont(ofSize: size)
     }
     
-    //NEXA
+    //POPPINS
     
-    static func nexaBold(ofSize size: CGFloat) -> UIFont {
-        return customFont(name: "NexaBold", size: size)
-    }
-        
-    //SOFIA
-    
-    static func sofiaProRegular(ofSize size: CGFloat) -> UIFont {
-        return customFont(name: "SofiaPro", size: size)
+    static func poppinsBlack(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-Black", size: size)
         //return customFont(name: "SofiaProLight", size: size)
         //return customFont(name: "SofiaPro-Bold", size: size)
     }
     
-    static func sofiaProLight(ofSize size: CGFloat) -> UIFont {
-        return customFont(name: "SofiaProLight", size: size)
+    static func poppinsBold(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-Bold", size: size)
     }
     
-    static func sofiaProBold(ofSize size: CGFloat) -> UIFont {
-        return customFont(name: "SofiaPro-Bold", size: size)
+    static func poppinsRegular(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-Regular", size: size)
     }
     
-    static func sofiaProMedium(ofSize size: CGFloat) -> UIFont {
-        return customFont(name: "SofiaPro-Medium", size: size)
+    static func poppinsThin(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-Thin", size: size)
     }
     
-    static func sofiaProSemiBold(ofSize size: CGFloat) -> UIFont {
-        return customFont(name: "SofiaPro-SemiBold", size: size)
+    static func poppinsExtraLight(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-ExtraLight", size: size)
+    }
+    
+    static func poppinsLight(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-Light", size: size)
+    }
+    
+    static func poppinsMedium(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-Medium", size: size)
+    }
+    
+    static func poppinsSemiBold(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-SemiBold", size: size) //Poppins-SemiBold
+    }
+    
+    static func poppinsExtraBold(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-ExtraBold", size: size)
     }
     
 }
 
 extension UIView {
+    func presentAndBounce() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.transform = CGAffineTransform(translationX: 0, y: -5)
+        }) { (success) in
+            UIView.animate(withDuration: 0.15, animations: {
+                self.transform = CGAffineTransform(translationX: 0, y: 5)
+            }) { (success) in
+                UIView.animate(withDuration: 0.1) {
+                    self.transform = CGAffineTransform(translationX: 0, y: 0)
+                }
+            }
+        }
+    }
+    
     func applyShadow(shadowOpacity: Float, shadowSize: CGSize, shadowRadius: CGFloat) {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = shadowSize
@@ -349,6 +373,9 @@ extension String {
 }
 
 extension UIColor {
+    
+    static let mainThemeRed = UIColor(red: 239/255, green: 76/255, blue: 76/255, alpha: 1.0)
+    static let mainThemeGreen = UIColor(red: 33/255, green: 182/255, blue: 103/255, alpha: 1.0)
     
     static let liveDataRed = UIColor(red: 239/255, green: 76/255, blue: 76/255, alpha: 1.0)
     static let liveDataGreen = UIColor(red: 43/255, green: 226/255, blue: 139/255, alpha: 1.0)

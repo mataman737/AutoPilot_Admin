@@ -76,7 +76,7 @@ extension ConnectChannelTableViewCell {
         circleImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 57)).isActive = true
         
         chatNameLabel.text = "Community"
-        chatNameLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 21))
+        chatNameLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 21))
         chatNameLabel.textColor = .black
         chatNameLabel.numberOfLines = 1
         chatNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -86,7 +86,7 @@ extension ConnectChannelTableViewCell {
         chatNameLabel.centerYAnchor.constraint(equalTo: circleImageView.centerYAnchor, constant: -.createAspectRatio(value: 9)).isActive = true
         
         chatDescriptionLabel.text = "Lorem ipsum dolor sit amet"
-        chatDescriptionLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        chatDescriptionLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         chatDescriptionLabel.textColor = .black.withAlphaComponent(0.5)
         chatDescriptionLabel.numberOfLines = 0
         chatDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -135,7 +135,7 @@ extension ConnectChannelTableViewCell {
         shadowLayer.addSubview(contentLayer)
         contentLayer.fillSuperview()
         
-        channelTitleLabel.font = .sofiaProBold(ofSize: 20)
+        channelTitleLabel.font = .poppinsBold(ofSize: 20)
         channelTitleLabel.textAlignment = .left
         channelTitleLabel.textColor = .white
         channelTitleLabel.numberOfLines = 0
@@ -144,7 +144,7 @@ extension ConnectChannelTableViewCell {
         channelTitleLabel.leadingAnchor.constraint(equalTo: contentLayer.leadingAnchor, constant: 16).isActive = true
         channelTitleLabel.topAnchor.constraint(equalTo: contentLayer.topAnchor, constant: 14).isActive = true
         
-        detailLabel.font = .sofiaProRegular(ofSize: 14)
+        detailLabel.font = .poppinsRegular(ofSize: 14)
         detailLabel.textAlignment = .left
         detailLabel.textColor = .white.withAlphaComponent(0.7)
         detailLabel.numberOfLines = 0
@@ -162,7 +162,7 @@ extension ConnectChannelTableViewCell {
         mailImageView.heightAnchor.constraint(equalToConstant: 18).isActive = true
         mailImageView.widthAnchor.constraint(equalToConstant: 18).isActive = true
         
-        newMessageLabel.font = .sofiaProRegular(ofSize: 14)
+        newMessageLabel.font = .poppinsRegular(ofSize: 14)
         newMessageLabel.textAlignment = .left
         newMessageLabel.textColor = .white
         newMessageLabel.numberOfLines = 0

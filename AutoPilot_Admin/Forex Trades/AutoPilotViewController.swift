@@ -516,7 +516,7 @@ extension AutoPilotViewController {
             let pickOptionVC = PickOptionViewController()
             pickOptionVC.delegate = self
             pickOptionVC.modalPresentationStyle = .overFullScreen
-            pickOptionVC.titleLabel.text = "Pick Trading Pair"
+            pickOptionVC.navTitleLabel.text = "Pick Trading Pair"
             pickOptionVC.shareURLButton.continueLabel.text = "Confirm Traiding Pair"
             self.present(pickOptionVC, animated: false, completion: nil)
         } else {

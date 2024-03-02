@@ -36,7 +36,7 @@ extension SubscriberCountTableViewCell {
         titleLabel.text = "Total Subscribers"
         titleLabel.textAlignment = .left
         titleLabel.textColor = .newBlack.withAlphaComponent(0.5)
-        titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        titleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(titleLabel)
@@ -46,7 +46,7 @@ extension SubscriberCountTableViewCell {
         monthStartLabel.text = "190"
         monthStartLabel.textAlignment = .left
         monthStartLabel.textColor = .newBlack
-        monthStartLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        monthStartLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 18))
         monthStartLabel.numberOfLines = 0
         monthStartLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(monthStartLabel)
@@ -65,7 +65,7 @@ extension SubscriberCountTableViewCell {
         monthEndLabel.text = "280"
         monthEndLabel.textAlignment = .left
         monthEndLabel.textColor = .newBlack
-        monthEndLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        monthEndLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 18))
         monthEndLabel.numberOfLines = 0
         monthEndLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(monthEndLabel)
@@ -75,7 +75,7 @@ extension SubscriberCountTableViewCell {
         percentChangeLabel.text = "+47.37%"
         percentChangeLabel.textAlignment = .right
         percentChangeLabel.textColor = UIColor(red: 70/255, green: 192/255, blue: 83/255, alpha: 1.0)
-        percentChangeLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        percentChangeLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 18))
         percentChangeLabel.numberOfLines = 0
         percentChangeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(percentChangeLabel)

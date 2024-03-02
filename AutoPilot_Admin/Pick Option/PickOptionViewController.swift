@@ -13,9 +13,15 @@ protocol PickOptionViewControllerDelegate: AnyObject {
 
 class PickOptionViewController: UIViewController {
     
+    var mainScrollView = UIScrollView()
+    var wrapper = UIView()
+    var mainContainer = UIView()
+    var navTitleLabel = UILabel()
+    var keyLine = UIView()
+    var isDismissing = false
+    
     weak var delegate: PickOptionViewControllerDelegate?
-    var opacityLayer = UIView()
-    var cardContainer = UIView()
+    var opacityLayer = UIView()    
     var cardHeight: NSLayoutConstraint!
     var titleLabel = UILabel()
     var downArrow = UIImageView()
@@ -55,29 +61,19 @@ class PickOptionViewController: UIViewController {
 
 extension PickOptionViewController {
     @objc func presentViews() {
+        mainContainer.presentAndBounce()
         UIView.animate(withDuration: 0.2, animations: {
             self.opacityLayer.alpha = 0.4
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: -5)
         }) { (success) in
-            UIView.animate(withDuration: 0.15, animations: {
-                self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 5)
-            }) { (success) in
-                UIView.animate(withDuration: 0.1) {
-                    self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 0)
-                }
-            }
+            //
         }
-    }
-    
-    @objc func hideCard() {
-        self.cardContainer.isHidden = true
     }
     
     @objc func dismissViews() {
         lightImpactGenerator()
         UIView.animate(withDuration: 0.2, animations: {
             self.opacityLayer.alpha = 0
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 385)
+            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
         }) { (success) in
             self.dismiss(animated: true) {
                 if self.optionSelected {
@@ -125,4 +121,23 @@ extension PickOptionViewController: UIPickerViewDelegate, UIPickerViewDataSource
     
 }
 
+//MARK: SCROLLVIEW DELEGATE
 
+extension PickOptionViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.tag == 1 {
+            let yOffset = scrollView.contentOffset.y// + 44
+            if yOffset > 0 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            }
+            
+            if yOffset < -45 {
+                if !isDismissing {
+                    dismissViews()
+                    isDismissing = true
+                }
+            }
+        }
+                
+    }
+}

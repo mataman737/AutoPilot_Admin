@@ -43,7 +43,7 @@ extension ActivePayoutSubscribersTableViewCell {
         payoutContainer.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
         payoutContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 100)).isActive = true
         
-        payoutLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 22))
+        payoutLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 22))
         payoutLabel.textAlignment = .center
         payoutLabel.textColor = .black
         payoutLabel.numberOfLines = 0
@@ -52,7 +52,7 @@ extension ActivePayoutSubscribersTableViewCell {
         payoutLabel.centerXAnchor.constraint(equalTo: payoutContainer.centerXAnchor).isActive = true
         payoutLabel.centerYAnchor.constraint(equalTo: payoutContainer.centerYAnchor, constant: -.createAspectRatio(value: 6)).isActive = true
         
-        payoutDetailLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 12))
+        payoutDetailLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 12))
         payoutDetailLabel.textAlignment = .center
         payoutDetailLabel.textColor = .black.withAlphaComponent(0.5)
         payoutDetailLabel.numberOfLines = 0
@@ -70,7 +70,7 @@ extension ActivePayoutSubscribersTableViewCell {
         activeSubscribersContainer.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
         activeSubscribersContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 100)).isActive = true
         
-        subLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 22))
+        subLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 22))
         subLabel.textAlignment = .center
         subLabel.textColor = .black
         subLabel.numberOfLines = 0
@@ -80,7 +80,7 @@ extension ActivePayoutSubscribersTableViewCell {
         subLabel.centerYAnchor.constraint(equalTo: activeSubscribersContainer.centerYAnchor, constant: -.createAspectRatio(value: 6)).isActive = true
         
         subDetailLabel.text = "Active Subscribers"
-        subDetailLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 12))
+        subDetailLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 12))
         subDetailLabel.textAlignment = .center
         subDetailLabel.textColor = .black.withAlphaComponent(0.5)
         subDetailLabel.numberOfLines = 0

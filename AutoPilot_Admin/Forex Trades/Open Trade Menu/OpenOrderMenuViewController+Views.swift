@@ -87,7 +87,7 @@ extension OpenOrderMenuViewController {
         entryPriceTitleLabel.text = "Entry Price"
         entryPriceTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         entryPriceTitleLabel.textAlignment = .left
-        entryPriceTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
+        entryPriceTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 9))
         entryPriceTitleLabel.numberOfLines = 0
         entryPriceTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(entryPriceTitleLabel)
@@ -103,7 +103,7 @@ extension OpenOrderMenuViewController {
 //        entryPriceLabel.text = "1.12345"
         entryPriceLabel.textColor = .newBlack.withAlphaComponent(0.75)
         entryPriceLabel.textAlignment = .left
-        entryPriceLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        entryPriceLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         entryPriceLabel.numberOfLines = 0
         entryPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(entryPriceLabel)
@@ -122,7 +122,7 @@ extension OpenOrderMenuViewController {
         
         currentPriceLabel.textColor = .newBlack.withAlphaComponent(0.75)
         currentPriceLabel.textAlignment = .left
-        currentPriceLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        currentPriceLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         currentPriceLabel.numberOfLines = 0
         currentPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(currentPriceLabel)
@@ -132,7 +132,7 @@ extension OpenOrderMenuViewController {
         currentPriceTitleLabel.text = "Current Price"
         currentPriceTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         currentPriceTitleLabel.textAlignment = .left
-        currentPriceTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
+        currentPriceTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 9))
         currentPriceTitleLabel.numberOfLines = 0
         currentPriceTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(currentPriceTitleLabel)
@@ -141,7 +141,7 @@ extension OpenOrderMenuViewController {
         
         //unrealizedProfitLabel.textColor = .green//UIColor(red: 191/255, green: 106/255, blue: 106/255, alpha: 1.0)
         unrealizedProfitLabel.textAlignment = .right
-        unrealizedProfitLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        unrealizedProfitLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         unrealizedProfitLabel.numberOfLines = 0
         unrealizedProfitLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(unrealizedProfitLabel)
@@ -151,7 +151,7 @@ extension OpenOrderMenuViewController {
         unrealizedProfitTitleLabel.text = "Unrealized Profit"
         unrealizedProfitTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         unrealizedProfitTitleLabel.textAlignment = .right
-        unrealizedProfitTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
+        unrealizedProfitTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 9))
         unrealizedProfitTitleLabel.numberOfLines = 0
         unrealizedProfitTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(unrealizedProfitTitleLabel)
@@ -161,7 +161,7 @@ extension OpenOrderMenuViewController {
         stopLossTitleLabel.text = "Stop Loss"
         stopLossTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         stopLossTitleLabel.textAlignment = .left
-        stopLossTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
+        stopLossTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 9))
         stopLossTitleLabel.numberOfLines = 0
         stopLossTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(stopLossTitleLabel)
@@ -170,7 +170,7 @@ extension OpenOrderMenuViewController {
         
         stopLossLabel.textColor = .newBlack.withAlphaComponent(0.75)
         stopLossLabel.textAlignment = .left
-        stopLossLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        stopLossLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         stopLossLabel.numberOfLines = 0
         stopLossLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(stopLossLabel)
@@ -180,7 +180,7 @@ extension OpenOrderMenuViewController {
         takeProfitTitleLabel.text = "Take Profit"
         takeProfitTitleLabel.textColor = .newBlack.withAlphaComponent(0.5)
         takeProfitTitleLabel.textAlignment = .right
-        takeProfitTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 9))
+        takeProfitTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 9))
         takeProfitTitleLabel.numberOfLines = 0
         takeProfitTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(takeProfitTitleLabel)
@@ -201,7 +201,7 @@ extension OpenOrderMenuViewController {
         
         takeProfitLabel.textColor = .newBlack.withAlphaComponent(0.75)
         takeProfitLabel.textAlignment = .right
-        takeProfitLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        takeProfitLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         takeProfitLabel.numberOfLines = 0
         takeProfitLabel.translatesAutoresizingMaskIntoConstraints = false
         tradeDetailsContainer.addSubview(takeProfitLabel)
@@ -212,7 +212,7 @@ extension OpenOrderMenuViewController {
                 
         navTitleLabel.textAlignment = .center
         navTitleLabel.textColor = .newBlack
-        navTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 19))
+        navTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 19))
         navTitleLabel.numberOfLines = 0
         navTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(navTitleLabel)

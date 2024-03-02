@@ -46,12 +46,12 @@ extension MonthLineGraphTableViewCell {
         lineGraphContainer.addSubview(lineGraphView)
         lineGraphView.fillSuperview()
         
-        monthLabel.setupLabel(text: "", txtColor: .black, font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18)), txtAlignment: .left)
+        monthLabel.setupLabel(text: "", txtColor: .black, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 18)), txtAlignment: .left)
         contentView.addSubview(monthLabel)
         monthLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
         monthLabel.bottomAnchor.constraint(equalTo: lineGraphContainer.topAnchor, constant: -.createAspectRatio(value: 31)).isActive = true
         
-        payoutAmountLabel.setupLabel(text: "", txtColor: .black, font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18)), txtAlignment: .right)
+        payoutAmountLabel.setupLabel(text: "", txtColor: .black, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 18)), txtAlignment: .right)
         contentView.addSubview(payoutAmountLabel)
         payoutAmountLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.createAspectRatio(value: 24)).isActive = true
         payoutAmountLabel.centerYAnchor.constraint(equalTo: monthLabel.centerYAnchor).isActive = true

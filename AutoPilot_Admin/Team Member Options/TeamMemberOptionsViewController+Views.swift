@@ -13,7 +13,7 @@ extension TeamMemberOptionsViewController {
     
     func setupColors() {
         mainContainer.backgroundColor = .white
-        keyLine.backgroundColor = .white
+        keyLine.backgroundColor = .black.withAlphaComponent(0.25)
         textColor = .black
         navTitleLabel.textColor = .black
         dateLabel.textColor = .black.withAlphaComponent(0.5)
@@ -61,28 +61,30 @@ extension TeamMemberOptionsViewController {
         mainContainer.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor).isActive = true
         mainContainer.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor).isActive = true
         mainContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
-        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 630)).isActive = true //580
+        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 644)).isActive = true //580
         mainContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
+        keyLine.backgroundColor = .black.withAlphaComponent(0.25)
         keyLine.layer.cornerRadius = .createAspectRatio(value: 4)/2
         keyLine.translatesAutoresizingMaskIntoConstraints = false
-        mainScrollView.addSubview(keyLine)
+        mainContainer.addSubview(keyLine)
         keyLine.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
-        keyLine.bottomAnchor.constraint(equalTo: mainContainer.topAnchor, constant: -.createAspectRatio(value: 6)).isActive = true
+        keyLine.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         keyLine.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 34)).isActive = true
         keyLine.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 4)).isActive = true
-        keyLine.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
                         
+        navTitleLabel.textColor = .black
+        navTitleLabel.isUserInteractionEnabled = false
         navTitleLabel.textAlignment = .center
-        navTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 19))
+        navTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 19))
         navTitleLabel.numberOfLines = 0
         navTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(navTitleLabel)
-        navTitleLabel.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: 18).isActive = true
+        navTitleLabel.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 32)).isActive = true
         navTitleLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
                         
         dateLabel.textAlignment = .center
-        dateLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 13))
+        dateLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 13))
         dateLabel.numberOfLines = 0
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(dateLabel)
@@ -90,15 +92,16 @@ extension TeamMemberOptionsViewController {
         dateLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
         
         totalPercentChangeLabel.text = "+30%"
-        totalPercentChangeLabel.textColor = .liveDataGreen
+        totalPercentChangeLabel.textColor = .mainThemeGreen
         totalPercentChangeLabel.textAlignment = .right
-        totalPercentChangeLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 16))
+        totalPercentChangeLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 16))
         totalPercentChangeLabel.numberOfLines = 0
         totalPercentChangeLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(totalPercentChangeLabel)
         totalPercentChangeLabel.centerYAnchor.constraint(equalTo: navTitleLabel.centerYAnchor).isActive = true
         totalPercentChangeLabel.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: -.createAspectRatio(value: 18)).isActive = true
         
+        //if 
         lotPercentView.delegate = self
         //lotPercentView.lotSizeContainer.addTarget(self, action: #selector(animateTables(sender:)), for: .touchUpInside)
         //lotPercentView.percentContainer.addTarget(self, action: #selector(animateTables(sender:)), for: .touchUpInside)
@@ -121,7 +124,9 @@ extension TeamMemberOptionsViewController {
         lineGraphView.topAnchor.constraint(equalTo: lotPercentView.bottomAnchor, constant: .createAspectRatio(value: 35)).isActive = true //25
         lineGraphView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 260)).isActive = true
         
+        //newChannelOption.backgroundColor = .blue
         newChannelOption.iconImageView.image = UIImage(named: "phonecall")
+        newChannelOption.iconImageView.setImageColor(color: .black)
         newChannelOption.optionTitleLabel.text = "Call"
         newChannelOption.optionButton.addTarget(self, action: #selector(makePhoneCall), for: .touchUpInside)
         newChannelOption.optionDetailLabel.text = "Start a phone call"
@@ -133,8 +138,10 @@ extension TeamMemberOptionsViewController {
         newChannelOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor).isActive = true
         newChannelOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
         
+        //sendContentOption.backgroundColor = .red.withAlphaComponent(0.5)
         sendContentOption.optionButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         sendContentOption.iconImageView.image = UIImage(named: "message-circle-grad-thickNVU")
+        sendContentOption.iconImageView.setImageColor(color: .black)
         sendContentOption.optionTitleLabel.text = "Send Message"
         sendContentOption.optionDetailLabel.text = "Open up iMessage"
         sendContentOption.translatesAutoresizingMaskIntoConstraints = false

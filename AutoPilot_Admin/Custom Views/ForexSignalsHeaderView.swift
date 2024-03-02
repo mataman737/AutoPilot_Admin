@@ -28,7 +28,7 @@ class ForexSignalsHeaderView: UIView {
 extension ForexSignalsHeaderView {
     func setupViews() {
         
-        dateLabel.font = .sofiaProMedium(ofSize: 18)
+        dateLabel.font = .poppinsMedium(ofSize: 18)
         dateLabel.textAlignment = .left
         dateLabel.textColor = .black
         dateLabel.numberOfLines = 0
@@ -37,7 +37,7 @@ extension ForexSignalsHeaderView {
         dateLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         dateLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         
-        signalCountLabel.font = .sofiaProMedium(ofSize: 18)
+        signalCountLabel.font = .poppinsMedium(ofSize: 18)
         signalCountLabel.textAlignment = .left
         signalCountLabel.textColor = .black
         signalCountLabel.numberOfLines = 0
@@ -69,7 +69,7 @@ class ActivePendingHeaderView: UIView {
 extension ActivePendingHeaderView {
     func setupViews() {
         sectionLabel.textAlignment = .left
-        sectionLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        sectionLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 18))
         sectionLabel.textColor = .black.withAlphaComponent(0.5)
         sectionLabel.numberOfLines = 0
         sectionLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -125,13 +125,14 @@ class ToastNotificationView: UIView {
             self.toastView.layer.shadowOpacity = 0.2
             self.toastView.layer.shadowRadius = .createAspectRatio(value: 20)
             self.toastView.clipsToBounds = false
-            self.toastView.image = UIImage(named: "buttonGradientNVU")
+            self.toastView.image = UIImage(named: "")
+            self.toastView.backgroundColor = .black
             self.toastView.layer.masksToBounds = true
             self.toastView.contentMode = .scaleAspectFill
             
             self.toastMessageLabel = UILabel()
             self.toastMessageLabel.text = self.message
-            self.toastMessageLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+            self.toastMessageLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
             self.toastMessageLabel.textColor = .white
             self.toastMessageLabel.textAlignment = .center
             self.toastMessageLabel.translatesAutoresizingMaskIntoConstraints = false

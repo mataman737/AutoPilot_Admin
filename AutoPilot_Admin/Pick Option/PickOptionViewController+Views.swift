@@ -21,12 +21,11 @@ extension PickOptionViewController {
     func setupViews() {
         
         if isDarkMode {
-            cardContainer.backgroundColor = .themeGray
             textColor = .white
         } else {
-            cardContainer.backgroundColor = .white
             textColor = .black
         }
+
         
         opacityLayer.isUserInteractionEnabled = true
         opacityLayer.backgroundColor = .black
@@ -35,59 +34,81 @@ extension PickOptionViewController {
         self.view.addSubview(opacityLayer)
         opacityLayer.fillSuperview()
         
-        //cardContainer.backgroundColor = .themeGray
-        cardContainer.layer.cornerRadius = 24
-        cardContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        cardContainer.layer.masksToBounds = true
-        cardContainer.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(cardContainer)
-        cardContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        cardContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        cardContainer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        cardHeight = cardContainer.heightAnchor.constraint(equalToConstant: 385)
-        cardHeight.isActive = true
-        cardContainer.transform = CGAffineTransform(translationX: 0, y: 385)
+        mainScrollView.tag = 1
+        mainScrollView.delegate = self
+        mainScrollView.showsVerticalScrollIndicator = false
+        mainScrollView.backgroundColor = .clear
+        mainScrollView.contentInsetAdjustmentBehavior = .never
+        mainScrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 1.1)
+        mainScrollView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(mainScrollView)
+        mainScrollView.fillSuperview()
         
-        //view.frame.height - 57
+        let opacityTapped = UITapGestureRecognizer(target: self, action: #selector(dismissViews))
+        wrapper.addGestureRecognizer(opacityTapped)
+        wrapper.isUserInteractionEnabled = true
+        wrapper.backgroundColor = .clear
+        wrapper.translatesAutoresizingMaskIntoConstraints = false
+        mainScrollView.addSubview(wrapper)
+        wrapper.topAnchor.constraint(equalTo: mainScrollView.topAnchor).isActive = true
+        wrapper.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor).isActive = true
+        wrapper.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        wrapper.heightAnchor.constraint(equalToConstant: self.view.frame.height).isActive = true
         
+        mainContainer.backgroundColor = .white
+        mainContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        mainContainer.layer.cornerRadius = .createAspectRatio(value: 15)
+        mainContainer.layer.masksToBounds = true
+        mainContainer.translatesAutoresizingMaskIntoConstraints = false
+        wrapper.addSubview(mainContainer)
+        mainContainer.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor).isActive = true
+        mainContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 385)).isActive = true
+        mainContainer.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor, constant: 0).isActive = true
+        mainContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
-        //titleLabel.text = "Preferred Language"
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = textColor
-        titleLabel.font = .sofiaProMedium(ofSize: 16)
-        titleLabel.numberOfLines = 0
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(titleLabel)
-        titleLabel.topAnchor.constraint(equalTo: cardContainer.topAnchor, constant: 20).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: cardContainer.centerXAnchor).isActive = true
+        keyLine.backgroundColor = .black.withAlphaComponent(0.25)
+        keyLine.layer.cornerRadius = .createAspectRatio(value: 4)/2
+        keyLine.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(keyLine)
+        keyLine.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
+        keyLine.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        keyLine.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 34)).isActive = true
+        keyLine.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 4)).isActive = true
+        
+        navTitleLabel.textColor = .black
+        navTitleLabel.isUserInteractionEnabled = false
+        navTitleLabel.textAlignment = .center
+        navTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 19))
+        navTitleLabel.numberOfLines = 0
+        navTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(navTitleLabel)
+        navTitleLabel.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 32)).isActive = true
+        navTitleLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
                 
-        downArrow.image = UIImage(named: "newDownArrow") //downArrow
-        downArrow.setImageColor(color: textColor)
-        downArrow.contentMode = .scaleAspectFill
-        downArrow.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(downArrow)
-        downArrow.leadingAnchor.constraint(equalTo: cardContainer.leadingAnchor, constant: 22).isActive = true
-        downArrow.topAnchor.constraint(equalTo: cardContainer.topAnchor, constant: 14).isActive = true
-        downArrow.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        downArrow.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        downButton.backgroundColor = .clear
-        downButton.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(downButton)
-        downButton.leadingAnchor.constraint(equalTo: cardContainer.leadingAnchor, constant: 0).isActive = true
-        downButton.topAnchor.constraint(equalTo: cardContainer.topAnchor, constant: 0).isActive = true
-        downButton.trailingAnchor.constraint(equalTo: downArrow.trailingAnchor, constant: 10).isActive = true
-        downButton.bottomAnchor.constraint(equalTo: downArrow.bottomAnchor, constant: 10).isActive = true
-                
-        shareURLButton.addTarget(self, action: #selector(updateTapped), for: .touchUpInside)
-        shareURLButton.addShadow(shadowColor: .black, shadowOffset: CGSize(width: 2, height: 2), shadowOpacity: 0.2, shadowRadius: 4, shadowCornerRadius: 0)
+        //shareURLButton.addTarget(self, action: #selector(updateTapped), for: .touchUpInside)
+        //shareURLButton.addShadow(shadowColor: .black, shadowOffset: CGSize(width: 2, height: 2), shadowOpacity: 0.2, shadowRadius: 4, shadowCornerRadius: 0)
         //shareURLButton.continueLabel.text = "Update Language"
+        
+        shareURLButton.addTarget(self, action: #selector(updateTapped), for: .touchUpInside)
+        //shareURLButton.continueLabel.text = "Update Language"
+        shareURLButton.continueLabel.textColor = .white//UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0)
+        shareURLButton.continueLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 13))
+        shareURLButton.purpleBG.backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0)//.white
+        shareURLButton.spinner.color = .white//UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0)
+        shareURLButton.purpleBG.image = UIImage(named: "")
+        shareURLButton.purpleBG.layer.cornerRadius = .createAspectRatio(value: 44)/2
+        shareURLButton.setTitleColor(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0), for: .normal)
+        shareURLButton.layer.cornerRadius = .createAspectRatio(value: 44)/2
+        shareURLButton.layer.masksToBounds = true
         shareURLButton.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(shareURLButton)
-        shareURLButton.trailingAnchor.constraint(equalTo: cardContainer.trailingAnchor, constant: -25).isActive = true
-        shareURLButton.leadingAnchor.constraint(equalTo: cardContainer.leadingAnchor, constant: 25).isActive = true
-        shareURLButton.bottomAnchor.constraint(equalTo: cardContainer.bottomAnchor, constant: -35).isActive = true
-        shareURLButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        
+        shareURLButton.translatesAutoresizingMaskIntoConstraints = false
+        mainContainer.addSubview(shareURLButton)
+        shareURLButton.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor, constant: .createAspectRatio(value: 21)).isActive = true
+        shareURLButton.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor, constant: -.createAspectRatio(value: 21)).isActive = true
+        shareURLButton.bottomAnchor.constraint(equalTo: mainContainer.bottomAnchor, constant: -.createAspectRatio(value: 33)).isActive = true
+        shareURLButton.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 44)).isActive = true
         
         //
                 
@@ -95,11 +116,11 @@ extension PickOptionViewController {
         timePickerView.tintColor = .white
         timePickerView.dataSource = self
         timePickerView.translatesAutoresizingMaskIntoConstraints = false
-        cardContainer.addSubview(timePickerView)
-        timePickerView.leadingAnchor.constraint(equalTo: cardContainer.leadingAnchor).isActive = true
-        timePickerView.trailingAnchor.constraint(equalTo: cardContainer.trailingAnchor).isActive = true
-        timePickerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
-        timePickerView.heightAnchor.constraint(equalToConstant: 215).isActive = true
+        mainContainer.addSubview(timePickerView)
+        timePickerView.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor).isActive = true
+        timePickerView.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor).isActive = true
+        timePickerView.topAnchor.constraint(equalTo: navTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 20)).isActive = true
+        timePickerView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 215)).isActive = true
          
                 
     }

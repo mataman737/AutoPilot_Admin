@@ -46,7 +46,7 @@ extension MyTradersViewController {
         titleLabel.text = "My Traders"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .newBlack
-        titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        titleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(titleLabel)
@@ -136,13 +136,13 @@ extension MyTradersViewController {
         for layer in 1...loadingLayers.count {
             let keyPath = AnimationKeypath(keypath: "\(loadingLayers[layer - 1])")
             if i == 0 {
-                let colorProvider = ColorValueProvider(UIColor(red: 225/255, green: 61/255, blue: 227/255, alpha: 1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.black.withAlphaComponent(0.33).lottieColorValue)
                 loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
             } else if i == 1 {
-                let colorProvider = ColorValueProvider(UIColor(red: 229/255, green: 93/255, blue: 132/255, alpha: 1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.black.withAlphaComponent(0.66).lottieColorValue)
                 loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
             } else {
-                let colorProvider = ColorValueProvider(UIColor(red: 232/255, green: 121/255, blue: 47/255, alpha: 1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.black.withAlphaComponent(1.0).lottieColorValue)
                 loadingLottie.setValueProvider(colorProvider, keypath: keyPath)
             }
             i += 1

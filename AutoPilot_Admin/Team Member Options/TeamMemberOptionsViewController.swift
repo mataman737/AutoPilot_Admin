@@ -61,25 +61,16 @@ class TeamMemberOptionsViewController: UIViewController {
 
 extension TeamMemberOptionsViewController {
     @objc func animateViewsIn() {
-        UIView.animate(withDuration: 0.25) {
+        self.mainContainer.presentAndBounce()
+        UIView.animate(withDuration: 0.2) {
             self.opacityLayer.alpha = 0.75
-            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.keyLine.transform = CGAffineTransform(translationX: 0, y: -10)
         } completion: { (success) in
-            UIView.animate(withDuration: 0.15) {
-                self.mainContainer.transform = CGAffineTransform(translationX: 0, y: 5)
-                self.keyLine.transform = CGAffineTransform(translationX: 0, y: 5)
-            } completion: { (success) in
-                UIView.animate(withDuration: 0.15) {
-                    self.mainContainer.transform = CGAffineTransform(translationX: 0, y: 0)
-                    self.keyLine.transform = CGAffineTransform(translationX: 0, y: 0)
-                }
-            }
+            
         }
     }
     
     @objc func dimissVC() {
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.2) {
             self.mainScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
             self.opacityLayer.alpha = 0
         } completion: { (success) in
@@ -191,10 +182,12 @@ extension TeamMemberOptionsViewController: MFMessageComposeViewControllerDelegat
 extension TeamMemberOptionsViewController: LotSizePercentSwitchViewDelegate {
     func didTapSwitchOption(option: Int) {
         if option == 0 {
-            
+            updateUserPaidStatus(phone: self.phoneNumber, paid: true)
         } else {
-            
-        }        
+            updateUserPaidStatus(phone: self.phoneNumber, paid: false)
+        }
+        
+        
     }
     
     func updateUserPaidStatus(phone: String, paid: Bool) {
@@ -210,7 +203,7 @@ extension TeamMemberOptionsViewController: LotSizePercentSwitchViewDelegate {
             }
             
             DispatchQueue.main.async { [weak self] in
-                
+                print("\(user.firstName) | \(user.paid)")
             }
         }
     }

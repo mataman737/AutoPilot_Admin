@@ -13,6 +13,13 @@ protocol UpdateAccessCodeViewControllerDelegate: AnyObject {
 
 class UpdateAccessCodeViewController: UIViewController {
     
+    var mainScrollView = UIScrollView()
+    var wrapper = UIView()
+    var mainContainer = UIView()
+    var navTitleLabel = UILabel()
+    var keyLine = UIView()
+    var isDismissing = false
+    
     weak var delegate: UpdateAccessCodeViewControllerDelegate?
     var opacityLayer = UIView()
     var cardContainer = UIView()
@@ -36,9 +43,9 @@ class UpdateAccessCodeViewController: UIViewController {
 
 extension UpdateAccessCodeViewController {
     @objc func prsentViews() {
+        self.mainContainer.presentAndBounce()
         UIView.animate(withDuration: 0.25) {
             self.opacityLayer.alpha = 0.75
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 0)
         }
     }
     
@@ -47,7 +54,7 @@ extension UpdateAccessCodeViewController {
         UIView.animate(withDuration: 0.25) {
             self.view.endEditing(true)
             self.opacityLayer.alpha = 0
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
+            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
         } completion: { success in
             self.dismiss(animated: false)
         }
@@ -111,6 +118,26 @@ extension UpdateAccessCodeViewController: UITextFieldDelegate {
                 self?.delegate?.didUpdateAccessCode()
                 self?.successImpactGenerator()
                 self?.dismissViews()
+            }
+        }
+    }
+}
+
+//MARK: SCROLLVIEW DELEGATE
+
+extension UpdateAccessCodeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.tag == 1 {
+            let yOffset = scrollView.contentOffset.y// + 44
+            if yOffset > 0 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            }
+            
+            if yOffset < -45 {
+                if !isDismissing {
+                    dismissViews()
+                    isDismissing = true
+                }
             }
         }
     }

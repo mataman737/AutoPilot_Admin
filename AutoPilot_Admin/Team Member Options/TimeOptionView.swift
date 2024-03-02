@@ -45,7 +45,7 @@ extension TimeOptionView {
         
         timeLabel.textColor = .swBlue
         timeLabel.textAlignment = .center
-        timeLabel.font = .sofiaProMedium(ofSize: 11)
+        timeLabel.font = .poppinsMedium(ofSize: 11)
         timeLabel.textColor = UIColor.white.withAlphaComponent(0.5)
         timeLabel.numberOfLines = 0
         timeLabel.translatesAutoresizingMaskIntoConstraints = false

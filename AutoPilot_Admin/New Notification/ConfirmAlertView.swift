@@ -96,7 +96,7 @@ extension ConfirmAlertView {
                 
         reqTitleLabel.textAlignment = .center
         reqTitleLabel.textColor = UIColor(red: 68/255, green: 68/255, blue: 68/255, alpha: 1.0)
-        reqTitleLabel.font = .sofiaProBold(ofSize: 18)
+        reqTitleLabel.font = .poppinsBold(ofSize: 18)
         reqTitleLabel.numberOfLines = 0
         reqTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(reqTitleLabel)
@@ -105,7 +105,7 @@ extension ConfirmAlertView {
         
         reqDetailLabel.textAlignment = .center
         reqDetailLabel.textColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.0)
-        reqDetailLabel.font = .sofiaProRegular(ofSize: 15)
+        reqDetailLabel.font = .poppinsRegular(ofSize: 15)
         reqDetailLabel.numberOfLines = 0
         reqDetailLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(reqDetailLabel)
@@ -133,7 +133,7 @@ extension ConfirmAlertView {
         confirmLabel.text = "CONFIRM"
         confirmLabel.textAlignment = .center
         confirmLabel.textColor = UIColor(red: 255/255, green: 81/255, blue: 6/255, alpha: 1.0)
-        confirmLabel.font = .sofiaProBold(ofSize: 13)
+        confirmLabel.font = .poppinsBold(ofSize: 13)
         confirmLabel.numberOfLines = 0
         confirmLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(confirmLabel)
@@ -144,7 +144,7 @@ extension ConfirmAlertView {
         cancelLabel.text = "CANCEL"
         cancelLabel.textAlignment = .center
         cancelLabel.textColor = UIColor(red: 187/255, green: 187/255, blue: 187/255, alpha: 1.0)
-        cancelLabel.font = .sofiaProBold(ofSize: 13)
+        cancelLabel.font = .poppinsBold(ofSize: 13)
         cancelLabel.numberOfLines = 0
         cancelLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(cancelLabel)
@@ -323,7 +323,7 @@ extension ConfirmAlertView {
         uploadingLabel.text = "Uploading Drop"
         uploadingLabel.textAlignment = .center
         uploadingLabel.textColor = UIColor.themeBlack.withAlphaComponent(0.6)
-        uploadingLabel.font = .sofiaProMedium(ofSize: 12)
+        uploadingLabel.font = .poppinsMedium(ofSize: 12)
         uploadingLabel.numberOfLines = 0
         uploadingLabel.translatesAutoresizingMaskIntoConstraints = false
         loadingView.addSubview(uploadingLabel)

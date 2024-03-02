@@ -92,7 +92,7 @@ class PickImageVideoViewController: UIViewController {
         captionTitleLabel.text = "Caption"
         captionTitleLabel.textAlignment = .center
         captionTitleLabel.textColor = UIColor(red: 80/255, green: 80/255, blue: 80/255, alpha: 1.0)
-        captionTitleLabel.font = .sofiaProMedium(ofSize: 21)
+        captionTitleLabel.font = .poppinsMedium(ofSize: 21)
         captionTitleLabel.numberOfLines = 0
         captionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         navContainer.addSubview(captionTitleLabel)
@@ -101,7 +101,7 @@ class PickImageVideoViewController: UIViewController {
         
         //shareButton.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
         shareButton.setTitle("Share", for: .normal)
-        shareButton.titleLabel?.font = .sofiaProRegular(ofSize: 16)
+        shareButton.titleLabel?.font = .poppinsRegular(ofSize: 16)
         shareButton.setTitleColor(UIColor(red: 94/255, green: 93/255, blue: 108/255, alpha: 1.0), for: .normal)
         shareButton.translatesAutoresizingMaskIntoConstraints = false
         navContainer.addSubview(shareButton)
@@ -145,7 +145,7 @@ class PickImageVideoViewController: UIViewController {
         //captionTextView.delegate = self
         captionTextView.textColor = UIColor(red: 91/255, green: 91/255, blue: 91/255, alpha: 1.0)
         captionTextView.textAlignment = .left
-        captionTextView.font = .sofiaProMedium(ofSize: 14)
+        captionTextView.font = .poppinsMedium(ofSize: 14)
         captionTextView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(captionTextView)
         captionTextView.leadingAnchor.constraint(equalTo: selectedImageV.trailingAnchor, constant: 12).isActive = true
@@ -160,7 +160,7 @@ class PickImageVideoViewController: UIViewController {
         countLabel.backgroundColor = .white
         countLabel.text = "500"
         countLabel.textColor = .darkGray
-        countLabel.font = .sofiaProMedium(ofSize: 17)
+        countLabel.font = .poppinsMedium(ofSize: 17)
         countLabel.textAlignment = .center
         countLabel.numberOfLines = 0
         countLabel.translatesAutoresizingMaskIntoConstraints = false

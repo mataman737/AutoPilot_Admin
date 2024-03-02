@@ -14,18 +14,18 @@ extension SetupAccountViewController {
         transitionView.alpha = 0
         transitionView.layer.zPosition = 100
         transitionView.isUserInteractionEnabled = false
-        transitionView.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0)
+        transitionView.backgroundColor = .white
         transitionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(transitionView)
         transitionView.fillSuperview()
         
-        appLogoImageView.image = UIImage(named: "smartTraderLogoDark")
+        appLogoImageView.image = UIImage(named: "omniBlackCoin")
         appLogoImageView.translatesAutoresizingMaskIntoConstraints = false
         transitionView.addSubview(appLogoImageView)
         appLogoImageView.centerYAnchor.constraint(equalTo: transitionView.centerYAnchor).isActive = true
         appLogoImageView.centerXAnchor.constraint(equalTo: transitionView.centerXAnchor).isActive = true
-        appLogoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 240)).isActive = true
-        appLogoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 128)).isActive = true
+        appLogoImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 122)).isActive = true
+        appLogoImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 122)).isActive = true
     }
     
     func setupViews() {
@@ -106,7 +106,7 @@ extension SetupAccountViewController {
         addPhotoNameLabel.text = "Add photo and display name"
         addPhotoNameLabel.textAlignment = .left
         addPhotoNameLabel.textColor = .black
-        addPhotoNameLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 23))
+        addPhotoNameLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 23))
         addPhotoNameLabel.numberOfLines = 0
         addPhotoNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userInfoContainer.addSubview(addPhotoNameLabel)
@@ -146,12 +146,12 @@ extension SetupAccountViewController {
         usernameTextfield.keyboardType = .default
         usernameTextfield.autocorrectionType = .no
         usernameTextfield.textColor = .black
-        usernameTextfield.tintColor = .swBlue
+        usernameTextfield.tintColor = .black
         usernameTextfield.returnKeyType = .next
-        usernameTextfield.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
+        usernameTextfield.font = .poppinsMedium(ofSize: .createAspectRatio(value: 18))
         var namePlaceHolder = NSMutableAttributedString()
         let userName  = "Display Name"
-        namePlaceHolder = NSMutableAttributedString(string:userName, attributes: [NSAttributedString.Key.font: UIFont.sofiaProMedium(ofSize: 18)])
+        namePlaceHolder = NSMutableAttributedString(string:userName, attributes: [NSAttributedString.Key.font: UIFont.poppinsMedium(ofSize: 18)])
         namePlaceHolder.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black.withAlphaComponent(0.5), range:NSRange(location:0,length:userName.count))
         usernameTextfield.attributedPlaceholder = namePlaceHolder
         usernameTextfield.translatesAutoresizingMaskIntoConstraints = false
@@ -166,7 +166,7 @@ extension SetupAccountViewController {
         phoneLabel.text = "Enter your phone number"
         phoneLabel.textAlignment = .left
         phoneLabel.textColor = .black
-        phoneLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 23))
+        phoneLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 23))
         phoneLabel.numberOfLines = 0
         phoneLabel.translatesAutoresizingMaskIntoConstraints = false
         phoneNumberContainer.addSubview(phoneLabel)
@@ -205,7 +205,7 @@ extension SetupAccountViewController {
         
         nextButton.addShadow(shadowColor: .black, shadowOffset: CGSize(width: 4, height: 4), shadowOpacity: 0.2, shadowRadius: 4, shadowCornerRadius: 0)
         nextButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
-        nextButton.purpleBG.backgroundColor = .swBlue
+        nextButton.purpleBG.backgroundColor = .black
         nextButton.continueLabel.text = "Next"
         nextButton.continueLabel.textColor = .white
         nextButton.confirmLabel.text = "Confirm"
@@ -230,7 +230,7 @@ extension SetupAccountViewController {
         codeLabel.text = "What is the access code?"
         codeLabel.textAlignment = .left
         codeLabel.textColor = .black
-        codeLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 23))
+        codeLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 23))
         codeLabel.numberOfLines = 0
         codeLabel.translatesAutoresizingMaskIntoConstraints = false
         codeContainer.addSubview(codeLabel)

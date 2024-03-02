@@ -48,7 +48,7 @@ extension TeamMembersEmptyStateCell {
         teamMemberEmptyState.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 305)).isActive = true
         */
         
-        emptyStateLabel.setupLabel(text: "", txtColor: .black.withAlphaComponent(0.5), font: .sofiaProRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .left)
+        emptyStateLabel.setupLabel(text: "", txtColor: .black.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 12)), txtAlignment: .left)
         self.contentView.addSubview(emptyStateLabel)
         emptyStateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
         emptyStateLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: 0).isActive = true

@@ -96,7 +96,7 @@ extension PaymentHistoryViewController: UITableViewDelegate, UITableViewDataSour
         
         let footerLabel = UILabel()
         let footerText = "*Payment disbursed on September 15 to debit card ending in 4389"
-        footerLabel.setupLabel(text: footerText, txtColor: .black, font: .sofiaProRegular(ofSize: .createAspectRatio(value: 10)), txtAlignment: .left)
+        footerLabel.setupLabel(text: footerText, txtColor: .black, font: .poppinsRegular(ofSize: .createAspectRatio(value: 10)), txtAlignment: .left)
         footerView.addSubview(footerLabel)
         footerLabel.leadingAnchor.constraint(equalTo: footerView.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
         footerLabel.bottomAnchor.constraint(equalTo: footerDivider.topAnchor, constant: -.createAspectRatio(value: 27)).isActive = true

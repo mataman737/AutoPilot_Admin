@@ -74,7 +74,7 @@ extension ConnectBrokerViewController {
         skipLabel.text = "Cancel"
         skipLabel.textAlignment = .center
         skipLabel.textColor = varBlackColor.withAlphaComponent(0.65)
-        skipLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        skipLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
         skipLabel.numberOfLines = 0
         skipLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(skipLabel)
@@ -104,7 +104,7 @@ extension ConnectBrokerViewController {
         //
         
         navTitleLabel.text = "Connect a broker"
-        navTitleLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 18))
+        navTitleLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 18))
         navTitleLabel.textColor = varBlackColor
         navTitleLabel.textAlignment = .center
         navTitleLabel.numberOfLines = 0
@@ -115,7 +115,7 @@ extension ConnectBrokerViewController {
         
         let detailLabelZeroText = "Please enter an account name. This can be whatever you want!"
         detailLabelZero.setupLineHeight(myText: detailLabelZeroText, myLineSpacing: .createAspectRatio(value: 6))
-        detailLabelZero.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
+        detailLabelZero.font = .poppinsRegular(ofSize: .createAspectRatio(value: 14))
         detailLabelZero.textColor = varBlackColor.withAlphaComponent(0.5)
         detailLabelZero.textAlignment = .center
         detailLabelZero.numberOfLines = 0
@@ -134,7 +134,7 @@ extension ConnectBrokerViewController {
             detailLabelOneText = "Please enter your login & server credentials below to connect your broker to Smart Wealth."
         }
         detailLabelOne.setupLineHeight(myText: detailLabelOneText, myLineSpacing: .createAspectRatio(value: 6))
-        detailLabelOne.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
+        detailLabelOne.font = .poppinsRegular(ofSize: .createAspectRatio(value: 14))
         detailLabelOne.textColor = varBlackColor.withAlphaComponent(0.5)
         detailLabelOne.textAlignment = .center
         detailLabelOne.numberOfLines = 0
@@ -258,7 +258,7 @@ extension ConnectBrokerViewController {
         accountusernameEmailTextField.tag = 3
         
         accountNameCharacterCountLabel.text = "\(accountNameCharacterCount)/25"
-        accountNameCharacterCountLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        accountNameCharacterCountLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         accountNameCharacterCountLabel.textColor = varBlackColor
         accountNameCharacterCountLabel.textAlignment = .right
         accountNameCharacterCountLabel.numberOfLines = 0
@@ -270,7 +270,7 @@ extension ConnectBrokerViewController {
         noBrokerLabel.text = "Don't have a broker? Click here"//"I don't have a broker"
         noBrokerLabel.textAlignment = .center
         noBrokerLabel.textColor = isDarkMode.bool(forKey: "isDarkMode") ? .white.withAlphaComponent(0.5) : .black.withAlphaComponent(0.5)
-        noBrokerLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        noBrokerLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
         noBrokerLabel.numberOfLines = 0
         noBrokerLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(noBrokerLabel)
@@ -432,7 +432,7 @@ extension ConnectBrokerViewController {
         connectingLabel.alpha = 0
         connectingLabel.transform = CGAffineTransform(scaleX: 0.35, y: 0.35)
         connectingLabel.text = "Connecting to broker..."
-        connectingLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 20))
+        connectingLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 20))
         connectingLabel.textColor = varBlackColor
         connectingLabel.textAlignment = .center
         connectingLabel.numberOfLines = 0
@@ -463,7 +463,7 @@ extension ConnectBrokerViewController {
         orderPlaced.text = "Success!"
         orderPlaced.textColor = varBlackColor
         orderPlaced.textAlignment = .center
-        orderPlaced.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 25))
+        orderPlaced.font = .poppinsMedium(ofSize: .createAspectRatio(value: 25))
         orderPlaced.numberOfLines = 0
         orderPlaced.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(orderPlaced)
@@ -476,7 +476,7 @@ extension ConnectBrokerViewController {
         checkBackOfficeLabel.setupLineHeight(myText: checkBackOfficeLabelText, myLineSpacing: .createAspectRatio(value: 4))
         checkBackOfficeLabel.textColor = varBlackColor.withAlphaComponent(0.75)
         checkBackOfficeLabel.textAlignment = .center
-        checkBackOfficeLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        checkBackOfficeLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         checkBackOfficeLabel.numberOfLines = 0
         checkBackOfficeLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(checkBackOfficeLabel)
@@ -544,12 +544,12 @@ extension ConnectBrokerViewController {
         tfField.alpha = 1.0
         tfField.returnKeyType = .done
         tfField.textColor = varBlackColor
-        tfField.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 16))
+        tfField.font = .poppinsRegular(ofSize: .createAspectRatio(value: 16))
         tfField.autocorrectionType = .no
         tfField.tintColor = varBlackColor
         tfField.attributedPlaceholder = NSAttributedString(string: ph, attributes: [
             .foregroundColor: varBlackColor.withAlphaComponent(0.4),
-            .font: UIFont.sofiaProRegular(ofSize: .createAspectRatio(value: 16))
+            .font: UIFont.poppinsRegular(ofSize: .createAspectRatio(value: 16))
         ])
         tfField.delegate = self
         tfField.translatesAutoresizingMaskIntoConstraints = false

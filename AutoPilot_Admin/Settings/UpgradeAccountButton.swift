@@ -30,10 +30,10 @@ class UpgradeAccountButton: UIButton {
 extension UpgradeAccountButton {
     
     func setupViews() {
-        gradientBG.image = UIImage(named: "buttonGradientNVU")
+        gradientBG.image = UIImage(named: "")
+        gradientBG.backgroundColor = .black
         gradientBG.contentMode = .scaleAspectFill
         gradientBG.isUserInteractionEnabled = false
-        gradientBG.backgroundColor = .clear
         gradientBG.layer.cornerRadius = .createAspectRatio(value: 56)/2
         gradientBG.layer.masksToBounds = true
         gradientBG.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +43,7 @@ extension UpgradeAccountButton {
         continueLabel.isUserInteractionEnabled = false
         continueLabel.textAlignment = .center
         continueLabel.textColor = .white
-        continueLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        continueLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         continueLabel.numberOfLines = 0
         continueLabel.translatesAutoresizingMaskIntoConstraints = false
         gradientBG.addSubview(continueLabel)

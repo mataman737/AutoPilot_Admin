@@ -14,7 +14,7 @@ extension PickTraderTypeViewController {
     func setupColors() {
         if isDarkMode.bool(forKey: "isDarkMode") {
             mainContainer.backgroundColor = .darkModeBackground
-            keyLine.backgroundColor = .darkModeBackground
+            //keyLine.backgroundColor = .darkModeBackground
             textColor = .white
             navTitleLabel.textColor = .white
             dateLabel.textColor = .white.withAlphaComponent(0.5)
@@ -27,7 +27,7 @@ extension PickTraderTypeViewController {
             
         } else {
             mainContainer.backgroundColor = .white
-            keyLine.backgroundColor = .white
+            //keyLine.backgroundColor = .white
             textColor = .black
             navTitleLabel.textColor = .black
             dateLabel.textColor = .black.withAlphaComponent(0.5)
@@ -79,31 +79,30 @@ extension PickTraderTypeViewController {
         mainContainer.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor).isActive = true
         mainContainer.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor).isActive = true
         mainContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
-        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 307)).isActive = true //376 //445
+        mainContainer.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 340)).isActive = true //376 //445
         mainContainer.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         
+        keyLine.backgroundColor = .black.withAlphaComponent(0.25)
         keyLine.layer.cornerRadius = .createAspectRatio(value: 4)/2
         keyLine.translatesAutoresizingMaskIntoConstraints = false
-        mainScrollView.addSubview(keyLine)
+        mainContainer.addSubview(keyLine)
         keyLine.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
-        keyLine.bottomAnchor.constraint(equalTo: mainContainer.topAnchor, constant: -.createAspectRatio(value: 6)).isActive = true
+        keyLine.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 10)).isActive = true
         keyLine.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 34)).isActive = true
         keyLine.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 4)).isActive = true
-        keyLine.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
-    
         
         navTitleLabel.text = "New Team Member"
         navTitleLabel.textAlignment = .center
-        navTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 19))
+        navTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 19))
         navTitleLabel.numberOfLines = 0
         navTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(navTitleLabel)
-        navTitleLabel.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: 18).isActive = true
+        navTitleLabel.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 32)).isActive = true
         navTitleLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
                 
         dateLabel.text = "Choose an option below"
         dateLabel.textAlignment = .center
-        dateLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 13))
+        dateLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 13))
         dateLabel.numberOfLines = 0
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(dateLabel)
@@ -111,13 +110,14 @@ extension PickTraderTypeViewController {
         dateLabel.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor).isActive = true
         
         recentSignalsOption.iconImageView.image = UIImage(named: "traderGrad")
+        recentSignalsOption.iconImageView.setImageColor(color: .black)
         recentSignalsOption.optionTitleLabel.text = "New Trader"
         recentSignalsOption.optionButton.addTarget(self, action: #selector(newFollowupReminderTapped), for: .touchUpInside)
         recentSignalsOption.optionDetailLabel.text = "Add a trader to the team"
         recentSignalsOption.translatesAutoresizingMaskIntoConstraints = false
         mainContainer.addSubview(recentSignalsOption)
         recentSignalsOption.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor).isActive = true
-        recentSignalsOption.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 70)).isActive = true
+        recentSignalsOption.topAnchor.constraint(equalTo: mainContainer.topAnchor, constant: .createAspectRatio(value: 90)).isActive = true
         recentSignalsOption.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor).isActive = true
         recentSignalsOption.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 74)).isActive = true
         
@@ -134,6 +134,7 @@ extension PickTraderTypeViewController {
         
         longTermSignalsOption.optionButton.addTarget(self, action: #selector(didTapMarketingCenter), for: .touchUpInside)
         longTermSignalsOption.iconImageView.image = UIImage(named: "adminCoffeeGrad")
+        longTermSignalsOption.iconImageView.setImageColor(color: .black)
         longTermSignalsOption.optionTitleLabel.text = "New Admin"
         longTermSignalsOption.optionDetailLabel.text = "Add a admin to the team"
         longTermSignalsOption.translatesAutoresizingMaskIntoConstraints = false

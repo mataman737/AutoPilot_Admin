@@ -44,23 +44,24 @@ extension OptionsView {
         iconImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
         
         optionTitleLabel.textColor = .newBlack
-        optionTitleLabel.font = .sofiaProSemiBold(ofSize: 18)
+        optionTitleLabel.font = .poppinsSemiBold(ofSize: 18)
         optionTitleLabel.textAlignment = .left
         optionTitleLabel.numberOfLines = 1
         optionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(optionTitleLabel)
         optionTitleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: .createAspectRatio(value: 21)).isActive = true
-        optionTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: .createAspectRatio(value: 21)).isActive = true
+        optionTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
         
         optionDetailLabel.textColor = UIColor.newBlack.withAlphaComponent(0.5)
-        optionDetailLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
+        optionDetailLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 14))
         optionDetailLabel.textAlignment = .left
         optionDetailLabel.numberOfLines = 0
         optionDetailLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(optionDetailLabel)
         optionDetailLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: .createAspectRatio(value: 21)).isActive = true
         optionDetailLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -.createAspectRatio(value: 16)).isActive = true
-        optionDetailLabel.topAnchor.constraint(equalTo: optionTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 5)).isActive = true
+        optionDetailLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: .createAspectRatio(value: 10)).isActive = true
+        //optionDetailLabel.topAnchor.constraint(equalTo: optionTitleLabel.bottomAnchor, constant: .createAspectRatio(value: 5)).isActive = true
         
         optionButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(optionButton)
@@ -71,7 +72,7 @@ extension OptionsView {
         deactiveLabel.layer.zPosition = 2
         deactiveLabel.text = "Deactivated"
         deactiveLabel.textAlignment = .left
-        deactiveLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
+        deactiveLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 14))
         deactiveLabel.numberOfLines = 0
         deactiveLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(deactiveLabel)

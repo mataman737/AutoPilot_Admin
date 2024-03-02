@@ -30,7 +30,7 @@ class NoSignalsTableViewCell: UITableViewCell {
 extension NoSignalsTableViewCell {
     func setupViews() {
         noSignalsLabel.text = "No Signals"
-        noSignalsLabel.font = .sofiaProMedium(ofSize: 18)
+        noSignalsLabel.font = .poppinsMedium(ofSize: 18)
         noSignalsLabel.textAlignment = .left
         noSignalsLabel.textColor = .red
         noSignalsLabel.numberOfLines = 0

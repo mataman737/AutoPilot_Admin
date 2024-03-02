@@ -86,7 +86,7 @@ extension MyTradersViewController: PickTraderTypeViewControllerDelegate {
     func didTapTrader(type: String) {
         let updateAccessCodeVC = AddTraderViewController()
         updateAccessCodeVC.traderType = type
-        updateAccessCodeVC.titleLabel.text = type == "admin" ? "Add New Admin" : "Add New Trader"
+        updateAccessCodeVC.navTitleLabel.text = type == "admin" ? "Add New Admin" : "Add New Trader"
         updateAccessCodeVC.modalPresentationStyle = .overFullScreen
         self.present(updateAccessCodeVC, animated: false)
     }

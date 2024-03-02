@@ -40,7 +40,7 @@ extension EmptyStateView {
         lockLabel.text = "👋"
         lockLabel.textAlignment = .center
         lockLabel.textColor = .newBlack
-        lockLabel.font = .sofiaProSemiBold(ofSize: 40)
+        lockLabel.font = .poppinsSemiBold(ofSize: 40)
         lockLabel.numberOfLines = 0
         lockLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(lockLabel)
@@ -51,7 +51,7 @@ extension EmptyStateView {
         lockTitleLabel.text = "Say Hello!"
         lockTitleLabel.textAlignment = .center
         lockTitleLabel.textColor = .newBlack
-        lockTitleLabel.font = .sofiaProSemiBold(ofSize: 18)
+        lockTitleLabel.font = .poppinsSemiBold(ofSize: 18)
         lockTitleLabel.numberOfLines = 0
         lockTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(lockTitleLabel)
@@ -62,7 +62,7 @@ extension EmptyStateView {
         lockDetailLabel.text = "You can send Darrell a message\nafter you buy his package."
         lockDetailLabel.textAlignment = .center
         lockDetailLabel.textColor = UIColor.newBlack.withAlphaComponent(0.5)
-        lockDetailLabel.font = .sofiaProRegular(ofSize: 14)
+        lockDetailLabel.font = .poppinsRegular(ofSize: 14)
         lockDetailLabel.numberOfLines = 0
         lockDetailLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(lockDetailLabel)
@@ -74,7 +74,7 @@ extension EmptyStateView {
         squadUpButton.backgroundColor = UIColor(red: 144/255, green: 97/255, blue: 169/255, alpha: 1.0)
         squadUpButton.setTitle("Browse Darrell's Programs", for: .normal)
         squadUpButton.setTitleColor(.newBlack, for: .normal)
-        squadUpButton.titleLabel?.font = .sofiaProRegular(ofSize: 14)
+        squadUpButton.titleLabel?.font = .poppinsRegular(ofSize: 14)
         squadUpButton.layer.cornerRadius = 11
         squadUpButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(squadUpButton)

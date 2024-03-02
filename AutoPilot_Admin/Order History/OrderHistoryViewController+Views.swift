@@ -43,7 +43,7 @@ extension OrderHistoryViewController {
         titleLabel.text = "Trade History"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .newBlack
-        titleLabel.font = .sofiaProMedium(ofSize: 16)
+        titleLabel.font = .poppinsMedium(ofSize: 16)
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         navView.addSubview(titleLabel)

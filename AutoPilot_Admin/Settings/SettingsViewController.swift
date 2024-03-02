@@ -568,7 +568,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     @objc func didTapMyTeamAppLink() {
         lightImpactGenerator()
         let profileLinkVC = MyProfileLinkViewController()
-        profileLinkVC.titleLabel.text = "My Team App Link"
+        profileLinkVC.navTitleLabel.text = "My Team App Link"
         profileLinkVC.webAlias = "App_Link"
         profileLinkVC.modalPresentationStyle = .overFullScreen
         self.present(profileLinkVC, animated: false, completion: nil)
@@ -577,7 +577,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     @objc func didTapMyTeamWebLink() {
         lightImpactGenerator()
         let profileLinkVC = MyProfileLinkViewController()
-        profileLinkVC.titleLabel.text = "My Team Web Link"
+        profileLinkVC.navTitleLabel.text = "My Team Web Link"
         profileLinkVC.webAlias = "Web_Link"
         profileLinkVC.modalPresentationStyle = .overFullScreen
         self.present(profileLinkVC, animated: false, completion: nil)
@@ -854,7 +854,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         let sectionTitleLabel = UILabel()
-        sectionTitleLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 18))
+        sectionTitleLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 18))
         sectionTitleLabel.textColor = .newBlack
         sectionTitleLabel.textAlignment = .left
         sectionTitleLabel.numberOfLines = 0

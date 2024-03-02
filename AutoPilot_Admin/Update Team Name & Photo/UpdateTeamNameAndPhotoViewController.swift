@@ -16,6 +16,12 @@ protocol UpdateTeamNameAndPhotoViewControllerDelegate: AnyObject {
 
 class UpdateTeamNameAndPhotoViewController: UIViewController {
     
+    var mainScrollView = UIScrollView()
+    var wrapper = UIView()
+    var mainContainer = UIView()
+    var navTitleLabel = UILabel()
+    var keyLine = UIView()
+    var isDismissing = false
     weak var delegate: UpdateTeamNameAndPhotoViewControllerDelegate?
     var isDarkMode = UserDefaults()
     var opacityLayer = UIView()
@@ -54,18 +60,18 @@ class UpdateTeamNameAndPhotoViewController: UIViewController {
 
 extension UpdateTeamNameAndPhotoViewController {
     @objc func prsentViews() {
-        UIView.animate(withDuration: 0.25) {
+        self.mainContainer.presentAndBounce()
+        UIView.animate(withDuration: 0.2) {
             self.opacityLayer.alpha = 0.75
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: 0)
         }
     }
     
     @objc func dismissViews() {
         lightImpactGenerator()
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.2) {
             self.view.endEditing(true)
             self.opacityLayer.alpha = 0
-            self.cardContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
+            self.mainContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
         } completion: { success in
             self.dismiss(animated: false)
         }
@@ -211,5 +217,26 @@ extension UpdateTeamNameAndPhotoViewController: CircleCropViewControllerDelegate
     
     func circleCropDidCancel() {
         print("User canceled the crop flow")
+    }
+}
+
+//MARK: SCROLLVIEW DELEGATE
+
+extension UpdateTeamNameAndPhotoViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.tag == 1 {
+            let yOffset = scrollView.contentOffset.y// + 44
+            if yOffset > 0 {
+                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            }
+            
+            if yOffset < -45 {
+                if !isDismissing {
+                    dismissViews()
+                    isDismissing = true
+                }
+            }
+        }
+                
     }
 }

@@ -49,12 +49,12 @@ extension OnboardingView {
         animationView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 175)).isActive = true
         animationView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 175)).isActive = true
         
-        welcomeLabel.setupLabel(text: "Welcome to Omni!", txtColor: .black.withAlphaComponent(0.5), font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 15)), txtAlignment: .center)
+        welcomeLabel.setupLabel(text: "Welcome to Omni!", txtColor: .black.withAlphaComponent(0.5), font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 15)), txtAlignment: .center)
         self.addSubview(welcomeLabel)
         welcomeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         welcomeLabel.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: .createAspectRatio(value: 34)).isActive = true
         
-        setupAccLabel.setupLabel(text: "Setup your account", txtColor: .black, font: .sofiaProMedium(ofSize: .createAspectRatio(value: 26)), txtAlignment: .center)
+        setupAccLabel.setupLabel(text: "Setup your account", txtColor: .black, font: .poppinsMedium(ofSize: .createAspectRatio(value: 26)), txtAlignment: .center)
         self.addSubview(setupAccLabel)
         setupAccLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         setupAccLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: .createAspectRatio(value: 8)).isActive = true
@@ -95,7 +95,7 @@ extension OnboardingView {
         
         let containerLabel = UILabel()
         containerLabel.isUserInteractionEnabled = false
-        containerLabel.setupLabel(text: containerString, txtColor: .black, font: .sofiaProMedium(ofSize: .createAspectRatio(value: 16)), txtAlignment: .left)
+        containerLabel.setupLabel(text: containerString, txtColor: .black, font: .poppinsMedium(ofSize: .createAspectRatio(value: 16)), txtAlignment: .left)
         container.addSubview(containerLabel)
         containerLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: .createAspectRatio(value: 65)).isActive = true
         containerLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true

@@ -162,7 +162,7 @@ extension DashboardMainHeaderView {
         investingLabel.text = "INVESTING"//.localiz()
         investingLabel.textColor = UIColor.white.withAlphaComponent(0.5)
         investingLabel.textAlignment = .left
-        investingLabel.font = .sofiaProMedium(ofSize: 13)//.sofiaProMedium(ofSize: 11)
+        investingLabel.font = .poppinsMedium(ofSize: 13)//.sofiaProMedium(ofSize: 11)
         investingLabel.numberOfLines = 0
         investingLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(investingLabel)
@@ -172,7 +172,7 @@ extension DashboardMainHeaderView {
         investmentAmountLabel.text = "$0"
         investmentAmountLabel.textColor = UIColor.white.withAlphaComponent(1.0)
         investmentAmountLabel.textAlignment = .left
-        investmentAmountLabel.font = .sofiaProBold(ofSize: 32)
+        investmentAmountLabel.font = .poppinsBold(ofSize: 32)
         investmentAmountLabel.numberOfLines = 0
         investmentAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(investmentAmountLabel)
@@ -194,7 +194,7 @@ extension DashboardMainHeaderView {
         investmentAmountPercentChangeLabel.text = "$0 (0%)" //"+ $0 (0%)"
         investmentAmountPercentChangeLabel.textColor = UIColor(red: 18/255, green: 183/255, blue: 106/255, alpha: 1.0)
         investmentAmountPercentChangeLabel.textAlignment = .left
-        investmentAmountPercentChangeLabel.font = .sofiaProRegular(ofSize: 14)
+        investmentAmountPercentChangeLabel.font = .poppinsRegular(ofSize: 14)
         investmentAmountPercentChangeLabel.numberOfLines = 0
         investmentAmountPercentChangeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(investmentAmountPercentChangeLabel)
@@ -248,7 +248,7 @@ extension DashboardMainHeaderView {
     func createMainLabel(label: UILabel) {
         label.textColor = UIColor.white.withAlphaComponent(1.0)
         label.textAlignment = .left
-        label.font = .sofiaProSemiBold(ofSize: 26)
+        label.font = .poppinsSemiBold(ofSize: 26)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)
@@ -258,7 +258,7 @@ extension DashboardMainHeaderView {
     func createDetailLabel(label: UILabel) {
         label.textColor = UIColor.white.withAlphaComponent(0.5)
         label.textAlignment = .left
-        label.font = .sofiaProMedium(ofSize: 11)
+        label.font = .poppinsMedium(ofSize: 11)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)

@@ -73,7 +73,7 @@ extension MyBrokerOptionsTableViewCell {
         
         containerLabel.textAlignment = .left
         containerLabel.textColor = UIColor(red: 17/255, green: 18/255, blue: 19/255, alpha: 1.0)
-        containerLabel.font = .sofiaProMedium(ofSize: 16)
+        containerLabel.font = .poppinsMedium(ofSize: 16)
         containerLabel.numberOfLines = 0
         containerLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(containerLabel)
@@ -82,7 +82,7 @@ extension MyBrokerOptionsTableViewCell {
         
         serverLabel.textAlignment = .left
         serverLabel.textColor = UIColor(red: 17/255, green: 18/255, blue: 19/255, alpha: 1.0)
-        serverLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
+        serverLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 14))
         serverLabel.numberOfLines = 0
         serverLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(serverLabel)
@@ -111,7 +111,7 @@ extension MyBrokerOptionsTableViewCell {
         deleteLabel.text = "Delete"
         deleteLabel.textAlignment = .left
         deleteLabel.textColor = UIColor.newRed
-        deleteLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 12))
+        deleteLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 12))
         deleteLabel.numberOfLines = 0
         deleteLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(deleteLabel)

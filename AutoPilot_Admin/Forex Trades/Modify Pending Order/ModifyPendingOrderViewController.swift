@@ -155,7 +155,7 @@ extension ModifyPendingOrderViewController {
         self.view.endEditing(true)
         let pickOptionsVC = PickOptionViewController()
         pickOptionsVC.delegate = self
-        pickOptionsVC.titleLabel.text = "Take Profit Options"
+        pickOptionsVC.navTitleLabel.text = "Take Profit Options"
         pickOptionsVC.options = takeProfitOptions
         pickOptionsVC.shareURLButton.continueLabel.text = "Confirm"
         pickOptionsVC.modalPresentationStyle = .overFullScreen

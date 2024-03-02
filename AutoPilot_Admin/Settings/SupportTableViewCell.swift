@@ -34,7 +34,7 @@ extension SupportTableViewCell {
         titleLabel.text = "More Options"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white//.white
-        titleLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 16))
+        titleLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 16))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)

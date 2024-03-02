@@ -100,7 +100,7 @@ extension ModifyOpenOrderViewController {
         
         orderTypeLabel.textColor = .black
         orderTypeLabel.textAlignment = .right
-        orderTypeLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 12))
+        orderTypeLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 12))
         orderTypeLabel.numberOfLines = 0
         orderTypeLabel.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(orderTypeLabel)
@@ -110,7 +110,7 @@ extension ModifyOpenOrderViewController {
         //assetTitleLabel.text = forexSignal.positionStatus?.symbol
         assetTitleLabel.textColor = .black
         assetTitleLabel.textAlignment = .left
-        assetTitleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 20))
+        assetTitleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 20))
         assetTitleLabel.numberOfLines = 0
         assetTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(assetTitleLabel)
@@ -217,7 +217,7 @@ extension ModifyOpenOrderViewController {
         legalLabelZero.setupLineHeight(myText: legalLabelZeroText, myLineSpacing: .createAspectRatio(value: 6))
         legalLabelZero.textColor = .black.withAlphaComponent(0.75)
         legalLabelZero.numberOfLines = 0
-        legalLabelZero.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        legalLabelZero.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         legalLabelZero.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(legalLabelZero)
         legalLabelZero.leadingAnchor.constraint(equalTo: bulletZero.trailingAnchor, constant: .createAspectRatio(value: 8)).isActive = true
@@ -237,7 +237,7 @@ extension ModifyOpenOrderViewController {
         legalLabelOne.setupLineHeight(myText: legalLabelOneText, myLineSpacing: .createAspectRatio(value: 6))
         legalLabelOne.textColor = .black.withAlphaComponent(0.75)
         legalLabelOne.numberOfLines = 0
-        legalLabelOne.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        legalLabelOne.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         legalLabelOne.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(legalLabelOne)
         legalLabelOne.leadingAnchor.constraint(equalTo: bulletOne.trailingAnchor, constant: .createAspectRatio(value: 8)).isActive = true
@@ -289,7 +289,7 @@ extension ModifyOpenOrderViewController {
         orderPlaced.text = "Order Modified!"
         orderPlaced.textColor = .black
         orderPlaced.textAlignment = .center
-        orderPlaced.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 25))
+        orderPlaced.font = .poppinsMedium(ofSize: .createAspectRatio(value: 25))
         orderPlaced.numberOfLines = 0
         orderPlaced.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(orderPlaced)
@@ -301,7 +301,7 @@ extension ModifyOpenOrderViewController {
         checkBackOfficeLabel.setupLineHeight(myText: checkBackOfficeLabelText, myLineSpacing: 4)
         checkBackOfficeLabel.textColor = .black.withAlphaComponent(0.75)
         checkBackOfficeLabel.textAlignment = .center
-        checkBackOfficeLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        checkBackOfficeLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         checkBackOfficeLabel.numberOfLines = 0
         checkBackOfficeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(checkBackOfficeLabel)
@@ -328,7 +328,7 @@ extension ModifyOpenOrderViewController {
                 
         sectionTitleLabel.textColor = .black.withAlphaComponent(0.5)
         sectionTitleLabel.textAlignment = .left
-        sectionTitleLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 16))
+        sectionTitleLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 16))
         sectionTitleLabel.numberOfLines = 0
         sectionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(sectionTitleLabel)
@@ -343,7 +343,7 @@ extension ModifyOpenOrderViewController {
     func setupDetailLabel(detailLabel: UILabel, viewToPin: UIView, usdLabel: UILabel) {
         detailLabel.textColor = .black
         detailLabel.textAlignment = .right
-        detailLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        detailLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
         detailLabel.numberOfLines = 0
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
         viewToPin.addSubview(detailLabel)
@@ -353,7 +353,7 @@ extension ModifyOpenOrderViewController {
         
         usdLabel.textColor = .black.withAlphaComponent(0.3)
         usdLabel.textAlignment = .right
-        usdLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 13))
+        usdLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 13))
         usdLabel.numberOfLines = 0
         usdLabel.translatesAutoresizingMaskIntoConstraints = false
         viewToPin.addSubview(usdLabel)
@@ -364,7 +364,7 @@ extension ModifyOpenOrderViewController {
     func setupDetailLabelZero(detailLabel: UILabel, viewToPin: UIView, usdLabel: UILabel) {
         detailLabel.textColor = .black
         detailLabel.textAlignment = .right
-        detailLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        detailLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
         detailLabel.numberOfLines = 0
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
         viewToPin.addSubview(detailLabel)
@@ -373,7 +373,7 @@ extension ModifyOpenOrderViewController {
         
         usdLabel.textColor = .black.withAlphaComponent(0.3)
         usdLabel.textAlignment = .right
-        usdLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 13))
+        usdLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 13))
         usdLabel.numberOfLines = 0
         usdLabel.translatesAutoresizingMaskIntoConstraints = false
         viewToPin.addSubview(usdLabel)
@@ -388,7 +388,7 @@ extension ModifyOpenOrderViewController {
         txtField.tintColor = UIColor(red: 225/255, green: 67/255, blue: 206/255, alpha: 1.0)
         txtField.textAlignment = .right
         txtField.textColor = .black
-        txtField.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 16))
+        txtField.font = .poppinsMedium(ofSize: .createAspectRatio(value: 16))
         txtField.translatesAutoresizingMaskIntoConstraints = false
         pinView.addSubview(txtField)
         txtField.trailingAnchor.constraint(equalTo: pinView.trailingAnchor, constant: 0).isActive = true
@@ -415,7 +415,7 @@ extension ModifyOpenOrderViewController {
         
         let loadingLabel = UILabel()
         loadingLabel.text = "Placing order..."
-        loadingLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
+        loadingLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 14))
         loadingLabel.textColor = .white
         loadingLabel.numberOfLines = 0
         loadingLabel.translatesAutoresizingMaskIntoConstraints = false

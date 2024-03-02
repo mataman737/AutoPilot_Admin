@@ -59,9 +59,9 @@ extension SwipeConfirmView {
         self.addSubview(swipeContainer)
         swipeContainer.fillSuperview()
                 
-        swipeBG.image = UIImage(named: "buttonGradientNVU")
+        swipeBG.image = UIImage(named: "")
         swipeBG.contentMode = .scaleAspectFill
-        swipeBG.backgroundColor = .clear
+        swipeBG.backgroundColor = .darkModeBackground
         swipeBG.translatesAutoresizingMaskIntoConstraints = false
         swipeContainer.addSubview(swipeBG)
         swipeBG.fillSuperview()
@@ -72,7 +72,7 @@ extension SwipeConfirmView {
         swipeLabel.text = "BTC Payment"
         swipeLabel.textAlignment = .right
         swipeLabel.textColor = .white
-        swipeLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 17))
+        swipeLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 17))
         swipeLabel.numberOfLines = 0
         swipeLabel.translatesAutoresizingMaskIntoConstraints = false
         swipeBG.addSubview(swipeLabel)
@@ -148,13 +148,13 @@ extension SwipeConfirmView {
         for layer in 1...loadingLayers.count {
             let keyPath = AnimationKeypath(keypath: "\(loadingLayers[layer - 1])")
             if i == 0 {
-                let colorProvider = ColorValueProvider(UIColor(red: 42/255, green: 47/255, blue: 97/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.darkModeBackground.lottieColorValue)
                 arrowsAnimation.setValueProvider(colorProvider, keypath: keyPath)
             } else if i == 1 {
-                let colorProvider = ColorValueProvider(UIColor(red: 77/255, green: 110/255, blue: 142/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.darkModeBackground.withAlphaComponent(0.66).lottieColorValue)
                 arrowsAnimation.setValueProvider(colorProvider, keypath: keyPath)
             } else {
-                let colorProvider = ColorValueProvider(UIColor(red: 118/255, green: 181/255, blue: 193/255, alpha: 1.0).withAlphaComponent(1.0).lottieColorValue)
+                let colorProvider = ColorValueProvider(UIColor.darkModeBackground.withAlphaComponent(0.33).lottieColorValue)
                 arrowsAnimation.setValueProvider(colorProvider, keypath: keyPath)
             }
             i += 1

@@ -73,12 +73,15 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Sofia Pro Bold Az.otf</string>
-		<string>Sofia Pro Regular Az.otf</string>
-		<string>Sofia Pro Medium Az.otf</string>
-		<string>Sofia Pro Semi Bold Az.otf</string>
-		<string>sofiapro-light.otf</string>
-		<string>Nexa Bold.otf</string>
+		<string>Poppins-Black.otf</string>
+		<string>Poppins-Bold.otf</string>
+		<string>Poppins-ExtraBold.otf</string>
+		<string>Poppins-ExtraLight.otf</string>
+		<string>Poppins-Light.otf</string>
+		<string>Poppins-Medium.otf</string>
+		<string>Poppins-Regular.otf</string>
+		<string>Poppins-SemiBold.otf</string>
+		<string>Poppins-Thin.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

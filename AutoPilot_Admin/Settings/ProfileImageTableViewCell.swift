@@ -49,7 +49,7 @@ extension ProfileImageTableViewCell {
         
         nameLabel.textAlignment = .left
         nameLabel.textColor = .newBlack
-        nameLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 32))
+        nameLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 32))
         nameLabel.numberOfLines = 1
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(nameLabel)
@@ -95,7 +95,7 @@ extension ProfileImageTableViewCell {
         
         dateJoinedLabel.textAlignment = .left
         dateJoinedLabel.textColor = UIColor.newBlack.withAlphaComponent(0.5)
-        dateJoinedLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 16))
+        dateJoinedLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 16))
         dateJoinedLabel.numberOfLines = 1
         dateJoinedLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(dateJoinedLabel)

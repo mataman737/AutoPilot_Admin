@@ -97,7 +97,7 @@ extension SignalsTableViewCell {
                 
         currencyPairLabel.textColor = .newBlack
         currencyPairLabel.textAlignment = .left
-        currencyPairLabel.font = .sofiaProSemiBold(ofSize: 16)
+        currencyPairLabel.font = .poppinsSemiBold(ofSize: 16)
         currencyPairLabel.numberOfLines = 0
         currencyPairLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(currencyPairLabel)
@@ -107,7 +107,7 @@ extension SignalsTableViewCell {
         dividerLabel.text = "|"
         dividerLabel.textColor = .newBlack.withAlphaComponent(0.5)
         dividerLabel.textAlignment = .left
-        dividerLabel.font = .sofiaProRegular(ofSize: 14)
+        dividerLabel.font = .poppinsRegular(ofSize: 14)
         dividerLabel.numberOfLines = 0
         dividerLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(dividerLabel)
@@ -116,7 +116,7 @@ extension SignalsTableViewCell {
                 
         tickerLabel.textColor = .newBlack
         tickerLabel.textAlignment = .left
-        tickerLabel.font = .sofiaProSemiBold(ofSize: 16)
+        tickerLabel.font = .poppinsSemiBold(ofSize: 16)
         tickerLabel.numberOfLines = 0
         tickerLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tickerLabel)
@@ -125,7 +125,7 @@ extension SignalsTableViewCell {
         
         signalTimeLabel.textColor = .newBlack.withAlphaComponent(0.5)
         signalTimeLabel.textAlignment = .left
-        signalTimeLabel.font = .sofiaProRegular(ofSize: 14)
+        signalTimeLabel.font = .poppinsRegular(ofSize: 14)
         signalTimeLabel.numberOfLines = 0
         signalTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(signalTimeLabel)
@@ -134,7 +134,7 @@ extension SignalsTableViewCell {
                 
         orderTypeLabel.textColor = .newBlack.withAlphaComponent(0.75)
         orderTypeLabel.textAlignment = .left
-        orderTypeLabel.font = .sofiaProMedium(ofSize: 14)
+        orderTypeLabel.font = .poppinsMedium(ofSize: 14)
         orderTypeLabel.numberOfLines = 0
         orderTypeLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(orderTypeLabel)
@@ -146,7 +146,7 @@ extension SignalsTableViewCell {
         entryLabel.text = "Entry Price"
         entryLabel.textColor = .newBlack.withAlphaComponent(0.5)
         entryLabel.textAlignment = .left
-        entryLabel.font = .sofiaProMedium(ofSize: 16)
+        entryLabel.font = .poppinsMedium(ofSize: 16)
         entryLabel.numberOfLines = 0
         entryLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(entryLabel)
@@ -157,7 +157,7 @@ extension SignalsTableViewCell {
                 
         entryPriceLabel.textColor = UIColor(red: 106/255, green: 191/255, blue: 150/255, alpha: 1.0)
         entryPriceLabel.textAlignment = .right
-        entryPriceLabel.font = .sofiaProBold(ofSize: 16)
+        entryPriceLabel.font = .poppinsBold(ofSize: 16)
         entryPriceLabel.numberOfLines = 0
         entryPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(entryPriceLabel)
@@ -167,7 +167,7 @@ extension SignalsTableViewCell {
         tpOneLabel.text = "Take Profit 1"
         tpOneLabel.textColor = .newBlack.withAlphaComponent(0.5)
         tpOneLabel.textAlignment = .right
-        tpOneLabel.font = .sofiaProMedium(ofSize: 16)
+        tpOneLabel.font = .poppinsMedium(ofSize: 16)
         tpOneLabel.numberOfLines = 0
         tpOneLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tpOneLabel)
@@ -178,7 +178,7 @@ extension SignalsTableViewCell {
                         
         tpOnePriceLabel.textColor = UIColor(red: 106/255, green: 191/255, blue: 150/255, alpha: 1.0)
         tpOnePriceLabel.textAlignment = .right
-        tpOnePriceLabel.font = .sofiaProBold(ofSize: 16)
+        tpOnePriceLabel.font = .poppinsBold(ofSize: 16)
         tpOnePriceLabel.numberOfLines = 0
         tpOnePriceLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tpOnePriceLabel)
@@ -188,7 +188,7 @@ extension SignalsTableViewCell {
         tpTwoLabel.text = "Take Profit 2"
         tpTwoLabel.textColor = .newBlack.withAlphaComponent(0.5)
         tpTwoLabel.textAlignment = .right
-        tpTwoLabel.font = .sofiaProMedium(ofSize: 16)
+        tpTwoLabel.font = .poppinsMedium(ofSize: 16)
         tpTwoLabel.numberOfLines = 0
         tpTwoLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tpTwoLabel)
@@ -198,7 +198,7 @@ extension SignalsTableViewCell {
                         
         tpTwoPriceLabel.textColor = UIColor(red: 106/255, green: 191/255, blue: 150/255, alpha: 1.0)
         tpTwoPriceLabel.textAlignment = .right
-        tpTwoPriceLabel.font = .sofiaProBold(ofSize: 16)
+        tpTwoPriceLabel.font = .poppinsBold(ofSize: 16)
         tpTwoPriceLabel.numberOfLines = 0
         tpTwoPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tpTwoPriceLabel)
@@ -208,7 +208,7 @@ extension SignalsTableViewCell {
         tpThreeLabel.text = "Take Profit 3"
         tpThreeLabel.textColor = .newBlack.withAlphaComponent(0.5)
         tpThreeLabel.textAlignment = .right
-        tpThreeLabel.font = .sofiaProMedium(ofSize: 16)
+        tpThreeLabel.font = .poppinsMedium(ofSize: 16)
         tpThreeLabel.numberOfLines = 0
         tpThreeLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tpThreeLabel)
@@ -218,7 +218,7 @@ extension SignalsTableViewCell {
                         
         tpThreePriceLabel.textColor = UIColor(red: 106/255, green: 191/255, blue: 150/255, alpha: 1.0)
         tpThreePriceLabel.textAlignment = .right
-        tpThreePriceLabel.font = .sofiaProBold(ofSize: 16)
+        tpThreePriceLabel.font = .poppinsBold(ofSize: 16)
         tpThreePriceLabel.numberOfLines = 0
         tpThreePriceLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tpThreePriceLabel)
@@ -230,7 +230,7 @@ extension SignalsTableViewCell {
         stopLabel.text = "Stop Loss"
         stopLabel.textColor = .newBlack.withAlphaComponent(0.5)
         stopLabel.textAlignment = .left
-        stopLabel.font = .sofiaProMedium(ofSize: 16)
+        stopLabel.font = .poppinsMedium(ofSize: 16)
         stopLabel.numberOfLines = 0
         stopLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(stopLabel)
@@ -240,7 +240,7 @@ extension SignalsTableViewCell {
                         
         stopPriceLabel.textColor = UIColor(red: 191/255, green: 106/255, blue: 106/255, alpha: 1.0)
         stopPriceLabel.textAlignment = .left
-        stopPriceLabel.font = .sofiaProBold(ofSize: 16)
+        stopPriceLabel.font = .poppinsBold(ofSize: 16)
         stopPriceLabel.numberOfLines = 0
         stopPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(stopPriceLabel)
@@ -262,7 +262,7 @@ extension SignalsTableViewCell {
         noteLabel.isHidden = true
         noteLabel.textColor = .newBlack.withAlphaComponent(0.5)
         noteLabel.textAlignment = .left
-        noteLabel.font = .sofiaProRegular(ofSize: 13)
+        noteLabel.font = .poppinsRegular(ofSize: 13)
         noteLabel.numberOfLines = 0
         noteLabel.text = " "
         noteLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -341,7 +341,7 @@ extension SignalsTableViewCell {
         viewImageLabel.text = "View Thread"
         viewImageLabel.textAlignment = .left
         viewImageLabel.textColor = .white
-        viewImageLabel.font = .sofiaProMedium(ofSize: 15)
+        viewImageLabel.font = .poppinsMedium(ofSize: 15)
         viewImageLabel.numberOfLines = 0
         viewImageLabel.translatesAutoresizingMaskIntoConstraints = false
         viewImageButton.addSubview(viewImageLabel)
@@ -384,7 +384,7 @@ extension SignalsTableViewCell {
         unreadBubble.bottomAnchor.constraint(equalTo: viewImageButton.bottomAnchor, constant: 9).isActive = true
         
         unreadLabel.text = "3"
-        unreadLabel.font = .sofiaProSemiBold(ofSize: 18)
+        unreadLabel.font = .poppinsSemiBold(ofSize: 18)
         unreadLabel.textColor = .white
         unreadLabel.numberOfLines = 0
         unreadLabel.translatesAutoresizingMaskIntoConstraints = false

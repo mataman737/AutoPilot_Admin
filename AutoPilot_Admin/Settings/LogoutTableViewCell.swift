@@ -31,7 +31,7 @@ extension LogoutTableViewCell {
         titleLabel.text = "Log out"//.localiz()
         titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor(red: 244/255, green: 77/255, blue: 77/255, alpha: 1.0)
-        titleLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
+        titleLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 14))
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)

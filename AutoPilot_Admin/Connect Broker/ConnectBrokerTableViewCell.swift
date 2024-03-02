@@ -33,7 +33,7 @@ class ConnectBrokerTableViewCell: UITableViewCell {
 extension ConnectBrokerTableViewCell {
     func setupViews() {
         brokerLabel.text = "Prevail FX"
-        brokerLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 18))
+        brokerLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 18))
         brokerLabel.textAlignment = .left
         
         brokerLabel.textColor = .black.withAlphaComponent(1.0)

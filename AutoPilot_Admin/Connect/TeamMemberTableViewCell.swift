@@ -63,7 +63,7 @@ extension TeamMemberTableViewCell {
         arrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 12)).isActive = true
         
         chatNameLabel.text = "Community"
-        chatNameLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 21))
+        chatNameLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 21))
         chatNameLabel.textColor = .black
         chatNameLabel.numberOfLines = 1
         chatNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +73,7 @@ extension TeamMemberTableViewCell {
         chatNameLabel.centerYAnchor.constraint(equalTo: circleImageView.centerYAnchor, constant: -.createAspectRatio(value: 9)).isActive = true
         
         chatDescriptionLabel.text = "Lorem ipsum dolor sit amet"
-        chatDescriptionLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        chatDescriptionLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         chatDescriptionLabel.textColor = .black.withAlphaComponent(0.5)
         chatDescriptionLabel.numberOfLines = 0
         chatDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -83,7 +83,7 @@ extension TeamMemberTableViewCell {
         
         last30DayPercentChange.text = "0%"
         last30DayPercentChange.textAlignment = .right
-        last30DayPercentChange.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 16))
+        last30DayPercentChange.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 16))
         last30DayPercentChange.textColor = .liveDataGreen
         last30DayPercentChange.numberOfLines = 0
         last30DayPercentChange.translatesAutoresizingMaskIntoConstraints = false

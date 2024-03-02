@@ -111,12 +111,6 @@
 		DEC9A4E62A93EC65000DBE39 /* ForexSignalsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */; };
 		DEC9A4E82A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4E72A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift */; };
 		DEC9A4EA2A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4E92A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift */; };
-		DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4EE2A93ED96000DBE39 /* Nexa Bold.otf */; };
-		DEC9A4F52A93ED96000DBE39 /* Sofia Pro Light Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4EF2A93ED96000DBE39 /* Sofia Pro Light Az.otf */; };
-		DEC9A4F62A93ED96000DBE39 /* Sofia Pro Medium Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F02A93ED96000DBE39 /* Sofia Pro Medium Az.otf */; };
-		DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F12A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf */; };
-		DEC9A4F82A93ED96000DBE39 /* Sofia Pro Bold Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F22A93ED96000DBE39 /* Sofia Pro Bold Az.otf */; };
-		DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */; };
 		DEC9A4FB2A93F8A3000DBE39 /* SwipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */; };
 		DEC9A4FD2A93F948000DBE39 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */; };
 		DEC9C8BB2B2387FF00B14E83 /* eyeOnOff.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC9C8BA2B2387FF00B14E83 /* eyeOnOff.json */; };
@@ -134,6 +128,15 @@
 		DED14C392AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C382AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift */; };
 		DED14C3B2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C3A2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift */; };
 		DED14C3D2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED14C3C2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift */; };
+		DEEB718F2B8F91A3007E1DB5 /* Poppins-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB71862B8F919A007E1DB5 /* Poppins-ExtraLight.otf */; };
+		DEEB71902B8F91A3007E1DB5 /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB71872B8F919B007E1DB5 /* Poppins-SemiBold.otf */; };
+		DEEB71912B8F91A3007E1DB5 /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB71882B8F919C007E1DB5 /* Poppins-Medium.otf */; };
+		DEEB71922B8F91A3007E1DB5 /* Poppins-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB71892B8F919E007E1DB5 /* Poppins-ExtraBold.otf */; };
+		DEEB71932B8F91A3007E1DB5 /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB718A2B8F919F007E1DB5 /* Poppins-Regular.otf */; };
+		DEEB71942B8F91A3007E1DB5 /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB718B2B8F91A0007E1DB5 /* Poppins-Light.otf */; };
+		DEEB71952B8F91A3007E1DB5 /* Poppins-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB718C2B8F91A1007E1DB5 /* Poppins-Thin.otf */; };
+		DEEB71962B8F91A3007E1DB5 /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB718D2B8F91A2007E1DB5 /* Poppins-Bold.otf */; };
+		DEEB71972B8F91A3007E1DB5 /* Poppins-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEB718E2B8F91A3007E1DB5 /* Poppins-Black.otf */; };
 		DEF830A52AE5FFAA00268370 /* FPNCountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830732AE5FF9500268370 /* FPNCountryListViewController.swift */; };
 		DEF830A62AE5FFAA00268370 /* FPNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830742AE5FF9500268370 /* FPNTextField.swift */; };
 		DEF830A72AE5FFAA00268370 /* FPNCountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF830762AE5FF9500268370 /* FPNCountryRepository.swift */; };
@@ -288,12 +291,6 @@
 		DEC9A4E52A93EC65000DBE39 /* ForexSignalsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexSignalsHeaderView.swift; sourceTree = "<group>"; };
 		DEC9A4E72A93ECAC000DBE39 /* MT_NewForexSignalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MT_NewForexSignalViewController.swift; sourceTree = "<group>"; };
 		DEC9A4E92A93ECC7000DBE39 /* MT_NewForexSignalViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MT_NewForexSignalViewController+Views.swift"; sourceTree = "<group>"; };
-		DEC9A4EE2A93ED96000DBE39 /* Nexa Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold.otf"; sourceTree = "<group>"; };
-		DEC9A4EF2A93ED96000DBE39 /* Sofia Pro Light Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Light Az.otf"; sourceTree = "<group>"; };
-		DEC9A4F02A93ED96000DBE39 /* Sofia Pro Medium Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Medium Az.otf"; sourceTree = "<group>"; };
-		DEC9A4F12A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Semi Bold Az.otf"; sourceTree = "<group>"; };
-		DEC9A4F22A93ED96000DBE39 /* Sofia Pro Bold Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Bold Az.otf"; sourceTree = "<group>"; };
-		DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular Az.otf"; sourceTree = "<group>"; };
 		DEC9A4FA2A93F8A2000DBE39 /* SwipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeConfirmView.swift; sourceTree = "<group>"; };
 		DEC9A4FC2A93F948000DBE39 /* ToastNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationView.swift; sourceTree = "<group>"; };
 		DEC9C8BA2B2387FF00B14E83 /* eyeOnOff.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eyeOnOff.json; sourceTree = "<group>"; };
@@ -311,6 +308,15 @@
 		DED14C382AC0B57C00E3E88D /* ChartsLineMiniGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLineMiniGraphView.swift; sourceTree = "<group>"; };
 		DED14C3A2AC0B5A200E3E88D /* UpdatedMiniLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedMiniLineChart.swift; sourceTree = "<group>"; };
 		DED14C3C2AC0B8DB00E3E88D /* MonthLineGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthLineGraphTableViewCell.swift; sourceTree = "<group>"; };
+		DEEB71862B8F919A007E1DB5 /* Poppins-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.otf"; sourceTree = "<group>"; };
+		DEEB71872B8F919B007E1DB5 /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		DEEB71882B8F919C007E1DB5 /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
+		DEEB71892B8F919E007E1DB5 /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
+		DEEB718A2B8F919F007E1DB5 /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
+		DEEB718B2B8F91A0007E1DB5 /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
+		DEEB718C2B8F91A1007E1DB5 /* Poppins-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.otf"; sourceTree = "<group>"; };
+		DEEB718D2B8F91A2007E1DB5 /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
+		DEEB718E2B8F91A3007E1DB5 /* Poppins-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.otf"; sourceTree = "<group>"; };
 		DEF830732AE5FF9500268370 /* FPNCountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNCountryListViewController.swift; sourceTree = "<group>"; };
 		DEF830742AE5FF9500268370 /* FPNTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNTextField.swift; sourceTree = "<group>"; };
 		DEF830752AE5FF9500268370 /* FlagPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagPhoneNumber.h; sourceTree = "<group>"; };
@@ -782,12 +788,15 @@
 		DEC9A4EC2A93ED6F000DBE39 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				DEC9A4EE2A93ED96000DBE39 /* Nexa Bold.otf */,
-				DEC9A4F22A93ED96000DBE39 /* Sofia Pro Bold Az.otf */,
-				DEC9A4EF2A93ED96000DBE39 /* Sofia Pro Light Az.otf */,
-				DEC9A4F02A93ED96000DBE39 /* Sofia Pro Medium Az.otf */,
-				DEC9A4F32A93ED96000DBE39 /* Sofia Pro Regular Az.otf */,
-				DEC9A4F12A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf */,
+				DEEB718E2B8F91A3007E1DB5 /* Poppins-Black.otf */,
+				DEEB718D2B8F91A2007E1DB5 /* Poppins-Bold.otf */,
+				DEEB71892B8F919E007E1DB5 /* Poppins-ExtraBold.otf */,
+				DEEB71862B8F919A007E1DB5 /* Poppins-ExtraLight.otf */,
+				DEEB718B2B8F91A0007E1DB5 /* Poppins-Light.otf */,
+				DEEB71882B8F919C007E1DB5 /* Poppins-Medium.otf */,
+				DEEB718A2B8F919F007E1DB5 /* Poppins-Regular.otf */,
+				DEEB71872B8F919B007E1DB5 /* Poppins-SemiBold.otf */,
+				DEEB718C2B8F91A1007E1DB5 /* Poppins-Thin.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1008,6 +1017,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEEB71962B8F91A3007E1DB5 /* Poppins-Bold.otf in Resources */,
 				DEC9C8BB2B2387FF00B14E83 /* eyeOnOff.json in Resources */,
 				DE65093D2AF9E0E70089084C /* broadcastSent.json in Resources */,
 				FC6EF1012AAE3C77001075D9 /* GoogleService-Info.plist in Resources */,
@@ -1019,20 +1029,22 @@
 				DEF830B62AE5FFAA00268370 /* NBPhoneNumberMetadata.plist in Resources */,
 				DE4D57832AA6B818008E2B6B /* blueArrows.json in Resources */,
 				DEA21FF72AB3DB25007D1C3A /* radio.json in Resources */,
-				DEC9A4F42A93ED96000DBE39 /* Nexa Bold.otf in Resources */,
 				DE4D57812AA6B715008E2B6B /* gradientCheck.json in Resources */,
-				DEC9A4F52A93ED96000DBE39 /* Sofia Pro Light Az.otf in Resources */,
+				DEEB71912B8F91A3007E1DB5 /* Poppins-Medium.otf in Resources */,
 				DEF830AA2AE5FFAA00268370 /* FlagKit.xcassets in Resources */,
-				DEC9A4F82A93ED96000DBE39 /* Sofia Pro Bold Az.otf in Resources */,
+				DEEB71972B8F91A3007E1DB5 /* Poppins-Black.otf in Resources */,
 				DE6643A32AA56D2500DA27BE /* splash.mp4 in Resources */,
 				DEF830B12AE5FFAA00268370 /* GeneratePhoneNumberHeader.sh in Resources */,
-				DEC9A4F62A93ED96000DBE39 /* Sofia Pro Medium Az.otf in Resources */,
-				DEC9A4F72A93ED96000DBE39 /* Sofia Pro Semi Bold Az.otf in Resources */,
+				DEEB718F2B8F91A3007E1DB5 /* Poppins-ExtraLight.otf in Resources */,
+				DEEB71922B8F91A3007E1DB5 /* Poppins-ExtraBold.otf in Resources */,
+				DEEB71952B8F91A3007E1DB5 /* Poppins-Thin.otf in Resources */,
+				DEEB71932B8F91A3007E1DB5 /* Poppins-Regular.otf in Resources */,
 				DEB44E382AAE5F070006887A /* FlagKit.xcassets in Resources */,
-				DEC9A4F92A93ED96000DBE39 /* Sofia Pro Regular Az.otf in Resources */,
 				DEC9A4BF2A93DB3B000DBE39 /* Assets.xcassets in Resources */,
+				DEEB71942B8F91A3007E1DB5 /* Poppins-Light.otf in Resources */,
 				DEA21FF52AB3A529007D1C3A /* attempt_4.mp4 in Resources */,
 				DEC9A4BD2A93DB38000DBE39 /* Main.storyboard in Resources */,
+				DEEB71902B8F91A3007E1DB5 /* Poppins-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -95,7 +95,7 @@ extension ClosedOrderTableViewCell {
         assetImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 27)).isActive = true
         
         currencyPairLabel.textAlignment = .left
-        currencyPairLabel.font = .sofiaProSemiBold(ofSize: .createAspectRatio(value: 16))
+        currencyPairLabel.font = .poppinsSemiBold(ofSize: .createAspectRatio(value: 16))
         currencyPairLabel.numberOfLines = 0
         currencyPairLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(currencyPairLabel)
@@ -106,7 +106,7 @@ extension ClosedOrderTableViewCell {
         tickerLabel.text = "-"
         tickerLabel.alpha = 0.5
         tickerLabel.textAlignment = .left
-        tickerLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 12))
+        tickerLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 12))
         tickerLabel.numberOfLines = 0
         tickerLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tickerLabel)
@@ -117,7 +117,7 @@ extension ClosedOrderTableViewCell {
         tickerLabel.centerYAnchor.constraint(equalTo: assetImageView.centerYAnchor, constant: .createAspectRatio(value: 9)).isActive = true
         
         signalTimeLabel.textAlignment = .left
-        signalTimeLabel.font = .sofiaProRegular(ofSize: .createAspectRatio(value: 14))
+        signalTimeLabel.font = .poppinsRegular(ofSize: .createAspectRatio(value: 14))
         signalTimeLabel.numberOfLines = 0
         signalTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(signalTimeLabel)
@@ -125,7 +125,7 @@ extension ClosedOrderTableViewCell {
         signalTimeLabel.bottomAnchor.constraint(equalTo: assetImageView.bottomAnchor, constant: .createAspectRatio(value: 1)).isActive = true
         
         orderTypeLabel.textAlignment = .left
-        orderTypeLabel.font = .sofiaProMedium(ofSize: .createAspectRatio(value: 14))
+        orderTypeLabel.font = .poppinsMedium(ofSize: .createAspectRatio(value: 14))
         orderTypeLabel.numberOfLines = 0
         orderTypeLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(orderTypeLabel)
@@ -151,7 +151,7 @@ extension ClosedOrderTableViewCell {
         containerView.fillSuperview()
         
         entryPriceLabel.textAlignment = .left
-        entryPriceLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        entryPriceLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         entryPriceLabel.numberOfLines = 0
         entryPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(entryPriceLabel)
@@ -168,7 +168,7 @@ extension ClosedOrderTableViewCell {
         arrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 18)).isActive = true
                 
         currentPriceLabel.textAlignment = .left
-        currentPriceLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        currentPriceLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         currentPriceLabel.numberOfLines = 0
         currentPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(currentPriceLabel)
@@ -176,7 +176,7 @@ extension ClosedOrderTableViewCell {
         currentPriceLabel.centerYAnchor.constraint(equalTo: entryPriceLabel.centerYAnchor).isActive = true
         
         unrealizedProfitLabel.textAlignment = .right
-        unrealizedProfitLabel.font = .sofiaProBold(ofSize: .createAspectRatio(value: 16))
+        unrealizedProfitLabel.font = .poppinsBold(ofSize: .createAspectRatio(value: 16))
         unrealizedProfitLabel.numberOfLines = 0
         unrealizedProfitLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(unrealizedProfitLabel)

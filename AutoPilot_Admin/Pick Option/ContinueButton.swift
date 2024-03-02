@@ -44,7 +44,7 @@ extension ContinueButton {
         purpleBG.contentMode = .scaleAspectFill
         purpleBG.isUserInteractionEnabled = false
         purpleBG.backgroundColor = .clear
-        purpleBG.layer.cornerRadius = 56/2
+        purpleBG.layer.cornerRadius = .createAspectRatio(value: 48)/2
         purpleBG.layer.masksToBounds = true
         purpleBG.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(purpleBG)
@@ -53,7 +53,7 @@ extension ContinueButton {
         continueLabel.isUserInteractionEnabled = false
         continueLabel.textAlignment = .center
         continueLabel.textColor = .white
-        continueLabel.font = .sofiaProBold(ofSize: 16)
+        continueLabel.font = .poppinsBold(ofSize: 16)
         continueLabel.numberOfLines = 0
         continueLabel.translatesAutoresizingMaskIntoConstraints = false
         purpleBG.addSubview(continueLabel)
@@ -64,7 +64,7 @@ extension ContinueButton {
         confirmLabel.alpha = 0
         confirmLabel.textAlignment = .center
         confirmLabel.textColor = .white
-        confirmLabel.font = .sofiaProBold(ofSize: 16)
+        confirmLabel.font = .poppinsBold(ofSize: 16)
         confirmLabel.numberOfLines = 0
         confirmLabel.translatesAutoresizingMaskIntoConstraints = false
         purpleBG.addSubview(confirmLabel)
@@ -91,8 +91,8 @@ extension ContinueButton {
         purpleBG.addSubview(checkmarkLottie)
         checkmarkLottie.centerXAnchor.constraint(equalTo: purpleBG.centerXAnchor).isActive = true
         checkmarkLottie.centerYAnchor.constraint(equalTo: purpleBG.centerYAnchor, constant: 0).isActive = true
-        checkmarkLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        checkmarkLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        checkmarkLottie.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 75)).isActive = true
+        checkmarkLottie.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 75)).isActive = true
                 
         //print("😀😀😀 - \(checkmarkLottie.logHierarchyKeypaths()) - 😀😀😀")
             

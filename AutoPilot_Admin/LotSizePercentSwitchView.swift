@@ -23,7 +23,7 @@ class LotSizePercentSwitchView: UIView {
 
     override init(frame: CGRect) {
        super.init(frame: frame)
-        self.backgroundColor = .black.withAlphaComponent(0.1)
+        self.backgroundColor = .black.withAlphaComponent(0.35)
         self.layer.cornerRadius = .createAspectRatio(value: 29) / 2
         self.layer.masksToBounds = true
         setupViews()
@@ -40,6 +40,7 @@ class LotSizePercentSwitchView: UIView {
 extension LotSizePercentSwitchView {
     func setupViews() {
         
+        lotSizeContainer.layer.zPosition = 2
         lotSizeContainer.tag = 0
         lotSizeContainer.addTarget(self, action: #selector(didTapOption(sender:)), for: .touchUpInside)
         lotSizeContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -49,6 +50,7 @@ extension LotSizePercentSwitchView {
         lotSizeContainer.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         lotSizeContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
+        percentContainer.layer.zPosition = 2
         percentContainer.tag = 1
         percentContainer.addTarget(self, action: #selector(didTapOption(sender:)), for: .touchUpInside)
         percentContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +61,7 @@ extension LotSizePercentSwitchView {
         percentContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         lotSizeLabel.isUserInteractionEnabled = false
-        lotSizeLabel.setupLabel(text: "Enabled", txtColor: .black, font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 14)), txtAlignment: .center)
+        lotSizeLabel.setupLabel(text: "Enabled", txtColor: .white, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 14)), txtAlignment: .center)
         lotSizeContainer.addSubview(lotSizeLabel)
         lotSizeLabel.leadingAnchor.constraint(equalTo: lotSizeContainer.leadingAnchor).isActive = true
         lotSizeLabel.trailingAnchor.constraint(equalTo: lotSizeContainer.trailingAnchor).isActive = true
@@ -68,7 +70,7 @@ extension LotSizePercentSwitchView {
         
         percentLabel.isUserInteractionEnabled = false
         percentLabel.alpha = 0.25
-        percentLabel.setupLabel(text: "Disabled", txtColor: .black, font: .sofiaProSemiBold(ofSize: .createAspectRatio(value: 14)), txtAlignment: .center)
+        percentLabel.setupLabel(text: "Disabled", txtColor: .white, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 14)), txtAlignment: .center)
         percentContainer.addSubview(percentLabel)
         percentLabel.leadingAnchor.constraint(equalTo: percentContainer.leadingAnchor).isActive = true
         percentLabel.trailingAnchor.constraint(equalTo: percentContainer.trailingAnchor).isActive = true
@@ -76,7 +78,7 @@ extension LotSizePercentSwitchView {
         percentLabel.bottomAnchor.constraint(equalTo: percentContainer.bottomAnchor).isActive = true
         
         switchView.isUserInteractionEnabled = false
-        switchView.backgroundColor = .black.withAlphaComponent(0.3)
+        switchView.backgroundColor = .black
         switchView.layer.cornerRadius = .createAspectRatio(value: 25)/2
         switchView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(switchView)
@@ -117,5 +119,11 @@ extension LotSizePercentSwitchView {
         switchCenter.constant = .createAspectRatio(value: 43)
         self.lotSizeLabel.alpha = 0.25
         self.percentLabel.alpha = 1.0
+    }
+    
+    @objc func tradingIsTrue() {
+        switchCenter.constant = -.createAspectRatio(value: 43)
+        self.lotSizeLabel.alpha = 1.0
+        self.percentLabel.alpha = 0.25
     }
 }
