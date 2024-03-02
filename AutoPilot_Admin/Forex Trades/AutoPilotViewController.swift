@@ -202,6 +202,24 @@ class AutoPilotViewController: UIViewController {
         }
     }
     
+    func setGlobalAnnouncement(announcement: GlobalAnnouncement) {
+        API.sharedInstance.setGlobalAnnouncement(announcement: announcement) { success, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success else {
+                print("error setting global announcement")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                print("set global announcement")
+            }
+        }
+    }
+    
     func getOpenOrders() {
         API.sharedInstance.getOpenOrders { success, orders, error in
             guard error == nil else {

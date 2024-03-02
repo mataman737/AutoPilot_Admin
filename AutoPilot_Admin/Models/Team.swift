@@ -18,5 +18,7 @@ struct Team: Codable {
     var mtIds: [String]?
     var referralsOn: Bool?
     var copyTrading: Bool?
+    var price: Double?
+    var dueDate: Date?
     var created: Date
 }

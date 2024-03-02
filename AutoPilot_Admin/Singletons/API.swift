@@ -660,6 +660,66 @@ class API: NSObject {
         }
     }
     
+    func getLotsMetrics(completionHandler: @escaping (Bool, LotsMetrics?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/lotsmetrics", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let metrics = try decoder.decode(LotsMetrics.self, from: data)
+                
+                completionHandler(true, metrics, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
+    func getSubMetrics(completionHandler: @escaping (Bool, SubMetrics?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/submetrics", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let metrics = try decoder.decode(SubMetrics.self, from: data)
+                
+                completionHandler(true, metrics, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
+    func getUserPayments(completionHandler: @escaping (Bool, [UserPayment]?, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/teams/payments", method: "GET", authenticated: true) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let payments = try decoder.decode([UserPayment].self, from: data)
+                
+                completionHandler(true, payments, nil)
+            } catch {
+                print(error)
+                completionHandler(false, nil, error)
+            }
+        }
+    }
+    
     func sendNotification(notification: Notification, completionHandler: @escaping (Bool, Signal?, Error?) -> ()) {
         performRequest(endpoint: "sendpush", method: "POST", authenticated: true, object: notification) { (data, response, error) in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
@@ -1064,6 +1124,26 @@ class API: NSObject {
             } catch {
                 print(error)
                 completionHandler(false, nil, error)
+            }
+        }
+    }
+    
+    func setGlobalAnnouncement(announcement: GlobalAnnouncement, completionHandler: @escaping (Bool, Error?) -> ()) {
+        performRequest(endpoint: "api/admin/announcements/global", method: "POST", authenticated: true, object: announcement) { (data, response, error) in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                completionHandler(false, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let announcement = try decoder.decode(GlobalAnnouncement.self, from: data)
+                
+                completionHandler(true, nil)
+            } catch {
+                print(error)
+                completionHandler(false, error)
             }
         }
     }

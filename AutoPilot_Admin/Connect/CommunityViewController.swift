@@ -102,6 +102,10 @@ class CommunityViewController: UIViewController {
         getTeamMembers()
         //getTeamTraders()
         getCurrentTeam()
+        
+        getLotsMetrics()
+        getSubMetrics()
+        getUserPayments()
     }
     
     @objc func appMovedToForeround() {
@@ -174,6 +178,65 @@ class CommunityViewController: UIViewController {
                     self?.perform(#selector(self?.hideLoader), with: self, afterDelay: 0.5)
                 }
                 
+            }
+        }
+    }
+    
+    func getLotsMetrics() {
+        API.sharedInstance.getLotsMetrics { success, metrics, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let metrics = metrics else {
+                print("error getting lots metrics")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                print("Today's lots: \(metrics.todaysLots)")
+                print("This week's lots: \(metrics.thisWeeksLots)")
+                print("Last week's lots: \(metrics.lastWeeksLots)")
+                print("This months's lots: \(metrics.thisMonthsLots)")
+            }
+        }
+    }
+    
+    func getSubMetrics() {
+        API.sharedInstance.getSubMetrics { success, metrics, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let metrics = metrics else {
+                print("error getting sub metrics")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                print("Free count: \(metrics.freeCount)")
+                print("Paid count: \(metrics.paidCount)")
+                print("Historical count: \(metrics.historicalCount)")
+            }
+        }
+    }
+    
+    func getUserPayments() {
+        API.sharedInstance.getUserPayments { success, payments, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard success, let payments = payments else {
+                print("error getting user payments")
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                print("Payments count: \(payments.count)")
             }
         }
     }
