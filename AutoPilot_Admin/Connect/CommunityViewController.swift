@@ -533,13 +533,20 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
                 print(error)
             }
         } else {
-            if members.count > 0 {
+            
+            
+            if (indexPath.section == 1 ? paidMembers.count : unpaidMembers.count) > 0 {
+                var member = unpaidMembers[indexPath.row].user
+                if indexPath.section == 1 {
+                    member = paidMembers[indexPath.row].user
+                }
+//            }
+//            if members.count > 0 {
                 lightImpactGenerator()
                 let trainingOptionVC = TeamMemberOptionsViewController()
-                let member = members[indexPath.row].user
                 trainingOptionVC.navTitleLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
                 trainingOptionVC.dateLabel.text = ""
-                print("🔥🔥🔥 \(members[indexPath.row].balanceRecord) 🔥🔥🔥")
+                //print("🔥🔥🔥 \(members[indexPath.row].balanceRecord) 🔥🔥🔥")
                 if let memberPhone = member.phone {
                     trainingOptionVC.phoneNumber = memberPhone
                 }

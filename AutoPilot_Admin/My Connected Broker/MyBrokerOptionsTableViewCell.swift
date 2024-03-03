@@ -108,6 +108,7 @@ extension MyBrokerOptionsTableViewCell {
         threeDotsImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 10)).isActive = true
         threeDotsImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 4)).isActive = true
         
+        deleteLabel.isHidden = true
         deleteLabel.text = "Delete"
         deleteLabel.textAlignment = .left
         deleteLabel.textColor = UIColor.newRed
@@ -118,6 +119,7 @@ extension MyBrokerOptionsTableViewCell {
         deleteLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -.createAspectRatio(value: 16)).isActive = true
         deleteLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         
+        threeDotsButton.isHidden = true
         threeDotsButton.addTarget(self, action: #selector(didTapToDelete), for: .touchUpInside)
         threeDotsButton.backgroundColor = .clear
         threeDotsButton.translatesAutoresizingMaskIntoConstraints = false

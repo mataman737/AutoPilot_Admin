@@ -121,17 +121,17 @@ class MyConnectedBrokerAccountViewController: UIViewController {
 
 extension MyConnectedBrokerAccountViewController {
     @objc func animateViewsIn() {
-        UIView.animate(withDuration: 0.35, delay: 0.1, options: []) {
+        self.contentContainer.presentAndBounce()
+        UIView.animate(withDuration: 0.2, delay: 0.1, options: []) {
             self.blackLayer.alpha = 0.75
             self.view.layoutIfNeeded()
-            self.contentContainer.transform = CGAffineTransform(translationX: 0, y: 0)
         } completion: { success in
             //
         }
     }
         
     @objc func dismissViews() {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
             self.blackLayer.alpha = 0
             self.contentContainer.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
@@ -248,7 +248,7 @@ extension MyConnectedBrokerAccountViewController: UITableViewDelegate, UITableVi
 
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return .createAspectRatio(value: 60)
+        return .createAspectRatio(value: 60) //60
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -266,10 +266,10 @@ extension MyConnectedBrokerAccountViewController: UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let headerView = MyBrokersHeader()
+        let headerView = MyBrokersHeader()        
         headerView.dividerLine.backgroundColor = UIColor(red: 228/255, green: 229/255, blue: 230/255, alpha: 1.0)
         headerView.whiteView.backgroundColor = .white
-        headerView.checkoutTitleLabel.text = "My Broker"
+        headerView.checkoutTitleLabel.text = "Master Account"
         headerView.checkoutTitleLabel.textColor = .newBlack
         headerView.numberOfItemsLabel.text = "\(brokers.count) connected broker"
         headerView.numberOfItemsLabel.textColor = .newBlack.withAlphaComponent(0.5)
