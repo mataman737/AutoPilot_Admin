@@ -114,6 +114,7 @@ class UpdatedLineChart: UIView {
         lineChartView.isUserInteractionEnabled = true
         lineChartView.doubleTapToZoomEnabled = false
         lineChartView.pinchZoomEnabled = false
+        lineChartView.dragYEnabled = false
         let pan = lineChartView.gestureRecognizers?.first { $0 is UIPanGestureRecognizer }
         let tap = lineChartView.gestureRecognizers?.first { $0 is UITapGestureRecognizer }
         pan?.addTarget(self, action: #selector(gestureRecognized(_:)))

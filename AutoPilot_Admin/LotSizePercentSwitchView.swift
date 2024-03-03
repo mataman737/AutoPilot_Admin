@@ -69,7 +69,7 @@ extension LotSizePercentSwitchView {
         lotSizeLabel.bottomAnchor.constraint(equalTo: lotSizeContainer.bottomAnchor).isActive = true
         
         percentLabel.isUserInteractionEnabled = false
-        percentLabel.alpha = 0.25
+        percentLabel.alpha = 0.5
         percentLabel.setupLabel(text: "Disabled", txtColor: .white, font: .poppinsSemiBold(ofSize: .createAspectRatio(value: 14)), txtAlignment: .center)
         percentContainer.addSubview(percentLabel)
         percentLabel.leadingAnchor.constraint(equalTo: percentContainer.leadingAnchor).isActive = true
@@ -107,9 +107,9 @@ extension LotSizePercentSwitchView {
             self.layoutIfNeeded()
             if sender.tag == 0 {
                 self.lotSizeLabel.alpha = 1.0
-                self.percentLabel.alpha = 0.25
+                self.percentLabel.alpha = 0.5
             } else {
-                self.lotSizeLabel.alpha = 0.25
+                self.lotSizeLabel.alpha = 0.5
                 self.percentLabel.alpha = 1.0
             }
         }
