@@ -120,6 +120,14 @@ class CommunityViewController: UIViewController {
         }
     }
     
+    @objc func showLoader() {
+        UIView.animate(withDuration: 0.25) {
+            self.loadingContainer.alpha = 1.0
+        } completion: { success in
+            //self.loadingContainer.isHidden = true
+        }
+    }
+    
     func getCurrentTeam() {
         API.sharedInstance.getCurrentTeam { success, team, error in
             guard error == nil else {
@@ -533,26 +541,44 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
                 print(error)
             }
         } else {
+            //var member: User?
+            let trainingOptionVC = TeamMemberOptionsViewController()
+            trainingOptionVC.delegate = self
+            trainingOptionVC.dateLabel.text = ""
             
-            
-            if (indexPath.section == 1 ? paidMembers.count : unpaidMembers.count) > 0 {
-                var member = unpaidMembers[indexPath.row].user
-                if indexPath.section == 1 {
-                    member = paidMembers[indexPath.row].user
-                }
-//            }
-//            if members.count > 0 {
-                lightImpactGenerator()
-                let trainingOptionVC = TeamMemberOptionsViewController()
+            if indexPath.section == 1 {
+                var member = paidMembers[indexPath.row].user
                 trainingOptionVC.navTitleLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
-                trainingOptionVC.dateLabel.text = ""
-                //print("🔥🔥🔥 \(members[indexPath.row].balanceRecord) 🔥🔥🔥")
+                trainingOptionVC.subStatus = member.isSubscribed
                 if let memberPhone = member.phone {
                     trainingOptionVC.phoneNumber = memberPhone
                 }
-                trainingOptionVC.modalPresentationStyle = .overFullScreen
-                self.present(trainingOptionVC, animated: false)
+                print("\(member.isSubscribed) 🧑‍🎤🧑‍🎤🧑‍🎤")
+            } else if indexPath.section == 2 {
+                var member = unpaidMembers[indexPath.row].user
+                trainingOptionVC.navTitleLabel.text = "\(member.firstName ?? "") \(member.lastName ?? "")"
+                trainingOptionVC.subStatus = member.isSubscribed
+                if let memberPhone = member.phone {
+                    trainingOptionVC.phoneNumber = memberPhone
+                }
+                print("\(member.isSubscribed) 🧑‍🎤🧑‍🎤🧑‍🎤")
             }
+            
+//            if (indexPath.section == 1 ? paidMembers.count : unpaidMembers.count) > 0 {
+//                var member = unpaidMembers[indexPath.row].user
+//                if indexPath.section == 1 {
+//                    member = paidMembers[indexPath.row].user
+//                }
+
+                lightImpactGenerator()
+                                        
+            
+//            if let memberPhone = member.phone {
+//                trainingOptionVC.phoneNumber = memberPhone
+//            }
+            trainingOptionVC.modalPresentationStyle = .overFullScreen
+            self.present(trainingOptionVC, animated: false)
+            //}
         }
     }
 }
@@ -614,5 +640,14 @@ extension CommunityViewController {
 extension CommunityViewController: CustomChatChannelVCDelegate {
     func didCloseChannel() {
         getUnreadCount()
+    }
+}
+
+//MARK: TEAM MEMBER OPTIONS DELEGATE
+
+extension CommunityViewController: TeamMemberOptionsViewControllerDelegate {
+    func didUpdateUserSubStatus() {
+        showLoader()
+        getTeamMembers()
     }
 }

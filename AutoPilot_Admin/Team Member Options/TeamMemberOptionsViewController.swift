@@ -14,6 +14,7 @@ protocol TeamMemberOptionsViewControllerDelegate: AnyObject {
     //func didTapJoinSession(training: LiveTraining)
     //func didTapSetReminder(training: LiveTraining)
     //func didTapMore()
+    func didUpdateUserSubStatus()
 }
 
 class TeamMemberOptionsViewController: UIViewController {
@@ -47,6 +48,7 @@ class TeamMemberOptionsViewController: UIViewController {
     var entryPriceLock = UIImageView()    
     var textColor: UIColor = UIColor.white
     var lotPercentView = LotSizePercentSwitchView()
+    var subStatus = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +67,11 @@ extension TeamMemberOptionsViewController {
         UIView.animate(withDuration: 0.2) {
             self.opacityLayer.alpha = 0.75
         } completion: { (success) in
-            
+            if self.subStatus {
+                self.lotPercentView.tradingIsTrue()
+            } else {
+                self.lotPercentView.tradingIsFalse()
+            }
         }
     }
     
@@ -193,17 +199,26 @@ extension TeamMemberOptionsViewController: LotSizePercentSwitchViewDelegate {
     func updateUserPaidStatus(phone: String, paid: Bool) {
         API.sharedInstance.updateUserPaidStatus(paidUpdateRequest: UserUpdatePaidRequest(phone: phone, paid: paid)) { success, user, error in
             guard error == nil else {
-                print(error!)
+                print("\(error!) 🫠🫠🫠 000")
                 return
             }
             
             guard success, let user = user else {
-                print("error updating user status")
+                print("error updating user status 🫠🫠🫠 111")
                 return
             }
             
             DispatchQueue.main.async { [weak self] in
-                print("\(user.firstName) | \(user.paid)")
+                print("\(user.firstName) | \(user.paid) 🫠🫠🫠 222")
+                let toastNoti = ToastNotificationView()
+                self?.delegate?.didUpdateUserSubStatus()
+                if let subStatus = user.paid {
+                    if subStatus {
+                        toastNoti.present(withMessage: "Set to Paid!")
+                    } else {
+                        toastNoti.present(withMessage: "Set to Unpaid")
+                    }
+                }
             }
         }
     }

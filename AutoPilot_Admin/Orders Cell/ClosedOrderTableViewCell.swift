@@ -38,14 +38,25 @@ class ClosedOrderTableViewCell: UITableViewCell {
     
     var currentPrice: String?
     var pipDifference: Double?
+    
+    //
+    
+    var backgroundGradientImageView = UIImageView()
+    var entryTitleLabel = UILabel()
+    var closeTitleLabel = UILabel()
+    var profitTitleLabel = UILabel()
+    var dividerLine = UIView()
+    var circleZeroImageView = UIImageView()
+    var circleOneImageView = UIImageView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         self.contentView.backgroundColor = .clear
         self.backgroundColor = .clear
-        setupViews()
-        setupColors()
+        //setupViews()
+        setupNewViews()
+        //setupColors()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -182,6 +193,128 @@ extension ClosedOrderTableViewCell {
         containerView.addSubview(unrealizedProfitLabel)
         unrealizedProfitLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
         unrealizedProfitLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+    }
+    
+    func setupNewViews() {
+        //self.contentView.backgroundColor = .red
+        
+        backgroundGradientImageView.image = UIImage(named: "greenTradeGrad")
+        //backgroundGradientImageView.backgroundColor = .purple
+        backgroundGradientImageView.layer.masksToBounds = true
+        backgroundGradientImageView.layer.cornerRadius = 10
+        backgroundGradientImageView.contentMode = .scaleAspectFill
+        backgroundGradientImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(backgroundGradientImageView)
+        backgroundGradientImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: .createAspectRatio(value: 24)).isActive = true
+        backgroundGradientImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -.createAspectRatio(value: 24)).isActive = true
+        backgroundGradientImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: .createAspectRatio(value: 12)).isActive = true
+        backgroundGradientImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -.createAspectRatio(value: 12)).isActive = true
+        
+        assetImageView.backgroundColor = .clear
+        //assetImageView.layer.masksToBounds = true
+        //assetImageView.contentMode = .scaleAspectFill
+        assetImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundGradientImageView.addSubview(assetImageView)
+        //assetImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: .createAspectRatio(value: 0)).isActive = true //10
+        assetImageView.leadingAnchor.constraint(equalTo: backgroundGradientImageView.leadingAnchor, constant: .createAspectRatio(value: 10)).isActive = true //10
+        assetImageView.topAnchor.constraint(equalTo: backgroundGradientImageView.topAnchor, constant: .createAspectRatio(value: 12)).isActive = true
+        assetImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 35)).isActive = true
+        assetImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 30)).isActive = true
+        
+        
+        circleOneImageView.backgroundColor = .lightGray
+        circleOneImageView.layer.masksToBounds = true
+        circleOneImageView.contentMode = .scaleAspectFill
+        circleOneImageView.layer.cornerRadius = .createAspectRatio(value: 23)/2
+        circleOneImageView.layer.borderColor = UIColor.darkModeBackground.cgColor
+        circleOneImageView.layer.borderWidth = 2
+        circleOneImageView.translatesAutoresizingMaskIntoConstraints = false
+        assetImageView.addSubview(circleOneImageView)
+        circleOneImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 23)).isActive = true
+        circleOneImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 23)).isActive = true
+        circleOneImageView.trailingAnchor.constraint(equalTo: assetImageView.trailingAnchor).isActive = true
+        circleOneImageView.topAnchor.constraint(equalTo: assetImageView.topAnchor).isActive = true
+        
+        circleZeroImageView.backgroundColor = .darkGray
+        circleZeroImageView.layer.cornerRadius = .createAspectRatio(value: 23)/2
+        circleZeroImageView.layer.masksToBounds = true
+        circleZeroImageView.contentMode = .scaleAspectFill
+        circleZeroImageView.layer.borderColor = UIColor.darkModeBackground.cgColor
+        circleZeroImageView.layer.borderWidth = 2
+        circleZeroImageView.translatesAutoresizingMaskIntoConstraints = false
+        assetImageView.addSubview(circleZeroImageView)
+        circleZeroImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 23)).isActive = true
+        circleZeroImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 23)).isActive = true
+        circleZeroImageView.leadingAnchor.constraint(equalTo: assetImageView.leadingAnchor).isActive = true
+        circleZeroImageView.bottomAnchor.constraint(equalTo: assetImageView.bottomAnchor).isActive = true
+        
+        currencyPairLabel.setupLabel(text: "", txtColor: .white, font: .poppinsMedium(ofSize: .createAspectRatio(value: 16)), txtAlignment: .left)
+        backgroundGradientImageView.addSubview(currencyPairLabel)
+        currencyPairLabel.leadingAnchor.constraint(equalTo: assetImageView.trailingAnchor, constant: .createAspectRatio(value: 8)).isActive = true
+        currencyPairLabel.topAnchor.constraint(equalTo: backgroundGradientImageView.topAnchor, constant: .createAspectRatio(value: 14)).isActive = true
+        
+        signalTimeLabel.setupLabel(text: "", txtColor: .white.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 10)), txtAlignment: .left)
+        backgroundGradientImageView.addSubview(signalTimeLabel)
+        signalTimeLabel.leadingAnchor.constraint(equalTo: currencyPairLabel.leadingAnchor, constant: .createAspectRatio(value: 0)).isActive = true
+        signalTimeLabel.topAnchor.constraint(equalTo: currencyPairLabel.bottomAnchor, constant: .createAspectRatio(value: 0)).isActive = true
+        
+        entryPriceLabel.setupLabel(text: "", txtColor: .white.withAlphaComponent(0.5), font: .poppinsMedium(ofSize: .createAspectRatio(value: 18)), txtAlignment: .left)
+        backgroundGradientImageView.addSubview(entryPriceLabel)
+        entryPriceLabel.leadingAnchor.constraint(equalTo: assetImageView.leadingAnchor, constant: .createAspectRatio(value: 0)).isActive = true
+        entryPriceLabel.bottomAnchor.constraint(equalTo: backgroundGradientImageView.bottomAnchor, constant: -.createAspectRatio(value: 8)).isActive = true
+        
+        entryTitleLabel.setupLabel(text: "ENTRY PRICE", txtColor: .white.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 8)), txtAlignment: .left)
+        backgroundGradientImageView.addSubview(entryTitleLabel)
+        entryTitleLabel.leadingAnchor.constraint(equalTo: entryPriceLabel.leadingAnchor).isActive = true
+        entryTitleLabel.bottomAnchor.constraint(equalTo: entryPriceLabel.topAnchor, constant: -.createAspectRatio(value: 0)).isActive = true
+        
+        arrowImageView.image = UIImage(named: "littleArrow")
+        arrowImageView.contentMode = .scaleAspectFill
+        arrowImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundGradientImageView.addSubview(arrowImageView)
+        arrowImageView.leadingAnchor.constraint(equalTo: entryPriceLabel.trailingAnchor, constant: .createAspectRatio(value: 11)).isActive = true
+        arrowImageView.centerYAnchor.constraint(equalTo: entryPriceLabel.centerYAnchor, constant: .createAspectRatio(value: 0)).isActive = true
+        arrowImageView.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 14)).isActive = true
+        arrowImageView.widthAnchor.constraint(equalToConstant: .createAspectRatio(value: 14)).isActive = true
+        
+        currentPriceLabel.setupLabel(text: "", txtColor: .red, font: .poppinsMedium(ofSize: .createAspectRatio(value: 18)), txtAlignment: .left)
+        backgroundGradientImageView.addSubview(currentPriceLabel)
+        //currentPriceLabel.leadingAnchor.constraint(equalTo: entryPriceLabel.trailingAnchor, constant: .createAspectRatio(value: 36)).isActive = true
+        currentPriceLabel.leadingAnchor.constraint(equalTo: arrowImageView.trailingAnchor, constant: .createAspectRatio(value: 11)).isActive = true
+        currentPriceLabel.bottomAnchor.constraint(equalTo: entryPriceLabel.bottomAnchor).isActive = true
+        
+        closeTitleLabel.setupLabel(text: "CLOSE PRICE", txtColor: .white.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 8)), txtAlignment: .left)
+        backgroundGradientImageView.addSubview(closeTitleLabel)
+        closeTitleLabel.leadingAnchor.constraint(equalTo: currentPriceLabel.leadingAnchor).isActive = true
+        closeTitleLabel.bottomAnchor.constraint(equalTo: currentPriceLabel.topAnchor, constant: -.createAspectRatio(value: 0)).isActive = true
+        
+        unrealizedProfitLabel.setupLabel(text: "0.0", txtColor: .white, font: .poppinsMedium(ofSize: .createAspectRatio(value: 18)), txtAlignment: .right)
+        backgroundGradientImageView.addSubview(unrealizedProfitLabel)
+        unrealizedProfitLabel.trailingAnchor.constraint(equalTo: backgroundGradientImageView.trailingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
+        unrealizedProfitLabel.bottomAnchor.constraint(equalTo: entryPriceLabel.bottomAnchor).isActive = true
+        
+        profitTitleLabel.setupLabel(text: "PROFIT", txtColor: .white.withAlphaComponent(0.5), font: .poppinsRegular(ofSize: .createAspectRatio(value: 8)), txtAlignment: .right)
+        backgroundGradientImageView.addSubview(profitTitleLabel)
+        profitTitleLabel.trailingAnchor.constraint(equalTo: unrealizedProfitLabel.trailingAnchor).isActive = true
+        profitTitleLabel.bottomAnchor.constraint(equalTo: unrealizedProfitLabel.topAnchor, constant: -.createAspectRatio(value: 0)).isActive = true
+        
+        tickerLabel.setupLabel(text: "0 pips", txtColor: UIColor(red: 44/255, green: 221/255, blue: 127/255, alpha: 1.0), font: .poppinsMedium(ofSize: .createAspectRatio(value: 16)), txtAlignment: .right)
+        backgroundGradientImageView.addSubview(tickerLabel)
+        tickerLabel.trailingAnchor.constraint(equalTo: unrealizedProfitLabel.trailingAnchor).isActive = true
+        tickerLabel.centerYAnchor.constraint(equalTo: currencyPairLabel.centerYAnchor).isActive = true
+        
+        dividerLine.backgroundColor = UIColor(red: 44/255, green: 221/255, blue: 127/255, alpha: 0.1)
+        dividerLine.translatesAutoresizingMaskIntoConstraints = false
+        backgroundGradientImageView.addSubview(dividerLine)
+        dividerLine.centerYAnchor.constraint(equalTo: tickerLabel.centerYAnchor).isActive = true
+        dividerLine.trailingAnchor.constraint(equalTo: tickerLabel.leadingAnchor, constant: -.createAspectRatio(value: 10)).isActive = true
+        dividerLine.heightAnchor.constraint(equalToConstant: .createAspectRatio(value: 24)).isActive = true
+        dividerLine.widthAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        orderTypeLabel.setupLabel(text: "", txtColor: UIColor(red: 44/255, green: 221/255, blue: 127/255, alpha: 1.0), font: .poppinsMedium(ofSize: .createAspectRatio(value: 16)), txtAlignment: .right)
+        backgroundGradientImageView.addSubview(orderTypeLabel)
+        orderTypeLabel.trailingAnchor.constraint(equalTo: tickerLabel.leadingAnchor, constant: -.createAspectRatio(value: 21)).isActive = true
+        orderTypeLabel.centerYAnchor.constraint(equalTo: tickerLabel.centerYAnchor).isActive = true
     }
 }
 

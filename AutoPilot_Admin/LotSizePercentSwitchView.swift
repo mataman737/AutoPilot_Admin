@@ -119,11 +119,17 @@ extension LotSizePercentSwitchView {
         switchCenter.constant = .createAspectRatio(value: 43)
         self.lotSizeLabel.alpha = 0.25
         self.percentLabel.alpha = 1.0
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
     }
     
     @objc func tradingIsTrue() {
         switchCenter.constant = -.createAspectRatio(value: 43)
         self.lotSizeLabel.alpha = 1.0
         self.percentLabel.alpha = 0.25
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
     }
 }
